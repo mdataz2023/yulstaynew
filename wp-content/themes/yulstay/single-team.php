@@ -1,13 +1,17 @@
 <?php
 
-get_header();?>
+get_header();
+
+$team_member_name = get_field('team_member_name');
+
+?>
 
 <div class="pxp-content">
             <div class="pxp-agents mt-100">
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12 col-lg-8">
-                            <h1 class="pxp-page-header float-left">Erika Tillman</h1>
+                            <h1 class="pxp-page-header float-left"><?php the_title(); ?></h1>
                             <span class="pxp-agent-rating"><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span></span>
                             <div class="clearfix"></div>
                             <p>Licensed Associate Real Estate Broker</p>
@@ -16,7 +20,7 @@ get_header();?>
                                 <div class="pxp-agent-phone"><span class="fa fa-phone"></span> (123) 456-7890</div>
                             </div>
                             <div class="mt-4 mt-md-5">
-                                <a href="#pxp-work-with" class="pxp-agent-contact-btn" data-toggle="modal" data-target="#pxp-work-with">Work with Erika Tillman</a>
+                                <a href="#pxp-work-with" class="pxp-agent-contact-btn" data-toggle="modal" data-target="#pxp-work-with">Work with <?php the_title(); ?></a>
                             </div>
                         </div>
                         <div class="col-sm-12 offset-lg-1 col-lg-3">
@@ -27,10 +31,16 @@ get_header();?>
                     <div class="row">
                         <div class="col-sm-12 col-lg-8">
                             <div class="pxp-agent-section mt-4 mt-md-5">
-                                <h3>About Erika Tillman</h3>
+                                <h3>About <?php the_title(); ?></h3>
                                 <div class="mt-3 mt-md-4">
-                                    <p>Award winner and nominee, Erika Tillman, is one of NYC’s top producing agents. In 2016 she was a Top Producer Individual by sales volume and GCI. This high achiever received, among other recognitions, a Quadruple Platinum Award and was cover of Outfront Magazine in December 2016.</p>
-                                    <p>She is known as one of the smartest and most dedicated agents in the City. She has earned an excellent reputation with high-end developers. Her clientele includes some of the wealthiest Family Offices in the world, including royalty, and she works attending each generation’s needs and risk profile. She is the perfect agent for the most demanding clients and runs her business 24/7. </p>
+                                    <?php if( have_rows('team_member_paragraphs') ): $s= 1; $a=0; ?>
+                    
+                                    <?php while( have_rows('team_member_paragraphs') ): the_row() ;   
+                                    $i++;
+                                            $paragraph = get_sub_field('team_member_paragraph');     
+                                    ?>
+                                    <p><?php echo $paragraph; ?></p>
+                                    <?php   endwhile; endif; ?>
                                 </div>
                             </div>
                         </div>
