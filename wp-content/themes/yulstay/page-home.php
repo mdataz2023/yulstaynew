@@ -484,11 +484,11 @@
                 </div>
             </div>
         </div>
-        <script src="js/jquery-3.4.1.min.js"></script>
-        <script src="js/popper.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/owl.carousel.min.js"></script>
-        <script src="js/main.js?lasjkj"></script>
+        <script src="<?php echo get_template_directory_uri(); ?>/js/jquery-3.4.1.min.js"></script>
+        <script src="<?php echo get_template_directory_uri(); ?>/js/popper.min.js"></script>
+        <script src="<?php echo get_template_directory_uri(); ?>/js/bootstrap.min.js"></script>
+        <script src="<?php echo get_template_directory_uri(); ?>/js/owl.carousel.min.js"></script>
+        <script src="<?php echo get_template_directory_uri(); ?>/js/main.js?lasjkj"></script>
 
 
 <?php get_footer(); ?>
