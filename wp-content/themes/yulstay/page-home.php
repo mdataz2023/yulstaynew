@@ -4,7 +4,7 @@
         <meta charset="<?php bloginfo( 'charset' ); ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+        <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.png" type="image/x-icon">
         <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900" rel="stylesheet">
         <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/bootstrap.min.css">
         <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/font-awesome.min.css">
@@ -87,7 +87,7 @@
             <div class="pxp-hero vh-100">
                 <div class="pxp-hero-bg pxp-cover pxp-cover-bottom">
                     <video autoplay loop muted playsinline>
-                        <source src="<?php echo get_template_directory_uri(); ?>/images/Yulstay.mp4" type="video/mp4">
+                        <source src="<?php echo get_template_directory_uri(); ?>/<?php echo get_template_directory_uri(); ?>/images/Yulstay.mp4" type="video/mp4">
                         <!-- You can add additional source elements for different video formats (e.g., WebM, Ogg) -->
                         Your browser does not support the video tag.
                     </video>
@@ -100,7 +100,7 @@
                 </div>
             </div>
             <!-- <div class="pxp-hero vh-100">
-                <div class="pxp-hero-bg pxp-cover pxp-cover-bottom" style="background-image: url(images/ph-big.jpg);"></div>
+                <div class="pxp-hero-bg pxp-cover pxp-cover-bottom" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/ph-big.jpg);"></div>
                 <div class="pxp-hero-opacity"></div>
                 <div class="pxp-hero-caption">
                     <div class="container">
@@ -135,7 +135,7 @@
                     <div class="owl-carousel pxp-props-carousel-right-stage">
                         <div>
                             <a href="single-property.html" class="pxp-prop-card-1 rounded-lg">
-                                <div class="pxp-prop-card-1-fig pxp-cover" style="background-image: url(images/ph-gallery.jpg);"></div>
+                                <div class="pxp-prop-card-1-fig pxp-cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/ph-gallery.jpg);"></div>
                                 <div class="pxp-prop-card-1-gradient pxp-animate"></div>
                                 <div class="pxp-prop-card-1-details">
                                     <div class="pxp-prop-card-1-details-title">Chic Apartment in Downtown</div>
@@ -148,7 +148,7 @@
 
                         <div>
                             <a href="single-property.html" class="pxp-prop-card-1 rounded-lg">
-                                <div class="pxp-prop-card-1-fig pxp-cover" style="background-image: url(images/ph-gallery.jpg);"></div>
+                                <div class="pxp-prop-card-1-fig pxp-cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/ph-gallery.jpg);"></div>
                                 <div class="pxp-prop-card-1-gradient pxp-animate"></div>
                                 <div class="pxp-prop-card-1-details">
                                     <div class="pxp-prop-card-1-details-title">Colorful Little Apartment</div>
@@ -161,7 +161,7 @@
 
                         <div>
                             <a href="single-property.html" class="pxp-prop-card-1 rounded-lg">
-                                <div class="pxp-prop-card-1-fig pxp-cover" style="background-image: url(images/ph-gallery.jpg);"></div>
+                                <div class="pxp-prop-card-1-fig pxp-cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/ph-gallery.jpg);"></div>
                                 <div class="pxp-prop-card-1-gradient pxp-animate"></div>
                                 <div class="pxp-prop-card-1-details">
                                     <div class="pxp-prop-card-1-details-title">Cozy Two Bedroom Apartment</div>
@@ -174,7 +174,7 @@
 
                         <div>
                             <a href="single-property.html" class="pxp-prop-card-1 rounded-lg">
-                                <div class="pxp-prop-card-1-fig pxp-cover" style="background-image: url(images/ph-gallery.jpg);"></div>
+                                <div class="pxp-prop-card-1-fig pxp-cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/ph-gallery.jpg);"></div>
                                 <div class="pxp-prop-card-1-gradient pxp-animate"></div>
                                 <div class="pxp-prop-card-1-details">
                                     <div class="pxp-prop-card-1-details-title">Beautiful House in Marina</div>
@@ -187,7 +187,7 @@
 
                         <div>
                             <a href="single-property.html" class="pxp-prop-card-1 rounded-lg">
-                                <div class="pxp-prop-card-1-fig pxp-cover" style="background-image: url(images/ph-gallery.jpg);"></div>
+                                <div class="pxp-prop-card-1-fig pxp-cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/ph-gallery.jpg);"></div>
                                 <div class="pxp-prop-card-1-gradient pxp-animate"></div>
                                 <div class="pxp-prop-card-1-details">
                                     <div class="pxp-prop-card-1-details-title">Modern Residence</div>
@@ -200,7 +200,7 @@
 
                         <div>
                             <a href="single-property.html" class="pxp-prop-card-1 rounded-lg">
-                                <div class="pxp-prop-card-1-fig pxp-cover" style="background-image: url(images/ph-gallery.jpg);"></div>
+                                <div class="pxp-prop-card-1-fig pxp-cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/ph-gallery.jpg);"></div>
                                 <div class="pxp-prop-card-1-gradient pxp-animate"></div>
                                 <div class="pxp-prop-card-1-details">
                                     <div class="pxp-prop-card-1-details-title">Luxury Mansion</div>
@@ -216,7 +216,7 @@
                 </div>
             </div>
 
-            <div class="pxp-services pxp-cover mt-100 pt-100 mb-200" style="background-image: url(images/ph-big.jpg); background-position: 50% 60%;">
+            <div class="pxp-services pxp-cover mt-100 pt-100 mb-200" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/ph-big.jpg); background-position: 50% 60%;">
                 <h2 class="text-center pxp-section-h2">Why Choose Us</h2>
                 <p class="pxp-text-light text-center">We offer perfect real estate services</p>
 
@@ -224,7 +224,7 @@
                     <div class="pxp-services-container rounded-lg mt-4 mt-md-5">
                         <a href="properties.html" class="pxp-services-item">
                             <div class="pxp-services-item-fig">
-                                <img src="images/service-icon-1.svg" alt="...">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/service-icon-1.svg" alt="...">
                             </div>
                             <div class="pxp-services-item-text text-center">
                                 <div class="pxp-services-item-text-title">Find your future home</div>
@@ -234,7 +234,7 @@
                         </a>
                         <a href="agents.html" class="pxp-services-item">
                             <div class="pxp-services-item-fig">
-                                <img src="images/service-icon-2.svg" alt="...">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/service-icon-2.svg" alt="...">
                             </div>
                             <div class="pxp-services-item-text text-center">
                                 <div class="pxp-services-item-text-title">Experienced agents</div>
@@ -244,7 +244,7 @@
                         </a>
                         <a href="properties.html" class="pxp-services-item">
                             <div class="pxp-services-item-fig">
-                                <img src="images/service-icon-3.svg" alt="...">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/service-icon-3.svg" alt="...">
                             </div>
                             <div class="pxp-services-item-text text-center">
                                 <div class="pxp-services-item-text-title">Buy or rent homes</div>
@@ -254,7 +254,7 @@
                         </a>
                         <a href="submit-property.html" class="pxp-services-item">
                             <div class="pxp-services-item-fig">
-                                <img src="images/service-icon-4.svg" alt="...">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/service-icon-4.svg" alt="...">
                             </div>
                             <div class="pxp-services-item-text text-center">
                                 <div class="pxp-services-item-text-title">List your own property</div>
@@ -274,7 +274,7 @@
                 <div class="row mt-4 mt-md-5">
                     <div class="col-sm-12 col-md-6 col-lg-4">
                         <a href="properties.html" class="pxp-areas-1-item rounded-lg">
-                            <div class="pxp-areas-1-item-fig pxp-cover" style="background-image: url(images/ph-gallery.jpg);"></div>
+                            <div class="pxp-areas-1-item-fig pxp-cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/ph-gallery.jpg);"></div>
                             <div class="pxp-areas-1-item-details">
                                 <div class="pxp-areas-1-item-details-area">Bluemont</div>
                                 <div class="pxp-areas-1-item-details-city">Arlington, VA</div>
@@ -285,7 +285,7 @@
                     </div>
                     <div class="col-sm-12 col-md-6 col-lg-4">
                         <a href="properties.html" class="pxp-areas-1-item rounded-lg">
-                            <div class="pxp-areas-1-item-fig pxp-cover" style="background-image: url(images/ph-gallery.jpg);"></div>
+                            <div class="pxp-areas-1-item-fig pxp-cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/ph-gallery.jpg);"></div>
                             <div class="pxp-areas-1-item-details">
                                 <div class="pxp-areas-1-item-details-area">Overlake</div>
                                 <div class="pxp-areas-1-item-details-city">Redmond, WA</div>
@@ -296,7 +296,7 @@
                     </div>
                     <div class="col-sm-12 col-md-6 col-lg-4">
                         <a href="properties.html" class="pxp-areas-1-item rounded-lg">
-                            <div class="pxp-areas-1-item-fig pxp-cover" style="background-image: url(images/ph-gallery.jpg);"></div>
+                            <div class="pxp-areas-1-item-fig pxp-cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/ph-gallery.jpg);"></div>
                             <div class="pxp-areas-1-item-details">
                                 <div class="pxp-areas-1-item-details-area">College Terrace</div>
                                 <div class="pxp-areas-1-item-details-city">Palo Alto, CA</div>
@@ -307,7 +307,7 @@
                     </div>
                     <div class="col-sm-12 col-md-6 col-lg-4">
                         <a href="properties.html" class="pxp-areas-1-item rounded-lg">
-                            <div class="pxp-areas-1-item-fig pxp-cover" style="background-image: url(images/ph-gallery.jpg);"></div>
+                            <div class="pxp-areas-1-item-fig pxp-cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/ph-gallery.jpg);"></div>
                             <div class="pxp-areas-1-item-details">
                                 <div class="pxp-areas-1-item-details-area">Inner Sunset</div>
                                 <div class="pxp-areas-1-item-details-city">San Francisco, CA</div>
@@ -318,7 +318,7 @@
                     </div>
                     <div class="col-sm-12 col-md-6 col-lg-4">
                         <a href="properties.html" class="pxp-areas-1-item rounded-lg">
-                            <div class="pxp-areas-1-item-fig pxp-cover" style="background-image: url(images/ph-gallery.jpg);"></div>
+                            <div class="pxp-areas-1-item-fig pxp-cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/ph-gallery.jpg);"></div>
                             <div class="pxp-areas-1-item-details">
                                 <div class="pxp-areas-1-item-details-area">Upper West Side</div>
                                 <div class="pxp-areas-1-item-details-city">New York City, NY</div>
@@ -329,7 +329,7 @@
                     </div>
                     <div class="col-sm-12 col-md-6 col-lg-4">
                         <a href="properties.html" class="pxp-areas-1-item rounded-lg">
-                            <div class="pxp-areas-1-item-fig pxp-cover" style="background-image: url(images/ph-gallery.jpg);"></div>
+                            <div class="pxp-areas-1-item-fig pxp-cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/ph-gallery.jpg);"></div>
                             <div class="pxp-areas-1-item-details">
                                 <div class="pxp-areas-1-item-details-area">Marina District</div>
                                 <div class="pxp-areas-1-item-details-city">San Francisco, CA</div>
@@ -343,7 +343,7 @@
                 <a href="properties.html" class="pxp-primary-cta text-uppercase mt-2 mt-md-4 pxp-animate">Explore Neighborhoods</a>
             </div>
 
-            <div class="pxp-cta-1 pxp-cover mt-100 pt-300" style="background-image: url(images/ph-big.jpg); background-position: 50% 60%;">
+            <div class="pxp-cta-1 pxp-cover mt-100 pt-300" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/ph-big.jpg); background-position: 50% 60%;">
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12 col-md-6 col-lg-4">
@@ -365,7 +365,7 @@
                     <div class="col-sm-12 col-md-6 col-lg-3">
                         <a href="single-agent.html" class="pxp-agents-1-item">
                             <div class="pxp-agents-1-item-fig-container rounded-lg">
-                                <div class="pxp-agents-1-item-fig pxp-cover" style="background-image: url(images/ph-agent.jpg); background-position: top center"></div>
+                                <div class="pxp-agents-1-item-fig pxp-cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/ph-agent.jpg); background-position: top center"></div>
                             </div>
                             <div class="pxp-agents-1-item-details rounded-lg">
                                 <div class="pxp-agents-1-item-details-name">Scott Goodwin</div>
@@ -379,7 +379,7 @@
                     <div class="col-sm-12 col-md-6 col-lg-3">
                         <a href="single-agent.html" class="pxp-agents-1-item">
                             <div class="pxp-agents-1-item-fig-container rounded-lg">
-                                <div class="pxp-agents-1-item-fig pxp-cover" style="background-image: url(images/ph-agent.jpg); background-position: top center"></div>
+                                <div class="pxp-agents-1-item-fig pxp-cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/ph-agent.jpg); background-position: top center"></div>
                             </div>
                             <div class="pxp-agents-1-item-details rounded-lg">
                                 <div class="pxp-agents-1-item-details-name">Alayna Becker</div>
@@ -393,7 +393,7 @@
                     <div class="col-sm-12 col-md-6 col-lg-3">
                         <a href="single-agent.html" class="pxp-agents-1-item">
                             <div class="pxp-agents-1-item-fig-container rounded-lg">
-                                <div class="pxp-agents-1-item-fig pxp-cover" style="background-image: url(images/ph-agent.jpg); background-position: top center"></div>
+                                <div class="pxp-agents-1-item-fig pxp-cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/ph-agent.jpg); background-position: top center"></div>
                             </div>
                             <div class="pxp-agents-1-item-details rounded-lg">
                                 <div class="pxp-agents-1-item-details-name">Melvin Blackwell</div>
@@ -407,7 +407,7 @@
                     <div class="col-sm-12 col-md-6 col-lg-3">
                         <a href="single-agent.html" class="pxp-agents-1-item">
                             <div class="pxp-agents-1-item-fig-container rounded-lg">
-                                <div class="pxp-agents-1-item-fig pxp-cover" style="background-image: url(images/ph-agent.jpg); background-position: top center"></div>
+                                <div class="pxp-agents-1-item-fig pxp-cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/ph-agent.jpg); background-position: top center"></div>
                             </div>
                             <div class="pxp-agents-1-item-details rounded-lg">
                                 <div class="pxp-agents-1-item-details-name">Erika Tillman</div>
@@ -430,7 +430,7 @@
                     <div class="col-sm-12 col-md-6 col-lg-4">
                         <a href="#" class="pxp-plans-1-item">
                             <div class="pxp-plans-1-item-fig">
-                                <img src="images/plan-personal.svg" alt="...">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/plan-personal.svg" alt="...">
                             </div>
                             <div class="pxp-plans-1-item-title">Personal</div>
                             <ul class="pxp-plans-1-item-features list-unstyled">
@@ -448,7 +448,7 @@
                         <a href="#" class="pxp-plans-1-item pxp-is-popular">
                             <div class="pxp-plans-1-item-label">Most Popular</div>
                             <div class="pxp-plans-1-item-fig">
-                                <img src="images/plan-professional.svg" alt="...">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/plan-professional.svg" alt="...">
                             </div>
                             <div class="pxp-plans-1-item-title">Professional</div>
                             <ul class="pxp-plans-1-item-features list-unstyled">
@@ -466,7 +466,7 @@
                     <div class="col-sm-12 col-md-6 col-lg-4">
                         <a href="#" class="pxp-plans-1-item">
                             <div class="pxp-plans-1-item-fig">
-                                <img src="images/plan-business.svg" alt="...">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/plan-business.svg" alt="...">
                             </div>
                             <div class="pxp-plans-1-item-title">Business</div>
                             <ul class="pxp-plans-1-item-features list-unstyled">
