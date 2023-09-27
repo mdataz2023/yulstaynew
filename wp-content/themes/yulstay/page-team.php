@@ -80,7 +80,7 @@ get_header();?>
                                     <div class="pxp-agents-1-item-details-name"><?php the_title(); ?></div>
                                     <div class="pxp-agents-1-item-details-email"><span class="fa fa-phone"></span> (123) 456-7890</div>
                                     <div class="pxp-agents-1-item-details-spacer"></div>
-                                    <a href="<?php the_permalink(); ?>"><div class="pxp-agents-1-item-cta text-uppercase">More Details</div></a>
+                                    <div class="pxp-agents-1-item-cta text-uppercase">More Details</div>
                                 </div>
                                 <div class="pxp-agents-1-item-rating"><span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span></span></div>
                             </a>
