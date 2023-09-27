@@ -19,7 +19,7 @@ $team_member_telephone=get_field('team_member_telephone');
                             <div class="clearfix"></div>
                             <p><?php echo $team_member_destination; ?></p>
                             <div class="mt-4 mt-md-5">
-                                <div class="pxp-agent-email"><a href="mailto:erika.tillman@resideo.com"><span class="fa fa-envelope-o"></span> <?php echo $team_member_email; ?></a></div>
+                                <div class="pxp-agent-email"><a href="mailto:<?php echo $team_member_email; ?>"><span class="fa fa-envelope-o"></span> <?php echo $team_member_email; ?></a></div>
                                 <div class="pxp-agent-phone"><span class="fa fa-phone"></span> <?php echo $team_member_telephone; ?></div>
                             </div>
                             <div class="mt-4 mt-md-5">
