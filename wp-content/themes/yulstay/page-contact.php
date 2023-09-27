@@ -2,7 +2,7 @@
 /*
 	Template Name: Contact
 */
-get_headerhome();?>
+get_header();?>
 
         <div class="pxp-content">
             <div class="pxp-contact pxp-content-wrapper mt-100">
