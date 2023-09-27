@@ -32,7 +32,7 @@
     </head>
     <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
-    <div class="pxp-header fixed-top pxp-animate pxp-no-bg">
+        <div class="pxp-header fixed-top pxp-animate">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-5 col-md-2">
@@ -47,6 +47,7 @@
                                     <li><a href="index-2.html">Version 2</a></li>
                                     <li><a href="index-3.html">Version 3</a></li>
                                     <li><a href="index-4.html">Version 4</a></li>
+                                    <li><a href="index-5.html">Version 5</a></li>
                                     <li><a href="index-5.html">Version 5</a></li>
                                     <li><a href="index-6.html">Version 6</a></li>
                                 </ul>
@@ -76,8 +77,8 @@
                             <li class="list-inline-item">
                                 <a href="#">Themes</a>
                                 <ul class="pxp-nav-sub rounded-lg">
-                                    <li><a href="../light/agents.html">Light</a></li>
-                                    <li><a href="../dark/agents.html">Dark</a></li>
+                                    <li><a href="../light/index-2.html">Light</a></li>
+                                    <li><a href="../dark/index-2.html">Dark</a></li>
                                 </ul>
                             </li>
                             <li class="list-inline-item pxp-is-last"><a href="contact.html">Contact Us</a></li>

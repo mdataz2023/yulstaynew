@@ -2,7 +2,7 @@
 /*
 	Template Name: Home
 */
-get_header();?>
+get_headerhome();?>
 
 <!doctype html>
 <html lang="en">
