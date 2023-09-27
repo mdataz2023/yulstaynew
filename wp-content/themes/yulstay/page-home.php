@@ -85,6 +85,21 @@
 
         <div class="pxp-content">
             <div class="pxp-hero vh-100">
+                <div class="pxp-hero-bg pxp-cover pxp-cover-bottom">
+                    <video autoplay loop muted playsinline>
+                        <source src="<?php echo get_template_directory_uri(); ?>/images/Yulstay.mp4" type="video/mp4">
+                        <!-- You can add additional source elements for different video formats (e.g., WebM, Ogg) -->
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="pxp-hero-opacity"></div>
+                <div class="pxp-hero-caption">
+                    <div class="container">
+                        <h1 class="text-white">Find your future home</h1>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="pxp-hero vh-100">
                 <div class="pxp-hero-bg pxp-cover pxp-cover-bottom" style="background-image: url(images/ph-big.jpg);"></div>
                 <div class="pxp-hero-opacity"></div>
                 <div class="pxp-hero-caption">
@@ -111,7 +126,7 @@
                         </form>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <div class="container-fluid pxp-props-carousel-right mt-100">
                 <h2 class="pxp-section-h2">Featured Properties</h2>
