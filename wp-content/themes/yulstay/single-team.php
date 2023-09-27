@@ -20,7 +20,7 @@ $team_member_telephone=get_field('team_member_telephone');
                             <p><?php echo $team_member_destination; ?></p>
                             <div class="mt-4 mt-md-5">
                                 <div class="pxp-agent-email"><a href="mailto:<?php echo $team_member_email; ?>"><span class="fa fa-envelope-o"></span> <?php echo $team_member_email; ?></a></div>
-                                <div class="pxp-agent-phone"><span class="fa fa-phone"></span> <?php echo $team_member_telephone; ?></div>
+                                <div class="pxp-agent-phone"><a href="tel:<?php echo $team_member_telephone; ?>"><span class="fa fa-phone"></span> <?php echo $team_member_telephone; ?></a></div>
                             </div>
                             <div class="mt-4 mt-md-5">
                                 <a href="#pxp-work-with" class="pxp-agent-contact-btn" data-toggle="modal" data-target="#pxp-work-with">Work with <?php the_title(); ?></a>
