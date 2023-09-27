@@ -368,6 +368,5 @@ custom_get_header(); ?>
             </div>
         </div>
 
-</html>
 
 <?php get_footer(); ?>
