@@ -85,6 +85,8 @@ get_header();?>
                                 <div class="pxp-agents-1-item-rating"><span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span></span></div>
                             </a>
                         </div>
+                         <?php endwhile; endif; ?>
+
                         <!-- <div class="col-sm-12 col-md-6 col-lg-3">
                             <a href="single-agent.html" class="pxp-agents-1-item">
                                 <div class="pxp-agents-1-item-fig-container rounded-lg">
