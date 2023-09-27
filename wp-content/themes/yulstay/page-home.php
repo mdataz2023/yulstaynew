@@ -1,185 +1,123 @@
-<?php
-/*
-	Template Name: Home
-*/
-custom_get_header(); ?>
+<!doctype html>
+<html <?php language_attributes(); ?>>
+    <head>
+        <meta charset="<?php bloginfo( 'charset' ); ?>">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900" rel="stylesheet">
+        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/bootstrap.min.css">
+        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/font-awesome.min.css">
+        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css">
 
+        <title>resideo.</title>
+        <?php wp_head(); ?>
+    </head>
+    <body <?php body_class(); ?>>
+    <?php wp_body_open(); ?>
+
+<div class="pxp-header fixed-top pxp-animate">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-5 col-md-2">
+                        <a href="index.html" class="pxp-logo text-decoration-none">resideo.</a>
+                    </div>
+                    <div class="col-2 col-md-8 text-center">
+                        <ul class="pxp-nav list-inline">
+                            <li class="list-inline-item">
+                                <a href="#">Home</a>
+                                <ul class="pxp-nav-sub rounded-lg">
+                                    <li><a href="index.html">Version 1</a></li>
+                                    <li><a href="index-2.html">Version 2</a></li>
+                                    <li><a href="index-3.html">Version 3</a></li>
+                                    <li><a href="index-4.html">Version 4</a></li>
+                                    <li><a href="index-5.html">Version 5</a></li>
+                                    <li><a href="index-6.html">Version 6</a></li>
+                                </ul>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#">Properties</a>
+                                <ul class="pxp-nav-sub rounded-lg">
+                                    <li><a href="properties.html">All Properties</a></li>
+                                    <li><a href="single-property.html">Single Property</a></li>
+                                    <li><a href="submit-property.html">Submit New Property</a></li>
+                                </ul>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#">Agents</a>
+                                <ul class="pxp-nav-sub rounded-lg">
+                                    <li><a href="agents.html">All Agents</a></li>
+                                    <li><a href="single-agent.html">Single Agent</a></li>
+                                </ul>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#">Blog</a>
+                                <ul class="pxp-nav-sub rounded-lg">
+                                    <li><a href="blog.html">All Blog Posts</a></li>
+                                    <li><a href="single-post.html">Single Blog Post</a></li>
+                                </ul>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#">Themes</a>
+                                <ul class="pxp-nav-sub rounded-lg">
+                                    <li><a href="../light/index.html">Light</a></li>
+                                    <li><a href="../dark/index.html">Dark</a></li>
+                                </ul>
+                            </li>
+                            <li class="list-inline-item pxp-is-last"><a href="contact.html">Contact Us</a></li>
+                            <li class="list-inline-item pxp-has-btns">
+                                <div class="pxp-user-btns">
+                                    <a href="#" class="pxp-user-btns-signup pxp-signup-trigger">Sign Up</a>
+                                    <a href="#" class="pxp-user-btns-login pxp-signin-trigger">Sign In</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-5 col-md-2 text-right">
+                        <a href="javascript:void(0);" class="pxp-header-nav-trigger"><span class="fa fa-bars"></span></a>
+                        <a href="javascript:void(0);" class="pxp-header-user pxp-signin-trigger"><span class="fa fa-user-o"></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div class="pxp-content">
             <div class="pxp-hero vh-100">
-                <div id="pxp-hero-props-carousel-1" class="carousel slide pxp-hero-props-carousel-1" data-ride="carousel" data-pause="false" data-interval="7000">
-                    <ol class="carousel-indicators container">
-                        <li data-target="#pxp-hero-props-carousel-1" data-slide-to="0" class="pxp-cover active" style="background-image: url(images/ph-thmb.jpg);"></li>
-                        <li data-target="#pxp-hero-props-carousel-1" data-slide-to="1" class="pxp-cover" style="background-image: url(images/ph-thmb.jpg);"></li>
-                        <li data-target="#pxp-hero-props-carousel-1" data-slide-to="2" class="pxp-cover" style="background-image: url(images/ph-thmb.jpg);"></li>
-                        <li data-target="#pxp-hero-props-carousel-1" data-slide-to="3" class="pxp-cover" style="background-image: url(images/ph-thmb.jpg);"></li>
-                    </ol>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active" data-slide="0">
-                            <div class="pxp-hero-bg pxp-cover" style="background-image: url(images/ph-big.jpg);"></div>
-                            <div class="pxp-caption">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-sm-12 col-md-8 col-lg-6">
-                                            <div class="pxp-caption-prop-title">Chic Apartment in Downtown</div>
-                                        </div>
-                                    </div>
-                                    <div class="pxp-caption-prop-features mt-4">2 BD <span>|</span> 2 BA <span>|</span> 920 SF</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item" data-slide="1">
-                            <div class="pxp-hero-bg pxp-cover" style="background-image: url(images/ph-big.jpg);"></div>
-                            <div class="pxp-caption">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-sm-12 col-md-8 col-lg-6">
-                                            <div class="pxp-caption-prop-title">Colorful Little Apartment</div>
-                                        </div>
-                                    </div>
-                                    <div class="pxp-caption-prop-features mt-4">1 BD <span>|</span> 1 BA <span>|</span> 500 SF</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item" data-slide="2">
-                            <div class="pxp-hero-bg pxp-cover" style="background-image: url(images/ph-big.jpg);"></div>
-                            <div class="pxp-caption">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-sm-12 col-md-8 col-lg-6">
-                                            <div class="pxp-caption-prop-title">Cozy Two Bedroom Apartment</div>
-                                        </div>
-                                    </div>
-                                    <div class="pxp-caption-prop-features mt-4">2 BD <span>|</span> 2 BA <span>|</span> 870 SF</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item" data-slide="3">
-                            <div class="pxp-hero-bg pxp-cover" style="background-image: url(images/ph-big.jpg);"></div>
-                            <div class="pxp-caption">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-sm-12 col-md-8 col-lg-6">
-                                            <div class="pxp-caption-prop-title">Modern Residence</div>
-                                        </div>
-                                    </div>
-                                    <div class="pxp-caption-prop-features mt-4">4 BD <span>|</span> 1.5 BA <span>|</span> 2,240 SF</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="pxp-hero-bg pxp-cover pxp-cover-bottom" style="background-image: url(images/ph-big.jpg);"></div>
+                <div class="pxp-hero-opacity"></div>
+                <div class="pxp-hero-caption">
+                    <div class="container">
+                        <h1 class="text-white">Find your future home</h1>
 
-                    <div class="pxp-carousel-controls">
-                        <a class="pxp-carousel-control-prev" role="button" data-slide="prev">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32.414" height="20.828" viewBox="0 0 32.414 20.828">
-                                <g id="Group_30" data-name="Group 30" transform="translate(-1845.086 -1586.086)">
-                                    <line id="Line_2" data-name="Line 2" x1="30" transform="translate(1846.5 1596.5)" fill="none" stroke="#333" stroke-linecap="round" stroke-width="2"/>
-                                    <line id="Line_3" data-name="Line 3" x1="9" y2="9" transform="translate(1846.5 1587.5)" fill="none" stroke="#333" stroke-linecap="round" stroke-width="2"/>
-                                    <line id="Line_4" data-name="Line 4" x1="9" y1="9" transform="translate(1846.5 1596.5)" fill="none" stroke="#333" stroke-linecap="round" stroke-width="2"/>
-                                </g>
-                            </svg>
-                        </a>
-                        <a class="pxp-carousel-control-next" role="button" data-slide="next">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32.414" height="20.828" viewBox="0 0 32.414 20.828">
-                                <g id="Symbol_1_1" data-name="Symbol 1 – 1" transform="translate(-1847.5 -1589.086)">
-                                    <line id="Line_5" data-name="Line 2" x2="30" transform="translate(1848.5 1599.5)" fill="none" stroke="#333" stroke-linecap="round" stroke-width="2"/>
-                                    <line id="Line_6" data-name="Line 3" x2="9" y2="9" transform="translate(1869.5 1590.5)" fill="none" stroke="#333" stroke-linecap="round" stroke-width="2"/>
-                                    <line id="Line_7" data-name="Line 4" y1="9" x2="9" transform="translate(1869.5 1599.5)" fill="none" stroke="#333" stroke-linecap="round" stroke-width="2"/>
-                                </g>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                <div class="carousel slide pxp-hero-props-carousel-1-prices" data-ride="carousel" data-pause="false" data-interval="false">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active" data-slide="0" style="background-color: #e1a447;">
-                            <div class="pxp-progress"></div>
-                            <div class="pxp-price"><span>$890,000</span></div>
-                            <a href="single-property.html" class="pxp-cta text-uppercase pxp-animate">View Details</a>
-                        </div>
-                        <div class="carousel-item" data-slide="1" style="background-color: #837c12;">
-                            <div class="pxp-progress"></div>
-                            <div class="pxp-price"><span>$2,675</span></div>
-                            <a href="single-property.html" class="pxp-cta text-uppercase pxp-animate">View Details</a>
-                        </div>
-                        <div class="carousel-item" data-slide="2" style="background-color: #687389;">
-                            <div class="pxp-progress"></div>
-                            <div class="pxp-price"><span>$960,000</span></div>
-                            <a href="single-property.html" class="pxp-cta text-uppercase pxp-animate">View Details</a>
-                        </div>
-                        <div class="carousel-item" data-slide="3" style="background-color: #6e463a;">
-                            <div class="pxp-progress"></div>
-                            <div class="pxp-price"><span>$7,995</span></div>
-                            <a href="single-property.html" class="pxp-cta text-uppercase pxp-animate">View Details</a>
-                        </div>
-                    </div>
-                    <div class="pxp-carousel-ticker">
-                        <div class="pxp-carousel-ticker-counter"></div>
-                        <div class="pxp-carousel-ticker-divider">&nbsp;&nbsp;/&nbsp;&nbsp;</div>
-                        <div class="pxp-carousel-ticker-total"></div>
+                        <form class="pxp-hero-search mt-4" action="properties.html">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-4">
+                                    <div class="form-group">
+                                        <select class="custom-select">
+                                            <option selected>Buy</option>
+                                            <option value="1">Rent</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-8">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control pxp-is-address" placeholder="Enter address...">
+                                        <span class="fa fa-search"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
 
-            <div class="pxp-services-h pt-100 pb-100">
-                <div class="container">
-                    <h2 class="pxp-section-h2">Why Choose Us</h2>
-                    <p class="pxp-text-light">We offer perfect real estate services</p>
-
-                    <div class="pxp-services-h-container mt-4 mt-md-5">
-                        <div class="pxp-services-h-fig pxp-cover pxp-animate-in rounded-lg" style="background-image: url(images/ph-big.jpg);"></div>
-                        <div class="pxp-services-h-items pxp-animate-in ml-0 ml-lg-5 mt-4 mt-md-5 mt-lg-0">
-                            <div class="pxp-services-h-item">
-                                <div class="media">
-                                    <img src="images/service-icon-1-1.svg" class="mr-4" alt="...">
-                                    <div class="media-body">
-                                        <h5 class="mt-0">Find your future home</h5>
-                                        We help you find a new home by offering a smart real estate experience
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="pxp-services-h-item mt-3 mt-md-4">
-                                <div class="media">
-                                    <img src="images/service-icon-2-1.svg" class="mr-4" alt="...">
-                                    <div class="media-body">
-                                        <h5 class="mt-0">Experienced agents</h5>
-                                        Find an agent who knows your market best
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="pxp-services-h-item mt-3 mt-md-4">
-                                <div class="media">
-                                    <img src="images/service-icon-3-1.svg" class="mr-4" alt="...">
-                                    <div class="media-body">
-                                        <h5 class="mt-0">Buy or rent homes</h5>
-                                        Millions of houses and apartments in your favourite cities
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="pxp-services-h-item mt-3 mt-md-4">
-                                <div class="media">
-                                    <img src="images/service-icon-4-1.svg" class="mr-4" alt="...">
-                                    <div class="media-body">
-                                        <h5 class="mt-0">List your own property</h5>
-                                        Sign up now and sell or rent your own properties
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="contact.html" class="pxp-primary-cta text-uppercase mt-4 mt-md-5 pxp-animate pxp-animate-in">Learn more</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container-fluid pxp-props-carousel-right pxp-has-intro mt-100">
-                <div class="pxp-props-carousel-right-intro">
-                    <h2 class="pxp-section-h2">Featured Properties</h2>
-                    <p class="pxp-text-light">Browse our latest hot offers</p>
-                    <a href="properties.html" class="pxp-primary-cta text-uppercase mt-2 mt-md-3 mt-lg-5 pxp-animate">Browse All</a>
-                </div>
-                <div class="pxp-props-carousel-right-container mt-4 mt-md-5 mt-lg-0">
-                    <div class="owl-carousel pxp-props-carousel-right-stage-1">
+            <div class="container-fluid pxp-props-carousel-right mt-100">
+                <h2 class="pxp-section-h2">Featured Properties</h2>
+                <p class="pxp-text-light">Browse our latest hot offers</p>
+                <div class="pxp-props-carousel-right-container mt-4 mt-md-5">
+                    <div class="owl-carousel pxp-props-carousel-right-stage">
                         <div>
                             <a href="single-property.html" class="pxp-prop-card-1 rounded-lg">
                                 <div class="pxp-prop-card-1-fig pxp-cover" style="background-image: url(images/ph-gallery.jpg);"></div>
@@ -258,47 +196,146 @@ custom_get_header(); ?>
                             </a>
                         </div>
                     </div>
+
+                    <a href="properties.html" class="pxp-primary-cta text-uppercase mt-4 mt-md-5 pxp-animate">Browse All</a>
                 </div>
             </div>
 
-            <div class="pxp-testim-1 pt-100 pb-100 mt-100 pxp-cover" style="background-image: url(images/ph-big.jpg);">
-                <div class="pxp-testim-1-intro">
-                    <h2 class="pxp-section-h2">Customer Testimonials</h2>
-                    <p class="pxp-text-light">What our customers say about us</p>
-                    <a href="#" class="pxp-primary-cta text-uppercase mt-2 mt-md-3 mt-lg-5 pxp-animate">Read All Stories</a>
+            <div class="pxp-services pxp-cover mt-100 pt-100 mb-200" style="background-image: url(images/ph-big.jpg); background-position: 50% 60%;">
+                <h2 class="text-center pxp-section-h2">Why Choose Us</h2>
+                <p class="pxp-text-light text-center">We offer perfect real estate services</p>
+
+                <div class="container">
+                    <div class="pxp-services-container rounded-lg mt-4 mt-md-5">
+                        <a href="properties.html" class="pxp-services-item">
+                            <div class="pxp-services-item-fig">
+                                <img src="images/service-icon-1.svg" alt="...">
+                            </div>
+                            <div class="pxp-services-item-text text-center">
+                                <div class="pxp-services-item-text-title">Find your future home</div>
+                                <div class="pxp-services-item-text-sub">We help you find a new home by offering<br>a smart real estate experience</div>
+                            </div>
+                            <div class="pxp-services-item-cta text-uppercase text-center">Learn More</div>
+                        </a>
+                        <a href="agents.html" class="pxp-services-item">
+                            <div class="pxp-services-item-fig">
+                                <img src="images/service-icon-2.svg" alt="...">
+                            </div>
+                            <div class="pxp-services-item-text text-center">
+                                <div class="pxp-services-item-text-title">Experienced agents</div>
+                                <div class="pxp-services-item-text-sub">Find an agent who knows<br>your market best</div>
+                            </div>
+                            <div class="pxp-services-item-cta text-uppercase text-center">Learn More</div>
+                        </a>
+                        <a href="properties.html" class="pxp-services-item">
+                            <div class="pxp-services-item-fig">
+                                <img src="images/service-icon-3.svg" alt="...">
+                            </div>
+                            <div class="pxp-services-item-text text-center">
+                                <div class="pxp-services-item-text-title">Buy or rent homes</div>
+                                <div class="pxp-services-item-text-sub">Millions of houses and apartments in<br>your favourite cities</div>
+                            </div>
+                            <div class="pxp-services-item-cta text-uppercase text-center">Learn More</div>
+                        </a>
+                        <a href="submit-property.html" class="pxp-services-item">
+                            <div class="pxp-services-item-fig">
+                                <img src="images/service-icon-4.svg" alt="...">
+                            </div>
+                            <div class="pxp-services-item-text text-center">
+                                <div class="pxp-services-item-text-title">List your own property</div>
+                                <div class="pxp-services-item-text-sub">Sign up now and sell or rent<br>your own properties</div>
+                            </div>
+                            <div class="pxp-services-item-cta text-uppercase text-center">Learn More</div>
+                        </a>
+                        <div class="clearfix"></div>
+                    </div>
                 </div>
-                <div class="pxp-testim-1-container mt-4 mt-md-5 mt-lg-0">
-                    <div class="owl-carousel pxp-testim-1-stage">
-                        <div>
-                            <div class="pxp-testim-1-item">
-                                <div class="pxp-testim-1-item-avatar pxp-cover" style="background-image: url(images/ph-avatar.jpg)"></div>
-                                <div class="pxp-testim-1-item-name">Derek Cotner</div>
-                                <div class="pxp-testim-1-item-location">Houston, TX</div>
-                                <div class="pxp-testim-1-item-message">While Resideo functions like a traditional broker, the company's promise is using technology to reduce the time and friction of  buying and selling house or apartment.</div>
+            </div>
+
+            <div class="container mt-100">
+                <h2 class="pxp-section-h2">Explore Our Neighborhoods</h2>
+                <p class="pxp-text-light">Browse our comprehensive neighborhood listings</p>
+
+                <div class="row mt-4 mt-md-5">
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <a href="properties.html" class="pxp-areas-1-item rounded-lg">
+                            <div class="pxp-areas-1-item-fig pxp-cover" style="background-image: url(images/ph-gallery.jpg);"></div>
+                            <div class="pxp-areas-1-item-details">
+                                <div class="pxp-areas-1-item-details-area">Bluemont</div>
+                                <div class="pxp-areas-1-item-details-city">Arlington, VA</div>
                             </div>
-                        </div>
-                        <div>
-                            <div class="pxp-testim-1-item">
-                                <div class="pxp-testim-1-item-avatar pxp-cover" style="background-image: url(images/ph-avatar.jpg)"></div>
-                                <div class="pxp-testim-1-item-name">Rebecca Eason</div>
-                                <div class="pxp-testim-1-item-location">Washington, MD</div>
-                                <div class="pxp-testim-1-item-message">And it’s no wonder Resideo has shaken things up: As anyone who’s ever tried to rent or buy property in Washington knows, the experience is loaded with pain points.</div>
+                            <div class="pxp-areas-1-item-counter"><span>324 Properties</span></div>
+                            <div class="pxp-areas-1-item-cta text-uppercase">Explore</div>
+                        </a>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <a href="properties.html" class="pxp-areas-1-item rounded-lg">
+                            <div class="pxp-areas-1-item-fig pxp-cover" style="background-image: url(images/ph-gallery.jpg);"></div>
+                            <div class="pxp-areas-1-item-details">
+                                <div class="pxp-areas-1-item-details-area">Overlake</div>
+                                <div class="pxp-areas-1-item-details-city">Redmond, WA</div>
                             </div>
-                        </div>
-                        <div>
-                            <div class="pxp-testim-1-item">
-                                <div class="pxp-testim-1-item-avatar pxp-cover" style="background-image: url(images/ph-avatar.jpg)"></div>
-                                <div class="pxp-testim-1-item-name">Kenneth Spiers</div>
-                                <div class="pxp-testim-1-item-location">Cleveland, OH</div>
-                                <div class="pxp-testim-1-item-message">While Resideo functions like a traditional broker, the company's promise is using technology to reduce the time and friction of  buying and selling house or apartment.</div>
+                            <div class="pxp-areas-1-item-counter"><span>158 Properties</span></div>
+                            <div class="pxp-areas-1-item-cta text-uppercase">Explore</div>
+                        </a>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <a href="properties.html" class="pxp-areas-1-item rounded-lg">
+                            <div class="pxp-areas-1-item-fig pxp-cover" style="background-image: url(images/ph-gallery.jpg);"></div>
+                            <div class="pxp-areas-1-item-details">
+                                <div class="pxp-areas-1-item-details-area">College Terrace</div>
+                                <div class="pxp-areas-1-item-details-city">Palo Alto, CA</div>
                             </div>
-                        </div>
-                        <div>
-                            <div class="pxp-testim-1-item">
-                                <div class="pxp-testim-1-item-avatar pxp-cover" style="background-image: url(images/ph-avatar.jpg)"></div>
-                                <div class="pxp-testim-1-item-name">Susanne Weil</div>
-                                <div class="pxp-testim-1-item-location">Cambridge, MA</div>
-                                <div class="pxp-testim-1-item-message">And it’s no wonder Resideo has shaken things up: As anyone who’s ever tried to rent or buy property in Cambridge knows, the experience is loaded with pain points.</div>
+                            <div class="pxp-areas-1-item-counter"><span>129 Properties</span></div>
+                            <div class="pxp-areas-1-item-cta text-uppercase">Explore</div>
+                        </a>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <a href="properties.html" class="pxp-areas-1-item rounded-lg">
+                            <div class="pxp-areas-1-item-fig pxp-cover" style="background-image: url(images/ph-gallery.jpg);"></div>
+                            <div class="pxp-areas-1-item-details">
+                                <div class="pxp-areas-1-item-details-area">Inner Sunset</div>
+                                <div class="pxp-areas-1-item-details-city">San Francisco, CA</div>
+                            </div>
+                            <div class="pxp-areas-1-item-counter"><span>129 Properties</span></div>
+                            <div class="pxp-areas-1-item-cta text-uppercase">Explore</div>
+                        </a>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <a href="properties.html" class="pxp-areas-1-item rounded-lg">
+                            <div class="pxp-areas-1-item-fig pxp-cover" style="background-image: url(images/ph-gallery.jpg);"></div>
+                            <div class="pxp-areas-1-item-details">
+                                <div class="pxp-areas-1-item-details-area">Upper West Side</div>
+                                <div class="pxp-areas-1-item-details-city">New York City, NY</div>
+                            </div>
+                            <div class="pxp-areas-1-item-counter"><span>324 Properties</span></div>
+                            <div class="pxp-areas-1-item-cta text-uppercase">Explore</div>
+                        </a>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <a href="properties.html" class="pxp-areas-1-item rounded-lg">
+                            <div class="pxp-areas-1-item-fig pxp-cover" style="background-image: url(images/ph-gallery.jpg);"></div>
+                            <div class="pxp-areas-1-item-details">
+                                <div class="pxp-areas-1-item-details-area">Marina District</div>
+                                <div class="pxp-areas-1-item-details-city">San Francisco, CA</div>
+                            </div>
+                            <div class="pxp-areas-1-item-counter"><span>158 Properties</span></div>
+                            <div class="pxp-areas-1-item-cta text-uppercase">Explore</div>
+                        </a>
+                    </div>
+                </div>
+
+                <a href="properties.html" class="pxp-primary-cta text-uppercase mt-2 mt-md-4 pxp-animate">Explore Neighborhoods</a>
+            </div>
+
+            <div class="pxp-cta-1 pxp-cover mt-100 pt-300" style="background-image: url(images/ph-big.jpg); background-position: 50% 60%;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6 col-lg-4">
+                            <div class="pxp-cta-1-caption pxp-animate-in">
+                                <h2 class="pxp-section-h2">Search Smarter, From Anywhere</h2>
+                                <p class="pxp-text-light">Power your search with our Resideo real estate platform, for timely listings and a seamless experience.</p>
+                                <a href="properties.html" class="pxp-primary-cta text-uppercase mt-3 mt-md-5 pxp-animate">Search Now</a>
                             </div>
                         </div>
                     </div>
@@ -306,63 +343,128 @@ custom_get_header(); ?>
             </div>
 
             <div class="container mt-100">
-                <h2 class="pxp-section-h2">From Our Blog</h2>
-                <p class="pxp-text-light">Read our latest articles on real estate.</p>
+                <h2 class="pxp-section-h2">Our Featured Agents</h2>
+                <p class="pxp-text-light">Meet the best real estate agents</p>
+
                 <div class="row mt-4 mt-md-5">
-                    <div class="col-sm-12 col-md-6 col-lg-4">
-                        <a href="single-post.html" class="pxp-posts-1-item">
-                            <div class="pxp-posts-1-item-fig-container">
-                                <div class="pxp-posts-1-item-fig pxp-cover" style="background-image: url(images/ph-gallery.jpg);"></div>
+                    <div class="col-sm-12 col-md-6 col-lg-3">
+                        <a href="single-agent.html" class="pxp-agents-1-item">
+                            <div class="pxp-agents-1-item-fig-container rounded-lg">
+                                <div class="pxp-agents-1-item-fig pxp-cover" style="background-image: url(images/ph-agent.jpg); background-position: top center"></div>
                             </div>
-                            <div class="pxp-posts-1-item-details">
-                                <div class="pxp-posts-1-item-details-category">Interior Design</div>
-                                <div class="pxp-posts-1-item-details-title">What to Expect When Working with an Interior Designer</div>
-                                <div class="pxp-posts-1-item-details-date mt-2">April 9, 2021</div>
-                                <div class="pxp-posts-1-item-cta text-uppercase">Read Article</div>
+                            <div class="pxp-agents-1-item-details rounded-lg">
+                                <div class="pxp-agents-1-item-details-name">Scott Goodwin</div>
+                                <div class="pxp-agents-1-item-details-email"><span class="fa fa-phone"></span> (123) 456-7890</div>
+                                <div class="pxp-agents-1-item-details-spacer"></div>
+                                <div class="pxp-agents-1-item-cta text-uppercase">More Details</div>
                             </div>
+                            <div class="pxp-agents-1-item-rating"><span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span></span></div>
                         </a>
                     </div>
-                    <div class="col-sm-12 col-md-6 col-lg-4">
-                        <a href="single-post.html" class="pxp-posts-1-item">
-                            <div class="pxp-posts-1-item-fig-container">
-                                <div class="pxp-posts-1-item-fig pxp-cover" style="background-image: url(images/ph-gallery.jpg);"></div>
+                    <div class="col-sm-12 col-md-6 col-lg-3">
+                        <a href="single-agent.html" class="pxp-agents-1-item">
+                            <div class="pxp-agents-1-item-fig-container rounded-lg">
+                                <div class="pxp-agents-1-item-fig pxp-cover" style="background-image: url(images/ph-agent.jpg); background-position: top center"></div>
                             </div>
-                            <div class="pxp-posts-1-item-details">
-                                <div class="pxp-posts-1-item-details-category">Architecture</div>
-                                <div class="pxp-posts-1-item-details-title">Private Contemporary Home Balancing Openness</div>
-                                <div class="pxp-posts-1-item-details-date mt-2">April 9, 2021</div>
-                                <div class="pxp-posts-1-item-cta text-uppercase">Read Article</div>
+                            <div class="pxp-agents-1-item-details rounded-lg">
+                                <div class="pxp-agents-1-item-details-name">Alayna Becker</div>
+                                <div class="pxp-agents-1-item-details-email"><span class="fa fa-phone"></span> (456) 123-7890</div>
+                                <div class="pxp-agents-1-item-details-spacer"></div>
+                                <div class="pxp-agents-1-item-cta text-uppercase">More Details</div>
                             </div>
+                            <div class="pxp-agents-1-item-rating"><span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star-o"></span></span></div>
                         </a>
                     </div>
-                    <div class="col-sm-12 col-md-6 col-lg-4">
-                        <a href="single-post.html" class="pxp-posts-1-item">
-                            <div class="pxp-posts-1-item-fig-container">
-                                <div class="pxp-posts-1-item-fig pxp-cover" style="background-image: url(images/ph-gallery.jpg);"></div>
+                    <div class="col-sm-12 col-md-6 col-lg-3">
+                        <a href="single-agent.html" class="pxp-agents-1-item">
+                            <div class="pxp-agents-1-item-fig-container rounded-lg">
+                                <div class="pxp-agents-1-item-fig pxp-cover" style="background-image: url(images/ph-agent.jpg); background-position: top center"></div>
                             </div>
-                            <div class="pxp-posts-1-item-details">
-                                <div class="pxp-posts-1-item-details-category">Interior Design</div>
-                                <div class="pxp-posts-1-item-details-title">Stylish Modern Ranch Exuding a Welcoming Feel</div>
-                                <div class="pxp-posts-1-item-details-date mt-2">April 9, 2021</div>
-                                <div class="pxp-posts-1-item-cta text-uppercase">Read Article</div>
+                            <div class="pxp-agents-1-item-details rounded-lg">
+                                <div class="pxp-agents-1-item-details-name">Melvin Blackwell</div>
+                                <div class="pxp-agents-1-item-details-email"><span class="fa fa-phone"></span> (789) 123-4560</div>
+                                <div class="pxp-agents-1-item-details-spacer"></div>
+                                <div class="pxp-agents-1-item-cta text-uppercase">More Details</div>
                             </div>
+                            <div class="pxp-agents-1-item-rating"><span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span></span></div>
+                        </a>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-3">
+                        <a href="single-agent.html" class="pxp-agents-1-item">
+                            <div class="pxp-agents-1-item-fig-container rounded-lg">
+                                <div class="pxp-agents-1-item-fig pxp-cover" style="background-image: url(images/ph-agent.jpg); background-position: top center"></div>
+                            </div>
+                            <div class="pxp-agents-1-item-details rounded-lg">
+                                <div class="pxp-agents-1-item-details-name">Erika Tillman</div>
+                                <div class="pxp-agents-1-item-details-email"><span class="fa fa-phone"></span> (890) 456-1237</div>
+                                <div class="pxp-agents-1-item-details-spacer"></div>
+                                <div class="pxp-agents-1-item-cta text-uppercase">More Details</div>
+                            </div>
+                            <div class="pxp-agents-1-item-rating"><span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star-o"></span></span></div>
                         </a>
                     </div>
                 </div>
-                <a href="blog.html" class="pxp-primary-cta text-uppercase mt-2 mt-md-4 pxp-animate">Read More</a>
+
+                <a href="agents.html" class="pxp-primary-cta text-uppercase mt-1 mt-md-4 pxp-animate">See All Agents</a>
             </div>
 
-            <div class="pxp-full pxp-cover pt-100 pb-100 mt-100" style="background-image: url(images/ph-big.jpg);">
-                <div class="container">
-                    <h2 class="pxp-section-h2">Stay Up to Date</h2>
-                    <p class="pxp-text-light">Subscribe to our newsletter to receive our weekly feed</p>
-                    <div class="row mt-4 mt-md-5">
-                        <div class="col-sm-12 col-md-6">
-                            <form action="index-2.html" class="pxp-newsletter-1-form">
-                                <input type="text" class="form-control" placeholder="Enter your email...">
-                                <a href="#" class="pxp-primary-cta text-uppercase pxp-animate mt-3 mt-md-4">Subscribe</a>
-                            </form>
-                        </div>
+            <div class="container mt-100">
+                <h2 class="pxp-section-h2 text-center">Membership Plans</h2>
+                <p class="pxp-text-light text-center">Choose the plan that suits you best</p>
+                <div class="row mt-5">
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <a href="#" class="pxp-plans-1-item">
+                            <div class="pxp-plans-1-item-fig">
+                                <img src="images/plan-personal.svg" alt="...">
+                            </div>
+                            <div class="pxp-plans-1-item-title">Personal</div>
+                            <ul class="pxp-plans-1-item-features list-unstyled">
+                                <li>10 Listings</li>
+                                <li>2 Featured Listings</li>
+                            </ul>
+                            <div class="pxp-plans-1-item-price">
+                                <span class="pxp-plans-1-item-price-sum">Free</span>
+                                <span class="pxp-plans-1-item-price-period"> / 1 month</span>
+                            </div>
+                            <div class="pxp-plans-1-item-cta text-uppercase">Choose Plan</div>
+                        </a>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <a href="#" class="pxp-plans-1-item pxp-is-popular">
+                            <div class="pxp-plans-1-item-label">Most Popular</div>
+                            <div class="pxp-plans-1-item-fig">
+                                <img src="images/plan-professional.svg" alt="...">
+                            </div>
+                            <div class="pxp-plans-1-item-title">Professional</div>
+                            <ul class="pxp-plans-1-item-features list-unstyled">
+                                <li>10 Listings</li>
+                                <li>2 Featured Listings</li>
+                            </ul>
+                            <div class="pxp-plans-1-item-price">
+                                <span class="pxp-plans-1-item-price-currency">$</span>
+                                <span class="pxp-plans-1-item-price-sum">49.99</span>
+                                <span class="pxp-plans-1-item-price-period"> / 6 months</span>
+                            </div>
+                            <div class="pxp-plans-1-item-cta text-uppercase">Choose Plan</div>
+                        </a>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <a href="#" class="pxp-plans-1-item">
+                            <div class="pxp-plans-1-item-fig">
+                                <img src="images/plan-business.svg" alt="...">
+                            </div>
+                            <div class="pxp-plans-1-item-title">Business</div>
+                            <ul class="pxp-plans-1-item-features list-unstyled">
+                                <li>10 Listings</li>
+                                <li>2 Featured Listings</li>
+                            </ul>
+                            <div class="pxp-plans-1-item-price">
+                                <span class="pxp-plans-1-item-price-currency">$</span>
+                                <span class="pxp-plans-1-item-price-sum">99.99</span>
+                                <span class="pxp-plans-1-item-price-period"> / 1 year</span>
+                            </div>
+                            <div class="pxp-plans-1-item-cta text-uppercase">Choose Plan</div>
+                        </a>
                     </div>
                 </div>
             </div>
