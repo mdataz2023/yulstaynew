@@ -1,6 +1,6 @@
 <?php
 /*
-	Template Name: Residential
+	Template Name: Rental Property
 */
 get_header();?>
 

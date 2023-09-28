@@ -1,6 +1,6 @@
 <?php
 /*
-	Template Name: Residential
+	Template Name: Multi Residential
 */
 get_header();?>
 
