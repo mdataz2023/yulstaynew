@@ -83,7 +83,7 @@ $inscriptionsData = $wpdb->get_row(" SELECT * FROM INSCRIPTIONS where NO_INSCRIP
                             echo "1920x1280";
                          }
                          ?>" class="pxp-cover" style="background-image: url(<?php echo $page->PhotoURL;?>);"></a>
-                <figcaption itemprop="caption description">Image caption</figcaption>
+                <figcaption itemprop="caption description"></figcaption>
             </figure>
             <?php
                        $photoIndex++; }
