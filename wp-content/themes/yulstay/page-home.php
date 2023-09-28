@@ -4,7 +4,7 @@
         <meta charset="<?php bloginfo( 'charset' ); ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+        <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.png" type="image/x-icon">
         <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900" rel="stylesheet">
         <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/bootstrap.min.css">
         <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/font-awesome.min.css">
@@ -95,7 +95,8 @@
                 <div class="pxp-hero-opacity"></div>
                 <div class="pxp-hero-caption">
                     <div class="container">
-                        <h1 class="text-white">Find your future home</h1>
+                        <!-- <h1 class="text-white">Find your future home</h1> -->
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/yulstay-logo.png" style="width: 20rem;" alt="">
                     </div>
                 </div>
             </div>
@@ -357,7 +358,7 @@
                             <div class="pxp-cta-1-caption pxp-animate-in">
                                 <h2 class="pxp-section-h2"><?php echo $home_search_section_title; ?></h2>
                                 <p class="pxp-text-light"><?php echo $home_search_section_description; ?></p>
-                                <a href="<?php echo $home_search_section_link; ?>" class="pxp-primary-cta text-uppercase mt-3 mt-md-5 pxp-animate">Search Now></a>
+                                <a href="<?php echo $home_search_section_link; ?>" class="pxp-primary-cta text-uppercase mt-3 mt-md-5 pxp-animate">Search Now</a>
                             </div>
                         </div>
                     </div>
