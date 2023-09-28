@@ -9,7 +9,7 @@ get_header();?>
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12 col-md-7">
-                            <h1 class="pxp-page-header">Contact Us</h1>
+                            <h1 class="pxp-page-header">Join Our Team</h1>
                             <p class="pxp-text-light">Say hello. Tell us how we can guide you.</p>
                         </div>
                     </div>

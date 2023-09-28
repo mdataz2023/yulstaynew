@@ -16,9 +16,9 @@ get_header();?>
                 </div>
 
                 <div class="pxp-agents-hero mt-4 mt-md-5">
-                    <div class="pxp-agents-hero-fig pxp-cover" style="background-image: url(images/ph-big.jpg); background-position: 50% 60%;"></div>
+                    <div class="pxp-agents-hero-fig pxp-cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/ph-big.jpg); background-position: 50% 60%;"></div>
 
-                    <div class="pxp-agents-hero-search-container">
+                    <div hidden class="pxp-agents-hero-search-container">
                         <div class="container">
                             <div class="pxp-agents-hero-search">
                                 <h2 class="pxp-section-h2">Find an Agent</h2>
