@@ -16,7 +16,7 @@ get_header();?>
                 </div>
 
                 <div class="pxp-contact-hero mt-4 mt-md-5">
-                    <div class="pxp-contact-hero-fig pxp-cover" style="background-image: url(images/ph-big.jpg); background-position: 50% 80%;"></div>
+                    <div class="pxp-contact-hero-fig pxp-cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/ph-big.jpg); background-position: 50% 80%;"></div>
 
                     <div class="pxp-contact-hero-offices-container">
                         <div class="container">
@@ -119,5 +119,13 @@ get_header();?>
                 </div>
             </div>
         </div>
+
+        <script src="<?php echo get_template_directory_uri(); ?>/js/jquery-3.4.1.min.js"></script>
+        <script src="<?php echo get_template_directory_uri(); ?>/js/popper.min.js"></script>
+        <script src="<?php echo get_template_directory_uri(); ?>/js/bootstrap.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_KEY_HERE&amp;libraries=geometry&amp;libraries=places"></script>
+        <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.sticky.js"></script>
+        <script src="<?php echo get_template_directory_uri(); ?>/js/contact-map.js?assasd"></script>
+        <script src="<?php echo get_template_directory_uri(); ?>/js/main.js?kasjdk"></script>
 
 <?php get_footer(); ?>

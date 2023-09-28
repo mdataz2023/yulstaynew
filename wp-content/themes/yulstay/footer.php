@@ -148,12 +148,6 @@
             </div>
         </div>
 
-        <script src="<?php echo get_template_directory_uri(); ?>/js/jquery-3.4.1.min.js"></script>
-        <script src="<?php echo get_template_directory_uri(); ?>/js/popper.min.js"></script>
-        <script src="<?php echo get_template_directory_uri(); ?>/js/bootstrap.min.js"></script>
-        <script src="<?php echo get_template_directory_uri(); ?>/js/owl.carousel.min.js"></script>
-        <script src="<?php echo get_template_directory_uri(); ?>//main.js?lasjkj"></script>		
-
 <?php wp_footer(); ?>
 
 </body>

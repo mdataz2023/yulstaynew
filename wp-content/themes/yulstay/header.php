@@ -19,13 +19,19 @@
         <meta charset="<?php bloginfo( 'charset' ); ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+        <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.png" type="image/x-icon">
         <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900" rel="stylesheet">
+        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css?osaiduu">
+        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css?pas">
+        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css?lokas">
+        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css?asdsdd">
+        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css?asld">
+        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css?asdpo">
         <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/bootstrap.min.css">
         <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/font-awesome.min.css">
-        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/owl.carousel.min.css">
-        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/owl.theme.default.min.css">
-        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css">
+        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/photoswipe.css">
+        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/default-skin/default-skin.css">
+        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css?sadswq">
 
         <title>resideo.</title>
         <?php wp_head(); ?>
