@@ -78,8 +78,8 @@
                             <li class="list-inline-item">
                                 <a href="#">Yulstay</a>
                                 <ul class="pxp-nav-sub rounded-lg">
-                                    <li><a href="blog.html">All Blog Posts</a></li>
-                                    <li><a href="single-post.html">Single Blog Post</a></li>
+                                    <li><a href="blog.html">Pod Casts</a></li>
+                                    <li><a href="single-post.html">Shop</a></li>
                                 </ul>
                             </li>
 
