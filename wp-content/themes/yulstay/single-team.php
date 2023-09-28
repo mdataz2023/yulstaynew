@@ -53,15 +53,15 @@ $social_media_paragraph=get_field('social_media_paragraph');
                                 </div>
 
                                 <div class="mt-3 mt-md-4">
-                                    <?php if( have_rows('team_member_paragraphs') ): $s= 1; $a=0; ?>
+                                    <?php if( have_rows('team_member_questions') ): $s= 1; $a=0; ?>
                     
-                                    <?php while( have_rows('team_member_paragraphs') ): the_row() ;   
+                                    <?php while( have_rows('team_member_questions') ): the_row() ;   
                                     $i++;
-                                            $paragraph = get_sub_field('team_member_paragraph');
-                                            $paragraph = get_sub_field('team_member_paragraph');     
+                                            $team_member_question = get_sub_field('team_member_question');
+                                            $team_member_answer = get_sub_field('team_member_answer');     
                                     ?>
-                                    <p><?php echo $paragraph; ?></p>
-                                    <p><?php echo $paragraph; ?></p>
+                                    <p style="font-weight: 900;"><?php echo $team_member_question; ?></p>
+                                    <p><?php echo $team_member_answer; ?></p>
                                     <?php   endwhile; endif; ?>
                                 </div>
 
