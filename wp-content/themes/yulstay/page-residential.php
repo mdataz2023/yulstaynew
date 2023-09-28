@@ -192,8 +192,19 @@ get_header();?>
                     </div>
 
                     <div class="row">
+                    <?php $the_query = new WP_Query( array('post_type' =>'residential','posts_per_page' => '100',  'post__not_in'   => array( $id),) );?>
+							     <?php if ( have_posts())   : while ( $the_query->have_posts() ) : $the_query->the_post();?>
+							  
+									   <?php
+										$thumbnail_id = get_post_thumbnail_id(); 
+										$thumbnail_url = wp_get_attachment_image_src( $thumbnail_id, 'thumbnail-size', true );
+										$thumbnail_meta = get_post_meta( $thumbnail_id, '_wp_attachment_image_alt', true); 
+
+                    $categories = get_the_category();
+										
+										?>
                         <div class="col-sm-12 col-md-6 col-xxxl-4">
-                            <a href="single-property.html" class="pxp-results-card-1 rounded-lg" data-prop="1">
+                            <a href="<?php the_permalink(); ?>" class="pxp-results-card-1 rounded-lg" data-prop="1">
                                 <div id="card-carousel-1" class="carousel slide" data-ride="carousel" data-interval="false">
                                     <div class="carousel-inner">
                                         <div class="carousel-item active" style="background-image: url(images/ph-gallery.jpg)"></div>
@@ -209,7 +220,7 @@ get_header();?>
                                 </div>
                                 <div class="pxp-results-card-1-gradient"></div>
                                 <div class="pxp-results-card-1-details">
-                                    <div class="pxp-results-card-1-details-title">Chic Apartment in Downtown</div>
+                                    <div class="pxp-results-card-1-details-title"><?php the_title(); ?></div>
                                     <div class="pxp-results-card-1-details-price">$890,000</div>
                                 </div>
                                 <div class="pxp-results-card-1-features">
@@ -218,7 +229,9 @@ get_header();?>
                                 <div class="pxp-results-card-1-save"><span class="fa fa-star-o"></span></div>
                             </a>
                         </div>
-                        <div class="col-sm-12 col-md-6 col-xxxl-4">
+                        <?php endwhile; endif; ?>
+
+                        <!-- <div class="col-sm-12 col-md-6 col-xxxl-4">
                             <a href="single-property.html" class="pxp-results-card-1 rounded-lg" data-prop="2">
                                 <div id="card-carousel-2" class="carousel slide" data-ride="carousel" data-interval="false">
                                     <div class="carousel-inner">
@@ -347,7 +360,7 @@ get_header();?>
                                 </div>
                                 <div class="pxp-results-card-1-save"><span class="fa fa-star-o"></span></div>
                             </a>
-                        </div>
+                        </div> -->
                     </div>
 
                     <ul class="pagination pxp-paginantion mt-2 mt-md-4">
