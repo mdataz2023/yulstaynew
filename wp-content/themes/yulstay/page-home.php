@@ -99,7 +99,7 @@
                 <div class="pxp-hero-caption">
                     <div class="container">
                         <!-- <h1 class="text-white">Find your future home</h1> -->
-                        <a href="<?php bloginfo('url'); ?>/"><img src="<?php echo get_template_directory_uri(); ?>/images/yulstay-logo.png" style="width: 20rem;" alt=""></a>
+                        <a href="<?php bloginfo('url'); ?>/"><img src="<?php echo get_template_directory_uri(); ?>/images/yulstay-logo.png" style="width: 6rem;" alt=""></a>
                     </div>
                 </div>
             </div>
