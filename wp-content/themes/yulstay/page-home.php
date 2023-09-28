@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/owl.theme.default.min.css">
         <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css">
 
-        <title>resideo.</title>
+        <title><?php wp_title( '|', true, 'right' ); ?></title>
         <?php wp_head(); ?>
     </head>
     <body <?php body_class(); ?>>
@@ -128,9 +128,28 @@
                 </div>
             </div> -->
 
+            <?php
+
+            $home_banner_title = get_field('home_banner_title');
+            $home_team_section_title = get_field('home_team_section_title');
+            $home_team_section_description = get_field('home_team_section_description');
+            $home_team_section_link = get_field('home_team_section_link');
+            $home_why_choose_us_section_backgroud_image = get_field('home_why_choose_us_section_backgroud_image');
+            $home_why_choose_us_section_title = get_field('home_why_choose_us_section_title');
+            $home_why_choose_us_section_description = get_field('home_why_choose_us_section_description');
+            $home_properties_section_title = get_field('home_properties_section_title');
+            $home_properties_section_descripton = get_field('home_properties_section_descripton');
+            $home_properties_section_page_link = get_field('home_properties_section_page_link');
+            $home_search_section_background_image = get_field('home_search_section_background_image');
+            $home_search_section_title = get_field('home_search_section_title');
+            $home_search_section_description = get_field('home_search_section_description');
+            $home_search_section_link = get_field('home_search_section_link');
+
+            ?>
+
             <div class="container mt-100">
-                <h2 class="pxp-section-h2">Our Featured Team Members</h2>
-                <p class="pxp-text-light">Meet the best real estate agents</p>
+                <h2 class="pxp-section-h2"><?php echo $home_team_section_title; ?></h2>
+                <p class="pxp-text-light"><?php echo $home_team_section_description; ?></p>
 
                 <div class="row mt-4 mt-md-5">
                 <?php $the_query = new WP_Query( array('post_type' =>'team','posts_per_page' => '4',  'post__not_in'   => array( $id),) );?>
@@ -183,23 +202,32 @@
                 <a href="<?php bloginfo('url'); ?>/team" class="pxp-primary-cta text-uppercase mt-1 mt-md-4 pxp-animate">See All Agents</a>
             </div>
 
-            <div class="pxp-services pxp-cover mt-100 pt-100 mb-200" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/ph-big.jpg); background-position: 50% 60%;">
-                <h2 class="text-center pxp-section-h2">Why Choose Us</h2>
-                <p class="pxp-text-light text-center">We offer perfect real estate services</p>
+            <div class="pxp-services pxp-cover mt-100 pt-100 mb-200" style="background-image: url(<?php echo $home_why_choose_us_section_backgroud_image; ?>); background-position: 50% 60%;">
+                <h2 class="text-center pxp-section-h2"><?php echo $home_why_choose_us_section_title; ?></h2>
+                <p class="pxp-text-light text-center"><?php echo $home_why_choose_us_section_description; ?></p>
 
                 <div class="container">
                     <div class="pxp-services-container rounded-lg mt-4 mt-md-5">
-                        <a href="properties.html" class="pxp-services-item">
-                            <div class="pxp-services-item-fig">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/service-icon-1.svg" alt="...">
-                            </div>
-                            <div class="pxp-services-item-text text-center">
-                                <div class="pxp-services-item-text-title">Find your future home</div>
-                                <div class="pxp-services-item-text-sub">We help you find a new home by offering<br>a smart real estate experience</div>
-                            </div>
-                            <div class="pxp-services-item-cta text-uppercase text-center">Learn More</div>
-                        </a>
-                        <a href="agents.html" class="pxp-services-item">
+                        <?php if( have_rows('home_why_choose_us_section_cards') ): $s= 1; $a=0; ?>
+                        <?php while( have_rows('home_why_choose_us_section_cards') ): the_row() ;   
+                        $i++;
+                                $home_why_choose_us_section_card_image = get_sub_field('home_why_choose_us_section_card_image');
+                                $home_why_choose_us_section_card_title = get_sub_field('home_why_choose_us_section_card_title');
+                                $home_why_choose_us_section_card_description = get_sub_field('home_why_choose_us_section_card_description');
+                                $home_why_choose_us_section_card_link = get_sub_field('home_why_choose_us_section_card_link');
+                        ?>
+                            <a href="<?php echo $home_why_choose_us_section_card_link; ?>" class="pxp-services-item">
+                                <div class="pxp-services-item-fig">
+                                    <img src="<?php echo $home_why_choose_us_section_card_image; ?>" alt="...">
+                                </div>
+                                <div class="pxp-services-item-text text-center">
+                                    <div class="pxp-services-item-text-title"><?php echo $home_why_choose_us_section_card_title; ?></div>
+                                    <div class="pxp-services-item-text-sub"><?php echo $home_why_choose_us_section_card_description; ?></div>
+                                </div>
+                                <div class="pxp-services-item-cta text-uppercase text-center">Learn More</div>
+                            </a>
+                        <?php endwhile; endif; ?>
+                        <!-- <a href="agents.html" class="pxp-services-item">
                             <div class="pxp-services-item-fig">
                                 <img src="<?php echo get_template_directory_uri(); ?>/images/service-icon-2.svg" alt="...">
                             </div>
@@ -228,15 +256,15 @@
                                 <div class="pxp-services-item-text-sub">Sign up now and sell or rent<br>your own properties</div>
                             </div>
                             <div class="pxp-services-item-cta text-uppercase text-center">Learn More</div>
-                        </a>
+                        </a> -->
                         <div class="clearfix"></div>
                     </div>
                 </div>
             </div>
 
             <div class="container-fluid pxp-props-carousel-right mt-100">
-                <h2 class="pxp-section-h2">Featured Properties</h2>
-                <p class="pxp-text-light">Browse our latest hot offers</p>
+                <h2 class="pxp-section-h2"><?php echo $home_properties_section_title; ?></h2>
+                <p class="pxp-text-light"><?php echo $home_properties_section_descripton; ?></p>
                 <div class="pxp-props-carousel-right-container mt-4 mt-md-5">
                     <div class="owl-carousel pxp-props-carousel-right-stage">
                         <div>
@@ -318,18 +346,18 @@
                         </div>
                     </div>
 
-                    <a href="properties.html" class="pxp-primary-cta text-uppercase mt-4 mt-md-5 pxp-animate">Browse All</a>
+                    <a href="<?php echo $home_properties_section_page_link; ?>" class="pxp-primary-cta text-uppercase mt-4 mt-md-5 pxp-animate">Browse All</a>
                 </div>
             </div>
 
-            <div class="pxp-cta-1 pxp-cover mt-100 pt-300" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/ph-big.jpg); background-position: 50% 60%;">
+            <div class="pxp-cta-1 pxp-cover mt-100 pt-300" style="background-image: url(<?php echo $home_search_section_background_image; ?>); background-position: 50% 60%;">
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12 col-md-6 col-lg-4">
                             <div class="pxp-cta-1-caption pxp-animate-in">
-                                <h2 class="pxp-section-h2">Search Smarter, From Anywhere</h2>
-                                <p class="pxp-text-light">Power your search with our Resideo real estate platform, for timely listings and a seamless experience.</p>
-                                <a href="properties.html" class="pxp-primary-cta text-uppercase mt-3 mt-md-5 pxp-animate">Search Now</a>
+                                <h2 class="pxp-section-h2"><?php echo $home_search_section_title; ?></h2>
+                                <p class="pxp-text-light"><?php echo $home_search_section_description; ?></p>
+                                <a href="<?php echo $home_search_section_link; ?>" class="pxp-primary-cta text-uppercase mt-3 mt-md-5 pxp-animate">Search Now></a>
                             </div>
                         </div>
                     </div>
