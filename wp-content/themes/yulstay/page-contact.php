@@ -120,12 +120,4 @@ get_header();?>
             </div>
         </div>
 
-        <script src="<?php echo get_template_directory_uri(); ?>/js/jquery-3.4.1.min.js"></script>
-        <script src="<?php echo get_template_directory_uri(); ?>/js/popper.min.js"></script>
-        <script src="<?php echo get_template_directory_uri(); ?>/js/bootstrap.min.js"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_KEY_HERE&amp;libraries=geometry&amp;libraries=places"></script>
-        <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.sticky.js"></script>
-        <script src="<?php echo get_template_directory_uri(); ?>/js/contact-map.js?assasd"></script>
-        <script src="<?php echo get_template_directory_uri(); ?>/js/main.js?kasjdk"></script>
-
 <?php get_footer(); ?>

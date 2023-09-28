@@ -148,6 +148,26 @@
             </div>
         </div>
 
+        <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_KEY_HERE&amp;libraries=geometry&amp;libraries=places"></script>
+        <script src="<?php echo get_template_directory_uri(); ?>/js/contact-map.js?assasd"></script>
+        <script src="<?php echo get_template_directory_uri(); ?>/js/main.js?kasjdk"></script>
+        <script src="<?php echo get_template_directory_uri(); ?>/js/popper.min.js"></script>
+        <script src="<?php echo get_template_directory_uri(); ?>/js/bootstrap.min.js"></script>
+        <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.sticky.js"></script>
+        <script src="<?php echo get_template_directory_uri(); ?>/js/jquery-3.4.1.min.js"></script>
+        <script src="<?php echo get_template_directory_uri(); ?>/js/main.js?asder"></script>
+        <script src="<?php echo get_template_directory_uri(); ?>/js/markerclusterer.js"></script>
+        <script src="<?php echo get_template_directory_uri(); ?>/js/main.js?asdsd"></script>
+        <script src="<?php echo get_template_directory_uri(); ?>/js/map.js?asldksjd"></script>
+        <script src="<?php echo get_template_directory_uri(); ?>/js/main.js?sadok"></script>
+        <script src="<?php echo get_template_directory_uri(); ?>/js/photoswipe.min.js"></script> 
+        <script src="<?php echo get_template_directory_uri(); ?>/js/photoswipe-ui-default.min.js"></script>
+        <script src="<?php echo get_template_directory_uri(); ?>/js/gallery.js"></script>
+        <script src="<?php echo get_template_directory_uri(); ?>/js/infobox.js"></script>
+        <script src="<?php echo get_template_directory_uri(); ?>/js/single-map.js"></script>
+        <script src="<?php echo get_template_directory_uri(); ?>/js/Chart.min.js"></script>
+        <script src="<?php echo get_template_directory_uri(); ?>/js/main.js?asdasd12"></script>
+
 <?php wp_footer(); ?>
 
 </body>
