@@ -33,7 +33,7 @@ $social_media_paragraph=get_field('social_media_paragraph');
                             </div>
                         </div>
                         <div class="col-sm-12 offset-lg-1 col-lg-3">
-                            <div class="pxp-agent-photo pxp-cover rounded-lg mt-4 mt-md-5 mt-lg-0" style="background-image: url(images/ph-agent.jpg); background-position: 50% 0%;"></div>
+                            <div class="pxp-agent-photo pxp-cover rounded-lg mt-4 mt-md-5 mt-lg-0" style="background-image: url(<?php echo wp_get_attachment_url( get_post_thumbnail_id() ); ?>); background-position: 50% 0%;"></div>
                         </div>
                     </div>
 
@@ -51,6 +51,20 @@ $social_media_paragraph=get_field('social_media_paragraph');
                                     <p><?php echo $paragraph; ?></p>
                                     <?php   endwhile; endif; ?>
                                 </div>
+
+                                <div class="mt-3 mt-md-4">
+                                    <?php if( have_rows('team_member_paragraphs') ): $s= 1; $a=0; ?>
+                    
+                                    <?php while( have_rows('team_member_paragraphs') ): the_row() ;   
+                                    $i++;
+                                            $paragraph = get_sub_field('team_member_paragraph');
+                                            $paragraph = get_sub_field('team_member_paragraph');     
+                                    ?>
+                                    <p><?php echo $paragraph; ?></p>
+                                    <p><?php echo $paragraph; ?></p>
+                                    <?php   endwhile; endif; ?>
+                                </div>
+
                             </div>
                         </div>
                         <div class="col-sm-12 col-lg-3 offset-lg-1">
