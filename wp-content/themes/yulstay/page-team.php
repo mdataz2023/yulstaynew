@@ -65,7 +65,7 @@ get_header();?>
 
                     $categories = get_the_category();
 										
-										?>
+										?> 
                         <div class="col-sm-12 col-md-6 col-lg-3">
                             <a href="<?php the_permalink(); ?>" class="pxp-agents-1-item">
                             <?php if ( has_post_thumbnail() ) {
