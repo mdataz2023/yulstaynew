@@ -445,5 +445,13 @@ get_header();?>
             </div>
         </div>
 
+        <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_KEY_HERE&amp;libraries=geometry&amp;libraries=places"></script>
+        <script src="<?php echo get_template_directory_uri(); ?>/js/jquery-3.4.1.min.js"></script>
+        <script src="<?php echo get_template_directory_uri(); ?>/js/popper.min.js"></script>
+        <script src="<?php echo get_template_directory_uri(); ?>/js/bootstrap.min.js"></script>
+        <script src="<?php echo get_template_directory_uri(); ?>/js/markerclusterer.js"></script>
+        <script src="<?php echo get_template_directory_uri(); ?>/js/main.js?asdsd"></script>
+        <script src="<?php echo get_template_directory_uri(); ?>/js/map.js?asldksjd"></script>
+
         </body>
 </html>
