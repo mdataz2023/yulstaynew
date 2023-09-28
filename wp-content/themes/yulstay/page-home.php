@@ -22,7 +22,10 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-5 col-md-2">
-                        <a href="<?php bloginfo('url'); ?>/" class="pxp-logo text-decoration-none">Yulstay</a>
+                        <!-- <a href="<?php bloginfo('url'); ?>/" class="pxp-logo text-decoration-none">Yulstay</a> -->
+                        <a href="<?php bloginfo('url'); ?>/" class="pxp-logo text-decoration-none">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/yulstay-logo.png" style="height: 2.75rem;" alt="">
+                        </a>
                     </div>
                     <div class="col-2 col-md-8 text-center">
                         <ul class="pxp-nav list-inline">
@@ -53,17 +56,10 @@
                                 </ul> -->
                             </li>
                             <li class="list-inline-item">
-                                <a href="#">Blog</a>
+                                <a href="#">Yulstay</a>
                                 <ul class="pxp-nav-sub rounded-lg">
                                     <li><a href="blog.html">All Blog Posts</a></li>
                                     <li><a href="single-post.html">Single Blog Post</a></li>
-                                </ul>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#">Themes</a>
-                                <ul class="pxp-nav-sub rounded-lg">
-                                    <li><a href="../light/index.html">Light</a></li>
-                                    <li><a href="../dark/index.html">Dark</a></li>
                                 </ul>
                             </li>
                             <li class="list-inline-item pxp-is-last"><a href="<?php bloginfo('url'); ?>/contact">Contact Us</a></li>
@@ -72,6 +68,13 @@
                                     <a href="#" class="pxp-user-btns-signup pxp-signup-trigger">Sign Up</a>
                                     <a href="#" class="pxp-user-btns-login pxp-signin-trigger">Sign In</a>
                                 </div>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="<?php bloginfo('url'); ?>/join-our-team">Join Our Team</a>
+                                <!-- <ul class="pxp-nav-sub rounded-lg">
+                                    <li><a href="../light/index.html">Light</a></li>
+                                    <li><a href="../dark/index.html">Dark</a></li>
+                                </ul> -->
                             </li>
                         </ul>
                     </div>
