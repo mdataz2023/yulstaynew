@@ -7,6 +7,10 @@ $team_member_destination=get_field('team_member_destination');
 $team_member_email=get_field('team_member_email');
 $team_member_telephone=get_field('team_member_telephone');
 $team_member_address=get_field('team_member_address');
+$specialities_heading=get_field('social_media_heading');
+$specialities_paragraph=get_field('specialities_paragraph');
+$social_media_heading=get_field('social_media_heading');
+$social_media_paragraph=get_field('social_media_paragraph');
 
 ?>
 
