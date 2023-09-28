@@ -42,8 +42,10 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-5 col-md-2">
-                        <!-- <a href="<?php bloginfo('url'); ?>/" class="pxp-logo text-decoration-none">Yulstay</a> -->
-                        <a href="<?php bloginfo('url'); ?>/"><img src="<?php echo get_template_directory_uri(); ?>/images/yulstay-logo.png" style="width: 20rem;" alt=""></a>
+                        <a href="<?php bloginfo('url'); ?>/" class="pxp-logo text-decoration-none">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/yulstay-logo.png" style="width: 20rem;" alt="">
+                        </a>
+                        <!-- <a href="<?php bloginfo('url'); ?>/"></a> -->
                     </div>
                     <div class="col-2 col-md-8 text-center">
                         <ul class="pxp-nav list-inline">
