@@ -22,35 +22,35 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-5 col-md-2">
-                        <a href="index.html" class="pxp-logo text-decoration-none">resideo.</a>
+                        <a href="<?php bloginfo('url'); ?>/" class="pxp-logo text-decoration-none">Yulstay</a>
                     </div>
                     <div class="col-2 col-md-8 text-center">
                         <ul class="pxp-nav list-inline">
                             <li class="list-inline-item">
-                                <a href="#">Home</a>
-                                <ul class="pxp-nav-sub rounded-lg">
+                                <a href="<?php bloginfo('url'); ?>/">Home</a>
+                                <!-- <ul class="pxp-nav-sub rounded-lg">
                                     <li><a href="index.html">Version 1</a></li>
                                     <li><a href="index-2.html">Version 2</a></li>
                                     <li><a href="index-3.html">Version 3</a></li>
                                     <li><a href="index-4.html">Version 4</a></li>
                                     <li><a href="index-5.html">Version 5</a></li>
                                     <li><a href="index-6.html">Version 6</a></li>
-                                </ul>
+                                </ul> -->
                             </li>
                             <li class="list-inline-item">
                                 <a href="#">Properties</a>
                                 <ul class="pxp-nav-sub rounded-lg">
-                                    <li><a href="properties.html">All Properties</a></li>
-                                    <li><a href="single-property.html">Single Property</a></li>
-                                    <li><a href="submit-property.html">Submit New Property</a></li>
+                                    <li><a href="<?php bloginfo('url'); ?>/residential">Residential</a></li>
+                                    <li><a href="<?php bloginfo('url'); ?>/multi-residential">Multi Residential</a></li>
+                                    <li><a href="<?php bloginfo('url'); ?>/rental-property">Rental Property</a></li>
                                 </ul>
                             </li>
                             <li class="list-inline-item">
-                                <a href="#">Agents</a>
-                                <ul class="pxp-nav-sub rounded-lg">
+                                <a href="<?php bloginfo('url'); ?>/team">Team</a>
+                                <!-- <ul class="pxp-nav-sub rounded-lg">
                                     <li><a href="agents.html">All Agents</a></li>
                                     <li><a href="single-agent.html">Single Agent</a></li>
-                                </ul>
+                                </ul> -->
                             </li>
                             <li class="list-inline-item">
                                 <a href="#">Blog</a>
@@ -66,7 +66,7 @@
                                     <li><a href="../dark/index.html">Dark</a></li>
                                 </ul>
                             </li>
-                            <li class="list-inline-item pxp-is-last"><a href="contact.html">Contact Us</a></li>
+                            <li class="list-inline-item pxp-is-last"><a href="<?php bloginfo('url'); ?>/contact">Contact Us</a></li>
                             <li class="list-inline-item pxp-has-btns">
                                 <div class="pxp-user-btns">
                                     <a href="#" class="pxp-user-btns-signup pxp-signup-trigger">Sign Up</a>
