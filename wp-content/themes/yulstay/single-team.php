@@ -6,6 +6,7 @@ $team_member_name = get_field('team_member_name');
 $team_member_destination=get_field('team_member_destination');
 $team_member_email=get_field('team_member_email');
 $team_member_telephone=get_field('team_member_telephone');
+$team_member_address=get_field('team_member_address');
 
 ?>
 
@@ -20,6 +21,7 @@ $team_member_telephone=get_field('team_member_telephone');
                             <p><?php echo $team_member_destination; ?></p>
                             <div class="mt-4 mt-md-5">
                                 <div class="pxp-agent-email"><a href="mailto:<?php echo $team_member_email; ?>"><span class="fa fa-envelope-o"></span> <?php echo $team_member_email; ?></a></div>
+                                <div class="pxp-agent-email"><span class="fa fa-envelope-o"></span> <?php echo $team_member_address; ?></a></div>
                                 <div class="pxp-agent-phone"><a href="tel:<?php echo $team_member_telephone; ?>"><span class="fa fa-phone"></span> <?php echo $team_member_telephone; ?></a></div>
                             </div>
                             <div class="mt-4 mt-md-5">
