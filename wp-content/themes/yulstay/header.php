@@ -42,7 +42,8 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-5 col-md-2">
-                        <a href="<?php bloginfo('url'); ?>/" class="pxp-logo text-decoration-none">Yulstay</a>
+                        <!-- <a href="<?php bloginfo('url'); ?>/" class="pxp-logo text-decoration-none">Yulstay</a> -->
+                        <a href="<?php bloginfo('url'); ?>/"><img src="<?php echo get_template_directory_uri(); ?>/images/yulstay-logo.png" style="width: 20rem;" alt=""></a>
                     </div>
                     <div class="col-2 col-md-8 text-center">
                         <ul class="pxp-nav list-inline">
@@ -62,7 +63,7 @@
                                 <ul class="pxp-nav-sub rounded-lg">
                                     <li><a href="<?php bloginfo('url'); ?>/residential">Residential</a></li>
                                     <li><a href="<?php bloginfo('url'); ?>/multi-residential">Multi Residential</a></li>
-                                    <li><a href="<?php bloginfo('url'); ?>/rental-property">Rental Property</a></li>
+                                    <li><a href="<?php bloginfo('url'); ?>/rental-property">Rental + Management</a></li>
                                 </ul>
                             </li>
                             <li class="list-inline-item">

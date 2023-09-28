@@ -99,7 +99,7 @@
                 <div class="pxp-hero-caption">
                     <div class="container">
                         <!-- <h1 class="text-white">Find your future home</h1> -->
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/yulstay-logo.png" style="width: 20rem;" alt="">
+                        <a href="<?php bloginfo('url'); ?>/"><img src="<?php echo get_template_directory_uri(); ?>/images/yulstay-logo.png" style="width: 20rem;" alt=""></a>
                     </div>
                 </div>
             </div>
@@ -212,26 +212,17 @@
 
                 <div class="container">
                     <div class="pxp-services-container rounded-lg mt-4 mt-md-5">
-                        <?php if( have_rows('home_why_choose_us_section_cards') ): $s= 1; $a=0; ?>
-                        <?php while( have_rows('home_why_choose_us_section_cards') ): the_row() ;   
-                        $i++;
-                                $home_why_choose_us_section_card_image = get_sub_field('home_why_choose_us_section_card_image');
-                                $home_why_choose_us_section_card_title = get_sub_field('home_why_choose_us_section_card_title');
-                                $home_why_choose_us_section_card_description = get_sub_field('home_why_choose_us_section_card_description');
-                                $home_why_choose_us_section_card_link = get_sub_field('home_why_choose_us_section_card_link');
-                        ?>
-                            <a href="<?php echo $home_why_choose_us_section_card_link; ?>" class="pxp-services-item">
-                                <div class="pxp-services-item-fig">
-                                    <img src="<?php echo $home_why_choose_us_section_card_image; ?>" alt="...">
-                                </div>
-                                <div class="pxp-services-item-text text-center">
-                                    <div class="pxp-services-item-text-title"><?php echo $home_why_choose_us_section_card_title; ?></div>
-                                    <div class="pxp-services-item-text-sub"><?php echo $home_why_choose_us_section_card_description; ?></div>
-                                </div>
-                                <div class="pxp-services-item-cta text-uppercase text-center">Learn More</div>
-                            </a>
-                        <?php endwhile; endif; ?>
-                        <!-- <a href="agents.html" class="pxp-services-item">
+                        <a href="properties.html" class="pxp-services-item">
+                            <div class="pxp-services-item-fig">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/service-icon-1.svg" alt="...">
+                            </div>
+                            <div class="pxp-services-item-text text-center">
+                                <div class="pxp-services-item-text-title">Find your future home</div>
+                                <div class="pxp-services-item-text-sub">We help you find a new home by offering<br>a smart real estate experience</div>
+                            </div>
+                            <div class="pxp-services-item-cta text-uppercase text-center">Learn More</div>
+                        </a>
+                        <a href="agents.html" class="pxp-services-item">
                             <div class="pxp-services-item-fig">
                                 <img src="<?php echo get_template_directory_uri(); ?>/images/service-icon-2.svg" alt="...">
                             </div>
@@ -240,7 +231,27 @@
                                 <div class="pxp-services-item-text-sub">Find an agent who knows<br>your market best</div>
                             </div>
                             <div class="pxp-services-item-cta text-uppercase text-center">Learn More</div>
-                        </a> -->
+                        </a>
+                        <a href="properties.html" class="pxp-services-item">
+                            <div class="pxp-services-item-fig">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/service-icon-3.svg" alt="...">
+                            </div>
+                            <div class="pxp-services-item-text text-center">
+                                <div class="pxp-services-item-text-title">Buy or rent homes</div>
+                                <div class="pxp-services-item-text-sub">Millions of houses and apartments in<br>your favourite cities</div>
+                            </div>
+                            <div class="pxp-services-item-cta text-uppercase text-center">Learn More</div>
+                        </a>
+                        <a href="submit-property.html" class="pxp-services-item">
+                            <div class="pxp-services-item-fig">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/service-icon-4.svg" alt="...">
+                            </div>
+                            <div class="pxp-services-item-text text-center">
+                                <div class="pxp-services-item-text-title">List your own property</div>
+                                <div class="pxp-services-item-text-sub">Sign up now and sell or rent<br>your own properties</div>
+                            </div>
+                            <div class="pxp-services-item-cta text-uppercase text-center">Learn More</div>
+                        </a>
                         <div class="clearfix"></div>
                     </div>
                 </div>

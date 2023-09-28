@@ -16,7 +16,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12 col-lg-4">
-                        <div class="pxp-footer-logo">resideo.</div>
+                        <div class="pxp-footer-logo">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/yulstay-logo.png" style="width: 30rem;" alt="">
+                        </div>
                         <div class="pxp-footer-address mt-2">
                             90 Fifth Avenue, 3rd Floor<br>
                             San Francisco, CA 1980<br>
@@ -33,19 +35,19 @@
                             <div class="col-sm-12 col-md-4">
                                 <h4 class="pxp-footer-header mt-4 mt-lg-0">Company</h4>
                                 <ul class="list-unstyled pxp-footer-links mt-2">
-                                    <li><a href="#">About Us</a></li>
-                                    <li><a href="#">Agents</a></li>
-                                    <li><a href="#">Blog</a></li>
-                                    <li><a href="#">Demos</a></li>
-                                    <li><a href="#">Contact Us</a></li>
+                                    <li><a href="">About Us</a></li>
+                                    <li><a href="<?php bloginfo('url'); ?>/team">Team</a></li>
+                                    <li><a href="">Yulstay</a></li>
+                                    <li><a href="<?php bloginfo('url'); ?>/contact">Contact Us</a></li>
+                                    <li><a href="<?php bloginfo('url'); ?>/join-our-team">Join Our Team</a></li>
                                 </ul>
                             </div>
                             <div class="col-sm-12 col-md-4">
                                 <h4 class="pxp-footer-header mt-4 mt-lg-0">Actions</h4>
                                 <ul class="list-unstyled pxp-footer-links mt-2">
-                                    <li><a href="#">Buy Properties</a></li>
-                                    <li><a href="#">Rent Properties</a></li>
-                                    <li><a href="#">Sell Properties</a></li>
+                                    <li><a href="<?php bloginfo('url'); ?>/residential">Residential</a></li>
+                                    <li><a href="<?php bloginfo('url'); ?>/multi-residentialv">Multi Residential</a></li>
+                                    <li><a href="<?php bloginfo('url'); ?>/rental-property">Rental + Management</a></li>
                                 </ul>
                             </div>
                             <div class="col-sm-12 col-md-4">
@@ -64,7 +66,7 @@
 
                 <div class="pxp-footer-bottom mt-2">
                     <div><a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a></div>
-                    <div class="pxp-footer-copyright">&copy; Resideo. All Rights Reserved. 2021</div>
+                    <div class="pxp-footer-copyright">&copy; Yulasty. All Rights Reserved. 2021</div>
                 </div>
             </div>
         </div>
