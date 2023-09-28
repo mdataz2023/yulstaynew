@@ -17,7 +17,7 @@
                 <div class="row">
                     <div class="col-sm-12 col-lg-4">
                         <div class="pxp-footer-logo">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/yulstay-logo.png" style="width: 30rem;" alt="">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/yulstay-logo.png" style="width: 8rem;" alt="">
                         </div>
                         <div class="pxp-footer-address mt-2">
                             90 Fifth Avenue, 3rd Floor<br>
