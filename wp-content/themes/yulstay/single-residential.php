@@ -262,7 +262,7 @@ get_header();
                             </div>
                         </div>
 
-                        <div class="pxp-single-property-section mt-4 mt-md-5">
+                        <div hidden class="pxp-single-property-section mt-4 mt-md-5">
                             <h3>Schools in Marina District</h3>
                             <ul class="nav nav-tabs pxp-nav-tabs mt-3 mt-md-4">
                                 <li class="nav-item"><a class="nav-link active" href="#elementary" data-toggle="tab">Elementary</a></li>
