@@ -374,6 +374,156 @@ get_header();
             </div>
         </div>
 
+        <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="pswp__bg"></div>
+            <div class="pswp__scroll-wrap">
+                <div class="pswp__container">
+                    <div class="pswp__item"></div>
+                    <div class="pswp__item"></div>
+                    <div class="pswp__item"></div>
+                </div>
+                <div class="pswp__ui pswp__ui--hidden">
+                    <div class="pswp__top-bar">
+                        <div class="pswp__counter"></div>
+                        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                        <button class="pswp__button pswp__button--share" title="Share"></button>
+                        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                        <div class="pswp__preloader">
+                            <div class="pswp__preloader__icn">
+                                <div class="pswp__preloader__cut">
+                                    <div class="pswp__preloader__donut"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                        <div class="pswp__share-tooltip"></div> 
+                    </div>
+                    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+                    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+                    <div class="pswp__caption">
+                        <div class="pswp__caption__center"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="pxp-contact-agent" tabindex="-1" role="dialog" aria-labelledby="pxpContactAgentModal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h5 class="modal-title" id="pxpContactAgentModal">Contact Erika Tillman</h5>
+                        <form class="mt-4">
+                            <div class="form-group">
+                                <label for="pxp-contact-agent-name">Name</label>
+                                <input type="text" class="form-control" id="pxp-contact-agent-name">
+                            </div>
+                            <div class="form-group">
+                                <label for="pxp-contact-agent-email">Email</label>
+                                <input type="text" class="form-control" id="pxp-contact-agent-email">
+                            </div>
+                            <div class="form-group">
+                                <label for="pxp-contact-agent-phone">Phone</label>
+                                <input type="text" class="form-control" id="pxp-contact-agent-phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="pxp-contact-agent-message">Message</label>
+                                <textarea class="form-control" id="pxp-contact-agent-message" rows="4">I would like more information about Beautiful House in Marina on 542 29th Avenue.</textarea>
+                            </div>
+                            <div class="form-group mt-4">
+                                <a href="#" class="pxp-agent-contact-modal-btn">Send Message</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="pxp-signin-modal" tabindex="-1" role="dialog" aria-labelledby="pxpSigninModal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h5 class="modal-title" id="pxpSigninModal">Welcome back!</h5>
+                        <form class="mt-4">
+                            <div class="form-group">
+                                <label for="pxp-signin-email">Email</label>
+                                <input type="text" class="form-control" id="pxp-signin-email" placeholder="Enter your email address">
+                            </div>
+                            <div class="form-group">
+                                <label for="pxp-signin-pass">Password</label>
+                                <input type="password" class="form-control" id="pxp-signin-pass" placeholder="Enter your password">
+                            </div>
+                            <div class="form-group">
+                                <a href="#" class="pxp-agent-contact-modal-btn">Sign In</a>
+                            </div>
+                            <div class="form-group mt-4 text-center pxp-modal-small">
+                                <a href="#" class="pxp-modal-link">Forgot password</a>
+                            </div>
+                            <div class="text-center pxp-modal-small">
+                                New to Resideo? <a href="javascript:void(0);" class="pxp-modal-link pxp-signup-trigger">Create an account</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="pxp-signup-modal" tabindex="-1" role="dialog" aria-labelledby="pxpSignupModal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h5 class="modal-title" id="pxpSignupModal">Create an account</h5>
+                        <form class="mt-4">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="pxp-signup-firstname">First Name</label>
+                                        <input type="text" class="form-control" id="pxp-signup-firstname" placeholder="Enter first name">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="pxp-signup-lastname">Last Name</label>
+                                        <input type="text" class="form-control" id="pxp-signup-lastname" placeholder="Enter last name">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="pxp-signup-email">Email</label>
+                                <input type="text" class="form-control" id="pxp-signup-email" placeholder="Enter your email address">
+                            </div>
+                            <div class="form-group">
+                                <label for="pxp-signup-pass">Password</label>
+                                <input type="password" class="form-control" id="pxp-signup-pass" placeholder="Create a password">
+                            </div>
+                            <div class="form-group">
+                                <a href="#" class="pxp-agent-contact-modal-btn">Sign Up</a>
+                            </div>
+                            <div class="text-center mt-4 pxp-modal-small">
+                                Already have an account? <a href="javascript:void(0);" class="pxp-modal-link pxp-signin-trigger">Sign in</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <script src="<?php echo get_template_directory_uri(); ?>/js/jquery-3.4.1.min.js"></script>
         <script src="<?php echo get_template_directory_uri(); ?>/js/popper.min.js"></script>
         <script src="<?php echo get_template_directory_uri(); ?>/js/bootstrap.min.js"></script>
