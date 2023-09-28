@@ -180,7 +180,7 @@
                     </div> -->
                 </div>
 
-                <a href="agents.html" class="pxp-primary-cta text-uppercase mt-1 mt-md-4 pxp-animate">See All Agents</a>
+                <a href="<?php bloginfo('url'); ?>/team" class="pxp-primary-cta text-uppercase mt-1 mt-md-4 pxp-animate">See All Agents</a>
             </div>
 
             <div class="pxp-services pxp-cover mt-100 pt-100 mb-200" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/ph-big.jpg); background-position: 50% 60%;">
