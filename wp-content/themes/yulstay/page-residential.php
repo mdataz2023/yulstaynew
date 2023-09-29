@@ -12,6 +12,7 @@ if ($lang == 'en-US'){
 }
 global $wpdb;
 
+$the_query = new WP_Query( array('post_type' =>'residential','posts_per_page' => '1000',  'post__not_in'   => array( $id),) );
 ?>
 
 <div class="pxp-content pxp-full-height">
@@ -190,7 +191,8 @@ global $wpdb;
             </div>
             <div class="row pb-4">
                 <div class="col-sm-6">
-                    <h2 class="pxp-content-side-h2">1,684 Results</h2>
+                    <h2 class="pxp-content-side-h2"><span id='postsCount'><?php echo $the_query->post_count ;?></span>
+                        Results</h2>
                 </div>
                 <div class="col-sm-6">
                     <div class="pxp-sort-form form-inline float-right">
@@ -212,7 +214,6 @@ global $wpdb;
             </div>
 
             <div class="row">
-                <?php $the_query = new WP_Query( array('post_type' =>'residential','posts_per_page' => '100',  'post__not_in'   => array( $id),) );?>
                 <?php
                 $postIndex=0;
                 if ( have_posts())   : while ( $the_query->have_posts() ) : $the_query->the_post();?>
@@ -228,7 +229,8 @@ global $wpdb;
 				?>
                 <div class="col-sm-12 col-md-6 col-xxxl-4">
                     <a href="<?php the_permalink(); ?>" class="pxp-results-card-1 rounded-lg" data-prop="1">
-                        <div id="card-carousel-<?php echo  $postIndex;?>" class="carousel slide" data-ride="carousel" data-interval="false">
+                        <div id="card-carousel-<?php echo  $postIndex;?>" class="carousel slide" data-ride="carousel"
+                            data-interval="false">
                             <div class="carousel-inner">
                                 <?php
                             $photoIndex=0;
@@ -241,10 +243,12 @@ global $wpdb;
                          }
                         ?>
                             </div>
-                            <span class="carousel-control-prev" data-href="#card-carousel-<?php echo  $postIndex;?>" data-slide="prev">
+                            <span class="carousel-control-prev" data-href="#card-carousel-<?php echo  $postIndex;?>"
+                                data-slide="prev">
                                 <span class="fa fa-angle-left" aria-hidden="true"></span>
                             </span>
-                            <span class="carousel-control-next" data-href="#card-carousel-<?php echo  $postIndex;?>" data-slide="next">
+                            <span class="carousel-control-next" data-href="#card-carousel-<?php echo  $postIndex;?>"
+                                data-slide="next">
                                 <span class="fa fa-angle-right" aria-hidden="true"></span>
                             </span>
                         </div>
@@ -518,14 +522,15 @@ global $wpdb;
 (function($) {
     "use strict";
 
+
     var map;
     var markers = [];
     var markerCluster;
     var styles;
-    var propertiesList=[];
+    var propertiesList = [];
     var options = {
-        zoom : 14,
-        mapTypeId : 'Styled',
+        zoom: 14,
+        mapTypeId: 'Styled',
         panControl: false,
         zoomControl: true,
         mapTypeControl: false,
@@ -539,43 +544,157 @@ global $wpdb;
         fullscreenControl: false,
     };
 
-    styles = [{"featureType": "water","elementType": "geometry","stylers": [{"color": "#e9e9e9"},{"lightness": 17}]},{"featureType": "landscape","elementType": "geometry","stylers": [{"color": "#f5f5f5"},{"lightness": 20}]},{"featureType": "road.highway","elementType": "geometry.fill","stylers": [{"color": "#ffffff"},{"lightness": 17}]},{"featureType": "road.highway","elementType": "geometry.stroke","stylers": [{"color": "#ffffff"},{"lightness": 29},{"weight": 0.2}]},{"featureType": "road.arterial","elementType": "geometry","stylers": [{"color": "#ffffff"},{"lightness": 18}]},{"featureType": "road.local","elementType": "geometry","stylers": [{"color": "#ffffff"},{"lightness": 16}]},{"featureType": "poi","elementType": "geometry","stylers": [{"color": "#f5f5f5"},{"lightness": 21}]},{"featureType": "poi.park","elementType": "geometry","stylers": [{"color": "#dedede"},{"lightness": 21}]},{"elementType": "labels.text.stroke","stylers": [{"visibility": "on"},{"color": "#ffffff"},{"lightness": 16}]},{"elementType": "labels.text.fill","stylers": [{"saturation": 36},{"color": "#333333"},{"lightness": 40}]},{"elementType": "labels.icon","stylers": [{"visibility": "off"}]},{"featureType": "transit","elementType": "geometry","stylers": [{"color": "#f2f2f2"},{"lightness": 19}]},{"featureType": "administrative","elementType": "geometry.fill","stylers": [{"color": "#fefefe"},{"lightness": 20}]},{"featureType": "administrative","elementType": "geometry.stroke","stylers": [{"color": "#fefefe"},{"lightness": 17},{"weight": 1.2}]}];
-                <?php
-                        $datas = $wpdb->get_results("SELECT LATITUDE,LONGITUDE,NO_INSCRIPTION FROM INSCRIPTIONS", OBJECT );
+    styles = [{
+        "featureType": "water",
+        "elementType": "geometry",
+        "stylers": [{
+            "color": "#e9e9e9"
+        }, {
+            "lightness": 17
+        }]
+    }, {
+        "featureType": "landscape",
+        "elementType": "geometry",
+        "stylers": [{
+            "color": "#f5f5f5"
+        }, {
+            "lightness": 20
+        }]
+    }, {
+        "featureType": "road.highway",
+        "elementType": "geometry.fill",
+        "stylers": [{
+            "color": "#ffffff"
+        }, {
+            "lightness": 17
+        }]
+    }, {
+        "featureType": "road.highway",
+        "elementType": "geometry.stroke",
+        "stylers": [{
+            "color": "#ffffff"
+        }, {
+            "lightness": 29
+        }, {
+            "weight": 0.2
+        }]
+    }, {
+        "featureType": "road.arterial",
+        "elementType": "geometry",
+        "stylers": [{
+            "color": "#ffffff"
+        }, {
+            "lightness": 18
+        }]
+    }, {
+        "featureType": "road.local",
+        "elementType": "geometry",
+        "stylers": [{
+            "color": "#ffffff"
+        }, {
+            "lightness": 16
+        }]
+    }, {
+        "featureType": "poi",
+        "elementType": "geometry",
+        "stylers": [{
+            "color": "#f5f5f5"
+        }, {
+            "lightness": 21
+        }]
+    }, {
+        "featureType": "poi.park",
+        "elementType": "geometry",
+        "stylers": [{
+            "color": "#dedede"
+        }, {
+            "lightness": 21
+        }]
+    }, {
+        "elementType": "labels.text.stroke",
+        "stylers": [{
+            "visibility": "on"
+        }, {
+            "color": "#ffffff"
+        }, {
+            "lightness": 16
+        }]
+    }, {
+        "elementType": "labels.text.fill",
+        "stylers": [{
+            "saturation": 36
+        }, {
+            "color": "#333333"
+        }, {
+            "lightness": 40
+        }]
+    }, {
+        "elementType": "labels.icon",
+        "stylers": [{
+            "visibility": "off"
+        }]
+    }, {
+        "featureType": "transit",
+        "elementType": "geometry",
+        "stylers": [{
+            "color": "#f2f2f2"
+        }, {
+            "lightness": 19
+        }]
+    }, {
+        "featureType": "administrative",
+        "elementType": "geometry.fill",
+        "stylers": [{
+            "color": "#fefefe"
+        }, {
+            "lightness": 20
+        }]
+    }, {
+        "featureType": "administrative",
+        "elementType": "geometry.stroke",
+        "stylers": [{
+            "color": "#fefefe"
+        }, {
+            "lightness": 17
+        }, {
+            "weight": 1.2
+        }]
+    }];
+    <?php
+                        $datas = $wpdb->get_results("SELECT LATITUDE,LONGITUDE,NO_INSCRIPTION FROM INSCRIPTIONS i join wp_posts p on p.post_content=i.NO_INSCRIPTION where post_type='residential'", OBJECT );
                         foreach ($datas as $page) {
                             $post = $wpdb->get_row("SELECT ID from wp_posts where post_content='".$page->NO_INSCRIPTION."'", OBJECT );
                             $results = $wpdb->get_row(" SELECT * FROM PHOTOS where  NO_INSCRIPTION = '".$page->NO_INSCRIPTION."'", OBJECT );
 
                        ?>
-                                propertiesList.push(
-                                    {
-                                        id: <?php echo  $post->ID ;?>,
-                                        title: '<?php  echo $page->NO_INSCRIPTION;?>',
-                                        photo: '<?php  echo $results->PhotoURL;?>',
-                                        position: {
-                                            lat: '<?php echo $page->LATITUDE;?>',
-                                            lng: '<?php echo $page->LONGITUDE;?>'
-                                        },
-                                        price: {
-                                            long: '<?php echo $page->PRIX_DEMANDE.' '.($page->DEVISE_PRIX_DEMANDE==="CAN"?"$":$page->DEVISE_PRIX_DEMANDE)  ;?>',
-                                            short: '<?php echo $page->PRIX_DEMANDE.' '.($page->DEVISE_PRIX_DEMANDE==="CAN"?"$":$page->DEVISE_PRIX_DEMANDE)  ;?>'
-                                        },
-                                        link: '<?php  echo get_permalink( $post->ID );?>',
-                                        features: {
-                                            beds: '<?php echo $page->NB_CHAMBRES;?>',
-                                            baths:'<?php echo $page->NB_CHAMBRES_HORS_SOL;?>',
-                                            size: '<?php echo $page->UM_SPERFICIE_HABITABLE;?>'
-                                        }
-                                    } );
-                        <?php
+    propertiesList.push({
+        id: <?php echo  $post->ID ;?>,
+        title: '<?php  echo $page->NO_INSCRIPTION;?>',
+        photo: '<?php  echo $results->PhotoURL;?>',
+        position: {
+            lat: '<?php echo $page->LATITUDE;?>',
+            lng: '<?php echo $page->LONGITUDE;?>'
+        },
+        price: {
+            long: '<?php echo $page->PRIX_DEMANDE.' '.($page->DEVISE_PRIX_DEMANDE==="CAN"?"$":$page->DEVISE_PRIX_DEMANDE)  ;?>',
+            short: '<?php echo $page->PRIX_DEMANDE.' '.($page->DEVISE_PRIX_DEMANDE==="CAN"?"$":$page->DEVISE_PRIX_DEMANDE)  ;?>'
+        },
+        link: '<?php  echo get_permalink( $post->ID );?>',
+        features: {
+            beds: '<?php echo $page->NB_CHAMBRES;?>',
+            baths: '<?php echo $page->NB_CHAMBRES_HORS_SOL;?>',
+            size: '<?php echo $page->UM_SPERFICIE_HABITABLE;?>'
+        }
+    });
+    <?php
                         }
                         ?>
 
     function CustomMarker(id, latlng, map, classname, html) {
-        this.id        = id;
-        this.latlng_   = latlng;
+        this.id = id;
+        this.latlng_ = latlng;
         this.classname = classname;
-        this.html      = html;
+        this.html = html;
 
         this.setMap(map);
     }
@@ -636,14 +755,16 @@ global $wpdb;
             var latlng = new google.maps.LatLng(prop.position.lat, prop.position.lng);
 
             var html = '<div class="pxp-marker-short-price">' + prop.price.short + '</div>' +
-                        '<a href="' + prop.link + '" class="pxp-marker-details">' +
-                            '<div class="pxp-marker-details-fig pxp-cover" style="background-image: url(' + prop.photo + ');"></div>' +
-                            '<div class="pxp-marker-details-info">' +
-                                '<div class="pxp-marker-details-info-title">' + prop.title + '</div>' +
-                                '<div class="pxp-marker-details-info-price">' + prop.price.long + '</div>' +
-                                '<div class="pxp-marker-details-info-feat">' + prop.features.beds + ' BD<span>|</span>' + prop.features.baths + ' BA<span>|</span>' + prop.features.size + '</div>' +
-                            '</div>' +
-                        '</a>';
+                '<a href="' + prop.link + '" class="pxp-marker-details">' +
+                '<div class="pxp-marker-details-fig pxp-cover" style="background-image: url(' + prop.photo +
+                ');"></div>' +
+                '<div class="pxp-marker-details-info">' +
+                '<div class="pxp-marker-details-info-title">' + prop.title + '</div>' +
+                '<div class="pxp-marker-details-info-price">' + prop.price.long + '</div>' +
+                '<div class="pxp-marker-details-info-feat">' + prop.features.beds + ' BD<span>|</span>' +
+                prop.features.baths + ' BA<span>|</span>' + prop.features.size + '</div>' +
+                '</div>' +
+                '</a>';
 
             var marker = new CustomMarker(prop.id, latlng, map, 'pxp-price-marker', html);
 
@@ -653,14 +774,14 @@ global $wpdb;
     }
 
     setTimeout(function() {
-        if($('#results-map').length > 0) {
+        if ($('#results-map').length > 0) {
             map = new google.maps.Map(document.getElementById('results-map'), options);
             var styledMapType = new google.maps.StyledMapType(styles, {
-                name : 'Styled',
+                name: 'Styled',
             });
 
             map.mapTypes.set('Styled', styledMapType);
-            map.setCenter(new google.maps.LatLng(37.7577627,-122.4726194));
+            map.setCenter(new google.maps.LatLng(37.7577627, -122.4726194));
             map.setZoom(15);
 
             addMarkers(propertiesList, map);
@@ -672,8 +793,7 @@ global $wpdb;
             markerCluster = new MarkerClusterer(map, markers, {
                 maxZoom: 18,
                 gridSize: 60,
-                styles: [
-                    {
+                styles: [{
                         width: 40,
                         height: 40,
                     },
@@ -699,7 +819,7 @@ global $wpdb;
                             return e.id == propID;
                         });
 
-                        if(targetMarker.length > 0) {
+                        if (targetMarker.length > 0) {
                             targetMarker[0].addActive();
                             map.setCenter(targetMarker[0].latlng_);
                         }
@@ -710,7 +830,7 @@ global $wpdb;
                         return e.id == propID;
                     });
 
-                    if(targetMarker.length > 0) {
+                    if (targetMarker.length > 0) {
                         targetMarker[0].removeActive();
                     }
                 });
@@ -718,7 +838,6 @@ global $wpdb;
         }
     }, 300);
 })(jQuery);
-
 </script>
 
 </body>

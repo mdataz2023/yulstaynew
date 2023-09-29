@@ -24,7 +24,7 @@ $inscriptionsData = $wpdb->get_row(" SELECT * FROM INSCRIPTIONS where NO_INSCRIP
                     $municipalite = $wpdb->get_row(" SELECT * FROM MUNICIPALITES where CODE = '".$inscriptionsData->MUN_CODE."'", OBJECT );
                     // echo $municipalite->DESCRIPTION.' - '.$inscriptionsData->NO_INSCRIPTION;
                     ?>
-                    <?php the_title();?></h2>
+                        <?php the_title();?></h2>
                     <p class="pxp-sp-top-address pxp-text-light">542 29th Avenue, Marina District, San Francisco, CA
                         94121</p>
                 </div>
@@ -53,7 +53,7 @@ $inscriptionsData = $wpdb->get_row(" SELECT * FROM INSCRIPTIONS where NO_INSCRIP
                         <div>--- <span><?php echo $inscriptionsData->UM_SUPERFICIE_HABITABLE;?></span></div>
                     </div>
                     <div class="pxp-sp-top-price mt-3 mt-md-0">
-                    <?php echo $inscriptionsData->PRIX_DEMANDE.' '.($inscriptionsData->DEVISE_PRIX_DEMANDE==="CAN"?"$":$inscriptionsData->DEVISE_PRIX_DEMANDE) ;?>
+                        <?php echo $inscriptionsData->PRIX_DEMANDE.' '.($inscriptionsData->DEVISE_PRIX_DEMANDE==="CAN"?"$":$inscriptionsData->DEVISE_PRIX_DEMANDE) ;?>
                     </div>
                 </div>
             </div>
@@ -145,8 +145,7 @@ $inscriptionsData = $wpdb->get_row(" SELECT * FROM INSCRIPTIONS where NO_INSCRIP
                         <p><?php
                     $remarques = $wpdb->get_row(" SELECT * FROM REMARQUES where NO_INSCRIPTION = '".$inscriptionsData->NO_INSCRIPTION."' and CODE_LANGUE='".$language."'", OBJECT );
                     echo $remarques->TEXTE;
-                    ?><span class="pxp-dots">...</span><span
-                                class="pxp-dots-more">  <?php
+                    ?><span class="pxp-dots">...</span><span class="pxp-dots-more"> <?php
                                  $results = $wpdb->get_results("SELECT * FROM ADDENDA WHERE NO_INSCRIPTION = '".get_the_content()."' and CODE_LANGUE='".$language."'", OBJECT );
                                  foreach ($results as $page) {
                                     echo $page->TEXTE.'<br/>';
@@ -162,7 +161,8 @@ $inscriptionsData = $wpdb->get_row(" SELECT * FROM INSCRIPTIONS where NO_INSCRIP
                     <h3>Amenities</h3>
                     <div class="row mt-3 mt-md-4">
                         <div class="col-sm-6 col-lg-4">
-                            <div class="pxp-sp-amenities-item"><b><?php _e('Property Type','theme-text-domain'); ?> - </b><?php
+                            <div class="pxp-sp-amenities-item"><b><?php _e('Property Type','theme-text-domain'); ?> -
+                                </b><?php
                             $GENRES_PROPRIETES = $wpdb->get_row("SELECT * FROM GENRES_PROPRIETES WHERE GENRE_PROPRIETE ='".$inscriptionsData->GENRE_PROPRIETE."'", OBJECT );
                             if ($lang == 'en-US'){
                                 echo $GENRES_PROPRIETES->DESCRIPTION_ANGLAISE;
@@ -177,11 +177,13 @@ $inscriptionsData = $wpdb->get_row(" SELECT * FROM INSCRIPTIONS where NO_INSCRIP
                             ?></div>
                         </div>
                         <div class="col-sm-6 col-lg-4">
-                            <div class="pxp-sp-amenities-item"><b><?php _e('Year of construction','theme-text-domain'); ?> - </b><?php
+                            <div class="pxp-sp-amenities-item">
+                                <b><?php _e('Year of construction','theme-text-domain'); ?> - </b><?php
                             echo $inscriptionsData->ANNEE_CONTRUCTION;?></div>
                         </div>
                         <div class="col-sm-6 col-lg-4">
-                            <div class="pxp-sp-amenities-item"><b><?php _e('Deed of sale Signature','theme-text-domain'); ?> - </b><?php
+                            <div class="pxp-sp-amenities-item">
+                                <b><?php _e('Deed of sale Signature','theme-text-domain'); ?> - </b><?php
                             echo $inscriptionsData->DELAI_OCCUPATION_ANGLAIS;?></div>
                         </div>
                         <?php
@@ -196,30 +198,25 @@ $inscriptionsData = $wpdb->get_row(" SELECT * FROM INSCRIPTIONS where NO_INSCRIP
                         }else{
                    ?>
                         <div class="col-sm-6 col-lg-4">
-                            <div class="pxp-sp-amenities-item"><b><?php echo $SOUS_TYPE_CARACTERISTIQUES->DESCRIPTION_ANGLAISE;?> - </b> <?php echo $TYPE_CARACTERISTIQUES->DESCRIPTION_ANGLAISE;?></div>
+                            <div class="pxp-sp-amenities-item">
+                                <b><?php echo $SOUS_TYPE_CARACTERISTIQUES->DESCRIPTION_ANGLAISE;?> - </b>
+                                <?php echo $TYPE_CARACTERISTIQUES->DESCRIPTION_ANGLAISE;?></div>
                         </div>
                         <?php }
                     }
                     if($Proximity!==""){
                         ?>
-                         <div class="col-sm-6 col-lg-4">
-                            <div class="pxp-sp-amenities-item"><b><?php _e('Proximity','theme-text-domain'); ?> - </b> <?php echo $Proximity?></div>
+                        <div class="col-sm-6 col-lg-4">
+                            <div class="pxp-sp-amenities-item"><b><?php _e('Proximity','theme-text-domain'); ?> - </b>
+                                <?php echo $Proximity?></div>
                         </div>
-                       <?php
+                        <?php
                        }?>
                     </div>
                 </div>
 
                 <div class="pxp-single-property-section mt-4 mt-md-5">
                     <h3>Explore the Area</h3>
-                    <div class="pxp-sp-pois-nav mt-3 mt-md-4">
-                        <div class="pxp-sp-pois-nav-transportation text-uppercase">Transportation</div>
-                        <div class="pxp-sp-pois-nav-restaurants text-uppercase">Restaurants</div>
-                        <div class="pxp-sp-pois-nav-shopping text-uppercase">Shopping</div>
-                        <div class="pxp-sp-pois-nav-cafes text-uppercase">Cafes & Bars</div>
-                        <div class="pxp-sp-pois-nav-arts text-uppercase">Arts & Entertainment</div>
-                        <div class="pxp-sp-pois-nav-fitness text-uppercase">Fitness</div>
-                    </div>
                     <div id="pxp-sp-map" class="mt-3"></div>
                 </div>
 
@@ -445,13 +442,16 @@ $inscriptionsData = $wpdb->get_row(" SELECT * FROM INSCRIPTIONS where NO_INSCRIP
                         <a href="single-agent.html" class="pxp-sp-agent-fig pxp-cover rounded-lg"
                             style="background-image: url('<?php echo $MEMBRES->PHOTO_URL?>'); background-position: top center"></a>
                         <div class="pxp-sp-agent-info">
-                            <div class="pxp-sp-agent-info-name"><a href="single-agent.html"><?php echo $MEMBRES->NOM." ".$MEMBRES->PRENOM?></a></div>
+                            <div class="pxp-sp-agent-info-name"><a
+                                    href="single-agent.html"><?php echo $MEMBRES->NOM." ".$MEMBRES->PRENOM?></a></div>
                             <div class="pxp-sp-agent-info-rating"><span class="fa fa-star"></span><span
                                     class="fa fa-star"></span><span class="fa fa-star"></span><span
                                     class="fa fa-star"></span><span class="fa fa-star"></span></div>
                             <div class="pxp-sp-agent-info-email"><a
-                                    href="mailto:<?php echo $MEMBRES->COURRIEL?>"><?php echo $MEMBRES->COURRIEL?></a></div>
-                            <div class="pxp-sp-agent-info-phone"><span class="fa fa-phone"></span><?php echo $MEMBRES->TELEPHONE_1?></div>
+                                    href="mailto:<?php echo $MEMBRES->COURRIEL?>"><?php echo $MEMBRES->COURRIEL?></a>
+                            </div>
+                            <div class="pxp-sp-agent-info-phone"><span
+                                    class="fa fa-phone"></span><?php echo $MEMBRES->TELEPHONE_1?></div>
                         </div>
                         <div class="clearfix"></div>
                         <div class="pxp-sp-agent-btns mt-3 mt-md-4">
@@ -635,15 +635,128 @@ $inscriptionsData = $wpdb->get_row(" SELECT * FROM INSCRIPTIONS where NO_INSCRIP
 <script src="<?php echo get_template_directory_uri(); ?>/js/popper.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/bootstrap.min.js"></script>
 <script
-    src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_KEY_HERE&amp;libraries=geometry&amp;libraries=places">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALbrsESmR55p0PLDbeL-SQ_YPuRpucYrw&amp;libraries=geometry&amp;libraries=places">
 </script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/photoswipe.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/photoswipe-ui-default.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.sticky.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/gallery.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/infobox.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/single-map.js"></script>
+<!-- <script src="<?php echo get_template_directory_uri(); ?>/js/single-map.js"></script> -->
 <script src="<?php echo get_template_directory_uri(); ?>/js/Chart.min.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/main.js?asdasd12"></script>
+<!-- <script src="<?php echo get_template_directory_uri(); ?>/js/main.js?asdasd12"></script> -->
 
+
+<script>
+(function($) {
+    "use strict";
+    var map;
+    var styles;
+    var marker = [];
+    // Property map marker position
+    var propLat = '<?php echo $inscriptionsData->LATITUDE;?>';
+    var propLng = '<?php echo $inscriptionsData->LONGITUDE;?>4';
+
+    var options = {
+        zoom: 14,
+        mapTypeId: 'Styled',
+        panControl: false,
+        zoomControl: true,
+        mapTypeControl: true,
+        scaleControl: false,
+        streetViewControl: true,
+        overviewMapControl: false,
+        scrollwheel: false,
+        zoomControlOptions: {
+            position: google.maps.ControlPosition.RIGHT_BOTTOM,
+        },
+        fullscreenControl: true,
+    };
+
+
+    styles = [{
+        "featureType": "water",
+        "elementType": "geometry",
+        "stylers": [{
+            "color": "#e9e9e9"
+        }, {
+            "lightness": 17
+        }]
+    }];
+
+    var info = new InfoBox({
+        disableAutoPan: false,
+        maxWidth: 200,
+        pixelOffset: new google.maps.Size(-70, -44),
+        zIndex: null,
+        boxClass: 'poi-box',
+        boxStyle: {
+            'background': '#fff',
+            'opacity': 1,
+            'padding': '5px',
+            'box-shadow': '0 1px 2px 0 rgba(0, 0, 0, 0.13)',
+            'width': '140px',
+            'text-align': 'center',
+            'border-radius': '3px'
+        },
+        closeBoxMargin: "28px 26px 0px 0px",
+        closeBoxURL: "",
+        infoBoxClearance: new google.maps.Size(1, 1),
+        pane: "floatPane",
+        enableEventPropagation: false
+    });
+
+    function CustomMarker(latlng, map, classname) {
+        this.latlng_ = latlng;
+        this.classname = classname;
+
+        this.setMap(map);
+    }
+
+    CustomMarker.prototype = new google.maps.OverlayView();
+
+    CustomMarker.prototype.draw = function() {
+        var me = this;
+        var div = this.div_;
+
+        if (!div) {
+            div = this.div_ = document.createElement('div');
+            div.classList.add(this.classname);
+
+            var panes = this.getPanes();
+            panes.overlayImage.appendChild(div);
+        }
+
+        var point = this.getProjection().fromLatLngToDivPixel(this.latlng_);
+
+        if (point) {
+            div.style.left = point.x + 'px';
+            div.style.top = point.y + 'px';
+        }
+    };
+
+    function addPropMarker(propLat, propLng, map) {
+        var latlng = new google.maps.LatLng(propLat, propLng);
+        marker = new CustomMarker(latlng, map, 'pxp-single-marker');
+    }
+
+    setTimeout(function() {
+        if ($('#pxp-sp-map').length > 0) {
+            map = new google.maps.Map(document.getElementById('pxp-sp-map'), options);
+            var styledMapType = new google.maps.StyledMapType(styles, {
+                name: 'Styled',
+            });
+            var center = new google.maps.LatLng(propLat, propLng);
+
+            map.mapTypes.set('Styled', styledMapType);
+            map.setCenter(center);
+            map.setZoom(15);
+
+            addPropMarker(propLat, propLng, map);
+
+            google.maps.event.trigger(map, 'resize');
+        }
+    }, 300);
+})(jQuery);
+</script>
 <?php get_footer(); ?>
