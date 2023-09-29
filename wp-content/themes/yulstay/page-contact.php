@@ -23,17 +23,17 @@ get_header();?>
                             <div class="pxp-contact-hero-offices">
                                 <h2 class="pxp-section-h2">Our Offices</h2>
                                 <div class="row">
-                                    <div class="col-sm-12 col-md-4">
-                                        <div class="pxp-contact-hero-offices-title mt-3 mt-md-4">Los Angeles</div>
+                                    <div class="col-sm-12">
+                                        <div class="pxp-contact-hero-offices-title mt-3 mt-md-4">Montréal</div>
                                         <div class="pxp-contact-hero-offices-info mt-2 mt-md-3">
-                                            <p class="pxp-is-address">90 Fifth Avenue, 3rd Floor<br>Los Angeles, CA 1980</p>
+                                            <p class="pxp-is-address">Montréal, QC H3C 6N2 45 Rue des Soeurs Grises</p>
                                             <p>
-                                                <a href="#">(123) 789-7390</a><br>
-                                                <a href="#">office-la@resideo.com</a>
+                                                <a href="#">514.588.7663</a>
+                                                <a href="#">info@yulsty.com</a>
                                             </p>
                                         </div>
                                     </div>
-                                    <div class="col-sm-12 col-md-4">
+                                    <!-- <div class="col-sm-12 col-md-4">
                                         <div class="pxp-contact-hero-offices-title mt-3 mt-md-4">New York</div>
                                         <div class="pxp-contact-hero-offices-info mt-2 mt-md-3">
                                             <p class="pxp-is-address">90 Fifth Avenue, 3rd Floor<br>New York, NY 1980</p>
@@ -52,7 +52,7 @@ get_header();?>
                                                 <a href="#">office-sf@resideo.com</a>
                                             </p>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>
