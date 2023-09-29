@@ -61,7 +61,7 @@ get_header();?>
 
                 <div class="container mt-200">
                     <div class="row">
-                        <div class="col-sm-12 col-lg-6">
+                        <div class="col-sm-12">
                             <h2 class="pxp-section-h2">Send Us A Message</h2>
                             <div class="pxp-contact-form mt-3 mt-md-4">
                                 <div class="row">
@@ -100,7 +100,7 @@ get_header();?>
                                 <a href="#" class="pxp-contact-form-btn">Send Message</a>
                             </div>
                         </div>
-                        <div class="col-sm-12 col-lg-6">
+                        <!-- <div class="col-sm-12 col-lg-6">
                             <div class="row mt-4 mt-md-5 mt-lg-0">
                                 <div class="col-6">
                                     <h2 class="pxp-section-h2">Our Locations</h2>
@@ -114,7 +114,7 @@ get_header();?>
                                 </div>
                             </div>
                             <div id="pxp-contact-map" class="mt-3"></div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>

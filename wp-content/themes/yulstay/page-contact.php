@@ -105,13 +105,13 @@ get_header();?>
                                 <div class="col-6">
                                     <h2 class="pxp-section-h2">Our Locations</h2>
                                 </div>
-                                <div class="col-6 text-right">
+                                <!-- <div class="col-6 text-right">
                                     <select class="custom-select pxp-contact-locations-select">
                                         <option value="la">Los Angeles</option>
                                         <option value="ny">New York</option>
                                         <option value="sf">San Francisco</option>
                                     </select>
-                                </div>
+                                </div> -->
                             </div>
                             <div id="pxp-contact-map" class="mt-3"></div>
                         </div>
