@@ -28,7 +28,7 @@ get_header();?>
                                         <div class="pxp-contact-hero-offices-info mt-2 mt-md-3">
                                             <p class="pxp-is-address">Montréal, QC H3C 6N2 45 Rue des Soeurs Grises</p>
                                             <p>
-                                                <a href="#">514.588.7663</a>
+                                                <a href="#">514.588.7663</a><br>
                                                 <a href="#">info@yulsty.com</a>
                                             </p>
                                         </div>
