@@ -55,13 +55,6 @@
                                     <li><a href="single-agent.html">Single Agent</a></li>
                                 </ul> -->
                             </li>
-                            <li class="list-inline-item">
-                                <a href="#">Yulstay</a>
-                                <ul class="pxp-nav-sub rounded-lg">
-                                    <li><a href="blog.html">Pod Casts</a></li>
-                                    <li><a href="single-post.html">Shop</a></li>
-                                </ul>
-                            </li>
                             <li class="list-inline-item pxp-is-last"><a href="<?php bloginfo('url'); ?>/contact">Contact Us</a></li>
                             <li class="list-inline-item pxp-has-btns">
                                 <div class="pxp-user-btns">
@@ -76,11 +69,28 @@
                                     <li><a href="../dark/index.html">Dark</a></li>
                                 </ul> -->
                             </li>
+                            <li class="list-inline-item">
+                                <a href="#">Yulstay +</a>
+                                <ul class="pxp-nav-sub rounded-lg">
+                                    <li><a href="blog.html">Pod Casts</a></li>
+                                    <li><a href="single-post.html">Shop</a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </div>
                     <div class="col-5 col-md-2 text-right">
                         <a href="javascript:void(0);" class="pxp-header-nav-trigger"><span class="fa fa-bars"></span></a>
                         <a href="javascript:void(0);" class="pxp-header-user pxp-signin-trigger"><span class="fa fa-user-o"></span></a>
+                        <?php
+                            if (has_nav_menu('main-menu')) {
+                                wp_nav_menu(
+                                    array(
+                                        'theme_location' => 'main-menu',
+                                        'menu_class'     => 'main-menu', 
+                                    )
+                                );
+                            }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -99,7 +109,7 @@
                 <div class="pxp-hero-caption">
                     <div class="container">
                         <!-- <h1 class="text-white">Find your future home</h1> -->
-                        <a href="<?php bloginfo('url'); ?>/"><img src="<?php echo get_template_directory_uri(); ?>/images/yulstay-logo.png" style="width: 40rem;" alt=""></a>
+                        <a href="<?php bloginfo('url'); ?>/"><img src="<?php echo get_template_directory_uri(); ?>/images/yulstay-logo.png" style="width: 30rem;" alt=""></a>
                     </div>
                 </div>
             </div>

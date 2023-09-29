@@ -90,7 +90,7 @@
                                 </ul> -->
                             </li>
                             <li class="list-inline-item">
-                                <a href="#">Yulstay</a>
+                                <a href="#">Yulstay +</a>
                                 <ul class="pxp-nav-sub rounded-lg">
                                     <li><a href="blog.html">Pod Casts</a></li>
                                     <li><a href="single-post.html">Shop</a></li>

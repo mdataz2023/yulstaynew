@@ -6,4 +6,12 @@ function custom_get_header() {
         get_header();
     }
 }
+
+
+// Nav Menu
+
+function register_main_menu() {
+    register_nav_menu('main-menu',__( 'Main Menu' ));
+}
+add_action( 'init', 'register_main_menu' );
 ?>
