@@ -82,14 +82,14 @@
                         <a href="javascript:void(0);" class="pxp-header-nav-trigger"><span class="fa fa-bars"></span></a>
                         <a href="javascript:void(0);" class="pxp-header-user pxp-signin-trigger"><span class="fa fa-user-o"></span></a>
                         <?php
-                            if (has_nav_menu('main-menu')) {
-                                wp_nav_menu(
-                                    array(
-                                        'theme_location' => 'main-menu',
-                                        'menu_class'     => 'main-menu', 
-                                    )
-                                );
-                            }
+                        if (has_nav_menu('main-menu')) {
+                            wp_nav_menu(
+                                array(
+                                    'theme_location' => 'main-lang',
+                                    'menu_class'     => 'main-lang', 
+                                )
+                            );
+                        }
                         ?>
                     </div>
                 </div>
