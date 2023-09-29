@@ -75,14 +75,6 @@
                                     <li><a href="single-agent.html">Single Agent</a></li>
                                 </ul> -->
                             </li>
-                            <li class="list-inline-item">
-                                <a href="#">Yulstay</a>
-                                <ul class="pxp-nav-sub rounded-lg">
-                                    <li><a href="blog.html">Pod Casts</a></li>
-                                    <li><a href="single-post.html">Shop</a></li>
-                                </ul>
-                            </li>
-
                             <li class="list-inline-item pxp-is-last"><a href="<?php bloginfo('url'); ?>/contact">Contact Us</a></li>
                             <li class="list-inline-item pxp-has-btns">
                                 <div class="pxp-user-btns">
@@ -96,6 +88,13 @@
                                     <li><a href="../light/index.html">Light</a></li>
                                     <li><a href="../dark/index.html">Dark</a></li>
                                 </ul> -->
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#">Yulstay</a>
+                                <ul class="pxp-nav-sub rounded-lg">
+                                    <li><a href="blog.html">Pod Casts</a></li>
+                                    <li><a href="single-post.html">Shop</a></li>
+                                </ul>
                             </li>
                         </ul>
                     </div>
