@@ -10,8 +10,8 @@ function custom_get_header() {
 
 // Nav Menu
 
-function register_main_menu() {
-    register_nav_menu('main-menu',__( 'Main Menu' ));
+function register_main_lang() {
+    register_nav_menu('main-lang',__( 'Main lang' ));
 }
-add_action( 'init', 'register_main_menu' );
+add_action( 'init', 'register_main_lang' );
 ?>
