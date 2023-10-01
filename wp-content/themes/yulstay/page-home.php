@@ -2,9 +2,9 @@
 
 <?php
 error_reporting(0);
-$zipFolder    = '/home/customer/www/mdataz.com/public_html/yulstaygit/listing-files/';
-$unzipFolder    = '/home/customer/www/mdataz.com/public_html/yulstaygit/listing-files/';
-$backupFolder    = '/home/customer/www/mdataz.com/public_html/yulstaygit/listing-files/backup/';
+$zipFolder    = '/home/customer/www/mdataz.com/public_html/yulstaynew/listing-files/';
+$unzipFolder    = '/home/customer/www/mdataz.com/public_html/yulstaynew/listing-files/';
+$backupFolder    = '/home/customer/www/mdataz.com/public_html/yulstaynew/listing-files/backup/';
 $files1 = scandir($zipFolder);
 $pattern = '/[\n]/';
 global $wpdb;
