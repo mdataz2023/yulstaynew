@@ -13,7 +13,8 @@ $zip = new ZipArchive;
 for ($i=0; $i <count($files1) ; $i++) {
   $explode=explode(".zip",$files1[$i]);
   if(count($explode)>1){
-    $res = $zip->open($zipFolder.$files1[$i]);
+    chmod($zipFolder.$files1[$i],773);
+      $res = $zip->open($zipFolder.$files1[$i]);
     if ($res) {
         // Unzip Path
         $result =$zip->extractTo($unzipFolder);
@@ -958,7 +959,8 @@ unlink($zipFolder."INSCRIPTIONS.TXT");
                                 <div class="pxp-prop-card-1-details-title">Chic Apartment in Downtown</div>
                                 <div class="pxp-prop-card-1-details-price">$890,000</div>
                                 <div class="pxp-prop-card-1-details-features text-uppercase">2 BD <span>|</span> 2 BA
-                                    <span>|</span> 920 SF</div>
+                                    <span>|</span> 920 SF
+                                </div>
                             </div>
                             <div class="pxp-prop-card-1-details-cta text-uppercase">View Details</div>
                         </a>
@@ -974,7 +976,8 @@ unlink($zipFolder."INSCRIPTIONS.TXT");
                                 <div class="pxp-prop-card-1-details-title">Colorful Little Apartment</div>
                                 <div class="pxp-prop-card-1-details-price">$2,675</div>
                                 <div class="pxp-prop-card-1-details-features text-uppercase">1 BD <span>|</span> 1 BA
-                                    <span>|</span> 500 SF</div>
+                                    <span>|</span> 500 SF
+                                </div>
                             </div>
                             <div class="pxp-prop-card-1-details-cta text-uppercase">View Details</div>
                         </a>
@@ -990,7 +993,8 @@ unlink($zipFolder."INSCRIPTIONS.TXT");
                                 <div class="pxp-prop-card-1-details-title">Cozy Two Bedroom Apartment</div>
                                 <div class="pxp-prop-card-1-details-price">$960,000</div>
                                 <div class="pxp-prop-card-1-details-features text-uppercase">2 BD <span>|</span> 2 BA
-                                    <span>|</span> 870 SF</div>
+                                    <span>|</span> 870 SF
+                                </div>
                             </div>
                             <div class="pxp-prop-card-1-details-cta text-uppercase">View Details</div>
                         </a>
@@ -1006,7 +1010,8 @@ unlink($zipFolder."INSCRIPTIONS.TXT");
                                 <div class="pxp-prop-card-1-details-title">Beautiful House in Marina</div>
                                 <div class="pxp-prop-card-1-details-price">$5,198,000</div>
                                 <div class="pxp-prop-card-1-details-features text-uppercase">5 BD <span>|</span> 4.5 BA
-                                    <span>|</span> 3,945 SF</div>
+                                    <span>|</span> 3,945 SF
+                                </div>
                             </div>
                             <div class="pxp-prop-card-1-details-cta text-uppercase">View Details</div>
                         </a>
@@ -1022,7 +1027,8 @@ unlink($zipFolder."INSCRIPTIONS.TXT");
                                 <div class="pxp-prop-card-1-details-title">Modern Residence</div>
                                 <div class="pxp-prop-card-1-details-price">$7,995</div>
                                 <div class="pxp-prop-card-1-details-features text-uppercase">4 BD <span>|</span> 1.5 BA
-                                    <span>|</span> 2,240 SF</div>
+                                    <span>|</span> 2,240 SF
+                                </div>
                             </div>
                             <div class="pxp-prop-card-1-details-cta text-uppercase">View Details</div>
                         </a>
@@ -1038,7 +1044,8 @@ unlink($zipFolder."INSCRIPTIONS.TXT");
                                 <div class="pxp-prop-card-1-details-title">Luxury Mansion</div>
                                 <div class="pxp-prop-card-1-details-price">$5,430,000</div>
                                 <div class="pxp-prop-card-1-details-features text-uppercase">4 BD <span>|</span> 5 BA
-                                    <span>|</span> 5,200 SF</div>
+                                    <span>|</span> 5,200 SF
+                                </div>
                             </div>
                             <div class="pxp-prop-card-1-details-cta text-uppercase">View Details</div>
                         </a>
