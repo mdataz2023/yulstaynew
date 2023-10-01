@@ -2,10 +2,28 @@
 
 <?php
 error_reporting(0);
-
-$addendaFile = file_get_contents( "/home/customer/www/mdataz.com/public_html/yulstaygit/listing-files/ADDENDA.TXT");
+$zipFolder    = '/home/customer/www/mdataz.com/public_html/yulstaygit/listing-files/';
+$unzipFolder    = '/home/customer/www/mdataz.com/public_html/yulstaygit/listing-files/';
+$backupFolder    = '/home/customer/www/mdataz.com/public_html/yulstaygit/listing-files/backup/';
+$files1 = scandir($zipFolder);
 $pattern = '/[\n]/';
 global $wpdb;
+
+$zip = new ZipArchive;
+for ($i=0; $i <count($files1) ; $i++) {
+  $explode=explode(".zip",$files1[$i]);
+  if(count($explode)>1){
+    $res = $zip->open($files1[$i]);
+    if ($res === TRUE) {
+        // Unzip Path
+        $result =$zip->extractTo($unzipFolder);
+        $zip->close();
+        if($result===true){
+        copy($zipFolder.$files1[$i],$backupFolder.$files1[$i]);
+        unlink($zipFolder.$files1[$i]);
+
+$addendaFile = file_get_contents( $zipFolder."ADDENDA.TXT");
+
 $catch = preg_split($pattern, $addendaFile);
 
 foreach($catch as $value)
@@ -28,8 +46,9 @@ foreach($catch as $value)
     }
 
 }
+unlink($zipFolder."ADDENDA.TXT");
 
-$bureauxFile = file_get_contents("/home/customer/www/mdataz.com/public_html/yulstaygit/listing-files/BUREAUX.TXT");
+$bureauxFile = file_get_contents($zipFolder."BUREAUX.TXT");
 $bureauxResult = preg_split($pattern, $bureauxFile);
 foreach($bureauxResult as $value)
 {
@@ -58,7 +77,9 @@ foreach($bureauxResult as $value)
         );
     }
 }
-$caracteristiquesFile = file_get_contents("/home/customer/www/mdataz.com/public_html/yulstaygit/listing-files/CARACTERISTIQUES.TXT");
+unlink($zipFolder."BUREAUX.TXT");
+
+$caracteristiquesFile = file_get_contents($zipFolder."CARACTERISTIQUES.TXT");
 $caracteristiquesResult = preg_split($pattern, $caracteristiquesFile);
 foreach($caracteristiquesResult as $value)
 {
@@ -78,9 +99,10 @@ foreach($caracteristiquesResult as $value)
         );
     }
 }
+unlink($zipFolder."CARACTERISTIQUES.TXT");
 
 // =================================
-$depensesFile = file_get_contents("/home/customer/www/mdataz.com/public_html/yulstaygit/listing-files/DEPENSES.TXT");
+$depensesFile = file_get_contents($zipFolder."DEPENSES.TXT");
 $depensesResult = preg_split($pattern, $depensesFile);
 foreach($depensesResult as $value)
 {
@@ -102,8 +124,10 @@ foreach($depensesResult as $value)
         );
     }
 }
+unlink($zipFolder."DEPENSES.TXT");
+
 // =================================
-$firmesFile = file_get_contents("/home/customer/www/mdataz.com/public_html/yulstaygit/listing-files/FIRMES.TXT");
+$firmesFile = file_get_contents($zipFolder."FIRMES.TXT");
 $firmesResult = preg_split($pattern, $firmesFile);
 foreach($firmesResult as $value)
 {
@@ -123,9 +147,10 @@ foreach($firmesResult as $value)
         );
     }
 }
+unlink($zipFolder."FIRMES.TXT");
 
 // =================================
-$inscriptionsFile = file_get_contents("/home/customer/www/mdataz.com/public_html/yulstaygit/listing-files/INSCRIPTIONS.TXT");
+$inscriptionsFile = file_get_contents($zipFolder."INSCRIPTIONS.TXT");
 $inscriptionsResult = preg_split($pattern, $inscriptionsFile);
 foreach($inscriptionsResult as $value)
 {
@@ -295,10 +320,11 @@ foreach($inscriptionsResult as $value)
         );
     }
 }
+unlink($zipFolder."INSCRIPTIONS.TXT");
 
 
 // =================================
-$liensAdditionnelsFile = file_get_contents("/home/customer/www/mdataz.com/public_html/yulstaygit/listing-files/LIENS_ADDITIONNELS.TXT");
+$liensAdditionnelsFile = file_get_contents($zipFolder."LIENS_ADDITIONNELS.TXT");
 $liensAdditionnelsResult = preg_split($pattern, $liensAdditionnelsFile);
 foreach($liensAdditionnelsResult as $value)
 {
@@ -316,9 +342,10 @@ foreach($liensAdditionnelsResult as $value)
         );
     }
 }
+unlink($zipFolder."LIENS_ADDITIONNELS.TXT");
 
 // =================================
-$membresFile = file_get_contents("/home/customer/www/mdataz.com/public_html/yulstaygit/listing-files/MEMBRES.TXT");
+$membresFile = file_get_contents($zipFolder."MEMBRES.TXT");
 $membresResult = preg_split($pattern, $membresFile);
 foreach($membresResult as $value)
 {
@@ -355,10 +382,11 @@ foreach($membresResult as $value)
         );
     }
 }
+unlink($zipFolder."MEMBRES.TXT");
 
 
 // =================================
-$membresMSFile = file_get_contents("/home/customer/www/mdataz.com/public_html/yulstaygit/listing-files/MEMBRES_MEDIAS_SOCIAUX.TXT");
+$membresMSFile = file_get_contents($zipFolder."MEMBRES_MEDIAS_SOCIAUX.TXT");
 $membresMSResult = preg_split($pattern, $membresMSFile);
 foreach($membresMSResult as $value)
 {
@@ -374,9 +402,10 @@ foreach($membresMSResult as $value)
         );
     }
 }
+unlink($zipFolder."MEMBRES_MEDIAS_SOCIAUX.TXT");
 
 // =================================
-$photosFile = file_get_contents("/home/customer/www/mdataz.com/public_html/yulstaygit/listing-files/PHOTOS.TXT");
+$photosFile = file_get_contents($zipFolder."PHOTOS.TXT");
 $photosResult = preg_split($pattern, $photosFile);
 foreach($photosResult as $value)
 {
@@ -398,9 +427,10 @@ foreach($photosResult as $value)
         );
     }
 }
+unlink($zipFolder."PHOTOS.TXT");
 
 // =================================
-$piecesUnitesFile = file_get_contents("/home/customer/www/mdataz.com/public_html/yulstaygit/listing-files/PIECES_UNITES.TXT");
+$piecesUnitesFile = file_get_contents($zipFolder."PIECES_UNITES.TXT");
 $piecesUnitesResult = preg_split($pattern, $piecesUnitesFile);
 foreach($piecesUnitesResult as $value)
 {
@@ -430,9 +460,10 @@ foreach($piecesUnitesResult as $value)
         );
     }
 }
+unlink($zipFolder."PIECES_UNITES.TXT");
 
 // =================================
-$remarquesFile = file_get_contents("/home/customer/www/mdataz.com/public_html/yulstaygit/listing-files/REMARQUES.TXT");
+$remarquesFile = file_get_contents($zipFolder."REMARQUES.TXT");
 $remarquesResult = preg_split($pattern, $remarquesFile);
 foreach($remarquesResult as $value)
 {
@@ -452,9 +483,10 @@ foreach($remarquesResult as $value)
         );
     }
 }
+unlink($zipFolder."REMARQUES.TXT");
 
 // =================================
-$renovationsFile = file_get_contents("/home/customer/www/mdataz.com/public_html/yulstaygit/listing-files/RENOVATIONS.TXT");
+$renovationsFile = file_get_contents($zipFolder."RENOVATIONS.TXT");
 $renovationsResult = preg_split($pattern, $renovationsFile);
 foreach($renovationsResult as $value)
 {
@@ -475,9 +507,10 @@ foreach($renovationsResult as $value)
         );
     }
 }
+unlink($zipFolder."RENOVATIONS.TXT");
 
 // =================================
-$unitesDFile = file_get_contents("/home/customer/www/mdataz.com/public_html/yulstaygit/listing-files/UNITES_DETAILLEES.TXT");
+$unitesDFile = file_get_contents($zipFolder."UNITES_DETAILLEES.TXT");
 $unitesDResult = preg_split($pattern, $unitesDFile);
 foreach($unitesDResult as $value)
 {
@@ -510,10 +543,11 @@ foreach($unitesDResult as $value)
         );
     }
 }
+unlink($zipFolder."UNITES_DETAILLEES.TXT");
 
 
 // =================================
-$unitesSile = file_get_contents("/home/customer/www/mdataz.com/public_html/yulstaygit/listing-files/UNITES_SOMMAIRES.TXT");
+$unitesSile = file_get_contents($zipFolder."UNITES_SOMMAIRES.TXT");
 $unitesSResult = preg_split($pattern, $unitesSile);
 foreach($unitesSResult as $value)
 {
@@ -533,10 +567,11 @@ foreach($unitesSResult as $value)
         );
     }
 }
+unlink($zipFolder."UNITES_SOMMAIRES.TXT");
 
 
 // =================================
-$unitesSile = file_get_contents("/home/customer/www/mdataz.com/public_html/yulstaygit/listing-files/VALEURS_FIXES.TXT");
+$unitesSile = file_get_contents($zipFolder."VALEURS_FIXES.TXT");
 $unitesSResult = preg_split($pattern, $unitesSile);
 foreach($unitesSResult as $value)
 {
@@ -555,8 +590,10 @@ foreach($unitesSResult as $value)
         );
     }
 }
+unlink($zipFolder."VALEURS_FIXES.TXT");
+
 // =================================
-$visitesLibresile = file_get_contents("/home/customer/www/mdataz.com/public_html/yulstaygit/listing-files/VISITES_LIBRES.TXT");
+$visitesLibresile = file_get_contents($zipFolder."VISITES_LIBRES.TXT");
 $visitesLibresileResult = preg_split($pattern, $visitesLibresile);
 foreach($visitesLibresileResult as $value)
 {
@@ -579,6 +616,7 @@ foreach($visitesLibresileResult as $value)
         );
     }
 }
+unlink($zipFolder."VISITES_LIBRES.TXT");
 
 
 $getResultInscription=$wpdb->get_results("SELECT * FROM INSCRIPTIONS", OBJECT );
@@ -621,6 +659,14 @@ foreach($getResultInscription as $value)
   // );
   }
 }
+
+unlink($zipFolder."INSCRIPTIONS.TXT");
+
+}
+}
+}
+}
+
 ?>
 <html <?php language_attributes(); ?>>
     <head>
