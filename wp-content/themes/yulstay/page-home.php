@@ -155,7 +155,9 @@ $inscriptionsFile = file_get_contents($zipFolder."INSCRIPTIONS.TXT");
 $inscriptionsResult = preg_split($pattern, $inscriptionsFile);
 foreach($inscriptionsResult as $value)
 {
-    $value1= str_replace('�',"",$value);
+    $valueReplace= str_replace('�',"",$value);
+    $value1= str_replace(', ',"~",$valueReplace);
+
     $replaceValue= str_replace('"',"",str_replace('MontrÃ©al',"Montréal",$value1));
     $valueExplode=explode(",",$replaceValue);
     if(count($wpdb->get_results("SELECT * FROM INSCRIPTIONS WHERE NO_INSCRIPTION = '".$valueExplode[0]."' ", OBJECT ))==0){
@@ -187,7 +189,7 @@ foreach($inscriptionsResult as $value)
           'PRES_DE' =>$valueExplode[24],
           'NO_CIVIQUE_DEBUT' =>$valueExplode[25],
           'NO_CIVIQUE_FIN' =>$valueExplode[26],
-          'NOM_RUE_COMPLET' =>$valueExplode[27],
+          'NOM_RUE_COMPLET' =>str_replace('~',", ",$valueExplode[27]),
           'APPARTEMENT' =>$valueExplode[28],
           'CODE_POSTAL' =>$valueExplode[29],
           'CHAMP_INUTILISE_39' =>$valueExplode[30],
@@ -260,8 +262,8 @@ foreach($inscriptionsResult as $value)
           'CHAMP_INUTILISE_24' =>$valueExplode[97],
           'CHAMP_INUTILISE_25' =>$valueExplode[98],
           'NB_CHAUFFE_EAU_LOUE' =>$valueExplode[99],
-          'INCLUS_FRANCAIS' =>$valueExplode[100],
-          'INCLUS_ANGLAIS' =>$valueExplode[101],
+          'INCLUS_FRANCAIS' =>str_replace('~',", ",$valueExplode[100]),
+          'INCLUS_ANGLAIS' =>str_replace('~',", ",$valueExplode[101]),
           'EXCLUS_FRANCAIS' =>$valueExplode[102],
           'EXCLUS_ANGLAIS' =>$valueExplode[103],
           'NB_UNITES_TOTAL' =>$valueExplode[104],
