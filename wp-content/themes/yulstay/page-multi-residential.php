@@ -216,7 +216,8 @@ $the_query = new WP_Query( array('post_type' =>'multi-residential','posts_per_pa
                 if ( have_posts())   : while ( $the_query->have_posts() ) : $the_query->the_post();?>
 
                 <?php
-                    $inscriptionsData = $wpdb->get_row(" SELECT * FROM INSCRIPTIONS where NO_INSCRIPTION = '".get_the_content()."'", OBJECT );
+                    $inscriptionsData = $wpdb->get_row(" SELECT * FROM INSCRIPTIONS where NO_INSCRIPTION = '".get_the_content()."' and CODE_STATUT='EV'", OBJECT );
+                 if($inscriptionsData){
                     $thumbnail_id = get_post_thumbnail_id();
 										$thumbnail_url = wp_get_attachment_image_src( $thumbnail_id, 'thumbnail-size', true );
 										$thumbnail_meta = get_post_meta( $thumbnail_id, '_wp_attachment_image_alt', true);
@@ -266,6 +267,7 @@ $the_query = new WP_Query( array('post_type' =>'multi-residential','posts_per_pa
                 </div>
                 <?php
              $postIndex++;
+                        }
             endwhile; endif; ?>
 
                 <!-- <div class="coUl-sm-12 col-md-6 col-xxxl-4">
@@ -658,7 +660,7 @@ $the_query = new WP_Query( array('post_type' =>'multi-residential','posts_per_pa
         }]
     }];
     <?php
-                        $datas = $wpdb->get_results("SELECT LATITUDE,LONGITUDE,NO_INSCRIPTION FROM INSCRIPTIONS i join wp_posts p on p.post_content=i.NO_INSCRIPTION where post_type='multi-residential'", OBJECT );
+                        $datas = $wpdb->get_results("SELECT LATITUDE,LONGITUDE,NO_INSCRIPTION FROM INSCRIPTIONS i join wp_posts p on p.post_content=i.NO_INSCRIPTION where post_type='multi-residential'  and i.CODE_STATUT='EV'", OBJECT );
                         foreach ($datas as $page) {
                             $post = $wpdb->get_row("SELECT ID from wp_posts where post_content='".$page->NO_INSCRIPTION."'", OBJECT );
                             $results = $wpdb->get_row(" SELECT * FROM PHOTOS where  NO_INSCRIPTION = '".$page->NO_INSCRIPTION."'", OBJECT );

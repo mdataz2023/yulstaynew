@@ -319,6 +319,8 @@ foreach($inscriptionsResult as $value)
           "IND_VISITES_INTERACTIVES"=>$valueExplode[156]
           )
         );
+    }else{
+        $wpdb->update('INSCRIPTIONS', array('CODE_STATUT'=>$valueExplode[115]), array("NO_INSCRIPTION" => $valueExplode[0]));
     }
 }
 unlink($zipFolder."INSCRIPTIONS.TXT");
