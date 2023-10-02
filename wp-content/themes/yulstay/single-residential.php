@@ -515,7 +515,7 @@ $inscriptionsData = $wpdb->get_row(" SELECT * FROM INSCRIPTIONS where NO_INSCRIP
             </div>
             <div class="modal-body">
                 <h5 class="modal-title" id="pxpContactAgentModal">Contact Erika Tillman</h5>
-                <form class="mt-4">
+                <!-- <form class="mt-4">
                     <div class="form-group">
                         <label for="pxp-contact-agent-name">Name</label>
                         <input type="text" class="form-control" id="pxp-contact-agent-name">
@@ -536,7 +536,8 @@ $inscriptionsData = $wpdb->get_row(" SELECT * FROM INSCRIPTIONS where NO_INSCRIP
                     <div class="form-group mt-4">
                         <a href="#" class="pxp-agent-contact-modal-btn">Send Message</a>
                     </div>
-                </form>
+                </form> -->
+                <?php echo do_shortcode('[contact-form-7 id="a5998d6" title="Sebaaly Ralph Property Contact"]'); ?>
             </div>
         </div>
     </div>
