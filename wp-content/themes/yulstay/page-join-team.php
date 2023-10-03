@@ -82,13 +82,12 @@ $join_our_team_page_banner_image = get_field('join_our_team_page_banner_image');
                                     <div class="col-sm-12 col-md-6">
                                         <div class="form-group">
                                             <select class="custom-select" id="pxp-contact-form-reg">
-                                                <option value="">What is this regarding?</option>
-                                                <option value="">Customer support / feedback</option>
-                                                <option value="">Applying</option>
-                                                <option value="">Press</option>
-                                                <option value="">Listings</option>
-                                                <option value="">Partnerships</option>
-                                                <option value="">General questions</option>
+                                                <option value=""> - Choose a position - </option>
+                                                <option value="">New Brokers</option>
+                                                <option value="">Experienced Brokers</option>
+                                                <option value="">Rental Expert</option>
+                                                <option value="">Property Manger</option>
+                                                <option value="">Administrative</option>
                                             </select>
                                         </div>
                                     </div>
