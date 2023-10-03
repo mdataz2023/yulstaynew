@@ -12,143 +12,265 @@ global $wpdb;
 $the_query = new WP_Query( array('post_type' =>'rental-property','posts_per_page' => '1000',  'post__not_in'   => array( $id),) );
 ?>
 
-        <div class="pxp-content pxp-full-height">
-            <div class="pxp-map-side pxp-map-right pxp-half">
-                <div id="results-map"></div>
-                <a href="javascript:void(0);" class="pxp-list-toggle"><span class="fa fa-list"></span></a>
+<div class="pxp-content pxp-full-height">
+    <div class="pxp-map-side pxp-map-right pxp-half">
+        <div id="results-map"></div>
+        <a href="javascript:void(0);" class="pxp-list-toggle"><span class="fa fa-list"></span></a>
+    </div>
+    <div class="pxp-content-side pxp-content-left pxp-half">
+        <div class="pxp-content-side-wrapper">
+            <div class="d-flex">
+                <div class="pxp-content-side-search-form">
+                    <div class="row pxp-content-side-search-form-row">
+                        <div class="col-5 col-sm-5 col-md-4 col-lg-3 pxp-content-side-search-form-col">
+                            <select class="custom-select" id="pxp-p-search-status">
+                                <option value="buy" selected="selected">Buy</option>
+                                <option value="rent">Rent</option>
+                            </select>
+                        </div>
+                        <div class="col-7 col-sm-7 col-md-8 col-lg-9 pxp-content-side-search-form-col">
+                            <input type="text" class="form-control pxp-is-address"
+                                placeholder="Search by City, Neighborhood, or Address" id="pxp-p-search-address">
+                            <span class="fa fa-search"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <a role="button" class="pxp-adv-toggle"><span class="fa fa-sliders"></span></a>
+                </div>
             </div>
-            <div class="pxp-content-side pxp-content-left pxp-half">
-                <div class="pxp-content-side-wrapper">
-                    <div class="d-flex">
-                        <div class="pxp-content-side-search-form">
-                            <div class="row pxp-content-side-search-form-row">
-                                <div class="col-12 pxp-content-side-search-form-col">
-                                    <div class="form-group">
-                                        <select class="custom-select" id="pxp-p-filter-type">
-                                            <option value="">Select District</option>
-                                            <option value="">Apartment</option>
-                                            <option value="">House</option>
-                                            <option value="">Townhome</option>
-                                            <option value="">Multi-Family</option>
-                                            <option value="">Land</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="d-flex">
-                            <a role="button" class="pxp-adv-toggle"><span class="fa fa-sliders"></span></a>
+            <div class="pxp-content-side-search-form-adv mb-3">
+                <div class="row pxp-content-side-search-form-row">
+                    <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
+                        <div class="form-group">
+                            <label for="pxp-p-filter-price-min">Price</label>
+                            <input type="text" class="form-control" placeholder="Min" id="pxp-p-filter-price-min">
                         </div>
                     </div>
-                    <div class="pxp-content-side-search-form-adv mb-3">
-                        <div class="row pxp-content-side-search-form-row">
-                            <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
-                                <div class="form-group">
-                                    <label for="pxp-p-filter-price-min">Price</label>
-                                    <input type="text" class="form-control" placeholder="Min" id="pxp-p-filter-price-min">
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
-                                <div class="form-group">
-                                    <label for="pxp-p-filter-price-max" class="d-none d-sm-inline-block">&nbsp;</label>
-                                    <input type="text" class="form-control" placeholder="Max" id="pxp-p-filter-price-max">
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
-                                <div class="form-group">
-                                    <label for="pxp-p-filter-beds">Beds</label>
-                                    <select class="custom-select" id="pxp-p-filter-beds">
-                                        <option value="" selected="selected">Any</option>
-                                        <option value="">Studio</option>
-                                        <option value="">1</option>
-                                        <option value="">2</option>
-                                        <option value="">3</option>
-                                        <option value="">4</option>
-                                        <option value="">5+</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
-                                <div class="form-group">
-                                    <label for="pxp-p-filter-baths">Baths</label>
-                                    <select class="custom-select" id="pxp-p-filter-baths">
-                                        <option value="" selected="selected">Any</option>
-                                        <option value="">1+</option>
-                                        <option value="">1.5+</option>
-                                        <option value="">2+</option>
-                                        <option value="">3+</option>
-                                        <option value="">4+</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-md-4 pxp-content-side-search-form-col">
-                                <div class="form-group">
-                                    <label for="pxp-p-filter-size-min">Size (sq ft)</label>
-                                    <input type="text" class="form-control" id="pxp-p-filter-size-min" placeholder="Min">
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-md-4 pxp-content-side-search-form-col">
-                                <div class="form-group">
-                                    <label for="pxp-p-filter-size-max" class="d-none d-sm-inline-block">&nbsp;</label>
-                                    <input type="text" class="form-control" id="pxp-p-filter-size-max" placeholder="Max">
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <a href="#" class="pxp-filter-btn">Apply Filters</a>
-                    </div>
-                    <div class="row pb-4">
-                        <div class="col-sm-6">
-                            <h2 class="pxp-content-side-h2">1,684 Results</h2>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="pxp-sort-form form-inline float-right">
-                                <div class="form-group">
-                                    <select class="custom-select" id="pxp-sort-results">
-                                        <option value="" selected="selected">Default Sort</option>
-                                        <option value="">Price (Lo-Hi)</option>
-                                        <option value="">Price (Hi-Lo)</option>
-                                        <option value="">Beds</option>
-                                        <option value="">Baths</option>
-                                        <option value="">Size</option>
-                                    </select>
-                                </div>
-                                <div class="form-group d-flex">
-                                    <a role="button" class="pxp-map-toggle"><span class="fa fa-map-o"></span></a>
-                                </div>
-                            </div>
+                    <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
+                        <div class="form-group">
+                            <label for="pxp-p-filter-price-max" class="d-none d-sm-inline-block">&nbsp;</label>
+                            <input type="text" class="form-control" placeholder="Max" id="pxp-p-filter-price-max">
                         </div>
                     </div>
-
-                    <div class="row">
-                        <div class="col-sm-12 col-md-6 col-xxxl-4">
-                            <a href="single-property.html" class="pxp-results-card-1 rounded-lg" data-prop="1">
-                                <div id="card-carousel-1" class="carousel slide" data-ride="carousel" data-interval="false">
-                                    <div class="carousel-inner">
-                                        <div class="carousel-item active" style="background-image: url(images/ph-gallery.jpg)"></div>
-                                        <div class="carousel-item" style="background-image: url(images/ph-gallery.jpg);"></div>
-                                        <div class="carousel-item" style="background-image: url(images/ph-gallery.jpg);"></div>
-                                    </div>
-                                    <span class="carousel-control-prev" data-href="#card-carousel-1" data-slide="prev">
-                                        <span class="fa fa-angle-left" aria-hidden="true"></span>
-                                    </span>
-                                    <span class="carousel-control-next" data-href="#card-carousel-1" data-slide="next">
-                                        <span class="fa fa-angle-right" aria-hidden="true"></span>
-                                    </span>
-                                </div>
-                                <div class="pxp-results-card-1-gradient"></div>
-                                <div class="pxp-results-card-1-details">
-                                    <div class="pxp-results-card-1-details-title">Chic Apartment in Downtown</div>
-                                    <div class="pxp-results-card-1-details-price">$890,000</div>
-                                </div>
-                                <div class="pxp-results-card-1-features">
-                                    <span>2 BD <span>|</span> 2 BA <span>|</span> 920 SF</span>
-                                </div>
-                                <div class="pxp-results-card-1-save"><span class="fa fa-star-o"></span></div>
-                            </a>
+                    <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
+                        <div class="form-group">
+                            <label for="pxp-p-filter-beds">Beds</label>
+                            <select class="custom-select" id="pxp-p-filter-beds">
+                                <option value="" selected="selected">Any</option>
+                                <option value="">Studio</option>
+                                <option value="">1</option>
+                                <option value="">2</option>
+                                <option value="">3</option>
+                                <option value="">4</option>
+                                <option value="">5+</option>
+                            </select>
                         </div>
-                        <div class="col-sm-12 col-md-6 col-xxxl-4">
+                    </div>
+                    <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
+                        <div class="form-group">
+                            <label for="pxp-p-filter-baths">Baths</label>
+                            <select class="custom-select" id="pxp-p-filter-baths">
+                                <option value="" selected="selected">Any</option>
+                                <option value="">1+</option>
+                                <option value="">1.5+</option>
+                                <option value="">2+</option>
+                                <option value="">3+</option>
+                                <option value="">4+</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 pxp-content-side-search-form-col">
+                        <div class="form-group">
+                            <label for="pxp-p-filter-type">Type</label>
+                            <select class="custom-select" id="pxp-p-filter-type">
+                                <option value="">Select type</option>
+                                <option value="">Apartment</option>
+                                <option value="">House</option>
+                                <option value="">Townhome</option>
+                                <option value="">Multi-Family</option>
+                                <option value="">Land</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 pxp-content-side-search-form-col">
+                        <div class="form-group">
+                            <label for="pxp-p-filter-size-min">Size (sq ft)</label>
+                            <input type="text" class="form-control" id="pxp-p-filter-size-min" placeholder="Min">
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 pxp-content-side-search-form-col">
+                        <div class="form-group">
+                            <label for="pxp-p-filter-size-max" class="d-none d-sm-inline-block">&nbsp;</label>
+                            <input type="text" class="form-control" id="pxp-p-filter-size-max" placeholder="Max">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="mb-2">Amenities</label>
+                    <div class="row pxp-content-side-search-form-row">
+                        <div class="col-sm-6 col-md-4 pxp-content-side-search-form-col">
+                            <div class="form-group">
+                                <div class="checkbox custom-checkbox">
+                                    <label><input type="checkbox" value="1"><span class="fa fa-check"></span>
+                                        Internet</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4 pxp-content-side-search-form-col">
+                            <div class="form-group">
+                                <div class="checkbox custom-checkbox">
+                                    <label><input type="checkbox" value="1"><span class="fa fa-check"></span>
+                                        Garage</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4 pxp-content-side-search-form-col">
+                            <div class="form-group">
+                                <div class="checkbox custom-checkbox">
+                                    <label><input type="checkbox" value="1"><span class="fa fa-check"></span> Air
+                                        Conditioning</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4 pxp-content-side-search-form-col">
+                            <div class="form-group">
+                                <div class="checkbox custom-checkbox">
+                                    <label><input type="checkbox" value="1"><span class="fa fa-check"></span>
+                                        Dishwasher</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4 pxp-content-side-search-form-col">
+                            <div class="form-group">
+                                <div class="checkbox custom-checkbox">
+                                    <label><input type="checkbox" value="1"><span class="fa fa-check"></span>
+                                        Disposal</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4 pxp-content-side-search-form-col">
+                            <div class="form-group">
+                                <div class="checkbox custom-checkbox">
+                                    <label><input type="checkbox" value="1"><span class="fa fa-check"></span>
+                                        Balcony</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4 pxp-content-side-search-form-col">
+                            <div class="form-group">
+                                <div class="checkbox custom-checkbox">
+                                    <label><input type="checkbox" value="1"><span class="fa fa-check"></span>
+                                        Gym</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4 pxp-content-side-search-form-col">
+                            <div class="form-group">
+                                <div class="checkbox custom-checkbox">
+                                    <label><input type="checkbox" value="1"><span class="fa fa-check"></span>
+                                        Playroom</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4 pxp-content-side-search-form-col">
+                            <div class="form-group">
+                                <div class="checkbox custom-checkbox">
+                                    <label><input type="checkbox" value="1"><span class="fa fa-check"></span>
+                                        Bar</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#" class="pxp-filter-btn">Apply Filters</a>
+            </div>
+            <div class="row pb-4">
+                <div class="col-sm-6">
+                    <h2 class="pxp-content-side-h2"><span id='postsCount'><?php echo $the_query->post_count ;?></span>
+                        Results</h2>
+                </div>
+                <div class="col-sm-6">
+                    <div class="pxp-sort-form form-inline float-right">
+                        <div class="form-group">
+                            <select class="custom-select" id="pxp-sort-results">
+                                <option value="" selected="selected">Default Sort</option>
+                                <option value="">Price (Lo-Hi)</option>
+                                <option value="">Price (Hi-Lo)</option>
+                                <option value="">Beds</option>
+                                <option value="">Baths</option>
+                                <option value="">Size</option>
+                            </select>
+                        </div>
+                        <div class="form-group d-flex">
+                            <a role="button" class="pxp-map-toggle"><span class="fa fa-map-o"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <?php
+                $postIndex=0;
+                if ( have_posts())   : while ( $the_query->have_posts() ) : $the_query->the_post();?>
+
+                <?php
+                   $inscriptionsData = $wpdb->get_row(" SELECT * FROM INSCRIPTIONS where NO_INSCRIPTION = '".get_the_content()."' and CODE_STATUT='EV'", OBJECT );
+                   if($inscriptionsData){
+                    $thumbnail_id = get_post_thumbnail_id();
+										$thumbnail_url = wp_get_attachment_image_src( $thumbnail_id, 'thumbnail-size', true );
+										$thumbnail_meta = get_post_meta( $thumbnail_id, '_wp_attachment_image_alt', true);
+
+                    $categories = get_the_category();
+                    $results = $wpdb->get_results(" SELECT * FROM PHOTOS where  NO_INSCRIPTION = '".get_the_content()."' limit 3", OBJECT );
+				?>
+                <div class="col-sm-12 col-md-6 col-xxxl-4">
+                    <a href="<?php the_permalink(); ?>" class="pxp-results-card-1 rounded-lg" data-prop="1">
+                        <div id="card-carousel-<?php echo  $postIndex;?>" class="carousel slide" data-ride="carousel"
+                            data-interval="false">
+                            <div class="carousel-inner">
+                                <?php
+                            $photoIndex=0;
+                            foreach ($results as $page) {
+                        ?>
+                                <div class="carousel-item <?php echo $photoIndex==0?"active":""?>"
+                                    style="background-image: url(<?php echo $page->PhotoURL;?>)"> </div>
+                                <?php
+                            $photoIndex= $photoIndex+1;
+                         }
+                        ?>
+                            </div>
+                            <span class="carousel-control-prev" data-href="#card-carousel-<?php echo  $postIndex;?>"
+                                data-slide="prev">
+                                <span class="fa fa-angle-left" aria-hidden="true"></span>
+                            </span>
+                            <span class="carousel-control-next" data-href="#card-carousel-<?php echo  $postIndex;?>"
+                                data-slide="next">
+                                <span class="fa fa-angle-right" aria-hidden="true"></span>
+                            </span>
+                        </div>
+                        <div class="pxp-results-card-1-gradient"></div>
+                        <div class="pxp-results-card-1-details">
+                            <div class="pxp-results-card-1-details-title"><?php the_title(); ?></div>
+                            <div class="pxp-results-card-1-details-price">
+                                <?php echo $inscriptionsData->DEVISE_PRIX_LOCATION_DEMANDE .' '.($inscriptionsData->PRIX_LOCATION_DEMANDE==="CAN"?"$":$inscriptionsData->PRIX_LOCATION_DEMANDE)     ;?>
+                            </div>
+                        </div>
+                        <div class="pxp-results-card-1-features">
+                            <span><?php echo $inscriptionsData->NB_CHAMBRES;?> BD <span>|</span>
+                                <?php echo $inscriptionsData->NB_CHAMBRES_HORS_SOL;?> BA <span>|</span>
+                                <?php echo $inscriptionsData->UM_SPERFICIE_HABITABLE;?> </span>
+                        </div>
+                        <div class="pxp-results-card-1-save"><span class="fa fa-star-o"></span></div>
+                    </a>
+                </div>
+                <?php
+             $postIndex++;
+                        }
+            endwhile; endif; ?>
+
+                <!-- <div class="coUl-sm-12 col-md-6 col-xxxl-4">
                             <a href="single-property.html" class="pxp-results-card-1 rounded-lg" data-prop="2">
                                 <div id="card-carousel-2" class="carousel slide" data-ride="carousel" data-interval="false">
                                     <div class="carousel-inner">
@@ -277,24 +399,25 @@ $the_query = new WP_Query( array('post_type' =>'rental-property','posts_per_page
                                 </div>
                                 <div class="pxp-results-card-1-save"><span class="fa fa-star-o"></span></div>
                             </a>
-                        </div>
-                    </div>
+                        </div> -->
+            </div>
 
-                    <ul class="pagination pxp-paginantion mt-2 mt-md-4">
-                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item"><a class="page-link" href="#">Next <span class="fa fa-angle-right"></span></a></li>
-                    </ul>
+            <!-- <ul class="pagination pxp-paginantion mt-2 mt-md-4">
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next <span class="fa fa-angle-right"></span></a>
+                </li>
+            </ul> -->
 
-                </div>
-                <div class="pxp-footer pxp-content-side-wrapper">
-                    <div class="pxp-footer-bottom">
-                        <div class="pxp-footer-copyright">&copy; Resideo. All Rights Reserved. 2021</div>
-                    </div>
-                </div>
+        </div>
+        <div class="pxp-footer pxp-content-side-wrapper">
+            <div class="pxp-footer-bottom">
+                <div class="pxp-footer-copyright">&copy; Resideo. All Rights Reserved. 2021</div>
             </div>
         </div>
+    </div>
+</div>
 
 <div class="modal fade" id="pxp-signin-modal" tabindex="-1" role="dialog" aria-labelledby="pxpSigninModal"
     aria-hidden="true">
