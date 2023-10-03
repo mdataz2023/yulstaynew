@@ -470,7 +470,7 @@ global $wpdb;
                                 propertiesList.push(
                                     {
                                         id: <?php echo  $post->ID ;?>,
-                                        title: '<?php  echo $page->NO_INSCRIPTION;?>',
+                                        title: '<?php  echo $page-> NOM_RUE_COMPLET." ".$page->NO_INSCRIPTION;?>',
                                         photo: '<?php  echo $results->PhotoURL;?>',
                                         position: {
                                             lat: '<?php echo $page->LATITUDE;?>',
