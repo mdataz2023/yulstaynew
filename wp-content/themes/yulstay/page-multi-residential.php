@@ -584,7 +584,7 @@ $the_query = new WP_Query( array('post_type' =>'multi-residential','posts_per_pa
                        ?>
     propertiesList.push({
         id: <?php echo  $post->ID ;?>,
-        title: '<?php   echo $page-> NOM_RUE_COMPLET." ".$page->NO_INSCRIPTION;;?>',
+        title: '<?php   echo $page->NOM_RUE_COMPLET." ".$page->NO_INSCRIPTION;;?>',
         photo: '<?php  echo $results->PhotoURL;?>',
         position: {
             lat: '<?php echo $page->LATITUDE;?>',
