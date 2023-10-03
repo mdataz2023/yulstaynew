@@ -19,107 +19,107 @@ $the_query = new WP_Query( array('post_type' =>'rental-property','posts_per_page
     </div>
     <div class="pxp-content-side pxp-content-left pxp-half">
         <div class="pxp-content-side-wrapper">
-                    <div class="d-flex">
-                        <div class="pxp-content-side-search-form">
-                            <div class="row pxp-content-side-search-form-row">
-                                <div class="col-12 pxp-content-side-search-form-col">
-                                    <div class="form-group">
-                                        <select class="custom-select" id="pxp-p-filter-type">
-                                            <option value="">Select District</option>
-                                            <option value="">Apartment</option>
-                                            <option value="">House</option>
-                                            <option value="">Townhome</option>
-                                            <option value="">Multi-Family</option>
-                                            <option value="">Land</option>
-                                        </select>
-                                    </div>
-                                </div>
+            <div class="d-flex">
+                <div class="pxp-content-side-search-form">
+                    <div class="row pxp-content-side-search-form-row">
+                        <div class="col-12 pxp-content-side-search-form-col">
+                            <div class="form-group">
+                                <select class="custom-select" id="pxp-p-filter-type">
+                                    <option value="">Select District</option>
+                                    <option value="">Apartment</option>
+                                    <option value="">House</option>
+                                    <option value="">Townhome</option>
+                                    <option value="">Multi-Family</option>
+                                    <option value="">Land</option>
+                                </select>
                             </div>
-                        </div>
-                        <div class="d-flex">
-                            <a role="button" class="pxp-adv-toggle"><span class="fa fa-sliders"></span></a>
                         </div>
                     </div>
-                    <div class="pxp-content-side-search-form-adv mb-3">
-                        <div class="row pxp-content-side-search-form-row">
-                            <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
-                                <div class="form-group">
-                                    <label for="pxp-p-filter-price-min">Price</label>
-                                    <input type="text" class="form-control" placeholder="Min" id="pxp-p-filter-price-min">
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
-                                <div class="form-group">
-                                    <label for="pxp-p-filter-price-max" class="d-none d-sm-inline-block">&nbsp;</label>
-                                    <input type="text" class="form-control" placeholder="Max" id="pxp-p-filter-price-max">
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
-                                <div class="form-group">
-                                    <label for="pxp-p-filter-beds">Beds</label>
-                                    <select class="custom-select" id="pxp-p-filter-beds">
-                                        <option value="" selected="selected">Any</option>
-                                        <option value="">Studio</option>
-                                        <option value="">1</option>
-                                        <option value="">2</option>
-                                        <option value="">3</option>
-                                        <option value="">4</option>
-                                        <option value="">5+</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
-                                <div class="form-group">
-                                    <label for="pxp-p-filter-baths">Baths</label>
-                                    <select class="custom-select" id="pxp-p-filter-baths">
-                                        <option value="" selected="selected">Any</option>
-                                        <option value="">1+</option>
-                                        <option value="">1.5+</option>
-                                        <option value="">2+</option>
-                                        <option value="">3+</option>
-                                        <option value="">4+</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-md-4 pxp-content-side-search-form-col">
-                                <div class="form-group">
-                                    <label for="pxp-p-filter-size-min">Size (sq ft)</label>
-                                    <input type="text" class="form-control" id="pxp-p-filter-size-min" placeholder="Min">
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-md-4 pxp-content-side-search-form-col">
-                                <div class="form-group">
-                                    <label for="pxp-p-filter-size-max" class="d-none d-sm-inline-block">&nbsp;</label>
-                                    <input type="text" class="form-control" id="pxp-p-filter-size-max" placeholder="Max">
-                                </div>
-                            </div>
+                </div>
+                <div class="d-flex">
+                    <a role="button" class="pxp-adv-toggle"><span class="fa fa-sliders"></span></a>
+                </div>
+            </div>
+            <div class="pxp-content-side-search-form-adv mb-3">
+                <div class="row pxp-content-side-search-form-row">
+                    <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
+                        <div class="form-group">
+                            <label for="pxp-p-filter-price-min">Price</label>
+                            <input type="text" class="form-control" placeholder="Min" id="pxp-p-filter-price-min">
                         </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
+                        <div class="form-group">
+                            <label for="pxp-p-filter-price-max" class="d-none d-sm-inline-block">&nbsp;</label>
+                            <input type="text" class="form-control" placeholder="Max" id="pxp-p-filter-price-max">
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
+                        <div class="form-group">
+                            <label for="pxp-p-filter-beds">Beds</label>
+                            <select class="custom-select" id="pxp-p-filter-beds">
+                                <option value="" selected="selected">Any</option>
+                                <option value="">Studio</option>
+                                <option value="">1</option>
+                                <option value="">2</option>
+                                <option value="">3</option>
+                                <option value="">4</option>
+                                <option value="">5+</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
+                        <div class="form-group">
+                            <label for="pxp-p-filter-baths">Baths</label>
+                            <select class="custom-select" id="pxp-p-filter-baths">
+                                <option value="" selected="selected">Any</option>
+                                <option value="">1+</option>
+                                <option value="">1.5+</option>
+                                <option value="">2+</option>
+                                <option value="">3+</option>
+                                <option value="">4+</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 pxp-content-side-search-form-col">
+                        <div class="form-group">
+                            <label for="pxp-p-filter-size-min">Size (sq ft)</label>
+                            <input type="text" class="form-control" id="pxp-p-filter-size-min" placeholder="Min">
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 pxp-content-side-search-form-col">
+                        <div class="form-group">
+                            <label for="pxp-p-filter-size-max" class="d-none d-sm-inline-block">&nbsp;</label>
+                            <input type="text" class="form-control" id="pxp-p-filter-size-max" placeholder="Max">
+                        </div>
+                    </div>
+                </div>
 
 
-                        <a href="#" class="pxp-filter-btn">Apply Filters</a>
-                    </div>
-                    <div class="row pb-4">
-                        <div class="col-sm-6">
-                            <h2 class="pxp-content-side-h2">1,684 Results</h2>
+                <a href="#" class="pxp-filter-btn">Apply Filters</a>
+            </div>
+            <div class="row pb-4">
+                <div class="col-sm-6">
+                    <h2 class="pxp-content-side-h2">1,684 Results</h2>
+                </div>
+                <div class="col-sm-6">
+                    <div class="pxp-sort-form form-inline float-right">
+                        <div class="form-group">
+                            <select class="custom-select" id="pxp-sort-results">
+                                <option value="" selected="selected">Default Sort</option>
+                                <option value="">Price (Lo-Hi)</option>
+                                <option value="">Price (Hi-Lo)</option>
+                                <option value="">Beds</option>
+                                <option value="">Baths</option>
+                                <option value="">Size</option>
+                            </select>
                         </div>
-                        <div class="col-sm-6">
-                            <div class="pxp-sort-form form-inline float-right">
-                                <div class="form-group">
-                                    <select class="custom-select" id="pxp-sort-results">
-                                        <option value="" selected="selected">Default Sort</option>
-                                        <option value="">Price (Lo-Hi)</option>
-                                        <option value="">Price (Hi-Lo)</option>
-                                        <option value="">Beds</option>
-                                        <option value="">Baths</option>
-                                        <option value="">Size</option>
-                                    </select>
-                                </div>
-                                <div class="form-group d-flex">
-                                    <a role="button" class="pxp-map-toggle"><span class="fa fa-map-o"></span></a>
-                                </div>
-                            </div>
+                        <div class="form-group d-flex">
+                            <a role="button" class="pxp-map-toggle"><span class="fa fa-map-o"></span></a>
                         </div>
                     </div>
+                </div>
+            </div>
 
             <div class="row">
                 <?php
@@ -165,7 +165,11 @@ $the_query = new WP_Query( array('post_type' =>'rental-property','posts_per_page
                         <div class="pxp-results-card-1-details">
                             <div class="pxp-results-card-1-details-title"><?php the_title(); ?></div>
                             <div class="pxp-results-card-1-details-price">
-                                <?php echo $inscriptionsData->DEVISE_PRIX_LOCATION_DEMANDE .' '.($inscriptionsData->PRIX_LOCATION_DEMANDE==="CAN"?"$":$inscriptionsData->PRIX_LOCATION_DEMANDE)     ;?>
+                                <?php if($inscriptionsData->DEVISE_PRIX_DEMANDE==="CAN"){
+                                                            echo $inscriptionsData->PRIX_DEMANDE.' $';
+                                                        }else{
+                                                            echo $inscriptionsData->PRIX_LOCATION_DEMANDE;
+                                                        }?>
                             </div>
                         </div>
                         <div class="pxp-results-card-1-features">
@@ -586,8 +590,16 @@ $the_query = new WP_Query( array('post_type' =>'rental-property','posts_per_page
             lng: '<?php echo $page->LONGITUDE;?>'
         },
         price: {
-            long: '<?php echo $page->DEVISE_PRIX_LOCATION_DEMANDE.' '.($page->PRIX_LOCATION_DEMANDE==="CAN"?"$":$page->PRIX_LOCATION_DEMANDE)  ;?>',
-            short: '<?php echo $page->DEVISE_PRIX_LOCATION_DEMANDE.' '.($page->PRIX_LOCATION_DEMANDE==="CAN"?"$":$page->PRIX_LOCATION_DEMANDE)  ;?>'
+            long: '<?php if($inscriptionsData->DEVISE_PRIX_DEMANDE==="CAN"){
+                                                            echo $inscriptionsData->PRIX_DEMANDE.' $';
+                                                        }else{
+                                                            echo $inscriptionsData->PRIX_LOCATION_DEMANDE;
+                                                        }?>',
+            short: '<?php if($inscriptionsData->DEVISE_PRIX_DEMANDE==="CAN"){
+                                                            echo $inscriptionsData->PRIX_DEMANDE.' $';
+                                                        }else{
+                                                            echo $inscriptionsData->PRIX_LOCATION_DEMANDE;
+                                                        }?>'
         },
         link: '<?php  echo get_permalink( $post->ID );?>',
         features: {

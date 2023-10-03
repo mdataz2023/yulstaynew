@@ -25,8 +25,7 @@ $inscriptionsData = $wpdb->get_row(" SELECT * FROM INSCRIPTIONS where NO_INSCRIP
                     // echo $municipalite->DESCRIPTION.' - '.$inscriptionsData->NO_INSCRIPTION;
                     ?>
                         <?php the_title();?></h2>
-                    <p class="pxp-sp-top-address pxp-text-light">542 29th Avenue, Marina District, San Francisco, CA
-                        94121</p>
+                    <p class="pxp-sp-top-address pxp-text-light"><?php echo $inscriptionsData->NOM_RUE_COMPLET;?></p>
                 </div>
                 <div class="col-sm-12 col-md-7">
                     <div class="pxp-sp-top-btns mt-2 mt-md-0">
@@ -50,10 +49,14 @@ $inscriptionsData = $wpdb->get_row(" SELECT * FROM INSCRIPTIONS where NO_INSCRIP
                                 $UNITES_DETAILLEES = $wpdb->get_row("SELECT * FROM UNITES_DETAILLEES WHERE NO_INSCRIPTION='". $inscriptionsData->NO_INSCRIPTION."' ", OBJECT );
                                 echo $UNITES_DETAILLEES->NB_CHAMBRES;?> <span>BD</span></div>
                         <div><?php echo $inscriptionsData->NB_SALLES_BAINS;?> <span>BA</span></div>
-                        <div>--- <span><?php echo $inscriptionsData->UM_SUPERFICIE_HABITABLE;?></span></div>
+                        <div><?php echo $inscriptionsData->SUPERFICIE_HABITABLE;?><span> <?php echo $inscriptionsData->UM_SUPERFICIE_HABITABLE;?></span></div>
                     </div>
                     <div class="pxp-sp-top-price mt-3 mt-md-0">
-                        <?php echo $inscriptionsData->PRIX_DEMANDE.' '.($inscriptionsData->DEVISE_PRIX_DEMANDE==="CAN"?"$":$inscriptionsData->DEVISE_PRIX_DEMANDE) ;?>
+                    <?php if($inscriptionsData->DEVISE_PRIX_DEMANDE==="CAN"){
+                                                            echo $inscriptionsData->PRIX_DEMANDE.' $';
+                                                        }else{
+                                                            echo $inscriptionsData->PRIX_LOCATION_DEMANDE;
+                                                        }?>
                     </div>
                 </div>
             </div>
@@ -103,19 +106,29 @@ $inscriptionsData = $wpdb->get_row(" SELECT * FROM INSCRIPTIONS where NO_INSCRIP
                         <div class="col-sm-6">
                             <div class="pxp-sp-key-details-item">
                                 <div class="pxp-sp-kd-item-label text-uppercase">Property Type</div>
-                                <div class="pxp-sp-kd-item-value">Apartment</div>
+                                <div class="pxp-sp-kd-item-value"><?php
+                                    $GENRES_PROPRIETES = $wpdb->get_row("SELECT * FROM GENRES_PROPRIETES WHERE GENRE_PROPRIETE ='".$inscriptionsData->GENRE_PROPRIETE."'", OBJECT );
+                                    if ($lang == 'en-US'){
+                                       echo $GENRES_PROPRIETES->DESCRIPTION_ANGLAISE;
+                                   }else{
+                                        echo $GENRES_PROPRIETES->DESCRIPTION_FRANCAISE;
+                                    }
+                                ?></div>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="pxp-sp-key-details-item">
                                 <div class="pxp-sp-kd-item-label text-uppercase">Year Built</div>
-                                <div class="pxp-sp-kd-item-value">1980</div>
+                                <div class="pxp-sp-kd-item-value"><?php echo $inscriptionsData->ANNEE_CONTRUCTION?>
+                                </div>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="pxp-sp-key-details-item">
                                 <div class="pxp-sp-kd-item-label text-uppercase">Room Count</div>
-                                <div class="pxp-sp-kd-item-value">6</div>
+                                <div class="pxp-sp-kd-item-value"><?php
+                                $UNITES_DETAILLEES = $wpdb->get_row("SELECT * FROM UNITES_DETAILLEES WHERE NO_INSCRIPTION='". $inscriptionsData->NO_INSCRIPTION."' ", OBJECT );
+                                echo $UNITES_DETAILLEES->NB_CHAMBRES;?></div>
                             </div>
                         </div>
                         <div class="col-sm-6">
@@ -172,7 +185,12 @@ $inscriptionsData = $wpdb->get_row(" SELECT * FROM INSCRIPTIONS where NO_INSCRIP
                         <div class="col-sm-6 col-lg-4">
                             <div class="pxp-sp-amenities-item">
                                 <b><?php _e('Deed of sale Signature','theme-text-domain'); ?> - </b><?php
-                            echo $inscriptionsData->DELAI_OCCUPATION_ANGLAIS;?></div>
+                        if ($lang == 'en-US'){
+                            echo $inscriptionsData->DELAI_OCCUPATION_ANGLAIS;
+                        }else{
+                            echo $inscriptionsData->DELAI_OCCUPATION_FRANCAIS;
+                         }
+                         ?></div>
                         </div>
                         <?php
                         $results = $wpdb->get_results("SELECT * FROM CARACTERISTIQUES WHERE NO_INSCRIPTION = '".get_the_content()."' ", OBJECT );
@@ -182,13 +200,29 @@ $inscriptionsData = $wpdb->get_row(" SELECT * FROM INSCRIPTIONS where NO_INSCRIP
                             $TYPE_CARACTERISTIQUES = $wpdb->get_row("SELECT * FROM TYPE_CARACTERISTIQUES WHERE  CODE='".$page->TCAR_CODE."' ", OBJECT );
 
                         if($TYPE_CARACTERISTIQUES->DESCRIPTION_ANGLAISE==="Proximity"){
-                            $Proximity=($Proximity===""?$SOUS_TYPE_CARACTERISTIQUES->DESCRIPTION_ANGLAISE:$Proximity.", ".$SOUS_TYPE_CARACTERISTIQUES->DESCRIPTION_ANGLAISE);
+                            if ($lang == 'en-US'){
+                                $Proximity=($Proximity===""?$SOUS_TYPE_CARACTERISTIQUES->DESCRIPTION_ANGLAISE:$Proximity.", ".$SOUS_TYPE_CARACTERISTIQUES->DESCRIPTION_ANGLAISE);
+                            }else{
+                                $Proximity=($Proximity===""?$SOUS_TYPE_CARACTERISTIQUES->DESCRIPTION_FRANCAISE:$Proximity.", ".$SOUS_TYPE_CARACTERISTIQUES->DESCRIPTION_FRANCAISE);
+                             }
                         }else{
                    ?>
                         <div class="col-sm-6 col-lg-4">
                             <div class="pxp-sp-amenities-item">
-                                <b><?php echo $SOUS_TYPE_CARACTERISTIQUES->DESCRIPTION_ANGLAISE;?> - </b>
-                                <?php echo $TYPE_CARACTERISTIQUES->DESCRIPTION_ANGLAISE;?></div>
+                                <b><?php
+                                   if ($lang == 'en-US'){
+                                    echo $SOUS_TYPE_CARACTERISTIQUES->DESCRIPTION_ANGLAISE;
+                                }else{
+                                    echo $inscriptionsData->DESCRIPTION_FRANCAISE;
+                                 }
+                               ?> - </b>
+                                <?php
+                                  if ($lang == 'en-US'){
+                                    echo $TYPE_CARACTERISTIQUES->DESCRIPTION_ANGLAISE;
+                                }else{
+                                    echo $TYPE_CARACTERISTIQUES->DESCRIPTION_FRANCAISE;
+                                 }
+                               ?></div>
                         </div>
                         <?php }
                     }

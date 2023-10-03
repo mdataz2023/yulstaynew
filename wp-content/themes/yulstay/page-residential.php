@@ -124,7 +124,7 @@ global $wpdb;
                     </div>
 
             <div class="row">
-                <?php $the_query = new WP_Query( array('post_type' =>'residential','posts_per_page' => '100',  'post__not_in'   => array( $id),) );?>
+                <?php $the_query = new WP_Query( array('post_type' =>'residential','posts_per_page' => '1000',  'post__not_in'   => array( $id),) );?>
                 <?php
                 $postIndex=0;
                 if ( have_posts())   : while ( $the_query->have_posts() ) : $the_query->the_post();?>
@@ -165,7 +165,13 @@ global $wpdb;
                         <div class="pxp-results-card-1-details">
                             <div class="pxp-results-card-1-details-title"><?php the_title(); ?></div>
                             <div class="pxp-results-card-1-details-price">
-                                <?php echo $inscriptionsData->PRIX_DEMANDE.' '.($inscriptionsData->DEVISE_PRIX_DEMANDE==="CAN"?"$":$inscriptionsData->DEVISE_PRIX_DEMANDE)  ;?>
+                                <?php
+                                if($inscriptionsData->DEVISE_PRIX_DEMANDE==="CAN"){
+                                    echo $inscriptionsData->PRIX_DEMANDE.' $';
+                                }else{
+                                    echo $inscriptionsData->PRIX_LOCATION_DEMANDE;
+                                }
+                               ?>
                             </div>
                         </div>
                         <div class="pxp-results-card-1-features">
@@ -471,8 +477,16 @@ global $wpdb;
                                             lng: '<?php echo $page->LONGITUDE;?>'
                                         },
                                         price: {
-                                            long: '<?php echo $page->PRIX_DEMANDE.' '.($page->DEVISE_PRIX_DEMANDE==="CAN"?"$":$page->DEVISE_PRIX_DEMANDE)  ;?>',
-                                            short: '<?php echo $page->PRIX_DEMANDE.' '.($page->DEVISE_PRIX_DEMANDE==="CAN"?"$":$page->DEVISE_PRIX_DEMANDE)  ;?>'
+                                            long: '<?php if($inscriptionsData->DEVISE_PRIX_DEMANDE==="CAN"){
+                                                            echo $inscriptionsData->PRIX_DEMANDE.' $';
+                                                        }else{
+                                                            echo $inscriptionsData->PRIX_LOCATION_DEMANDE;
+                                                        }?>',
+                                            short: '<?php if($inscriptionsData->DEVISE_PRIX_DEMANDE==="CAN"){
+                                                            echo $inscriptionsData->PRIX_DEMANDE.' $';
+                                                        }else{
+                                                            echo $inscriptionsData->PRIX_LOCATION_DEMANDE;
+                                                        }?>'
                                         },
                                         link: '<?php  echo get_permalink( $post->ID );?>',
                                         features: {
