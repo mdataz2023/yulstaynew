@@ -768,7 +768,7 @@ unlink($zipFolder."INSCRIPTIONS.TXT");
     <div class="pxp-content">
         <div class="pxp-hero vh-100">
             <div class="pxp-hero-bg pxp-cover pxp-cover-bottom">
-                <video style="width:100%;" autoplay loop muted playsinline>
+                <video autoplay loop muted playsinline>
                     <source src="<?php echo get_template_directory_uri(); ?>/images/home-video.mp4" type="video/mp4">
                     <!-- You can add additional source elements for different video formats (e.g., WebM, Ogg) -->
                     Your browser does not support the video tag.
