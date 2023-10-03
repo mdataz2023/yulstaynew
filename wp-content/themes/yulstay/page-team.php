@@ -2,7 +2,11 @@
 /*
 	Template Name: Team
 */
-get_header();?>
+get_header();
+
+$team_page_banner_image = get_field('team_page_banner_image');
+
+?>
 
 <div class="pxp-content">
             <div class="pxp-agents pxp-content-wrapper mt-100">
@@ -16,7 +20,7 @@ get_header();?>
                 </div>
 
                 <div class="pxp-agents-hero mt-4 mt-md-5">
-                    <div class="pxp-agents-hero-fig pxp-cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/ph-big.jpg); background-position: 50% 60%;"></div>
+                    <div class="pxp-agents-hero-fig pxp-cover" style="background-image: url(<?php echo $team_page_banner_image ?>); background-position: 50% 60%;"></div>
 
                     <div hidden class="pxp-agents-hero-search-container">
                         <div class="container">
