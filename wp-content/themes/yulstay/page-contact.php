@@ -69,17 +69,17 @@ $contact_page_banner_image = get_field('contact_page_banner_image');
                             <h2 class="pxp-section-h2">Send Us A Message</h2>
                             <div class="pxp-contact-form mt-3 mt-md-4">
                                 <div class="row">
-                                    <div class="col-sm-12 col-md-6">
+                                    <div class="col-sm-12 col-md-12">
                                         <div class="form-group">
                                             <input type="text" class="form-control" id="pxp-contact-form-name" placeholder="Name">
                                         </div>
                                     </div>
-                                    <div class="col-sm-12 col-md-6">
+                                    <div class="col-sm-12 col-md-12">
                                         <div class="form-group">
                                             <input type="text" class="form-control" id="pxp-contact-form-email" placeholder="Email">
                                         </div>
                                     </div>
-                                    <div class="col-sm-12 col-md-6">
+                                    <!-- <div class="col-sm-12 col-md-6">
                                         <div class="form-group">
                                             <select class="custom-select" id="pxp-contact-form-reg">
                                                 <option value="">What is this regarding?</option>
@@ -91,8 +91,8 @@ $contact_page_banner_image = get_field('contact_page_banner_image');
                                                 <option value="">General questions</option>
                                             </select>
                                         </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-6">
+                                    </div> -->
+                                    <div class="col-sm-12 col-md-12">
                                         <div class="form-group">
                                             <input type="text" class="form-control" placeholder="Phone (optional)" id="pxp-contact-form-phone">
                                         </div>
@@ -123,5 +123,7 @@ $contact_page_banner_image = get_field('contact_page_banner_image');
                 </div>
             </div>
         </div>
+
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALbrsESmR55p0PLDbeL-SQ_YPuRpucYrw&amp;libraries=geometry&amp;libraries=places"></script>
 
 <?php get_footer(); ?>
