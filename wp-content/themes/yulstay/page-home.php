@@ -732,13 +732,6 @@ unlink($zipFolder."INSCRIPTIONS.TXT");
                                     <li><a href="single-agent.html">Single Agent</a></li>
                                 </ul> -->
                         </li>
-                        <li class="list-inline-item">
-                            <a href="#">Yulstay</a>
-                            <ul class="pxp-nav-sub rounded-lg">
-                                <li><a href="blog.html">All Blog Posts</a></li>
-                                <li><a href="single-post.html">Single Blog Post</a></li>
-                            </ul>
-                        </li>
                         <li class="list-inline-item pxp-is-last"><a href="<?php bloginfo('url'); ?>/contact">Contact
                                 Us</a></li>
                         <li class="list-inline-item pxp-has-btns">
@@ -754,6 +747,13 @@ unlink($zipFolder."INSCRIPTIONS.TXT");
                                     <li><a href="../dark/index.html">Dark</a></li>
                                 </ul> -->
                         </li>
+                        <li class="list-inline-item">
+                                <a href="#">Yulstay +</a>
+                                <ul class="pxp-nav-sub rounded-lg">
+                                    <li><a href="blog.html">Pod Casts</a></li>
+                                    <li><a href="single-post.html">Shop</a></li>
+                                </ul>
+                            </li>
                     </ul>
                 </div>
                 <div class="col-5 col-md-2 text-right">
