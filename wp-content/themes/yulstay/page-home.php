@@ -769,7 +769,8 @@ unlink($zipFolder."INSCRIPTIONS.TXT");
         <div class="pxp-hero vh-100">
             <div class="pxp-hero-bg pxp-cover pxp-cover-bottom">
                 <video autoplay loop muted playsinline>
-                    <source src="<?php echo get_template_directory_uri(); ?>/images/Yulstay.mp4" type="video/mp4">
+                    <!-- <source src="<?php echo get_template_directory_uri(); ?>/images/Yulstay.mp4" type="video/mp4"> -->
+                    <source src="<?php echo get_template_directory_uri(); ?>/images/home-video.mov" type="video/mov">
                     <!-- You can add additional source elements for different video formats (e.g., WebM, Ogg) -->
                     Your browser does not support the video tag.
                 </video>
@@ -778,9 +779,9 @@ unlink($zipFolder."INSCRIPTIONS.TXT");
             <div class="pxp-hero-caption">
                 <div class="container">
                     <!-- <h1 class="text-white">Find your future home</h1> -->
-                    <a href="<?php bloginfo('url'); ?>/"><img
-                            src="<?php echo get_template_directory_uri(); ?>/images/yulstay-logo.png"
-                            style="width: 6rem;" alt=""></a>
+                    <a href="<?php bloginfo('url'); ?>/">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/yulstay-logo.png" alt="">
+                    </a>
                 </div>
             </div>
         </div>
