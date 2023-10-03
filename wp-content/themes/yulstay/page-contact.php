@@ -2,7 +2,11 @@
 /*
 	Template Name: Contact
 */
-get_header();?>
+get_header();
+
+$contact_page_banner_image = get_field('contact_page_banner_image');
+
+?>
 
         <div class="pxp-content">
             <div class="pxp-contact pxp-content-wrapper mt-100">
@@ -16,7 +20,7 @@ get_header();?>
                 </div>
 
                 <div class="pxp-contact-hero mt-4 mt-md-5">
-                    <div class="pxp-contact-hero-fig pxp-cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/ph-big.jpg); background-position: 50% 80%;"></div>
+                    <div class="pxp-contact-hero-fig pxp-cover" style="background-image: url(<?php echo $contact_page_banner_image ?>); background-position: 50% 80%;"></div>
 
                     <div class="pxp-contact-hero-offices-container">
                         <div class="container">
