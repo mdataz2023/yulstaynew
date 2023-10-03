@@ -100,7 +100,7 @@ $the_query = new WP_Query( array('post_type' =>'multi-residential','posts_per_pa
                     </div>
                     <div class="row pb-4">
                         <div class="col-sm-6">
-                            <h2 class="pxp-content-side-h2">1,684 Results</h2>
+                            <h2 class="pxp-content-side-h2"><span id='postsCount'><?php echo $the_query->post_count ;?></span> Results</h2>
                         </div>
                         <div class="col-sm-6">
                             <div class="pxp-sort-form form-inline float-right">
