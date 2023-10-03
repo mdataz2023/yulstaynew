@@ -102,12 +102,6 @@ $inscriptionsData = $wpdb->get_row(" SELECT * FROM INSCRIPTIONS where NO_INSCRIP
                     <div class="row mt-3 mt-md-4">
                         <div class="col-sm-6">
                             <div class="pxp-sp-key-details-item">
-                                <div class="pxp-sp-kd-item-label text-uppercase">Status</div>
-                                <div class="pxp-sp-kd-item-value">Coming Soon</div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="pxp-sp-key-details-item">
                                 <div class="pxp-sp-kd-item-label text-uppercase">Property Type</div>
                                 <div class="pxp-sp-kd-item-value">Apartment</div>
                             </div>
@@ -116,12 +110,6 @@ $inscriptionsData = $wpdb->get_row(" SELECT * FROM INSCRIPTIONS where NO_INSCRIP
                             <div class="pxp-sp-key-details-item">
                                 <div class="pxp-sp-kd-item-label text-uppercase">Year Built</div>
                                 <div class="pxp-sp-kd-item-value">1980</div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="pxp-sp-key-details-item">
-                                <div class="pxp-sp-kd-item-label text-uppercase">Stories</div>
-                                <div class="pxp-sp-kd-item-value">23</div>
                             </div>
                         </div>
                         <div class="col-sm-6">
