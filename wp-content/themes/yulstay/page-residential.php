@@ -14,13 +14,13 @@ global $wpdb;
 
 ?>
 
-        <div class="pxp-content pxp-full-height">
-            <div class="pxp-map-side pxp-map-right pxp-half">
-                <div id="results-map"></div>
-                <a href="javascript:void(0);" class="pxp-list-toggle"><span class="fa fa-list"></span></a>
-            </div>
-            <div class="pxp-content-side pxp-content-left pxp-half">
-                <div class="pxp-content-side-wrapper">
+<div class="pxp-content pxp-full-height">
+    <div class="pxp-map-side pxp-map-right pxp-half">
+        <div id="results-map"></div>
+        <a href="javascript:void(0);" class="pxp-list-toggle"><span class="fa fa-list"></span></a>
+    </div>
+    <div class="pxp-content-side pxp-content-left pxp-half">
+        <div class="pxp-content-side-wrapper">
                     <div class="d-flex">
                         <div class="pxp-content-side-search-form">
                             <div class="row pxp-content-side-search-form-row">
@@ -123,34 +123,65 @@ global $wpdb;
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-sm-12 col-md-6 col-xxxl-4">
-                            <a href="single-property.html" class="pxp-results-card-1 rounded-lg" data-prop="1">
-                                <div id="card-carousel-1" class="carousel slide" data-ride="carousel" data-interval="false">
-                                    <div class="carousel-inner">
-                                        <div class="carousel-item active" style="background-image: url(images/ph-gallery.jpg)"></div>
-                                        <div class="carousel-item" style="background-image: url(images/ph-gallery.jpg);"></div>
-                                        <div class="carousel-item" style="background-image: url(images/ph-gallery.jpg);"></div>
-                                    </div>
-                                    <span class="carousel-control-prev" data-href="#card-carousel-1" data-slide="prev">
-                                        <span class="fa fa-angle-left" aria-hidden="true"></span>
-                                    </span>
-                                    <span class="carousel-control-next" data-href="#card-carousel-1" data-slide="next">
-                                        <span class="fa fa-angle-right" aria-hidden="true"></span>
-                                    </span>
-                                </div>
-                                <div class="pxp-results-card-1-gradient"></div>
-                                <div class="pxp-results-card-1-details">
-                                    <div class="pxp-results-card-1-details-title">Chic Apartment in Downtown</div>
-                                    <div class="pxp-results-card-1-details-price">$890,000</div>
-                                </div>
-                                <div class="pxp-results-card-1-features">
-                                    <span>2 BD <span>|</span> 2 BA <span>|</span> 920 SF</span>
-                                </div>
-                                <div class="pxp-results-card-1-save"><span class="fa fa-star-o"></span></div>
-                            </a>
+            <div class="row">
+                <?php $the_query = new WP_Query( array('post_type' =>'residential','posts_per_page' => '100',  'post__not_in'   => array( $id),) );?>
+                <?php
+                $postIndex=0;
+                if ( have_posts())   : while ( $the_query->have_posts() ) : $the_query->the_post();?>
+
+                <?php
+                    $inscriptionsData = $wpdb->get_row(" SELECT * FROM INSCRIPTIONS where NO_INSCRIPTION = '".get_the_content()."' and CODE_STATUT='EV'", OBJECT );
+                    if($inscriptionsData){
+                        $thumbnail_id = get_post_thumbnail_id();
+										$thumbnail_url = wp_get_attachment_image_src( $thumbnail_id, 'thumbnail-size', true );
+										$thumbnail_meta = get_post_meta( $thumbnail_id, '_wp_attachment_image_alt', true);
+
+                    $categories = get_the_category();
+                    $results = $wpdb->get_results(" SELECT * FROM PHOTOS where  NO_INSCRIPTION = '".get_the_content()."' limit 3", OBJECT );
+				?>
+                <div class="col-sm-12 col-md-6 col-xxxl-4">
+                    <a href="<?php the_permalink(); ?>" class="pxp-results-card-1 rounded-lg" data-prop="1">
+                        <div id="card-carousel-<?php echo  $postIndex;?>" class="carousel slide" data-ride="carousel" data-interval="false">
+                            <div class="carousel-inner">
+                                <?php
+                            $photoIndex=0;
+                            foreach ($results as $page) {
+                        ?>
+                                <div class="carousel-item <?php echo $photoIndex==0?"active":""?>"
+                                    style="background-image: url(<?php echo $page->PhotoURL;?>)"> </div>
+                                <?php
+                            $photoIndex= $photoIndex+1;
+                         }
+                        ?>
+                            </div>
+                            <span class="carousel-control-prev" data-href="#card-carousel-<?php echo  $postIndex;?>" data-slide="prev">
+                                <span class="fa fa-angle-left" aria-hidden="true"></span>
+                            </span>
+                            <span class="carousel-control-next" data-href="#card-carousel-<?php echo  $postIndex;?>" data-slide="next">
+                                <span class="fa fa-angle-right" aria-hidden="true"></span>
+                            </span>
                         </div>
-                        <div class="col-sm-12 col-md-6 col-xxxl-4">
+                        <div class="pxp-results-card-1-gradient"></div>
+                        <div class="pxp-results-card-1-details">
+                            <div class="pxp-results-card-1-details-title"><?php the_title(); ?></div>
+                            <div class="pxp-results-card-1-details-price">
+                                <?php echo $inscriptionsData->PRIX_DEMANDE.' '.($inscriptionsData->DEVISE_PRIX_DEMANDE==="CAN"?"$":$inscriptionsData->DEVISE_PRIX_DEMANDE)  ;?>
+                            </div>
+                        </div>
+                        <div class="pxp-results-card-1-features">
+                            <span><?php echo $inscriptionsData->NB_CHAMBRES;?> BD <span>|</span>
+                                <?php echo $inscriptionsData->NB_CHAMBRES_HORS_SOL;?> BA <span>|</span>
+                                <?php echo $inscriptionsData->UM_SPERFICIE_HABITABLE;?> </span>
+                        </div>
+                        <div class="pxp-results-card-1-save"><span class="fa fa-star-o"></span></div>
+                    </a>
+                </div>
+                <?php
+             $postIndex++;
+                        }
+            endwhile; endif; ?>
+
+                <!-- <div class="coUl-sm-12 col-md-6 col-xxxl-4">
                             <a href="single-property.html" class="pxp-results-card-1 rounded-lg" data-prop="2">
                                 <div id="card-carousel-2" class="carousel slide" data-ride="carousel" data-interval="false">
                                     <div class="carousel-inner">
@@ -279,24 +310,25 @@ global $wpdb;
                                 </div>
                                 <div class="pxp-results-card-1-save"><span class="fa fa-star-o"></span></div>
                             </a>
-                        </div>
-                    </div>
+                        </div> -->
+            </div>
 
-                    <ul class="pagination pxp-paginantion mt-2 mt-md-4">
-                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item"><a class="page-link" href="#">Next <span class="fa fa-angle-right"></span></a></li>
-                    </ul>
+            <!-- <ul class="pagination pxp-paginantion mt-2 mt-md-4">
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next <span class="fa fa-angle-right"></span></a>
+                </li>
+            </ul> -->
 
-                </div>
-                <div class="pxp-footer pxp-content-side-wrapper">
-                    <div class="pxp-footer-bottom">
-                        <div class="pxp-footer-copyright">&copy; Resideo. All Rights Reserved. 2021</div>
-                    </div>
-                </div>
+        </div>
+        <div class="pxp-footer pxp-content-side-wrapper">
+            <div class="pxp-footer-bottom">
+                <div class="pxp-footer-copyright">&copy; Resideo. All Rights Reserved. 2021</div>
             </div>
         </div>
+    </div>
+</div>
 
 <div class="modal fade" id="pxp-signin-modal" tabindex="-1" role="dialog" aria-labelledby="pxpSigninModal"
     aria-hidden="true">
