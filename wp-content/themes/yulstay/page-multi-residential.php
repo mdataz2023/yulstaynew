@@ -176,7 +176,7 @@ $the_query = new WP_Query( array('post_type' =>'multi-residential','posts_per_pa
                         <div class="pxp-results-card-1-features">
                             <span><?php echo $inscriptionsData->NB_CHAMBRES;?> BD <span>|</span>
                                 <?php echo $inscriptionsData->NB_CHAMBRES_HORS_SOL;?> BA <span>|</span>
-                                <?php echo $inscriptionsData->UM_SPERFICIE_HABITABLE;?> </span>
+                                <?php echo $inscriptionsData->UM_SUPERFICIE_HABITABLE;?> </span>
                         </div>
                         <div class="pxp-results-card-1-save"><span class="fa fa-star-o"></span></div>
                     </a>
@@ -576,7 +576,7 @@ $the_query = new WP_Query( array('post_type' =>'multi-residential','posts_per_pa
         }]
     }];
     <?php
-                        $datas = $wpdb->get_results("SELECT NB_CHAMBRES,UM_SPERFICIE_HABITABLE,NB_CHAMBRES_HORS_SOL,LATITUDE,LONGITUDE,NO_INSCRIPTION,DEVISE_PRIX_DEMANDE,PRIX_DEMANDE,PRIX_LOCATION_DEMANDE FROM INSCRIPTIONS i join wp_posts p on p.post_content=i.NO_INSCRIPTION where post_type='multi-residential'  and i.CODE_STATUT='EV'", OBJECT );
+                        $datas = $wpdb->get_results("SELECT NB_CHAMBRES,UM_SUPERFICIE_HABITABLE,NB_CHAMBRES_HORS_SOL,LATITUDE,LONGITUDE,NO_INSCRIPTION,DEVISE_PRIX_DEMANDE,PRIX_DEMANDE,PRIX_LOCATION_DEMANDE FROM INSCRIPTIONS i join wp_posts p on p.post_content=i.NO_INSCRIPTION where post_type='multi-residential'  and i.CODE_STATUT='EV'", OBJECT );
                         foreach ($datas as $page) {
                             $post = $wpdb->get_row("SELECT ID from wp_posts where post_content='".$page->NO_INSCRIPTION."'", OBJECT );
                             $results = $wpdb->get_row(" SELECT * FROM PHOTOS where  NO_INSCRIPTION = '".$page->NO_INSCRIPTION."'", OBJECT );
@@ -606,7 +606,7 @@ $the_query = new WP_Query( array('post_type' =>'multi-residential','posts_per_pa
         features: {
             beds: '<?php echo $page->NB_CHAMBRES;?>',
             baths: '<?php echo $page->NB_CHAMBRES_HORS_SOL;?>',
-            size: '<?php echo $page->UM_SPERFICIE_HABITABLE;?>'
+            size: '<?php echo $page->UM_SUPERFICIE_HABITABLE;?>'
         }
     });
     <?php
