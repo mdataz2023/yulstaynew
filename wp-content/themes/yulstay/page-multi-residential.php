@@ -591,17 +591,17 @@ $the_query = new WP_Query( array('post_type' =>'multi-residential','posts_per_pa
             lng: '<?php echo $page->LONGITUDE;?>'
         },
         price: {
-            long: '<?php if($inscriptionsData->DEVISE_PRIX_DEMANDE==="CAN"){
-                                                            echo $inscriptionsData->PRIX_DEMANDE.' $';
-                                                        }else{
-                                                            echo $inscriptionsData->PRIX_LOCATION_DEMANDE;
-                                                        }?>',
-            short: '<?php if($inscriptionsData->DEVISE_PRIX_DEMANDE==="CAN"){
-                                                            echo $inscriptionsData->PRIX_DEMANDE.' $';
-                                                        }else{
-                                                            echo $inscriptionsData->PRIX_LOCATION_DEMANDE;
-                                                        }?>'
-        },
+                    long: '<?php if($page->DEVISE_PRIX_DEMANDE==="CAN"){
+                                    echo $page->PRIX_DEMANDE.' $';
+                                }else{
+                                    echo $page->PRIX_LOCATION_DEMANDE;
+                                }?>',
+                    short: '<?php if($page->DEVISE_PRIX_DEMANDE==="CAN"){
+                                    echo $page->PRIX_DEMANDE.' $';
+                                }else{
+                                    echo $page->PRIX_LOCATION_DEMANDE;
+                                }?>'
+                },
         link: '<?php  echo get_permalink( $post->ID );?>',
         features: {
             beds: '<?php echo $page->NB_CHAMBRES;?>',
