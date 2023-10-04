@@ -499,7 +499,6 @@ global $wpdb;
                         }
 
                         ?>
-console.log(propertiesList,'xxxx')
     function CustomMarker(id, latlng, map, classname, html) {
         this.id        = id;
         this.latlng_   = latlng;
