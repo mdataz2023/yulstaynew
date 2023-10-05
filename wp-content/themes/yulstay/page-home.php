@@ -1155,6 +1155,50 @@ unlink($zipFolder."INSCRIPTIONS.TXT");
                 Neighborhoods</a>
         </div>
 
+        <div class="pxp-testim-1 pt-100 pb-100 mt-100 pxp-cover" style="background-image: url(images/ph-big.jpg);">
+                <div class="pxp-testim-1-intro">
+                    <h2 class="pxp-section-h2">Customer Testimonials</h2>
+                    <p class="pxp-text-light">What our customers say about us</p>
+                    <a href="#" class="pxp-primary-cta text-uppercase mt-2 mt-md-3 mt-lg-5 pxp-animate">Read All Stories</a>
+                </div>
+                <div class="pxp-testim-1-container mt-4 mt-md-5 mt-lg-0">
+                    <div class="owl-carousel pxp-testim-1-stage">
+                        <div>
+                            <div class="pxp-testim-1-item">
+                                <div class="pxp-testim-1-item-avatar pxp-cover" style="background-image: url(images/ph-avatar.jpg)"></div>
+                                <div class="pxp-testim-1-item-name">Derek Cotner</div>
+                                <div class="pxp-testim-1-item-location">Houston, TX</div>
+                                <div class="pxp-testim-1-item-message">While Resideo functions like a traditional broker, the company's promise is using technology to reduce the time and friction of  buying and selling house or apartment.</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="pxp-testim-1-item">
+                                <div class="pxp-testim-1-item-avatar pxp-cover" style="background-image: url(images/ph-avatar.jpg)"></div>
+                                <div class="pxp-testim-1-item-name">Rebecca Eason</div>
+                                <div class="pxp-testim-1-item-location">Washington, MD</div>
+                                <div class="pxp-testim-1-item-message">And it’s no wonder Resideo has shaken things up: As anyone who’s ever tried to rent or buy property in Washington knows, the experience is loaded with pain points.</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="pxp-testim-1-item">
+                                <div class="pxp-testim-1-item-avatar pxp-cover" style="background-image: url(images/ph-avatar.jpg)"></div>
+                                <div class="pxp-testim-1-item-name">Kenneth Spiers</div>
+                                <div class="pxp-testim-1-item-location">Cleveland, OH</div>
+                                <div class="pxp-testim-1-item-message">While Resideo functions like a traditional broker, the company's promise is using technology to reduce the time and friction of  buying and selling house or apartment.</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="pxp-testim-1-item">
+                                <div class="pxp-testim-1-item-avatar pxp-cover" style="background-image: url(images/ph-avatar.jpg)"></div>
+                                <div class="pxp-testim-1-item-name">Susanne Weil</div>
+                                <div class="pxp-testim-1-item-location">Cambridge, MA</div>
+                                <div class="pxp-testim-1-item-message">And it’s no wonder Resideo has shaken things up: As anyone who’s ever tried to rent or buy property in Cambridge knows, the experience is loaded with pain points.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
     </div>
 
 
