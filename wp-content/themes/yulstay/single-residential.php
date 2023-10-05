@@ -271,12 +271,8 @@ $inscriptionsData = $wpdb->get_row(" SELECT * FROM INSCRIPTIONS where NO_INSCRIP
                             <div class="col-sm-12 col-md-6">
                                 <div class="form-group">
                                     <label for="pxp-calculator-form-term">Purchase price</label>
-                                    <select class="custom-select" id="pxp-calculator-form-term">
-                                        <option value="30">30 Years Fixed</option>
-                                        <option value="20">20 Years Fixed</option>
-                                        <option value="15">15 Years Fixed</option>
-                                        <option value="10">10 Years Fixed</option>
-                                    </select>
+                                    <input type="text" class="form-control pxp-form-control-transform"
+                                        id="pxp-calculator-form-interest" data-type="percent" value="4.45%">
                                 </div>
                             </div>
                             <div class="col-sm-12 col-md-6">
@@ -289,8 +285,12 @@ $inscriptionsData = $wpdb->get_row(" SELECT * FROM INSCRIPTIONS where NO_INSCRIP
                             <div class="col-sm-12 col-md-6">
                                 <div class="form-group">
                                     <label for="pxp-calculator-form-price">Amortization</label>
-                                    <input type="text" class="form-control pxp-form-control-transform"
-                                        id="pxp-calculator-form-price" data-type="currency" value="$5,198,000">
+                                    <select class="custom-select" id="pxp-calculator-form-term">
+                                        <option value="30">30 Years Fixed</option>
+                                        <option value="20">20 Years Fixed</option>
+                                        <option value="15">15 Years Fixed</option>
+                                        <option value="10">10 Years Fixed</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-sm-12 col-md-6">
@@ -306,9 +306,12 @@ $inscriptionsData = $wpdb->get_row(" SELECT * FROM INSCRIPTIONS where NO_INSCRIP
                                     <div class="col-5 col-sm-5 col-md-4">
                                         <div class="form-group">
                                             <label for="pxp-calculator-form-down-percentage">Down payment</label>
-                                            <input type="text" class="form-control pxp-form-control-transform"
-                                                id="pxp-calculator-form-down-percentage" data-type="percent"
-                                                value="10%">
+                                            <select class="custom-select" id="pxp-calculator-form-term">
+                                                <option value="30">30 Years Fixed</option>
+                                                <option value="20">20 Years Fixed</option>
+                                                <option value="15">15 Years Fixed</option>
+                                                <option value="10">10 Years Fixed</option>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
@@ -377,19 +380,19 @@ $inscriptionsData = $wpdb->get_row(" SELECT * FROM INSCRIPTIONS where NO_INSCRIP
                             <div class="col-sm-12 col-md-6">
                                 <div class="form-group">
                                     <label for="pxp-calculator-form-term">Payment</label>
+                                    <input type="text" class="form-control pxp-form-control-transform"
+                                        id="pxp-calculator-form-interest" data-type="percent" value="4.45%">
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-6">
+                                <div class="form-group">
+                                    <label for="pxp-calculator-form-interest">Payment frequency</label>
                                     <select class="custom-select" id="pxp-calculator-form-term">
                                         <option value="30">30 Years Fixed</option>
                                         <option value="20">20 Years Fixed</option>
                                         <option value="15">15 Years Fixed</option>
                                         <option value="10">10 Years Fixed</option>
                                     </select>
-                                </div>
-                            </div>
-                            <div class="col-sm-12 col-md-6">
-                                <div class="form-group">
-                                    <label for="pxp-calculator-form-interest">Payment frequency</label>
-                                    <input type="text" class="form-control pxp-form-control-transform"
-                                        id="pxp-calculator-form-interest" data-type="percent" value="4.45%">
                                 </div>
                             </div>
                             <div class="col-sm-12 col-md-6">
@@ -404,9 +407,12 @@ $inscriptionsData = $wpdb->get_row(" SELECT * FROM INSCRIPTIONS where NO_INSCRIP
                                     <div class="col-7 col-sm-7 col-md-8">
                                         <div class="form-group">
                                             <label for="pxp-calculator-form-down-price">Amortization period</label>
-                                            <input type="text" class="form-control pxp-form-control-transform"
-                                                id="pxp-calculator-form-down-price" data-type="currency"
-                                                value="$519,800">
+                                            <select class="custom-select" id="pxp-calculator-form-term">
+                                                <option value="30">30 Years Fixed</option>
+                                                <option value="20">20 Years Fixed</option>
+                                                <option value="15">15 Years Fixed</option>
+                                                <option value="10">10 Years Fixed</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-5 col-sm-5 col-md-4">
