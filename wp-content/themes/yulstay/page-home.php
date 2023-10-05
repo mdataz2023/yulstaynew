@@ -630,13 +630,11 @@ foreach($getResultInscription as $value)
   if(count($wpdb->get_results("SELECT * FROM ".$wpdb->prefix."posts where post_content='$value->NO_INSCRIPTION'", OBJECT ))==0){
     // // Create post object
     $postType="";
-    if($value->CATEGORIE_PROPRIETE=="T"){
+    if($value->PRIX_LOCATION_DEMANDE>0){
       $postType="rental-property";
-    }
-    if($value->CATEGORIE_PROPRIETE=="R"){
+    }else if($value->CATEGORIE_PROPRIETE =="R" & $value->GENRE_PROPRIETE =="AP"){
       $postType='residential';
-    }
-    if($value->CATEGORIE_PROPRIETE=="M"){
+    }else{
       $postType='multi-residential';
     }
     $my_post = array(
@@ -748,12 +746,12 @@ unlink($zipFolder."INSCRIPTIONS.TXT");
                                 </ul> -->
                         </li>
                         <li class="list-inline-item">
-                                <a href="#">Yulstay +</a>
-                                <ul class="pxp-nav-sub rounded-lg">
-                                    <li><a href="blog.html">Pod Casts</a></li>
-                                    <li><a href="single-post.html">Shop</a></li>
-                                </ul>
-                            </li>
+                            <a href="#">Yulstay +</a>
+                            <ul class="pxp-nav-sub rounded-lg">
+                                <li><a href="blog.html">Pod Casts</a></li>
+                                <li><a href="single-post.html">Shop</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
                 <div class="col-5 col-md-2 text-right">
@@ -779,7 +777,7 @@ unlink($zipFolder."INSCRIPTIONS.TXT");
                 <div class="container">
                     <!-- <h1 class="text-white">Find your future home</h1> -->
                     <a href="<?php bloginfo('url'); ?>/">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/yulstay-logo.png" alt="">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/yulstay-logo.png" alt="">
                     </a>
                 </div>
             </div>
@@ -862,7 +860,8 @@ unlink($zipFolder."INSCRIPTIONS.TXT");
                         <?php } ?>
                         <div class="pxp-agents-1-item-details rounded-lg">
                             <div class="pxp-agents-1-item-details-name"><?php the_title(); ?></div>
-                            <div class="pxp-agents-1-item-details-email"><span class="fa fa-phone"></span> <?php echo get_field('team_member_telephone'); ?></div>
+                            <div class="pxp-agents-1-item-details-email"><span class="fa fa-phone"></span>
+                                <?php echo get_field('team_member_telephone'); ?></div>
                             <div class="pxp-agents-1-item-details-spacer"></div>
                             <div class="pxp-agents-1-item-cta text-uppercase">More Details</div>
                         </div>
@@ -952,107 +951,98 @@ unlink($zipFolder."INSCRIPTIONS.TXT");
             <p class="pxp-text-light"><?php echo $home_properties_section_descripton; ?></p>
             <div class="pxp-props-carousel-right-container mt-4 mt-md-5">
                 <div class="owl-carousel pxp-props-carousel-right-stage">
-                    <div>
-                        <a href="single-property.html" class="pxp-prop-card-1 rounded-lg">
-                            <div class="pxp-prop-card-1-fig pxp-cover"
-                                style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/ph-gallery.jpg);">
-                            </div>
-                            <div class="pxp-prop-card-1-gradient pxp-animate"></div>
-                            <div class="pxp-prop-card-1-details">
-                                <div class="pxp-prop-card-1-details-title">Chic Apartment in Downtown</div>
-                                <div class="pxp-prop-card-1-details-price">$890,000</div>
-                                <div class="pxp-prop-card-1-details-features text-uppercase">2 BD <span>|</span> 2 BA
-                                    <span>|</span> 920 SF
-                                </div>
-                            </div>
-                            <div class="pxp-prop-card-1-details-cta text-uppercase">View Details</div>
-                        </a>
-                    </div>
 
+                    <?php
+                        $datas = $wpdb->get_results("SELECT i.*,p.ID FROM INSCRIPTIONS i join wp_posts p on p.post_content=i.NO_INSCRIPTION where post_type='residential'  and i.CODE_STATUT='EV' limit 2", OBJECT );
+                        foreach ($datas as $inscriptionsData) {
+                    $results = $wpdb->get_row(" SELECT * FROM PHOTOS where  NO_INSCRIPTION = '".$inscriptionsData->NO_INSCRIPTION ."' limit 1", OBJECT );
+				?>
                     <div>
-                        <a href="single-property.html" class="pxp-prop-card-1 rounded-lg">
+                        <a href="<?php echo get_permalink( $inscriptionsData->ID );?>"
+                            class="pxp-prop-card-1 rounded-lg">
                             <div class="pxp-prop-card-1-fig pxp-cover"
-                                style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/ph-gallery.jpg);">
+                                style="background-image: url(<?php  echo $results->PhotoURL;?>);">
                             </div>
                             <div class="pxp-prop-card-1-gradient pxp-animate"></div>
                             <div class="pxp-prop-card-1-details">
-                                <div class="pxp-prop-card-1-details-title">Colorful Little Apartment</div>
-                                <div class="pxp-prop-card-1-details-price">$2,675</div>
-                                <div class="pxp-prop-card-1-details-features text-uppercase">1 BD <span>|</span> 1 BA
-                                    <span>|</span> 500 SF
+                                <div class="pxp-prop-card-1-details-title">
+                                    <?php echo $inscriptionsData->NOM_RUE_COMPLET;?></div>
+                                <div class="pxp-prop-card-1-details-price">
+                                    <?php  echo $inscriptionsData->PRIX_DEMANDE.' $';?></div>
+                                <div class="pxp-prop-card-1-details-features text-uppercase">
+                                    <?php  echo $inscriptionsData->NB_CHAMBRES;?> BD <span>|</span>
+                                    <?php echo $inscriptionsData->NB_CHAMBRES_HORS_SOL;?> BA
+                                    <span>|</span>
+                                    <?php echo $inscriptionsData->SUPERFICIE_HABITABLE." ".$inscriptionsData->UM_SUPERFICIE_HABITABLE;?>
                                 </div>
                             </div>
                             <div class="pxp-prop-card-1-details-cta text-uppercase">View Details</div>
                         </a>
                     </div>
+                    <?php
+                       $postIndex++;
+                    } ?>
+                    <?php
+                        $datas = $wpdb->get_results("SELECT i.*,p.ID FROM INSCRIPTIONS i join wp_posts p on p.post_content=i.NO_INSCRIPTION where post_type='rental-property'  and i.CODE_STATUT='EV' limit 2", OBJECT );
+                        foreach ($datas as $inscriptionsData) {
+                    $results = $wpdb->get_row(" SELECT * FROM PHOTOS where  NO_INSCRIPTION = '".$inscriptionsData->NO_INSCRIPTION ."' limit 1", OBJECT );
+				?>
+                    <div>
+                        <a href="<?php echo get_permalink( $inscriptionsData->ID );?>"
+                            class="pxp-prop-card-1 rounded-lg">
+                            <div class="pxp-prop-card-1-fig pxp-cover"
+                                style="background-image: url(<?php  echo $results->PhotoURL;?>);">
+                            </div>
+                            <div class="pxp-prop-card-1-gradient pxp-animate"></div>
+                            <div class="pxp-prop-card-1-details">
+                                <div class="pxp-prop-card-1-details-title">
+                                    <?php echo $inscriptionsData->NOM_RUE_COMPLET;?></div>
+                                <div class="pxp-prop-card-1-details-price">
+                                    <?php  echo $inscriptionsData->PRIX_LOCATION_DEMANDE.' $';?></div>
+                                <div class="pxp-prop-card-1-details-features text-uppercase">
+                                    <?php  echo $inscriptionsData->NB_CHAMBRES;?> BD <span>|</span>
+                                    <?php echo $inscriptionsData->NB_CHAMBRES_HORS_SOL;?> BA
+                                    <span>|</span>
+                                    <?php echo $inscriptionsData->SUPERFICIE_HABITABLE." ".$inscriptionsData->UM_SUPERFICIE_HABITABLE;?>
+                                </div>
+                            </div>
+                            <div class="pxp-prop-card-1-details-cta text-uppercase">View Details</div>
+                        </a>
+                    </div>
+                    <?php
+                       $postIndex++;
+                    } ?>
+                    <?php
+                        $datas = $wpdb->get_results("SELECT i.*,p.ID FROM INSCRIPTIONS i join wp_posts p on p.post_content=i.NO_INSCRIPTION where post_type='multi-residential'  and i.CODE_STATUT='EV' limit 2", OBJECT );
+                        foreach ($datas as $inscriptionsData) {
+                    $results = $wpdb->get_row(" SELECT * FROM PHOTOS where  NO_INSCRIPTION = '".$inscriptionsData->NO_INSCRIPTION ."' limit 1", OBJECT );
+				?>
+                    <div>
+                        <a href="<?php echo get_permalink( $inscriptionsData->ID );?>"
+                            class="pxp-prop-card-1 rounded-lg">
+                            <div class="pxp-prop-card-1-fig pxp-cover"
+                                style="background-image: url(<?php  echo $results->PhotoURL;?>);">
+                            </div>
+                            <div class="pxp-prop-card-1-gradient pxp-animate"></div>
+                            <div class="pxp-prop-card-1-details">
+                                <div class="pxp-prop-card-1-details-title">
+                                    <?php echo $inscriptionsData->NOM_RUE_COMPLET;?></div>
+                                <div class="pxp-prop-card-1-details-price">
+                                    <?php  echo $inscriptionsData->PRIX_DEMANDE.' $';?></div>
+                                <div class="pxp-prop-card-1-details-features text-uppercase">
+                                    <?php  echo $inscriptionsData->NB_CHAMBRES;?> BD <span>|</span>
+                                    <?php echo $inscriptionsData->NB_CHAMBRES_HORS_SOL;?> BA
+                                    <span>|</span>
+                                    <?php echo $inscriptionsData->SUPERFICIE_HABITABLE." ".$inscriptionsData->UM_SUPERFICIE_HABITABLE;?>
+                                </div>
+                            </div>
+                            <div class="pxp-prop-card-1-details-cta text-uppercase">View Details</div>
+                        </a>
+                    </div>
+                    <?php
+                       $postIndex++;
+                    } ?>
 
-                    <div>
-                        <a href="single-property.html" class="pxp-prop-card-1 rounded-lg">
-                            <div class="pxp-prop-card-1-fig pxp-cover"
-                                style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/ph-gallery.jpg);">
-                            </div>
-                            <div class="pxp-prop-card-1-gradient pxp-animate"></div>
-                            <div class="pxp-prop-card-1-details">
-                                <div class="pxp-prop-card-1-details-title">Cozy Two Bedroom Apartment</div>
-                                <div class="pxp-prop-card-1-details-price">$960,000</div>
-                                <div class="pxp-prop-card-1-details-features text-uppercase">2 BD <span>|</span> 2 BA
-                                    <span>|</span> 870 SF
-                                </div>
-                            </div>
-                            <div class="pxp-prop-card-1-details-cta text-uppercase">View Details</div>
-                        </a>
-                    </div>
-
-                    <div>
-                        <a href="single-property.html" class="pxp-prop-card-1 rounded-lg">
-                            <div class="pxp-prop-card-1-fig pxp-cover"
-                                style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/ph-gallery.jpg);">
-                            </div>
-                            <div class="pxp-prop-card-1-gradient pxp-animate"></div>
-                            <div class="pxp-prop-card-1-details">
-                                <div class="pxp-prop-card-1-details-title">Beautiful House in Marina</div>
-                                <div class="pxp-prop-card-1-details-price">$5,198,000</div>
-                                <div class="pxp-prop-card-1-details-features text-uppercase">5 BD <span>|</span> 4.5 BA
-                                    <span>|</span> 3,945 SF
-                                </div>
-                            </div>
-                            <div class="pxp-prop-card-1-details-cta text-uppercase">View Details</div>
-                        </a>
-                    </div>
-
-                    <div>
-                        <a href="single-property.html" class="pxp-prop-card-1 rounded-lg">
-                            <div class="pxp-prop-card-1-fig pxp-cover"
-                                style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/ph-gallery.jpg);">
-                            </div>
-                            <div class="pxp-prop-card-1-gradient pxp-animate"></div>
-                            <div class="pxp-prop-card-1-details">
-                                <div class="pxp-prop-card-1-details-title">Modern Residence</div>
-                                <div class="pxp-prop-card-1-details-price">$7,995</div>
-                                <div class="pxp-prop-card-1-details-features text-uppercase">4 BD <span>|</span> 1.5 BA
-                                    <span>|</span> 2,240 SF
-                                </div>
-                            </div>
-                            <div class="pxp-prop-card-1-details-cta text-uppercase">View Details</div>
-                        </a>
-                    </div>
-
-                    <div>
-                        <a href="single-property.html" class="pxp-prop-card-1 rounded-lg">
-                            <div class="pxp-prop-card-1-fig pxp-cover"
-                                style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/ph-gallery.jpg);">
-                            </div>
-                            <div class="pxp-prop-card-1-gradient pxp-animate"></div>
-                            <div class="pxp-prop-card-1-details">
-                                <div class="pxp-prop-card-1-details-title">Luxury Mansion</div>
-                                <div class="pxp-prop-card-1-details-price">$5,430,000</div>
-                                <div class="pxp-prop-card-1-details-features text-uppercase">4 BD <span>|</span> 5 BA
-                                    <span>|</span> 5,200 SF
-                                </div>
-                            </div>
-                            <div class="pxp-prop-card-1-details-cta text-uppercase">View Details</div>
-                        </a>
-                    </div>
                 </div>
 
                 <a href="<?php echo $home_properties_section_page_link; ?>"

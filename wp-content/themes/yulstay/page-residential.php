@@ -20,116 +20,116 @@ global $wpdb;
         <a href="javascript:void(0);" class="pxp-list-toggle"><span class="fa fa-list"></span></a>
     </div>
     <div class="pxp-content-side pxp-content-left pxp-half">
-                <div class="pxp-content-side-wrapper">
-                    <div class="d-flex">
-                        <div class="pxp-content-side-search-form">
-                            <div class="row pxp-content-side-search-form-row">
-                                <div class="col-12 pxp-content-side-search-form-col">
-                                    <div class="form-group">
-                                        <select class="custom-select" id="pxp-p-filter-type">
-                                            <option value="">Select District</option>
-                                            <option value="">Apartment</option>
-                                            <option value="">House</option>
-                                            <option value="">Townhome</option>
-                                            <option value="">Multi-Family</option>
-                                            <option value="">Land</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="d-flex">
-                            <a role="button" class="pxp-adv-toggle"><span class="fa fa-sliders"></span></a>
-                        </div>
-                    </div>
-                    <div class="pxp-content-side-search-form-adv mb-3">
-                        <div class="row pxp-content-side-search-form-row">
-                            <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
-                                <div class="form-group">
-                                    <label for="pxp-p-filter-price-min">Price</label>
-                                    <input type="text" class="form-control" placeholder="Min" id="pxp-p-filter-price-min">
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
-                                <div class="form-group">
-                                    <label for="pxp-p-filter-price-max" class="d-none d-sm-inline-block">&nbsp;</label>
-                                    <input type="text" class="form-control" placeholder="Max" id="pxp-p-filter-price-max">
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
-                                <div class="form-group">
-                                    <label for="pxp-p-filter-beds">Beds</label>
-                                    <select class="custom-select" id="pxp-p-filter-beds">
-                                        <option value="" selected="selected">Any</option>
-                                        <option value="">Studio</option>
-                                        <option value="">1</option>
-                                        <option value="">2</option>
-                                        <option value="">3</option>
-                                        <option value="">4</option>
-                                        <option value="">5+</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
-                                <div class="form-group">
-                                    <label for="pxp-p-filter-baths">Baths</label>
-                                    <select class="custom-select" id="pxp-p-filter-baths">
-                                        <option value="" selected="selected">Any</option>
-                                        <option value="">1+</option>
-                                        <option value="">1.5+</option>
-                                        <option value="">2+</option>
-                                        <option value="">3+</option>
-                                        <option value="">4+</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-md-4 pxp-content-side-search-form-col">
-                                <div class="form-group">
-                                    <label for="pxp-p-filter-size-min">Size (sq ft)</label>
-                                    <input type="text" class="form-control" id="pxp-p-filter-size-min" placeholder="Min">
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-md-4 pxp-content-side-search-form-col">
-                                <div class="form-group">
-                                    <label for="pxp-p-filter-size-max" class="d-none d-sm-inline-block">&nbsp;</label>
-                                    <input type="text" class="form-control" id="pxp-p-filter-size-max" placeholder="Max">
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <a href="#" class="pxp-filter-btn">Apply Filters</a>
-                    </div>
-                    <div class="row pb-4">
-                        <div class="col-sm-6">
-                            <h2 class="pxp-content-side-h2">1,684 Results</h2>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="pxp-sort-form form-inline float-right">
-                                <div class="form-group">
-                                    <select class="custom-select" id="pxp-sort-results">
-                                        <option value="" selected="selected">Default Sort</option>
-                                        <option value="">Price (Lo-Hi)</option>
-                                        <option value="">Price (Hi-Lo)</option>
-                                        <option value="">Beds</option>
-                                        <option value="">Baths</option>
-                                        <option value="">Size</option>
-                                    </select>
-                                </div>
-                                <div class="form-group d-flex">
-                                    <a role="button" class="pxp-map-toggle"><span class="fa fa-map-o"></span></a>
-                                </div>
+    <div class="d-flex">
+                <div class="pxp-content-side-search-form">
+                    <div class="row pxp-content-side-search-form-row">
+                        <div class="col-12 pxp-content-side-search-form-col">
+                            <div class="form-group">
+                                <select class="custom-select" id="pxp-p-filter-type">
+                                    <option value="">Select District</option>
+                                    <option value="">Apartment</option>
+                                    <option value="">House</option>
+                                    <option value="">Townhome</option>
+                                    <option value="">Multi-Family</option>
+                                    <option value="">Land</option>
+                                </select>
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="d-flex">
+                    <a role="button" class="pxp-adv-toggle"><span class="fa fa-sliders"></span></a>
+                </div>
+            </div>
+            <div class="pxp-content-side-search-form-adv mb-3">
+                <div class="row pxp-content-side-search-form-row">
+                    <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
+                        <div class="form-group">
+                            <label for="pxp-p-filter-price-min">Price</label>
+                            <input type="text" class="form-control" placeholder="Min" id="pxp-p-filter-price-min">
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
+                        <div class="form-group">
+                            <label for="pxp-p-filter-price-max" class="d-none d-sm-inline-block">&nbsp;</label>
+                            <input type="text" class="form-control" placeholder="Max" id="pxp-p-filter-price-max">
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
+                        <div class="form-group">
+                            <label for="pxp-p-filter-beds">Beds</label>
+                            <select class="custom-select" id="pxp-p-filter-beds">
+                                <option value="" selected="selected">Any</option>
+                                <option value="">Studio</option>
+                                <option value="">1</option>
+                                <option value="">2</option>
+                                <option value="">3</option>
+                                <option value="">4</option>
+                                <option value="">5+</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
+                        <div class="form-group">
+                            <label for="pxp-p-filter-baths">Baths</label>
+                            <select class="custom-select" id="pxp-p-filter-baths">
+                                <option value="" selected="selected">Any</option>
+                                <option value="">1+</option>
+                                <option value="">1.5+</option>
+                                <option value="">2+</option>
+                                <option value="">3+</option>
+                                <option value="">4+</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 pxp-content-side-search-form-col">
+                        <div class="form-group">
+                            <label for="pxp-p-filter-size-min">Size (sq ft)</label>
+                            <input type="text" class="form-control" id="pxp-p-filter-size-min" placeholder="Min">
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 pxp-content-side-search-form-col">
+                        <div class="form-group">
+                            <label for="pxp-p-filter-size-max" class="d-none d-sm-inline-block">&nbsp;</label>
+                            <input type="text" class="form-control" id="pxp-p-filter-size-max" placeholder="Max">
+                        </div>
+                    </div>
+                </div>
 
-            <div class="row">
-                <?php $the_query = new WP_Query( array('post_type' =>'residential','posts_per_page' => '1000',  'post__not_in'   => array( $id),) );?>
-                <?php
+
+                <a href="#" class="pxp-filter-btn">Apply Filters</a>
+            </div>
+
+        <div class="row pb-4">
+            <div class="col-sm-6">
+                <h2 class="pxp-content-side-h2">1,684 Results</h2>
+            </div>
+            <div class="col-sm-6">
+                <div class="pxp-sort-form form-inline float-right">
+                    <div class="form-group">
+                        <select class="custom-select" id="pxp-sort-results">
+                            <option value="" selected="selected">Default Sort</option>
+                            <option value="">Price (Lo-Hi)</option>
+                            <option value="">Price (Hi-Lo)</option>
+                            <option value="">Beds</option>
+                            <option value="">Baths</option>
+                            <option value="">Size</option>
+                        </select>
+                    </div>
+                    <div class="form-group d-flex">
+                        <a role="button" class="pxp-map-toggle"><span class="fa fa-map-o"></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <?php $the_query = new WP_Query( array('post_type' =>'residential','posts_per_page' => '1000',  'post__not_in'   => array( $id),) );?>
+            <?php
                 $postIndex=0;
                 if ( have_posts())   : while ( $the_query->have_posts() ) : $the_query->the_post();?>
 
-                <?php
+            <?php
                     $inscriptionsData = $wpdb->get_row(" SELECT * FROM INSCRIPTIONS where NO_INSCRIPTION = '".get_the_content()."' and CODE_STATUT='EV'", OBJECT );
                     if($inscriptionsData){
                         $thumbnail_id = get_post_thumbnail_id();
@@ -139,55 +139,52 @@ global $wpdb;
                     $categories = get_the_category();
                     $results = $wpdb->get_results(" SELECT * FROM PHOTOS where  NO_INSCRIPTION = '".get_the_content()."' limit 3", OBJECT );
 				?>
-                <div class="col-sm-12 col-md-6 col-xxxl-4">
-                    <a href="<?php the_permalink(); ?>" class="pxp-results-card-1 rounded-lg" data-prop="1">
-                        <div id="card-carousel-<?php echo  $postIndex;?>" class="carousel slide" data-ride="carousel" data-interval="false">
-                            <div class="carousel-inner">
-                                <?php
+            <div class="col-sm-12 col-md-6 col-xxxl-4">
+                <a href="<?php the_permalink(); ?>" class="pxp-results-card-1 rounded-lg" data-prop="1">
+                    <div id="card-carousel-<?php echo  $postIndex;?>" class="carousel slide" data-ride="carousel"
+                        data-interval="false">
+                        <div class="carousel-inner">
+                            <?php
                             $photoIndex=0;
                             foreach ($results as $page) {
                         ?>
-                                <div class="carousel-item <?php echo $photoIndex==0?"active":""?>"
-                                    style="background-image: url(<?php echo $page->PhotoURL;?>)"> </div>
-                                <?php
+                            <div class="carousel-item <?php echo $photoIndex==0?"active":""?>"
+                                style="background-image: url(<?php echo $page->PhotoURL;?>)"> </div>
+                            <?php
                             $photoIndex= $photoIndex+1;
                          }
                         ?>
-                            </div>
-                            <span class="carousel-control-prev" data-href="#card-carousel-<?php echo  $postIndex;?>" data-slide="prev">
-                                <span class="fa fa-angle-left" aria-hidden="true"></span>
-                            </span>
-                            <span class="carousel-control-next" data-href="#card-carousel-<?php echo  $postIndex;?>" data-slide="next">
-                                <span class="fa fa-angle-right" aria-hidden="true"></span>
-                            </span>
                         </div>
-                        <div class="pxp-results-card-1-gradient"></div>
-                        <div class="pxp-results-card-1-details">
-                            <div class="pxp-results-card-1-details-title"><?php the_title(); ?></div>
-                            <div class="pxp-results-card-1-details-price">
-                                <?php
-                                if($inscriptionsData->DEVISE_PRIX_DEMANDE==="CAN"){
-                                    echo $inscriptionsData->PRIX_DEMANDE.' $';
-                                }else{
-                                    echo $inscriptionsData->PRIX_LOCATION_DEMANDE;
-                                }
-                               ?>
-                            </div>
+                        <span class="carousel-control-prev" data-href="#card-carousel-<?php echo  $postIndex;?>"
+                            data-slide="prev">
+                            <span class="fa fa-angle-left" aria-hidden="true"></span>
+                        </span>
+                        <span class="carousel-control-next" data-href="#card-carousel-<?php echo  $postIndex;?>"
+                            data-slide="next">
+                            <span class="fa fa-angle-right" aria-hidden="true"></span>
+                        </span>
+                    </div>
+                    <div class="pxp-results-card-1-gradient"></div>
+                    <div class="pxp-results-card-1-details">
+                        <div class="pxp-results-card-1-details-title"><?php the_title(); ?></div>
+                        <div class="pxp-results-card-1-details-price">
+                            <?php  echo $inscriptionsData->PRIX_DEMANDE.' $';?>
                         </div>
-                        <div class="pxp-results-card-1-features">
-                            <span><?php echo $inscriptionsData->NB_CHAMBRES;?> BD <span>|</span>
-                                <?php echo $inscriptionsData->NB_CHAMBRES_HORS_SOL;?> BA <span>|</span>
-                                <?php echo $inscriptionsData->UM_SUPERFICIE_HABITABLE;?> </span>
-                        </div>
-                        <div class="pxp-results-card-1-save"><span class="fa fa-star-o"></span></div>
-                    </a>
-                </div>
-                <?php
+                    </div>
+                    <div class="pxp-results-card-1-features">
+                        <span><?php echo $inscriptionsData->NB_CHAMBRES;?> BD <span>|</span>
+                            <?php echo $inscriptionsData->NB_CHAMBRES_HORS_SOL;?> BA <span>|</span>
+                            <?php echo $inscriptionsData->SUPERFICIE_HABITABLE." ".$inscriptionsData->UM_SUPERFICIE_HABITABLE;?> </span>
+                    </div>
+                    <div class="pxp-results-card-1-save"><span class="fa fa-star-o"></span></div>
+                </a>
+            </div>
+            <?php
              $postIndex++;
                         }
             endwhile; endif; ?>
 
-                <!-- <div class="coUl-sm-12 col-md-6 col-xxxl-4">
+            <!-- <div class="coUl-sm-12 col-md-6 col-xxxl-4">
                             <a href="single-property.html" class="pxp-results-card-1 rounded-lg" data-prop="2">
                                 <div id="card-carousel-2" class="carousel slide" data-ride="carousel" data-interval="false">
                                     <div class="carousel-inner">
@@ -317,9 +314,9 @@ global $wpdb;
                                 <div class="pxp-results-card-1-save"><span class="fa fa-star-o"></span></div>
                             </a>
                         </div> -->
-            </div>
+        </div>
 
-            <!-- <ul class="pagination pxp-paginantion mt-2 mt-md-4">
+        <!-- <ul class="pagination pxp-paginantion mt-2 mt-md-4">
                 <li class="page-item active"><a class="page-link" href="#">1</a></li>
                 <li class="page-item"><a class="page-link" href="#">2</a></li>
                 <li class="page-item"><a class="page-link" href="#">3</a></li>
@@ -327,13 +324,13 @@ global $wpdb;
                 </li>
             </ul> -->
 
-        </div>
-        <div class="pxp-footer pxp-content-side-wrapper">
-            <div class="pxp-footer-bottom">
-                <div class="pxp-footer-copyright">&copy; Resideo. All Rights Reserved. 2021</div>
-            </div>
+    </div>
+    <div class="pxp-footer pxp-content-side-wrapper">
+        <div class="pxp-footer-bottom">
+            <div class="pxp-footer-copyright">&copy; Resideo. All Rights Reserved. 2021</div>
         </div>
     </div>
+</div>
 </div>
 
 <div class="modal fade" id="pxp-signin-modal" tabindex="-1" role="dialog" aria-labelledby="pxpSigninModal"
@@ -442,10 +439,10 @@ global $wpdb;
     var markers = [];
     var markerCluster;
     var styles;
-    var propertiesList=[];
+    var propertiesList = [];
     var options = {
-        zoom : 14,
-        mapTypeId : 'Styled',
+        zoom: 14,
+        mapTypeId: 'Styled',
         panControl: false,
         zoomControl: true,
         mapTypeControl: false,
@@ -459,54 +456,163 @@ global $wpdb;
         fullscreenControl: false,
     };
 
-    styles = [{"featureType": "water","elementType": "geometry","stylers": [{"color": "#e9e9e9"},{"lightness": 17}]},{"featureType": "landscape","elementType": "geometry","stylers": [{"color": "#f5f5f5"},{"lightness": 20}]},{"featureType": "road.highway","elementType": "geometry.fill","stylers": [{"color": "#ffffff"},{"lightness": 17}]},{"featureType": "road.highway","elementType": "geometry.stroke","stylers": [{"color": "#ffffff"},{"lightness": 29},{"weight": 0.2}]},{"featureType": "road.arterial","elementType": "geometry","stylers": [{"color": "#ffffff"},{"lightness": 18}]},{"featureType": "road.local","elementType": "geometry","stylers": [{"color": "#ffffff"},{"lightness": 16}]},{"featureType": "poi","elementType": "geometry","stylers": [{"color": "#f5f5f5"},{"lightness": 21}]},{"featureType": "poi.park","elementType": "geometry","stylers": [{"color": "#dedede"},{"lightness": 21}]},{"elementType": "labels.text.stroke","stylers": [{"visibility": "on"},{"color": "#ffffff"},{"lightness": 16}]},{"elementType": "labels.text.fill","stylers": [{"saturation": 36},{"color": "#333333"},{"lightness": 40}]},{"elementType": "labels.icon","stylers": [{"visibility": "off"}]},{"featureType": "transit","elementType": "geometry","stylers": [{"color": "#f2f2f2"},{"lightness": 19}]},{"featureType": "administrative","elementType": "geometry.fill","stylers": [{"color": "#fefefe"},{"lightness": 20}]},{"featureType": "administrative","elementType": "geometry.stroke","stylers": [{"color": "#fefefe"},{"lightness": 17},{"weight": 1.2}]}];
-                <?php
+    styles = [{
+        "featureType": "water",
+        "elementType": "geometry",
+        "stylers": [{
+            "color": "#e9e9e9"
+        }, {
+            "lightness": 17
+        }]
+    }, {
+        "featureType": "landscape",
+        "elementType": "geometry",
+        "stylers": [{
+            "color": "#f5f5f5"
+        }, {
+            "lightness": 20
+        }]
+    }, {
+        "featureType": "road.highway",
+        "elementType": "geometry.fill",
+        "stylers": [{
+            "color": "#ffffff"
+        }, {
+            "lightness": 17
+        }]
+    }, {
+        "featureType": "road.highway",
+        "elementType": "geometry.stroke",
+        "stylers": [{
+            "color": "#ffffff"
+        }, {
+            "lightness": 29
+        }, {
+            "weight": 0.2
+        }]
+    }, {
+        "featureType": "road.arterial",
+        "elementType": "geometry",
+        "stylers": [{
+            "color": "#ffffff"
+        }, {
+            "lightness": 18
+        }]
+    }, {
+        "featureType": "road.local",
+        "elementType": "geometry",
+        "stylers": [{
+            "color": "#ffffff"
+        }, {
+            "lightness": 16
+        }]
+    }, {
+        "featureType": "poi",
+        "elementType": "geometry",
+        "stylers": [{
+            "color": "#f5f5f5"
+        }, {
+            "lightness": 21
+        }]
+    }, {
+        "featureType": "poi.park",
+        "elementType": "geometry",
+        "stylers": [{
+            "color": "#dedede"
+        }, {
+            "lightness": 21
+        }]
+    }, {
+        "elementType": "labels.text.stroke",
+        "stylers": [{
+            "visibility": "on"
+        }, {
+            "color": "#ffffff"
+        }, {
+            "lightness": 16
+        }]
+    }, {
+        "elementType": "labels.text.fill",
+        "stylers": [{
+            "saturation": 36
+        }, {
+            "color": "#333333"
+        }, {
+            "lightness": 40
+        }]
+    }, {
+        "elementType": "labels.icon",
+        "stylers": [{
+            "visibility": "off"
+        }]
+    }, {
+        "featureType": "transit",
+        "elementType": "geometry",
+        "stylers": [{
+            "color": "#f2f2f2"
+        }, {
+            "lightness": 19
+        }]
+    }, {
+        "featureType": "administrative",
+        "elementType": "geometry.fill",
+        "stylers": [{
+            "color": "#fefefe"
+        }, {
+            "lightness": 20
+        }]
+    }, {
+        "featureType": "administrative",
+        "elementType": "geometry.stroke",
+        "stylers": [{
+            "color": "#fefefe"
+        }, {
+            "lightness": 17
+        }, {
+            "weight": 1.2
+        }]
+    }];
+    <?php
                         $datas = $wpdb->get_results("SELECT NB_CHAMBRES,UM_SUPERFICIE_HABITABLE,NB_CHAMBRES_HORS_SOL,LATITUDE,LONGITUDE,NO_INSCRIPTION,DEVISE_PRIX_DEMANDE,PRIX_DEMANDE,PRIX_LOCATION_DEMANDE FROM INSCRIPTIONS i join wp_posts p on p.post_content=i.NO_INSCRIPTION where p.post_type='residential' and i.CODE_STATUT='EV'", OBJECT );
                         foreach ($datas as $page) {
                             $post = $wpdb->get_row("SELECT ID from wp_posts where post_content='".$page->NO_INSCRIPTION."'", OBJECT );
                             $results = $wpdb->get_row(" SELECT * FROM PHOTOS where  NO_INSCRIPTION = '".$page->NO_INSCRIPTION."'", OBJECT );
 
                        ?>
-                                propertiesList.push(
-                                    {
-                                        id: <?php echo  $post->ID ;?>,
-                                        title: '<?php  echo $page->NOM_RUE_COMPLET." ".$page->NO_INSCRIPTION;?>',
-                                        photo: '<?php  echo $results->PhotoURL;?>',
-                                        position: {
-                                            lat: '<?php echo $page->LATITUDE;?>',
-                                            lng: '<?php echo $page->LONGITUDE;?>'
-                                        },
-                                        price: {
-                                            long: '<?php if($page->DEVISE_PRIX_DEMANDE==="CAN"){
-                                                            echo $page->PRIX_DEMANDE.' $';
-                                                        }else{
-                                                            echo $page->PRIX_LOCATION_DEMANDE;
-                                                        }?>',
-                                            short: '<?php if($page->DEVISE_PRIX_DEMANDE==="CAN"){
-                                                            echo $page->PRIX_DEMANDE.' $';
-                                                        }else{
-                                                            echo $page->PRIX_LOCATION_DEMANDE;
-                                                        }?>'
-                                        },
-                                        link: '<?php  echo get_permalink( $post->ID );?>',
-                                        features: {
-                                            beds: '<?php echo $page->NB_CHAMBRES;?>',
-                                            baths:'<?php echo $page->NB_CHAMBRES_HORS_SOL;?>',
-                                            size: '<?php echo $page->UM_SUPERFICIE_HABITABLE;?>'
-                                        }
-                                    } );
-                        <?php
+    propertiesList.push({
+        id: <?php echo  $post->ID ;?>,
+        title: '<?php  echo $page->NOM_RUE_COMPLET." ".$page->NO_INSCRIPTION;?>',
+        photo: '<?php  echo $results->PhotoURL;?>',
+        position: {
+            lat: '<?php echo $page->LATITUDE;?>',
+            lng: '<?php echo $page->LONGITUDE;?>'
+        },
+        price: {
+            long: '<?php  echo $page->PRIX_DEMANDE.' $';?>',
+            short: '<?php  echo $page->PRIX_DEMANDE.' $';?>'
+        },
+        link: '<?php  echo get_permalink( $post->ID );?>',
+        features: {
+            beds: '<?php echo $page->NB_CHAMBRES;?>',
+            baths: '<?php echo $page->NB_CHAMBRES_HORS_SOL;?>',
+            size: '<?php echo $page->SUPERFICIE_HABITABLE." ".$page->UM_SUPERFICIE_HABITABLE;?>'
+        }
+    });
+    <?php
                         }
 
                         ?>
-    function CustomMarker(id, latlng, map, classname, html) {
-        this.id        = id;
-        this.latlng_   = latlng;
-        this.classname = classname;
-        this.html      = html;
 
-        this.setMap(map);
-    }
+        ?
+        >
+        function CustomMarker(id, latlng, map, classname, html) {
+            this.id = id;
+            this.latlng_ = latlng;
+            this.classname = classname;
+            this.html = html;
+
+            this.setMap(map);
+        }
 
     CustomMarker.prototype = new google.maps.OverlayView();
 
@@ -564,14 +670,16 @@ global $wpdb;
             var latlng = new google.maps.LatLng(prop.position.lat, prop.position.lng);
 
             var html = '<div class="pxp-marker-short-price">' + prop.price.short + '</div>' +
-                        '<a href="' + prop.link + '" class="pxp-marker-details">' +
-                            '<div class="pxp-marker-details-fig pxp-cover" style="background-image: url(' + prop.photo + ');"></div>' +
-                            '<div class="pxp-marker-details-info">' +
-                                '<div class="pxp-marker-details-info-title">' + prop.title + '</div>' +
-                                '<div class="pxp-marker-details-info-price">' + prop.price.long + '</div>' +
-                                '<div class="pxp-marker-details-info-feat">' + prop.features.beds + ' BD<span>|</span>' + prop.features.baths + ' BA<span>|</span>' + prop.features.size + '</div>' +
-                            '</div>' +
-                        '</a>';
+                '<a href="' + prop.link + '" class="pxp-marker-details">' +
+                '<div class="pxp-marker-details-fig pxp-cover" style="background-image: url(' + prop.photo +
+                ');"></div>' +
+                '<div class="pxp-marker-details-info">' +
+                '<div class="pxp-marker-details-info-title">' + prop.title + '</div>' +
+                '<div class="pxp-marker-details-info-price">' + prop.price.long + '</div>' +
+                '<div class="pxp-marker-details-info-feat">' + prop.features.beds + ' BD<span>|</span>' +
+                prop.features.baths + ' BA<span>|</span>' + prop.features.size + '</div>' +
+                '</div>' +
+                '</a>';
 
             var marker = new CustomMarker(prop.id, latlng, map, 'pxp-price-marker', html);
 
@@ -581,14 +689,14 @@ global $wpdb;
     }
 
     setTimeout(function() {
-        if($('#results-map').length > 0) {
+        if ($('#results-map').length > 0) {
             map = new google.maps.Map(document.getElementById('results-map'), options);
             var styledMapType = new google.maps.StyledMapType(styles, {
-                name : 'Styled',
+                name: 'Styled',
             });
 
             map.mapTypes.set('Styled', styledMapType);
-            map.setCenter(new google.maps.LatLng(37.7577627,-122.4726194));
+            map.setCenter(new google.maps.LatLng(37.7577627, -122.4726194));
             map.setZoom(15);
 
             addMarkers(propertiesList, map);
@@ -600,8 +708,7 @@ global $wpdb;
             markerCluster = new MarkerClusterer(map, markers, {
                 maxZoom: 18,
                 gridSize: 60,
-                styles: [
-                    {
+                styles: [{
                         width: 40,
                         height: 40,
                     },
@@ -627,7 +734,7 @@ global $wpdb;
                             return e.id == propID;
                         });
 
-                        if(targetMarker.length > 0) {
+                        if (targetMarker.length > 0) {
                             targetMarker[0].addActive();
                             map.setCenter(targetMarker[0].latlng_);
                         }
@@ -638,7 +745,7 @@ global $wpdb;
                         return e.id == propID;
                     });
 
-                    if(targetMarker.length > 0) {
+                    if (targetMarker.length > 0) {
                         targetMarker[0].removeActive();
                     }
                 });
@@ -646,7 +753,6 @@ global $wpdb;
         }
     }, 300);
 })(jQuery);
-
 </script>
 
 </body>
