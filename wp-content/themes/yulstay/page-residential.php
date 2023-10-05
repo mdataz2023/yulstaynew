@@ -20,6 +20,7 @@ global $wpdb;
         <a href="javascript:void(0);" class="pxp-list-toggle"><span class="fa fa-list"></span></a>
     </div>
     <div class="pxp-content-side pxp-content-left pxp-half">
+    <div class="pxp-content-side-wrapper">
         <div class="d-flex">
             <div class="pxp-content-side-search-form">
                 <div class="row pxp-content-side-search-form-row">
@@ -327,7 +328,7 @@ global $wpdb;
                 <li class="page-item"><a class="page-link" href="#">Next <span class="fa fa-angle-right"></span></a>
                 </li>
             </ul> -->
-
+        </div>
     </div>
     <div class="pxp-footer pxp-content-side-wrapper">
         <div class="pxp-footer-bottom">
