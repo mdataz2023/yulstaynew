@@ -248,7 +248,7 @@ $inscriptionsData = $wpdb->get_row(" SELECT * FROM INSCRIPTIONS where NO_INSCRIP
                     <h3>Payment Calculator</h3>
                     <div class="pxp-calculator-view mt-3 mt-md-4">
                         <div class="row">
-                            <div class="col-sm-12 col-lg-4 align-self-center">
+                            <!-- <div class="col-sm-12 col-lg-4 align-self-center">
                                 <div class="pxp-calculator-chart-container">
                                     <canvas id="pxp-calculator-chart"></canvas>
                                     <div class="pxp-calculator-chart-result">
@@ -256,8 +256,8 @@ $inscriptionsData = $wpdb->get_row(" SELECT * FROM INSCRIPTIONS where NO_INSCRIP
                                         <div class="pxp-calculator-chart-result-label">per month</div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-sm-12 col-lg-8 align-self-center mt-3 mt-lg-0">
+                            </div> -->
+                            <div class="col-sm-12 col-lg-12 align-self-center mt-3 mt-lg-0">
                                 <div class="pxp-calculator-data">
                                     <div class="row justify-content-between">
                                         <div class="col-8">
@@ -269,7 +269,7 @@ $inscriptionsData = $wpdb->get_row(" SELECT * FROM INSCRIPTIONS where NO_INSCRIP
                                         </div>
                                     </div>
                                 </div>
-                                <div class="pxp-calculator-data">
+                                <!-- <div class="pxp-calculator-data">
                                     <div class="row justify-content-between">
                                         <div class="col-8">
                                             <div class="pxp-calculator-data-label"><span
@@ -290,7 +290,7 @@ $inscriptionsData = $wpdb->get_row(" SELECT * FROM INSCRIPTIONS where NO_INSCRIP
                                             <div class="pxp-calculator-data-sum" id="pxp-calculator-data-hd"></div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
