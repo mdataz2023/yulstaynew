@@ -24,14 +24,18 @@ $the_query = new WP_Query( array('post_type' =>'rental-property','posts_per_page
                     <div class="row pxp-content-side-search-form-row">
                         <div class="col-12 pxp-content-side-search-form-col">
                             <div class="form-group">
-                                <select class="custom-select" id="pxp-p-filter-type">
-                                    <option value="">Select District</option>
-                                    <option value="">Apartment</option>
-                                    <option value="">House</option>
-                                    <option value="">Townhome</option>
-                                    <option value="">Multi-Family</option>
-                                    <option value="">Land</option>
-                                </select>
+                            <select class="custom-select" id="pxp-p-filter-type">
+                                <option value="" disabled selected>Select Listning</option>
+                                <option value="All" >All</option>
+                                <?php
+                                     $datas = $wpdb->get_results("SELECT i.NOM_RUE_COMPLET,p.ID,i.NO_INSCRIPTION FROM INSCRIPTIONS i join wp_posts p on p.post_content=i.NO_INSCRIPTION where post_type='rental-property'  and i.CODE_STATUT='EV'", OBJECT );
+                                     foreach ($datas as $inscriptionsData) {
+                                        ?>
+                                <option value="<?php echo $inscriptionsData->NO_INSCRIPTION;?>">
+                                    <?php echo $inscriptionsData->NOM_RUE_COMPLET;?></option>
+                                <?php }
+                                ?>
+                            </select>
                             </div>
                         </div>
                     </div>
@@ -136,7 +140,8 @@ $the_query = new WP_Query( array('post_type' =>'rental-property','posts_per_page
                     $categories = get_the_category();
                     $results = $wpdb->get_results(" SELECT * FROM PHOTOS where  NO_INSCRIPTION = '".get_the_content()."' limit 3", OBJECT );
 				?>
-                <div class="col-sm-12 col-md-6 col-xxxl-4">
+                <div  class="col-sm-12 col-md-6 col-xxxl-4 hide_post_class"
+                id='NO_INSCRIPTION<?php echo $inscriptionsData->NO_INSCRIPTION?>'>
                     <a href="<?php the_permalink(); ?>" class="pxp-results-card-1 rounded-lg" data-prop="1">
                         <div id="card-carousel-<?php echo  $postIndex;?>" class="carousel slide" data-ride="carousel"
                             data-interval="false">
@@ -746,6 +751,15 @@ $the_query = new WP_Query( array('post_type' =>'rental-property','posts_per_page
         }
     }, 300);
 })(jQuery);
+
+$("#pxp-p-filter-type").change(function() {
+    $('.hide_post_class').hide();
+    if ($("#pxp-p-filter-type").val() == "All") {
+        $('.hide_post_class').show();
+    } else {
+        $('#NO_INSCRIPTION'+$("#pxp-p-filter-type").val()).show();
+    }
+});
 </script>
 
 </body>

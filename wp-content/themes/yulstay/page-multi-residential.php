@@ -25,12 +25,16 @@ $the_query = new WP_Query( array('post_type' =>'multi-residential','posts_per_pa
                         <div class="col-12 pxp-content-side-search-form-col">
                             <div class="form-group">
                                 <select class="custom-select" id="pxp-p-filter-type">
-                                    <option value="">Select District</option>
-                                    <option value="">Apartment</option>
-                                    <option value="">House</option>
-                                    <option value="">Townhome</option>
-                                    <option value="">Multi-Family</option>
-                                    <option value="">Land</option>
+                                    <option value="" disabled selected>Select Listning</option>
+                                    <option value="All">All</option>
+                                    <?php
+                                     $datas = $wpdb->get_results("SELECT i.NOM_RUE_COMPLET,p.ID,i.NO_INSCRIPTION FROM INSCRIPTIONS i join wp_posts p on p.post_content=i.NO_INSCRIPTION where post_type='multi-residential'  and i.CODE_STATUT='EV'", OBJECT );
+                                     foreach ($datas as $inscriptionsData) {
+                                        ?>
+                                    <option value="<?php echo $inscriptionsData->NO_INSCRIPTION;?>">
+                                        <?php echo $inscriptionsData->NOM_RUE_COMPLET;?></option>
+                                    <?php }
+                                ?>
                                 </select>
                             </div>
                         </div>
@@ -137,7 +141,8 @@ $the_query = new WP_Query( array('post_type' =>'multi-residential','posts_per_pa
                     $categories = get_the_category();
                     $results = $wpdb->get_results(" SELECT * FROM PHOTOS where  NO_INSCRIPTION = '".get_the_content()."' limit 3", OBJECT );
 				?>
-                <div class="col-sm-12 col-md-6 col-xxxl-4">
+                <div class="col-sm-12 col-md-6 col-xxxl-4 hide_post_class"
+                    id='NO_INSCRIPTION<?php echo $inscriptionsData->NO_INSCRIPTION?>'>
                     <a href="<?php the_permalink(); ?>" class="pxp-results-card-1 rounded-lg" data-prop="1">
                         <div id="card-carousel-<?php echo  $postIndex;?>" class="carousel slide" data-ride="carousel"
                             data-interval="false">
@@ -172,7 +177,8 @@ $the_query = new WP_Query( array('post_type' =>'multi-residential','posts_per_pa
                         <div class="pxp-results-card-1-features">
                             <span><?php echo $inscriptionsData->NB_CHAMBRES;?> BD <span>|</span>
                                 <?php echo $inscriptionsData->NB_CHAMBRES_HORS_SOL;?> BA <span>|</span>
-                                <?php echo $inscriptionsData->SUPERFICIE_HABITABLE." ".$inscriptionsData->UM_SUPERFICIE_HABITABLE;?> </span>
+                                <?php echo $inscriptionsData->SUPERFICIE_HABITABLE." ".$inscriptionsData->UM_SUPERFICIE_HABITABLE;?>
+                            </span>
                         </div>
                         <div class="pxp-results-card-1-save"><span class="fa fa-star-o"></span></div>
                     </a>
@@ -587,9 +593,9 @@ $the_query = new WP_Query( array('post_type' =>'multi-residential','posts_per_pa
             lng: '<?php echo $page->LONGITUDE;?>'
         },
         price: {
-                    long: '<?php echo $page->PRIX_DEMANDE.' $'; ?>',
-                    short: '<?php echo $page->PRIX_DEMANDE.' $'; ?>'
-                },
+            long: '<?php echo $page->PRIX_DEMANDE.' $'; ?>',
+            short: '<?php echo $page->PRIX_DEMANDE.' $'; ?>'
+        },
         link: '<?php  echo get_permalink( $post->ID );?>',
         features: {
             beds: '<?php echo $page->NB_CHAMBRES;?>',
@@ -749,6 +755,15 @@ $the_query = new WP_Query( array('post_type' =>'multi-residential','posts_per_pa
         }
     }, 300);
 })(jQuery);
+
+$("#pxp-p-filter-type").change(function() {
+    $('.hide_post_class').hide();
+    if ($("#pxp-p-filter-type").val() == "All") {
+        $('.hide_post_class').show();
+    } else {
+        $('#NO_INSCRIPTION'+$("#pxp-p-filter-type").val()).show();
+    }
+});
 </script>
 
 </body>
