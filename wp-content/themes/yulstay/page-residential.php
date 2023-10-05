@@ -20,85 +20,85 @@ global $wpdb;
         <a href="javascript:void(0);" class="pxp-list-toggle"><span class="fa fa-list"></span></a>
     </div>
     <div class="pxp-content-side pxp-content-left pxp-half">
-    <div class="d-flex">
-                <div class="pxp-content-side-search-form">
-                    <div class="row pxp-content-side-search-form-row">
-                        <div class="col-12 pxp-content-side-search-form-col">
-                            <div class="form-group">
-                                <select class="custom-select" id="pxp-p-filter-type">
-                                    <option value="">Select District</option>
-                                    <option value="">Apartment</option>
-                                    <option value="">House</option>
-                                    <option value="">Townhome</option>
-                                    <option value="">Multi-Family</option>
-                                    <option value="">Land</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex">
-                    <a role="button" class="pxp-adv-toggle"><span class="fa fa-sliders"></span></a>
-                </div>
-            </div>
-            <div class="pxp-content-side-search-form-adv mb-3">
+        <div class="d-flex">
+            <div class="pxp-content-side-search-form">
                 <div class="row pxp-content-side-search-form-row">
-                    <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
+                    <div class="col-12 pxp-content-side-search-form-col">
                         <div class="form-group">
-                            <label for="pxp-p-filter-price-min">Price</label>
-                            <input type="text" class="form-control" placeholder="Min" id="pxp-p-filter-price-min">
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
-                        <div class="form-group">
-                            <label for="pxp-p-filter-price-max" class="d-none d-sm-inline-block">&nbsp;</label>
-                            <input type="text" class="form-control" placeholder="Max" id="pxp-p-filter-price-max">
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
-                        <div class="form-group">
-                            <label for="pxp-p-filter-beds">Beds</label>
-                            <select class="custom-select" id="pxp-p-filter-beds">
-                                <option value="" selected="selected">Any</option>
-                                <option value="">Studio</option>
-                                <option value="">1</option>
-                                <option value="">2</option>
-                                <option value="">3</option>
-                                <option value="">4</option>
-                                <option value="">5+</option>
+                            <select class="custom-select" id="pxp-p-filter-type">
+                                <option value="">Select District</option>
+                                <option value="">Apartment</option>
+                                <option value="">House</option>
+                                <option value="">Townhome</option>
+                                <option value="">Multi-Family</option>
+                                <option value="">Land</option>
                             </select>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
-                        <div class="form-group">
-                            <label for="pxp-p-filter-baths">Baths</label>
-                            <select class="custom-select" id="pxp-p-filter-baths">
-                                <option value="" selected="selected">Any</option>
-                                <option value="">1+</option>
-                                <option value="">1.5+</option>
-                                <option value="">2+</option>
-                                <option value="">3+</option>
-                                <option value="">4+</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4 pxp-content-side-search-form-col">
-                        <div class="form-group">
-                            <label for="pxp-p-filter-size-min">Size (sq ft)</label>
-                            <input type="text" class="form-control" id="pxp-p-filter-size-min" placeholder="Min">
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4 pxp-content-side-search-form-col">
-                        <div class="form-group">
-                            <label for="pxp-p-filter-size-max" class="d-none d-sm-inline-block">&nbsp;</label>
-                            <input type="text" class="form-control" id="pxp-p-filter-size-max" placeholder="Max">
                         </div>
                     </div>
                 </div>
-
-
-                <a href="#" class="pxp-filter-btn">Apply Filters</a>
             </div>
+            <div class="d-flex">
+                <a role="button" class="pxp-adv-toggle"><span class="fa fa-sliders"></span></a>
+            </div>
+        </div>
+        <div class="pxp-content-side-search-form-adv mb-3">
+            <div class="row pxp-content-side-search-form-row">
+                <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
+                    <div class="form-group">
+                        <label for="pxp-p-filter-price-min">Price</label>
+                        <input type="text" class="form-control" placeholder="Min" id="pxp-p-filter-price-min">
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
+                    <div class="form-group">
+                        <label for="pxp-p-filter-price-max" class="d-none d-sm-inline-block">&nbsp;</label>
+                        <input type="text" class="form-control" placeholder="Max" id="pxp-p-filter-price-max">
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
+                    <div class="form-group">
+                        <label for="pxp-p-filter-beds">Beds</label>
+                        <select class="custom-select" id="pxp-p-filter-beds">
+                            <option value="" selected="selected">Any</option>
+                            <option value="">Studio</option>
+                            <option value="">1</option>
+                            <option value="">2</option>
+                            <option value="">3</option>
+                            <option value="">4</option>
+                            <option value="">5+</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
+                    <div class="form-group">
+                        <label for="pxp-p-filter-baths">Baths</label>
+                        <select class="custom-select" id="pxp-p-filter-baths">
+                            <option value="" selected="selected">Any</option>
+                            <option value="">1+</option>
+                            <option value="">1.5+</option>
+                            <option value="">2+</option>
+                            <option value="">3+</option>
+                            <option value="">4+</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 pxp-content-side-search-form-col">
+                    <div class="form-group">
+                        <label for="pxp-p-filter-size-min">Size (sq ft)</label>
+                        <input type="text" class="form-control" id="pxp-p-filter-size-min" placeholder="Min">
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 pxp-content-side-search-form-col">
+                    <div class="form-group">
+                        <label for="pxp-p-filter-size-max" class="d-none d-sm-inline-block">&nbsp;</label>
+                        <input type="text" class="form-control" id="pxp-p-filter-size-max" placeholder="Max">
+                    </div>
+                </div>
+            </div>
+
+
+            <a href="#" class="pxp-filter-btn">Apply Filters</a>
+        </div>
 
         <div class="row pb-4">
             <div class="col-sm-6">
@@ -174,7 +174,8 @@ global $wpdb;
                     <div class="pxp-results-card-1-features">
                         <span><?php echo $inscriptionsData->NB_CHAMBRES;?> BD <span>|</span>
                             <?php echo $inscriptionsData->NB_CHAMBRES_HORS_SOL;?> BA <span>|</span>
-                            <?php echo $inscriptionsData->SUPERFICIE_HABITABLE." ".$inscriptionsData->UM_SUPERFICIE_HABITABLE;?> </span>
+                            <?php echo $inscriptionsData->SUPERFICIE_HABITABLE." ".$inscriptionsData->UM_SUPERFICIE_HABITABLE;?>
+                        </span>
                     </div>
                     <div class="pxp-results-card-1-save"><span class="fa fa-star-o"></span></div>
                 </a>
@@ -603,16 +604,14 @@ global $wpdb;
 
                         ?>
 
-        ?
-        >
-        function CustomMarker(id, latlng, map, classname, html) {
-            this.id = id;
-            this.latlng_ = latlng;
-            this.classname = classname;
-            this.html = html;
+    function CustomMarker(id, latlng, map, classname, html) {
+        this.id = id;
+        this.latlng_ = latlng;
+        this.classname = classname;
+        this.html = html;
 
-            this.setMap(map);
-        }
+        this.setMap(map);
+    }
 
     CustomMarker.prototype = new google.maps.OverlayView();
 
