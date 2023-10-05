@@ -164,18 +164,12 @@ $the_query = new WP_Query( array('post_type' =>'rental-property','posts_per_page
                         <div class="pxp-results-card-1-gradient"></div>
                         <div class="pxp-results-card-1-details">
                             <div class="pxp-results-card-1-details-title"><?php the_title(); ?></div>
-                            <div class="pxp-results-card-1-details-price">
-                                <?php if($inscriptionsData->DEVISE_PRIX_DEMANDE==="CAN"){
-                                                            echo $inscriptionsData->PRIX_DEMANDE.' $';
-                                                        }else{
-                                                            echo $inscriptionsData->PRIX_LOCATION_DEMANDE;
-                                                        }?>
-                            </div>
+                            <div class="pxp-results-card-1-details-price"><?php echo $inscriptionsData->PRIX_LOCATION_DEMANDE." $";?></div>
                         </div>
                         <div class="pxp-results-card-1-features">
                             <span><?php echo $inscriptionsData->NB_CHAMBRES;?> BD <span>|</span>
                                 <?php echo $inscriptionsData->NB_CHAMBRES_HORS_SOL;?> BA <span>|</span>
-                                <?php echo $inscriptionsData->UM_SUPERFICIE_HABITABLE;?> </span>
+                                <?php echo $inscriptionsData->SUPERFICIE_HABITABLE." ".$inscriptionsData->UM_SUPERFICIE_HABITABLE;?> </span>
                         </div>
                         <div class="pxp-results-card-1-save"><span class="fa fa-star-o"></span></div>
                     </a>
@@ -589,23 +583,15 @@ $the_query = new WP_Query( array('post_type' =>'rental-property','posts_per_page
             lat: '<?php echo $page->LATITUDE;?>',
             lng: '<?php echo $page->LONGITUDE;?>'
         },
-        price:{
-                    long: '<?php if($page->DEVISE_PRIX_DEMANDE==="CAN"){
-                                    echo $page->PRIX_DEMANDE.' $';
-                                }else{
-                                    echo $page->PRIX_LOCATION_DEMANDE;
-                                }?>',
-                    short: '<?php if($page->DEVISE_PRIX_DEMANDE==="CAN"){
-                                    echo $page->PRIX_DEMANDE.' $';
-                                }else{
-                                    echo $page->PRIX_LOCATION_DEMANDE;
-                                }?>'
-                },
+        price: {
+            long: '<?php echo $page->PRIX_LOCATION_DEMANDE." $";?>',
+            short: '<?php echo $page->PRIX_LOCATION_DEMANDE." $";?>'
+        },
         link: '<?php  echo get_permalink( $post->ID );?>',
         features: {
             beds: '<?php echo $page->NB_CHAMBRES;?>',
             baths: '<?php echo $page->NB_CHAMBRES_HORS_SOL;?>',
-            size: '<?php echo $page->UM_SUPERFICIE_HABITABLE;?>'
+            size: '<?php echo $page->SUPERFICIE_HABITABLE." ".$page->UM_SUPERFICIE_HABITABLE;?>'
         }
     });
     <?php
