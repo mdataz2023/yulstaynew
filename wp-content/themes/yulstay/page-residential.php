@@ -2,6 +2,7 @@
 /*
 	Template Name: Residential
 */
+session_start();
 get_header();
 $lang = get_bloginfo("language");
 $language="A";
@@ -781,6 +782,14 @@ $("#pxp-sort-results").change(function() {
             attr: "id"
         });
     }
+});
+
+$(".pxp-filter-btn").click(function() {
+
+    alert("<?php echo $_COOKIE["price_min"]; ;?>")
+});
+$("#pxp-p-filter-price-min").on('keyup', function(){
+    document.cookie='price_min='+this.value;
 });
 </script>
 
