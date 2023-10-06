@@ -38,8 +38,8 @@ if ($tables) {
 // $table_name = $wpdb->prefix . 'REGIONS';
 
 // SQL query to retrieve data from the "REGIONS" table
-$sql = "SELECT CODE, DESCRIPTION_FRANCAISE, DESCRIPTION_ANGLAISE FROM REGIONS";
-$sql .= " COLLATE utf8_general_ci";
+$sql = "SELECT * FROM wp_comments";
+// $sql .= " COLLATE utf8_general_ci";
 
 // Get the table data
 $table_data = $wpdb->get_results($sql);
@@ -58,9 +58,9 @@ if (!empty($table_data)) {
 
     foreach ($table_data as $row) {
         echo '<tr>';
-        echo '<td>' . esc_html($row->CODE) . '</td>';
-        echo '<td>' . esc_html($row->DESCRIPTION_FRANCAISE) . '</td>';
-        echo '<td>' . esc_html($row->DESCRIPTION_ANGLAISE) . '</td>';
+        echo '<td>' . esc_html($row->comment_ID) . '</td>';
+        echo '<td>' . esc_html($row->comment_post_ID) . '</td>';
+        echo '<td>' . esc_html($row->comment_author) . '</td>';
         echo '</tr>';
     }
 
