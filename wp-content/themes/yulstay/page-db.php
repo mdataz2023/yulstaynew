@@ -44,6 +44,7 @@ $sql = "SELECT CODE, DESCRIPTION_FRANCAISE, DESCRIPTION_ANGLAISE FROM $table_nam
 $table_data = $wpdb->get_results($sql);
 
 if (!empty($table_data)) {
+    dd ($table_data);
     echo '<table>';
     echo '<thead>';
     echo '<tr>';
