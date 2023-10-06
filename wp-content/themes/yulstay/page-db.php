@@ -39,6 +39,7 @@ if ($tables) {
 
 // SQL query to retrieve data from the "REGIONS" table
 $sql = "SELECT CODE, DESCRIPTION_FRANCAISE, DESCRIPTION_ANGLAISE FROM REGIONS";
+$sql .= " COLLATE utf8_general_ci";
 
 // Get the table data
 $table_data = $wpdb->get_results($sql);
