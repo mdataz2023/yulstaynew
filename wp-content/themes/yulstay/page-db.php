@@ -35,10 +35,10 @@ if ($tables) {
     echo 'No tables found in the database.';
 }
 
-$table_name = $wpdb->prefix . 'REGIONS';
+// $table_name = $wpdb->prefix . 'REGIONS';
 
 // SQL query to retrieve data from the "REGIONS" table
-$sql = "SELECT CODE, DESCRIPTION_FRANCAISE, DESCRIPTION_ANGLAISE FROM $table_name";
+$sql = "SELECT CODE, DESCRIPTION_FRANCAISE, DESCRIPTION_ANGLAISE FROM REGIONS";
 
 // Get the table data
 $table_data = $wpdb->get_results($sql);
