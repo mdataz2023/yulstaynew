@@ -24,18 +24,18 @@ $the_query = new WP_Query( array('post_type' =>'rental-property','posts_per_page
                     <div class="row pxp-content-side-search-form-row">
                         <div class="col-12 pxp-content-side-search-form-col">
                             <div class="form-group">
-                            <select class="custom-select" id="pxp-p-filter-type">
-                                <option value="" disabled selected>Select Listning</option>
-                                <option value="All" >All</option>
-                                <?php
+                                <select class="custom-select" id="pxp-p-filter-type">
+                                    <option value="" disabled selected>Select Listning</option>
+                                    <option value="All">All</option>
+                                    <?php
                                      $datas = $wpdb->get_results("SELECT i.NOM_RUE_COMPLET,p.ID,i.NO_INSCRIPTION FROM INSCRIPTIONS i join wp_posts p on p.post_content=i.NO_INSCRIPTION where post_type='rental-property'  and i.CODE_STATUT='EV'  group by i.NOM_RUE_COMPLET", OBJECT );
                                      foreach ($datas as $inscriptionsData) {
                                         ?>
-                                <option value="<?php echo $inscriptionsData->NOM_RUE_COMPLET;?>">
-                                    <?php echo $inscriptionsData->NOM_RUE_COMPLET;?></option>
-                                <?php }
+                                    <option value="<?php echo $inscriptionsData->NOM_RUE_COMPLET;?>">
+                                        <?php echo $inscriptionsData->NOM_RUE_COMPLET;?></option>
+                                    <?php }
                                 ?>
-                            </select>
+                                </select>
                             </div>
                         </div>
                     </div>
@@ -64,11 +64,11 @@ $the_query = new WP_Query( array('post_type' =>'rental-property','posts_per_page
                             <select class="custom-select" id="pxp-p-filter-beds">
                                 <option value="" selected="selected">Any</option>
                                 <option value="">Studio</option>
-                                <option value="">1</option>
-                                <option value="">2</option>
-                                <option value="">3</option>
-                                <option value="">4</option>
-                                <option value="">5+</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5+</option>
                             </select>
                         </div>
                     </div>
@@ -77,11 +77,11 @@ $the_query = new WP_Query( array('post_type' =>'rental-property','posts_per_page
                             <label for="pxp-p-filter-baths">Baths</label>
                             <select class="custom-select" id="pxp-p-filter-baths">
                                 <option value="" selected="selected">Any</option>
-                                <option value="">1+</option>
-                                <option value="">1.5+</option>
-                                <option value="">2+</option>
-                                <option value="">3+</option>
-                                <option value="">4+</option>
+                                <option value="1">1+</option>
+                                <option value="2">2+</option>
+                                <option value="3">3+</option>
+                                <option value="4">4+</option>
+                                <option value="5">5+</option>
                             </select>
                         </div>
                     </div>
@@ -102,23 +102,21 @@ $the_query = new WP_Query( array('post_type' =>'rental-property','posts_per_page
 
                 <a href="#" class="pxp-filter-btn">Apply Filters</a>
             </div>
+
             <div class="row pb-4">
                 <div class="col-sm-6">
                     <h2 class="pxp-content-side-h2"><?php
                     $POST_COUNT = $wpdb->get_row("SELECT count(NO_INSCRIPTION) as POST_COUNT FROM INSCRIPTIONS i join wp_posts p on p.post_content=i.NO_INSCRIPTION where p.post_type='rental-property' and i.CODE_STATUT='EV'", OBJECT );
                 echo $POST_COUNT->POST_COUNT;
-                ?>  Results</h2>
+                ?> Results</h2>
                 </div>
                 <div class="col-sm-6">
                     <div class="pxp-sort-form form-inline float-right">
                         <div class="form-group">
                             <select class="custom-select" id="pxp-sort-results">
                                 <option value="" selected="selected">Default Sort</option>
-                                <option value="">Price (Lo-Hi)</option>
-                                <option value="">Price (Hi-Lo)</option>
-                                <option value="">Beds</option>
-                                <option value="">Baths</option>
-                                <option value="">Size</option>
+                                <option value="low">Price (Lo-Hi)</option>
+                                <option value="high">Price (Hi-Lo)</option>
                             </select>
                         </div>
                         <div class="form-group d-flex">
@@ -128,7 +126,7 @@ $the_query = new WP_Query( array('post_type' =>'rental-property','posts_per_page
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row filter_hide_section">
                 <?php
                 $postIndex=0;
                 if ( have_posts())   : while ( $the_query->have_posts() ) : $the_query->the_post();?>
@@ -143,11 +141,10 @@ $the_query = new WP_Query( array('post_type' =>'rental-property','posts_per_page
                     $categories = get_the_category();
                     $results = $wpdb->get_results(" SELECT * FROM PHOTOS where  NO_INSCRIPTION = '".get_the_content()."' limit 3", OBJECT );
 				?>
-                <div  class="col-sm-12 col-md-6 col-xxxl-4 hide_post_class  NO_INSCRIPTION<?php
+                <div class="col-sm-12 col-md-6 col-xxxl-4 hide_post_class  NO_INSCRIPTION<?php
             $r2=str_replace(' ',"",$inscriptionsData->NOM_RUE_COMPLET);
             $r1=str_replace("'","",$r2);
-            echo str_replace('.',"",$r1)?>"
-                id='NO_INSCRIPTION<?php echo $inscriptionsData->NO_INSCRIPTION?>'>
+            echo str_replace('.',"",$r1)?>" id='NO_INSCRIPTION<?php echo $inscriptionsData->NO_INSCRIPTION?>'>
                     <a href="<?php the_permalink(); ?>" class="pxp-results-card-1 rounded-lg" data-prop="1">
                         <div id="card-carousel-<?php echo  $postIndex;?>" class="carousel slide" data-ride="carousel"
                             data-interval="false">
@@ -175,12 +172,14 @@ $the_query = new WP_Query( array('post_type' =>'rental-property','posts_per_page
                         <div class="pxp-results-card-1-gradient"></div>
                         <div class="pxp-results-card-1-details">
                             <div class="pxp-results-card-1-details-title"><?php the_title(); ?></div>
-                            <div class="pxp-results-card-1-details-price"><?php echo $inscriptionsData->PRIX_LOCATION_DEMANDE." $";?></div>
+                            <div class="pxp-results-card-1-details-price">
+                                <?php echo $inscriptionsData->PRIX_LOCATION_DEMANDE." $";?></div>
                         </div>
                         <div class="pxp-results-card-1-features">
                             <span><?php echo $inscriptionsData->NB_CHAMBRES;?> BD <span>|</span>
                                 <?php echo $inscriptionsData->NB_CHAMBRES_HORS_SOL;?> BA <span>|</span>
-                                <?php echo $inscriptionsData->SUPERFICIE_HABITABLE." ".$inscriptionsData->UM_SUPERFICIE_HABITABLE;?> </span>
+                                <?php echo $inscriptionsData->SUPERFICIE_HABITABLE." ".$inscriptionsData->UM_SUPERFICIE_HABITABLE;?>
+                            </span>
                         </div>
                         <div class="pxp-results-card-1-save"><span class="fa fa-star-o"></span></div>
                     </a>
@@ -321,7 +320,9 @@ $the_query = new WP_Query( array('post_type' =>'rental-property','posts_per_page
                             </a>
                         </div> -->
             </div>
+            <div class="row filter_display_section">
 
+            </div>
             <!-- <ul class="pagination pxp-paginantion mt-2 mt-md-4">
                 <li class="page-item active"><a class="page-link" href="#">1</a></li>
                 <li class="page-item"><a class="page-link" href="#">2</a></li>
@@ -768,6 +769,50 @@ $("#pxp-p-filter-type").change(function() {
         var r2 = r1.replaceAll("'", "");
         $('.NO_INSCRIPTION' + r2.replaceAll(" ", "")).show();
     }
+});
+
+
+$("#pxp-sort-results").change(function() {
+    $.ajax("<?php echo get_template_directory_uri(); ?>/page-db.php", {
+        type: 'POST', // http method
+        data: {
+            post_type: "rental-property",
+            bloginfo: "<?php echo bloginfo('url');?>",
+            orderBy: $("#pxp-sort-results").val(),
+            min_price: $("#pxp-p-filter-price-min").val(),
+            max_price: $("#pxp-p-filter-price-max").val(),
+            min_size: $("#pxp-p-filter-size-min").val(),
+            max_size: $("#pxp-p-filter-size-max").val(),
+            baths: $("#pxp-p-filter-baths").val(),
+            beds: $("#pxp-p-filter-beds").val(),
+        }, // data to submit
+        success: function(data, status, xhr) {
+            $('.filter_hide_section').hide();
+            $(".filter_display_section").html(data);
+        },
+        error: function(jqXhr, textStatus, errorMessage) {}
+    });
+});
+
+$(".pxp-filter-btn").click(function() {
+    $.ajax("<?php echo get_template_directory_uri(); ?>/page-db.php", {
+        type: 'POST',
+        data: {
+            post_type: "rental-property",
+            bloginfo: "<?php echo bloginfo('url');?>",
+            min_price: $("#pxp-p-filter-price-min").val(),
+            max_price: $("#pxp-p-filter-price-max").val(),
+            min_size: $("#pxp-p-filter-size-min").val(),
+            max_size: $("#pxp-p-filter-size-max").val(),
+            baths: $("#pxp-p-filter-baths").val(),
+            beds: $("#pxp-p-filter-beds").val(),
+        },
+        success: function(data, status, xhr) {
+            $('.filter_hide_section').hide();
+            $(".filter_display_section").html(data);
+        },
+        error: function(jqXhr, textStatus, errorMessage) {}
+    });
 });
 </script>
 

@@ -2,7 +2,6 @@
 /*
 	Template Name: Residential
 */
-session_start();
 get_header();
 $lang = get_bloginfo("language");
 $language="A";
@@ -67,11 +66,11 @@ global $wpdb;
                             <select class="custom-select" id="pxp-p-filter-beds">
                                 <option value="" selected="selected">Any</option>
                                 <option value="">Studio</option>
-                                <option value="">1</option>
-                                <option value="">2</option>
-                                <option value="">3</option>
-                                <option value="">4</option>
-                                <option value="">5+</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5+</option>
                             </select>
                         </div>
                     </div>
@@ -80,11 +79,11 @@ global $wpdb;
                             <label for="pxp-p-filter-baths">Baths</label>
                             <select class="custom-select" id="pxp-p-filter-baths">
                                 <option value="" selected="selected">Any</option>
-                                <option value="">1+</option>
-                                <option value="">1.5+</option>
-                                <option value="">2+</option>
-                                <option value="">3+</option>
-                                <option value="">4+</option>
+                                <option value="1">1+</option>
+                                <option value="2">2+</option>
+                                <option value="3">3+</option>
+                                <option value="4">4+</option>
+                                <option value="5">5+</option>
                             </select>
                         </div>
                     </div>
@@ -129,7 +128,7 @@ global $wpdb;
                 </div>
             </div>
 
-            <div class="row price_sort">
+            <div class="row filter_hide_section">
                 <?php $the_query = new WP_Query( array('post_type' =>'residential','posts_per_page' => '1000',  'post__not_in'   => array( $id),) );?>
                 <?php
                 $postIndex=0;
@@ -326,7 +325,9 @@ global $wpdb;
                             </a>
                         </div> -->
             </div>
+            <div class="row filter_display_section">
 
+            </div>
             <!-- <ul class="pagination pxp-paginantion mt-2 mt-md-4">
                 <li class="page-item active"><a class="page-link" href="#">1</a></li>
                 <li class="page-item"><a class="page-link" href="#">2</a></li>
@@ -777,19 +778,48 @@ $("#pxp-p-filter-type").change(function() {
 
 
 $("#pxp-sort-results").change(function() {
-    if ($("#pxp-sort-results").val() == "low") {
-        $(".price_sort > dev").tsort("", {
-            attr: "id"
-        });
-    }
+    $.ajax("<?php echo get_template_directory_uri(); ?>/page-db.php", {
+        type: 'POST', // http method
+        data: {
+            post_type: "residential",
+            bloginfo: "<?php echo bloginfo('url');?>",
+            orderBy: $("#pxp-sort-results").val(),
+            min_price: $("#pxp-p-filter-price-min").val(),
+            max_price: $("#pxp-p-filter-price-max").val(),
+            min_size: $("#pxp-p-filter-size-min").val(),
+            max_size: $("#pxp-p-filter-size-max").val(),
+            baths: $("#pxp-p-filter-baths").val(),
+            beds: $("#pxp-p-filter-beds").val(),
+        }, // data to submit
+        success: function(data, status, xhr) {
+            $('.filter_hide_section').hide();
+            $(".filter_display_section").html(data);
+        },
+        error: function(jqXhr, textStatus, errorMessage) {
+        }
+    });
 });
 
 $(".pxp-filter-btn").click(function() {
-
-    alert("<?php echo $_COOKIE["price_min"]; ;?>")
-});
-$("#pxp-p-filter-price-min").on('keyup', function(){
-    document.cookie='price_min='+this.value;
+    $.ajax("<?php echo get_template_directory_uri(); ?>/page-db.php", {
+        type: 'POST',
+        data: {
+            post_type: "residential",
+            bloginfo: "<?php echo bloginfo('url');?>",
+            min_price: $("#pxp-p-filter-price-min").val(),
+            max_price: $("#pxp-p-filter-price-max").val(),
+            min_size: $("#pxp-p-filter-size-min").val(),
+            max_size: $("#pxp-p-filter-size-max").val(),
+            baths: $("#pxp-p-filter-baths").val(),
+            beds: $("#pxp-p-filter-beds").val(),
+        },
+        success: function(data, status, xhr) {
+            $('.filter_hide_section').hide();
+            $(".filter_display_section").html(data);
+        },
+        error: function(jqXhr, textStatus, errorMessage) {
+        }
+    });
 });
 </script>
 
