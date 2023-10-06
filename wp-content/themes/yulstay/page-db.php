@@ -35,6 +35,39 @@ if ($tables) {
     echo 'No tables found in the database.';
 }
 
+$table_name = $wpdb->prefix . 'REGIONS';
+
+// SQL query to retrieve data from the "REGIONS" table
+$sql = "SELECT CODE, DESCRIPTION_FRANCAISE, DESCRIPTION_ANGLAISE FROM $table_name";
+
+// Get the table data
+$table_data = $wpdb->get_results($sql);
+
+if (!empty($table_data)) {
+    echo '<table>';
+    echo '<thead>';
+    echo '<tr>';
+    echo '<th>CODE</th>';
+    echo '<th>DESCRIPTION_FRANCAISE</th>';
+    echo '<th>DESCRIPTION_ANGLAISE</th>';
+    echo '</tr>';
+    echo '</thead>';
+    echo '<tbody>';
+
+    foreach ($table_data as $row) {
+        echo '<tr>';
+        echo '<td>' . esc_html($row->CODE) . '</td>';
+        echo '<td>' . esc_html($row->DESCRIPTION_FRANCAISE) . '</td>';
+        echo '<td>' . esc_html($row->DESCRIPTION_ANGLAISE) . '</td>';
+        echo '</tr>';
+    }
+
+    echo '</tbody>';
+    echo '</table>';
+} else {
+    echo 'No data found in the "REGIONS" table.';
+}
+
 ?>
 </div>
 
