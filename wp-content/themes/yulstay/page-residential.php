@@ -20,118 +20,121 @@ global $wpdb;
         <a href="javascript:void(0);" class="pxp-list-toggle"><span class="fa fa-list"></span></a>
     </div>
     <div class="pxp-content-side pxp-content-left pxp-half">
-    <div class="pxp-content-side-wrapper">
-        <div class="d-flex">
-            <div class="pxp-content-side-search-form">
-                <div class="row pxp-content-side-search-form-row">
-                    <div class="col-12 pxp-content-side-search-form-col">
-                        <div class="form-group">
-                            <select class="custom-select" id="pxp-p-filter-type">
-                                <option value="" disabled selected>Select Listning</option>
-                                <option value="All">All</option>
-                                <?php
-                                     $datas = $wpdb->get_results("SELECT i.NOM_RUE_COMPLET,p.ID,i.NO_INSCRIPTION FROM INSCRIPTIONS i join wp_posts p on p.post_content=i.NO_INSCRIPTION where post_type='residential'  and i.CODE_STATUT='EV'", OBJECT );
+        <div class="pxp-content-side-wrapper">
+            <div class="d-flex">
+                <div class="pxp-content-side-search-form">
+                    <div class="row pxp-content-side-search-form-row">
+                        <div class="col-12 pxp-content-side-search-form-col">
+                            <div class="form-group">
+                                <select class="custom-select" id="pxp-p-filter-type">
+                                    <option value="" disabled selected>Select Listning</option>
+                                    <option value="All">All</option>
+                                    <?php
+                                     $datas = $wpdb->get_results("SELECT i.NOM_RUE_COMPLET,p.ID,i.NO_INSCRIPTION FROM INSCRIPTIONS i join wp_posts p on p.post_content=i.NO_INSCRIPTION where post_type='residential'  and i.CODE_STATUT='EV' group by i.NOM_RUE_COMPLET", OBJECT );
                                      foreach ($datas as $inscriptionsData) {
                                         ?>
-                                <option value="<?php echo $inscriptionsData->NO_INSCRIPTION;?>">
-                                    <?php echo $inscriptionsData->NOM_RUE_COMPLET;?></option>
-                                <?php }
+                                    <option value="<?php echo $inscriptionsData->NOM_RUE_COMPLET;?>">
+                                        <?php echo $inscriptionsData->NOM_RUE_COMPLET;?></option>
+                                    <?php }
                                 ?>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <a role="button" class="pxp-adv-toggle"><span class="fa fa-sliders"></span></a>
+                </div>
+            </div>
+            <div class="pxp-content-side-search-form-adv mb-3">
+                <div class="row pxp-content-side-search-form-row">
+                    <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
+                        <div class="form-group">
+                            <label for="pxp-p-filter-price-min">Price</label>
+                            <input type="text" class="form-control" placeholder="Min" id="pxp-p-filter-price-min">
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
+                        <div class="form-group">
+                            <label for="pxp-p-filter-price-max" class="d-none d-sm-inline-block">&nbsp;</label>
+                            <input type="text" class="form-control" placeholder="Max" id="pxp-p-filter-price-max">
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
+                        <div class="form-group">
+                            <label for="pxp-p-filter-beds">Beds</label>
+                            <select class="custom-select" id="pxp-p-filter-beds">
+                                <option value="" selected="selected">Any</option>
+                                <option value="">Studio</option>
+                                <option value="">1</option>
+                                <option value="">2</option>
+                                <option value="">3</option>
+                                <option value="">4</option>
+                                <option value="">5+</option>
                             </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
+                        <div class="form-group">
+                            <label for="pxp-p-filter-baths">Baths</label>
+                            <select class="custom-select" id="pxp-p-filter-baths">
+                                <option value="" selected="selected">Any</option>
+                                <option value="">1+</option>
+                                <option value="">1.5+</option>
+                                <option value="">2+</option>
+                                <option value="">3+</option>
+                                <option value="">4+</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 pxp-content-side-search-form-col">
+                        <div class="form-group">
+                            <label for="pxp-p-filter-size-min">Size (sq ft)</label>
+                            <input type="text" class="form-control" id="pxp-p-filter-size-min" placeholder="Min">
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 pxp-content-side-search-form-col">
+                        <div class="form-group">
+                            <label for="pxp-p-filter-size-max" class="d-none d-sm-inline-block">&nbsp;</label>
+                            <input type="text" class="form-control" id="pxp-p-filter-size-max" placeholder="Max">
+                        </div>
+                    </div>
+                </div>
+
+
+                <a href="#" class="pxp-filter-btn">Apply Filters</a>
+            </div>
+
+            <div class="row pb-4">
+                <div class="col-sm-6">
+                    <h2 class="pxp-content-side-h2"><?php
+                    $POST_COUNT = $wpdb->get_row("SELECT count(NO_INSCRIPTION) as POST_COUNT FROM INSCRIPTIONS i join wp_posts p on p.post_content=i.NO_INSCRIPTION where p.post_type='residential' and i.CODE_STATUT='EV'", OBJECT );
+                echo $POST_COUNT->POST_COUNT;
+                ?> Results</h2>
+                </div>
+                <div class="col-sm-6">
+                    <div class="pxp-sort-form form-inline float-right">
+                        <div class="form-group">
+                            <select class="custom-select" id="pxp-sort-results">
+                                <option value="" selected="selected">Default Sort</option>
+                                <option value="low">Price (Lo-Hi)</option>
+                                <option value="high">Price (Hi-Lo)</option>
+                            </select>
+                        </div>
+                        <div class="form-group d-flex">
+                            <a role="button" class="pxp-map-toggle"><span class="fa fa-map-o"></span></a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="d-flex">
-                <a role="button" class="pxp-adv-toggle"><span class="fa fa-sliders"></span></a>
-            </div>
-        </div>
-        <div class="pxp-content-side-search-form-adv mb-3">
-            <div class="row pxp-content-side-search-form-row">
-                <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
-                    <div class="form-group">
-                        <label for="pxp-p-filter-price-min">Price</label>
-                        <input type="text" class="form-control" placeholder="Min" id="pxp-p-filter-price-min">
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
-                    <div class="form-group">
-                        <label for="pxp-p-filter-price-max" class="d-none d-sm-inline-block">&nbsp;</label>
-                        <input type="text" class="form-control" placeholder="Max" id="pxp-p-filter-price-max">
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
-                    <div class="form-group">
-                        <label for="pxp-p-filter-beds">Beds</label>
-                        <select class="custom-select" id="pxp-p-filter-beds">
-                            <option value="" selected="selected">Any</option>
-                            <option value="">Studio</option>
-                            <option value="">1</option>
-                            <option value="">2</option>
-                            <option value="">3</option>
-                            <option value="">4</option>
-                            <option value="">5+</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
-                    <div class="form-group">
-                        <label for="pxp-p-filter-baths">Baths</label>
-                        <select class="custom-select" id="pxp-p-filter-baths">
-                            <option value="" selected="selected">Any</option>
-                            <option value="">1+</option>
-                            <option value="">1.5+</option>
-                            <option value="">2+</option>
-                            <option value="">3+</option>
-                            <option value="">4+</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 pxp-content-side-search-form-col">
-                    <div class="form-group">
-                        <label for="pxp-p-filter-size-min">Size (sq ft)</label>
-                        <input type="text" class="form-control" id="pxp-p-filter-size-min" placeholder="Min">
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 pxp-content-side-search-form-col">
-                    <div class="form-group">
-                        <label for="pxp-p-filter-size-max" class="d-none d-sm-inline-block">&nbsp;</label>
-                        <input type="text" class="form-control" id="pxp-p-filter-size-max" placeholder="Max">
-                    </div>
-                </div>
-            </div>
 
-
-            <a href="#" class="pxp-filter-btn">Apply Filters</a>
-        </div>
-
-        <div class="row pb-4">
-            <div class="col-sm-6">
-                <h2 class="pxp-content-side-h2">1,684 Results</h2>
-            </div>
-            <div class="col-sm-6">
-                <div class="pxp-sort-form form-inline float-right">
-                    <div class="form-group">
-                        <select class="custom-select" id="pxp-sort-results">
-                            <option value="" selected="selected">Default Sort</option>
-                            <option value="low">Price (Lo-Hi)</option>
-                            <option value="high">Price (Hi-Lo)</option>
-                        </select>
-                    </div>
-                    <div class="form-group d-flex">
-                        <a role="button" class="pxp-map-toggle"><span class="fa fa-map-o"></span></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row price_sort" >
-            <?php $the_query = new WP_Query( array('post_type' =>'residential','posts_per_page' => '1000',  'post__not_in'   => array( $id),) );?>
-            <?php
+            <div class="row price_sort">
+                <?php $the_query = new WP_Query( array('post_type' =>'residential','posts_per_page' => '1000',  'post__not_in'   => array( $id),) );?>
+                <?php
                 $postIndex=0;
                 if ( have_posts())   : while ( $the_query->have_posts() ) : $the_query->the_post();?>
 
-            <?php
+                <?php
                     $inscriptionsData = $wpdb->get_row(" SELECT * FROM INSCRIPTIONS where NO_INSCRIPTION = '".get_the_content()."' and CODE_STATUT='EV'", OBJECT );
                     if($inscriptionsData){
                         $thumbnail_id = get_post_thumbnail_id();
@@ -141,55 +144,57 @@ global $wpdb;
                     $categories = get_the_category();
                     $results = $wpdb->get_results(" SELECT * FROM PHOTOS where  NO_INSCRIPTION = '".get_the_content()."' limit 3", OBJECT );
 				?>
-            <div class="col-sm-12 col-md-6 col-xxxl-4 hide_post_class  NO_INSCRIPTION<?php echo $inscriptionsData->NO_INSCRIPTION?>"
-                id='<?php  echo $inscriptionsData->PRIX_DEMANDE;?>'>
+                <div class="col-sm-12 col-md-6 col-xxxl-4 hide_post_class  NO_INSCRIPTION<?php
+            $r2=str_replace(' ',"",$inscriptionsData->NOM_RUE_COMPLET);
+            $r1=str_replace("'","",$r2);
+            echo str_replace('.',"",$r1)?>" id='<?php  echo $inscriptionsData->PRIX_DEMANDE;?>'>
 
-                <a href="<?php the_permalink(); ?>" class="pxp-results-card-1 rounded-lg" data-prop="1">
-                    <div id="card-carousel-<?php echo  $postIndex;?>" class="carousel slide" data-ride="carousel"
-                        data-interval="false">
-                        <div class="carousel-inner">
-                            <?php
+                    <a href="<?php the_permalink(); ?>" class="pxp-results-card-1 rounded-lg" data-prop="1">
+                        <div id="card-carousel-<?php echo  $postIndex;?>" class="carousel slide" data-ride="carousel"
+                            data-interval="false">
+                            <div class="carousel-inner">
+                                <?php
                             $photoIndex=0;
                             foreach ($results as $page) {
                         ?>
-                            <div class="carousel-item <?php echo $photoIndex==0?"active":""?>"
-                                style="background-image: url(<?php echo $page->PhotoURL;?>)"> </div>
-                            <?php
+                                <div class="carousel-item <?php echo $photoIndex==0?"active":""?>"
+                                    style="background-image: url(<?php echo $page->PhotoURL;?>)"> </div>
+                                <?php
                             $photoIndex= $photoIndex+1;
                          }
                         ?>
+                            </div>
+                            <span class="carousel-control-prev" data-href="#card-carousel-<?php echo  $postIndex;?>"
+                                data-slide="prev">
+                                <span class="fa fa-angle-left" aria-hidden="true"></span>
+                            </span>
+                            <span class="carousel-control-next" data-href="#card-carousel-<?php echo  $postIndex;?>"
+                                data-slide="next">
+                                <span class="fa fa-angle-right" aria-hidden="true"></span>
+                            </span>
                         </div>
-                        <span class="carousel-control-prev" data-href="#card-carousel-<?php echo  $postIndex;?>"
-                            data-slide="prev">
-                            <span class="fa fa-angle-left" aria-hidden="true"></span>
-                        </span>
-                        <span class="carousel-control-next" data-href="#card-carousel-<?php echo  $postIndex;?>"
-                            data-slide="next">
-                            <span class="fa fa-angle-right" aria-hidden="true"></span>
-                        </span>
-                    </div>
-                    <div class="pxp-results-card-1-gradient"></div>
-                    <div class="pxp-results-card-1-details">
-                        <div class="pxp-results-card-1-details-title"><?php the_title(); ?></div>
-                        <div class="pxp-results-card-1-details-price">
-                            <?php  echo $inscriptionsData->PRIX_DEMANDE.' $';?>
+                        <div class="pxp-results-card-1-gradient"></div>
+                        <div class="pxp-results-card-1-details">
+                            <div class="pxp-results-card-1-details-title"><?php the_title(); ?></div>
+                            <div class="pxp-results-card-1-details-price">
+                                <?php  echo $inscriptionsData->PRIX_DEMANDE.' $';?>
+                            </div>
                         </div>
-                    </div>
-                    <div class="pxp-results-card-1-features">
-                        <span><?php echo $inscriptionsData->NB_CHAMBRES;?> BD <span>|</span>
-                            <?php echo $inscriptionsData->NB_CHAMBRES_HORS_SOL;?> BA <span>|</span>
-                            <?php echo $inscriptionsData->SUPERFICIE_HABITABLE." ".$inscriptionsData->UM_SUPERFICIE_HABITABLE;?>
-                        </span>
-                    </div>
-                    <div class="pxp-results-card-1-save"><span class="fa fa-star-o"></span></div>
-                </a>
-            </div>
-            <?php
+                        <div class="pxp-results-card-1-features">
+                            <span><?php echo $inscriptionsData->NB_CHAMBRES;?> BD <span>|</span>
+                                <?php echo $inscriptionsData->NB_CHAMBRES_HORS_SOL;?> BA <span>|</span>
+                                <?php echo $inscriptionsData->SUPERFICIE_HABITABLE." ".$inscriptionsData->UM_SUPERFICIE_HABITABLE;?>
+                            </span>
+                        </div>
+                        <div class="pxp-results-card-1-save"><span class="fa fa-star-o"></span></div>
+                    </a>
+                </div>
+                <?php
              $postIndex++;
                         }
             endwhile; endif; ?>
 
-            <!-- <div class="coUl-sm-12 col-md-6 col-xxxl-4">
+                <!-- <div class="coUl-sm-12 col-md-6 col-xxxl-4">
                             <a href="single-property.html" class="pxp-results-card-1 rounded-lg" data-prop="2">
                                 <div id="card-carousel-2" class="carousel slide" data-ride="carousel" data-interval="false">
                                     <div class="carousel-inner">
@@ -319,9 +324,9 @@ global $wpdb;
                                 <div class="pxp-results-card-1-save"><span class="fa fa-star-o"></span></div>
                             </a>
                         </div> -->
-        </div>
+            </div>
 
-        <!-- <ul class="pagination pxp-paginantion mt-2 mt-md-4">
+            <!-- <ul class="pagination pxp-paginantion mt-2 mt-md-4">
                 <li class="page-item active"><a class="page-link" href="#">1</a></li>
                 <li class="page-item"><a class="page-link" href="#">2</a></li>
                 <li class="page-item"><a class="page-link" href="#">3</a></li>
@@ -762,7 +767,10 @@ $("#pxp-p-filter-type").change(function() {
     if ($("#pxp-p-filter-type").val() == "All") {
         $('.hide_post_class').show();
     } else {
-        $('.NO_INSCRIPTION' + $("#pxp-p-filter-type").val()).show();
+        var value = $("#pxp-p-filter-type").val();
+        var r1 = value.replaceAll(".", "");
+        var r2 = r1.replaceAll("'", "");
+        $('.NO_INSCRIPTION' + r2.replaceAll(" ", "")).show();
     }
 });
 
