@@ -67,7 +67,7 @@ if (!empty($table_data)) {
     echo '</table>';
 } else {
     echo 'No data found in the "REGIONS" table.';
-    dd ($table_data);
+    
 }
 
 ?>
