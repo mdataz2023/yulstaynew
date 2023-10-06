@@ -6,7 +6,7 @@ get_header();
 
 ?>
 
-<div>
+<div style="color: black">
 <?php
 global $wpdb;
 
@@ -20,6 +20,21 @@ if ($wpdb->last_error) {
     // Database connection is successful
     echo "Database connection is working!";
 }
+
+$tables = $wpdb->get_results("SHOW TABLES");
+
+if ($tables) {
+    echo '<ul>';
+    foreach ($tables as $table) {
+        foreach ($table as $table_name) {
+            echo '<li>' . esc_html($table_name) . '</li>';
+        }
+    }
+    echo '</ul>';
+} else {
+    echo 'No tables found in the database.';
+}
+
 ?>
 </div>
 
