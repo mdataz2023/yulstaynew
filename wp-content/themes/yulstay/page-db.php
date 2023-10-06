@@ -1,78 +1,121 @@
 <?php
-/*
-    Template Name: DB
-*/
-get_header();
 
-?>
+$servername = "localhost";
+$username = "uhd50p3aarwb3";
+$password = "b2p(N1;]:3Lc";
+$dbname = "db3slni3ex0xza";
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+$language="A";
 
-<div style="color: black">
-<?php
-global $wpdb;
+$customSql="";
+$post_type=$_POST['post_type'];
+$min_price=$_POST['min_price'];
+$max_price=$_POST['max_price'];
+$min_size=$_POST['min_size'];
+$max_size=$_POST['max_size'];
+$orderBy=@$_POST['orderBy'];
+$baths=$_POST['baths'];
+$beds=$_POST['beds'];
 
-// Perform a simple query to check the database connection
-$result = $wpdb->get_var("SELECT 1");
+if(isset($min_price)&$min_price!=""){
+    $customSql.=" and  PRIX_DEMANDE >= '".$min_price."'";
+}
+if(isset($max_price)&$max_price!=""){
+    $customSql.=" and  PRIX_DEMANDE <= '".$max_price."'";
+}
+if(isset($beds)&$beds!=""){
+    if($beds==5)
+        $customSql.=" and NB_CHAMBRES >= '".$beds."'";
+    else
+        $customSql.=" and NB_CHAMBRES = '".$beds."'";
+}
+if(isset($baths)&$baths!="undefined"&$baths!="" ){
+    $customSql.=" and  NB_CHAMBRES_HORS_SOL >= '".$baths."'";
+}
+if(isset($min_size)&$min_size!=""){
+    $customSql.=" and  SUPERFICIE_HABITABLE >= '".$min_size."'";
+}
+if(isset($max_size)&$max_size!=""){
+    $customSql.=" and  SUPERFICIE_HABITABLE <= '".$min_size."'";
+}
+if(isset($orderBy)&$orderBy!=""){
 
-if ($wpdb->last_error) {
-    // If there is an error, print or log it
-    echo "Database connection error: " . $wpdb->last_error;
-} else {
-    // Database connection is successful
-    echo "Database connection is working!";
+$price="PRIX_DEMANDE";
+if($post_type=="rental-property"){
+    $price="PRIX_LOCATION_DEMANDE";
+}
+    if($orderBy=="low"){
+        $customSql.=" order by  ".$price." asc";
+    }else if($orderBy=="high"){
+        $customSql.=" order by  ".$price." desc";
+    }
 }
 
-$tables = $wpdb->get_results("SHOW TABLES");
+$sql= "SELECT * FROM INSCRIPTIONS i join wp_posts p on p.post_content=i.NO_INSCRIPTION where p.post_type='".$_POST['post_type']."' and i.CODE_STATUT='EV' ".$customSql;
+// $sql = "INSERT INTO filter_table (QUERY) VALUES ('".$sql1."' )";
 
-if ($tables) {
-    echo '<ul>';
-    foreach ($tables as $table) {
-        foreach ($table as $table_name) {
-            echo '<li>' . esc_html($table_name) . '</li>';
+$result = mysqli_query($conn, $sql);
+$data="";
+$postIndex=0;
+    while($inscriptionsData = mysqli_fetch_assoc($result)) {
+        $photos=mysqli_query($conn, "SELECT * FROM PHOTOS where  NO_INSCRIPTION = '".$inscriptionsData["NO_INSCRIPTION"]."' limit 3");
+        $photosHtml="";
+        if ($photos->num_rows > 0) {
+            $photoIndex=0;
+            while($page = mysqli_fetch_assoc($photos)) {
+                $actv="";
+                if($photoIndex==0){
+                    $actv="active";
+                }else{
+                    $actv="";
+                }
+                $photosHtml.='<div class="carousel-item '.$actv.'" style="background-image: url('.$page['PhotoURL'].')"> </div>';
+                $photoIndex++;
+            }
         }
-    }
-    echo '</ul>';
-} else {
-    echo 'No tables found in the database.';
+        $r2=str_replace(' ',"",$inscriptionsData['NOM_RUE_COMPLET']);
+        $r1=str_replace("'","",$r2);
+        $data.='
+        <div class="col-sm-12 col-md-6 col-xxxl-4 NO_INSCRIPTION'.str_replace('.',"",$r1).'">
+            <a href="'.$_POST['bloginfo'].'/'.$_POST['post_type'].'/'.$inscriptionsData['post_name'].'" class="pxp-results-card-1 rounded-lg" data-prop="1">
+                <div id="card-carousel-'.$postIndex.'" class="carousel slide" data-ride="carousel"
+                    data-interval="false">
+                <div class="carousel-inner">
+                '. $photosHtml.'
+                </div>
+                <span class="carousel-control-prev" data-href="#card-carousel-'.$postIndex.'"
+                    data-slide="prev">
+                    <span class="fa fa-angle-left" aria-hidden="true"></span>
+                </span>
+                <span class="carousel-control-next" data-href="#card-carousel-'.$postIndex.'"
+                    data-slide="next">
+                    <span class="fa fa-angle-right" aria-hidden="true"></span>
+                </span>
+             </div>
+             <div class="pxp-results-card-1-gradient"></div>
+             <div class="pxp-results-card-1-details">
+                 <div class="pxp-results-card-1-details-title">'.$inscriptionsData['NOM_RUE_COMPLET'].'</div>
+                 <div class="pxp-results-card-1-details-price">
+                     '.$inscriptionsData['PRIX_DEMANDE'].' $'.'
+                 </div>
+             </div>
+             <div class="pxp-results-card-1-features">
+                 <span>'.$inscriptionsData['NB_CHAMBRES'].' BD <span>|</span>
+                     '.$inscriptionsData['NB_CHAMBRES_HORS_SOL'].' BA <span>|</span>
+                    '.$inscriptionsData['SUPERFICIE_HABITABLE']." ".$inscriptionsData['UM_SUPERFICIE_HABITABLE'].'
+                 </span>
+             </div>
+             <div class="pxp-results-card-1-save"><span class="fa fa-star-o"></span></div>
+         </a>
+        </div>
+';
+$postIndex++;
 }
-
-// $table_name = $wpdb->prefix . 'REGIONS';
-
-// SQL query to retrieve data from the "REGIONS" table
-$sql = "SELECT * FROM wp_comments";
-// $sql .= " COLLATE utf8_general_ci";
-
-// Get the table data
-$table_data = $wpdb->get_results($sql);
-
-if (!empty($table_data)) {
-    echo '<table>';
-    echo '<thead>';
-    echo '<tr>';
-    echo '<th>CODE</th>';
-    echo '<th>DESCRIPTION_FRANCAISE</th>';
-    echo '<th>DESCRIPTION_ANGLAISE</th>';
-    echo '</tr>';
-    echo '</thead>';
-    echo '<tbody>';
-
-    foreach ($table_data as $row) {
-        echo '<tr>';
-        echo '<td>' . esc_html($row->comment_ID) . '</td>';
-        echo '<td>' . esc_html($row->comment_post_ID) . '</td>';
-        echo '<td>' . esc_html($row->comment_author) . '</td>';
-        echo '</tr>';
-    }
-
-    echo '</tbody>';
-    echo '</table>';
-} else {
-    echo 'No data found in the "REGIONS" table.';
-    
-}
-
-?>
-</div>
-
-<?php
-get_footer();
+// mysqli_close($conn);
+echo $data;
 ?>
