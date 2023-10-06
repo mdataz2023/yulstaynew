@@ -4,6 +4,10 @@
 */
 get_header();
 
+?>
+
+<div>
+<?php
 global $wpdb;
 $table_name = $wpdb->prefix . 'REGIONS'; 
 $sql = "SELECT * FROM $table_name";
@@ -29,6 +33,9 @@ foreach ($table_data as $row) {
 
 echo '</tbody>';
 echo '</table>';
+?>
+</div>
 
+<?php
 get_footer();
 ?>
