@@ -28,10 +28,10 @@ $the_query = new WP_Query( array('post_type' =>'multi-residential','posts_per_pa
                                     <option value="" disabled selected>Select Listning</option>
                                     <option value="All">All</option>
                                     <?php
-                                     $datas = $wpdb->get_results("SELECT i.NOM_RUE_COMPLET,p.ID,i.NO_INSCRIPTION FROM INSCRIPTIONS i join wp_posts p on p.post_content=i.NO_INSCRIPTION where post_type='multi-residential'  and i.CODE_STATUT='EV'", OBJECT );
+                                     $datas = $wpdb->get_results("SELECT i.NOM_RUE_COMPLET,p.ID,i.NO_INSCRIPTION FROM INSCRIPTIONS i join wp_posts p on p.post_content=i.NO_INSCRIPTION where post_type='multi-residential'  and i.CODE_STATUT='EV'  group by i.NOM_RUE_COMPLET", OBJECT );
                                      foreach ($datas as $inscriptionsData) {
                                         ?>
-                                    <option value="<?php echo $inscriptionsData->NO_INSCRIPTION;?>">
+                                    <option value="<?php echo $inscriptionsData->NOM_RUE_COMPLET;?>">
                                         <?php echo $inscriptionsData->NOM_RUE_COMPLET;?></option>
                                     <?php }
                                 ?>
@@ -104,8 +104,11 @@ $the_query = new WP_Query( array('post_type' =>'multi-residential','posts_per_pa
             </div>
             <div class="row pb-4">
                 <div class="col-sm-6">
-                    <h2 class="pxp-content-side-h2"><span id='postsCount'><?php echo $the_query->post_count ;?></span>
-                        Results</h2>
+                    <h2 class="pxp-content-side-h2">
+                    <?php
+                    $POST_COUNT = $wpdb->get_row("SELECT count(NO_INSCRIPTION) as POST_COUNT FROM INSCRIPTIONS i join wp_posts p on p.post_content=i.NO_INSCRIPTION where p.post_type='multi-residential' and i.CODE_STATUT='EV'", OBJECT );
+                echo $POST_COUNT->POST_COUNT;
+                ?> Results</h2>
                 </div>
                 <div class="col-sm-6">
                     <div class="pxp-sort-form form-inline float-right">
@@ -141,7 +144,10 @@ $the_query = new WP_Query( array('post_type' =>'multi-residential','posts_per_pa
                     $categories = get_the_category();
                     $results = $wpdb->get_results(" SELECT * FROM PHOTOS where  NO_INSCRIPTION = '".get_the_content()."' limit 3", OBJECT );
 				?>
-                <div class="col-sm-12 col-md-6 col-xxxl-4 hide_post_class"
+                <div class="col-sm-12 col-md-6 col-xxxl-4 hide_post_class NO_INSCRIPTION<?php
+            $r2=str_replace(' ',"",$inscriptionsData->NOM_RUE_COMPLET);
+            $r1=str_replace("'","",$r2);
+            echo str_replace('.',"",$r1)?>" id='<?php  echo $inscriptionsData->PRIX_DEMANDE;?>"
                     id='NO_INSCRIPTION<?php echo $inscriptionsData->NO_INSCRIPTION?>'>
                     <a href="<?php the_permalink(); ?>" class="pxp-results-card-1 rounded-lg" data-prop="1">
                         <div id="card-carousel-<?php echo  $postIndex;?>" class="carousel slide" data-ride="carousel"
@@ -761,7 +767,10 @@ $("#pxp-p-filter-type").change(function() {
     if ($("#pxp-p-filter-type").val() == "All") {
         $('.hide_post_class').show();
     } else {
-        $('#NO_INSCRIPTION'+$("#pxp-p-filter-type").val()).show();
+        var value = $("#pxp-p-filter-type").val();
+        var r1 = value.replaceAll(".", "");
+        var r2 = r1.replaceAll("'", "");
+        $('.NO_INSCRIPTION' + r2.replaceAll(" ", "")).show();
     }
 });
 </script>
