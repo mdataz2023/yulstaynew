@@ -807,7 +807,7 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
     var marker = [];
     // Property map marker position
     var propLat = '<?php echo $inscriptionsData->LATITUDE;?>';
-    var propLng = '<?php echo $inscriptionsData->LONGITUDE;?>4';
+    var propLng = '<?php echo $inscriptionsData->LONGITUDE;?>';
 
     var options = {
         zoom: 14,
