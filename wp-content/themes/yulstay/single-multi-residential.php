@@ -28,7 +28,7 @@ $inscriptionsData = $wpdb->get_row(" SELECT * FROM INSCRIPTIONS where NO_INSCRIP
                     <p class="pxp-sp-top-address pxp-text-light"><?php echo $inscriptionsData->NOM_RUE_COMPLET;?></p>
                 </div>
                 <div class="col-sm-12 col-md-7">
-                    <div class="pxp-sp-top-btns mt-2 mt-md-0">
+                    <div class="pxp-sp-top-btns mt-2 mt-md-0" style="display: none;">
                         <a href="#" class="pxp-sp-top-btn"><span class="fa fa-star"></span> Save</a>
                         <div class="dropdown">
                             <a class="pxp-sp-top-btn" href="#" role="button" id="dropdownMenuLink"
@@ -561,7 +561,7 @@ $inscriptionsData = $wpdb->get_row(" SELECT * FROM INSCRIPTIONS where NO_INSCRIP
             </div>
             <div class="modal-body">
                 <h5 class="modal-title" id="pxpContactAgentModal">Contact Erika Tillman</h5>
-                <form class="mt-4">
+                <!-- <form class="mt-4">
                     <div class="form-group">
                         <label for="pxp-contact-agent-name">Name</label>
                         <input type="text" class="form-control" id="pxp-contact-agent-name">
@@ -582,7 +582,12 @@ $inscriptionsData = $wpdb->get_row(" SELECT * FROM INSCRIPTIONS where NO_INSCRIP
                     <div class="form-group mt-4">
                         <a href="#" class="pxp-agent-contact-modal-btn">Send Message</a>
                     </div>
-                </form>
+                </form> -->
+                <?php echo do_shortcode('[contact-form-7 id="a5998d6" title="Sebaaly Ralph Property Contact"]'); ?>
+                <!-- <?php echo do_shortcode('[contact-form-7 id="bedd78f" title="Michael Ghannoum Property Contact"]'); ?>
+                <?php echo do_shortcode('[contact-form-7 id="026505a" title="Cynthia Dahoud Property Contact"]'); ?>
+                <?php echo do_shortcode('[contact-form-7 id="08b0a05" title="Parvez Coowar Property Contact"]'); ?>
+                <?php echo do_shortcode('[contact-form-7 id="a5998d6" title="Christian Daoud Property Contact"]'); ?> -->
             </div>
         </div>
     </div>
