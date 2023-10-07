@@ -127,10 +127,22 @@ $inscriptionsData = $wpdb->get_row(" SELECT * FROM INSCRIPTIONS where NO_INSCRIP
                         </div>
                         <div class="col-sm-6">
                             <div class="pxp-sp-key-details-item">
-                                <div class="pxp-sp-kd-item-label text-uppercase">Room Count</div>
+                                <div class="pxp-sp-kd-item-label text-uppercase">Number of Rooms</div>
                                 <div class="pxp-sp-kd-item-value"><?php
                                 $UNITES_DETAILLEES = $wpdb->get_row("SELECT * FROM UNITES_DETAILLEES WHERE NO_INSCRIPTION='". $inscriptionsData->NO_INSCRIPTION."' ", OBJECT );
                                 echo $UNITES_DETAILLEES->NB_CHAMBRES;?></div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="pxp-sp-key-details-item">
+                                <div class="pxp-sp-kd-item-label text-uppercase">Number of Bedroom</div>
+                                <div class="pxp-sp-kd-item-value">2</div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="pxp-sp-key-details-item">
+                                <div class="pxp-sp-kd-item-label text-uppercase">Number of Bathroom</div>
+                                <div class="pxp-sp-kd-item-value">2</div>
                             </div>
                         </div>
                         <div class="col-sm-6">
