@@ -20,6 +20,7 @@ $inscriptionsData = $wpdb->get_row(" SELECT * FROM INSCRIPTIONS where NO_INSCRIP
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-md-5">
+                <p class="pxp-sp-top-address pxp-text-light">MLSXXXXXXXX</p>
                     <h2 class="pxp-sp-top-title"><?php
                     $municipalite = $wpdb->get_row(" SELECT * FROM MUNICIPALITES where CODE = '".$inscriptionsData->MUN_CODE."'", OBJECT );
                     // echo $municipalite->DESCRIPTION.' - '.$inscriptionsData->NO_INSCRIPTION;
