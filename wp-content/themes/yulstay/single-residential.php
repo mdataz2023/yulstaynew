@@ -794,6 +794,7 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.sticky.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/gallery.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/infobox.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/markerclusterer.js"></script>
 <!-- <script src="<?php echo get_template_directory_uri(); ?>/js/single-map.js"></script> -->
 <script src="<?php echo get_template_directory_uri(); ?>/js/Chart.min.js"></script>
 <!-- <script src="<?php echo get_template_directory_uri(); ?>/js/main.js?asdasd12"></script> -->
