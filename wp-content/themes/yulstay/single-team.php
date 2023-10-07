@@ -11,6 +11,7 @@ $specialities_heading=get_field('social_media_heading');
 $specialities_paragraph=get_field('specialities_paragraph');
 $social_media_heading=get_field('social_media_heading');
 $social_media_paragraph=get_field('social_media_paragraph');
+$broker_id=get_field('broker_id');
 
 ?>
 
