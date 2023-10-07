@@ -4,6 +4,7 @@ $servername = "localhost";
 $username = "uhd50p3aarwb3";
 $password = "b2p(N1;]:3Lc";
 $dbname = "db3slni3ex0xza";
+
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
@@ -41,7 +42,7 @@ if(isset($min_size)&$min_size!=""){
     $customSql.=" and  SUPERFICIE_HABITABLE >= '".$min_size."'";
 }
 if(isset($max_size)&$max_size!=""){
-    $customSql.=" and  SUPERFICIE_HABITABLE <= '".$min_size."'";
+    $customSql.=" and  SUPERFICIE_HABITABLE <= '".$max_size."'";
 }
 if(isset($orderBy)&$orderBy!=""){
 

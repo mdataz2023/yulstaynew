@@ -13,6 +13,9 @@ if ($lang == 'en-US'){
    $language="F";
 }
 $inscriptionsData = $wpdb->get_row(" SELECT * FROM INSCRIPTIONS where NO_INSCRIPTION = '".get_the_content()."'", OBJECT );
+$GENRES_PROPRIETES = $wpdb->get_row("SELECT * FROM GENRES_PROPRIETES WHERE GENRE_PROPRIETE ='".$inscriptionsData->GENRE_PROPRIETE."'", OBJECT );
+$MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r ON m.REGION_CODE = r.CODE where m.CODE='".$inscriptionsData->MUN_CODE."' ", OBJECT );
+
 ?>
 
 <div class="pxp-content">
@@ -20,13 +23,21 @@ $inscriptionsData = $wpdb->get_row(" SELECT * FROM INSCRIPTIONS where NO_INSCRIP
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-md-5">
-                <p class="pxp-sp-top-address pxp-text-light">MLSXXXXXXXX</p>
+                    <p class="pxp-sp-top-address pxp-text-light">MLS<?php echo  $inscriptionsData->NO_INSCRIPTION;?></p>
                     <h2 class="pxp-sp-top-title"><?php
-                    $municipalite = $wpdb->get_row(" SELECT * FROM MUNICIPALITES where CODE = '".$inscriptionsData->MUN_CODE."'", OBJECT );
-                    // echo $municipalite->DESCRIPTION.' - '.$inscriptionsData->NO_INSCRIPTION;
-                    ?>
-                        <?php the_title();?></h2>
-                    <p class="pxp-sp-top-address pxp-text-light"><?php echo $inscriptionsData->NOM_RUE_COMPLET;?></p>
+                    $property="";
+                    $cityName="";
+                     if ($lang == 'en-US'){
+                        $property=$GENRES_PROPRIETES->DESCRIPTION_ANGLAISE;
+                        $cityName=$MUNICIPALITES->DESCRIPTION_ANGLAISE;
+                     }else{
+                        $property=$GENRES_PROPRIETES->DESCRIPTION_FRANCAISE;
+                        $cityName=$MUNICIPALITES->DESCRIPTION_FRANCAISE;
+                     }
+                     echo $property." for sale, ".$cityName;?></h2>
+                    <p class="pxp-sp-top-address pxp-text-light">
+                        <?php echo  $inscriptionsData->APPARTEMENT.' '. $inscriptionsData->CODE_POSTAL.', '.$inscriptionsData->NOM_RUE_COMPLET.$cityName;?>
+                    </p>
                 </div>
                 <div class="col-sm-12 col-md-7">
                     <div class="pxp-sp-top-btns mt-2 mt-md-0" style="display: none;">
@@ -51,11 +62,12 @@ $inscriptionsData = $wpdb->get_row(" SELECT * FROM INSCRIPTIONS where NO_INSCRIP
                                 echo $UNITES_DETAILLEES->NB_CHAMBRES;?> <span>BD</span></div>
                         <div><?php echo $inscriptionsData->NB_SALLES_BAINS;?> <span>BA</span></div>
                         <div>
-                            <?php echo $inscriptionsData->SUPERFICIE_HABITABLE;?> <span><?php echo $inscriptionsData->UM_SUPERFICIE_HABITABLE;?></span>
+                            <?php echo $inscriptionsData->SUPERFICIE_HABITABLE;?>
+                            <span><?php echo $inscriptionsData->UM_SUPERFICIE_HABITABLE;?></span>
                         </div>
                     </div>
                     <div class="pxp-sp-top-price mt-3 mt-md-0">
-                    <?php if($inscriptionsData->DEVISE_PRIX_DEMANDE==="CAN"){
+                        <?php if($inscriptionsData->DEVISE_PRIX_DEMANDE==="CAN"){
                                                             echo $inscriptionsData->PRIX_DEMANDE.' $';
                                                         }else{
                                                             echo $inscriptionsData->PRIX_LOCATION_DEMANDE;
@@ -106,11 +118,10 @@ $inscriptionsData = $wpdb->get_row(" SELECT * FROM INSCRIPTIONS where NO_INSCRIP
                 <div class="pxp-single-property-section">
                     <h3>Key Details</h3>
                     <div class="row mt-3 mt-md-4">
-                        <div class="col-sm-6">
+                        <!-- <div class="col-sm-6">
                             <div class="pxp-sp-key-details-item">
                                 <div class="pxp-sp-kd-item-label text-uppercase">Property Type</div>
                                 <div class="pxp-sp-kd-item-value"><?php
-                                 $GENRES_PROPRIETES = $wpdb->get_row("SELECT * FROM GENRES_PROPRIETES WHERE GENRE_PROPRIETE ='".$inscriptionsData->GENRE_PROPRIETE."'", OBJECT );
                                  if ($lang == 'en-US'){
                                     echo $GENRES_PROPRIETES->DESCRIPTION_ANGLAISE;
                                 }else{
@@ -125,30 +136,30 @@ $inscriptionsData = $wpdb->get_row(" SELECT * FROM INSCRIPTIONS where NO_INSCRIP
                                 <div class="pxp-sp-kd-item-value"><?php echo $inscriptionsData->ANNEE_CONTRUCTION?>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="col-sm-6">
                             <div class="pxp-sp-key-details-item">
                                 <div class="pxp-sp-kd-item-label text-uppercase">Number of Rooms</div>
                                 <div class="pxp-sp-kd-item-value"><?php
-                                $UNITES_DETAILLEES = $wpdb->get_row("SELECT * FROM UNITES_DETAILLEES WHERE NO_INSCRIPTION='". $inscriptionsData->NO_INSCRIPTION."' ", OBJECT );
-                                echo $UNITES_DETAILLEES->NB_CHAMBRES;?></div>
+                                echo $inscriptionsData->NB_PIECES;?></div>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="pxp-sp-key-details-item">
                                 <div class="pxp-sp-kd-item-label text-uppercase">Number of Bedroom</div>
-                                <div class="pxp-sp-kd-item-value">2</div>
+                                <div class="pxp-sp-kd-item-value"><?php echo $inscriptionsData->NB_CHAMBRES;?></div>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="pxp-sp-key-details-item">
                                 <div class="pxp-sp-kd-item-label text-uppercase">Number of Bathroom</div>
-                                <div class="pxp-sp-kd-item-value">2</div>
+                                <div class="pxp-sp-kd-item-value"><?php
+                                echo $inscriptionsData->NB_SALLES_BAINS;?></div>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="pxp-sp-key-details-item">
-                                <div class="pxp-sp-kd-item-label text-uppercase">Parking Spaces</div>
+                                <div class="pxp-sp-kd-itemabel text-uppercase">Parking Spaces</div>
                                 <div class="pxp-sp-kd-item-value">2</div>
                             </div>
                         </div>
@@ -158,15 +169,20 @@ $inscriptionsData = $wpdb->get_row(" SELECT * FROM INSCRIPTIONS where NO_INSCRIP
                 <div class="pxp-single-property-section mt-4 mt-md-5">
                     <h3>Overview</h3>
                     <div class="mt-3 mt-md-4">
+                        <h4>Description</h4>
                         <p><?php
                     $remarques = $wpdb->get_row(" SELECT * FROM REMARQUES where NO_INSCRIPTION = '".$inscriptionsData->NO_INSCRIPTION."' and CODE_LANGUE='".$language."'", OBJECT );
-                    echo $remarques->TEXTE;
-                    ?><span class="pxp-dots">...</span><span class="pxp-dots-more"> <?php
+                    echo $remarques->TEXTE==""?"-<br>":$remarques->TEXTE;
+                    ?><span class="pxp-dots">...</span>
+                            <span class="pxp-dots-more">
+                                <span class="addendaFontSize"><br>Addenda <br></span>
+                                <?php
                                  $results = $wpdb->get_results("SELECT * FROM ADDENDA WHERE NO_INSCRIPTION = '".get_the_content()."' and CODE_LANGUE='".$language."'", OBJECT );
                                  foreach ($results as $page) {
                                     echo $page->TEXTE.'<br/>';
                                  }
-                    ?></span></p>
+                    ?></span>
+                        </p>
                         <a href="#" class="pxp-sp-more text-uppercase"><span class="pxp-sp-more-1">Continue Reading
                                 <span class="fa fa-angle-down"></span></span><span class="pxp-sp-more-2">Show Less <span
                                     class="fa fa-angle-up"></span></span></a>
@@ -179,7 +195,6 @@ $inscriptionsData = $wpdb->get_row(" SELECT * FROM INSCRIPTIONS where NO_INSCRIP
                         <div class="col-sm-6 col-lg-4">
                             <div class="pxp-sp-amenities-item"><b><?php _e('Property Type','theme-text-domain'); ?> -
                                 </b><?php
-                            $GENRES_PROPRIETES = $wpdb->get_row("SELECT * FROM GENRES_PROPRIETES WHERE GENRE_PROPRIETE ='".$inscriptionsData->GENRE_PROPRIETE."'", OBJECT );
                             if ($lang == 'en-US'){
                                 echo $GENRES_PROPRIETES->DESCRIPTION_ANGLAISE;
                             }else{
@@ -195,7 +210,8 @@ $inscriptionsData = $wpdb->get_row(" SELECT * FROM INSCRIPTIONS where NO_INSCRIP
                         <div class="col-sm-6 col-lg-4">
                             <div class="pxp-sp-amenities-item">
                                 <b><?php _e('Year of construction','theme-text-domain'); ?> - </b><?php
-                            echo $inscriptionsData->ANNEE_CONTRUCTION;?></div>
+                            echo $inscriptionsData->ANNEE_CONTRUCTION;?>
+                            </div>
                         </div>
                         <div class="col-sm-6 col-lg-4">
                             <div class="pxp-sp-amenities-item">
@@ -205,7 +221,8 @@ $inscriptionsData = $wpdb->get_row(" SELECT * FROM INSCRIPTIONS where NO_INSCRIP
                         }else{
                             echo $inscriptionsData->DELAI_OCCUPATION_FRANCAIS;
                          }
-                         ?></div>
+                         ?>
+                            </div>
                         </div>
                         <?php
                         $results = $wpdb->get_results("SELECT * FROM CARACTERISTIQUES WHERE NO_INSCRIPTION = '".get_the_content()."' ", OBJECT );
@@ -237,7 +254,8 @@ $inscriptionsData = $wpdb->get_row(" SELECT * FROM INSCRIPTIONS where NO_INSCRIP
                                 }else{
                                     echo $TYPE_CARACTERISTIQUES->DESCRIPTION_FRANCAISE;
                                  }
-                               ?></div>
+                               ?>
+                            </div>
                         </div>
                         <?php }
                     }
@@ -557,11 +575,11 @@ $inscriptionsData = $wpdb->get_row(" SELECT * FROM INSCRIPTIONS where NO_INSCRIP
                             $MEMBRES = $wpdb->get_row("SELECT * FROM MEMBRES WHERE CODE ='".$inscriptionsData->COURTIER_INSCRIPTEUR_1."'", OBJECT );
                         ?>
                     <div class="pxp-sp-agent mt-3 mt-md-4">
-                        <a href="single-agent.html" class="pxp-sp-agent-fig pxp-cover rounded-lg"
+                        <a href="<?php echo site_url()."/team/".strtolower($MEMBRES->PRENOM."-". $MEMBRES->NOM)?>" class="pxp-sp-agent-fig pxp-cover rounded-lg"
                             style="background-image: url('<?php echo $MEMBRES->PHOTO_URL?>'); background-position: top center"></a>
                         <div class="pxp-sp-agent-info">
                             <div class="pxp-sp-agent-info-name"><a
-                                    href="single-agent.html"><?php echo $MEMBRES->NOM." ".$MEMBRES->PRENOM?></a></div>
+                                    href="<?php echo site_url()."/team/".strtolower($MEMBRES->PRENOM."-". $MEMBRES->NOM)?>"><?php echo $MEMBRES->PRENOM." ". $MEMBRES->NOM?></a></div>
                             <div class="pxp-sp-agent-info-rating"><span class="fa fa-star"></span><span
                                     class="fa fa-star"></span><span class="fa fa-star"></span><span
                                     class="fa fa-star"></span><span class="fa fa-star"></span></div>
@@ -632,7 +650,7 @@ $inscriptionsData = $wpdb->get_row(" SELECT * FROM INSCRIPTIONS where NO_INSCRIP
                 </button>
             </div>
             <div class="modal-body">
-                <h5 class="modal-title" id="pxpContactAgentModal">Contact Erika Tillman</h5>
+                <h5 class="modal-title" id="pxpContactAgentModal">Contact <?php echo $MEMBRES->NOM." ".$MEMBRES->PRENOM?></h5>
                 <!-- <form class="mt-4">
                     <div class="form-group">
                         <label for="pxp-contact-agent-name">Name</label>
@@ -655,11 +673,22 @@ $inscriptionsData = $wpdb->get_row(" SELECT * FROM INSCRIPTIONS where NO_INSCRIP
                         <a href="#" class="pxp-agent-contact-modal-btn">Send Message</a>
                     </div>
                 </form> -->
-                <?php echo do_shortcode('[contact-form-7 id="a5998d6" title="Sebaaly Ralph Property Contact"]'); ?>
-                <!-- <?php echo do_shortcode('[contact-form-7 id="bedd78f" title="Michael Ghannoum Property Contact"]'); ?>
-                <?php echo do_shortcode('[contact-form-7 id="026505a" title="Cynthia Dahoud Property Contact"]'); ?>
-                <?php echo do_shortcode('[contact-form-7 id="08b0a05" title="Parvez Coowar Property Contact"]'); ?>
-                <?php echo do_shortcode('[contact-form-7 id="a5998d6" title="Christian Daoud Property Contact"]'); ?> -->
+
+                <?php
+                if($MEMBRES->PRENOM." ". $MEMBRES->NOM=="Sebaaly Ralph")
+                echo do_shortcode('[contact-form-7 id="a5998d6" title="Sebaaly Ralph Property Contact"]'); ?>
+                <!-- <?php
+                if($MEMBRES->PRENOM." ". $MEMBRES->NOM=="Michael Ghannoum")
+                echo do_shortcode('[contact-form-7 id="bedd78f" title="Michael Ghannoum Property Contact"]'); ?>
+                <?php
+                if($MEMBRES->PRENOM." ". $MEMBRES->NOM=="Cynthia Dahoud")
+                echo do_shortcode('[contact-form-7 id="026505a" title="Cynthia Dahoud Property Contact"]'); ?>
+                <?php
+                if($MEMBRES->PRENOM." ". $MEMBRES->NOM=="Parvez Coowar")
+                echo do_shortcode('[contact-form-7 id="08b0a05" title="Parvez Coowar Property Contact"]'); ?>
+                <?php
+                if($MEMBRES->PRENOM." ". $MEMBRES->NOM=="Christian Daoud")
+                echo do_shortcode('[contact-form-7 id="a5998d6" title="Christian Daoud Property Contact"]'); ?> -->
 
             </div>
         </div>
@@ -754,7 +783,6 @@ $inscriptionsData = $wpdb->get_row(" SELECT * FROM INSCRIPTIONS where NO_INSCRIP
         </div>
     </div>
 </div>
-
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery-3.4.1.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/popper.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/bootstrap.min.js"></script>

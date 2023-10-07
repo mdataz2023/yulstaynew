@@ -28,11 +28,17 @@ $the_query = new WP_Query( array('post_type' =>'rental-property','posts_per_page
                                     <option value="" disabled selected>Select Listning</option>
                                     <option value="All">All</option>
                                     <?php
-                                     $datas = $wpdb->get_results("SELECT i.NOM_RUE_COMPLET,p.ID,i.NO_INSCRIPTION FROM INSCRIPTIONS i join wp_posts p on p.post_content=i.NO_INSCRIPTION where post_type='rental-property'  and i.CODE_STATUT='EV'  group by i.NOM_RUE_COMPLET", OBJECT );
-                                     foreach ($datas as $inscriptionsData) {
+                                     $datas = $wpdb->get_results("
+                                     SELECT
+                                            *
+                                        FROM
+                                            REGIONS", OBJECT );
+                                     foreach ($datas as $REGIONS) {
                                         ?>
-                                    <option value="<?php echo $inscriptionsData->NOM_RUE_COMPLET;?>">
-                                        <?php echo $inscriptionsData->NOM_RUE_COMPLET;?></option>
+                                    <option value="<?php echo $REGIONS->CODE;?>">
+                                        <?php
+                                            echo $language=="A" ?$REGIONS->DESCRIPTION_ANGLAISE:$REGIONS->DESCRIPTION_FRANCAISE;?>
+                                    </option>
                                     <?php }
                                 ?>
                                 </select>
@@ -101,6 +107,7 @@ $the_query = new WP_Query( array('post_type' =>'rental-property','posts_per_page
 
 
                 <a href="#" class="pxp-filter-btn">Apply Filters</a>
+                <a href="#" class="pxp-filter-clear-btn">Clear</a>
             </div>
 
             <div class="row pb-4">
@@ -142,9 +149,13 @@ $the_query = new WP_Query( array('post_type' =>'rental-property','posts_per_page
                     $results = $wpdb->get_results(" SELECT * FROM PHOTOS where  NO_INSCRIPTION = '".get_the_content()."' limit 3", OBJECT );
 				?>
                 <div class="col-sm-12 col-md-6 col-xxxl-4 hide_post_class  NO_INSCRIPTION<?php
-            $r2=str_replace(' ',"",$inscriptionsData->NOM_RUE_COMPLET);
-            $r1=str_replace("'","",$r2);
-            echo str_replace('.',"",$r1)?>" id='NO_INSCRIPTION<?php echo $inscriptionsData->NO_INSCRIPTION?>'>
+             $REGION_CODE = $wpdb->get_row("
+             SELECT
+                  REGION_CODE
+             FROM
+                 MUNICIPALITES where CODE='".$inscriptionsData->MUN_CODE."' ", OBJECT );
+
+     echo $REGION_CODE->REGION_CODE;?>">
                     <a href="<?php the_permalink(); ?>" class="pxp-results-card-1 rounded-lg" data-prop="1">
                         <div id="card-carousel-<?php echo  $postIndex;?>" class="carousel slide" data-ride="carousel"
                             data-interval="false">
@@ -177,7 +188,7 @@ $the_query = new WP_Query( array('post_type' =>'rental-property','posts_per_page
                         </div>
                         <div class="pxp-results-card-1-features">
                             <span><?php echo $inscriptionsData->NB_CHAMBRES;?> BD <span>|</span>
-                                <?php echo $inscriptionsData->NB_CHAMBRES_HORS_SOL;?> BA <span>|</span>
+                                <?php echo $inscriptionsData->NB_SALLES_BAINS;?> BA <span>|</span>
                                 <?php echo $inscriptionsData->SUPERFICIE_HABITABLE." ".$inscriptionsData->UM_SUPERFICIE_HABITABLE;?>
                             </span>
                         </div>
@@ -794,6 +805,10 @@ $("#pxp-sort-results").change(function() {
     });
 });
 
+$(".pxp-filter-clear-btn").click(function() {
+    $('.filter_hide_section').show();
+    $(".filter_display_section").hide();
+});
 $(".pxp-filter-btn").click(function() {
     $.ajax("<?php echo get_template_directory_uri(); ?>/page-db.php", {
         type: 'POST',
