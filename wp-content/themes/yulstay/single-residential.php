@@ -789,6 +789,7 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
 <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALbrsESmR55p0PLDbeL-SQ_YPuRpucYrw&amp;libraries=geometry&amp;libraries=places">
 </script>
+
 <script src="<?php echo get_template_directory_uri(); ?>/js/photoswipe.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/photoswipe-ui-default.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.sticky.js"></script>
@@ -797,7 +798,7 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
 <script src="<?php echo get_template_directory_uri(); ?>/js/markerclusterer.js"></script>
 <!-- <script src="<?php echo get_template_directory_uri(); ?>/js/single-map.js"></script> -->
 <script src="<?php echo get_template_directory_uri(); ?>/js/Chart.min.js"></script>
-<!-- <script src="<?php echo get_template_directory_uri(); ?>/js/main.js?asdasd12"></script> -->
+<script src="<?php echo get_template_directory_uri(); ?>/js/main.js?asdasd12"></script>
 
 
 <script>
