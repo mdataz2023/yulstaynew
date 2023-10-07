@@ -100,7 +100,7 @@ $broker_id=get_field('broker_id');
             <h2 class="pxp-section-h2 mt-100">Listings by <?php the_title(); ?></h2>
             <div class="row mt-4 mt-md-5">
                 <?php
-                        $datas = $wpdb->get_results("SELECT i.*,p.ID FROM INSCRIPTIONS i join wp_posts p on p.post_content=i.NO_INSCRIPTION where post_type='residential'  and i.CODE_STATUT='EV'", OBJECT );
+                        $datas = $wpdb->get_results("SELECT i.*,p.ID FROM INSCRIPTIONS i join wp_posts p on p.post_content=i.NO_INSCRIPTION where post_type='residential'  and i.CODE_STATUT='EV' and COURTIER_INSCRIPTEUR_1='".$broker_id."'", OBJECT );
                         foreach ($datas as $inscriptionsData) {
                     $results = $wpdb->get_row(" SELECT * FROM PHOTOS where  NO_INSCRIPTION = '".$inscriptionsData->NO_INSCRIPTION ."' limit 1", OBJECT );
 				?>
