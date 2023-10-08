@@ -149,9 +149,8 @@
                 </div>
             </div>
         </div>
-        <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALbrsESmR55p0PLDbeL-SQ_YPuRpucYrw&amp;libraries=geometry&amp;libraries=places">
-</script>
+
+        <!-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_KEY_HERE&amp;libraries=geometry&amp;libraries=places"></script> -->
         <script src="<?php echo get_template_directory_uri(); ?>/js/contact-map.js?assasd"></script>
         <script src="<?php echo get_template_directory_uri(); ?>/js/main.js?kasjdk"></script>
         <script src="<?php echo get_template_directory_uri(); ?>/js/popper.min.js"></script>
