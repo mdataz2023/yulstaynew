@@ -842,6 +842,10 @@ unlink($zipFolder."INSCRIPTIONS.TXT");
             $home_search_section_title = get_field('home_search_section_title');
             $home_search_section_description = get_field('home_search_section_description');
             $home_search_section_link = get_field('home_search_section_link');
+            $home_page_testimonial_background_image = get_field('home_page_testimonial_background_image');
+            $home_page_testimonial_title = get_field('home_page_testimonial_title');
+            $home_page_testimonial_description = get_field('home_page_testimonial_description');
+            $home_page_testimonial_link = get_field('home_page_testimonial_link');
 
             ?>
 
@@ -1190,26 +1194,39 @@ unlink($zipFolder."INSCRIPTIONS.TXT");
                 Neighborhoods</a>
         </div>
 
-        <div class="pxp-testim-1 pt-100 pb-100 mt-100 pxp-cover" style="background-image: url(images/ph-big.jpg);">
+        <div class="pxp-testim-1 pt-100 pb-100 mt-100 pxp-cover" style="background-image: url(<?php echo $home_page_testimonial_background_image; ?>);">
             <div class="pxp-testim-1-intro">
-                <h2 class="pxp-section-h2">Customer Testimonials</h2>
-                <p class="pxp-text-light">What our customers say about us</p>
-                <a href="#" class="pxp-primary-cta text-uppercase mt-2 mt-md-3 mt-lg-5 pxp-animate">Read All Stories</a>
+                <h2 class="pxp-section-h2"><?php echo $home_page_testimonial_title; ?></h2>
+                <p class="pxp-text-light"><?php echo $home_page_testimonial_description; ?></p>
+                <a href="<?php echo $home_page_testimonial_link; ?>" class="pxp-primary-cta text-uppercase mt-2 mt-md-3 mt-lg-5 pxp-animate">Read All Stories</a>
             </div>
             <div class="pxp-testim-1-container mt-4 mt-md-5 mt-lg-0">
                 <div class="owl-carousel pxp-testim-1-stage">
+                    <?php $the_query = new WP_Query( array('post_type' =>'team','posts_per_page' => '20',  'post__not_in'   => array( $id),) );?>
+                                    <?php if ( have_posts())   : while ( $the_query->have_posts() ) : $the_query->the_post();?>
+                                
+                                        <?php
+                                            $thumbnail_id = get_post_thumbnail_id(); 
+                                            $thumbnail_url = wp_get_attachment_image_src( $thumbnail_id, 'thumbnail-size', true );
+                                            $thumbnail_meta = get_post_meta( $thumbnail_id, '_wp_attachment_image_alt', true); 
+
+                        $categories = get_the_category();
+										
+										?> 
                     <div>
                         <div class="pxp-testim-1-item">
-                            <div class="pxp-testim-1-item-avatar pxp-cover"
-                                style="background-image: url(images/ph-avatar.jpg)"></div>
-                            <div class="pxp-testim-1-item-name">Derek Cotner</div>
-                            <div class="pxp-testim-1-item-location">Houston, TX</div>
-                            <div class="pxp-testim-1-item-message">While Resideo functions like a traditional broker,
-                                the company's promise is using technology to reduce the time and friction of buying and
-                                selling house or apartment.</div>
+                            <?php if ( has_post_thumbnail() ) {
+                                $attachment_image = wp_get_attachment_url( get_post_thumbnail_id() );
+                                //echo '<link rel="preload" as="image" href="' . esc_attr( $attachment_image ) . '">';  
+                            ?>
+                                <div class="pxp-testim-1-item-avatar pxp-cover" style="background-image: url(<?php echo $attachment_image; ?>)"></div>
+                            <?php } ?>
+                            <div class="pxp-testim-1-item-name"><?php the_title(); ?></div>
+                            <div class="pxp-testim-1-item-location"><?php echo get_field('testimonial_client_detail'); ?></div>
+                            <div class="pxp-testim-1-item-message"><?php echo get_field('testimonial_client_comment'); ?></div>
                         </div>
                     </div>
-                    <div>
+                    <!-- <div>
                         <div class="pxp-testim-1-item">
                             <div class="pxp-testim-1-item-avatar pxp-cover"
                                 style="background-image: url(images/ph-avatar.jpg)"></div>
@@ -1241,7 +1258,7 @@ unlink($zipFolder."INSCRIPTIONS.TXT");
                                 anyone who’s ever tried to rent or buy property in Cambridge knows, the experience is
                                 loaded with pain points.</div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
