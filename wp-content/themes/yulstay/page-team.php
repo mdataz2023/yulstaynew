@@ -5,6 +5,8 @@
 get_header();
 
 $team_page_banner_image = get_field('team_page_banner_image');
+$team_page_title = get_field('team_page_title');
+$team_page_title_description = get_field('team_page_title_description');
 
 ?>
 
@@ -13,8 +15,8 @@ $team_page_banner_image = get_field('team_page_banner_image');
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12 col-md-7">
-                            <h1 class="pxp-page-header">Our Agents</h1>
-                            <p class="pxp-text-light">Pairing the industry's top technology with unsurpassed local expertise.</p>
+                            <h1 class="pxp-page-header"><?php echo $team_page_title ?></h1>
+                            <p class="pxp-text-light"><?php echo $team_page_title_description ?></p>
                         </div>
                     </div>
                 </div>
@@ -191,12 +193,12 @@ $team_page_banner_image = get_field('team_page_banner_image');
                         </div> -->
                     </div>
         
-                    <ul class="pagination pxp-paginantion mt-2 mt-md-3">
+                    <!-- <ul class="pagination pxp-paginantion mt-2 mt-md-3">
                         <li class="page-item active"><a class="page-link" href="#">1</a></li>
                         <li class="page-item"><a class="page-link" href="#">2</a></li>
                         <li class="page-item"><a class="page-link" href="#">3</a></li>
                         <li class="page-item"><a class="page-link" href="#">Next <span class="fa fa-angle-right"></span></a></li>
-                    </ul>
+                    </ul> -->
                 </div>
             </div>
         </div>
