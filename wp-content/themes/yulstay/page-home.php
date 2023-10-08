@@ -692,6 +692,12 @@ unlink($zipFolder."INSCRIPTIONS.TXT");
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
 
+    <?php
+    /*
+        Template Name: Home
+    */
+    ?>
+
     <div class="pxp-header fixed-top pxp-animate">
         <div class="container">
             <div class="row align-items-center">
