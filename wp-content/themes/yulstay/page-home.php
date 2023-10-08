@@ -1226,6 +1226,7 @@ unlink($zipFolder."INSCRIPTIONS.TXT");
                             <div class="pxp-testim-1-item-message"><?php echo get_field('testimonial_client_comment'); ?></div>
                         </div>
                     </div>
+                    <?php endwhile; endif; ?>
                     <!-- <div>
                         <div class="pxp-testim-1-item">
                             <div class="pxp-testim-1-item-avatar pxp-cover"
