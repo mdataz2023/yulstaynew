@@ -928,7 +928,7 @@ unlink($zipFolder."INSCRIPTIONS.TXT");
                         </div>
                         <div class="pxp-services-item-cta text-uppercase text-center">Learn More</div>
                     </a>
-                    <a href="agents.html" class="pxp-services-item">
+                    <!-- <a href="agents.html" class="pxp-services-item">
                         <div class="pxp-services-item-fig">
                             <img src="<?php echo get_template_directory_uri(); ?>/images/service-icon-2.svg" alt="...">
                         </div>
@@ -959,7 +959,7 @@ unlink($zipFolder."INSCRIPTIONS.TXT");
                             </div>
                         </div>
                         <div class="pxp-services-item-cta text-uppercase text-center">Learn More</div>
-                    </a>
+                    </a> -->
                     <div class="clearfix"></div>
                 </div>
             </div>
