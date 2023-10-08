@@ -96,18 +96,6 @@
                                     <li><a href="single-post.html">Shop</a></li>
                                 </ul>
                             </li>
-                            <li class="list-inline-item">
-                            <?php
-                                if (has_nav_menu('main-lang')) {
-                                    wp_nav_menu(
-                                        array(
-                                            'theme_location' => 'main-lang',
-                                            'menu_class'     => 'main-lang', 
-                                        )
-                                    );
-                                }
-                            ?>
-                            </li>
                         </ul>
                     </div>
                     <div class="col-5 col-md-2 text-right">
