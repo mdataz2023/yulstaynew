@@ -137,15 +137,15 @@ $broker_id=get_field('broker_id');
 
             </div>
 
-            <ul class="pagination pxp-paginantion mt-3 mt-md-4">
+            <!-- <ul class="pagination pxp-paginantion mt-3 mt-md-4">
                 <li class="page-item active"><a class="page-link" href="#">1</a></li>
                 <li class="page-item"><a class="page-link" href="#">2</a></li>
                 <li class="page-item"><a class="page-link" href="#">3</a></li>
                 <li class="page-item"><a class="page-link" href="#">Next <span class="fa fa-angle-right"></span></a>
                 </li>
-            </ul>
+            </ul> -->
 
-            <div class="row mt-100">
+            <!-- <div class="row mt-100">
                 <div class="col-sm-12 col-lg-1"></div>
                 <div class="col-sm-12 col-lg-10">
                     <div class="pxp-agent-block">
@@ -224,7 +224,7 @@ $broker_id=get_field('broker_id');
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>
