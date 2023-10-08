@@ -118,7 +118,7 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                 <div class="pxp-single-property-section">
                     <h3>Key Details</h3>
                     <div class="row mt-3 mt-md-4">
-                        <!-- <div class="col-sm-6">
+                        <div class="col-sm-6">
                             <div class="pxp-sp-key-details-item">
                                 <div class="pxp-sp-kd-item-label text-uppercase">Property Type</div>
                                 <div class="pxp-sp-kd-item-value"><?php
@@ -136,7 +136,7 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                                 <div class="pxp-sp-kd-item-value"><?php echo $inscriptionsData->ANNEE_CONTRUCTION?>
                                 </div>
                             </div>
-                        </div> -->
+                        </div>
                         <div class="col-sm-6">
                             <div class="pxp-sp-key-details-item">
                                 <div class="pxp-sp-kd-item-label text-uppercase">Number of Rooms</div>
@@ -575,11 +575,13 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                             $MEMBRES = $wpdb->get_row("SELECT * FROM MEMBRES WHERE CODE ='".$inscriptionsData->COURTIER_INSCRIPTEUR_1."'", OBJECT );
                         ?>
                     <div class="pxp-sp-agent mt-3 mt-md-4">
-                        <a href="<?php echo site_url()."/team/".strtolower($MEMBRES->PRENOM."-". $MEMBRES->NOM)?>" class="pxp-sp-agent-fig pxp-cover rounded-lg"
+                        <a href="<?php echo site_url()."/team/".strtolower($MEMBRES->PRENOM."-". $MEMBRES->NOM)?>"
+                            class="pxp-sp-agent-fig pxp-cover rounded-lg"
                             style="background-image: url('<?php echo $MEMBRES->PHOTO_URL?>'); background-position: top center"></a>
                         <div class="pxp-sp-agent-info">
                             <div class="pxp-sp-agent-info-name"><a
-                                    href="<?php echo site_url()."/team/".strtolower($MEMBRES->PRENOM."-". $MEMBRES->NOM)?>"><?php echo $MEMBRES->PRENOM." ". $MEMBRES->NOM?></a></div>
+                                    href="<?php echo site_url()."/team/".strtolower($MEMBRES->PRENOM."-". $MEMBRES->NOM)?>"><?php echo $MEMBRES->PRENOM." ". $MEMBRES->NOM?></a>
+                            </div>
                             <div class="pxp-sp-agent-info-rating"><span class="fa fa-star"></span><span
                                     class="fa fa-star"></span><span class="fa fa-star"></span><span
                                     class="fa fa-star"></span><span class="fa fa-star"></span></div>
@@ -650,7 +652,8 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                 </button>
             </div>
             <div class="modal-body">
-                <h5 class="modal-title" id="pxpContactAgentModal">Contact <?php echo $MEMBRES->NOM." ".$MEMBRES->PRENOM?></h5>
+                <h5 class="modal-title" id="pxpContactAgentModal">Contact
+                    <?php echo $MEMBRES->NOM." ".$MEMBRES->PRENOM?></h5>
                 <!-- <form class="mt-4">
                     <div class="form-group">
                         <label for="pxp-contact-agent-name">Name</label>
@@ -675,20 +678,32 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                 </form> -->
 
                 <?php
-                if($MEMBRES->PRENOM." ". $MEMBRES->NOM=="Sebaaly Ralph")
-                echo do_shortcode('[contact-form-7 id="a5998d6" title="Sebaaly Ralph Property Contact"]'); ?>
-                <!-- <?php
+                if($MEMBRES->PRENOM." ". $MEMBRES->NOM=="Sebaaly Ralph"){
+                echo do_shortcode('[contact-form-7 id="a5998d6" title="Sebaaly Ralph Property Contact"]');
+                }
+                ?>
+                <?php
                 if($MEMBRES->PRENOM." ". $MEMBRES->NOM=="Michael Ghannoum")
-                echo do_shortcode('[contact-form-7 id="bedd78f" title="Michael Ghannoum Property Contact"]'); ?>
+{
+    echo do_shortcode('[contact-form-7 id="bedd78f" title="Michael Ghannoum Property Contact"]');
+}            ?>
                 <?php
                 if($MEMBRES->PRENOM." ". $MEMBRES->NOM=="Cynthia Dahoud")
-                echo do_shortcode('[contact-form-7 id="026505a" title="Cynthia Dahoud Property Contact"]'); ?>
+{
+    echo do_shortcode('[contact-form-7 id="026505a" title="Cynthia Dahoud Property Contact"]');
+}            ?>
                 <?php
                 if($MEMBRES->PRENOM." ". $MEMBRES->NOM=="Parvez Coowar")
-                echo do_shortcode('[contact-form-7 id="08b0a05" title="Parvez Coowar Property Contact"]'); ?>
+{
+    echo do_shortcode('[contact-form-7 id="08b0a05" title="Parvez Coowar Property Contact"]');
+}
+            ?>
                 <?php
                 if($MEMBRES->PRENOM." ". $MEMBRES->NOM=="Christian Daoud")
-                echo do_shortcode('[contact-form-7 id="a5998d6" title="Christian Daoud Property Contact"]'); ?> -->
+{
+    echo do_shortcode('[contact-form-7 id="a5998d6" title="Christian Daoud Property Contact"]');
+}
+?>
 
             </div>
         </div>
@@ -803,25 +818,28 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
 (function($) {
     "use strict";
     var map;
-    var markers = [];
-    var markerCluster;
     var styles;
-    var propertiesList = [];
+    var marker = [];
+    // Property map marker position
+    var propLat = '<?php echo $inscriptionsData->LATITUDE;?>';
+    var propLng = '<?php echo $inscriptionsData->LONGITUDE;?>';
+
     var options = {
         zoom: 14,
         mapTypeId: 'Styled',
         panControl: false,
         zoomControl: true,
-        mapTypeControl: false,
+        mapTypeControl: true,
         scaleControl: false,
-        streetViewControl: false,
+        streetViewControl: true,
         overviewMapControl: false,
         scrollwheel: false,
         zoomControlOptions: {
             position: google.maps.ControlPosition.RIGHT_BOTTOM,
         },
-        fullscreenControl: false,
+        fullscreenControl: true,
     };
+
 
     styles = [{
         "featureType": "water",
@@ -831,150 +849,33 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
         }, {
             "lightness": 17
         }]
-    }, {
-        "featureType": "landscape",
-        "elementType": "geometry",
-        "stylers": [{
-            "color": "#f5f5f5"
-        }, {
-            "lightness": 20
-        }]
-    }, {
-        "featureType": "road.highway",
-        "elementType": "geometry.fill",
-        "stylers": [{
-            "color": "#ffffff"
-        }, {
-            "lightness": 17
-        }]
-    }, {
-        "featureType": "road.highway",
-        "elementType": "geometry.stroke",
-        "stylers": [{
-            "color": "#ffffff"
-        }, {
-            "lightness": 29
-        }, {
-            "weight": 0.2
-        }]
-    }, {
-        "featureType": "road.arterial",
-        "elementType": "geometry",
-        "stylers": [{
-            "color": "#ffffff"
-        }, {
-            "lightness": 18
-        }]
-    }, {
-        "featureType": "road.local",
-        "elementType": "geometry",
-        "stylers": [{
-            "color": "#ffffff"
-        }, {
-            "lightness": 16
-        }]
-    }, {
-        "featureType": "poi",
-        "elementType": "geometry",
-        "stylers": [{
-            "color": "#f5f5f5"
-        }, {
-            "lightness": 21
-        }]
-    }, {
-        "featureType": "poi.park",
-        "elementType": "geometry",
-        "stylers": [{
-            "color": "#dedede"
-        }, {
-            "lightness": 21
-        }]
-    }, {
-        "elementType": "labels.text.stroke",
-        "stylers": [{
-            "visibility": "on"
-        }, {
-            "color": "#ffffff"
-        }, {
-            "lightness": 16
-        }]
-    }, {
-        "elementType": "labels.text.fill",
-        "stylers": [{
-            "saturation": 36
-        }, {
-            "color": "#333333"
-        }, {
-            "lightness": 40
-        }]
-    }, {
-        "elementType": "labels.icon",
-        "stylers": [{
-            "visibility": "off"
-        }]
-    }, {
-        "featureType": "transit",
-        "elementType": "geometry",
-        "stylers": [{
-            "color": "#f2f2f2"
-        }, {
-            "lightness": 19
-        }]
-    }, {
-        "featureType": "administrative",
-        "elementType": "geometry.fill",
-        "stylers": [{
-            "color": "#fefefe"
-        }, {
-            "lightness": 20
-        }]
-    }, {
-        "featureType": "administrative",
-        "elementType": "geometry.stroke",
-        "stylers": [{
-            "color": "#fefefe"
-        }, {
-            "lightness": 17
-        }, {
-            "weight": 1.2
-        }]
     }];
-    <?php
-                        $datas = $wpdb->get_results("SELECT NB_CHAMBRES,UM_SUPERFICIE_HABITABLE,NB_CHAMBRES_HORS_SOL,LATITUDE,LONGITUDE,NO_INSCRIPTION,DEVISE_PRIX_DEMANDE,PRIX_DEMANDE,PRIX_LOCATION_DEMANDE FROM INSCRIPTIONS i join wp_posts p on p.post_content=i.NO_INSCRIPTION where p.post_type='residential' and i.CODE_STATUT='EV'", OBJECT );
-                        foreach ($datas as $page) {
-                            $post = $wpdb->get_row("SELECT ID from wp_posts where post_content='".$inscriptionsData->NO_INSCRIPTION."'", OBJECT );
-                            $results = $wpdb->get_row(" SELECT * FROM PHOTOS where  NO_INSCRIPTION = '".$inscriptionsData->NO_INSCRIPTION."'", OBJECT );
 
-                       ?>
-    propertiesList.push({
-        id: <?php echo  $post->ID ;?>,
-        title: '<?php  echo $inscriptionsData->NOM_RUE_COMPLET." ".$inscriptionsData->NO_INSCRIPTION;?>',
-        photo: '<?php  echo $results->PhotoURL;?>',
-        position: {
-            lat: '<?php echo $inscriptionsData->LATITUDE;?>',
-            lng: '<?php echo $inscriptionsData->LONGITUDE;?>'
+    var info = new InfoBox({
+        disableAutoPan: false,
+        maxWidth: 200,
+        pixelOffset: new google.maps.Size(-70, -44),
+        zIndex: null,
+        boxClass: 'poi-box',
+        boxStyle: {
+            'background': '#fff',
+            'opacity': 1,
+            'padding': '5px',
+            'box-shadow': '0 1px 2px 0 rgba(0, 0, 0, 0.13)',
+            'width': '140px',
+            'text-align': 'center',
+            'border-radius': '3px'
         },
-        price: {
-            long: '<?php  echo $inscriptionsData->PRIX_DEMANDE.' $';?>',
-            short: '<?php  echo $inscriptionsData->PRIX_DEMANDE.' $';?>'
-        },
-        link: '<?php  echo get_permalink( $post->ID );?>',
-        features: {
-            beds: '<?php echo $inscriptionsData->NB_CHAMBRES;?>',
-            baths: '<?php echo $inscriptionsData->NB_CHAMBRES_HORS_SOL;?>',
-            size: '<?php echo $inscriptionsData->SUPERFICIE_HABITABLE." ".$inscriptionsData->UM_SUPERFICIE_HABITABLE;?>'
-        }
+        closeBoxMargin: "28px 26px 0px 0px",
+        closeBoxURL: "",
+        infoBoxClearance: new google.maps.Size(1, 1),
+        pane: "floatPane",
+        enableEventPropagation: false
     });
-    <?php
-                        }
 
-                        ?>
-
-    function CustomMarker(id, latlng, map, classname, html) {
-        this.id = id;
+    function CustomMarker(latlng, map, classname) {
         this.latlng_ = latlng;
         this.classname = classname;
-        this.html = html;
 
         this.setMap(map);
     }
@@ -988,11 +889,6 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
         if (!div) {
             div = this.div_ = document.createElement('div');
             div.classList.add(this.classname);
-            div.innerHTML = this.html;
-
-            google.maps.event.addDomListener(div, 'click', function(event) {
-                google.maps.event.trigger(me, 'click');
-            });
 
             var panes = this.getPanes();
             panes.overlayImage.appendChild(div);
@@ -1006,118 +902,28 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
         }
     };
 
-    CustomMarker.prototype.remove = function() {
-        if (this.div_) {
-            this.div_.parentNode.removeChild(this.div_);
-            this.div_ = null;
-        }
-    };
-
-    CustomMarker.prototype.getPosition = function() {
-        return this.latlng_;
-    };
-
-    CustomMarker.prototype.addActive = function() {
-        if (this.div_) {
-            $('.pxp-price-marker').removeClass('active');
-            this.div_.classList.add('active');
-        }
-    };
-
-    CustomMarker.prototype.removeActive = function() {
-        if (this.div_) {
-            this.div_.classList.remove('active');
-        }
-    };
-
-    function addMarkers(props, map) {
-        $.each(props, function(i, prop) {
-            var latlng = new google.maps.LatLng(prop.position.lat, prop.position.lng);
-
-            var html = '<div class="pxp-marker-short-price">' + prop.price.short + '</div>' +
-                '<a href="' + prop.link + '" class="pxp-marker-details">' +
-                '<div class="pxp-marker-details-fig pxp-cover" style="background-image: url(' + prop.photo +
-                ');"></div>' +
-                '<div class="pxp-marker-details-info">' +
-                '<div class="pxp-marker-details-info-title">' + prop.title + '</div>' +
-                '<div class="pxp-marker-details-info-price">' + prop.price.long + '</div>' +
-                '<div class="pxp-marker-details-info-feat">' + prop.features.beds + ' BD<span>|</span>' +
-                prop.features.baths + ' BA<span>|</span>' + prop.features.size + '</div>' +
-                '</div>' +
-                '</a>';
-
-            var marker = new CustomMarker(prop.id, latlng, map, 'pxp-price-marker', html);
-
-            marker.id = prop.id;
-            markers.push(marker);
-        });
+    function addPropMarker(propLat, propLng, map) {
+        var latlng = new google.maps.LatLng(propLat, propLng);
+        marker = new CustomMarker(latlng, map, 'pxp-single-marker');
     }
 
     setTimeout(function() {
-        if ($('#results-map').length > 0) {
-            map = new google.maps.Map(document.getElementById('results-map'), options);
+        if ($('#pxp-sp-map').length > 0) {
+            map = new google.maps.Map(document.getElementById('pxp-sp-map'), options);
             var styledMapType = new google.maps.StyledMapType(styles, {
                 name: 'Styled',
             });
+            var center = new google.maps.LatLng(propLat, propLng);
 
             map.mapTypes.set('Styled', styledMapType);
-            map.setCenter(new google.maps.LatLng(37.7577627, -122.4726194));
+            map.setCenter(center);
             map.setZoom(15);
 
-            addMarkers(propertiesList, map);
-
-            map.fitBounds(markers.reduce(function(bounds, marker) {
-                return bounds.extend(marker.getPosition());
-            }, new google.maps.LatLngBounds()));
-
-            markerCluster = new MarkerClusterer(map, markers, {
-                maxZoom: 18,
-                gridSize: 60,
-                styles: [{
-                        width: 40,
-                        height: 40,
-                    },
-                    {
-                        width: 60,
-                        height: 60,
-                    },
-                    {
-                        width: 80,
-                        height: 80,
-                    },
-                ]
-            });
+            addPropMarker(propLat, propLng, map);
 
             google.maps.event.trigger(map, 'resize');
-
-            $('.pxp-results-card-1').each(function(i) {
-                var propID = $(this).attr('data-prop');
-
-                $(this).on('mouseenter', function() {
-                    if (map) {
-                        var targetMarker = $.grep(markers, function(e) {
-                            return e.id == propID;
-                        });
-
-                        if (targetMarker.length > 0) {
-                            targetMarker[0].addActive();
-                            map.setCenter(targetMarker[0].latlng_);
-                        }
-                    }
-                });
-                $(this).on('mouseleave', function() {
-                    var targetMarker = $.grep(markers, function(e) {
-                        return e.id == propID;
-                    });
-
-                    if (targetMarker.length > 0) {
-                        targetMarker[0].removeActive();
-                    }
-                });
-            });
         }
     }, 300);
 })(jQuery);
-
 </script>
 <?php get_footer(); ?>

@@ -110,7 +110,14 @@ $broker_id=get_field('broker_id');
                             style="background-image: url(<?php  echo $results->PhotoURL;?>);"></div>
                         <div class="pxp-prop-card-1-gradient pxp-animate"></div>
                         <div class="pxp-prop-card-1-details">
-                            <div class="pxp-prop-card-1-details-title"><?php echo $inscriptionsData->NOM_RUE_COMPLET;?></div>
+                            <div class="pxp-prop-card-1-details-title"><?php
+                             $REGION_CODE = $wpdb->get_row("SELECT r.*,REGION_CODE,m.DESCRIPTION FROM MUNICIPALITES m JOIN REGIONS r ON m.REGION_CODE = r.CODE where m.CODE='".$inscriptionsData->MUN_CODE."' ", OBJECT );
+                             if ($lang == 'en-US'){
+                                echo $REGION_CODE->DESCRIPTION;
+                             }else{
+                                echo $REGION_CODE->DESCRIPTION;
+                             }
+                              ?></div>
                             <div class="pxp-prop-card-1-details-price"><?php  echo $inscriptionsData->PRIX_DEMANDE.' $';?></div>
                             <?php  echo $inscriptionsData->NB_CHAMBRES;?> BD <span>|</span>
                                     <?php echo $inscriptionsData->NB_CHAMBRES_HORS_SOL;?> BA
