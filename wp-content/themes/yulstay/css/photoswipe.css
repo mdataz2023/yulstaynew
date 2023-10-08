@@ -177,3 +177,17 @@
 .pswp__error-msg a {
   color: #CCC;
   text-decoration: underline; }
+
+
+  /* Lang */
+  .wpml-ls-flag{
+    width: 24px;
+  }
+
+  .wpml-ls-item{
+    list-style-type: none;
+  }
+
+  #menu-main-lang{
+    padding-top: 12px;
+  }
