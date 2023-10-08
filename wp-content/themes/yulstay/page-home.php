@@ -1202,7 +1202,7 @@ unlink($zipFolder."INSCRIPTIONS.TXT");
             </div>
             <div class="pxp-testim-1-container mt-4 mt-md-5 mt-lg-0">
                 <div class="owl-carousel pxp-testim-1-stage">
-                    <?php $the_query = new WP_Query( array('post_type' =>'team','posts_per_page' => '20',  'post__not_in'   => array( $id),) );?>
+                    <?php $the_query = new WP_Query( array('post_type' =>'testimonial','posts_per_page' => '20',  'post__not_in'   => array( $id),) );?>
                                     <?php if ( have_posts())   : while ( $the_query->have_posts() ) : $the_query->the_post();?>
                                 
                                         <?php
