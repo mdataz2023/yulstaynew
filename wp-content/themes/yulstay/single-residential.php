@@ -67,11 +67,7 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                         </div>
                     </div>
                     <div class="pxp-sp-top-price mt-3 mt-md-0">
-                        <?php if($inscriptionsData->DEVISE_PRIX_DEMANDE==="CAN"){
-                                                            echo $inscriptionsData->PRIX_DEMANDE.' $';
-                                                        }else{
-                                                            echo $inscriptionsData->PRIX_LOCATION_DEMANDE;
-                                                        }?>
+                        <?php echo $inscriptionsData->PRIX_DEMANDE.' $'; ?>
                     </div>
                 </div>
             </div>

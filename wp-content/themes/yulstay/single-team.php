@@ -100,7 +100,7 @@ $broker_id=get_field('broker_id');
             <h2 class="pxp-section-h2 mt-100">Listings by <?php the_title(); ?></h2>
             <div class="row mt-4 mt-md-5">
                 <?php
-                        $datas = $wpdb->get_results("SELECT i.*,p.ID FROM INSCRIPTIONS i join wp_posts p on p.post_content=i.NO_INSCRIPTION where i.CODE_STATUT='EV' and COURTIER_INSCRIPTEUR_1='".$broker_id."'", OBJECT );
+                        $datas = $wpdb->get_results("SELECT i.*,p.ID,p.post_type FROM INSCRIPTIONS i join wp_posts p on p.post_content=i.NO_INSCRIPTION where i.CODE_STATUT='EV' and COURTIER_INSCRIPTEUR_1='".$broker_id."'", OBJECT );
                         foreach ($datas as $inscriptionsData) {
                     $results = $wpdb->get_row(" SELECT * FROM PHOTOS where  NO_INSCRIPTION = '".$inscriptionsData->NO_INSCRIPTION ."' limit 1", OBJECT );
 				?>
@@ -118,7 +118,13 @@ $broker_id=get_field('broker_id');
                                 echo $REGION_CODE->DESCRIPTION;
                              }
                               ?></div>
-                            <div class="pxp-prop-card-1-details-price"><?php  echo $inscriptionsData->PRIX_DEMANDE.' $';?></div>
+                            <div class="pxp-prop-card-1-details-price"><?php
+                            if($inscriptionsData->post_type=="residential" || $inscriptionsData->post_type=="multi-residential"){
+                                echo $inscriptionsData->PRIX_DEMANDE.' $';
+                            }else{
+                                echo $inscriptionsData->PRIX_LOCATION_DEMANDE.' $';
+                            }
+                         ?></div>
                             <?php  echo $inscriptionsData->NB_CHAMBRES;?> BD <span>|</span>
                                     <?php echo $inscriptionsData->NB_CHAMBRES_HORS_SOL;?> BA
                                     <span>|</span>
