@@ -5,6 +5,15 @@
 get_header();
 
 $join_our_team_page_banner_image = get_field('join_our_team_page_banner_image');
+$join_our_team_page_title = get_field('join_our_team_page_title');
+$join_our_team_page_title_description = get_field('join_our_team_page_title_description');
+$join_our_team_page_contact_details_title = get_field('join_our_team_page_contact_details_title');
+$join_our_team_page_address_line_one = get_field('join_our_team_page_address_line_one');
+$join_our_team_page_address_line_two = get_field('join_our_team_page_address_line_two');
+$join_our_team_page_contact_number = get_field('join_our_team_page_contact_number');
+$join_our_team_page_contact_number_link = get_field('join_our_team_page_contact_number_link');
+$join_our_team_page_email_address = get_field('join_our_team_page_email_address');
+$join_our_team_page_email_address_link = get_field('join_our_team_page_email_address_link');
 
 ?>
 
@@ -13,8 +22,8 @@ $join_our_team_page_banner_image = get_field('join_our_team_page_banner_image');
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12 col-md-7">
-                            <h1 class="pxp-page-header">Join Our Team</h1>
-                            <p class="pxp-text-light">Say hello. Tell us how we can guide you.</p>
+                            <h1 class="pxp-page-header"><?php echo $join_our_team_page_title; ?></h1>
+                            <p class="pxp-text-light"><?php echo $join_our_team_page_title_description; ?></p>
                         </div>
                     </div>
                 </div>
@@ -25,15 +34,15 @@ $join_our_team_page_banner_image = get_field('join_our_team_page_banner_image');
                     <div class="pxp-contact-hero-offices-container">
                         <div class="container">
                             <div class="pxp-contact-hero-offices">
-                                <h2 class="pxp-section-h2">Our Offices</h2>
+                                <h2 class="pxp-section-h2"><?php echo $join_our_team_page_contact_details_title; ?></h2>
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <div class="pxp-contact-hero-offices-title mt-3 mt-md-4">Montréal</div>
+                                        <div class="pxp-contact-hero-offices-title mt-3 mt-md-4"><?php echo $join_our_team_page_address_line_one; ?></div>
                                         <div class="pxp-contact-hero-offices-info mt-2 mt-md-3">
-                                            <p class="pxp-is-address">Montréal, QC H3C 6N2 45 Rue des Soeurs Grises</p>
+                                            <p class="pxp-is-address"><?php echo $join_our_team_page_address_line_two; ?></p>
                                             <p>
-                                                <a href="#">514.588.7663</a><br>
-                                                <a href="#">info@yulsty.com</a>
+                                                <a href="<?php echo $join_our_team_page_contact_number_link; ?>"><?php echo $join_our_team_page_contact_number; ?></a><br>
+                                                <a href="<?php echo $join_our_team_page_email_address_link; ?>"><?php echo $join_our_team_page_email_address; ?></a>
                                             </p>
                                         </div>
                                     </div>
