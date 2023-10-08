@@ -780,6 +780,21 @@ unlink($zipFolder."INSCRIPTIONS.TXT");
         </div>
     </div>
 
+    <style>
+          .wpml-ls-flag{
+    width: 24px;
+  }
+
+  .wpml-ls-item{
+    list-style-type: none;
+  }
+
+  #menu-main-lang{
+    padding-top: 12px;
+    padding-left: 0px;
+  }
+    </style>
+
     <div class="pxp-content">
         <div class="pxp-hero vh-100">
             <div class="pxp-hero-bg pxp-cover pxp-cover-bottom">
