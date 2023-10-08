@@ -64,11 +64,9 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                                 <?php echo $inscriptionsData->UM_SUPERFICIE_HABITABLE;?></span></div>
                     </div>
                     <div class="pxp-sp-top-price mt-3 mt-md-0">
-                        <?php if($inscriptionsData->DEVISE_PRIX_DEMANDE==="CAN"){
+                        <?php
                                                             echo $inscriptionsData->PRIX_DEMANDE.' $';
-                                                        }else{
-                                                            echo $inscriptionsData->PRIX_LOCATION_DEMANDE;
-                                                        }?>
+                                                        ?>
                     </div>
                 </div>
             </div>
@@ -115,7 +113,7 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                 <div class="pxp-single-property-section">
                     <h3>Key Details</h3>
                     <div class="row mt-3 mt-md-4">
-                    <div class="col-sm-6">
+                        <div class="col-sm-6">
                             <div class="pxp-sp-key-details-item">
                                 <div class="pxp-sp-kd-item-label text-uppercase">Property Type</div>
                                 <div class="pxp-sp-kd-item-value"><?php
@@ -130,7 +128,8 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                         <div class="col-sm-6">
                             <div class="pxp-sp-key-details-item">
                                 <div class="pxp-sp-kd-item-label text-uppercase">Year Built</div>
-                                <div class="pxp-sp-kd-item-value"><?php echo $inscriptionsData->ANNEE_CONTRUCTION?></div>
+                                <div class="pxp-sp-kd-item-value"><?php echo $inscriptionsData->ANNEE_CONTRUCTION?>
+                                </div>
                             </div>
                         </div>
                         <div class="col-sm-6">
@@ -501,11 +500,13 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                             $MEMBRES = $wpdb->get_row("SELECT * FROM MEMBRES WHERE CODE ='".$inscriptionsData->COURTIER_INSCRIPTEUR_1."'", OBJECT );
                         ?>
                     <div class="pxp-sp-agent mt-3 mt-md-4">
-                        <a href="<?php echo site_url()."/team/".strtolower($MEMBRES->PRENOM."-". $MEMBRES->NOM)?>" class="pxp-sp-agent-fig pxp-cover rounded-lg"
+                        <a href="<?php echo site_url()."/team/".strtolower($MEMBRES->PRENOM."-". $MEMBRES->NOM)?>"
+                            class="pxp-sp-agent-fig pxp-cover rounded-lg"
                             style="background-image: url('<?php echo $MEMBRES->PHOTO_URL?>'); background-position: top center"></a>
                         <div class="pxp-sp-agent-info">
                             <div class="pxp-sp-agent-info-name"><a
-                                    href="<?php echo site_url()."/team/".strtolower($MEMBRES->PRENOM."-". $MEMBRES->NOM)?>"><?php echo $MEMBRES->NOM." ".$MEMBRES->PRENOM?></a></div>
+                                    href="<?php echo site_url()."/team/".strtolower($MEMBRES->PRENOM."-". $MEMBRES->NOM)?>"><?php echo $MEMBRES->NOM." ".$MEMBRES->PRENOM?></a>
+                            </div>
                             <div class="pxp-sp-agent-info-rating"><span class="fa fa-star"></span><span
                                     class="fa fa-star"></span><span class="fa fa-star"></span><span
                                     class="fa fa-star"></span><span class="fa fa-star"></span></div>
@@ -576,7 +577,8 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                 </button>
             </div>
             <div class="modal-body">
-                <h5 class="modal-title" id="pxpContactAgentModal">Contact <?php echo $MEMBRES->NOM." ".$MEMBRES->PRENOM?></h5>
+                <h5 class="modal-title" id="pxpContactAgentModal">Contact
+                    <?php echo $MEMBRES->NOM." ".$MEMBRES->PRENOM?></h5>
                 <!-- <form class="mt-4">
                     <div class="form-group">
                         <label for="pxp-contact-agent-name">Name</label>
