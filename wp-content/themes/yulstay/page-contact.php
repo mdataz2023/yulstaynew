@@ -124,6 +124,5 @@ $contact_page_banner_image = get_field('contact_page_banner_image');
             </div>
         </div>
 
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALbrsESmR55p0PLDbeL-SQ_YPuRpucYrw&amp;libraries=geometry&amp;libraries=places"></script>
 
 <?php get_footer(); ?>
