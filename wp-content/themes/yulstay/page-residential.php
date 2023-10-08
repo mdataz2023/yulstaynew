@@ -352,7 +352,7 @@ global $wpdb;
     </div>
     <div class="pxp-footer pxp-content-side-wrapper">
         <div class="pxp-footer-bottom">
-            <div class="pxp-footer-copyright">&copy; Resideo. All Rights Reserved. 2021</div>
+            <div class="pxp-footer-copyright">&copy; Yulasty. All Rights Reserved. 2023</div>
         </div>
     </div>
 </div>

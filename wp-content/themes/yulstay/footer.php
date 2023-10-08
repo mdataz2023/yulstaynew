@@ -35,7 +35,7 @@
                             <div class="col-sm-12 col-md-4">
                                 <h4 class="pxp-footer-header mt-4 mt-lg-0">Company</h4>
                                 <ul class="list-unstyled pxp-footer-links mt-2">
-                                    <li><a href="">About Us</a></li>
+                                    <!-- <li><a href="">About Us</a></li> -->
                                     <li><a href="<?php bloginfo('url'); ?>/team">Team</a></li>
                                     <li><a href="">Yulstay</a></li>
                                     <li><a href="<?php bloginfo('url'); ?>/contact">Contact Us</a></li>
