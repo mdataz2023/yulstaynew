@@ -917,15 +917,22 @@ unlink($zipFolder."INSCRIPTIONS.TXT");
             <h2 class="text-center pxp-section-h2"><?php echo $home_why_choose_us_section_title; ?></h2>
             <p class="pxp-text-light text-center"><?php echo $home_why_choose_us_section_description; ?></p>
 
+            <?php
+                $why_choose_us_card_one_link = get_field('why_choose_us_card_one_link');
+                $why_choose_us_card_one_title = get_field('why_choose_us_card_one_title');
+                $why_choose_us_card_one_description = get_field('why_choose_us_card_one_description');
+                $why_choose_us_card_one_image = get_field('why_choose_us_card_one_image');
+            ?>
+
             <div class="container">
                 <div class="pxp-services-container rounded-lg mt-4 mt-md-5">
-                        <a href="<?php echo get_field('why_choose_us_card_one_link'); ?>" class="pxp-services-item">
+                        <a href="<?php echo $why_choose_us_card_one_link; ?>" class="pxp-services-item">
                             <div class="pxp-services-item-fig" style="color:#00aec5;">
-                                <?php echo get_field('why_choose_us_card_one_image'); ?>
+                                <?php echo $why_choose_us_card_one_image; ?>
                             </div>
                             <div class="pxp-services-item-text text-center">
-                                <div class="pxp-services-item-text-title"><?php echo get_field('why_choose_us_card_one_title'); ?></div>
-                                <div class="pxp-services-item-text-sub"><?php echo get_field('why_choose_us_card_one_description'); ?></div>
+                                <div class="pxp-services-item-text-title"><?php echo $why_choose_us_card_one_title; ?></div>
+                                <div class="pxp-services-item-text-sub"><?php echo $why_choose_us_card_one_description; ?></div>
                             </div>
                             <div class="pxp-services-item-cta text-uppercase text-center">Learn More</div>
                         </a>
