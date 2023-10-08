@@ -76,12 +76,12 @@
                                 </ul> -->
                             </li>
                             <li class="list-inline-item pxp-is-last"><a href="<?php bloginfo('url'); ?>/contact">Contact Us</a></li>
-                            <li class="list-inline-item pxp-has-btns">
+                            <!-- <li class="list-inline-item pxp-has-btns">
                                 <div class="pxp-user-btns">
                                     <a href="#" class="pxp-user-btns-signup pxp-signup-trigger">Sign Up</a>
                                     <a href="#" class="pxp-user-btns-login pxp-signin-trigger">Sign In</a>
                                 </div>
-                            </li>
+                            </li> -->
                             <li class="list-inline-item">
                                 <a href="<?php bloginfo('url'); ?>/join-our-team">Join Our Team</a>
                                 <!-- <ul class="pxp-nav-sub rounded-lg">
@@ -95,6 +95,18 @@
                                     <li><a href="blog.html">Pod Casts</a></li>
                                     <li><a href="single-post.html">Shop</a></li>
                                 </ul>
+                            </li>
+                            <li class="list-inline-item">
+                            <?php
+                                if (has_nav_menu('main-lang')) {
+                                    wp_nav_menu(
+                                        array(
+                                            'theme_location' => 'main-lang',
+                                            'menu_class'     => 'main-lang', 
+                                        )
+                                    );
+                                }
+                            ?>
                             </li>
                         </ul>
                     </div>
