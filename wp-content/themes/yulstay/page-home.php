@@ -920,8 +920,8 @@ unlink($zipFolder."INSCRIPTIONS.TXT");
             <div class="container">
                 <div class="pxp-services-container rounded-lg mt-4 mt-md-5">
                         <a href="<?php echo get_field('why_choose_us_card_one_link'); ?>" class="pxp-services-item">
-                            <div class="pxp-services-item-fig">
-                                <img src="<?php echo get_field('why_choose_us_card_one_image'); ?>" alt="...">
+                            <div class="pxp-services-item-fig" style="color:#00aec5;">
+                                <?php echo get_field('why_choose_us_card_one_image'); ?>
                             </div>
                             <div class="pxp-services-item-text text-center">
                                 <div class="pxp-services-item-text-title"><?php echo get_field('why_choose_us_card_one_title'); ?></div>
