@@ -113,7 +113,7 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                 <div class="pxp-single-property-section">
                     <h3>Key Details</h3>
                     <div class="row mt-3 mt-md-4">
-                        <!-- <div class="col-sm-6">
+                          <div class="col-sm-6">
                             <div class="pxp-sp-key-details-item">
                                 <div class="pxp-sp-kd-item-label text-uppercase">Property Type</div>
                                 <div class="pxp-sp-kd-item-value"><?php
@@ -130,7 +130,7 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                                 <div class="pxp-sp-kd-item-label text-uppercase">Year Built</div>
                                 <div class="pxp-sp-kd-item-value"><?php echo $inscriptionsData->ANNEE_CONTRUCTION?></div>
                             </div>
-                        </div> -->
+                        </div>
                         <div class="col-sm-6">
                             <div class="pxp-sp-key-details-item">
                                 <div class="pxp-sp-kd-item-label text-uppercase">Number of Rooms</div>
@@ -154,7 +154,7 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                         <div class="col-sm-6">
                             <div class="pxp-sp-key-details-item">
                                 <div class="pxp-sp-kd-item-label text-uppercase">Parking Spaces</div>
-                                <div class="pxp-sp-kd-item-value">2</div>
+                                <div class="pxp-sp-kd-item-value">-</div>
                             </div>
                         </div>
                     </div>
@@ -582,20 +582,32 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                     </div>
                 </form> -->
                 <?php
-                if($MEMBRES->PRENOM." ". $MEMBRES->NOM=="Sebaaly Ralph")
-                echo do_shortcode('[contact-form-7 id="a5998d6" title="Sebaaly Ralph Property Contact"]'); ?>
-                <!-- <?php
+                if($MEMBRES->PRENOM." ". $MEMBRES->NOM=="Sebaaly Ralph"){
+                echo do_shortcode('[contact-form-7 id="a5998d6" title="Sebaaly Ralph Property Contact"]');
+                }
+                ?>
+                <?php
                 if($MEMBRES->PRENOM." ". $MEMBRES->NOM=="Michael Ghannoum")
-                echo do_shortcode('[contact-form-7 id="bedd78f" title="Michael Ghannoum Property Contact"]'); ?>
+{
+    echo do_shortcode('[contact-form-7 id="bedd78f" title="Michael Ghannoum Property Contact"]');
+}            ?>
                 <?php
                 if($MEMBRES->PRENOM." ". $MEMBRES->NOM=="Cynthia Dahoud")
-                echo do_shortcode('[contact-form-7 id="026505a" title="Cynthia Dahoud Property Contact"]'); ?>
+{
+    echo do_shortcode('[contact-form-7 id="026505a" title="Cynthia Dahoud Property Contact"]');
+}            ?>
                 <?php
                 if($MEMBRES->PRENOM." ". $MEMBRES->NOM=="Parvez Coowar")
-                echo do_shortcode('[contact-form-7 id="08b0a05" title="Parvez Coowar Property Contact"]'); ?>
+{
+    echo do_shortcode('[contact-form-7 id="08b0a05" title="Parvez Coowar Property Contact"]');
+}
+            ?>
                 <?php
                 if($MEMBRES->PRENOM." ". $MEMBRES->NOM=="Christian Daoud")
-                echo do_shortcode('[contact-form-7 id="a5998d6" title="Christian Daoud Property Contact"]'); ?> -->
+{
+    echo do_shortcode('[contact-form-7 id="a5998d6" title="Christian Daoud Property Contact"]');
+}
+?>
 
             </div>
         </div>

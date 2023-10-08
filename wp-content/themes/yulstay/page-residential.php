@@ -152,12 +152,7 @@ global $wpdb;
                     $results = $wpdb->get_results(" SELECT * FROM PHOTOS where  NO_INSCRIPTION = '".get_the_content()."' limit 3", OBJECT );
 				?>
                 <div class="col-sm-12 col-md-6 col-xxxl-4 hide_post_class  NO_INSCRIPTION<?php
-                    $REGION_CODE = $wpdb->get_row("
-                    SELECT
-                         REGION_CODE
-                    FROM
-                        MUNICIPALITES where CODE='".$inscriptionsData->MUN_CODE."' ", OBJECT );
-
+                $REGION_CODE = $wpdb->get_row("SELECT r.*,REGION_CODE,m.DESCRIPTION FROM MUNICIPALITES m JOIN REGIONS r ON m.REGION_CODE = r.CODE where m.CODE='".$inscriptionsData->MUN_CODE."' ", OBJECT );
             echo $REGION_CODE->REGION_CODE;?>" >
 
                     <a href="<?php the_permalink(); ?>" class="pxp-results-card-1 rounded-lg" data-prop="1">
@@ -186,7 +181,14 @@ global $wpdb;
                         </div>
                         <div class="pxp-results-card-1-gradient"></div>
                         <div class="pxp-results-card-1-details">
-                            <div class="pxp-results-card-1-details-title"><?php the_title(); ?></div>
+                            <div class="pxp-results-card-1-details-title"><?php
+                             $cityName="";
+                             if ($lang == 'en-US'){
+                                $cityName=$REGION_CODE->DESCRIPTION;
+                             }else{
+                                $cityName=$REGION_CODE->DESCRIPTION;
+                             }
+                            echo   $cityName; ?></div>
                             <div class="pxp-results-card-1-details-price">
                                 <?php  echo $inscriptionsData->PRIX_DEMANDE.' $';?>
                             </div>
