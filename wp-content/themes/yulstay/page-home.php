@@ -809,7 +809,7 @@ unlink($zipFolder."INSCRIPTIONS.TXT");
                 <div class="container">
                     <!-- <h1 class="text-white">Find your future home</h1> -->
                     <a href="<?php bloginfo('url'); ?>/">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/yulstay-logo.png" alt="">
+                        <img  src="<?php echo get_template_directory_uri(); ?>/images/yulstay-logo.png" alt="">
                     </a>
                 </div>
             </div>
