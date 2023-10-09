@@ -8503,6 +8503,7 @@ a.pxp-services-tabs-content-item:hover .pxp-services-tabs-content-item-cta {
 
 @media screen and (max-width: 991px) {
     .home-video{
-        height: 100vh;
+        height: 100%;
+        width: unset;
     }
 }
