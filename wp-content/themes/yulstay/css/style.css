@@ -8495,3 +8495,8 @@ a.pxp-services-tabs-content-item:hover .pxp-services-tabs-content-item-cta {
         height: auto !important;
     }
 }
+
+
+.home-video{
+    width: 100vw;
+}
