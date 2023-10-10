@@ -50,7 +50,8 @@ $dataIns = $wpdb->get_results("SELECT *  FROM INSCRIPTIONS i join wp_posts p on 
                 $REGION_CODE = $wpdb->get_row("SELECT r.*,REGION_CODE,m.DESCRIPTION FROM MUNICIPALITES m JOIN REGIONS r ON m.REGION_CODE = r.CODE where m.CODE='".$inscriptionsData->MUN_CODE."' ", OBJECT );
             echo $REGION_CODE->REGION_CODE;?>">
 
-                    <a href="<?php echo site_url()."/".$inscriptionsData->post_type."/". $inscriptionsData->post_name?>" class="pxp-results-card-1 rounded-lg" data-prop="1">
+                    <a href="<?php echo site_url()."/".$inscriptionsData->post_type."/". $inscriptionsData->post_name?>"
+                        class="pxp-results-card-1 rounded-lg" data-prop="1">
                         <div id="card-carousel-<?php echo  $postIndex;?>" class="carousel slide" data-ride="carousel"
                             data-interval="false">
                             <div class="carousel-inner">
@@ -86,7 +87,12 @@ $dataIns = $wpdb->get_results("SELECT *  FROM INSCRIPTIONS i join wp_posts p on 
                             echo   $cityName;
                             ?></div>
                             <div class="pxp-results-card-1-details-price">
-                                <?php  echo $inscriptionsData->PRIX_DEMANDE.' $';?>
+                                <?php
+                                 if($page->post_type=="rental-property"){
+                    echo $page->PRIX_LOCATION_DEMANDE.' $';
+                }else{
+                    echo $page->PRIX_DEMANDE.' $';
+                }?>
                             </div>
                         </div>
                         <div class="pxp-results-card-1-features">
@@ -493,7 +499,8 @@ $dataIns = $wpdb->get_results("SELECT *  FROM INSCRIPTIONS i join wp_posts p on 
         }]
     }];
     <?php
-                        foreach ($dataIns as $page) {
+$dataIns = $wpdb->get_results("SELECT *  FROM INSCRIPTIONS i join wp_posts p on p.post_content=i.NO_INSCRIPTION join MUNICIPALITES m  ON m.CODE = i.MUN_CODE   where i.CODE_STATUT='EV' AND m.REGION_CODE='".$_GET["city"]."'", OBJECT );
+                 foreach ($dataIns as $page) {
                             $post = $wpdb->get_row("SELECT ID from wp_posts where post_content='".$page->NO_INSCRIPTION."'", OBJECT );
                             $results = $wpdb->get_row(" SELECT * FROM PHOTOS where  NO_INSCRIPTION = '".$page->NO_INSCRIPTION."'", OBJECT );
 
@@ -507,8 +514,18 @@ $dataIns = $wpdb->get_results("SELECT *  FROM INSCRIPTIONS i join wp_posts p on 
             lng: '<?php echo $page->LONGITUDE;?>'
         },
         price: {
-            long: '<?php  echo $page->PRIX_DEMANDE.' $';?>',
-            short: '<?php  echo $page->PRIX_DEMANDE.' $';?>'
+            long: '<?php
+                if($page->post_type=="rental-property"){
+                    echo $page->PRIX_LOCATION_DEMANDE.' $';
+                }else{
+                    echo $page->PRIX_DEMANDE.' $';
+                }
+                ?>',
+            short: '<?php    if($page->post_type=="rental-property"){
+                    echo $page->PRIX_LOCATION_DEMANDE.' $';
+                }else{
+                    echo $page->PRIX_DEMANDE.' $';
+                }?>'
         },
         link: '<?php  echo get_permalink( $post->ID );?>',
         features: {
