@@ -456,4 +456,6 @@ get_header();
 <script src="<?php echo get_template_directory_uri(); ?>/js/markerclusterer.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/main.js?asdsd"></script>
 
-<?php get_footer(); ?>
+</body>
+
+</html>
