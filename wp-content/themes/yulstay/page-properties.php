@@ -88,10 +88,10 @@ $dataIns = $wpdb->get_results("SELECT *  FROM INSCRIPTIONS i join wp_posts p on 
                             ?></div>
                             <div class="pxp-results-card-1-details-price">
                                 <?php
-                                 if($page->post_type=="rental-property"){
-                    echo $page->PRIX_LOCATION_DEMANDE.' $';
+                                 if($inscriptionsData->post_type=="rental-property"){
+                    echo $inscriptionsData->PRIX_LOCATION_DEMANDE.' $';
                 }else{
-                    echo $page->PRIX_DEMANDE.' $';
+                    echo $inscriptionsData->PRIX_DEMANDE.' $';
                 }?>
                             </div>
                         </div>
