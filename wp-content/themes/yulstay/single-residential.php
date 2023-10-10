@@ -311,10 +311,30 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                                 <div class="form-group">
                                     <label for="pxp-calculator-form-price">Amortization</label>
                                     <select class="custom-select">
-                                        <option value="30">30 Years Fixed</option>
-                                        <option value="20">20 Years Fixed</option>
-                                        <option value="15">15 Years Fixed</option>
-                                        <option value="10">10 Years Fixed</option>
+                                        <option value="">5 Years</option>
+                                        <option value="">6 Years</option>
+                                        <option value="">7 Years</option>
+                                        <option value="">8 Years</option>
+                                        <option value="">9 Years</option>
+                                        <option value="">10 Years</option>
+                                        <option value="">11 Years</option>
+                                        <option value="">12 Years</option>
+                                        <option value="">13 Years</option>
+                                        <option value="">14 Years</option>
+                                        <option value="">15 Years</option>
+                                        <option value="">16 Years</option>
+                                        <option value="">17 Years</option>
+                                        <option value="">18 Years</option>
+                                        <option value="">19 Years</option>
+                                        <option value="">20 Years</option>
+                                        <option value="">21 Years</option>
+                                        <option value="">22 Years</option>
+                                        <option value="">23 Years</option>
+                                        <option value="">24 Years</option>
+                                        <option value="">15 Years</option>
+                                        <option value="">30 Years</option>
+                                        <option value="">34 Years</option>
+                                        <option value="">40 Years</option>
                                     </select>
                                 </div>
                             </div>
@@ -330,10 +350,10 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                                         <div class="form-group">
                                             <label for="pxp-calculator-form-down-percentage">Down payment</label>
                                             <select class="custom-select">
-                                                <option value="30">30 Years Fixed</option>
-                                                <option value="20">20 Years Fixed</option>
-                                                <option value="15">15 Years Fixed</option>
-                                                <option value="10">10 Years Fixed</option>
+                                                <option value="0.05">5 %</option>
+                                                <option value="0.1">10 %</option>
+                                                <option value="0.15">15 %</option>
+                                                <option value="0.2">20 %</option>
                                             </select>
                                         </div>
                                     </div>
