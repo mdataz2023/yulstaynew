@@ -35,7 +35,9 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                         $cityName=$MUNICIPALITES->DESCRIPTION_FRANCAISE;
                      }
                      echo $property." for sale, ".$cityName;?></h2>
-                    <p class="pxp-sp-top-address pxp-text-light"><?php echo  $inscriptionsData->APPARTEMENT.' '. $inscriptionsData->CODE_POSTAL.', '.$inscriptionsData->NOM_RUE_COMPLET.$cityName;?></p>
+                    <p class="pxp-sp-top-address pxp-text-light">
+                        <?php echo  $inscriptionsData->APPARTEMENT.' '. $inscriptionsData->CODE_POSTAL.', '.$inscriptionsData->NOM_RUE_COMPLET.$cityName;?>
+                    </p>
                 </div>
                 <div class="col-sm-12 col-md-7">
                     <div class="pxp-sp-top-btns mt-2 mt-md-0" style="display: none;">
@@ -59,10 +61,11 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                                 $UNITES_DETAILLEES = $wpdb->get_row("SELECT * FROM UNITES_DETAILLEES WHERE NO_INSCRIPTION='". $inscriptionsData->NO_INSCRIPTION."' ", OBJECT );
                                 echo $UNITES_DETAILLEES->NB_CHAMBRES;?> <span>BD</span></div>
                         <div><?php echo $inscriptionsData->NB_SALLES_BAINS;?> <span>BA</span></div>
-                        <div><?php echo $inscriptionsData->SUPERFICIE_HABITABLE;?><span> <?php echo $inscriptionsData->UM_SUPERFICIE_HABITABLE;?></span></div>
+                        <div><?php echo $inscriptionsData->SUPERFICIE_HABITABLE;?><span>
+                                <?php echo $inscriptionsData->UM_SUPERFICIE_HABITABLE;?></span></div>
                     </div>
                     <div class="pxp-sp-top-price mt-3 mt-md-0">
-                    <?php if($inscriptionsData->DEVISE_PRIX_DEMANDE==="CAN"){
+                        <?php if($inscriptionsData->DEVISE_PRIX_DEMANDE==="CAN"){
                                                             echo $inscriptionsData->PRIX_DEMANDE.' $';
                                                         }else{
                                                             echo $inscriptionsData->PRIX_LOCATION_DEMANDE;
@@ -113,7 +116,7 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                 <div class="pxp-single-property-section">
                     <h3>Key Details</h3>
                     <div class="row mt-3 mt-md-4">
-                          <div class="col-sm-6">
+                        <div class="col-sm-6">
                             <div class="pxp-sp-key-details-item">
                                 <div class="pxp-sp-kd-item-label text-uppercase">Property Type</div>
                                 <div class="pxp-sp-kd-item-value"><?php
@@ -128,7 +131,8 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                         <div class="col-sm-6">
                             <div class="pxp-sp-key-details-item">
                                 <div class="pxp-sp-kd-item-label text-uppercase">Year Built</div>
-                                <div class="pxp-sp-kd-item-value"><?php echo $inscriptionsData->ANNEE_CONTRUCTION?></div>
+                                <div class="pxp-sp-kd-item-value"><?php echo $inscriptionsData->ANNEE_CONTRUCTION?>
+                                </div>
                             </div>
                         </div>
                         <div class="col-sm-6">
@@ -163,13 +167,13 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                 <div class="pxp-single-property-section mt-4 mt-md-5">
                     <h3>Overview</h3>
                     <div class="mt-3 mt-md-4">
-                    <h4>Description</h4>
+                        <h4>Description</h4>
                         <p><?php
                     $remarques = $wpdb->get_row(" SELECT * FROM REMARQUES where NO_INSCRIPTION = '".$inscriptionsData->NO_INSCRIPTION."' and CODE_LANGUE='".$language."'", OBJECT );
                     echo $remarques->TEXTE;
                     ?><span class="pxp-dots">...</span><span class="pxp-dots-more">
-                        <span class="addendaFontSize"><br>Addenda <br></span>
-                        <?php
+                                <span class="addendaFontSize"><br>Addenda <br></span>
+                                <?php
                                  $results = $wpdb->get_results("SELECT * FROM ADDENDA WHERE NO_INSCRIPTION = '".get_the_content()."' and CODE_LANGUE='".$language."'", OBJECT );
                                  foreach ($results as $page) {
                                     echo $page->TEXTE.'<br/>';
@@ -202,7 +206,8 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                         <div class="col-sm-6 col-lg-4">
                             <div class="pxp-sp-amenities-item">
                                 <b><?php _e('Year of construction','theme-text-domain'); ?> - </b><?php
-                            echo $inscriptionsData->ANNEE_CONTRUCTION;?></div>
+                            echo $inscriptionsData->ANNEE_CONTRUCTION;?>
+                            </div>
                         </div>
                         <div class="col-sm-6 col-lg-4">
                             <div class="pxp-sp-amenities-item">
@@ -212,7 +217,8 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                         }else{
                             echo $inscriptionsData->DELAI_OCCUPATION_FRANCAIS;
                          }
-                         ?></div>
+                         ?>
+                            </div>
                         </div>
                         <?php
                         $results = $wpdb->get_results("SELECT * FROM CARACTERISTIQUES WHERE NO_INSCRIPTION = '".get_the_content()."' ", OBJECT );
@@ -244,7 +250,8 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                                 }else{
                                     echo $TYPE_CARACTERISTIQUES->DESCRIPTION_FRANCAISE;
                                  }
-                               ?></div>
+                               ?>
+                            </div>
                         </div>
                         <?php }
                     }
@@ -483,11 +490,13 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                             $MEMBRES = $wpdb->get_row("SELECT * FROM MEMBRES WHERE CODE ='".$inscriptionsData->COURTIER_INSCRIPTEUR_1."'", OBJECT );
                         ?>
                     <div class="pxp-sp-agent mt-3 mt-md-4">
-                        <a href="<?php echo site_url()."/team/".strtolower($MEMBRES->PRENOM."-". $MEMBRES->NOM)?>" class="pxp-sp-agent-fig pxp-cover rounded-lg"
+                        <a href="<?php echo site_url()."/team/".strtolower($MEMBRES->PRENOM."-". $MEMBRES->NOM)?>"
+                            class="pxp-sp-agent-fig pxp-cover rounded-lg"
                             style="background-image: url('<?php echo $MEMBRES->PHOTO_URL?>'); background-position: top center"></a>
                         <div class="pxp-sp-agent-info">
                             <div class="pxp-sp-agent-info-name"><a
-                                    href="<?php echo site_url()."/team/".strtolower($MEMBRES->PRENOM."-". $MEMBRES->NOM)?>"><?php echo $MEMBRES->NOM." ".$MEMBRES->PRENOM?></a></div>
+                                    href="<?php echo site_url()."/team/".strtolower($MEMBRES->PRENOM."-". $MEMBRES->NOM)?>"><?php echo $MEMBRES->NOM." ".$MEMBRES->PRENOM?></a>
+                            </div>
                             <div class="pxp-sp-agent-info-rating"><span class="fa fa-star"></span><span
                                     class="fa fa-star"></span><span class="fa fa-star"></span><span
                                     class="fa fa-star"></span><span class="fa fa-star"></span></div>
@@ -558,7 +567,8 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                 </button>
             </div>
             <div class="modal-body">
-                <h5 class="modal-title" id="pxpContactAgentModal">Contact <?php echo $MEMBRES->NOM." ".$MEMBRES->PRENOM?></h5>
+                <h5 class="modal-title" id="pxpContactAgentModal">Contact
+                    <?php echo $MEMBRES->NOM." ".$MEMBRES->PRENOM?></h5>
                 <!-- <form class="mt-4">
                     <div class="form-group">
                         <label for="pxp-contact-agent-name">Name</label>
@@ -582,32 +592,28 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                     </div>
                 </form> -->
                 <?php
-                if($MEMBRES->PRENOM." ". $MEMBRES->NOM=="Sebaaly Ralph"){
+                if($MEMBRES->CODE=="107667"){
                 echo do_shortcode('[contact-form-7 id="a5998d6" title="Sebaaly Ralph Property Contact"]');
                 }
-                ?>
-                <?php
+
                 if($MEMBRES->PRENOM." ". $MEMBRES->NOM=="Michael Ghannoum")
-{
-    echo do_shortcode('[contact-form-7 id="bedd78f" title="Michael Ghannoum Property Contact"]');
-}            ?>
-                <?php
-                if($MEMBRES->PRENOM." ". $MEMBRES->NOM=="Cynthia Dahoud")
-{
-    echo do_shortcode('[contact-form-7 id="026505a" title="Cynthia Dahoud Property Contact"]');
-}            ?>
-                <?php
-                if($MEMBRES->PRENOM." ". $MEMBRES->NOM=="Parvez Coowar")
-{
-    echo do_shortcode('[contact-form-7 id="08b0a05" title="Parvez Coowar Property Contact"]');
-}
-            ?>
-                <?php
-                if($MEMBRES->PRENOM." ". $MEMBRES->NOM=="Christian Daoud")
-{
-    echo do_shortcode('[contact-form-7 id="a5998d6" title="Christian Daoud Property Contact"]');
-}
-?>
+                {
+                    echo do_shortcode('[contact-form-7 id="bedd78f" title="Michael Ghannoum Property Contact"]');
+                }
+                 if($MEMBRES->PRENOM." ". $MEMBRES->NOM=="Cynthia Dahoud")
+                {
+                    echo do_shortcode('[contact-form-7 id="026505a" title="Cynthia Dahoud Property Contact"]');
+                }
+                 if($MEMBRES->CODE=="82166")
+                {
+                    echo do_shortcode('[contact-form-7 id="08b0a05" title="Parvez Coowar Property Contact"]');
+                }
+
+                 if($MEMBRES->CODE=="118696")
+                {
+                    echo do_shortcode('[contact-form-7 id="a5998d6" title="Christian Daoud Property Contact"]');
+                }
+                ?>
 
             </div>
         </div>
