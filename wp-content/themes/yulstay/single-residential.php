@@ -869,32 +869,28 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                 </form> -->
 
                 <?php
-                if($MEMBRES->PRENOM." ". $MEMBRES->NOM=="Sebaaly Ralph"){
+                if($MEMBRES->CODE=="107667"){
                 echo do_shortcode('[contact-form-7 id="a5998d6" title="Sebaaly Ralph Property Contact"]');
                 }
-                ?>
-                <?php
+
                 if($MEMBRES->PRENOM." ". $MEMBRES->NOM=="Michael Ghannoum")
-{
-    echo do_shortcode('[contact-form-7 id="bedd78f" title="Michael Ghannoum Property Contact"]');
-}            ?>
-                <?php
-                if($MEMBRES->PRENOM." ". $MEMBRES->NOM=="Cynthia Dahoud")
-{
-    echo do_shortcode('[contact-form-7 id="026505a" title="Cynthia Dahoud Property Contact"]');
-}            ?>
-                <?php
-                if($MEMBRES->PRENOM." ". $MEMBRES->NOM=="Parvez Coowar")
-{
-    echo do_shortcode('[contact-form-7 id="08b0a05" title="Parvez Coowar Property Contact"]');
-}
-            ?>
-                <?php
-                if($MEMBRES->PRENOM." ". $MEMBRES->NOM=="Christian Daoud")
-{
-    echo do_shortcode('[contact-form-7 id="a5998d6" title="Christian Daoud Property Contact"]');
-}
-?>
+                {
+                    echo do_shortcode('[contact-form-7 id="bedd78f" title="Michael Ghannoum Property Contact"]');
+                }
+                 if($MEMBRES->PRENOM." ". $MEMBRES->NOM=="Cynthia Dahoud")
+                {
+                    echo do_shortcode('[contact-form-7 id="026505a" title="Cynthia Dahoud Property Contact"]');
+                }
+                 if($MEMBRES->CODE=="82166")
+                {
+                    echo do_shortcode('[contact-form-7 id="08b0a05" title="Parvez Coowar Property Contact"]');
+                }
+
+                 if($MEMBRES->CODE=="118696")
+                {
+                    echo do_shortcode('[contact-form-7 id="a5998d6" title="Christian Daoud Property Contact"]');
+                }
+                ?>
 
             </div>
         </div>
