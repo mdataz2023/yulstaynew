@@ -364,6 +364,7 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                         // var mortgage = purchasePrice - (purchasePrice * downPayment);
                         // document.getElementById('mortgage').value = "$" + mortgage.toFixed(2);
 
+                        // Initialize the mortgage variable
                         var mortgage = null;
 
                         // Function to calculate the mortgage amount
@@ -375,7 +376,11 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                         }
 
                         // Add an event listener to the select element to trigger the calculation when the option changes
-                        document.getElementById('downPayment').addEventListener('change', calculateMortgage);
+                        document.getElementById('downPayment').addEventListener('change', function () {
+                            calculateMortgage();
+                            // You can also access the updated mortgage value here using the 'mortgage' variable
+                            console.log("Updated Mortgage Value: $" + mortgage.toFixed(2));
+                        });
 
                         // Initial calculation
                         calculateMortgage();
