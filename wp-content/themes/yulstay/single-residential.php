@@ -359,10 +359,23 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                         </div>
                     </div>
                     <script>
-                        var purchasePrice = 300000;
-                        var downPayment = parseFloat(document.getElementById('downPayment').value);
-                        var mortgage = purchasePrice - (purchasePrice * downPayment);
-                        document.getElementById('mortgage').value = "$" + mortgage.toFixed(2);
+                        // var purchasePrice = 300000;
+                        // var downPayment = parseFloat(document.getElementById('downPayment').value);
+                        // var mortgage = purchasePrice - (purchasePrice * downPayment);
+                        // document.getElementById('mortgage').value = "$" + mortgage.toFixed(2);
+
+                        function calculateMortgage() {
+                            var purchasePrice = 300000; // You can use your actual value
+                            var downPayment = parseFloat(document.getElementById('downPayment').value);
+                            var mortgage = purchasePrice - (purchasePrice * downPayment);
+                            document.getElementById('mortgage').value = "$" + mortgage.toFixed(2);
+                        }
+
+                        // Add an event listener to the select element to trigger the calculation when the option changes
+                        document.getElementById('downPayment').addEventListener('change', calculateMortgage);
+
+                        // Initial calculation
+                        calculateMortgage();
 
                         // var interestRate = parseFloat(document.getElementById('purchasePrice').value);
                         // var amortization = parseFloat(document.getElementById('purchasePrice').value);
