@@ -283,7 +283,7 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                                                     class="fa fa-minus"></span>Monthly Payment</div>
                                         </div>
                                         <div class="col-4 text-right">
-                                            <div class="pxp-calculator-data-sum">$ 534</div>
+                                            <div class="pxp-calculator-data-sum" id="answer">$ 534</div>
                                         </div>
                                     </div>
                                 </div>
@@ -291,21 +291,19 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                         </div>
                     </div>
                     <div class="pxp-calculator-form mt-3 mt-md-4">
-                        <input type="hidden" id="pxp-calculator-form-property-taxes" value="$1,068">
-                        <input type="hidden" id="pxp-calculator-form-hoa-dues" value="$2,036">
 
                         <div class="row">
                             <div class="col-sm-12 col-md-6">
                                 <div class="form-group">
                                         <label for="pxp-calculator-form-term">Purchase price</label>
-                                        <input type="text" class="form-control pxp-form-control-transform" value="300000">
+                                        <input type="text" class="form-control pxp-form-control-transform" id="purchasePrice" value="300000">
                                     </div>
                                 </div>
                             <div class="col-sm-12 col-md-6">
                                 <div class="row">
                                     <div class="form-group">
                                         <label for="pxp-calculator-form-price">Amortization</label>
-                                        <select class="custom-select">
+                                        <select class="custom-select" id="amortization">
                                             <option value="5">5 Years</option>
                                             <option value="6">6 Years</option>
                                             <option value="7">7 Years</option>
@@ -335,7 +333,7 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                                     <div class="col-6 col-sm-6 col-md-6">
                                         <div class="form-group">
                                             <label for="pxp-calculator-form-down-percentage">Down payment</label>
-                                            <select class="custom-select">
+                                            <select class="custom-select" id="downPayment">
                                                 <option value="0.05">5 %</option>
                                                 <option value="0.1">10 %</option>
                                                 <option value="0.15">15 %</option>
