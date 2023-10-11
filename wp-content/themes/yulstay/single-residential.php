@@ -375,8 +375,8 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
 
                         calculateMortgage();
 
-                        var interestRate = parseFloat(document.getElementById('interestRate').value);
-                        var amortization = parseFloat(document.getElementById('amortization').value);
+                        var interestRate = 2;
+                        var amortization = 30;
                         var r = interestRate / 12;
                         var n = amortization * 12;
                         var numerator = mortgage * r * Math.pow(1 + r, n);
