@@ -375,6 +375,7 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
 
                         calculateMortgage();
 
+                        
                         var interestRate = 2;
                         var amortization = 30;
                         var r = interestRate / 12;
