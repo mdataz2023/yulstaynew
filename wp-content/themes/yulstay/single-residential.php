@@ -364,18 +364,22 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                         // var mortgage = purchasePrice - (purchasePrice * downPayment);
                         // document.getElementById('mortgage').value = "$" + mortgage.toFixed(2);
 
+                        var mortgage = null;
+
+                        // Function to calculate the mortgage amount
                         function calculateMortgage() {
-                            var purchasePrice = 300000;
+                            var purchasePrice = 300000; // You can use your actual value
                             var downPayment = parseFloat(document.getElementById('downPayment').value);
-                            var mortgage = purchasePrice - (purchasePrice * downPayment);
+                            mortgage = purchasePrice - (purchasePrice * downPayment);
                             document.getElementById('mortgage').value = "$" + mortgage.toFixed(2);
                         }
 
+                        // Add an event listener to the select element to trigger the calculation when the option changes
                         document.getElementById('downPayment').addEventListener('change', calculateMortgage);
 
+                        // Initial calculation
                         calculateMortgage();
 
-                        
                         var interestRate = 2;
                         var amortization = 30;
                         var r = interestRate / 12;
@@ -385,6 +389,7 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                         var monthlyPayment = numerator / denominator;
 
                         console.log("Monthly Mortgage Payment: " + monthlyPayment.toFixed(2));
+                        console.log("Mortgage : " + mortgage.toFixed(2));
                     </script>
                 </div>
                 <!-- <div class="pxp-single-property-section mt-4 mt-md-5">
