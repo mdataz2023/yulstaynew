@@ -282,6 +282,95 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                 </div>
 
                 <div class="pxp-single-property-section mt-4 mt-md-5">
+    <h3>Monthly Payment Calculator</h3>
+    <div class="pxp-calculator-view mt-3 mt-md-4">
+        <div class="row">
+            <div class="col-sm-12 col-lg-12 align-self-center mt-3 mt-lg-0">
+                <div class="pxp-calculator-data">
+                    <div class="row justify-content-between">
+                        <div class="col-8">
+                            <div class="pxp-calculator-data-label">
+                                <span class="fa fa-minus"></span> Monthly Payment
+                            </div>
+                        </div>
+                        <div class="col-4 text-right">
+                            <div class="pxp-calculator-data-sum" id="answer">$ 0.00</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pxp-calculator-form mt-3 mt-md-4">
+        <div class="row">
+            <div class="col-sm-12 col-md-6">
+                <div class="form-group">
+                    <label for="purchasePrice">Purchase price</label>
+                    <input type="text" class="form-control pxp-form-control-transform" id="purchasePrice" value="300000">
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <div class="row">
+                    <div class="form-group">
+                        <label for="amortization">Amortization</label>
+                        <select class="custom-select" id="amortization">
+                            <option value="5">5 Years</option>
+                            <option value="10">10 Years</option>
+                            <option value="15">15 Years</option>
+                            <option value="20">20 Years</option>
+                            <option value="25">25 Years</option>
+                            <option value="30">30 Years</option>
+                            <option value="35">35 Years</option>
+                            <option value="40">40 Years</option>
+                        </select>
+                    </div>
+                    <div class="col-6 col-sm-6 col-md-6">
+                        <div class="form-group">
+                            <label for="downPayment">Down payment</label>
+                            <select class="custom-select" id="downPayment">
+                                <option value="0.05">5 %</option>
+                                <option value="0.1">10 %</option>
+                                <option value="0.15">15 %</option>
+                                <option value="0.2">20 %</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Function to calculate the monthly mortgage payment
+        function calculateMonthlyPayment() {
+            var purchasePrice = parseFloat(document.getElementById('purchasePrice').value);
+            var downPayment = parseFloat(document.getElementById('downPayment').value);
+            var amortization = parseInt(document.getElementById('amortization').value);
+            var r = downPayment / 12;
+            var n = amortization * 12;
+            var numerator = purchasePrice * r * Math.pow(1 + r, n);
+            var denominator = Math.pow(1 + r, n) - 1;
+            var monthlyPayment = numerator / denominator;
+            document.getElementById('answer').textContent = "$ " + monthlyPayment.toFixed(2);
+        }
+
+        // Add an event listener to the 'Calculate' button or any appropriate trigger
+        // For example, you can add a 'Calculate' button and add a click event listener to it.
+
+        // Example of adding a button:
+        /*
+        var calculateButton = document.createElement('button');
+        calculateButton.textContent = 'Calculate';
+        calculateButton.addEventListener('click', calculateMonthlyPayment);
+        document.body.appendChild(calculateButton);
+        */
+
+        // Alternatively, you can call calculateMonthlyPayment directly.
+        calculateMonthlyPayment();
+    </script>
+</div>
+
+
+                <div class="pxp-single-property-section mt-4 mt-md-5">
                     <h3>Payment Calculator</h3>
                     <div class="pxp-calculator-view mt-3 mt-md-4">
                         <div class="row">
