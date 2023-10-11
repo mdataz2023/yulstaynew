@@ -272,110 +272,6 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                 </div>
 
                 <div class="pxp-single-property-section mt-4 mt-md-5">
-                    <h3>Monthly Payment</h3>
-                    <div class="pxp-calculator-view mt-3 mt-md-4">
-                        <div class="row">
-                            <div class="col-sm-12 col-lg-12 align-self-center mt-3 mt-lg-0">
-                                <div class="pxp-calculator-data">
-                                    <div class="row justify-content-between">
-                                        <div class="col-8">
-                                            <div class="pxp-calculator-data-label"><span
-                                                    class="fa fa-minus"></span>Principal and Interest</div>
-                                        </div>
-                                        <div class="col-4 text-right">
-                                            <div class="pxp-calculator-data-sum">$ 534</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pxp-calculator-form mt-3 mt-md-4">
-                        <input type="hidden" id="pxp-calculator-form-property-taxes" value="$1,068">
-                        <input type="hidden" id="pxp-calculator-form-hoa-dues" value="$2,036">
-
-                        <div class="row">
-                            <div class="col-sm-12 col-md-6">
-                                <div class="form-group">
-                                    <label for="pxp-calculator-form-term">Purchase price</label>
-                                    <input type="text" class="form-control pxp-form-control-transform">
-                                </div>
-                            </div>
-                            <div class="col-sm-12 col-md-6">
-                                <div class="form-group">
-                                    <label for="pxp-calculator-form-interest">Interest rate</label>
-                                    <input type="text" class="form-control pxp-form-control-transform">
-                                </div>
-                            </div>
-                            <div class="col-sm-12 col-md-6">
-                                    <div class="form-group">
-                                        <label for="pxp-calculator-form-price">Amortization</label>
-                                        <select class="custom-select" id="amortization">
-                                            <option value="5">5 Years</option>
-                                            <option value="6">6 Years</option>
-                                            <option value="7">7 Years</option>
-                                            <option value="8">8 Years</option>
-                                            <option value="9">9 Years</option>
-                                            <option value="10">10 Years</option>
-                                            <option value="11">11 Years</option>
-                                            <option value="12">12 Years</option>
-                                            <option value="13">13 Years</option>
-                                            <option value="14">14 Years</option>
-                                            <option value="15">15 Years</option>
-                                            <option value="16">16 Years</option>
-                                            <option value="17">17 Years</option>
-                                            <option value="18">18 Years</option>
-                                            <option value="19">19 Years</option>
-                                            <option value="20">20 Years</option>
-                                            <option value="21">21 Years</option>
-                                            <option value="22">22 Years</option>
-                                            <option value="23">23 Years</option>
-                                            <option value="24">24 Years</option>
-                                            <option value="15">15 Years</option>
-                                            <option value="30">30 Years</option>
-                                            <option value="35">35 Years</option>
-                                            <option value="40">40 Years</option>
-                                        </select>
-                                    </div>
-                            </div>
-                            <div class="col-sm-12 col-md-6">
-                                <div class="row">
-                                    <div class="col-7 col-sm-7 col-md-8">
-                                        <div class="form-group">
-                                            <label for="pxp-calculator-form-down-price">Mortgage amount</label>
-                                            <input type="text" class="form-control pxp-form-control-transform">
-                                        </div>
-                                    </div>
-                                    <div class="col-5 col-sm-5 col-md-4">
-                                        <div class="form-group">
-                                            <label for="pxp-calculator-form-down-percentage">Down payment</label>
-                                            <select class="custom-select" id="downPayment">
-                                                <option value="0.05">5 %</option>
-                                                <option value="0.1">10 %</option>
-                                                <option value="0.15">15 %</option>
-                                                <option value="0.2">20 %</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <script>
-                        var purchasePrice = 300000;
-                        var downPayment = 0.05;
-                        var amortization = 30;
-                        var r = downPayment / 12;
-                        var n = amortization * 12;
-                        var numerator = purchasePrice * r * Math.pow(1 + r, n);
-                        var denominator = Math.pow(1 + r, n) - 1;
-                        var monthlyPayment = numerator / denominator;
-
-                        console.log("Monthly Mortgage Payment: " + monthlyPayment.toFixed(2));
-                    </script>
-                </div>
-
-                <div class="pxp-single-property-section mt-4 mt-md-5">
                     <h3>Monthly Payment Calculator</h3>
                     <div class="pxp-calculator-view mt-3 mt-md-4">
                         <div class="row">
@@ -387,7 +283,7 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                                                     class="fa fa-minus"></span>Monthly Payment</div>
                                         </div>
                                         <div class="col-4 text-right">
-                                            <div class="pxp-calculator-data-sum" id="answer">$ 534</div>
+                                            <div class="pxp-calculator-data-sum">$ 534</div>
                                         </div>
                                     </div>
                                 </div>
@@ -395,16 +291,20 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                         </div>
                     </div>
                     <div class="pxp-calculator-form mt-3 mt-md-4">
-
                         <div class="row">
                             <div class="col-sm-12 col-md-6">
                                 <div class="form-group">
-                                        <label for="pxp-calculator-form-term">Purchase price</label>
-                                        <input type="text" class="form-control pxp-form-control-transform" id="purchasePrice" value="300000">
-                                    </div>
+                                    <label for="pxp-calculator-form-term">Purchase price</label>
+                                    <input type="text" class="form-control pxp-form-control-transform">
                                 </div>
+                            </div>
                             <div class="col-sm-12 col-md-6">
-                                <div class="row">
+                                <div class="form-group">
+                                    <label for="pxp-calculator-form-interest">Interest rate</label>
+                                    <input type="text" class="form-control pxp-form-control-transform" id="interestRate">
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-6">
                                     <div class="form-group">
                                         <label for="pxp-calculator-form-price">Amortization</label>
                                         <select class="custom-select" id="amortization">
@@ -434,7 +334,10 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                                             <option value="40">40 Years</option>
                                         </select>
                                     </div>
-                                    <div class="col-6 col-sm-6 col-md-6">
+                            </div>
+                            <div class="col-sm-12 col-md-6">
+                                <div class="row">
+                                    <div class="col-5 col-sm-5 col-md-4">
                                         <div class="form-group">
                                             <label for="pxp-calculator-form-down-percentage">Down payment</label>
                                             <select class="custom-select" id="downPayment">
@@ -445,13 +348,33 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                                             </select>
                                         </div>
                                     </div>
+                                    <div class="col-7 col-sm-7 col-md-8">
+                                        <div class="form-group">
+                                            <label for="pxp-calculator-form-down-price">Mortgage amount</label>
+                                            <input type="text" class="form-control pxp-form-control-transform" id="mortgage">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <script>
+                        var purchasePrice = 300000;
+                        var downPayment = parseFloat(document.getElementById('downPayment').value);
+                        var mortgage = purchasePrice - (purchasePrice * downPayment);
+                        document.getElementById('mortgage').value = "$" + mortgage.toFixed(2);
 
+                        // var interestRate = parseFloat(document.getElementById('purchasePrice').value);
+                        // var amortization = parseFloat(document.getElementById('purchasePrice').value);
+                        // var r = interestRate / 12;
+                        // var n = amortization * 12;
+                        // var numerator = mortgage * r * Math.pow(1 + r, n);
+                        // var denominator = Math.pow(1 + r, n) - 1;
+                        // var monthlyPayment = numerator / denominator;
+
+                        // console.log("Monthly Mortgage Payment: " + monthlyPayment.toFixed(2));
+                    </script>
                 </div>
-
                 <!-- <div class="pxp-single-property-section mt-4 mt-md-5">
                     <h3>Monthly Payment</h3>
                     <div class="pxp-calculator-view mt-3 mt-md-4">
