@@ -404,7 +404,6 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                             updateMonthlyPayment();
                         }
 
-                        // Function to calculate the monthly mortgage payment
                         function updateMonthlyPayment() {
                             var interestRate = 2;
                             var amortization = 30;
