@@ -237,18 +237,19 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                    ?>
                         <div class="col-sm-6 col-lg-4">
                             <div class="pxp-sp-amenities-item">
-                                <b><?php
-                                   if ($lang == 'en-US'){
-                                    echo $SOUS_TYPE_CARACTERISTIQUES->DESCRIPTION_ANGLAISE;
-                                }else{
-                                    echo $inscriptionsData->DESCRIPTION_FRANCAISE;
-                                 }
-                               ?> - </b>
-                                <?php
+                            <b><?php
                                   if ($lang == 'en-US'){
                                     echo $TYPE_CARACTERISTIQUES->DESCRIPTION_ANGLAISE;
                                 }else{
                                     echo $TYPE_CARACTERISTIQUES->DESCRIPTION_FRANCAISE;
+                                 }
+                               ?> - </b>
+
+                                <?php
+                                   if ($lang == 'en-US'){
+                                    echo $SOUS_TYPE_CARACTERISTIQUES->DESCRIPTION_ANGLAISE;
+                                }else{
+                                    echo $inscriptionsData->DESCRIPTION_FRANCAISE;
                                  }
                                ?>
                             </div>
