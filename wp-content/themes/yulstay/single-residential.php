@@ -298,7 +298,7 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                             <div class="col-sm-12 col-md-6">
                                 <div class="form-group">
                                         <label for="pxp-calculator-form-term">Purchase price</label>
-                                        <input type="text" class="form-control pxp-form-control-transform">
+                                        <input type="text" class="form-control pxp-form-control-transform" value="300000">
                                     </div>
                                 </div>
                             <div class="col-sm-12 col-md-6">
@@ -306,30 +306,30 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                                     <div class="form-group">
                                         <label for="pxp-calculator-form-price">Amortization</label>
                                         <select class="custom-select">
-                                            <option value="">5 Years</option>
-                                            <option value="">6 Years</option>
-                                            <option value="">7 Years</option>
-                                            <option value="">8 Years</option>
-                                            <option value="">9 Years</option>
-                                            <option value="">10 Years</option>
-                                            <option value="">11 Years</option>
-                                            <option value="">12 Years</option>
-                                            <option value="">13 Years</option>
-                                            <option value="">14 Years</option>
-                                            <option value="">15 Years</option>
-                                            <option value="">16 Years</option>
-                                            <option value="">17 Years</option>
-                                            <option value="">18 Years</option>
-                                            <option value="">19 Years</option>
-                                            <option value="">20 Years</option>
-                                            <option value="">21 Years</option>
-                                            <option value="">22 Years</option>
-                                            <option value="">23 Years</option>
-                                            <option value="">24 Years</option>
-                                            <option value="">15 Years</option>
-                                            <option value="">30 Years</option>
-                                            <option value="">34 Years</option>
-                                            <option value="">40 Years</option>
+                                            <option value="5">5 Years</option>
+                                            <option value="6">6 Years</option>
+                                            <option value="7">7 Years</option>
+                                            <option value="8">8 Years</option>
+                                            <option value="9">9 Years</option>
+                                            <option value="10">10 Years</option>
+                                            <option value="11">11 Years</option>
+                                            <option value="12">12 Years</option>
+                                            <option value="13">13 Years</option>
+                                            <option value="14">14 Years</option>
+                                            <option value="15">15 Years</option>
+                                            <option value="16">16 Years</option>
+                                            <option value="17">17 Years</option>
+                                            <option value="18">18 Years</option>
+                                            <option value="19">19 Years</option>
+                                            <option value="20">20 Years</option>
+                                            <option value="21">21 Years</option>
+                                            <option value="22">22 Years</option>
+                                            <option value="23">23 Years</option>
+                                            <option value="24">24 Years</option>
+                                            <option value="15">15 Years</option>
+                                            <option value="30">30 Years</option>
+                                            <option value="35">35 Years</option>
+                                            <option value="40">40 Years</option>
                                         </select>
                                     </div>
                                     <div class="col-6 col-sm-6 col-md-6">
