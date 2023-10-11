@@ -351,7 +351,7 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                                     <div class="col-7 col-sm-7 col-md-8">
                                         <div class="form-group">
                                             <label for="pxp-calculator-form-down-price">Mortgage amount</label>
-                                            <input type="text" class="form-control pxp-form-control-transform" id="mortgage">
+                                            <input type="text" class="form-control pxp-form-control-transform" id="mortgage" readonly>
                                         </div>
                                     </div>
                                 </div>
@@ -360,7 +360,7 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                     </div>
                     <script>
 
-                        var mortgage = 0;
+                        var mortgage = null;
 
                         function calculateMortgage() {
                             var purchasePrice = 300000; 
