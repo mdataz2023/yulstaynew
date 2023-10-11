@@ -405,7 +405,7 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                         }
 
                         function updateMonthlyPayment() {
-                            var interestRate = 2;
+                            var interestRate = 0.05;
                             var amortization = 30;
                             var r = interestRate / 12;
                             var n = amortization * 12;
