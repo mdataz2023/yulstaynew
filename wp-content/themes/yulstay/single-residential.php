@@ -332,7 +332,7 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                                             <option value="">40 Years</option>
                                         </select>
                                     </div>
-                                    <div class="col-5 col-sm-5 col-md-4">
+                                    <div class="col-6 col-sm-6 col-md-6">
                                         <div class="form-group">
                                             <label for="pxp-calculator-form-down-percentage">Down payment</label>
                                             <select class="custom-select">
