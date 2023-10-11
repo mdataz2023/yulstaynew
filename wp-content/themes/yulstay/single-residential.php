@@ -301,7 +301,7 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                             <div class="col-sm-12 col-md-6">
                                 <div class="form-group">
                                     <label for="pxp-calculator-form-interest">Interest rate</label>
-                                    <input type="text" class="form-control pxp-form-control-transform" id="interestRate">
+                                    <input type="text" class="form-control pxp-form-control-transform" id="interestRate" value="5">
                                 </div>
                             </div>
                             <div class="col-sm-12 col-md-6">
@@ -405,8 +405,8 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                         }
 
                         function updateMonthlyPayment() {
-                            var interestRate = 0.05;
-                            var amortization = 30;
+                            var interestRate = parseFloat(document.getElementById('interestRate').value);
+                            var amortization = parseFloat(document.getElementById('amortization').value);
                             var r = interestRate / 12;
                             var n = amortization * 12;
                             var numerator = mortgage * r * Math.pow(1 + r, n);
@@ -414,16 +414,26 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                             var monthlyPayment = numerator / denominator;
 
                             // Display the updated monthly payment
-                            console.log("Monthly Mortgage Payment: " + monthlyPayment.toFixed(2));
+                            document.getElementById('monthlyPayment').value = "$" + monthlyPayment.toFixed(2);
                         }
 
-                        // Add an event listener to the select element to trigger the calculation and update the mortgage variable
+                        // Add event listeners to the input elements for interestRate and amortization
+                        document.getElementById('interestRate').addEventListener('change', function () {
+                            updateMonthlyPayment();
+                        });
+
+                        document.getElementById('amortization').addEventListener('change', function () {
+                            updateMonthlyPayment();
+                        });
+
+                        // Add an event listener to the select element for downPayment
                         document.getElementById('downPayment').addEventListener('change', function () {
                             calculateMortgage();
                         });
 
                         // Initial calculation
                         calculateMortgage();
+
 
                     </script>
                 </div>
