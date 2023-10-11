@@ -296,21 +296,6 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
 
                         <div class="row">
                             <div class="col-sm-12 col-md-6">
-
-                            </div>
-                            <div class="col-sm-12 col-md-6">
-                                <div class="form-group">
-                                    <label for="pxp-calculator-form-interest">Interest rate</label>
-                                    <input type="text" class="form-control pxp-form-control-transform">
-                                </div>
-                            </div>
-                            <div class="col-sm-12 col-md-6">
-                                <div class="form-group">
-                                        <label for="pxp-calculator-form-term">Purchase price</label>
-                                        <input type="text" class="form-control pxp-form-control-transform">
-                                    </div>
-                                </div>
-                            <div class="col-sm-12 col-md-6">
                                 <div class="row">
                                     <div class="form-group">
                                         <label for="pxp-calculator-form-price">Amortization</label>
