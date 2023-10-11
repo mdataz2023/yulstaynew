@@ -296,10 +296,7 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
 
                         <div class="row">
                             <div class="col-sm-12 col-md-6">
-                                <div class="form-group">
-                                    <label for="pxp-calculator-form-term">Purchase price</label>
-                                    <input type="text" class="form-control pxp-form-control-transform">
-                                </div>
+
                             </div>
                             <div class="col-sm-12 col-md-6">
                                 <div class="form-group">
@@ -309,42 +306,40 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                             </div>
                             <div class="col-sm-12 col-md-6">
                                 <div class="form-group">
-                                    <label for="pxp-calculator-form-price">Amortization</label>
-                                    <select class="custom-select">
-                                        <option value="">5 Years</option>
-                                        <option value="">6 Years</option>
-                                        <option value="">7 Years</option>
-                                        <option value="">8 Years</option>
-                                        <option value="">9 Years</option>
-                                        <option value="">10 Years</option>
-                                        <option value="">11 Years</option>
-                                        <option value="">12 Years</option>
-                                        <option value="">13 Years</option>
-                                        <option value="">14 Years</option>
-                                        <option value="">15 Years</option>
-                                        <option value="">16 Years</option>
-                                        <option value="">17 Years</option>
-                                        <option value="">18 Years</option>
-                                        <option value="">19 Years</option>
-                                        <option value="">20 Years</option>
-                                        <option value="">21 Years</option>
-                                        <option value="">22 Years</option>
-                                        <option value="">23 Years</option>
-                                        <option value="">24 Years</option>
-                                        <option value="">15 Years</option>
-                                        <option value="">30 Years</option>
-                                        <option value="">34 Years</option>
-                                        <option value="">40 Years</option>
-                                    </select>
+                                        <label for="pxp-calculator-form-term">Purchase price</label>
+                                        <input type="text" class="form-control pxp-form-control-transform">
+                                    </div>
                                 </div>
-                            </div>
                             <div class="col-sm-12 col-md-6">
                                 <div class="row">
-                                    <div class="col-7 col-sm-7 col-md-8">
-                                        <div class="form-group">
-                                            <label for="pxp-calculator-form-down-price">Mortgage amount</label>
-                                            <input type="text" class="form-control pxp-form-control-transform">
-                                        </div>
+                                    <div class="form-group">
+                                        <label for="pxp-calculator-form-price">Amortization</label>
+                                        <select class="custom-select">
+                                            <option value="">5 Years</option>
+                                            <option value="">6 Years</option>
+                                            <option value="">7 Years</option>
+                                            <option value="">8 Years</option>
+                                            <option value="">9 Years</option>
+                                            <option value="">10 Years</option>
+                                            <option value="">11 Years</option>
+                                            <option value="">12 Years</option>
+                                            <option value="">13 Years</option>
+                                            <option value="">14 Years</option>
+                                            <option value="">15 Years</option>
+                                            <option value="">16 Years</option>
+                                            <option value="">17 Years</option>
+                                            <option value="">18 Years</option>
+                                            <option value="">19 Years</option>
+                                            <option value="">20 Years</option>
+                                            <option value="">21 Years</option>
+                                            <option value="">22 Years</option>
+                                            <option value="">23 Years</option>
+                                            <option value="">24 Years</option>
+                                            <option value="">15 Years</option>
+                                            <option value="">30 Years</option>
+                                            <option value="">34 Years</option>
+                                            <option value="">40 Years</option>
+                                        </select>
                                     </div>
                                     <div class="col-5 col-sm-5 col-md-4">
                                         <div class="form-group">
@@ -362,19 +357,11 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                         </div>
                     </div>
                     <script>
-                        // var purchasePrice = 300000;
-                        // var downPayment = 0.05;
-                        // var amortization = 30;
-                        // var r = downPayment / 12 ;
-                        // var n = amortization * 12;
-                        // var m = purchasePrice * r (1+r)**n / (1+r)**n - 1;
-
                         var purchasePrice = 300000;
                         var downPayment = 0.05;
                         var amortization = 30;
                         var r = downPayment / 12;
                         var n = amortization * 12;
-                        // var monthlyInterestRate = r / 100; // Convert the annual interest rate to a monthly rate
                         var numerator = purchasePrice * r * Math.pow(1 + r, n);
                         var denominator = Math.pow(1 + r, n) - 1;
                         var monthlyPayment = numerator / denominator;
