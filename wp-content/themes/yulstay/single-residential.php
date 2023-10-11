@@ -365,27 +365,25 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                         // document.getElementById('mortgage').value = "$" + mortgage.toFixed(2);
 
                         function calculateMortgage() {
-                            var purchasePrice = 300000; // You can use your actual value
+                            var purchasePrice = 300000;
                             var downPayment = parseFloat(document.getElementById('downPayment').value);
                             var mortgage = purchasePrice - (purchasePrice * downPayment);
                             document.getElementById('mortgage').value = "$" + mortgage.toFixed(2);
                         }
 
-                        // Add an event listener to the select element to trigger the calculation when the option changes
                         document.getElementById('downPayment').addEventListener('change', calculateMortgage);
 
-                        // Initial calculation
                         calculateMortgage();
 
-                        // var interestRate = parseFloat(document.getElementById('purchasePrice').value);
-                        // var amortization = parseFloat(document.getElementById('purchasePrice').value);
-                        // var r = interestRate / 12;
-                        // var n = amortization * 12;
-                        // var numerator = mortgage * r * Math.pow(1 + r, n);
-                        // var denominator = Math.pow(1 + r, n) - 1;
-                        // var monthlyPayment = numerator / denominator;
+                        var interestRate = parseFloat(document.getElementById('interestRate').value);
+                        var amortization = parseFloat(document.getElementById('amortization').value);
+                        var r = interestRate / 12;
+                        var n = amortization * 12;
+                        var numerator = mortgage * r * Math.pow(1 + r, n);
+                        var denominator = Math.pow(1 + r, n) - 1;
+                        var monthlyPayment = numerator / denominator;
 
-                        // console.log("Monthly Mortgage Payment: " + monthlyPayment.toFixed(2));
+                        console.log("Monthly Mortgage Payment: " + monthlyPayment.toFixed(2));
                     </script>
                 </div>
                 <!-- <div class="pxp-single-property-section mt-4 mt-md-5">
