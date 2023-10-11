@@ -360,7 +360,7 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                     </div>
                     <script>
 
-                        var mortgage = null;
+                        var mortgage = 0;
 
                         function calculateMortgage() {
                             var purchasePrice = 300000; 
