@@ -365,6 +365,32 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                         // document.getElementById('mortgage').value = "$" + mortgage.toFixed(2);
 
                         // Initialize the mortgage variable
+                        // var mortgage = null;
+
+                        // function calculateMortgage() {
+                        //     var purchasePrice = 300000;
+                        //     var downPayment = parseFloat(document.getElementById('downPayment').value);
+                        //     mortgage = purchasePrice - (purchasePrice * downPayment);
+                        //     document.getElementById('mortgage').value = "$" + mortgage.toFixed(2);
+                        // }
+
+                        // document.getElementById('downPayment').addEventListener('change', function () {
+                        //     calculateMortgage();
+                        //     console.log("Updated Mortgage Value: $" + mortgage.toFixed(2));
+                        // });
+
+                        // calculateMortgage();
+
+                        // var interestRate = 2;
+                        // var amortization = 30;
+                        // var r = interestRate / 12;
+                        // var n = amortization * 12;
+                        // var numerator = mortgage * r * Math.pow(1 + r, n);
+                        // var denominator = Math.pow(1 + r, n) - 1;
+                        // var monthlyPayment = numerator / denominator;
+
+                        // console.log("Monthly Mortgage Payment: " + monthlyPayment.toFixed(2));
+                        // console.log("Mortgage : " + mortgage.toFixed(2));
                         var mortgage = null;
 
                         // Function to calculate the mortgage amount
@@ -373,28 +399,33 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                             var downPayment = parseFloat(document.getElementById('downPayment').value);
                             mortgage = purchasePrice - (purchasePrice * downPayment);
                             document.getElementById('mortgage').value = "$" + mortgage.toFixed(2);
+                            
+                            // Recalculate monthlyPayment based on the updated mortgage value
+                            updateMonthlyPayment();
                         }
 
-                        // Add an event listener to the select element to trigger the calculation when the option changes
+                        // Function to calculate the monthly mortgage payment
+                        function updateMonthlyPayment() {
+                            var interestRate = 2;
+                            var amortization = 30;
+                            var r = interestRate / 12;
+                            var n = amortization * 12;
+                            var numerator = mortgage * r * Math.pow(1 + r, n);
+                            var denominator = Math.pow(1 + r, n) - 1;
+                            var monthlyPayment = numerator / denominator;
+
+                            // Display the updated monthly payment
+                            console.log("Monthly Mortgage Payment: " + monthlyPayment.toFixed(2));
+                        }
+
+                        // Add an event listener to the select element to trigger the calculation and update the mortgage variable
                         document.getElementById('downPayment').addEventListener('change', function () {
                             calculateMortgage();
-                            // You can also access the updated mortgage value here using the 'mortgage' variable
-                            console.log("Updated Mortgage Value: $" + mortgage.toFixed(2));
                         });
 
                         // Initial calculation
                         calculateMortgage();
 
-                        var interestRate = 2;
-                        var amortization = 30;
-                        var r = interestRate / 12;
-                        var n = amortization * 12;
-                        var numerator = mortgage * r * Math.pow(1 + r, n);
-                        var denominator = Math.pow(1 + r, n) - 1;
-                        var monthlyPayment = numerator / denominator;
-
-                        console.log("Monthly Mortgage Payment: " + monthlyPayment.toFixed(2));
-                        console.log("Mortgage : " + mortgage.toFixed(2));
                     </script>
                 </div>
                 <!-- <div class="pxp-single-property-section mt-4 mt-md-5">
