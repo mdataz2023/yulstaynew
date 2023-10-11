@@ -493,7 +493,7 @@ global $wpdb;
                                 echo $city->DESCRIPTION_FRANCAISE;
                              }
                             ?></div>
-                            <div class="pxp-areas-1-item-details-city">Arlington, VA</div>
+                            <!-- <div class="pxp-areas-1-item-details-city">Arlington, VA</div> -->
                         </div>
                         <div class="pxp-areas-1-item-counter"><span><?php
 
@@ -521,8 +521,8 @@ global $wpdb;
 
             </div>
 
-            <a href="properties.html" class="pxp-primary-cta text-uppercase mt-2 mt-md-4 pxp-animate">Explore
-                Neighborhoods</a>
+            <!-- <a href="properties.html" class="pxp-primary-cta text-uppercase mt-2 mt-md-4 pxp-animate">Explore
+                Neighborhoods</a> -->
         </div>
 
         <div class="pxp-testim-1 pt-100 pb-100 mt-100 pxp-cover" style="background-image: url(<?php echo $home_page_testimonial_background_image; ?>);">
