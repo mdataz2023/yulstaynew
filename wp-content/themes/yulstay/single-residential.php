@@ -272,7 +272,7 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                 </div>
 
                 <div class="pxp-single-property-section mt-4 mt-md-5">
-                    <h3>Monthly Payment</h3>
+                    <h3>Monthly Payment Calculator</h3>
                     <div class="pxp-calculator-view mt-3 mt-md-4">
                         <div class="row">
                             <div class="col-sm-12 col-lg-12 align-self-center mt-3 mt-lg-0">
@@ -280,7 +280,7 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                                     <div class="row justify-content-between">
                                         <div class="col-8">
                                             <div class="pxp-calculator-data-label"><span
-                                                    class="fa fa-minus"></span>Principal and Interest</div>
+                                                    class="fa fa-minus"></span>Monthly Payment</div>
                                         </div>
                                         <div class="col-4 text-right">
                                             <div class="pxp-calculator-data-sum">$ 534</div>
