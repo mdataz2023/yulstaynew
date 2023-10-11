@@ -374,9 +374,9 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                         var amortization = 30;
                         var r = downPayment / 12;
                         var n = amortization * 12;
-                        var monthlyInterestRate = r / 100; // Convert the annual interest rate to a monthly rate
-                        var numerator = purchasePrice * monthlyInterestRate * Math.pow(1 + monthlyInterestRate, n);
-                        var denominator = Math.pow(1 + monthlyInterestRate, n) - 1;
+                        // var monthlyInterestRate = r / 100; // Convert the annual interest rate to a monthly rate
+                        var numerator = purchasePrice * r * Math.pow(1 + r, n);
+                        var denominator = Math.pow(1 + r, n) - 1;
                         var monthlyPayment = numerator / denominator;
 
                         console.log("Monthly Mortgage Payment: " + monthlyPayment.toFixed(2));
