@@ -1025,12 +1025,13 @@ if ($lang == 'en-US'){
         </div>
     </div>
 </div>
-<script src="<?php echo get_template_directory_uri(); ?>/js/jquery-3.4.1.min.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/popper.min.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/bootstrap.min.js"></script>
 <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALbrsESmR55p0PLDbeL-SQ_YPuRpucYrw&amp;libraries=geometry&amp;libraries=places">
 </script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/jquery-3.4.1.min.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/popper.min.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/bootstrap.min.js"></script>
+
 <script src="<?php echo get_template_directory_uri(); ?>/js/photoswipe.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/photoswipe-ui-default.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.sticky.js"></script>
@@ -1189,6 +1190,7 @@ if ($lang == 'en-US'){
                             $results = $wpdb->get_row(" SELECT * FROM PHOTOS where  NO_INSCRIPTION = '".$page->NO_INSCRIPTION."'", OBJECT );
 
                        ?>
+
     propertiesList.push({
         id: <?php echo  $post->ID ;?>,
         title: '<?php  echo $page->NOM_RUE_COMPLET." ".$page->NO_INSCRIPTION;?>',
@@ -1304,7 +1306,7 @@ if ($lang == 'en-US'){
             });
 
             map.mapTypes.set('Styled', styledMapType);
-            map.setCenter(new google.maps.LatLng(37.7577627, -122.4726194));
+            map.setCenter(new google.maps.LatLng('<?php echo $page->LATITUDE;?>','<?php echo $page->LONGITUDE;?>'));
             map.setZoom(15);
 
             addMarkers(propertiesList, map);
