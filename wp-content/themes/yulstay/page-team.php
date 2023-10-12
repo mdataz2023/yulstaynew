@@ -1,6 +1,6 @@
 <?php
 /*
-	Template Name: Team_old
+	Template Name: Team
 */
 get_header();
 
