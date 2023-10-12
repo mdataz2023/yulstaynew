@@ -4,6 +4,10 @@
 */
 get_header();
 
+?>
+
+<?php
+
 $team_page_banner_image = get_field('team_page_banner_image');
 $team_page_title = get_field('team_page_title');
 $team_page_title_description = get_field('team_page_title_description');
