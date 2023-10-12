@@ -1005,7 +1005,7 @@ h1.pxp-page-header {
 }
 
 .pxp-hero-opacity {
-    background-color: rgba(0, 174, 197, 0.3);
+    background-color: #00aec54d;
     position: absolute;
     top: 0;
     left: 0;
