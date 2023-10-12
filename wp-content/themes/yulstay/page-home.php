@@ -61,7 +61,7 @@ global $wpdb;
                                 </ul> -->
                         </li>
                         <li class="list-inline-item">
-                            <span class="navproperty">Properties</span>
+                            <span class="navproperty" style="color: #000;">Properties</span>
                             <ul class="pxp-nav-sub rounded-lg">
                                 <li><a href="<?php bloginfo('url'); ?>/residential">Residential</a></li>
                                 <li><a href="<?php bloginfo('url'); ?>/multi-residential">Multi Residential</a></li>
