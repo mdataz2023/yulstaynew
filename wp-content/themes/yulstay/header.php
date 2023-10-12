@@ -61,7 +61,7 @@
                                 </ul> -->
                             </li>
                             <li class="list-inline-item">
-                            <span style="text-transform: uppercase; font-weight: 700; color: #000; text-decoration: none;">Properties</span>
+                            <span class="navproperty">Properties</span>
                                 <ul class="pxp-nav-sub rounded-lg">
                                     <li><a href="<?php bloginfo('url'); ?>/residential">Residential</a></li>
                                     <li><a href="<?php bloginfo('url'); ?>/multi-residential">Multi Residential</a></li>
