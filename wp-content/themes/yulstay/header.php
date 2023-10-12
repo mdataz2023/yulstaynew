@@ -70,11 +70,12 @@
                             </li>
                             <li class="list-inline-item">
                                 <a href="<?php bloginfo('url'); ?>/team">Team</a>
+                            </li>
                                 <!-- <ul class="pxp-nav-sub rounded-lg">
                                     <li><a href="agents.html">All Agents</a></li>
                                     <li><a href="single-agent.html">Single Agent</a></li>
                                 </ul> -->
-                            </li>
+                            
                             <li class="list-inline-item pxp-is-last"><a href="<?php bloginfo('url'); ?>/contact">Contact Us</a></li>
                             <!-- <li class="list-inline-item pxp-has-btns">
                                 <div class="pxp-user-btns">
