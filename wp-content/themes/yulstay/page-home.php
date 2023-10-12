@@ -8,6 +8,14 @@ error_reporting(0);
 // $files1 = scandir($zipFolder);
 // $pattern = '/[\n]/';
 global $wpdb;
+$lang = get_bloginfo("language");
+$currencyLetterPrefix="";
+$currencyLetterSuffix="";
+if ($lang == 'en-US'){
+    $currencyLetterPrefix="$ ";
+}else{
+    $currencyLetterSuffix=" $";
+}
  ?>
 <html <?php language_attributes(); ?>>
 
@@ -347,7 +355,7 @@ global $wpdb;
                              }
                               ?></div>
                                 <div class="pxp-prop-card-1-details-price">
-                                    <?php  echo $inscriptionsData->PRIX_DEMANDE.' $';?></div>
+                                    <?php  echo $currencyLetterPrefix."".$inscriptionsData->PRIX_DEMANDE.''.$currencyLetterSuffix;?></div>
                                 <div class="pxp-prop-card-1-details-features text-uppercase">
                                     <?php  echo $inscriptionsData->NB_CHAMBRES;?> BD <span>|</span>
                                     <?php echo $inscriptionsData->NB_CHAMBRES_HORS_SOL;?> BA
@@ -384,7 +392,7 @@ global $wpdb;
                              }
                               ?></div>
                                 <div class="pxp-prop-card-1-details-price">
-                                    <?php  echo $inscriptionsData->PRIX_LOCATION_DEMANDE.' $';?></div>
+                                    <?php  echo $currencyLetterPrefix."".$inscriptionsData->PRIX_LOCATION_DEMANDE.''.$currencyLetterSuffix;?></div>
                                 <div class="pxp-prop-card-1-details-features text-uppercase">
                                     <?php  echo $inscriptionsData->NB_CHAMBRES;?> BD <span>|</span>
                                     <?php echo $inscriptionsData->NB_CHAMBRES_HORS_SOL;?> BA
@@ -421,7 +429,7 @@ global $wpdb;
                              }
                               ?></div>
                                 <div class="pxp-prop-card-1-details-price">
-                                    <?php  echo $inscriptionsData->PRIX_DEMANDE.' $';?></div>
+                                    <?php  echo $currencyLetterPrefix."".$inscriptionsData->PRIX_DEMANDE.''.$currencyLetterSuffix;?></div>
                                 <div class="pxp-prop-card-1-details-features text-uppercase">
                                     <?php  echo $inscriptionsData->NB_CHAMBRES;?> BD <span>|</span>
                                     <?php echo $inscriptionsData->NB_CHAMBRES_HORS_SOL;?> BA
