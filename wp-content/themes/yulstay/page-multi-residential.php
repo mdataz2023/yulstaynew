@@ -1,4 +1,7 @@
 <?php
+/*
+	Template Name: Multi Residential
+*/
 get_header();
 $lang = get_bloginfo("language");
 $language="A";
