@@ -5,10 +5,14 @@
 get_header();
 $lang = get_bloginfo("language");
 $language="A";
+$currencyLetterPrefix="";
+$currencyLetterSuffix="";
 if ($lang == 'en-US'){
-   $language="A";
+    $currencyLetterPrefix="$ ";
+    $language="A";
 }else{
-   $language="F";
+    $currencyLetterSuffix=" $";
+    $language="F";
 }
 global $wpdb;
 
@@ -190,7 +194,7 @@ global $wpdb;
                              }
                             echo   $cityName; ?></div>
                             <div class="pxp-results-card-1-details-price">
-                                <?php  echo $inscriptionsData->PRIX_DEMANDE.' $';?>
+                                <?php  echo $currencyLetterPrefix."".$inscriptionsData->PRIX_DEMANDE.''.$currencyLetterSuffix;?>
                             </div>
                         </div>
                         <div class="pxp-results-card-1-features">
@@ -613,8 +617,8 @@ global $wpdb;
             lng: '<?php echo $page->LONGITUDE;?>'
         },
         price: {
-            long: '<?php  echo $page->PRIX_DEMANDE.' $';?>',
-            short: '<?php  echo $page->PRIX_DEMANDE.' $';?>'
+            long: '<?php  echo $currencyLetterPrefix."".$page->PRIX_DEMANDE.''.$currencyLetterSuffix;?>',
+            short: '<?php  echo $currencyLetterPrefix."".$page->PRIX_DEMANDE.''.$currencyLetterSuffix;?>'
         },
         link: '<?php  echo get_permalink( $post->ID );?>',
         features: {

@@ -7,10 +7,14 @@ $image_two = get_field('image_two');
 $image_three = get_field('image_three');
 $lang = get_bloginfo("language");
 $language="A";
+$currencyLetterPrefix="";
+$currencyLetterSuffix="";
 if ($lang == 'en-US'){
-   $language="A";
+    $language="A";
+    $currencyLetterPrefix="$ ";
 }else{
-   $language="F";
+    $language="F";
+    $currencyLetterSuffix=" $";
 }
 $inscriptionsData = $wpdb->get_row(" SELECT * FROM INSCRIPTIONS where NO_INSCRIPTION = '".get_the_content()."'", OBJECT );
 $GENRES_PROPRIETES = $wpdb->get_row("SELECT * FROM GENRES_PROPRIETES WHERE GENRE_PROPRIETE ='".$inscriptionsData->GENRE_PROPRIETE."'", OBJECT );
@@ -65,9 +69,7 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                                 <?php echo $inscriptionsData->UM_SUPERFICIE_HABITABLE;?></span></div>
                     </div>
                     <div class="pxp-sp-top-price mt-3 mt-md-0">
-                        <?php
-                                                            echo $inscriptionsData->PRIX_LOCATION_DEMANDE.' $';
-                                                        ?>
+                        <?php echo $currencyLetterPrefix."".$inscriptionsData->PRIX_LOCATION_DEMANDE.''.$currencyLetterSuffi; ?>
                     </div>
                 </div>
             </div>
@@ -165,18 +167,37 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                 <div class="pxp-single-property-section mt-4 mt-md-5">
                     <h3>Overview</h3>
                     <div class="mt-3 mt-md-4">
-                        <h4>Description</h4>
-                        <p><?php
+                        <?php
                     $remarques = $wpdb->get_row(" SELECT * FROM REMARQUES where NO_INSCRIPTION = '".$inscriptionsData->NO_INSCRIPTION."' and CODE_LANGUE='".$language."'", OBJECT );
-                    echo $remarques->TEXTE;
-                    ?><span class="pxp-dots">...</span><span class="pxp-dots-more">
+                    ?>
+                        <?php
+                    if( $remarques->TEXTE!=""){
+                    ?>
+                        <h4>Description</h4>
+                        <?php }?>
+                        <p>
+                            <?php
+  echo $remarques->TEXTE==""?" ":$remarques->TEXTE;
+  ?>
+  <span class="pxp-dots">...</span><span class="pxp-dots-more">
                                 <span class="addendaFontSize"><br>Addenda <br></span>
                                 <?php
                                  $results = $wpdb->get_results("SELECT * FROM ADDENDA WHERE NO_INSCRIPTION = '".get_the_content()."' and CODE_LANGUE='".$language."'", OBJECT );
                                  foreach ($results as $page) {
                                     echo $page->TEXTE.'<br/>';
                                  }
-                    ?></span></p>
+                    ?> <br>
+                    <span class="addendaFontSize"><br>Inclusions <br></span>
+                    <?php
+if ($lang == 'en-US'){
+echo $inscriptionsData->INCLUS_ANGLAIS."<br><br>".$inscriptionsData->EXCLUS_ANGLAIS;
+}else{
+echo $inscriptionsData->INCLUS_FRANCAIS."<br><br>".$inscriptionsData->EXCLUS_FRANCAIS;
+
+}
+?>
+</span>
+                    </p>
                         <a href="#" class="pxp-sp-more text-uppercase"><span class="pxp-sp-more-1">Continue Reading
                                 <span class="fa fa-angle-down"></span></span><span class="pxp-sp-more-2">Show Less <span
                                     class="fa fa-angle-up"></span></span></a>
@@ -235,7 +256,7 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                    ?>
                         <div class="col-sm-6 col-lg-4">
                             <div class="pxp-sp-amenities-item">
-                            <b><?php
+                                <b><?php
                                   if ($lang == 'en-US'){
                                     echo $TYPE_CARACTERISTIQUES->DESCRIPTION_ANGLAISE;
                                 }else{

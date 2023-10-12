@@ -5,10 +5,14 @@
 get_header();
 $lang = get_bloginfo("language");
 $language="A";
+$currencyLetterPrefix="";
+$currencyLetterSuffix="";
 if ($lang == 'en-US'){
-   $language="A";
+    $currencyLetterPrefix="$ ";
+    $language="A";
 }else{
-   $language="F";
+    $currencyLetterSuffix=" $";
+    $language="F";
 }
 global $wpdb;
 
@@ -189,7 +193,7 @@ $the_query = new WP_Query( array('post_type' =>'rental-property','posts_per_page
                              }
                             echo   $cityName; ?></div>
                             <div class="pxp-results-card-1-details-price">
-                                <?php echo $inscriptionsData->PRIX_LOCATION_DEMANDE." $";?></div>
+                                <?php echo $currencyLetterPrefix."". $inscriptionsData->PRIX_LOCATION_DEMANDE.''.$currencyLetterSuffix;;?></div>
                         </div>
                         <div class="pxp-results-card-1-features">
                             <span><?php echo $inscriptionsData->NB_CHAMBRES;?> BD <span>|</span>
@@ -612,8 +616,8 @@ $the_query = new WP_Query( array('post_type' =>'rental-property','posts_per_page
             lng: '<?php echo $page->LONGITUDE;?>'
         },
         price: {
-            long: '<?php echo $page->PRIX_LOCATION_DEMANDE." $";?>',
-            short: '<?php echo $page->PRIX_LOCATION_DEMANDE." $";?>'
+            long: '<?php echo  $currencyLetterPrefix."". $page->PRIX_LOCATION_DEMANDE.''.$currencyLetterSuffix;?>',
+            short: '<?php echo $currencyLetterPrefix."". $page->PRIX_LOCATION_DEMANDE.''.$currencyLetterSuffix;;?>'
         },
         link: '<?php  echo get_permalink( $post->ID );?>',
         features: {

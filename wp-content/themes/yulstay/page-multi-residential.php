@@ -5,10 +5,14 @@
 get_header();
 $lang = get_bloginfo("language");
 $language="A";
+$currencyLetterPrefix="";
+$currencyLetterSuffix="";
 if ($lang == 'en-US'){
-   $language="A";
+    $currencyLetterPrefix="$ ";
+    $language="A";
 }else{
-   $language="F";
+    $currencyLetterSuffix=" $";
+    $language="F";
 }
 global $wpdb;
 
@@ -53,7 +57,7 @@ $the_query = new WP_Query( array('post_type' =>'multi-residential','posts_per_pa
                     <a role="button" class="pxp-adv-toggle"><span class="fa fa-sliders"></span></a>
                 </div>
             </div>
-            
+
             <div class="pxp-content-side-search-form-adv mb-3">
                 <div class="row pxp-content-side-search-form-row">
                     <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
@@ -155,7 +159,7 @@ $the_query = new WP_Query( array('post_type' =>'multi-residential','posts_per_pa
 				?>
                 <div class="col-sm-12 col-md-6 col-xxxl-4 hide_post_class NO_INSCRIPTION<?php
                              $REGION_CODE = $wpdb->get_row("SELECT r.*,REGION_CODE,m.DESCRIPTION FROM MUNICIPALITES m JOIN REGIONS r ON m.REGION_CODE = r.CODE where m.CODE='".$inscriptionsData->MUN_CODE."' ", OBJECT );
-        echo $REGION_CODE->REGION_CODE;?>" >
+        echo $REGION_CODE->REGION_CODE;?>">
                     <a href="<?php the_permalink(); ?>" class="pxp-results-card-1 rounded-lg" data-prop="1">
                         <div id="card-carousel-<?php echo  $postIndex;?>" class="carousel slide" data-ride="carousel"
                             data-interval="false">
@@ -191,7 +195,7 @@ $the_query = new WP_Query( array('post_type' =>'multi-residential','posts_per_pa
                              }
                             echo   $cityName; ?></div>
                             <div class="pxp-results-card-1-details-price">
-                                <?php echo $inscriptionsData->PRIX_DEMANDE.' $'; ?>
+                                <?php echo $currencyLetterPrefix."".$inscriptionsData->PRIX_DEMANDE.''.$currencyLetterSuffix; ?>
                             </div>
                         </div>
                         <div class="pxp-results-card-1-features">
@@ -615,9 +619,10 @@ $the_query = new WP_Query( array('post_type' =>'multi-residential','posts_per_pa
             lng: '<?php echo $page->LONGITUDE;?>'
         },
         price: {
-            long: '<?php echo $page->PRIX_DEMANDE.' $'; ?>',
-            short: '<?php echo $page->PRIX_DEMANDE.' $'; ?>'
+            long: '<?php echo $currencyLetterPrefix."".$page->PRIX_DEMANDE.''.$currencyLetterSuffix; ?>',
+            short: '<?php echo $currencyLetterPrefix."".$page->PRIX_DEMANDE.''.$currencyLetterSuffix; ?>'
         },
+        ;
         link: '<?php  echo get_permalink( $post->ID );?>',
         features: {
             beds: '<?php echo $page->NB_CHAMBRES;?>',
