@@ -76,7 +76,7 @@
                                     <li><a href="single-agent.html">Single Agent</a></li>
                                 </ul> -->
                             
-                            <li class="list-inline-item pxp-is-last"><a href="<?php bloginfo('url'); ?>/team">Contact Us</a></li>
+                            <li class="list-inline-item pxp-is-last"><a href="<?php bloginfo('url'); ?>/contact">Contact Us</a></li>
                             <!-- <li class="list-inline-item pxp-has-btns">
                                 <div class="pxp-user-btns">
                                     <a href="#" class="pxp-user-btns-signup pxp-signup-trigger">Sign Up</a>
