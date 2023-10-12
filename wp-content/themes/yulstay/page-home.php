@@ -97,7 +97,7 @@ global $wpdb;
                             </ul>
                         </li>
                         <li class="list-inline-item">
-                            <!-- <?php
+                            <?php
                                 if (has_nav_menu('main-lang')) {
                                     wp_nav_menu(
                                         array(
@@ -106,7 +106,7 @@ global $wpdb;
                                         )
                                     );
                                 }
-                            ?> -->
+                            ?>
                         </li>
                     </ul>
                 </div>
