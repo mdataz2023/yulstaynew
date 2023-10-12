@@ -1038,6 +1038,7 @@ if ($lang == 'en-US'){
 <script src="<?php echo get_template_directory_uri(); ?>/js/infobox.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/Chart.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/markerclusterer.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/main.js?asdsd"></script>
 
 
 <script>
