@@ -14,7 +14,7 @@ $team_page_title_description = get_field('team_page_title_description');
 
 ?>
 
-<div class="pxp-content">
+        <div class="pxp-content">
             <div class="pxp-agents pxp-content-wrapper mt-100">
                 <div class="container">
                     <div class="row">
@@ -65,7 +65,7 @@ $team_page_title_description = get_field('team_page_title_description');
 
                 <div class="container">
                     <div class="row mt-200">
-                    <?php $the_query = new WP_Query( array('post_type' =>'team','posts_per_page' => '20',  'post__not_in'   => array( $id),) );?>
+                        <?php $the_query = new WP_Query( array('post_type' =>'team','posts_per_page' => '20',  'post__not_in'   => array( $id),) );?>
 							     <?php if ( have_posts())   : while ( $the_query->have_posts() ) : $the_query->the_post();?>
 							  
 									   <?php
@@ -73,7 +73,7 @@ $team_page_title_description = get_field('team_page_title_description');
 										$thumbnail_url = wp_get_attachment_image_src( $thumbnail_id, 'thumbnail-size', true );
 										$thumbnail_meta = get_post_meta( $thumbnail_id, '_wp_attachment_image_alt', true); 
 
-                    $categories = get_the_category();
+                        $categories = get_the_category();
 										
 										?> 
                         <div class="col-sm-12 col-md-6 col-lg-3">
@@ -97,112 +97,7 @@ $team_page_title_description = get_field('team_page_title_description');
                         </div>
                          <?php endwhile; endif; ?>
 
-                        <!-- <div class="col-sm-12 col-md-6 col-lg-3">
-                            <a href="single-agent.html" class="pxp-agents-1-item">
-                                <div class="pxp-agents-1-item-fig-container rounded-lg">
-                                    <div class="pxp-agents-1-item-fig pxp-cover" style="background-image: url(images/ph-agent.jpg); background-position: top center"></div>
-                                </div>
-                                <div class="pxp-agents-1-item-details rounded-lg">
-                                    <div class="pxp-agents-1-item-details-name">Alayna Becker</div>
-                                    <div class="pxp-agents-1-item-details-email"><span class="fa fa-phone"></span> (456) 123-7890</div>
-                                    <div class="pxp-agents-1-item-details-spacer"></div>
-                                    <div class="pxp-agents-1-item-cta text-uppercase">More Details</div>
-                                </div>
-                                <div class="pxp-agents-1-item-rating"><span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star-o"></span></span></div>
-                            </a>
-                        </div>
-                        <div class="col-sm-12 col-md-6 col-lg-3">
-                            <a href="single-agent.html" class="pxp-agents-1-item">
-                                <div class="pxp-agents-1-item-fig-container rounded-lg">
-                                    <div class="pxp-agents-1-item-fig pxp-cover" style="background-image: url(images/ph-agent.jpg); background-position: top center"></div>
-                                </div>
-                                <div class="pxp-agents-1-item-details rounded-lg">
-                                    <div class="pxp-agents-1-item-details-name">Melvin Blackwell</div>
-                                    <div class="pxp-agents-1-item-details-email"><span class="fa fa-phone"></span> (789) 123-4560</div>
-                                    <div class="pxp-agents-1-item-details-spacer"></div>
-                                    <div class="pxp-agents-1-item-cta text-uppercase">More Details</div>
-                                </div>
-                                <div class="pxp-agents-1-item-rating"><span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span></span></div>
-                            </a>
-                        </div>
-                        <div class="col-sm-12 col-md-6 col-lg-3">
-                            <a href="single-agent.html" class="pxp-agents-1-item">
-                                <div class="pxp-agents-1-item-fig-container rounded-lg">
-                                    <div class="pxp-agents-1-item-fig pxp-cover" style="background-image: url(images/ph-agent.jpg); background-position: top center"></div>
-                                </div>
-                                <div class="pxp-agents-1-item-details rounded-lg">
-                                    <div class="pxp-agents-1-item-details-name">Erika Tillman</div>
-                                    <div class="pxp-agents-1-item-details-email"><span class="fa fa-phone"></span> (890) 456-1237</div>
-                                    <div class="pxp-agents-1-item-details-spacer"></div>
-                                    <div class="pxp-agents-1-item-cta text-uppercase">More Details</div>
-                                </div>
-                                <div class="pxp-agents-1-item-rating"><span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star-o"></span></span></div>
-                            </a>
-                        </div>
-                        <div class="col-sm-12 col-md-6 col-lg-3">
-                            <a href="single-agent.html" class="pxp-agents-1-item">
-                                <div class="pxp-agents-1-item-fig-container rounded-lg">
-                                    <div class="pxp-agents-1-item-fig pxp-cover" style="background-image: url(images/ph-agent.jpg); background-position: top center"></div>
-                                </div>
-                                <div class="pxp-agents-1-item-details rounded-lg">
-                                    <div class="pxp-agents-1-item-details-name">Melvin Blackwell</div>
-                                    <div class="pxp-agents-1-item-details-email"><span class="fa fa-phone"></span> (789) 123-4560</div>
-                                    <div class="pxp-agents-1-item-details-spacer"></div>
-                                    <div class="pxp-agents-1-item-cta text-uppercase">More Details</div>
-                                </div>
-                                <div class="pxp-agents-1-item-rating"><span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span></span></div>
-                            </a>
-                        </div>
-                        <div class="col-sm-12 col-md-6 col-lg-3">
-                            <a href="single-agent.html" class="pxp-agents-1-item">
-                                <div class="pxp-agents-1-item-fig-container rounded-lg">
-                                    <div class="pxp-agents-1-item-fig pxp-cover" style="background-image: url(images/ph-agent.jpg); background-position: top center"></div>
-                                </div>
-                                <div class="pxp-agents-1-item-details rounded-lg">
-                                    <div class="pxp-agents-1-item-details-name">Erika Tillman</div>
-                                    <div class="pxp-agents-1-item-details-email"><span class="fa fa-phone"></span> (890) 456-1237</div>
-                                    <div class="pxp-agents-1-item-details-spacer"></div>
-                                    <div class="pxp-agents-1-item-cta text-uppercase">More Details</div>
-                                </div>
-                                <div class="pxp-agents-1-item-rating"><span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star-o"></span></span></div>
-                            </a>
-                        </div>
-                        <div class="col-sm-12 col-md-6 col-lg-3">
-                            <a href="single-agent.html" class="pxp-agents-1-item">
-                                <div class="pxp-agents-1-item-fig-container rounded-lg">
-                                    <div class="pxp-agents-1-item-fig pxp-cover" style="background-image: url(images/ph-agent.jpg); background-position: top center"></div>
-                                </div>
-                                <div class="pxp-agents-1-item-details rounded-lg">
-                                    <div class="pxp-agents-1-item-details-name">Scott Goodwin</div>
-                                    <div class="pxp-agents-1-item-details-email"><span class="fa fa-phone"></span> (123) 456-7890</div>
-                                    <div class="pxp-agents-1-item-details-spacer"></div>
-                                    <div class="pxp-agents-1-item-cta text-uppercase">More Details</div>
-                                </div>
-                                <div class="pxp-agents-1-item-rating"><span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span></span></div>
-                            </a>
-                        </div>
-                        <div class="col-sm-12 col-md-6 col-lg-3">
-                            <a href="single-agent.html" class="pxp-agents-1-item">
-                                <div class="pxp-agents-1-item-fig-container rounded-lg">
-                                    <div class="pxp-agents-1-item-fig pxp-cover" style="background-image: url(images/ph-agent.jpg); background-position: top center"></div>
-                                </div>
-                                <div class="pxp-agents-1-item-details rounded-lg">
-                                    <div class="pxp-agents-1-item-details-name">Alayna Becker</div>
-                                    <div class="pxp-agents-1-item-details-email"><span class="fa fa-phone"></span> (456) 123-7890</div>
-                                    <div class="pxp-agents-1-item-details-spacer"></div>
-                                    <div class="pxp-agents-1-item-cta text-uppercase">More Details</div>
-                                </div>
-                                <div class="pxp-agents-1-item-rating"><span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star-o"></span></span></div>
-                            </a>
-                        </div> -->
                     </div>
-        
-                    <!-- <ul class="pagination pxp-paginantion mt-2 mt-md-3">
-                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item"><a class="page-link" href="#">Next <span class="fa fa-angle-right"></span></a></li>
-                    </ul> -->
                 </div>
             </div>
         </div>
