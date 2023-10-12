@@ -66,7 +66,7 @@
                                 </ul> -->
                             </li>
                             <li class="list-inline-item">
-                            <span <?php if (get_the_ID() == '34' || get_the_ID() == '36' || get_the_ID() == '38') ?> class="navproperty <?php { echo 'active-nav-link'; } ?>" style="color: #000;">Properties</span>
+                            <span <?php if (get_the_ID() == '34' || get_the_ID() == '36' || get_the_ID() == '38') { ?> class="navproperty <?php echo 'active-nav-link'; } ?>" style="color: #000;">Properties</span>
                                 <ul class="pxp-nav-sub rounded-lg">
                                     <li><a href="<?php bloginfo('url'); ?>/residential" <?php if(get_the_ID() == '34' || get_the_ID() == '476') { ?> class="active-nav-link"<?php } ?>>Residential</a></li>
                                     <li><a href="<?php bloginfo('url'); ?>/multi-residential" <?php if(get_the_ID() == '38' || get_the_ID() == '541') { ?> class="active-nav-link"<?php } ?>>Multi Residential</a></li>
