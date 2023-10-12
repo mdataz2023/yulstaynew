@@ -68,7 +68,7 @@ global $wpdb;
                             </ul>
                         </li>
                         <li class="list-inline-item">
-                            <a href="<?php bloginfo('url'); ?>/team">Team</a>
+                            <a href="<?php bloginfo('url'); ?>/teams">Team</a>
                             <!-- <ul class="pxp-nav-sub rounded-lg">
                                     <li><a href="agents.html">All Agents</a></li>
                                     <li><a href="single-agent.html">Single Agent</a></li>
