@@ -68,7 +68,7 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                         <div><?php echo $inscriptionsData->NB_SALLES_BAINS;?> <span>BA</span></div>
                         <div>
                             <?php echo $inscriptionsData->SUPERFICIE_HABITABLE;?>
-                            <span><?php echo $inscriptionsData->UM_SUPERFICIE_HABITABLE;?></span>
+                            <span>sq.ft.</span>
                         </div>
                     </div>
                     <div class="pxp-sp-top-price mt-3 mt-md-0">
