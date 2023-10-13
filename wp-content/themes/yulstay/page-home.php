@@ -45,6 +45,11 @@ if ($lang == 'en-US'){
     */
     ?>
 
+    <style>
+        .active-nav-link-home{
+            text-decoration: underline !important;
+        }
+    </style>
     <div class="pxp-header fixed-top pxp-animate">
         <div class="container">
             <div class="row align-items-center">
@@ -58,7 +63,7 @@ if ($lang == 'en-US'){
                 <div class="col-2 col-md-8 text-center">
                     <ul class="pxp-nav list-inline">
                         <li class="list-inline-item">
-                            <a href="<?php bloginfo('url'); ?>/">Home</a>
+                            <a href="<?php bloginfo('url'); ?>/"  <?php if(get_the_ID() == '6' || get_the_ID() == '495') { ?> class="active-nav-link-home"<?php } ?>>Home</a>
                             <!-- <ul class="pxp-nav-sub rounded-lg">
                                     <li><a href="index.html">Version 1</a></li>
                                     <li><a href="index-2.html">Version 2</a></li>
