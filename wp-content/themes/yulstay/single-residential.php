@@ -121,7 +121,7 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                     <div class="row mt-3 mt-md-4">
                         <div class="col-sm-6">
                             <div class="pxp-sp-key-details-item">
-                                <div class="pxp-sp-kd-item-label text-uppercase">Property Type</div>
+                                <div class="text-uppercase">Property Type</div>
                                 <div class="pxp-sp-kd-item-value"><?php
                                  if ($lang == 'en-US'){
                                     echo $GENRES_PROPRIETES->DESCRIPTION_ANGLAISE;
@@ -133,34 +133,34 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                         </div>
                         <div class="col-sm-6">
                             <div class="pxp-sp-key-details-item">
-                                <div class="pxp-sp-kd-item-label text-uppercase">Year Built</div>
+                                <div class="text-uppercase">Year Built</div>
                                 <div class="pxp-sp-kd-item-value"><?php echo $inscriptionsData->ANNEE_CONTRUCTION?>
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="pxp-sp-key-details-item">
-                                <div class="pxp-sp-kd-item-label text-uppercase">Number of Rooms</div>
+                                <div class="text-uppercase">Number of Rooms</div>
                                 <div class="pxp-sp-kd-item-value"><?php
                                 echo $inscriptionsData->NB_PIECES;?></div>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="pxp-sp-key-details-item">
-                                <div class="pxp-sp-kd-item-label text-uppercase">Number of Bedroom</div>
+                                <div class="text-uppercase">Number of Bedroom</div>
                                 <div class="pxp-sp-kd-item-value"><?php echo $inscriptionsData->NB_CHAMBRES;?></div>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="pxp-sp-key-details-item">
-                                <div class="pxp-sp-kd-item-label text-uppercase">Number of Bathroom</div>
+                                <div class="text-uppercase">Number of Bathroom</div>
                                 <div class="pxp-sp-kd-item-value"><?php
                                 echo $inscriptionsData->NB_SALLES_BAINS;?></div>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="pxp-sp-key-details-item">
-                                <div class="pxp-sp-kd-itemabel text-uppercase">Parking Spaces</div>
+                                <div class="text-uppercase">Parking Spaces</div>
                                 <div class="pxp-sp-kd-item-value">2</div>
                             </div>
                         </div>
@@ -209,7 +209,7 @@ if ($lang == 'en-US'){
                 </div>
 
                 <div class="pxp-single-property-section mt-4 mt-md-5">
-                    <h3>Amenities</h3>
+                    <h3>Characteristic</h3>
                     <div class="row mt-3 mt-md-4">
                         <div class="col-sm-6 col-lg-4">
                             <div class="pxp-sp-amenities-item"><b><?php _e('Property Type','theme-text-domain'); ?> -
@@ -587,7 +587,7 @@ if ($lang == 'en-US'){
                         </div>
                     </div>
                 </div> -->
-                <div class="pxp-single-property-section mt-4 mt-md-5">
+                <div hidden class="pxp-single-property-section mt-4 mt-md-5">
                     <h3>Payment Calculator</h3>
                     <div class="pxp-calculator-view mt-3 mt-md-4">
                         <div class="row">
@@ -827,9 +827,6 @@ if ($lang == 'en-US'){
                             <a href="#pxp-contact-agent" class="pxp-sp-agent-btn-main" data-toggle="modal"
                                 data-target="#pxp-contact-agent"><span class="fa fa-envelope-o"></span> Contact
                                 Agent</a>
-                            <a href="#pxp-contact-agent" class="pxp-sp-agent-btn" data-toggle="modal"
-                                data-target="#pxp-contact-agent"><span class="fa fa-calendar-check-o"></span> Request
-                                Tour</a>
                         </div>
                     </div>
                 </div>
