@@ -567,7 +567,7 @@ if ($lang == 'en-US'){
                                 <div class="pxp-testim-1-item-avatar pxp-cover" style="background-image: url(<?php echo $attachment_image; ?>)"></div>
                             <?php } ?>
                             <div class="pxp-testim-1-item-name"><?php the_title(); ?></div>
-                            <div class="pxp-testim-1-item-location"><?php the_excerpt(); ?></div>
+                            <!-- <div class="pxp-testim-1-item-location"><?php the_excerpt(); ?></div> -->
                             <div class="pxp-testim-1-item-message"><?php the_content(); ?></div>
                         </div>
                     </div>
