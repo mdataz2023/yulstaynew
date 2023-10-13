@@ -25,7 +25,7 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
     <div class="pxp-single-property-top pxp-content-wrapper mt-100">
         <div class="container">
             <div class="row">
-                <div class="col-sm-12 col-md-5">
+                <div class="col-sm-12 col-md-8">
                     <p class="pxp-sp-top-address pxp-text-light">MLS<?php echo  $inscriptionsData->NO_INSCRIPTION;?></p>
                     <h2 class="pxp-sp-top-title"><?php
                     $property="";
@@ -42,7 +42,7 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                         <?php echo  $inscriptionsData->APPARTEMENT.' , '.$inscriptionsData->NOM_RUE_COMPLET.$cityName.' , '.$inscriptionsData->CODE_POSTAL;?>
                     </p>
                 </div>
-                <div class="col-sm-12 col-md-7">
+                <div class="col-sm-12 col-md-4">
                     <div class="pxp-sp-top-btns mt-2 mt-md-0" style="display: none;">
                         <a href="#" class="pxp-sp-top-btn"><span class="fa fa-star"></span> Save</a>
                         <div class="dropdown">
