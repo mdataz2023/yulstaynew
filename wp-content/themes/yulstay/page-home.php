@@ -48,7 +48,7 @@ if ($lang == 'en-US'){
 
     <style>
         .active-nav-link-home{
-            text-decoration: underline !important;
+            color: #0093a6 !important;
         }
         .checked {
             color: orange;
@@ -460,7 +460,7 @@ if ($lang == 'en-US'){
             </div>
         </div>
 
-        <div class="pxp-cta-1 pxp-cover mt-100 pt-300"
+        <div hidden class="pxp-cta-1 pxp-cover mt-100 pt-300"
             style="background-image: url(<?php echo $home_search_section_background_image; ?>); background-position: 50% 60%;">
             <div class="container">
                 <div class="row">
