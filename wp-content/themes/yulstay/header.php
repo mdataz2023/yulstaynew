@@ -104,14 +104,21 @@
                             </li>
                             <li class="list-inline-item">
                             <?php
-                                if (has_nav_menu('main-lang')) {
-                                    wp_nav_menu(
-                                        array(
-                                            'theme_location' => 'main-lang',
-                                            'menu_class'     => 'main-lang', 
-                                        )
-                                    );
+                                function custom_wpml_language_switcher($items) {
+                                    foreach ($items as $item) {
+                                        // Check if the menu item is for switching to English
+                                        if ($item->title === 'English') {
+                                            $item->title = 'EN';
+                                        }
+                                        // Check if the menu item is for switching to French
+                                        if ($item->title === 'French') {
+                                            $item->title = 'FN';
+                                        }
+                                    }
+                                    return $items;
                                 }
+
+                                add_filter('wp_nav_menu_objects', 'custom_wpml_language_switcher');
                             ?>
                             </li>
                         </ul>
