@@ -68,7 +68,7 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                                 <?php echo $inscriptionsData->UM_SUPERFICIE_HABITABLE;?></span></div>
                     </div>
                     <div class="pxp-sp-top-price mt-3 mt-md-0">
-                        <?php echo $currencyLetterPrefix."".$inscriptionsData->PRIX_DEMANDE.''.$currencyLetterSuffi; ?>
+                        <?php echo $currencyLetterPrefix."".$inscriptionsData->PRIX_DEMANDE.''.$currencyLetterSuffix; ?>
                     </div>
                 </div>
             </div>

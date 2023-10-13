@@ -72,7 +72,7 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                         </div>
                     </div>
                     <div class="pxp-sp-top-price mt-3 mt-md-0">
-                        <?php echo $currencyLetterPrefix."".$inscriptionsData->PRIX_DEMANDE.''.$currencyLetterSuffi; ?>
+                        <?php echo $currencyLetterPrefix."".$inscriptionsData->PRIX_DEMANDE.''.$currencyLetterSuffix; ?>
                     </div>
                 </div>
             </div>
@@ -1363,7 +1363,7 @@ if ($lang == 'en-US'){
             });
         }
     }, 300);
-    $('.pxp-sp-more-1').click(function (e) {
+    $('.pxp-sp-more-1').click(function(e) {
         e = e || window.event;
         e.preventDefault ? e.preventDefault() : e.returnValue = false;
 
@@ -1372,7 +1372,7 @@ if ($lang == 'en-US'){
         $('.pxp-sp-more-2').show();
         $('.pxp-sp-more-1').hide();
     });
-    $('.pxp-sp-more-2').click(function (e) {
+    $('.pxp-sp-more-2').click(function(e) {
         e = e || window.event;
         e.preventDefault ? e.preventDefault() : e.returnValue = false;
         $('.pxp-dots').toggle();
