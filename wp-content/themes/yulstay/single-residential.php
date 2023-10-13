@@ -272,7 +272,7 @@ if ($lang == 'en-US'){
                                    if ($lang == 'en-US'){
                                     echo $SOUS_TYPE_CARACTERISTIQUES->DESCRIPTION_ANGLAISE;
                                 }else{
-                                    echo $inscriptionsData->DESCRIPTION_FRANCAISE;
+                                    echo $SOUS_TYPE_CARACTERISTIQUES->DESCRIPTION_FRANCAISE;
                                  }
                                ?>
                             </div>
