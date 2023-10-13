@@ -209,6 +209,10 @@
     text-decoration: none;
   }
 
+  .pxp-is-sticky .navproperty-home{
+    color: #000;
+  }
+
   @media screen and (max-width: 991px){
     .navproperty{
       text-transform: none;
