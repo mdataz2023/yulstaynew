@@ -198,6 +198,13 @@
   .navproperty{
     text-transform: uppercase;
     font-weight: 700;
+    color: #000;
+    text-decoration: none;
+  }
+
+  .navproperty-home{
+    text-transform: uppercase;
+    font-weight: 700;
     color: #fff;
     text-decoration: none;
   }
@@ -208,5 +215,12 @@
       display: inline-block;
       font-size: 1.3rem;
       color: black;
+    }
+
+    .navproperty-home{
+      text-transform: uppercase;
+      font-weight: 700;
+      color: black;
+      text-decoration: none;
     }
   }

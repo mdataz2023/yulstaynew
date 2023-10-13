@@ -69,7 +69,7 @@ if ($lang == 'en-US'){
                                 </ul> -->
                         </li>
                         <li class="list-inline-item">
-                            <span class="navproperty">Properties</span>
+                            <span class="navproperty-home">Properties</span>
                             <ul class="pxp-nav-sub rounded-lg">
                                 <li><a href="<?php bloginfo('url'); ?>/residential">Residential</a></li>
                                 <li><a href="<?php bloginfo('url'); ?>/multi-residential">Multi Residential</a></li>
