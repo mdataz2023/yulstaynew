@@ -26,8 +26,8 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
     <div class="pxp-single-property-top pxp-content-wrapper mt-100">
         <div class="container">
             <div class="row">
-                <div class="col-sm-12 col-md-5">
-                    <p class="pxp-sp-top-address pxp-text-light">MLS<?php echo  $inscriptionsData->NO_INSCRIPTION;?></p>
+                <div class="col-sm-12 col-md-8">
+                    <p class="pxp-sp-top-address pxp-text-light">MLS <?php echo  $inscriptionsData->NO_INSCRIPTION;?></p>
                     <h2 class="pxp-sp-top-title"><?php
                     $property="";
                     $cityName="";
@@ -43,7 +43,7 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                         <?php echo  $inscriptionsData->APPARTEMENT.' , '.$inscriptionsData->NOM_RUE_COMPLET.$cityName.' , '.$inscriptionsData->CODE_POSTAL;?>
                     </p>
                 </div>
-                <div class="col-sm-12 col-md-7">
+                <div class="col-sm-12 col-md-4">
                     <div class="pxp-sp-top-btns mt-2 mt-md-0" style="display: none;">
                         <a href="#" class="pxp-sp-top-btn"><span class="fa fa-star"></span> Save</a>
                         <div class="dropdown">
@@ -65,8 +65,7 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                                 $UNITES_DETAILLEES = $wpdb->get_row("SELECT * FROM UNITES_DETAILLEES WHERE NO_INSCRIPTION='". $inscriptionsData->NO_INSCRIPTION."' ", OBJECT );
                                 echo $UNITES_DETAILLEES->NB_CHAMBRES;?> <span>BD</span></div>
                         <div><?php echo $inscriptionsData->NB_SALLES_BAINS;?> <span>BA</span></div>
-                        <div><?php echo $inscriptionsData->SUPERFICIE_HABITABLE;?><span>
-                                <?php echo $inscriptionsData->UM_SUPERFICIE_HABITABLE;?></span></div>
+                        <div><?php echo $inscriptionsData->SUPERFICIE_HABITABLE;?> <span>sq.ft.</span></div>
                     </div>
                     <div class="pxp-sp-top-price mt-3 mt-md-0">
                         <?php echo $currencyLetterPrefix."".$inscriptionsData->PRIX_LOCATION_DEMANDE.''.$currencyLetterSuffix; ?>

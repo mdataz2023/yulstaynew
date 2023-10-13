@@ -64,8 +64,7 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                                 $UNITES_DETAILLEES = $wpdb->get_row("SELECT * FROM UNITES_DETAILLEES WHERE NO_INSCRIPTION='". $inscriptionsData->NO_INSCRIPTION."' ", OBJECT );
                                 echo $UNITES_DETAILLEES->NB_CHAMBRES;?> <span>BD</span></div>
                         <div><?php echo $inscriptionsData->NB_SALLES_BAINS;?> <span>BA</span></div>
-                        <div><?php echo $inscriptionsData->SUPERFICIE_HABITABLE;?><span>
-                                <?php echo $inscriptionsData->UM_SUPERFICIE_HABITABLE;?></span></div>
+                        <div><?php echo $inscriptionsData->SUPERFICIE_HABITABLE;?> <span>sq.ft.</span></div>
                     </div>
                     <div class="pxp-sp-top-price mt-3 mt-md-0">
                         <?php echo $currencyLetterPrefix."".$inscriptionsData->PRIX_DEMANDE.''.$currencyLetterSuffix; ?>
