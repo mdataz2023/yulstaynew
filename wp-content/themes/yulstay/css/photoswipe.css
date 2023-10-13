@@ -222,9 +222,9 @@
     }
 
     .navproperty-home{
-      text-transform: uppercase;
-      font-weight: 700;
+      text-transform: none;
+      display: inline-block;
+      font-size: 1.3rem;
       color: black;
-      text-decoration: none;
     }
   }
