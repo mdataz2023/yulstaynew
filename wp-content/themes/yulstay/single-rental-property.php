@@ -855,6 +855,23 @@ echo $inscriptionsData->INCLUS_FRANCAIS."<br><br>".$inscriptionsData->EXCLUS_FRA
             google.maps.event.trigger(map, 'resize');
         }
     }, 300);
+    $('.pxp-sp-more-1').click(function (e) {
+        e = e || window.event;
+        e.preventDefault ? e.preventDefault() : e.returnValue = false;
+
+        $('.pxp-dots').toggle();
+        $('.pxp-dots-more').slideToggle();
+        $('.pxp-sp-more-2').show();
+        $('.pxp-sp-more-1').hide();
+    });
+    $('.pxp-sp-more-2').click(function (e) {
+        e = e || window.event;
+        e.preventDefault ? e.preventDefault() : e.returnValue = false;
+        $('.pxp-dots').toggle();
+        $('.pxp-dots-more').slideToggle();
+        $('.pxp-sp-more-2').hide();
+        $('.pxp-sp-more-1').show();
+    });
 })(jQuery);
 </script>
 <?php get_footer(); ?>

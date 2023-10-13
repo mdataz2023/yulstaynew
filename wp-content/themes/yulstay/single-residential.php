@@ -170,10 +170,10 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                 <div class="pxp-single-property-section mt-4 mt-md-5">
                     <h3>Overview</h3>
                     <div class="mt-3 mt-md-4">
-                    <?php
+                        <?php
                     $remarques = $wpdb->get_row(" SELECT * FROM REMARQUES where NO_INSCRIPTION = '".$inscriptionsData->NO_INSCRIPTION."' and CODE_LANGUE='".$language."'", OBJECT );
                     ?>
-                    <?php
+                        <?php
                     if( $remarques->TEXTE!=""){
                     ?>
                         <h4>Description</h4>
@@ -189,10 +189,10 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                                  foreach ($results as $page) {
                                     echo $page->TEXTE.'<br/>';
                                  }
-                    ?>
-                     <br>
-                            <span class="addendaFontSize"><br>Inclusions <br></span>
-                            <?php
+                                ?>
+                                <br>
+                                <span class="addendaFontSize"><br>Inclusions <br></span>
+                                <?php
 if ($lang == 'en-US'){
     echo $inscriptionsData->INCLUS_ANGLAIS."<br><br>".$inscriptionsData->EXCLUS_ANGLAIS;
 }else{
@@ -200,7 +200,7 @@ if ($lang == 'en-US'){
 
 }
 ?>
-                </span>
+                            </span>
                         </p>
                         <a href="#" class="pxp-sp-more text-uppercase"><span class="pxp-sp-more-1">Continue Reading
                                 <span class="fa fa-angle-down"></span></span><span class="pxp-sp-more-2">Show Less <span
@@ -260,7 +260,7 @@ if ($lang == 'en-US'){
                    ?>
                         <div class="col-sm-6 col-lg-4">
                             <div class="pxp-sp-amenities-item">
-                            <b><?php
+                                <b><?php
                                   if ($lang == 'en-US'){
                                     echo $TYPE_CARACTERISTIQUES->DESCRIPTION_ANGLAISE;
                                 }else{
@@ -319,15 +319,15 @@ if ($lang == 'en-US'){
                             <div class="col-sm-12 col-md-6">
                                 <div class="form-group">
                                     <label for="pxp-calculator-form-term">Purchase price</label>
-                                    <input type="text" onkeyup="calculatorFunction()"
-                                        class="form-control p " id="purchasePrice" value="<?php echo $inscriptionsData->PRIX_DEMANDE; ?>">
+                                    <input type="text" onkeyup="calculatorFunction()" class="form-control p "
+                                        id="purchasePrice" value="<?php echo $inscriptionsData->PRIX_DEMANDE; ?>">
                                 </div>
                             </div>
                             <div class="col-sm-12 col-md-6">
                                 <div class="form-group">
                                     <label for="pxp-calculator-form-interest">Interest rate</label>
-                                    <input type="text" onkeyup="calculatorFunction()"
-                                        class="form-control " id="interestRate" value="2">
+                                    <input type="text" onkeyup="calculatorFunction()" class="form-control "
+                                        id="interestRate" value="2">
                                 </div>
                             </div>
                             <div class="col-sm-12 col-md-6">
@@ -1306,7 +1306,8 @@ if ($lang == 'en-US'){
             });
 
             map.mapTypes.set('Styled', styledMapType);
-            map.setCenter(new google.maps.LatLng('<?php echo $page->LATITUDE;?>','<?php echo $page->LONGITUDE;?>'));
+            map.setCenter(new google.maps.LatLng('<?php echo $page->LATITUDE;?>',
+                '<?php echo $page->LONGITUDE;?>'));
             map.setZoom(15);
 
             addMarkers(propertiesList, map);
@@ -1362,6 +1363,23 @@ if ($lang == 'en-US'){
             });
         }
     }, 300);
+    $('.pxp-sp-more-1').click(function (e) {
+        e = e || window.event;
+        e.preventDefault ? e.preventDefault() : e.returnValue = false;
+
+        $('.pxp-dots').toggle();
+        $('.pxp-dots-more').slideToggle();
+        $('.pxp-sp-more-2').show();
+        $('.pxp-sp-more-1').hide();
+    });
+    $('.pxp-sp-more-2').click(function (e) {
+        e = e || window.event;
+        e.preventDefault ? e.preventDefault() : e.returnValue = false;
+        $('.pxp-dots').toggle();
+        $('.pxp-dots-more').slideToggle();
+        $('.pxp-sp-more-2').hide();
+        $('.pxp-sp-more-1').show();
+    });
 })(jQuery);
 </script>
 <?php get_footer(); ?>
