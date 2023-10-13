@@ -138,7 +138,7 @@ if ($lang == 'en-US'){
 
     <style>
           .wpml-ls-flag{
-    width: 24px;
+    width: 19px;
   }
 
   .wpml-ls-item{
