@@ -40,7 +40,7 @@
     <?php wp_body_open(); ?>
     <style>
         .active-nav-link{
-            color: #0093a6;
+            color: #0093a6 !important;
         }
     </style>
     <div class="pxp-header fixed-top pxp-animate pxp-no-bg">
@@ -66,22 +66,22 @@
                                 </ul> -->
                             </li>
                             <li class="list-inline-item">
-                            <span class="navproperty" style="color: #000;">Properties</span>
+                            <span class="navproperty" <?php if (get_the_ID() == '34' || get_the_ID() == '36' || get_the_ID() == '38' || get_the_ID() == '476' || get_the_ID() == '541' || get_the_ID() == '542') { ?> style="color: #0093a6 !important;" <?php } ?>>Properties</span>
                                 <ul class="pxp-nav-sub rounded-lg">
-                                    <li><a href="<?php bloginfo('url'); ?>/residential" <?php if(get_the_ID() == '2') { ?> class="active-nav-link"<?php } ?>>Residential</a></li>
-                                    <li><a href="<?php bloginfo('url'); ?>/multi-residential" <?php if(get_the_ID() == '2') { ?> class="active-nav-link"<?php } ?>>Multi Residential</a></li>
-                                    <li><a href="<?php bloginfo('url'); ?>/rental-property" <?php if(get_the_ID() == '2') { ?> class="active-nav-link"<?php } ?>>Rental + Management</a></li>
+                                    <li><a href="<?php bloginfo('url'); ?>/residential" <?php if(get_the_ID() == '34' || get_the_ID() == '476') { ?> class="active-nav-link"<?php } ?>>Residential</a></li>
+                                    <li><a href="<?php bloginfo('url'); ?>/multi-residential" <?php if(get_the_ID() == '38' || get_the_ID() == '541') { ?> class="active-nav-link"<?php } ?>>Multi Residential</a></li>
+                                    <li><a href="<?php bloginfo('url'); ?>/rental-property" <?php if(get_the_ID() == '36' || get_the_ID() == '542') { ?> class="active-nav-link"<?php } ?>>Rental + Management</a></li>
                                 </ul>
                             </li>
                             <li class="list-inline-item">
-                                <a href="<?php bloginfo('url'); ?>/teams" <?php if(get_the_ID() == '2') { ?> class="active-nav-link"<?php } ?>>Team</a>
+                                <a href="<?php bloginfo('url'); ?>/teams" <?php if(get_the_ID() == '549' || get_the_ID() == '551') { ?> class="active-nav-link"<?php } ?>>Team</a>
                             </li>
                                 <!-- <ul class="pxp-nav-sub rounded-lg">
                                     <li><a href="agents.html">All Agents</a></li>
                                     <li><a href="single-agent.html">Single Agent</a></li>
                                 </ul> -->
                             
-                            <li class="list-inline-item pxp-is-last"><a href="<?php bloginfo('url'); ?>/contact" <?php if(get_the_ID() == '2') { ?> class="active-nav-link"<?php } ?>>Contact Us</a></li>
+                            <li class="list-inline-item pxp-is-last"><a href="<?php bloginfo('url'); ?>/contact" <?php if(get_the_ID() == '8' || get_the_ID() == '543') { ?> class="active-nav-link"<?php } ?>>Contact Us</a></li>
                             <!-- <li class="list-inline-item pxp-has-btns">
                                 <div class="pxp-user-btns">
                                     <a href="#" class="pxp-user-btns-signup pxp-signup-trigger">Sign Up</a>
@@ -89,7 +89,7 @@
                                 </div>
                             </li> -->
                             <li class="list-inline-item">
-                                <a href="<?php bloginfo('url'); ?>/join-our-team" <?php if(get_the_ID() == '76') { ?> class="active-nav-link"<?php } ?>>Join Our Team</a>
+                                <a href="<?php bloginfo('url'); ?>/join-our-team" <?php if(get_the_ID() == '76' || get_the_ID() == '544') { ?> class="active-nav-link"<?php } ?>>Join Our Team</a>
                                 <!-- <ul class="pxp-nav-sub rounded-lg">
                                     <li><a href="../light/index.html">Light</a></li>
                                     <li><a href="../dark/index.html">Dark</a></li>

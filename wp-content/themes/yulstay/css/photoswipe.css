@@ -198,12 +198,30 @@
   .navproperty{
     text-transform: uppercase;
     font-weight: 700;
+    color: #000;
+    text-decoration: none;
+  }
+
+  .navproperty-home{
+    text-transform: uppercase;
+    font-weight: 700;
     color: #fff;
     text-decoration: none;
   }
 
+  .pxp-is-sticky .navproperty-home{
+    color: #000;
+  }
+
   @media screen and (max-width: 991px){
     .navproperty{
+      text-transform: none;
+      display: inline-block;
+      font-size: 1.3rem;
+      color: black;
+    }
+
+    .navproperty-home{
       text-transform: none;
       display: inline-block;
       font-size: 1.3rem;
