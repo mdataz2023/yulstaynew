@@ -24,10 +24,18 @@ $baths=$_POST['baths'];
 $beds=$_POST['beds'];
 
 if(isset($min_price)&$min_price!=""){
-    $customSql.=" and  PRIX_DEMANDE >= '".$min_price."'";
+    if($post_type=="rental-property"){
+        $customSql.=" and  PRIX_LOCATION_DEMANDE >= '".$min_price."'";
+    }else{
+        $customSql.=" and  PRIX_DEMANDE >= '".$min_price."'";
+    }
 }
 if(isset($max_price)&$max_price!=""){
-    $customSql.=" and  PRIX_DEMANDE <= '".$max_price."'";
+    if($post_type=="rental-property"){
+        $customSql.=" and  PRIX_LOCATION_DEMANDE <= '".$max_price."'";
+    }else{
+        $customSql.=" and  PRIX_DEMANDE <= '".$max_price."'";
+    }
 }
 if(isset($beds)&$beds!=""){
     if($beds==5)
@@ -81,6 +89,18 @@ $postIndex=0;
         }
         $r2=str_replace(' ',"",$inscriptionsData['NOM_RUE_COMPLET']);
         $r1=str_replace("'","",$r2);
+$priceVariable=0;
+        if($post_type=="rental-property"){
+            $priceVariable=    $inscriptionsData['PRIX_LOCATION_DEMANDE'];
+        }else{
+            $priceVariable=    $inscriptionsData['PRIX_DEMANDE'];
+        }
+        $REGION_CODES=mysqli_query($conn, "SELECT r.*,REGION_CODE,m.DESCRIPTION FROM MUNICIPALITES m JOIN REGIONS r ON m.REGION_CODE = r.CODE where m.CODE='".$inscriptionsData['MUN_CODE']."' limit 3");
+        $title="";
+        while($REGION_CODE = mysqli_fetch_assoc($REGION_CODES)) {
+            $title=$REGION_CODE['DESCRIPTION'];
+        }
+
         $data.='
         <div class="col-sm-12 col-md-6 col-xxxl-4 NO_INSCRIPTION'.str_replace('.',"",$r1).'">
             <a href="'.$_POST['bloginfo'].'/'.$_POST['post_type'].'/'.$inscriptionsData['post_name'].'" class="pxp-results-card-1 rounded-lg" data-prop="1">
@@ -100,9 +120,9 @@ $postIndex=0;
              </div>
              <div class="pxp-results-card-1-gradient"></div>
              <div class="pxp-results-card-1-details">
-                 <div class="pxp-results-card-1-details-title">'.$inscriptionsData['NOM_RUE_COMPLET'].'</div>
+                 <div class="pxp-results-card-1-details-title">'.  $title.'</div>
                  <div class="pxp-results-card-1-details-price">
-                     '.$inscriptionsData['PRIX_DEMANDE'].' $'.'
+                     '.number_format($priceVariable,2).' $'.'
                  </div>
              </div>
              <div class="pxp-results-card-1-features">
