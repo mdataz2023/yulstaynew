@@ -80,7 +80,7 @@
                                 </ul>
                             </li>
                             <li class="list-inline-item">
-                            <?php
+                            <!-- <?php
                                 if (has_nav_menu('main-lang')) {
                                     wp_nav_menu(
                                         array(
@@ -89,6 +89,27 @@
                                         )
                                     );
                                 }
+                            ?> -->
+                            <?php
+                            if (has_nav_menu('main-lang')) {
+                                $menu_items = wp_get_nav_menu_items('main-lang');
+
+                                foreach ($menu_items as $item) {
+                                    if ($item->title === 'English') {
+                                        $item->title = 'EN';
+                                    } elseif ($item->title === 'French') {
+                                        $item->title = 'FN';
+                                    }
+                                }
+
+                                // Display the modified menu
+                                wp_nav_menu(
+                                    array(
+                                        'menu' => $menu_items,
+                                        'menu_class' => 'main-lang',
+                                    )
+                                );
+                            }
                             ?>
                             </li>
                         </ul>
