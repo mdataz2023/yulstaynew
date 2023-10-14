@@ -67,7 +67,7 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                         <div><?php echo $inscriptionsData->SUPERFICIE_HABITABLE;?> <span>sq.ft.</span></div>
                     </div>
                     <div class="pxp-sp-top-price mt-3 mt-md-0">
-                        <?php echo $currencyLetterPrefix."".$inscriptionsData->PRIX_DEMANDE.''.$currencyLetterSuffix; ?>
+                        <?php echo $currencyLetterPrefix."".number_format($inscriptionsData->PRIX_DEMANDE,2).''.$currencyLetterSuffix; ?>
                     </div>
                 </div>
             </div>
@@ -322,7 +322,7 @@ echo $inscriptionsData->INCLUS_FRANCAIS."<br><br>".$inscriptionsData->EXCLUS_FRA
                                 <div class="form-group">
                                     <label for="pxp-calculator-form-term"><?php _e('Purchase price','theme-text-domain'); ?></label>
                                     <input type="text" onkeyup="calculatorFunction()" class="form-control p "
-                                        id="purchasePrice" value="<?php echo $inscriptionsData->PRIX_DEMANDE; ?>">
+                                        id="purchasePrice" value="<?php echo $inscriptionsData->PRIX_DEMANDE; ?>" >
                                 </div>
                             </div>
                             <div class="col-sm-12 col-md-6">
@@ -400,8 +400,10 @@ echo $inscriptionsData->INCLUS_FRANCAIS."<br><br>".$inscriptionsData->EXCLUS_FRA
                         var numerator = mortgage * r * Math.pow(1 + r, n);
                         var denominator = Math.pow(1 + r, n) - 1;
                         var monthlyPayment = numerator / denominator;
-                        $('#monthlyPayment').html("$" + parseFloat(monthlyPayment).toFixed(2))
-                        $('#mortgage').val("$" + parseFloat(mortgage).toFixed(2))
+                        $('#monthlyPayment').html("$" + parseFloat(monthlyPayment).toFixed(2).toString().replace(
+                            /\B(?=(\d{3})+(?!\d))/g, ','))
+                        $('#mortgage').val("$" + parseFloat(mortgage).toFixed(2).toString().replace(
+                            /\B(?=(\d{3})+(?!\d))/g, ','))
                     }
                     </script>
                 </div>

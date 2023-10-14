@@ -340,7 +340,7 @@ if ($lang == 'en-US'){
                              }
                               ?></div>
                                 <div class="pxp-prop-card-1-details-price">
-                                    <?php  echo $currencyLetterPrefix."".$inscriptionsData->PRIX_DEMANDE.''.$currencyLetterSuffix;?></div>
+                                    <?php  echo $currencyLetterPrefix."".number_format($inscriptionsData->PRIX_DEMANDE,2).''.$currencyLetterSuffix;?></div>
                                 <div class="pxp-prop-card-1-details-features text-uppercase">
                                     <?php  echo $inscriptionsData->NB_CHAMBRES;?> BD <span>|</span>
                                     <?php echo $inscriptionsData->NB_CHAMBRES_HORS_SOL;?> BA
@@ -377,7 +377,7 @@ if ($lang == 'en-US'){
                              }
                               ?></div>
                                 <div class="pxp-prop-card-1-details-price">
-                                    <?php  echo $currencyLetterPrefix."".$inscriptionsData->PRIX_LOCATION_DEMANDE.''.$currencyLetterSuffix;?></div>
+                                    <?php  echo $currencyLetterPrefix."".number_format($inscriptionsData->PRIX_LOCATION_DEMANDE,2).''.$currencyLetterSuffix;?></div>
                                 <div class="pxp-prop-card-1-details-features text-uppercase">
                                     <?php  echo $inscriptionsData->NB_CHAMBRES;?> BD <span>|</span>
                                     <?php echo $inscriptionsData->NB_CHAMBRES_HORS_SOL;?> BA
@@ -414,7 +414,7 @@ if ($lang == 'en-US'){
                              }
                               ?></div>
                                 <div class="pxp-prop-card-1-details-price">
-                                    <?php  echo $currencyLetterPrefix."".$inscriptionsData->PRIX_DEMANDE.''.$currencyLetterSuffix;?></div>
+                                    <?php  echo $currencyLetterPrefix."".number_format($inscriptionsData->PRIX_DEMANDE,2).''.$currencyLetterSuffix;?></div>
                                 <div class="pxp-prop-card-1-details-features text-uppercase">
                                     <?php  echo $inscriptionsData->NB_CHAMBRES;?> BD <span>|</span>
                                     <?php echo $inscriptionsData->NB_CHAMBRES_HORS_SOL;?> BA
@@ -552,7 +552,7 @@ if ($lang == 'en-US'){
                                 <span class="fa fa-star checked"></span>
                                 <span class="fa fa-star checked"></span>
                                 <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>    
+                                <span class="fa fa-star checked"></span>
                             </div>
                             <div class="pxp-testim-1-item-message"><?php the_content(); ?></div>
                         </div>
