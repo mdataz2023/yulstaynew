@@ -166,7 +166,7 @@
         <script src="<?php echo get_template_directory_uri(); ?>/js/photoswipe-ui-default.min.js"></script>
         <script src="<?php echo get_template_directory_uri(); ?>/js/gallery.js"></script>
         <script src="<?php echo get_template_directory_uri(); ?>/js/infobox.js"></script>
-        <script src="<?php echo get_template_directory_uri(); ?>/js/single-map.js"></script>
+        <!-- <script src="<?php echo get_template_directory_uri(); ?>/js/single-map.js"></script> -->
         <script src="<?php echo get_template_directory_uri(); ?>/js/Chart.min.js"></script>
         <script src="<?php echo get_template_directory_uri(); ?>/js/main.js?asdasd12"></script>
         <script src="<?php echo get_template_directory_uri(); ?>/js/owl.carousel.min.js"></script>
