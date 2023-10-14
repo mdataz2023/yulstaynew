@@ -32,8 +32,8 @@ $the_query = new WP_Query( array('post_type' =>'rental-property','posts_per_page
                         <div class="col-12 pxp-content-side-search-form-col">
                             <div class="form-group">
                                 <select class="custom-select" id="pxp-p-filter-type">
-                                    <option value="" disabled selected>Select Listning</option>
-                                    <option value="All">All</option>
+                                    <option value="" disabled selected><?php _e('Select Listning','theme-text-domain'); ?></option>
+                                    <option value="All"><?php _e('All','theme-text-domain'); ?></option>
                                     <?php
                                      $datas = $wpdb->get_results("
                                      SELECT
@@ -61,7 +61,7 @@ $the_query = new WP_Query( array('post_type' =>'rental-property','posts_per_page
                 <div class="row pxp-content-side-search-form-row">
                     <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
                         <div class="form-group">
-                            <label for="pxp-p-filter-price-min">Price</label>
+                            <label for="pxp-p-filter-price-min"><?php _e('Price','theme-text-domain'); ?></label>
                             <input type="text" class="form-control" placeholder="Min" id="pxp-p-filter-price-min">
                         </div>
                     </div>
@@ -73,9 +73,9 @@ $the_query = new WP_Query( array('post_type' =>'rental-property','posts_per_page
                     </div>
                     <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
                         <div class="form-group">
-                            <label for="pxp-p-filter-beds">Beds</label>
+                            <label for="pxp-p-filter-beds"><?php _e('Beds','theme-text-domain'); ?></label>
                             <select class="custom-select" id="pxp-p-filter-beds">
-                                <option value="" selected="selected">Any</option>
+                                <option value="" selected="selected"><?php _e('Any','theme-text-domain'); ?></option>
                                 <option value="">Studio</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -87,9 +87,9 @@ $the_query = new WP_Query( array('post_type' =>'rental-property','posts_per_page
                     </div>
                     <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
                         <div class="form-group">
-                            <label for="pxp-p-filter-baths">Baths</label>
+                            <label for="pxp-p-filter-baths"><?php _e('Baths','theme-text-domain'); ?></label>
                             <select class="custom-select" id="pxp-p-filter-baths">
-                                <option value="" selected="selected">Any</option>
+                                <option value="" selected="selected"><?php _e('Any','theme-text-domain'); ?></option>
                                 <option value="1">1+</option>
                                 <option value="2">2+</option>
                                 <option value="3">3+</option>
@@ -100,7 +100,7 @@ $the_query = new WP_Query( array('post_type' =>'rental-property','posts_per_page
                     </div>
                     <div class="col-sm-6 col-md-4 pxp-content-side-search-form-col">
                         <div class="form-group">
-                            <label for="pxp-p-filter-size-min">Size (sq ft)</label>
+                            <label for="pxp-p-filter-size-min"><?php _e('Size (sq ft)','theme-text-domain'); ?></label>
                             <input type="text" class="form-control" id="pxp-p-filter-size-min" placeholder="Min">
                         </div>
                     </div>
@@ -113,8 +113,8 @@ $the_query = new WP_Query( array('post_type' =>'rental-property','posts_per_page
                 </div>
 
 
-                <a href="#" class="pxp-filter-btn">Apply Filters</a>
-                <a href="#" class="pxp-filter-clear-btn">Clear</a>
+                <a href="#" class="pxp-filter-btn"><?php _e('Apply Filters','theme-text-domain'); ?></a>
+                <a href="#" class="pxp-filter-clear-btn"><?php _e('Clear','theme-text-domain'); ?></a>
             </div>
 
             <div class="row pb-4">
@@ -122,15 +122,15 @@ $the_query = new WP_Query( array('post_type' =>'rental-property','posts_per_page
                     <h2 class="pxp-content-side-h2"><?php
                     $POST_COUNT = $wpdb->get_row("SELECT count(NO_INSCRIPTION) as POST_COUNT FROM INSCRIPTIONS i join wp_posts p on p.post_content=i.NO_INSCRIPTION where p.post_type='rental-property' and i.CODE_STATUT='EV'", OBJECT );
                 echo $POST_COUNT->POST_COUNT;
-                ?> Results</h2>
+                ?> <?php _e('Results','theme-text-domain'); ?></h2>
                 </div>
                 <div class="col-sm-6">
                     <div class="pxp-sort-form form-inline float-right">
                         <div class="form-group">
                             <select class="custom-select" id="pxp-sort-results">
-                                <option value="" selected="selected">Default Sort</option>
-                                <option value="low">Price (Lo-Hi)</option>
-                                <option value="high">Price (Hi-Lo)</option>
+                                <option value="" selected="selected"><?php _e('Default Sort','theme-text-domain'); ?></option>
+                                <option value="low"><?php _e('Price (Lo-Hi)','theme-text-domain'); ?></option>
+                                <option value="high"><?php _e('Price (Hi-Lo)','theme-text-domain'); ?></option>
                             </select>
                         </div>
                         <div class="form-group d-flex">
@@ -354,7 +354,7 @@ $the_query = new WP_Query( array('post_type' =>'rental-property','posts_per_page
         </div>
         <div class="pxp-footer pxp-content-side-wrapper">
             <div class="pxp-footer-bottom">
-                <div class="pxp-footer-copyright">&copy; Yulasty. All Rights Reserved. 2023</div>
+                <div class="pxp-footer-copyright">&copy; <?php _e('Yulasty. All Rights Reserved. 2023','theme-text-domain'); ?></div>
             </div>
         </div>
     </div>
