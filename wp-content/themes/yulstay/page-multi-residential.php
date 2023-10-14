@@ -465,322 +465,321 @@ $the_query = new WP_Query( array('post_type' =>'multi-residential','posts_per_pa
 (function($) {
     "use strict";
 
+var map;
+var markers = [];
+var markerCluster;
+var styles;
+var propertiesList = [];
+var options = {
+    zoom: 14,
+    mapTypeId: 'Styled',
+    panControl: false,
+    zoomControl: true,
+    mapTypeControl: false,
+    scaleControl: false,
+    streetViewControl: false,
+    overviewMapControl: false,
+    scrollwheel: false,
+    zoomControlOptions: {
+        position: google.maps.ControlPosition.RIGHT_BOTTOM,
+    },
+    fullscreenControl: false,
+};
 
-    var map;
-    var markers = [];
-    var markerCluster;
-    var styles;
-    var propertiesList = [];
-    var options = {
-        zoom: 14,
-        mapTypeId: 'Styled',
-        panControl: false,
-        zoomControl: true,
-        mapTypeControl: false,
-        scaleControl: false,
-        streetViewControl: false,
-        overviewMapControl: false,
-        scrollwheel: false,
-        zoomControlOptions: {
-            position: google.maps.ControlPosition.RIGHT_BOTTOM,
-        },
-        fullscreenControl: false,
-    };
+styles = [{
+    "featureType": "water",
+    "elementType": "geometry",
+    "stylers": [{
+        "color": "#e9e9e9"
+    }, {
+        "lightness": 17
+    }]
+}, {
+    "featureType": "landscape",
+    "elementType": "geometry",
+    "stylers": [{
+        "color": "#f5f5f5"
+    }, {
+        "lightness": 20
+    }]
+}, {
+    "featureType": "road.highway",
+    "elementType": "geometry.fill",
+    "stylers": [{
+        "color": "#ffffff"
+    }, {
+        "lightness": 17
+    }]
+}, {
+    "featureType": "road.highway",
+    "elementType": "geometry.stroke",
+    "stylers": [{
+        "color": "#ffffff"
+    }, {
+        "lightness": 29
+    }, {
+        "weight": 0.2
+    }]
+}, {
+    "featureType": "road.arterial",
+    "elementType": "geometry",
+    "stylers": [{
+        "color": "#ffffff"
+    }, {
+        "lightness": 18
+    }]
+}, {
+    "featureType": "road.local",
+    "elementType": "geometry",
+    "stylers": [{
+        "color": "#ffffff"
+    }, {
+        "lightness": 16
+    }]
+}, {
+    "featureType": "poi",
+    "elementType": "geometry",
+    "stylers": [{
+        "color": "#f5f5f5"
+    }, {
+        "lightness": 21
+    }]
+}, {
+    "featureType": "poi.park",
+    "elementType": "geometry",
+    "stylers": [{
+        "color": "#dedede"
+    }, {
+        "lightness": 21
+    }]
+}, {
+    "elementType": "labels.text.stroke",
+    "stylers": [{
+        "visibility": "on"
+    }, {
+        "color": "#ffffff"
+    }, {
+        "lightness": 16
+    }]
+}, {
+    "elementType": "labels.text.fill",
+    "stylers": [{
+        "saturation": 36
+    }, {
+        "color": "#333333"
+    }, {
+        "lightness": 40
+    }]
+}, {
+    "elementType": "labels.icon",
+    "stylers": [{
+        "visibility": "off"
+    }]
+}, {
+    "featureType": "transit",
+    "elementType": "geometry",
+    "stylers": [{
+        "color": "#f2f2f2"
+    }, {
+        "lightness": 19
+    }]
+}, {
+    "featureType": "administrative",
+    "elementType": "geometry.fill",
+    "stylers": [{
+        "color": "#fefefe"
+    }, {
+        "lightness": 20
+    }]
+}, {
+    "featureType": "administrative",
+    "elementType": "geometry.stroke",
+    "stylers": [{
+        "color": "#fefefe"
+    }, {
+        "lightness": 17
+    }, {
+        "weight": 1.2
+    }]
+}];
+<?php
+                    $datas = $wpdb->get_results("SELECT NB_CHAMBRES,UM_SUPERFICIE_HABITABLE,NB_CHAMBRES_HORS_SOL,LATITUDE,LONGITUDE,NO_INSCRIPTION,DEVISE_PRIX_DEMANDE,PRIX_DEMANDE,PRIX_LOCATION_DEMANDE FROM INSCRIPTIONS i join wp_posts p on p.post_content=i.NO_INSCRIPTION where p.post_type='residential' and i.CODE_STATUT='EV'", OBJECT );
+                    foreach ($datas as $page) {
+                        $post = $wpdb->get_row("SELECT ID from wp_posts where post_content='".$page->NO_INSCRIPTION."'", OBJECT );
+                        $results = $wpdb->get_row(" SELECT * FROM PHOTOS where  NO_INSCRIPTION = '".$page->NO_INSCRIPTION."'", OBJECT );
 
-    styles = [{
-        "featureType": "water",
-        "elementType": "geometry",
-        "stylers": [{
-            "color": "#e9e9e9"
-        }, {
-            "lightness": 17
-        }]
-    }, {
-        "featureType": "landscape",
-        "elementType": "geometry",
-        "stylers": [{
-            "color": "#f5f5f5"
-        }, {
-            "lightness": 20
-        }]
-    }, {
-        "featureType": "road.highway",
-        "elementType": "geometry.fill",
-        "stylers": [{
-            "color": "#ffffff"
-        }, {
-            "lightness": 17
-        }]
-    }, {
-        "featureType": "road.highway",
-        "elementType": "geometry.stroke",
-        "stylers": [{
-            "color": "#ffffff"
-        }, {
-            "lightness": 29
-        }, {
-            "weight": 0.2
-        }]
-    }, {
-        "featureType": "road.arterial",
-        "elementType": "geometry",
-        "stylers": [{
-            "color": "#ffffff"
-        }, {
-            "lightness": 18
-        }]
-    }, {
-        "featureType": "road.local",
-        "elementType": "geometry",
-        "stylers": [{
-            "color": "#ffffff"
-        }, {
-            "lightness": 16
-        }]
-    }, {
-        "featureType": "poi",
-        "elementType": "geometry",
-        "stylers": [{
-            "color": "#f5f5f5"
-        }, {
-            "lightness": 21
-        }]
-    }, {
-        "featureType": "poi.park",
-        "elementType": "geometry",
-        "stylers": [{
-            "color": "#dedede"
-        }, {
-            "lightness": 21
-        }]
-    }, {
-        "elementType": "labels.text.stroke",
-        "stylers": [{
-            "visibility": "on"
-        }, {
-            "color": "#ffffff"
-        }, {
-            "lightness": 16
-        }]
-    }, {
-        "elementType": "labels.text.fill",
-        "stylers": [{
-            "saturation": 36
-        }, {
-            "color": "#333333"
-        }, {
-            "lightness": 40
-        }]
-    }, {
-        "elementType": "labels.icon",
-        "stylers": [{
-            "visibility": "off"
-        }]
-    }, {
-        "featureType": "transit",
-        "elementType": "geometry",
-        "stylers": [{
-            "color": "#f2f2f2"
-        }, {
-            "lightness": 19
-        }]
-    }, {
-        "featureType": "administrative",
-        "elementType": "geometry.fill",
-        "stylers": [{
-            "color": "#fefefe"
-        }, {
-            "lightness": 20
-        }]
-    }, {
-        "featureType": "administrative",
-        "elementType": "geometry.stroke",
-        "stylers": [{
-            "color": "#fefefe"
-        }, {
-            "lightness": 17
-        }, {
-            "weight": 1.2
-        }]
-    }];
-    <?php
-                        $datas = $wpdb->get_results("SELECT NB_CHAMBRES,UM_SUPERFICIE_HABITABLE,NB_CHAMBRES_HORS_SOL,LATITUDE,LONGITUDE,NO_INSCRIPTION,DEVISE_PRIX_DEMANDE,PRIX_DEMANDE,PRIX_LOCATION_DEMANDE FROM INSCRIPTIONS i join wp_posts p on p.post_content=i.NO_INSCRIPTION where post_type='multi-residential'  and i.CODE_STATUT='EV'", OBJECT );
-                        foreach ($datas as $page) {
-                            $post = $wpdb->get_row("SELECT ID from wp_posts where post_content='".$page->NO_INSCRIPTION."'", OBJECT );
-                            $results = $wpdb->get_row(" SELECT * FROM PHOTOS where  NO_INSCRIPTION = '".$page->NO_INSCRIPTION."'", OBJECT );
-
-                       ?>
-    propertiesList.push({
-        id: <?php echo  $post->ID ;?>,
-        title: '<?php   echo $page->NOM_RUE_COMPLET." ".$page->NO_INSCRIPTION;;?>',
-        photo: '<?php  echo $results->PhotoURL;?>',
-        position: {
-            lat: '<?php echo $page->LATITUDE;?>',
-            lng: '<?php echo $page->LONGITUDE;?>'
-        },
-        price: {
-            long: '<?php echo $currencyLetterPrefix."".number_format($page->PRIX_DEMANDE,2).''.$currencyLetterSuffix; ?>',
-            short: '<?php echo $currencyLetterPrefix."".number_format($page->PRIX_DEMANDE,2).''.$currencyLetterSuffix; ?>'
-        },
-        ;
-        link: '<?php  echo get_permalink( $post->ID );?>',
-        features: {
-            beds: '<?php echo $page->NB_CHAMBRES;?>',
-            baths: '<?php echo $page->NB_CHAMBRES_HORS_SOL;?>',
-            size: '<?php echo $page->SUPERFICIE_HABITABLE." ".$page->UM_SUPERFICIE_HABITABLE;?>'
-        }
-    });
-    <?php
-                        }
-                        ?>
-
-    function CustomMarker(id, latlng, map, classname, html) {
-        this.id = id;
-        this.latlng_ = latlng;
-        this.classname = classname;
-        this.html = html;
-
-        this.setMap(map);
+                   ?>
+propertiesList.push({
+    id: <?php echo  $post->ID ;?>,
+    title: '<?php  echo $page->NOM_RUE_COMPLET." ".$page->NO_INSCRIPTION;?>',
+    photo: '<?php  echo $results->PhotoURL;?>',
+    position: {
+        lat: '<?php echo $page->LATITUDE;?>',
+        lng: '<?php echo $page->LONGITUDE;?>'
+    },
+    price: {
+        long: '<?php  echo $currencyLetterPrefix."".number_format($page->PRIX_DEMANDE,2).''.$currencyLetterSuffix;?>',
+        short: '<?php  echo $currencyLetterPrefix."".number_format($page->PRIX_DEMANDE,2).''.$currencyLetterSuffix;?>'
+    },
+    link: '<?php  echo get_permalink( $post->ID );?>',
+    features: {
+        beds: '<?php echo $page->NB_CHAMBRES;?>',
+        baths: '<?php echo $page->NB_CHAMBRES_HORS_SOL;?>',
+        size: '<?php echo $page->SUPERFICIE_HABITABLE." ".$page->UM_SUPERFICIE_HABITABLE;?>'
     }
-
-    CustomMarker.prototype = new google.maps.OverlayView();
-
-    CustomMarker.prototype.draw = function() {
-        var me = this;
-        var div = this.div_;
-
-        if (!div) {
-            div = this.div_ = document.createElement('div');
-            div.classList.add(this.classname);
-            div.innerHTML = this.html;
-
-            google.maps.event.addDomListener(div, 'click', function(event) {
-                google.maps.event.trigger(me, 'click');
-            });
-
-            var panes = this.getPanes();
-            panes.overlayImage.appendChild(div);
-        }
-
-        var point = this.getProjection().fromLatLngToDivPixel(this.latlng_);
-
-        if (point) {
-            div.style.left = point.x + 'px';
-            div.style.top = point.y + 'px';
-        }
-    };
-
-    CustomMarker.prototype.remove = function() {
-        if (this.div_) {
-            this.div_.parentNode.removeChild(this.div_);
-            this.div_ = null;
-        }
-    };
-
-    CustomMarker.prototype.getPosition = function() {
-        return this.latlng_;
-    };
-
-    CustomMarker.prototype.addActive = function() {
-        if (this.div_) {
-            $('.pxp-price-marker').removeClass('active');
-            this.div_.classList.add('active');
-        }
-    };
-
-    CustomMarker.prototype.removeActive = function() {
-        if (this.div_) {
-            this.div_.classList.remove('active');
-        }
-    };
-
-    function addMarkers(props, map) {
-        $.each(props, function(i, prop) {
-            var latlng = new google.maps.LatLng(prop.position.lat, prop.position.lng);
-
-            var html = '<div class="pxp-marker-short-price">' + prop.price.short + '</div>' +
-                '<a href="' + prop.link + '" class="pxp-marker-details">' +
-                '<div class="pxp-marker-details-fig pxp-cover" style="background-image: url(' + prop.photo +
-                ');"></div>' +
-                '<div class="pxp-marker-details-info">' +
-                '<div class="pxp-marker-details-info-title">' + prop.title + '</div>' +
-                '<div class="pxp-marker-details-info-price">' + prop.price.long + '</div>' +
-                '<div class="pxp-marker-details-info-feat">' + prop.features.beds + ' BD<span>|</span>' +
-                prop.features.baths + ' BA<span>|</span>' + prop.features.size + '</div>' +
-                '</div>' +
-                '</a>';
-
-            var marker = new CustomMarker(prop.id, latlng, map, 'pxp-price-marker', html);
-
-            marker.id = prop.id;
-            markers.push(marker);
-        });
-    }
-
-    setTimeout(function() {
-        if ($('#results-map').length > 0) {
-            map = new google.maps.Map(document.getElementById('results-map'), options);
-            var styledMapType = new google.maps.StyledMapType(styles, {
-                name: 'Styled',
-            });
-
-            map.mapTypes.set('Styled', styledMapType);
-            map.setCenter(new google.maps.LatLng(37.7577627, -122.4726194));
-            map.setZoom(15);
-
-            addMarkers(propertiesList, map);
-
-            map.fitBounds(markers.reduce(function(bounds, marker) {
-                return bounds.extend(marker.getPosition());
-            }, new google.maps.LatLngBounds()));
-
-            markerCluster = new MarkerClusterer(map, markers, {
-                maxZoom: 18,
-                gridSize: 60,
-                styles: [{
-                        width: 40,
-                        height: 40,
-                    },
-                    {
-                        width: 60,
-                        height: 60,
-                    },
-                    {
-                        width: 80,
-                        height: 80,
-                    },
-                ]
-            });
-
-            google.maps.event.trigger(map, 'resize');
-
-            $('.pxp-results-card-1').each(function(i) {
-                var propID = $(this).attr('data-prop');
-
-                $(this).on('mouseenter', function() {
-                    if (map) {
-                        var targetMarker = $.grep(markers, function(e) {
-                            return e.id == propID;
-                        });
-
-                        if (targetMarker.length > 0) {
-                            targetMarker[0].addActive();
-                            map.setCenter(targetMarker[0].latlng_);
-                        }
+});
+<?php
                     }
-                });
-                $(this).on('mouseleave', function() {
+
+                    ?>
+
+function CustomMarker(id, latlng, map, classname, html) {
+    this.id = id;
+    this.latlng_ = latlng;
+    this.classname = classname;
+    this.html = html;
+
+    this.setMap(map);
+}
+
+CustomMarker.prototype = new google.maps.OverlayView();
+
+CustomMarker.prototype.draw = function() {
+    var me = this;
+    var div = this.div_;
+
+    if (!div) {
+        div = this.div_ = document.createElement('div');
+        div.classList.add(this.classname);
+        div.innerHTML = this.html;
+
+        google.maps.event.addDomListener(div, 'click', function(event) {
+            google.maps.event.trigger(me, 'click');
+        });
+
+        var panes = this.getPanes();
+        panes.overlayImage.appendChild(div);
+    }
+
+    var point = this.getProjection().fromLatLngToDivPixel(this.latlng_);
+
+    if (point) {
+        div.style.left = point.x + 'px';
+        div.style.top = point.y + 'px';
+    }
+};
+
+CustomMarker.prototype.remove = function() {
+    if (this.div_) {
+        this.div_.parentNode.removeChild(this.div_);
+        this.div_ = null;
+    }
+};
+
+CustomMarker.prototype.getPosition = function() {
+    return this.latlng_;
+};
+
+CustomMarker.prototype.addActive = function() {
+    if (this.div_) {
+        $('.pxp-price-marker').removeClass('active');
+        this.div_.classList.add('active');
+    }
+};
+
+CustomMarker.prototype.removeActive = function() {
+    if (this.div_) {
+        this.div_.classList.remove('active');
+    }
+};
+
+function addMarkers(props, map) {
+    $.each(props, function(i, prop) {
+        var latlng = new google.maps.LatLng(prop.position.lat, prop.position.lng);
+
+        var html = '<div class="pxp-marker-short-price">' + prop.price.short + '</div>' +
+            '<a href="' + prop.link + '" class="pxp-marker-details">' +
+            '<div class="pxp-marker-details-fig pxp-cover" style="background-image: url(' + prop.photo +
+            ');"></div>' +
+            '<div class="pxp-marker-details-info">' +
+            '<div class="pxp-marker-details-info-title">' + prop.title + '</div>' +
+            '<div class="pxp-marker-details-info-price">' + prop.price.long + '</div>' +
+            '<div class="pxp-marker-details-info-feat">' + prop.features.beds + ' BD<span>|</span>' +
+            prop.features.baths + ' BA<span>|</span>' + prop.features.size + '</div>' +
+            '</div>' +
+            '</a>';
+
+        var marker = new CustomMarker(prop.id, latlng, map, 'pxp-price-marker', html);
+
+        marker.id = prop.id;
+        markers.push(marker);
+    });
+}
+
+setTimeout(function() {
+    if ($('#results-map').length > 0) {
+        map = new google.maps.Map(document.getElementById('results-map'), options);
+        var styledMapType = new google.maps.StyledMapType(styles, {
+            name: 'Styled',
+        });
+
+        map.mapTypes.set('Styled', styledMapType);
+        map.setCenter(new google.maps.LatLng(37.7577627, -122.4726194));
+        map.setZoom(15);
+
+        addMarkers(propertiesList, map);
+
+        map.fitBounds(markers.reduce(function(bounds, marker) {
+            return bounds.extend(marker.getPosition());
+        }, new google.maps.LatLngBounds()));
+
+        markerCluster = new MarkerClusterer(map, markers, {
+            maxZoom: 18,
+            gridSize: 60,
+            styles: [{
+                    width: 40,
+                    height: 40,
+                },
+                {
+                    width: 60,
+                    height: 60,
+                },
+                {
+                    width: 80,
+                    height: 80,
+                },
+            ]
+        });
+
+        google.maps.event.trigger(map, 'resize');
+
+        $('.pxp-results-card-1').each(function(i) {
+            var propID = $(this).attr('data-prop');
+
+            $(this).on('mouseenter', function() {
+                if (map) {
                     var targetMarker = $.grep(markers, function(e) {
                         return e.id == propID;
                     });
 
                     if (targetMarker.length > 0) {
-                        targetMarker[0].removeActive();
+                        targetMarker[0].addActive();
+                        map.setCenter(targetMarker[0].latlng_);
                     }
-                });
+                }
             });
-        }
-    }, 300);
+            $(this).on('mouseleave', function() {
+                var targetMarker = $.grep(markers, function(e) {
+                    return e.id == propID;
+                });
+
+                if (targetMarker.length > 0) {
+                    targetMarker[0].removeActive();
+                }
+            });
+        });
+    }
+}, 300);
 })(jQuery);
 
 $("#pxp-p-filter-type").change(function() {
