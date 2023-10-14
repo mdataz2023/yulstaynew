@@ -195,7 +195,7 @@ $the_query = new WP_Query( array('post_type' =>'multi-residential','posts_per_pa
                              }
                             echo   $cityName; ?></div>
                             <div class="pxp-results-card-1-details-price">
-                                <?php echo $currencyLetterPrefix."".$inscriptionsData->PRIX_DEMANDE.''.$currencyLetterSuffix; ?>
+                                <?php echo $currencyLetterPrefix."".number_format($inscriptionsData->PRIX_DEMANDE,2).''.$currencyLetterSuffix; ?>
                             </div>
                         </div>
                         <div class="pxp-results-card-1-features">
@@ -619,8 +619,8 @@ $the_query = new WP_Query( array('post_type' =>'multi-residential','posts_per_pa
             lng: '<?php echo $page->LONGITUDE;?>'
         },
         price: {
-            long: '<?php echo $currencyLetterPrefix."".$page->PRIX_DEMANDE.''.$currencyLetterSuffix; ?>',
-            short: '<?php echo $currencyLetterPrefix."".$page->PRIX_DEMANDE.''.$currencyLetterSuffix; ?>'
+            long: '<?php echo $currencyLetterPrefix."".number_format($page->PRIX_DEMANDE,2).''.$currencyLetterSuffix; ?>',
+            short: '<?php echo $currencyLetterPrefix."".number_format($page->PRIX_DEMANDE,2).''.$currencyLetterSuffix; ?>'
         },
         ;
         link: '<?php  echo get_permalink( $post->ID );?>',
