@@ -67,51 +67,28 @@ if ($lang == 'en-US'){
                 <div class="col-2 col-md-8 text-center">
                     <ul class="pxp-nav list-inline">
                         <li class="list-inline-item">
-                            <a href="<?php bloginfo('url'); ?>/"  <?php if(get_the_ID() == '6' || get_the_ID() == '495') { ?> class="active-nav-link-home"<?php } ?>>Home</a>
-                            <!-- <ul class="pxp-nav-sub rounded-lg">
-                                    <li><a href="index.html">Version 1</a></li>
-                                    <li><a href="index-2.html">Version 2</a></li>
-                                    <li><a href="index-3.html">Version 3</a></li>
-                                    <li><a href="index-4.html">Version 4</a></li>
-                                    <li><a href="index-5.html">Version 5</a></li>
-                                    <li><a href="index-6.html">Version 6</a></li>
-                                </ul> -->
+                            <a href="<?php bloginfo('url'); ?>/"  <?php if(get_the_ID() == '6' || get_the_ID() == '495') { ?> class="active-nav-link-home"<?php } ?>><?php _e('Home','theme-text-domain'); ?></a>
                         </li>
                         <li class="list-inline-item">
-                            <span class="navproperty-home">Properties</span>
+                            <span class="navproperty-home"><?php _e('Properties','theme-text-domain'); ?></span>
                             <ul class="pxp-nav-sub rounded-lg">
-                                <li><a href="<?php bloginfo('url'); ?>/residential">Residential</a></li>
-                                <li><a href="<?php bloginfo('url'); ?>/multi-residential">Multi Residential</a></li>
-                                <li><a href="<?php bloginfo('url'); ?>/rental-property">Rental Property</a></li>
+                                <li><a href="<?php bloginfo('url'); ?>/residential"><?php _e('Residential','theme-text-domain'); ?></a></li>
+                                <li><a href="<?php bloginfo('url'); ?>/multi-residential"><?php _e('Multi Residential','theme-text-domain'); ?></a></li>
+                                <li><a href="<?php bloginfo('url'); ?>/rental-property"><?php _e('Rental Property','theme-text-domain'); ?></a></li>
                             </ul>
                         </li>
                         <li class="list-inline-item">
-                            <a href="<?php bloginfo('url'); ?>/teams">Team</a>
-                            <!-- <ul class="pxp-nav-sub rounded-lg">
-                                    <li><a href="agents.html">All Agents</a></li>
-                                    <li><a href="single-agent.html">Single Agent</a></li>
-                                </ul> -->
+                            <a href="<?php bloginfo('url'); ?>/teams"><?php _e('Team','theme-text-domain'); ?></a>
                         </li>
-                        <li class="list-inline-item pxp-is-last"><a href="<?php bloginfo('url'); ?>/contact">Contact
-                                Us</a></li>
-                        <!-- <li class="list-inline-item pxp-has-btns">
-                            <div class="pxp-user-btns">
-                                <a href="#" class="pxp-user-btns-signup pxp-signup-trigger">Sign Up</a>
-                                <a href="#" class="pxp-user-btns-login pxp-signin-trigger">Sign In</a>
-                            </div>
-                        </li> -->
+                        <li class="list-inline-item pxp-is-last"><a href="<?php bloginfo('url'); ?>/contact"><?php _e('Contact Us','theme-text-domain'); ?></a></li>
                         <li class="list-inline-item">
-                            <a href="<?php bloginfo('url'); ?>/join-our-team">Join Our Team</a>
-                            <!-- <ul class="pxp-nav-sub rounded-lg">
-                                    <li><a href="../light/index.html">Light</a></li>
-                                    <li><a href="../dark/index.html">Dark</a></li>
-                                </ul> -->
+                            <a href="<?php bloginfo('url'); ?>/join-our-team"><?php _e('Join Our Team','theme-text-domain'); ?></a>
                         </li>
                         <li class="list-inline-item">
-                            <a href="#">Yulstay +</a>
+                            <a href="#"><?php _e('Yulstay +','theme-text-domain'); ?></a>
                             <ul class="pxp-nav-sub rounded-lg">
-                                <li><a href="blog.html">Pod Casts</a></li>
-                                <li><a href="single-post.html">Shop</a></li>
+                                <li><a href="blog.html"><?php _e('Pod Casts','theme-text-domain'); ?></a></li>
+                                <li><a href="single-post.html"><?php _e('Shop','theme-text-domain'); ?></a></li>
                             </ul>
                         </li>
                         <li class="list-inline-item">
@@ -255,7 +232,7 @@ if ($lang == 'en-US'){
                             <div class="pxp-agents-1-item-details-email"><span class="fa fa-phone"></span>
                                 <?php echo get_field('team_member_telephone'); ?></div>
                             <div class="pxp-agents-1-item-details-spacer"></div>
-                            <div class="pxp-agents-1-item-cta text-uppercase">More Details</div>
+                            <div class="pxp-agents-1-item-cta text-uppercase"><?php _e('More Details','theme-text-domain'); ?></div>
                         </div>
                         <div class="pxp-agents-1-item-rating"><span><span class="fa fa-star"></span><span
                                     class="fa fa-star"></span><span class="fa fa-star"></span><span
@@ -279,8 +256,7 @@ if ($lang == 'en-US'){
                     </div> -->
             </div>
 
-            <a href="<?php bloginfo('url'); ?>/team" class="pxp-primary-cta text-uppercase mt-1 mt-md-4 pxp-animate">See
-                All Agents</a>
+            <a href="<?php bloginfo('url'); ?>/team" class="pxp-primary-cta text-uppercase mt-1 mt-md-4 pxp-animate"><?php _e('See All Agents','theme-text-domain'); ?></a>
         </div>
 
         <div class="pxp-services pxp-cover mt-100 pt-100 mb-200"
@@ -296,40 +272,40 @@ if ($lang == 'en-US'){
                                 <img src="<?php echo get_template_directory_uri(); ?>/images/service-icon-1.svg" alt="...">
                             </div>
                             <div class="pxp-services-item-text text-center">
-                                <div class="pxp-services-item-text-title">Find your future home</div>
-                                <div class="pxp-services-item-text-sub">We help you find a new home by offering<br>a smart real estate experience</div>
+                                <div class="pxp-services-item-text-title"><?php _e('Find your future home','theme-text-domain'); ?></div>
+                                <div class="pxp-services-item-text-sub"><?php _e('We help you find a new home by offering','theme-text-domain'); ?><br><?php _e('a smart real estate experience','theme-text-domain'); ?></div>
                             </div>
-                            <div class="pxp-services-item-cta text-uppercase text-center">Learn More</div>
+                            <div class="pxp-services-item-cta text-uppercase text-center"><?php _e('Learn More','theme-text-domain'); ?></div>
                         </a>
                         <a href="agents.html" class="pxp-services-item">
                             <div class="pxp-services-item-fig">
                                 <img src="<?php echo get_template_directory_uri(); ?>/images/service-icon-2.svg" alt="...">
                             </div>
                             <div class="pxp-services-item-text text-center">
-                                <div class="pxp-services-item-text-title">Experienced agents</div>
-                                <div class="pxp-services-item-text-sub">Find an agent who knows<br>your market best</div>
+                                <div class="pxp-services-item-text-title"><?php _e('Experienced agents','theme-text-domain'); ?></div>
+                                <div class="pxp-services-item-text-sub"><?php _e('Find an agent who knows','theme-text-domain'); ?><br><?php _e('your market best','theme-text-domain'); ?></div>
                             </div>
-                            <div class="pxp-services-item-cta text-uppercase text-center">Learn More</div>
+                            <div class="pxp-services-item-cta text-uppercase text-center"><?php _e('Learn More','theme-text-domain'); ?></div>
                         </a>
                         <a href="properties.html" class="pxp-services-item">
                             <div class="pxp-services-item-fig">
                                 <img src="<?php echo get_template_directory_uri(); ?>/images/service-icon-3.svg" alt="...">
                             </div>
                             <div class="pxp-services-item-text text-center">
-                                <div class="pxp-services-item-text-title">Buy or rent homes</div>
-                                <div class="pxp-services-item-text-sub">Millions of houses and apartments in<br>your favourite cities</div>
+                                <div class="pxp-services-item-text-title"><?php _e('Buy or rent homes','theme-text-domain'); ?></div>
+                                <div class="pxp-services-item-text-sub"><?php _e('Millions of houses and apartments in','theme-text-domain'); ?><br><?php _e('your favourite cities','theme-text-domain'); ?></div>
                             </div>
-                            <div class="pxp-services-item-cta text-uppercase text-center">Learn More</div>
+                            <div class="pxp-services-item-cta text-uppercase text-center"><?php _e('Learn More','theme-text-domain'); ?></div>
                         </a>
                         <a href="submit-property.html" class="pxp-services-item">
                             <div class="pxp-services-item-fig">
                                 <img src="<?php echo get_template_directory_uri(); ?>/images/service-icon-4.svg" alt="...">
                             </div>
                             <div class="pxp-services-item-text text-center">
-                                <div class="pxp-services-item-text-title">List your own property</div>
-                                <div class="pxp-services-item-text-sub">Sign up now and sell or rent<br>your own properties</div>
+                                <div class="pxp-services-item-text-title"><?php _e('List your own property','theme-text-domain'); ?></div>
+                                <div class="pxp-services-item-text-sub"><?php _e('Sign up now and sell or rent','theme-text-domain'); ?><br><?php _e('your own properties','theme-text-domain'); ?></div>
                             </div>
-                            <div class="pxp-services-item-cta text-uppercase text-center">Learn More</div>
+                            <div class="pxp-services-item-cta text-uppercase text-center"><?php _e('Learn More','theme-text-domain'); ?></div>
                         </a>
                     <div class="clearfix"></div>
                 </div>
@@ -372,7 +348,7 @@ if ($lang == 'en-US'){
                                     <?php echo $inscriptionsData->SUPERFICIE_HABITABLE." ".$inscriptionsData->UM_SUPERFICIE_HABITABLE;?>
                                 </div>
                             </div>
-                            <div class="pxp-prop-card-1-details-cta text-uppercase">View Details</div>
+                            <div class="pxp-prop-card-1-details-cta text-uppercase"><?php _e('View Details','theme-text-domain'); ?></div>
                         </a>
                     </div>
                     <?php
@@ -409,7 +385,7 @@ if ($lang == 'en-US'){
                                     <?php echo $inscriptionsData->SUPERFICIE_HABITABLE." ".$inscriptionsData->UM_SUPERFICIE_HABITABLE;?>
                                 </div>
                             </div>
-                            <div class="pxp-prop-card-1-details-cta text-uppercase">View Details</div>
+                            <div class="pxp-prop-card-1-details-cta text-uppercase"><?php _e('View Details','theme-text-domain'); ?></div>
                         </a>
                     </div>
                     <?php
@@ -446,7 +422,7 @@ if ($lang == 'en-US'){
                                     <?php echo $inscriptionsData->SUPERFICIE_HABITABLE." ".$inscriptionsData->UM_SUPERFICIE_HABITABLE;?>
                                 </div>
                             </div>
-                            <div class="pxp-prop-card-1-details-cta text-uppercase">View Details</div>
+                            <div class="pxp-prop-card-1-details-cta text-uppercase"><?php _e('View Details','theme-text-domain'); ?></div>
                         </a>
                     </div>
                     <?php
@@ -456,7 +432,7 @@ if ($lang == 'en-US'){
                 </div>
 
                 <a href="<?php echo $home_properties_section_page_link; ?>"
-                    class="pxp-primary-cta text-uppercase mt-4 mt-md-5 pxp-animate">Browse All</a>
+                    class="pxp-primary-cta text-uppercase mt-4 mt-md-5 pxp-animate"><?php _e('Browse All','theme-text-domain'); ?></a>
             </div>
         </div>
 
@@ -469,7 +445,7 @@ if ($lang == 'en-US'){
                             <h2 class="pxp-section-h2"><?php echo $home_search_section_title; ?></h2>
                             <p class="pxp-text-light"><?php echo $home_search_section_description; ?></p>
                             <a href="<?php echo $home_search_section_link; ?>"
-                                class="pxp-primary-cta text-uppercase mt-3 mt-md-5 pxp-animate">Search Now</a>
+                                class="pxp-primary-cta text-uppercase mt-3 mt-md-5 pxp-animate"><?php _e('Search Now','theme-text-domain'); ?></a>
                         </div>
                     </div>
                 </div>
@@ -530,8 +506,8 @@ if ($lang == 'en-US'){
                         WHERE
                           i.CODE_STATUT = 'EV' AND m.REGION_CODE='".$city->CODE ."'", OBJECT );
                         echo $COUNT_REGION->COUNT_REGION;
-                        ?> Properties</span></div>
-                        <div class="pxp-areas-1-item-cta text-uppercase">Explore</div>
+                        ?> <?php _e('Properties','theme-text-domain'); ?></span></div>
+                        <div class="pxp-areas-1-item-cta text-uppercase"><?php _e('Explore','theme-text-domain'); ?></div>
                     </a>
                 </div>
 <?php }
@@ -547,7 +523,7 @@ if ($lang == 'en-US'){
             <div class="pxp-testim-1-intro">
                 <h2 class="pxp-section-h2"><?php echo $home_page_testimonial_title; ?></h2>
                 <p class="pxp-text-light"><?php echo $home_page_testimonial_description; ?></p>
-                <a href="<?php echo $home_page_testimonial_link; ?>" class="pxp-primary-cta text-uppercase mt-2 mt-md-3 mt-lg-5 pxp-animate">Read All Stories</a>
+                <a href="<?php echo $home_page_testimonial_link; ?>" class="pxp-primary-cta text-uppercase mt-2 mt-md-3 mt-lg-5 pxp-animate"><?php _e('Read All Stories','theme-text-domain'); ?></a>
             </div>
             <div class="pxp-testim-1-container mt-4 mt-md-5 mt-lg-0">
                 <div class="owl-carousel pxp-testim-1-stage">
