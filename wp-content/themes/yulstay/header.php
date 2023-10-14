@@ -55,51 +55,28 @@
                     <div class="col-2 col-md-8 text-center">
                         <ul class="pxp-nav list-inline">
                             <li class="list-inline-item">
-                                <a href="<?php bloginfo('url'); ?>/" <?php if(get_the_ID() == '6') { ?> class="active-nav-link"<?php } ?>>Home</a>
-                                <!-- <ul class="pxp-nav-sub rounded-lg">
-                                    <li><a href="index.html">Version 1</a></li>
-                                    <li><a href="index-2.html">Version 2</a></li>
-                                    <li><a href="index-3.html">Version 3</a></li>
-                                    <li><a href="index-4.html">Version 4</a></li>
-                                    <li><a href="index-5.html">Version 5</a></li>
-                                    <li><a href="index-6.html">Version 6</a></li>
-                                </ul> -->
+                                <a href="<?php bloginfo('url'); ?>/" <?php if(get_the_ID() == '6') { ?> class="active-nav-link"<?php } ?>><?php _e('Home','theme-text-domain'); ?></a>
                             </li>
                             <li class="list-inline-item">
-                            <span class="navproperty" <?php if (get_the_ID() == '34' || get_the_ID() == '36' || get_the_ID() == '38' || get_the_ID() == '476' || get_the_ID() == '541' || get_the_ID() == '542') { ?> style="color: #0093a6 !important;" <?php } ?>>Properties</span>
+                            <span class="navproperty" <?php if (get_the_ID() == '34' || get_the_ID() == '36' || get_the_ID() == '38' || get_the_ID() == '476' || get_the_ID() == '541' || get_the_ID() == '542') { ?> style="color: #0093a6 !important;" <?php } ?>><?php _e('Properties','theme-text-domain'); ?></span>
                                 <ul class="pxp-nav-sub rounded-lg">
-                                    <li><a href="<?php bloginfo('url'); ?>/residential" <?php if(get_the_ID() == '34' || get_the_ID() == '476') { ?> class="active-nav-link"<?php } ?>>Residential</a></li>
-                                    <li><a href="<?php bloginfo('url'); ?>/multi-residential" <?php if(get_the_ID() == '38' || get_the_ID() == '541') { ?> class="active-nav-link"<?php } ?>>Multi Residential</a></li>
-                                    <li><a href="<?php bloginfo('url'); ?>/rental-property" <?php if(get_the_ID() == '36' || get_the_ID() == '542') { ?> class="active-nav-link"<?php } ?>>Rental + Management</a></li>
+                                    <li><a href="<?php bloginfo('url'); ?>/residential" <?php if(get_the_ID() == '34' || get_the_ID() == '476') { ?> class="active-nav-link"<?php } ?>><?php _e('Residential','theme-text-domain'); ?></a></li>
+                                    <li><a href="<?php bloginfo('url'); ?>/multi-residential" <?php if(get_the_ID() == '38' || get_the_ID() == '541') { ?> class="active-nav-link"<?php } ?>><?php _e('Multi Residential','theme-text-domain'); ?></a></li>
+                                    <li><a href="<?php bloginfo('url'); ?>/rental-property" <?php if(get_the_ID() == '36' || get_the_ID() == '542') { ?> class="active-nav-link"<?php } ?>><?php _e('Rental + Management','theme-text-domain'); ?></a></li>
                                 </ul>
                             </li>
                             <li class="list-inline-item">
-                                <a href="<?php bloginfo('url'); ?>/teams" <?php if(get_the_ID() == '549' || get_the_ID() == '551') { ?> class="active-nav-link"<?php } ?>>Team</a>
+                                <a href="<?php bloginfo('url'); ?>/teams" <?php if(get_the_ID() == '549' || get_the_ID() == '551') { ?> class="active-nav-link"<?php } ?>><?php _e('Team','theme-text-domain'); ?></a>
                             </li>
-                                <!-- <ul class="pxp-nav-sub rounded-lg">
-                                    <li><a href="agents.html">All Agents</a></li>
-                                    <li><a href="single-agent.html">Single Agent</a></li>
-                                </ul> -->
-                            
-                            <li class="list-inline-item pxp-is-last"><a href="<?php bloginfo('url'); ?>/contact" <?php if(get_the_ID() == '8' || get_the_ID() == '543') { ?> class="active-nav-link"<?php } ?>>Contact Us</a></li>
-                            <!-- <li class="list-inline-item pxp-has-btns">
-                                <div class="pxp-user-btns">
-                                    <a href="#" class="pxp-user-btns-signup pxp-signup-trigger">Sign Up</a>
-                                    <a href="#" class="pxp-user-btns-login pxp-signin-trigger">Sign In</a>
-                                </div>
-                            </li> -->
+                            <li class="list-inline-item pxp-is-last"><a href="<?php bloginfo('url'); ?>/contact" <?php if(get_the_ID() == '8' || get_the_ID() == '543') { ?> class="active-nav-link"<?php } ?>><?php _e('Contact Us','theme-text-domain'); ?></a></li>
                             <li class="list-inline-item">
-                                <a href="<?php bloginfo('url'); ?>/join-our-team" <?php if(get_the_ID() == '76' || get_the_ID() == '544') { ?> class="active-nav-link"<?php } ?>>Join Our Team</a>
-                                <!-- <ul class="pxp-nav-sub rounded-lg">
-                                    <li><a href="../light/index.html">Light</a></li>
-                                    <li><a href="../dark/index.html">Dark</a></li>
-                                </ul> -->
+                                <a href="<?php bloginfo('url'); ?>/join-our-team" <?php if(get_the_ID() == '76' || get_the_ID() == '544') { ?> class="active-nav-link"<?php } ?>><?php _e('Join Our Team','theme-text-domain'); ?></a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="#">Yulstay +</a>
+                                <a href="#"><?php _e('Yulstay +','theme-text-domain'); ?></a>
                                 <ul class="pxp-nav-sub rounded-lg">
-                                    <li><a href="blog.html">Pod Casts</a></li>
-                                    <li><a href="single-post.html">Shop</a></li>
+                                    <li><a href="blog.html"><?php _e('Pod Casts','theme-text-domain'); ?></a></li>
+                                    <li><a href="single-post.html"><?php _e('Shop','theme-text-domain'); ?></a></li>
                                 </ul>
                             </li>
                             <li class="list-inline-item">
