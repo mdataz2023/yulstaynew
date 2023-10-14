@@ -36,7 +36,7 @@ $broker_id=get_field('broker_id');
                     </div>
                     <div hidden class="mt-4 mt-md-5">
                         <a href="#pxp-work-with" class="pxp-agent-contact-btn" data-toggle="modal"
-                            data-target="#pxp-work-with">Work with <?php the_title(); ?></a>
+                            data-target="#pxp-work-with"><?php _e('Work with','theme-text-domain'); ?> <?php the_title(); ?></a>
                     </div>
                 </div>
                 <div class="col-sm-12 offset-lg-1 col-lg-3">
@@ -78,7 +78,7 @@ $broker_id=get_field('broker_id');
                 </div>
                 <div class="col-sm-12 col-lg-3 offset-lg-1">
                     <div class="pxp-agent-section mt-4 mt-md-5">
-                        <h3>Specialities</h3>
+                        <h3><?php _e('Specialities','theme-text-domain'); ?></h3>
                         <ul class="list-unstyled pxp-agent-specialities mt-3 mt-md-4">
                             <li>International Buyers and Sellers</li>
                             <li>Investors</li>
@@ -86,7 +86,7 @@ $broker_id=get_field('broker_id');
                         </ul>
                     </div>
                     <div class="pxp-agent-section mt-4 mt-md-5">
-                        <h3>Social Media</h3>
+                        <h3><?php _e('Social Media','theme-text-domain'); ?></h3>
                         <ul class="list-unstyled pxp-agent-social mt-3 mt-md-4">
                             <li><a href="#"><span class="fa fa-facebook"></span></a></li>
                             <li><a href="#"><span class="fa fa-twitter"></span></a></li>
@@ -97,7 +97,7 @@ $broker_id=get_field('broker_id');
                 </div>
             </div>
 
-            <h2 class="pxp-section-h2 mt-100">Listings by <?php the_title(); ?></h2>
+            <h2 class="pxp-section-h2 mt-100"><?php _e('Listings by','theme-text-domain'); ?> <?php the_title(); ?></h2>
             <div class="row mt-4 mt-md-5">
                 <?php
                         $datas = $wpdb->get_results("SELECT i.*,p.ID,p.post_type FROM INSCRIPTIONS i join wp_posts p on p.post_content=i.NO_INSCRIPTION where i.CODE_STATUT='EV' and COURTIER_INSCRIPTEUR_1='".$broker_id."'", OBJECT );
@@ -130,7 +130,7 @@ $broker_id=get_field('broker_id');
                                     <span>|</span>
                                     <?php echo $inscriptionsData->SUPERFICIE_HABITABLE." ".$inscriptionsData->UM_SUPERFICIE_HABITABLE;?>
                         </div>
-                        <div class="pxp-prop-card-1-details-cta text-uppercase">View Details</div>
+                        <div class="pxp-prop-card-1-details-cta text-uppercase"><?php _e('View Details','theme-text-domain'); ?></div>
                     </a>
                 </div>
                 <?php } ?>
