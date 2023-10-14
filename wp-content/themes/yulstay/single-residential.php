@@ -873,7 +873,7 @@ if ($lang == 'en-US'){
                 </button>
             </div>
             <div class="modal-body">
-                <h5 class="modal-title" id="pxpContactAgentModal">Contact
+                <h5 class="modal-title" id="pxpContactAgentModal">Contact<?php _e('','theme-text-domain'); ?>
                     <?php echo $MEMBRES->NOM." ".$MEMBRES->PRENOM?></h5>
                 <!-- <form class="mt-4">
                     <div class="form-group">
