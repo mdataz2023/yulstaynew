@@ -76,7 +76,8 @@ $contact_page_email_address_link = get_field('contact_page_email_address_link');
                     <div class="row">
                         <div class="col-sm-12 col-lg-6">
                             <h2 class="pxp-section-h2">Send Us A Message</h2>
-                            <div class="pxp-contact-form mt-3 mt-md-4">
+                            <?php echo do_shortcode('[contact-form-7 id="96e23ab" title="Contact Form"]'); ?>
+                            <!-- <div class="pxp-contact-form mt-3 mt-md-4">
                                 <div class="row">
                                     <div class="col-sm-12 col-md-12">
                                         <div class="form-group">
@@ -88,19 +89,6 @@ $contact_page_email_address_link = get_field('contact_page_email_address_link');
                                             <input type="text" class="form-control" id="pxp-contact-form-email" placeholder="Email">
                                         </div>
                                     </div>
-                                    <!-- <div class="col-sm-12 col-md-6">
-                                        <div class="form-group">
-                                            <select class="custom-select" id="pxp-contact-form-reg">
-                                                <option value="">What is this regarding?</option>
-                                                <option value="">Customer support / feedback</option>
-                                                <option value="">Applying</option>
-                                                <option value="">Press</option>
-                                                <option value="">Listings</option>
-                                                <option value="">Partnerships</option>
-                                                <option value="">General questions</option>
-                                            </select>
-                                        </div>
-                                    </div> -->
                                     <div class="col-sm-12 col-md-12">
                                         <div class="form-group">
                                             <input type="text" class="form-control" placeholder="Phone (optional)" id="pxp-contact-form-phone">
@@ -111,7 +99,7 @@ $contact_page_email_address_link = get_field('contact_page_email_address_link');
                                     <textarea class="form-control" id="pxp-contact-form-message" rows="6" placeholder="Message"></textarea>
                                 </div>
                                 <a href="#" class="pxp-contact-form-btn">Send Message</a>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="col-sm-12 col-lg-6">
                             <div class="row mt-4 mt-md-5 mt-lg-0">
