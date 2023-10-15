@@ -76,7 +76,7 @@ $join_our_team_page_email_address_link = get_field('join_our_team_page_email_add
                     <div class="row">
                         <div class="col-sm-12">
                             <h2 class="pxp-section-h2">Send Us A Message</h2>
-                            <div class="pxp-contact-form mt-3 mt-md-4">
+                            <!-- <div class="pxp-contact-form mt-3 mt-md-4">
                                 <div class="row">
                                     <div class="col-sm-12 col-md-6">
                                         <div class="form-group">
@@ -110,7 +110,7 @@ $join_our_team_page_email_address_link = get_field('join_our_team_page_email_add
                                     <textarea class="form-control" id="pxp-contact-form-message" rows="6" placeholder="Message"></textarea>
                                 </div>
                                 <a href="#" class="pxp-contact-form-btn">Send Message</a>
-                            </div>
+                            </div> -->
                         </div>
                         <!-- <div class="col-sm-12 col-lg-6">
                             <div class="row mt-4 mt-md-5 mt-lg-0">

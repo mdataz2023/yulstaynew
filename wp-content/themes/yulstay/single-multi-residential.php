@@ -211,7 +211,7 @@ echo $inscriptionsData->INCLUS_FRANCAIS."<br><br>".$inscriptionsData->EXCLUS_FRA
                 </div>
 
                 <div class="pxp-single-property-section mt-4 mt-md-5">
-                    <h3>Characteristic<?php _e('','theme-text-domain'); ?></h3>
+                    <h3><?php _e('Characteristic','theme-text-domain'); ?></h3>
                     <div class="row mt-3 mt-md-4">
                         <div class="col-sm-6 col-lg-4">
                             <div class="pxp-sp-amenities-item"><b><?php _e('Property Type','theme-text-domain'); ?> -

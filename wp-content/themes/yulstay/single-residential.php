@@ -809,7 +809,7 @@ if ($lang == 'en-US'){
             </div>
             <div class="col-lg-4">
                 <div class="pxp-single-property-section pxp-sp-agent-section mt-4 mt-md-5 mt-lg-0">
-                    <h3>Listed By<?php _e('','theme-text-domain'); ?></h3>
+                    <h3><?php _e('Listed By','theme-text-domain'); ?></h3>
                     <?php
                             $MEMBRES = $wpdb->get_row("SELECT * FROM MEMBRES WHERE CODE ='".$inscriptionsData->COURTIER_INSCRIPTEUR_1."'", OBJECT );
                         ?>
@@ -888,7 +888,7 @@ if ($lang == 'en-US'){
                 </button>
             </div>
             <div class="modal-body">
-                <h5 class="modal-title" id="pxpContactAgentModal">Contact<?php _e('','theme-text-domain'); ?>
+                <h5 class="modal-title" id="pxpContactAgentModal"><?php _e('Contact','theme-text-domain'); ?>
                     <?php echo $MEMBRES->NOM." ".$MEMBRES->PRENOM?></h5>
                 <!-- <form class="mt-4">
                     <div class="form-group">

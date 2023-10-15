@@ -121,7 +121,7 @@ global $wpdb;
                     <h2 class="pxp-content-side-h2"><?php
                     $POST_COUNT = $wpdb->get_row("SELECT count(NO_INSCRIPTION) as POST_COUNT FROM INSCRIPTIONS i join wp_posts p on p.post_content=i.NO_INSCRIPTION where p.post_type='residential' and i.CODE_STATUT='EV'", OBJECT );
                 echo $POST_COUNT->POST_COUNT;
-                ?> Results<?php _e('','theme-text-domain'); ?></h2>
+                ?> <?php _e('Results','theme-text-domain'); ?></h2>
                 </div>
                 <div class="col-sm-6">
                     <div class="pxp-sort-form form-inline float-right">
