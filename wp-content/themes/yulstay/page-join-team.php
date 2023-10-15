@@ -76,6 +76,7 @@ $join_our_team_page_email_address_link = get_field('join_our_team_page_email_add
                     <div class="row">
                         <div class="col-sm-12">
                             <h2 class="pxp-section-h2">Send Us A Message</h2>
+                            <?php echo do_shortcode('[contact-form-7 id="3660b35" title="Join Our Team Form"]'); ?>
                             <!-- <div class="pxp-contact-form mt-3 mt-md-4">
                                 <div class="row">
                                     <div class="col-sm-12 col-md-6">
