@@ -220,16 +220,6 @@
     color: #000 !important;
   }
 
-  .wpml-ls-native::before {
-    content: "EN";
-    display: inline;
-  }
-
-  .wpml-ls-native::after {
-    content: "GLISH";
-    display: inline;
-    opacity: 0;
-  }
 
   @media screen and (max-width: 991px){
     .navproperty{

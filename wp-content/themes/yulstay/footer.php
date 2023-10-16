@@ -150,6 +150,28 @@
             </div>
         </div>
 
+        <script>
+            // Find the element with the class "wpml-ls-native"
+            const spanElement = document.querySelector(".wpml-ls-native");
+
+            if (spanElement) {
+            // Get the text content within the span element
+            const textContent = spanElement.textContent;
+
+            // Extract "En" from the text content
+            const extractedText = textContent.match(/En/);
+
+            if (extractedText) {
+                // Create a new span element to display only "En"
+                const newSpanElement = document.createElement("span");
+                newSpanElement.textContent = extractedText[0];
+
+                // Replace the original span element with the new one
+                spanElement.replaceWith(newSpanElement);
+            }
+            }
+        </script>
+
         <!-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_KEY_HERE&amp;libraries=geometry&amp;libraries=places"></script> -->
         <script src="<?php echo get_template_directory_uri(); ?>/js/contact-map.js?assasd"></script>
         <script src="<?php echo get_template_directory_uri(); ?>/js/main.js?kasjdk"></script>
