@@ -70,7 +70,7 @@ if ($lang == 'en-US'){
                             <a href="<?php bloginfo('url'); ?>/"  <?php if(get_the_ID() == '6' || get_the_ID() == '495') { ?> class="active-nav-link-home"<?php } ?>><?php _e('Home','theme-text-domain'); ?></a>
                         </li>
                         <li class="list-inline-item">
-                            <span class="navproperty-home"><?php _e('Properties','theme-text-domain'); ?></span>
+                            <a class="navproperty-home"><?php _e('Properties','theme-text-domain'); ?></a>
                             <ul class="pxp-nav-sub rounded-lg">
                                 <li><a href="<?php bloginfo('url'); ?>/residential"><?php _e('Residential','theme-text-domain'); ?></a></li>
                                 <li><a href="<?php bloginfo('url'); ?>/multi-residential"><?php _e('Multi Residential','theme-text-domain'); ?></a></li>
