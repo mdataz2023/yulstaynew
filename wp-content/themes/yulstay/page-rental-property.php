@@ -193,7 +193,7 @@ $the_query = new WP_Query( array('post_type' =>'rental-property','posts_per_page
                              }
                             echo   $cityName; ?></div>
                             <div class="pxp-results-card-1-details-price">
-                                <?php echo $currencyLetterPrefix."". number_format($inscriptionsData->PRIX_LOCATION_DEMANDE,2).''.$currencyLetterSuffix;;?></div>
+                                <?php echo $currencyLetterPrefix."". number_format($inscriptionsData->PRIX_LOCATION_DEMANDE).''.$currencyLetterSuffix;;?></div>
                         </div>
                         <div class="pxp-results-card-1-features">
                             <span><?php echo $inscriptionsData->NB_CHAMBRES;?> BD <span>|</span>
@@ -616,8 +616,8 @@ $the_query = new WP_Query( array('post_type' =>'rental-property','posts_per_page
             lng: '<?php echo $page->LONGITUDE;?>'
         },
         price: {
-            long: '<?php echo  $currencyLetterPrefix."". number_format($page->PRIX_LOCATION_DEMANDE,2).''.$currencyLetterSuffix;?>',
-            short: '<?php echo $currencyLetterPrefix."". number_format($page->PRIX_LOCATION_DEMANDE,2).''.$currencyLetterSuffix;;?>'
+            long: '<?php echo  $currencyLetterPrefix."". number_format($page->PRIX_LOCATION_DEMANDE).''.$currencyLetterSuffix;?>',
+            short: '<?php echo $currencyLetterPrefix."". number_format($page->PRIX_LOCATION_DEMANDE).''.$currencyLetterSuffix;;?>'
         },
         link: '<?php  echo get_permalink( $post->ID );?>',
         features: {
@@ -780,15 +780,37 @@ $the_query = new WP_Query( array('post_type' =>'rental-property','posts_per_page
 })(jQuery);
 
 $("#pxp-p-filter-type").change(function() {
-    $('.hide_post_class').hide();
-    if ($("#pxp-p-filter-type").val() == "All") {
-        $('.hide_post_class').show();
-    } else {
-        var value = $("#pxp-p-filter-type").val();
-        var r1 = value.replaceAll(".", "");
-        var r2 = r1.replaceAll("'", "");
-        $('.NO_INSCRIPTION' + r2.replaceAll(" ", "")).show();
-    }
+    // $('.hide_post_class').hide();
+    // $('.hide_post_class2').hide();
+    // if ($("#pxp-p-filter-type").val() == "All") {
+    //     $('.hide_post_class').show();
+    // } else {
+    //     var value = $("#pxp-p-filter-type").val();
+    //     var r1 = value.replaceAll(".", "");
+    //     var r2 = r1.replaceAll("'", "");
+    //     $('.NO_INSCRIPTION' + value).show();
+    // }
+
+    $.ajax("<?php echo get_template_directory_uri(); ?>/page-db.php", {
+        type: 'POST',
+        data: {
+            post_type: "rental-property",
+            bloginfo: "<?php echo bloginfo('url');?>",
+            regionCode: $("#pxp-p-filter-type").val(),
+            orderBy: $("#pxp-sort-results").val(),
+            min_price: $("#pxp-p-filter-price-min").val(),
+            max_price: $("#pxp-p-filter-price-max").val(),
+            min_size: $("#pxp-p-filter-size-min").val(),
+            max_size: $("#pxp-p-filter-size-max").val(),
+            baths: $("#pxp-p-filter-baths").val(),
+            beds: $("#pxp-p-filter-beds").val(),
+        }, // data to submit
+        success: function(data, status, xhr) {
+            $('.filter_hide_section').hide();
+            $(".filter_display_section").html(data);
+        },
+        error: function(jqXhr, textStatus, errorMessage) {}
+    });
 });
 
 
@@ -798,6 +820,7 @@ $("#pxp-sort-results").change(function() {
         data: {
             post_type: "rental-property",
             bloginfo: "<?php echo bloginfo('url');?>",
+            regionCode: $("#pxp-p-filter-type").val(),
             orderBy: $("#pxp-sort-results").val(),
             min_price: $("#pxp-p-filter-price-min").val(),
             max_price: $("#pxp-p-filter-price-max").val(),
@@ -817,6 +840,14 @@ $("#pxp-sort-results").change(function() {
 $(".pxp-filter-clear-btn").click(function() {
     $('.filter_hide_section').show();
     $(".filter_display_section").hide();
+    $("#pxp-p-filter-type").val("");
+    $("#pxp-sort-results").val("");
+    $("#pxp-p-filter-price-min").val("");
+    $("#pxp-p-filter-price-max").val("")
+    $("#pxp-p-filter-size-min").val("")
+    $("#pxp-p-filter-size-max").val("")
+    $("#pxp-p-filter-baths").val("")
+    $("#pxp-p-filter-beds").val("")
 });
 $(".pxp-filter-btn").click(function() {
     $.ajax("<?php echo get_template_directory_uri(); ?>/page-db.php", {
@@ -824,6 +855,8 @@ $(".pxp-filter-btn").click(function() {
         data: {
             post_type: "rental-property",
             bloginfo: "<?php echo bloginfo('url');?>",
+            regionCode: $("#pxp-p-filter-type").val(),
+            orderBy: $("#pxp-sort-results").val(),
             min_price: $("#pxp-p-filter-price-min").val(),
             max_price: $("#pxp-p-filter-price-max").val(),
             min_size: $("#pxp-p-filter-size-min").val(),

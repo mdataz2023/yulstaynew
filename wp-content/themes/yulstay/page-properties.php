@@ -688,62 +688,6 @@ $dataIns = $wpdb->get_results("SELECT *  FROM INSCRIPTIONS i join wp_posts p on 
     }, 300);
 })(jQuery);
 
-$("#pxp-p-filter-type").change(function() {
-    $('.hide_post_class').hide();
-    if ($("#pxp-p-filter-type").val() == "All") {
-        $('.hide_post_class').show();
-    } else {
-        $('.NO_INSCRIPTION' + $("#pxp-p-filter-type").val()).show();
-    }
-});
-
-
-$("#pxp-sort-results").change(function() {
-    $.ajax("<?php echo get_template_directory_uri(); ?>/page-db.php", {
-        type: 'POST', // http method
-        data: {
-            post_type: "residential",
-            bloginfo: "<?php echo bloginfo('url');?>",
-            orderBy: $("#pxp-sort-results").val(),
-            min_price: $("#pxp-p-filter-price-min").val(),
-            max_price: $("#pxp-p-filter-price-max").val(),
-            min_size: $("#pxp-p-filter-size-min").val(),
-            max_size: $("#pxp-p-filter-size-max").val(),
-            baths: $("#pxp-p-filter-baths").val(),
-            beds: $("#pxp-p-filter-beds").val(),
-        }, // data to submit
-        success: function(data, status, xhr) {
-            $('.filter_hide_section').hide();
-            $(".filter_display_section").html(data);
-        },
-        error: function(jqXhr, textStatus, errorMessage) {}
-    });
-});
-
-$(".pxp-filter-clear-btn").click(function() {
-    $('.filter_hide_section').show();
-    $(".filter_display_section").hide();
-});
-$(".pxp-filter-btn").click(function() {
-    $.ajax("<?php echo get_template_directory_uri(); ?>/page-db.php", {
-        type: 'POST',
-        data: {
-            post_type: "residential",
-            bloginfo: "<?php echo bloginfo('url');?>",
-            min_price: $("#pxp-p-filter-price-min").val(),
-            max_price: $("#pxp-p-filter-price-max").val(),
-            min_size: $("#pxp-p-filter-size-min").val(),
-            max_size: $("#pxp-p-filter-size-max").val(),
-            baths: $("#pxp-p-filter-baths").val(),
-            beds: $("#pxp-p-filter-beds").val(),
-        },
-        success: function(data, status, xhr) {
-            $('.filter_hide_section').hide();
-            $(".filter_display_section").html(data);
-        },
-        error: function(jqXhr, textStatus, errorMessage) {}
-    });
-});
 </script>
 
 </body>

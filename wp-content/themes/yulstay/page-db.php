@@ -1,5 +1,4 @@
 <?php
-
 $servername = "localhost";
 $username = "uhd50p3aarwb3";
 $password = "b2p(N1;]:3Lc";
@@ -20,8 +19,10 @@ $max_price=$_POST['max_price'];
 $min_size=$_POST['min_size'];
 $max_size=$_POST['max_size'];
 $orderBy=@$_POST['orderBy'];
+$regionCode=@$_POST['regionCode'];
 $baths=$_POST['baths'];
 $beds=$_POST['beds'];
+$regionSql="";
 
 if(isset($min_price)&$min_price!=""){
     if($post_type=="rental-property"){
@@ -45,6 +46,12 @@ if(isset($beds)&$beds!=""){
 }
 if(isset($baths)&$baths!="undefined"&$baths!="" ){
     $customSql.=" and  NB_CHAMBRES_HORS_SOL >= '".$baths."'";
+}
+if(isset($min_size)&$min_size!=""){
+    $customSql.=" and  SUPERFICIE_HABITABLE >= '".$min_size."'";
+}
+if(isset($regionCode)&$regionCode!=""& $regionCode!="All"){
+    $regionSql.=" and  REGION_CODE = '".$regionCode."' ";
 }
 if(isset($min_size)&$min_size!=""){
     $customSql.=" and  SUPERFICIE_HABITABLE >= '".$min_size."'";
@@ -89,20 +96,27 @@ $postIndex=0;
         }
         $r2=str_replace(' ',"",$inscriptionsData['NOM_RUE_COMPLET']);
         $r1=str_replace("'","",$r2);
-$priceVariable=0;
+        $priceVariable=0;
         if($post_type=="rental-property"){
-            $priceVariable=    $inscriptionsData['PRIX_LOCATION_DEMANDE'];
+            $priceVariable=$inscriptionsData['PRIX_LOCATION_DEMANDE'];
         }else{
-            $priceVariable=    $inscriptionsData['PRIX_DEMANDE'];
+            $priceVariable=$inscriptionsData['PRIX_DEMANDE'];
         }
-        $REGION_CODES=mysqli_query($conn, "SELECT r.*,REGION_CODE,m.DESCRIPTION FROM MUNICIPALITES m JOIN REGIONS r ON m.REGION_CODE = r.CODE where m.CODE='".$inscriptionsData['MUN_CODE']."' limit 3");
+        $REGION_CODES=mysqli_query($conn, "SELECT r.*,REGION_CODE,m.DESCRIPTION FROM MUNICIPALITES m JOIN REGIONS r ON m.REGION_CODE = r.CODE where m.CODE='".$inscriptionsData['MUN_CODE']."' ".$regionSql." limit 1");
         $title="";
+        $regionNo='';
+        if(isset($regionCode)&$regionCode!="" & $regionCode!="All"){
+        if ($REGION_CODES->num_rows === 0) {
+            continue;
+        }
+        }
         while($REGION_CODE = mysqli_fetch_assoc($REGION_CODES)) {
             $title=$REGION_CODE['DESCRIPTION'];
+            $regionNo=$REGION_CODE['REGION_CODE'];
         }
 
         $data.='
-        <div class="col-sm-12 col-md-6 col-xxxl-4 NO_INSCRIPTION'.str_replace('.',"",$r1).'">
+        <div class="col-sm-12 col-md-6 col-xxxl-4 hide_post_class2 NO_INSCRIPTION'.str_replace('.',"",$regionNo).'">
             <a href="'.$_POST['bloginfo'].'/'.$_POST['post_type'].'/'.$inscriptionsData['post_name'].'" class="pxp-results-card-1 rounded-lg" data-prop="1">
                 <div id="card-carousel-'.$postIndex.'" class="carousel slide" data-ride="carousel"
                     data-interval="false">
@@ -122,7 +136,7 @@ $priceVariable=0;
              <div class="pxp-results-card-1-details">
                  <div class="pxp-results-card-1-details-title">'.  $title.'</div>
                  <div class="pxp-results-card-1-details-price">
-                     '.number_format($priceVariable,2).' $'.'
+                     '.number_format($priceVariable).' $'.'
                  </div>
              </div>
              <div class="pxp-results-card-1-features">

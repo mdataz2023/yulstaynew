@@ -32,7 +32,8 @@ $the_query = new WP_Query( array('post_type' =>'multi-residential','posts_per_pa
                         <div class="col-12 pxp-content-side-search-form-col">
                             <div class="form-group">
                                 <select class="custom-select" id="pxp-p-filter-type">
-                                    <option value="" disabled selected><?php _e('Select Listning','theme-text-domain'); ?></option>
+                                    <option value="" disabled selected>
+                                        <?php _e('Select Listning','theme-text-domain'); ?></option>
                                     <option value="All"><?php _e('All','theme-text-domain'); ?></option>
                                     <?php
                                      $datas = $wpdb->get_results("
@@ -130,7 +131,8 @@ $the_query = new WP_Query( array('post_type' =>'multi-residential','posts_per_pa
                     <div class="pxp-sort-form form-inline float-right">
                         <div class="form-group">
                             <select class="custom-select" id="pxp-sort-results">
-                                <option value="" selected="selected"><?php _e('Default Sort','theme-text-domain'); ?></option>
+                                <option value="" selected="selected"><?php _e('Default Sort','theme-text-domain'); ?>
+                                </option>
                                 <option value="low"><?php _e('Price (Lo-Hi)','theme-text-domain'); ?></option>
                                 <option value="high"><?php _e('Price (Hi-Lo)','theme-text-domain'); ?></option>
                             </select>
@@ -195,7 +197,7 @@ $the_query = new WP_Query( array('post_type' =>'multi-residential','posts_per_pa
                              }
                             echo   $cityName; ?></div>
                             <div class="pxp-results-card-1-details-price">
-                                <?php echo $currencyLetterPrefix."".number_format($inscriptionsData->PRIX_DEMANDE,2).''.$currencyLetterSuffix; ?>
+                                <?php echo $currencyLetterPrefix."".number_format($inscriptionsData->PRIX_DEMANDE).''.$currencyLetterSuffix; ?>
                             </div>
                         </div>
                         <div class="pxp-results-card-1-features">
@@ -357,7 +359,8 @@ $the_query = new WP_Query( array('post_type' =>'multi-residential','posts_per_pa
         </div>
         <div class="pxp-footer pxp-content-side-wrapper">
             <div class="pxp-footer-bottom">
-                <div class="pxp-footer-copyright">&copy; <?php _e('Yulasty. All Rights Reserved. 2023','theme-text-domain'); ?></div>
+                <div class="pxp-footer-copyright">&copy;
+                    <?php _e('Yulasty. All Rights Reserved. 2023','theme-text-domain'); ?></div>
             </div>
         </div>
     </div>
@@ -465,333 +468,344 @@ $the_query = new WP_Query( array('post_type' =>'multi-residential','posts_per_pa
 (function($) {
     "use strict";
 
-var map;
-var markers = [];
-var markerCluster;
-var styles;
-var propertiesList = [];
-var options = {
-    zoom: 14,
-    mapTypeId: 'Styled',
-    panControl: false,
-    zoomControl: true,
-    mapTypeControl: false,
-    scaleControl: false,
-    streetViewControl: false,
-    overviewMapControl: false,
-    scrollwheel: false,
-    zoomControlOptions: {
-        position: google.maps.ControlPosition.RIGHT_BOTTOM,
-    },
-    fullscreenControl: false,
-};
+    var map;
+    var markers = [];
+    var markerCluster;
+    var styles;
+    var propertiesList = [];
+    var options = {
+        zoom: 14,
+        mapTypeId: 'Styled',
+        panControl: false,
+        zoomControl: true,
+        mapTypeControl: false,
+        scaleControl: false,
+        streetViewControl: false,
+        overviewMapControl: false,
+        scrollwheel: false,
+        zoomControlOptions: {
+            position: google.maps.ControlPosition.RIGHT_BOTTOM,
+        },
+        fullscreenControl: false,
+    };
 
-styles = [{
-    "featureType": "water",
-    "elementType": "geometry",
-    "stylers": [{
-        "color": "#e9e9e9"
+    styles = [{
+        "featureType": "water",
+        "elementType": "geometry",
+        "stylers": [{
+            "color": "#e9e9e9"
+        }, {
+            "lightness": 17
+        }]
     }, {
-        "lightness": 17
-    }]
-}, {
-    "featureType": "landscape",
-    "elementType": "geometry",
-    "stylers": [{
-        "color": "#f5f5f5"
+        "featureType": "landscape",
+        "elementType": "geometry",
+        "stylers": [{
+            "color": "#f5f5f5"
+        }, {
+            "lightness": 20
+        }]
     }, {
-        "lightness": 20
-    }]
-}, {
-    "featureType": "road.highway",
-    "elementType": "geometry.fill",
-    "stylers": [{
-        "color": "#ffffff"
+        "featureType": "road.highway",
+        "elementType": "geometry.fill",
+        "stylers": [{
+            "color": "#ffffff"
+        }, {
+            "lightness": 17
+        }]
     }, {
-        "lightness": 17
-    }]
-}, {
-    "featureType": "road.highway",
-    "elementType": "geometry.stroke",
-    "stylers": [{
-        "color": "#ffffff"
+        "featureType": "road.highway",
+        "elementType": "geometry.stroke",
+        "stylers": [{
+            "color": "#ffffff"
+        }, {
+            "lightness": 29
+        }, {
+            "weight": 0.2
+        }]
     }, {
-        "lightness": 29
+        "featureType": "road.arterial",
+        "elementType": "geometry",
+        "stylers": [{
+            "color": "#ffffff"
+        }, {
+            "lightness": 18
+        }]
     }, {
-        "weight": 0.2
-    }]
-}, {
-    "featureType": "road.arterial",
-    "elementType": "geometry",
-    "stylers": [{
-        "color": "#ffffff"
+        "featureType": "road.local",
+        "elementType": "geometry",
+        "stylers": [{
+            "color": "#ffffff"
+        }, {
+            "lightness": 16
+        }]
     }, {
-        "lightness": 18
-    }]
-}, {
-    "featureType": "road.local",
-    "elementType": "geometry",
-    "stylers": [{
-        "color": "#ffffff"
+        "featureType": "poi",
+        "elementType": "geometry",
+        "stylers": [{
+            "color": "#f5f5f5"
+        }, {
+            "lightness": 21
+        }]
     }, {
-        "lightness": 16
-    }]
-}, {
-    "featureType": "poi",
-    "elementType": "geometry",
-    "stylers": [{
-        "color": "#f5f5f5"
+        "featureType": "poi.park",
+        "elementType": "geometry",
+        "stylers": [{
+            "color": "#dedede"
+        }, {
+            "lightness": 21
+        }]
     }, {
-        "lightness": 21
-    }]
-}, {
-    "featureType": "poi.park",
-    "elementType": "geometry",
-    "stylers": [{
-        "color": "#dedede"
+        "elementType": "labels.text.stroke",
+        "stylers": [{
+            "visibility": "on"
+        }, {
+            "color": "#ffffff"
+        }, {
+            "lightness": 16
+        }]
     }, {
-        "lightness": 21
-    }]
-}, {
-    "elementType": "labels.text.stroke",
-    "stylers": [{
-        "visibility": "on"
+        "elementType": "labels.text.fill",
+        "stylers": [{
+            "saturation": 36
+        }, {
+            "color": "#333333"
+        }, {
+            "lightness": 40
+        }]
     }, {
-        "color": "#ffffff"
+        "elementType": "labels.icon",
+        "stylers": [{
+            "visibility": "off"
+        }]
     }, {
-        "lightness": 16
-    }]
-}, {
-    "elementType": "labels.text.fill",
-    "stylers": [{
-        "saturation": 36
+        "featureType": "transit",
+        "elementType": "geometry",
+        "stylers": [{
+            "color": "#f2f2f2"
+        }, {
+            "lightness": 19
+        }]
     }, {
-        "color": "#333333"
+        "featureType": "administrative",
+        "elementType": "geometry.fill",
+        "stylers": [{
+            "color": "#fefefe"
+        }, {
+            "lightness": 20
+        }]
     }, {
-        "lightness": 40
-    }]
-}, {
-    "elementType": "labels.icon",
-    "stylers": [{
-        "visibility": "off"
-    }]
-}, {
-    "featureType": "transit",
-    "elementType": "geometry",
-    "stylers": [{
-        "color": "#f2f2f2"
-    }, {
-        "lightness": 19
-    }]
-}, {
-    "featureType": "administrative",
-    "elementType": "geometry.fill",
-    "stylers": [{
-        "color": "#fefefe"
-    }, {
-        "lightness": 20
-    }]
-}, {
-    "featureType": "administrative",
-    "elementType": "geometry.stroke",
-    "stylers": [{
-        "color": "#fefefe"
-    }, {
-        "lightness": 17
-    }, {
-        "weight": 1.2
-    }]
-}];
-<?php
+        "featureType": "administrative",
+        "elementType": "geometry.stroke",
+        "stylers": [{
+            "color": "#fefefe"
+        }, {
+            "lightness": 17
+        }, {
+            "weight": 1.2
+        }]
+    }];
+    <?php
                     $datas = $wpdb->get_results("SELECT NB_CHAMBRES,UM_SUPERFICIE_HABITABLE,NB_CHAMBRES_HORS_SOL,LATITUDE,LONGITUDE,NO_INSCRIPTION,DEVISE_PRIX_DEMANDE,PRIX_DEMANDE,PRIX_LOCATION_DEMANDE FROM INSCRIPTIONS i join wp_posts p on p.post_content=i.NO_INSCRIPTION where p.post_type='multi-residential' and i.CODE_STATUT='EV'", OBJECT );
                     foreach ($datas as $page) {
                         $post = $wpdb->get_row("SELECT ID from wp_posts where post_content='".$page->NO_INSCRIPTION."'", OBJECT );
                         $results = $wpdb->get_row(" SELECT * FROM PHOTOS where  NO_INSCRIPTION = '".$page->NO_INSCRIPTION."'", OBJECT );
 
                    ?>
-propertiesList.push({
-    id: <?php echo  $post->ID ;?>,
-    title: '<?php  echo $page->NOM_RUE_COMPLET." ".$page->NO_INSCRIPTION;?>',
-    photo: '<?php  echo $results->PhotoURL;?>',
-    position: {
-        lat: '<?php echo $page->LATITUDE;?>',
-        lng: '<?php echo $page->LONGITUDE;?>'
-    },
-    price: {
-        long: '<?php  echo $currencyLetterPrefix."".number_format($page->PRIX_DEMANDE,2).''.$currencyLetterSuffix;?>',
-        short: '<?php  echo $currencyLetterPrefix."".number_format($page->PRIX_DEMANDE,2).''.$currencyLetterSuffix;?>'
-    },
-    link: '<?php  echo get_permalink( $post->ID );?>',
-    features: {
-        beds: '<?php echo $page->NB_CHAMBRES;?>',
-        baths: '<?php echo $page->NB_CHAMBRES_HORS_SOL;?>',
-        size: '<?php echo $page->SUPERFICIE_HABITABLE." ".$page->UM_SUPERFICIE_HABITABLE;?>'
-    }
-});
-<?php
+    propertiesList.push({
+        id: <?php echo  $post->ID ;?>,
+        title: '<?php  echo $page->NOM_RUE_COMPLET." ".$page->NO_INSCRIPTION;?>',
+        photo: '<?php  echo $results->PhotoURL;?>',
+        position: {
+            lat: '<?php echo $page->LATITUDE;?>',
+            lng: '<?php echo $page->LONGITUDE;?>'
+        },
+        price: {
+            long: '<?php  echo $currencyLetterPrefix."".number_format($page->PRIX_DEMANDE).''.$currencyLetterSuffix;?>',
+            short: '<?php  echo $currencyLetterPrefix."".number_format($page->PRIX_DEMANDE).''.$currencyLetterSuffix;?>'
+        },
+        link: '<?php  echo get_permalink( $post->ID );?>',
+        features: {
+            beds: '<?php echo $page->NB_CHAMBRES;?>',
+            baths: '<?php echo $page->NB_CHAMBRES_HORS_SOL;?>',
+            size: '<?php echo $page->SUPERFICIE_HABITABLE." ".$page->UM_SUPERFICIE_HABITABLE;?>'
+        }
+    });
+    <?php
                     }
 
                     ?>
 
-function CustomMarker(id, latlng, map, classname, html) {
-    this.id = id;
-    this.latlng_ = latlng;
-    this.classname = classname;
-    this.html = html;
+    function CustomMarker(id, latlng, map, classname, html) {
+        this.id = id;
+        this.latlng_ = latlng;
+        this.classname = classname;
+        this.html = html;
 
-    this.setMap(map);
-}
+        this.setMap(map);
+    }
 
-CustomMarker.prototype = new google.maps.OverlayView();
+    CustomMarker.prototype = new google.maps.OverlayView();
 
-CustomMarker.prototype.draw = function() {
-    var me = this;
-    var div = this.div_;
+    CustomMarker.prototype.draw = function() {
+        var me = this;
+        var div = this.div_;
 
-    if (!div) {
-        div = this.div_ = document.createElement('div');
-        div.classList.add(this.classname);
-        div.innerHTML = this.html;
+        if (!div) {
+            div = this.div_ = document.createElement('div');
+            div.classList.add(this.classname);
+            div.innerHTML = this.html;
 
-        google.maps.event.addDomListener(div, 'click', function(event) {
-            google.maps.event.trigger(me, 'click');
+            google.maps.event.addDomListener(div, 'click', function(event) {
+                google.maps.event.trigger(me, 'click');
+            });
+
+            var panes = this.getPanes();
+            panes.overlayImage.appendChild(div);
+        }
+
+        var point = this.getProjection().fromLatLngToDivPixel(this.latlng_);
+
+        if (point) {
+            div.style.left = point.x + 'px';
+            div.style.top = point.y + 'px';
+        }
+    };
+
+    CustomMarker.prototype.remove = function() {
+        if (this.div_) {
+            this.div_.parentNode.removeChild(this.div_);
+            this.div_ = null;
+        }
+    };
+
+    CustomMarker.prototype.getPosition = function() {
+        return this.latlng_;
+    };
+
+    CustomMarker.prototype.addActive = function() {
+        if (this.div_) {
+            $('.pxp-price-marker').removeClass('active');
+            this.div_.classList.add('active');
+        }
+    };
+
+    CustomMarker.prototype.removeActive = function() {
+        if (this.div_) {
+            this.div_.classList.remove('active');
+        }
+    };
+
+    function addMarkers(props, map) {
+        $.each(props, function(i, prop) {
+            var latlng = new google.maps.LatLng(prop.position.lat, prop.position.lng);
+
+            var html = '<div class="pxp-marker-short-price">' + prop.price.short + '</div>' +
+                '<a href="' + prop.link + '" class="pxp-marker-details">' +
+                '<div class="pxp-marker-details-fig pxp-cover" style="background-image: url(' + prop.photo +
+                ');"></div>' +
+                '<div class="pxp-marker-details-info">' +
+                '<div class="pxp-marker-details-info-title">' + prop.title + '</div>' +
+                '<div class="pxp-marker-details-info-price">' + prop.price.long + '</div>' +
+                '<div class="pxp-marker-details-info-feat">' + prop.features.beds + ' BD<span>|</span>' +
+                prop.features.baths + ' BA<span>|</span>' + prop.features.size + '</div>' +
+                '</div>' +
+                '</a>';
+
+            var marker = new CustomMarker(prop.id, latlng, map, 'pxp-price-marker', html);
+
+            marker.id = prop.id;
+            markers.push(marker);
         });
-
-        var panes = this.getPanes();
-        panes.overlayImage.appendChild(div);
     }
 
-    var point = this.getProjection().fromLatLngToDivPixel(this.latlng_);
+    setTimeout(function() {
+        if ($('#results-map').length > 0) {
+            map = new google.maps.Map(document.getElementById('results-map'), options);
+            var styledMapType = new google.maps.StyledMapType(styles, {
+                name: 'Styled',
+            });
 
-    if (point) {
-        div.style.left = point.x + 'px';
-        div.style.top = point.y + 'px';
-    }
-};
+            map.mapTypes.set('Styled', styledMapType);
+            map.setCenter(new google.maps.LatLng(37.7577627, -122.4726194));
+            map.setZoom(15);
 
-CustomMarker.prototype.remove = function() {
-    if (this.div_) {
-        this.div_.parentNode.removeChild(this.div_);
-        this.div_ = null;
-    }
-};
+            addMarkers(propertiesList, map);
 
-CustomMarker.prototype.getPosition = function() {
-    return this.latlng_;
-};
+            map.fitBounds(markers.reduce(function(bounds, marker) {
+                return bounds.extend(marker.getPosition());
+            }, new google.maps.LatLngBounds()));
 
-CustomMarker.prototype.addActive = function() {
-    if (this.div_) {
-        $('.pxp-price-marker').removeClass('active');
-        this.div_.classList.add('active');
-    }
-};
+            markerCluster = new MarkerClusterer(map, markers, {
+                maxZoom: 18,
+                gridSize: 60,
+                styles: [{
+                        width: 40,
+                        height: 40,
+                    },
+                    {
+                        width: 60,
+                        height: 60,
+                    },
+                    {
+                        width: 80,
+                        height: 80,
+                    },
+                ]
+            });
 
-CustomMarker.prototype.removeActive = function() {
-    if (this.div_) {
-        this.div_.classList.remove('active');
-    }
-};
+            google.maps.event.trigger(map, 'resize');
 
-function addMarkers(props, map) {
-    $.each(props, function(i, prop) {
-        var latlng = new google.maps.LatLng(prop.position.lat, prop.position.lng);
+            $('.pxp-results-card-1').each(function(i) {
+                var propID = $(this).attr('data-prop');
 
-        var html = '<div class="pxp-marker-short-price">' + prop.price.short + '</div>' +
-            '<a href="' + prop.link + '" class="pxp-marker-details">' +
-            '<div class="pxp-marker-details-fig pxp-cover" style="background-image: url(' + prop.photo +
-            ');"></div>' +
-            '<div class="pxp-marker-details-info">' +
-            '<div class="pxp-marker-details-info-title">' + prop.title + '</div>' +
-            '<div class="pxp-marker-details-info-price">' + prop.price.long + '</div>' +
-            '<div class="pxp-marker-details-info-feat">' + prop.features.beds + ' BD<span>|</span>' +
-            prop.features.baths + ' BA<span>|</span>' + prop.features.size + '</div>' +
-            '</div>' +
-            '</a>';
+                $(this).on('mouseenter', function() {
+                    if (map) {
+                        var targetMarker = $.grep(markers, function(e) {
+                            return e.id == propID;
+                        });
 
-        var marker = new CustomMarker(prop.id, latlng, map, 'pxp-price-marker', html);
-
-        marker.id = prop.id;
-        markers.push(marker);
-    });
-}
-
-setTimeout(function() {
-    if ($('#results-map').length > 0) {
-        map = new google.maps.Map(document.getElementById('results-map'), options);
-        var styledMapType = new google.maps.StyledMapType(styles, {
-            name: 'Styled',
-        });
-
-        map.mapTypes.set('Styled', styledMapType);
-        map.setCenter(new google.maps.LatLng(37.7577627, -122.4726194));
-        map.setZoom(15);
-
-        addMarkers(propertiesList, map);
-
-        map.fitBounds(markers.reduce(function(bounds, marker) {
-            return bounds.extend(marker.getPosition());
-        }, new google.maps.LatLngBounds()));
-
-        markerCluster = new MarkerClusterer(map, markers, {
-            maxZoom: 18,
-            gridSize: 60,
-            styles: [{
-                    width: 40,
-                    height: 40,
-                },
-                {
-                    width: 60,
-                    height: 60,
-                },
-                {
-                    width: 80,
-                    height: 80,
-                },
-            ]
-        });
-
-        google.maps.event.trigger(map, 'resize');
-
-        $('.pxp-results-card-1').each(function(i) {
-            var propID = $(this).attr('data-prop');
-
-            $(this).on('mouseenter', function() {
-                if (map) {
+                        if (targetMarker.length > 0) {
+                            targetMarker[0].addActive();
+                            map.setCenter(targetMarker[0].latlng_);
+                        }
+                    }
+                });
+                $(this).on('mouseleave', function() {
                     var targetMarker = $.grep(markers, function(e) {
                         return e.id == propID;
                     });
 
                     if (targetMarker.length > 0) {
-                        targetMarker[0].addActive();
-                        map.setCenter(targetMarker[0].latlng_);
+                        targetMarker[0].removeActive();
                     }
-                }
-            });
-            $(this).on('mouseleave', function() {
-                var targetMarker = $.grep(markers, function(e) {
-                    return e.id == propID;
                 });
-
-                if (targetMarker.length > 0) {
-                    targetMarker[0].removeActive();
-                }
             });
-        });
-    }
-}, 300);
+        }
+    }, 300);
 })(jQuery);
 
 $("#pxp-p-filter-type").change(function() {
-    $('.hide_post_class').hide();
-    if ($("#pxp-p-filter-type").val() == "All") {
-        $('.hide_post_class').show();
-    } else {
-        var value = $("#pxp-p-filter-type").val();
-        var r1 = value.replaceAll(".", "");
-        var r2 = r1.replaceAll("'", "");
-        $('.NO_INSCRIPTION' + r2.replaceAll(" ", "")).show();
-    }
+    $.ajax("<?php echo get_template_directory_uri(); ?>/page-db.php", {
+        type: 'POST',
+        data: {
+            post_type: "multi-residential",
+            bloginfo: "<?php echo bloginfo('url');?>",
+            regionCode: $("#pxp-p-filter-type").val(),
+            orderBy: $("#pxp-sort-results").val(),
+            min_price: $("#pxp-p-filter-price-min").val(),
+            max_price: $("#pxp-p-filter-price-max").val(),
+            min_size: $("#pxp-p-filter-size-min").val(),
+            max_size: $("#pxp-p-filter-size-max").val(),
+            baths: $("#pxp-p-filter-baths").val(),
+            beds: $("#pxp-p-filter-beds").val(),
+        }, // data to submit
+        success: function(data, status, xhr) {
+            $('.filter_hide_section').hide();
+            $(".filter_display_section").html(data);
+        },
+        error: function(jqXhr, textStatus, errorMessage) {}
+    });
 });
 
 
@@ -801,6 +815,7 @@ $("#pxp-sort-results").change(function() {
         data: {
             post_type: "multi-residential",
             bloginfo: "<?php echo bloginfo('url');?>",
+            regionCode: $("#pxp-p-filter-type").val(),
             orderBy: $("#pxp-sort-results").val(),
             min_price: $("#pxp-p-filter-price-min").val(),
             max_price: $("#pxp-p-filter-price-max").val(),
@@ -820,6 +835,16 @@ $("#pxp-sort-results").change(function() {
 $(".pxp-filter-clear-btn").click(function() {
     $('.filter_hide_section').show();
     $(".filter_display_section").hide();
+
+    $("#pxp-p-filter-type").val("");
+    $("#pxp-sort-results").val("");
+    $("#pxp-p-filter-price-min").val("");
+    $("#pxp-p-filter-price-max").val("")
+    $("#pxp-p-filter-size-min").val("")
+    $("#pxp-p-filter-size-max").val("")
+    $("#pxp-p-filter-baths").val("")
+    $("#pxp-p-filter-beds").val("")
+
 });
 
 $(".pxp-filter-btn").click(function() {
@@ -828,6 +853,8 @@ $(".pxp-filter-btn").click(function() {
         data: {
             post_type: "multi-residential",
             bloginfo: "<?php echo bloginfo('url');?>",
+            regionCode: $("#pxp-p-filter-type").val(),
+            orderBy: $("#pxp-sort-results").val(),
             min_price: $("#pxp-p-filter-price-min").val(),
             max_price: $("#pxp-p-filter-price-max").val(),
             min_size: $("#pxp-p-filter-size-min").val(),
