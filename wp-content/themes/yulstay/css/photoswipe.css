@@ -188,6 +188,17 @@
     list-style-type: none;
   }
 
+  .wpml-ls-item span{
+    padding-left: 4px;
+    padding-right: 4px;
+    border-radius: 4px;
+    background-color: #cdcccc7d;
+    text-transform: uppercase;
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
   #menu-main-lang{
     padding: unset;
   }
