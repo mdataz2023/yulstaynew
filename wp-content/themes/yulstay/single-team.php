@@ -13,6 +13,17 @@ $social_media_heading=get_field('social_media_heading');
 $social_media_paragraph=get_field('social_media_paragraph');
 $broker_id=get_field('broker_id');
 
+$lang = get_bloginfo("language");
+$language="A";
+$currencyLetterPrefix="";
+$currencyLetterSuffix="";
+if ($lang == 'en-US'){
+    $language="A";
+    $currencyLetterPrefix="$ ";
+}else{
+    $language="F";
+    $currencyLetterSuffix=" $";
+}
 ?>
 
 <div class="pxp-content">
@@ -120,9 +131,9 @@ $broker_id=get_field('broker_id');
                               ?></div>
                             <div class="pxp-prop-card-1-details-price"><?php
                             if($inscriptionsData->post_type=="residential" || $inscriptionsData->post_type=="multi-residential"){
-                                echo $inscriptionsData->PRIX_DEMANDE.' $';
+                                echo $currencyLetterPrefix."".number_format($inscriptionsData->PRIX_DEMANDE).''.$currencyLetterSuffix;
                             }else{
-                                echo $inscriptionsData->PRIX_LOCATION_DEMANDE.' $';
+                                echo $currencyLetterPrefix."".number_format($inscriptionsData->PRIX_LOCATION_DEMANDE).''.$currencyLetterSuffix;
                             }
                          ?></div>
                             <?php  echo $inscriptionsData->NB_CHAMBRES;?> BD <span>|</span>

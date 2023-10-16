@@ -31,7 +31,8 @@ global $wpdb;
                         <div class="col-12 pxp-content-side-search-form-col">
                             <div class="form-group">
                                 <select class="custom-select" id="pxp-p-filter-type">
-                                    <option value="" disabled selected><?php _e('Select Listning','theme-text-domain'); ?></option>
+                                    <option value="" disabled selected>
+                                        <?php _e('Select Listning','theme-text-domain'); ?></option>
                                     <option value="All">All</option>
                                     <?php
                                      $datas = $wpdb->get_results("
@@ -127,7 +128,8 @@ global $wpdb;
                     <div class="pxp-sort-form form-inline float-right">
                         <div class="form-group">
                             <select class="custom-select" id="pxp-sort-results">
-                                <option value="" selected="selected"><?php _e('Default Sort','theme-text-domain'); ?></option>
+                                <option value="" selected="selected"><?php _e('Default Sort','theme-text-domain'); ?>
+                                </option>
                                 <option value="low"><?php _e('Price (Lo-Hi)','theme-text-domain'); ?></option>
                                 <option value="high"><?php _e('Price (Hi-Lo)','theme-text-domain'); ?></option>
                             </select>
@@ -157,7 +159,7 @@ global $wpdb;
 				?>
                 <div class="col-sm-12 col-md-6 col-xxxl-4 hide_post_class  NO_INSCRIPTION<?php
                 $REGION_CODE = $wpdb->get_row("SELECT r.*,REGION_CODE,m.DESCRIPTION FROM MUNICIPALITES m JOIN REGIONS r ON m.REGION_CODE = r.CODE where m.CODE='".$inscriptionsData->MUN_CODE."' ", OBJECT );
-            echo $REGION_CODE->REGION_CODE;?>" >
+            echo $REGION_CODE->REGION_CODE;?>">
 
                     <a href="<?php the_permalink(); ?>" class="pxp-results-card-1 rounded-lg" data-prop="1">
                         <div id="card-carousel-<?php echo  $postIndex;?>" class="carousel slide" data-ride="carousel"
@@ -194,7 +196,7 @@ global $wpdb;
                              }
                             echo   $cityName; ?></div>
                             <div class="pxp-results-card-1-details-price">
-                                <?php  echo $currencyLetterPrefix."".number_format($inscriptionsData->PRIX_DEMANDE,2).''.$currencyLetterSuffix;?>
+                                <?php  echo $currencyLetterPrefix."".number_format($inscriptionsData->PRIX_DEMANDE ).''.$currencyLetterSuffix;?>
                             </div>
                         </div>
                         <div class="pxp-results-card-1-features">
@@ -356,7 +358,8 @@ global $wpdb;
     </div>
     <div class="pxp-footer pxp-content-side-wrapper">
         <div class="pxp-footer-bottom">
-            <div class="pxp-footer-copyright">&copy; <?php _e('Yulasty. All Rights Reserved. 2023','theme-text-domain'); ?></div>
+            <div class="pxp-footer-copyright">&copy;
+                <?php _e('Yulasty. All Rights Reserved. 2023','theme-text-domain'); ?></div>
         </div>
     </div>
 </div>
@@ -617,8 +620,8 @@ global $wpdb;
             lng: '<?php echo $page->LONGITUDE;?>'
         },
         price: {
-            long: '<?php  echo $currencyLetterPrefix."".number_format($page->PRIX_DEMANDE,2).''.$currencyLetterSuffix;?>',
-            short: '<?php  echo $currencyLetterPrefix."".number_format($page->PRIX_DEMANDE,2).''.$currencyLetterSuffix;?>'
+            long: '<?php  echo $currencyLetterPrefix."".number_format($page->PRIX_DEMANDE).''.$currencyLetterSuffix;?>',
+            short: '<?php  echo $currencyLetterPrefix."".number_format($page->PRIX_DEMANDE ).''.$currencyLetterSuffix;?>'
         },
         link: '<?php  echo get_permalink( $post->ID );?>',
         features: {
@@ -782,12 +785,26 @@ global $wpdb;
 })(jQuery);
 
 $("#pxp-p-filter-type").change(function() {
-    $('.hide_post_class').hide();
-    if ($("#pxp-p-filter-type").val() == "All") {
-        $('.hide_post_class').show();
-    } else {
-        $('.NO_INSCRIPTION' + $("#pxp-p-filter-type").val()).show();
-    }
+    $.ajax("<?php echo get_template_directory_uri(); ?>/page-db.php", {
+        type: 'POST',
+        data: {
+            post_type: "residential",
+            bloginfo: "<?php echo bloginfo('url');?>",
+            regionCode: $("#pxp-p-filter-type").val(),
+            orderBy: $("#pxp-sort-results").val(),
+            min_price: $("#pxp-p-filter-price-min").val(),
+            max_price: $("#pxp-p-filter-price-max").val(),
+            min_size: $("#pxp-p-filter-size-min").val(),
+            max_size: $("#pxp-p-filter-size-max").val(),
+            baths: $("#pxp-p-filter-baths").val(),
+            beds: $("#pxp-p-filter-beds").val(),
+        }, // data to submit
+        success: function(data, status, xhr) {
+            $('.filter_hide_section').hide();
+            $(".filter_display_section").html(data);
+        },
+        error: function(jqXhr, textStatus, errorMessage) {}
+    });
 });
 
 
@@ -797,6 +814,7 @@ $("#pxp-sort-results").change(function() {
         data: {
             post_type: "residential",
             bloginfo: "<?php echo bloginfo('url');?>",
+            regionCode: $("#pxp-p-filter-type").val(),
             orderBy: $("#pxp-sort-results").val(),
             min_price: $("#pxp-p-filter-price-min").val(),
             max_price: $("#pxp-p-filter-price-max").val(),
@@ -816,6 +834,14 @@ $("#pxp-sort-results").change(function() {
 $(".pxp-filter-clear-btn").click(function() {
     $('.filter_hide_section').show();
     $(".filter_display_section").hide();
+    $("#pxp-p-filter-type").val("");
+    $("#pxp-sort-results").val("");
+    $("#pxp-p-filter-price-min").val("");
+    $("#pxp-p-filter-price-max").val("")
+    $("#pxp-p-filter-size-min").val("")
+    $("#pxp-p-filter-size-max").val("")
+    $("#pxp-p-filter-baths").val("")
+    $("#pxp-p-filter-beds").val("")
 });
 $(".pxp-filter-btn").click(function() {
     $.ajax("<?php echo get_template_directory_uri(); ?>/page-db.php", {
@@ -823,6 +849,8 @@ $(".pxp-filter-btn").click(function() {
         data: {
             post_type: "residential",
             bloginfo: "<?php echo bloginfo('url');?>",
+            regionCode: $("#pxp-p-filter-type").val(),
+            orderBy: $("#pxp-sort-results").val(),
             min_price: $("#pxp-p-filter-price-min").val(),
             max_price: $("#pxp-p-filter-price-max").val(),
             min_size: $("#pxp-p-filter-size-min").val(),
@@ -840,29 +868,29 @@ $(".pxp-filter-btn").click(function() {
 </script>
 
 <script>
-            // Find the element with the class "wpml-ls-native"
-            const spanElement = document.querySelector(".wpml-ls-native");
+// Find the element with the class "wpml-ls-native"
+const spanElement = document.querySelector(".wpml-ls-native");
 
-            if (spanElement) {
-            // Get the text content within the span element
-            const textContent = spanElement.textContent;
+if (spanElement) {
+    // Get the text content within the span element
+    const textContent = spanElement.textContent;
 
-            // Determine what to display based on the text content
-            let displayText = "";
-            if (textContent.includes("Français")) {
-                displayText = "FR";
-            } else if (textContent.includes("English")) {
-                displayText = "EN";
-            }
+    // Determine what to display based on the text content
+    let displayText = "";
+    if (textContent.includes("Français")) {
+        displayText = "FR";
+    } else if (textContent.includes("English")) {
+        displayText = "EN";
+    }
 
-            // Create a new span element with the determined display text
-            const newSpanElement = document.createElement("span");
-            newSpanElement.textContent = displayText;
+    // Create a new span element with the determined display text
+    const newSpanElement = document.createElement("span");
+    newSpanElement.textContent = displayText;
 
-            // Replace the original span element with the new one
-            spanElement.replaceWith(newSpanElement);
-            }
-        </script>
+    // Replace the original span element with the new one
+    spanElement.replaceWith(newSpanElement);
+}
+</script>
 
 </body>
 
