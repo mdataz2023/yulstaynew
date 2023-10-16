@@ -210,10 +210,10 @@
   }
 
   .navproperty-home{
-    text-transform: uppercase;
-    font-weight: 700;
-    color: #fff;
-    text-decoration: none;
+    text-transform: uppercase !important;
+    font-weight: 700 !important;
+    color: #fff !important;
+    text-decoration: none !important;
   }
 
   .pxp-is-sticky .navproperty-home{
