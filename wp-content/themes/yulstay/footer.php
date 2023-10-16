@@ -158,17 +158,20 @@
             // Get the text content within the span element
             const textContent = spanElement.textContent;
 
-            // Extract "En" from the text content
-            const extractedText = textContent.match(/En/);
-
-            if (extractedText) {
-                // Create a new span element to display only "En"
-                const newSpanElement = document.createElement("span");
-                newSpanElement.textContent = extractedText[0];
-
-                // Replace the original span element with the new one
-                spanElement.replaceWith(newSpanElement);
+            // Determine what to display based on the text content
+            let displayText = "";
+            if (textContent.includes("Français")) {
+                displayText = "FR";
+            } else if (textContent.includes("English")) {
+                displayText = "EN";
             }
+
+            // Create a new span element with the determined display text
+            const newSpanElement = document.createElement("span");
+            newSpanElement.textContent = displayText;
+
+            // Replace the original span element with the new one
+            spanElement.replaceWith(newSpanElement);
             }
         </script>
 
