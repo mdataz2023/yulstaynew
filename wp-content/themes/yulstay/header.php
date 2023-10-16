@@ -58,7 +58,7 @@
                                 <a href="<?php bloginfo('url'); ?>/" <?php if(get_the_ID() == '6') { ?> class="active-nav-link"<?php } ?>><?php _e('Home','theme-text-domain'); ?></a>
                             </li>
                             <li class="list-inline-item">
-                            <span class="navproperty" <?php if (get_the_ID() == '34' || get_the_ID() == '36' || get_the_ID() == '38' || get_the_ID() == '476' || get_the_ID() == '541' || get_the_ID() == '542') { ?> style="color: #0093a6 !important;" <?php } ?>><?php _e('Properties','theme-text-domain'); ?></span>
+                            <a class="navproperty" <?php if (get_the_ID() == '34' || get_the_ID() == '36' || get_the_ID() == '38' || get_the_ID() == '476' || get_the_ID() == '541' || get_the_ID() == '542') { ?> style="color: #0093a6 !important;" <?php } ?>><?php _e('Properties','theme-text-domain'); ?></a>
                                 <ul class="pxp-nav-sub rounded-lg">
                                     <li><a href="<?php bloginfo('url'); ?>/residential" <?php if(get_the_ID() == '34' || get_the_ID() == '476') { ?> class="active-nav-link"<?php } ?>><?php _e('Residential','theme-text-domain'); ?></a></li>
                                     <li><a href="<?php bloginfo('url'); ?>/multi-residential" <?php if(get_the_ID() == '38' || get_the_ID() == '541') { ?> class="active-nav-link"<?php } ?>><?php _e('Multi Residential','theme-text-domain'); ?></a></li>
