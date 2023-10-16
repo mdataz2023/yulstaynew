@@ -217,7 +217,7 @@
   }
 
   .pxp-is-sticky .navproperty-home{
-    color: #000;
+    color: #000 !important;
   }
 
   @media screen and (max-width: 991px){
