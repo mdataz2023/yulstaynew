@@ -72,13 +72,13 @@
                             <li class="list-inline-item">
                                 <a href="<?php bloginfo('url'); ?>/join-our-team" <?php if(get_the_ID() == '76' || get_the_ID() == '544') { ?> class="active-nav-link"<?php } ?>><?php _e('Join Our Team','theme-text-domain'); ?></a>
                             </li>
-                            <li class="list-inline-item">
+                            <!-- <li class="list-inline-item">
                                 <a href="#"><?php _e('Yulstay +','theme-text-domain'); ?></a>
                                 <ul class="pxp-nav-sub rounded-lg">
                                     <li><a href="blog.html"><?php _e('Pod Casts','theme-text-domain'); ?></a></li>
                                     <li><a href="single-post.html"><?php _e('Shop','theme-text-domain'); ?></a></li>
                                 </ul>
-                            </li>
+                            </li> -->
                             <li class="list-inline-item">
                             <?php
                                 if (has_nav_menu('main-lang')) {
