@@ -103,18 +103,7 @@ $the_query = new WP_Query( array('post_type' =>'rental-property','posts_per_page
                             </select>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-md-4 pxp-content-side-search-form-col">
-                        <div class="form-group">
-                            <label for="pxp-p-filter-size-min"><?php _e('Size (sq ft)','theme-text-domain'); ?></label>
-                            <input type="text" class="form-control" id="pxp-p-filter-size-min" placeholder="Min">
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4 pxp-content-side-search-form-col">
-                        <div class="form-group">
-                            <label for="pxp-p-filter-size-max" class="d-none d-sm-inline-block">&nbsp;</label>
-                            <input type="text" class="form-control" id="pxp-p-filter-size-max" placeholder="Max">
-                        </div>
-                    </div>
+
                 </div>
 
 
@@ -805,8 +794,8 @@ $("#pxp-p-filter-type").change(function() {
             orderBy: $("#pxp-sort-results").val(),
             min_price: $("#pxp-p-filter-price-min").val(),
             max_price: $("#pxp-p-filter-price-max").val(),
-            min_size: $("#pxp-p-filter-size-min").val(),
-            max_size: $("#pxp-p-filter-size-max").val(),
+            // min_size: $("#pxp-p-filter-size-min").val(),
+            // max_size: $("#pxp-p-filter-size-max").val(),
             baths: $("#pxp-p-filter-baths").val(),
             beds: $("#pxp-p-filter-beds").val(),
         }, // data to submit
@@ -829,8 +818,8 @@ $("#pxp-sort-results").change(function() {
             orderBy: $("#pxp-sort-results").val(),
             min_price: $("#pxp-p-filter-price-min").val(),
             max_price: $("#pxp-p-filter-price-max").val(),
-            min_size: $("#pxp-p-filter-size-min").val(),
-            max_size: $("#pxp-p-filter-size-max").val(),
+            // min_size: $("#pxp-p-filter-size-min").val(),
+            // max_size: $("#pxp-p-filter-size-max").val(),
             baths: $("#pxp-p-filter-baths").val(),
             beds: $("#pxp-p-filter-beds").val(),
         }, // data to submit
@@ -849,8 +838,8 @@ $(".pxp-filter-clear-btn").click(function() {
     $("#pxp-sort-results").val("");
     $("#pxp-p-filter-price-min").val("");
     $("#pxp-p-filter-price-max").val("")
-    $("#pxp-p-filter-size-min").val("")
-    $("#pxp-p-filter-size-max").val("")
+    // $("#pxp-p-filter-size-min").val("")
+    // $("#pxp-p-filter-size-max").val("")
     $("#pxp-p-filter-baths").val("")
     $("#pxp-p-filter-beds").val("")
 });
@@ -864,8 +853,8 @@ $(".pxp-filter-btn").click(function() {
             orderBy: $("#pxp-sort-results").val(),
             min_price: $("#pxp-p-filter-price-min").val(),
             max_price: $("#pxp-p-filter-price-max").val(),
-            min_size: $("#pxp-p-filter-size-min").val(),
-            max_size: $("#pxp-p-filter-size-max").val(),
+            // min_size: $("#pxp-p-filter-size-min").val(),
+            // max_size: $("#pxp-p-filter-size-max").val(),
             baths: $("#pxp-p-filter-baths").val(),
             beds: $("#pxp-p-filter-beds").val(),
         },
