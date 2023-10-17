@@ -35,16 +35,21 @@ global $wpdb;
                                         <?php _e('Select Listning','theme-text-domain'); ?></option>
                                     <option value="All">All</option>
                                     <?php
-                                     $datas = $wpdb->get_results("
-                                     SELECT
-                                            *
-                                        FROM
-                                            REGIONS", OBJECT );
+                                     $datas = $wpdb->get_results("SELECT
+                                     m.*, REGION_CODE, m.DESCRIPTION
+                                 FROM
+                                 wp_posts p join
+                                     INSCRIPTIONS i on i.NO_INSCRIPTION=p.post_content
+                                         JOIN
+                                     MUNICIPALITES m ON m.CODE = i.MUN_CODE
+                                         JOIN
+                                     REGIONS r ON m.REGION_CODE = r.CODE where p.post_type='residential' and i.CODE_STATUT='EV'
+                                 GROUP BY i.MUN_CODE", OBJECT );
                                      foreach ($datas as $REGIONS) {
                                         ?>
                                     <option value="<?php echo $REGIONS->CODE;?>">
                                         <?php
-                                            echo $language=="A" ?$REGIONS->DESCRIPTION_ANGLAISE:$REGIONS->DESCRIPTION_FRANCAISE;?>
+                                            echo $language=="A" ?$REGIONS->DESCRIPTION:$REGIONS->DESCRIPTION;?>
                                     </option>
                                     <?php }
                                 ?>
