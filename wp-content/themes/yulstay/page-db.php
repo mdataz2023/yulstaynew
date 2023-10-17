@@ -1,5 +1,9 @@
 <?php
 $servername = "localhost";
+// $username = "root";
+// $password = "1234";
+// $dbname = "yulstaynewdb";
+
 $username = "uhd50p3aarwb3";
 $password = "b2p(N1;]:3Lc";
 $dbname = "db3slni3ex0xza";
@@ -47,11 +51,8 @@ if(isset($beds)&$beds!=""){
 if(isset($baths)&$baths!="undefined"&$baths!="" ){
     $customSql.=" and  NB_CHAMBRES_HORS_SOL >= '".$baths."'";
 }
-if(isset($min_size)&$min_size!=""){
-    $customSql.=" and  SUPERFICIE_HABITABLE >= '".$min_size."'";
-}
 if(isset($regionCode)&$regionCode!=""& $regionCode!="All"){
-    $regionSql.=" and  REGION_CODE = '".$regionCode."' ";
+    $regionSql.=" and  m.CODE = '".$regionCode."' ";
 }
 if(isset($min_size)&$min_size!=""){
     $customSql.=" and  SUPERFICIE_HABITABLE >= '".$min_size."'";
@@ -59,6 +60,8 @@ if(isset($min_size)&$min_size!=""){
 if(isset($max_size)&$max_size!=""){
     $customSql.=" and  SUPERFICIE_HABITABLE <= '".$max_size."'";
 }
+
+
 if(isset($orderBy)&$orderBy!=""){
 
 $price="PRIX_DEMANDE";
@@ -71,6 +74,7 @@ if($post_type=="rental-property"){
         $customSql.=" order by  ".$price." desc";
     }
 }
+
 
 $sql= "SELECT * FROM INSCRIPTIONS i join wp_posts p on p.post_content=i.NO_INSCRIPTION where p.post_type='".$_POST['post_type']."' and i.CODE_STATUT='EV' ".$customSql;
 // $sql = "INSERT INTO filter_table (QUERY) VALUES ('".$sql1."' )";
