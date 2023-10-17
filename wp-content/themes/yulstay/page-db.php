@@ -20,8 +20,8 @@ $customSql="";
 $post_type=$_POST['post_type'];
 $min_price=$_POST['min_price'];
 $max_price=$_POST['max_price'];
-$min_size=$_POST['min_size'];
-$max_size=$_POST['max_size'];
+// $min_size=$_POST['min_size'];
+// $max_size=$_POST['max_size'];
 $orderBy=@$_POST['orderBy'];
 $regionCode=@$_POST['regionCode'];
 $baths=$_POST['baths'];
@@ -54,12 +54,12 @@ if(isset($baths)&$baths!="undefined"&$baths!="" ){
 if(isset($regionCode)&$regionCode!=""& $regionCode!="All"){
     $regionSql.=" and  m.CODE = '".$regionCode."' ";
 }
-if(isset($min_size)&$min_size!=""){
-    $customSql.=" and  SUPERFICIE_HABITABLE >= '".$min_size."'";
-}
-if(isset($max_size)&$max_size!=""){
-    $customSql.=" and  SUPERFICIE_HABITABLE <= '".$max_size."'";
-}
+// if(isset($min_size)&$min_size!=""){
+//     $customSql.=" and  SUPERFICIE_HABITABLE >= '".$min_size."'";
+// }
+// if(isset($max_size)&$max_size!=""){
+//     $customSql.=" and  SUPERFICIE_HABITABLE <= '".$max_size."'";
+// }
 
 
 if(isset($orderBy)&$orderBy!=""){
