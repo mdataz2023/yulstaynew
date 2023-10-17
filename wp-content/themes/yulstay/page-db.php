@@ -30,16 +30,16 @@ $regionSql="";
 
 if(isset($min_price)&$min_price!=""){
     if($post_type=="rental-property"){
-        $customSql.=" and  PRIX_LOCATION_DEMANDE >= '".$min_price."'";
+        $customSql.=" and  PRIX_LOCATION_DEMANDE >= ".$min_price;
     }else{
-        $customSql.=" and  PRIX_DEMANDE >= '".$min_price."'";
+        $customSql.=" and  PRIX_DEMANDE >= ".$min_price;
     }
 }
 if(isset($max_price)&$max_price!=""){
     if($post_type=="rental-property"){
-        $customSql.=" and  PRIX_LOCATION_DEMANDE <= '".$max_price."'";
+        $customSql.=" and  PRIX_LOCATION_DEMANDE <= ".$max_price."";
     }else{
-        $customSql.=" and  PRIX_DEMANDE <= '".$max_price."'";
+        $customSql.=" and  PRIX_DEMANDE <= ".$max_price."";
     }
 }
 if(isset($beds)&$beds!=""){
