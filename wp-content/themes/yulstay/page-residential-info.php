@@ -127,11 +127,11 @@ get_header();
                             <a href="single-property.html" class="pxp-cta text-uppercase pxp-animate">Residential Team</a>
                         </div>
                     </div>
-                    <div class="pxp-carousel-ticker">
+                    <!-- <div class="pxp-carousel-ticker">
                         <div class="pxp-carousel-ticker-counter"></div>
                         <div class="pxp-carousel-ticker-divider">&nbsp;&nbsp;/&nbsp;&nbsp;</div>
                         <div class="pxp-carousel-ticker-total"></div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
