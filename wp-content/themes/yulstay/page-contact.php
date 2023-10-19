@@ -114,7 +114,9 @@ $contact_page_email_address_link = get_field('contact_page_email_address_link');
                                     </select>
                                 </div> -->
                             </div>
-                            <div id="pxp-contact-map" class="mt-3"></div>
+                            <div id="pxp-contact-map" class="mt-3">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61881264.85818968!2d-42.547092534468554!3d18.801153713081384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc91b04898a3c2b%3A0xa830225a045600ad!2sYulstay%20Real%20Estate%20Services!5e0!3m2!1sen!2slk!4v1697704318079!5m2!1sen!2slk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
                         </div>
                     </div>
                 </div>
