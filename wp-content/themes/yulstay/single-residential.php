@@ -35,10 +35,10 @@ $MUNICIPALITES = $wpdb->get_row("SELECT r.* FROM MUNICIPALITES m JOIN REGIONS r 
                     $cityName="";
                      if ($lang == 'en-US'){
                         $property=$GENRES_PROPRIETES->DESCRIPTION_ANGLAISE;
-                        $cityName=$MUNICIPALITES->DESCRIPTION_ANGLAISE;
+                        $cityName=$MUNICIPALITES->DESCRIPTION;
                      }else{
                         $property=$GENRES_PROPRIETES->DESCRIPTION_FRANCAISE;
-                        $cityName=$MUNICIPALITES->DESCRIPTION_FRANCAISE;
+                        $cityName=$MUNICIPALITES->DESCRIPTION;
                      }
                      echo $property." for sale, ".$cityName;?></h2>
                     <p class="pxp-sp-top-address pxp-text-light">
@@ -353,7 +353,7 @@ if ($lang == 'en-US'){
                                         <option value="17">17 Years</option>
                                         <option value="18">18 Years</option>
                                         <option value="19">19 Years</option>
-                                        <option value="20">20 Years</option>
+                                        <option selected value="20">20 Years</option>
                                         <option value="21">21 Years</option>
                                         <option value="22">22 Years</option>
                                         <option value="23">23 Years</option>
