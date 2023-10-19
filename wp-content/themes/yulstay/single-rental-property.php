@@ -40,7 +40,7 @@ $MUNICIPALITES = $wpdb->get_row("SELECT * FROM MUNICIPALITES m JOIN REGIONS r ON
                      }
                      echo $property." for sale, ".$cityName;?></h2>
                     <p class="pxp-sp-top-address pxp-text-light">
-                        <?php echo  $inscriptionsData->APPARTEMENT.' , '.$inscriptionsData->NOM_RUE_COMPLET.$cityName.' , '.$inscriptionsData->CODE_POSTAL;?>
+                        <?php echo  $inscriptionsData->APPARTEMENT.' , '.$inscriptionsData->NOM_RUE_COMPLET.$cityName;?>
                     </p>
                 </div>
                 <div class="col-sm-12 col-md-4">
