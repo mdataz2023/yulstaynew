@@ -39,7 +39,7 @@ $MUNICIPALITES = $wpdb->get_row("SELECT * FROM MUNICIPALITES m JOIN REGIONS r ON
                      }
                      echo $property." for sale, ".$cityName;?></h2>
                     <p class="pxp-sp-top-address pxp-text-light">
-                        <?php echo  $inscriptionsData->APPARTEMENT.' , '.$inscriptionsData->NOM_RUE_COMPLET.$cityName.' , '.$inscriptionsData->CODE_POSTAL;?>
+                        <?php echo  $inscriptionsData->NO_CIVIQUE_DEBUT.', '.$inscriptionsData->NOM_RUE_COMPLET.', app.'.$inscriptionsData->APPARTEMENT.', '. $cityName;?>
                     </p>
                 </div>
                 <div class="col-sm-12 col-md-4">
@@ -128,7 +128,8 @@ $MUNICIPALITES = $wpdb->get_row("SELECT * FROM MUNICIPALITES m JOIN REGIONS r ON
                         </div>
                         <div class="col-sm-6">
                             <div class="pxp-sp-key-details-item">
-                                <div class="text-uppercase"><?php _e('Year of construction','theme-text-domain'); ?></div>
+                                <div class="text-uppercase"><?php _e('Year of construction','theme-text-domain'); ?>
+                                </div>
                                 <div class="pxp-sp-kd-item-value"><?php echo $inscriptionsData->ANNEE_CONTRUCTION?>
                                 </div>
                             </div>
@@ -185,15 +186,17 @@ $MUNICIPALITES = $wpdb->get_row("SELECT * FROM MUNICIPALITES m JOIN REGIONS r ON
   echo $remarques->TEXTE==""?" ":$remarques->TEXTE;
   ?>
                             <span class="pxp-dots">...</span><span class="pxp-dots-more">
-                                <span class="addendaFontSize"><br><?php _e('Addenda','theme-text-domain'); ?> <br></span>
+                                <span class="addendaFontSize"><br><?php _e('Addenda','theme-text-domain'); ?>
+                                    <br></span>
                                 <?php
                                  $results = $wpdb->get_results("SELECT * FROM ADDENDA WHERE NO_INSCRIPTION = '".get_the_content()."' and CODE_LANGUE='".$language."'", OBJECT );
                                  foreach ($results as $page) {
                                     echo $page->TEXTE.'<br/>';
                                  }
                     ?> <br>
-                    <span class="addendaFontSize"><br><?php _e('Inclusions','theme-text-domain'); ?> <br></span>
-                    <?php
+                                <span class="addendaFontSize"><br><?php _e('Inclusions','theme-text-domain'); ?>
+                                    <br></span>
+                                <?php
 if ($lang == 'en-US'){
 echo $inscriptionsData->INCLUS_ANGLAIS."<br><br>".$inscriptionsData->EXCLUS_ANGLAIS;
 }else{
@@ -204,8 +207,10 @@ echo $inscriptionsData->INCLUS_FRANCAIS."<br><br>".$inscriptionsData->EXCLUS_FRA
 
                             </span>
                         </p>
-                        <a href="#" class="pxp-sp-more text-uppercase"><span class="pxp-sp-more-1"><?php _e('Continue Reading','theme-text-domain'); ?>
-                                <span class="fa fa-angle-down"></span></span><span class="pxp-sp-more-2"><?php _e('Show Less','theme-text-domain'); ?> <span
+                        <a href="#" class="pxp-sp-more text-uppercase"><span
+                                class="pxp-sp-more-1"><?php _e('Continue Reading','theme-text-domain'); ?>
+                                <span class="fa fa-angle-down"></span></span><span
+                                class="pxp-sp-more-2"><?php _e('Show Less','theme-text-domain'); ?> <span
                                     class="fa fa-angle-up"></span></span></a>
                     </div>
                 </div>
@@ -306,7 +311,8 @@ echo $inscriptionsData->INCLUS_FRANCAIS."<br><br>".$inscriptionsData->EXCLUS_FRA
                                     <div class="row justify-content-between">
                                         <div class="col-8">
                                             <div class="pxp-calculator-data-label"><span
-                                                    class="fa fa-minus"></span><?php _e('Monthly Payment','theme-text-domain'); ?></div>
+                                                    class="fa fa-minus"></span><?php _e('Monthly Payment','theme-text-domain'); ?>
+                                            </div>
                                         </div>
                                         <div class="col-4 text-right">
                                             <div class="pxp-calculator-data-sum" id="monthlyPayment">$ </div>
@@ -320,21 +326,24 @@ echo $inscriptionsData->INCLUS_FRANCAIS."<br><br>".$inscriptionsData->EXCLUS_FRA
                         <div class="row">
                             <div class="col-sm-12 col-md-6">
                                 <div class="form-group">
-                                    <label for="pxp-calculator-form-term"><?php _e('Purchase price','theme-text-domain'); ?></label>
+                                    <label
+                                        for="pxp-calculator-form-term"><?php _e('Purchase price','theme-text-domain'); ?></label>
                                     <input type="text" onkeyup="calculatorFunction()" class="form-control p "
-                                        id="purchasePrice" value="<?php echo $inscriptionsData->PRIX_DEMANDE; ?>" >
+                                        id="purchasePrice" value="<?php echo $inscriptionsData->PRIX_DEMANDE; ?>">
                                 </div>
                             </div>
                             <div class="col-sm-12 col-md-6">
                                 <div class="form-group">
-                                    <label for="pxp-calculator-form-interest"><?php _e('Interest rate','theme-text-domain'); ?></label>
+                                    <label
+                                        for="pxp-calculator-form-interest"><?php _e('Interest rate','theme-text-domain'); ?></label>
                                     <input type="text" onkeyup="calculatorFunction()" class="form-control "
                                         id="interestRate" value="2">
                                 </div>
                             </div>
                             <div class="col-sm-12 col-md-6">
                                 <div class="form-group">
-                                    <label for="pxp-calculator-form-price"><?php _e('Amortization','theme-text-domain'); ?></label>
+                                    <label
+                                        for="pxp-calculator-form-price"><?php _e('Amortization','theme-text-domain'); ?></label>
                                     <select onchange="calculatorFunction()" class="custom-select" id="amortization">
                                         <option value="5">5 Years</option>
                                         <option value="6">6 Years</option>
@@ -367,7 +376,8 @@ echo $inscriptionsData->INCLUS_FRANCAIS."<br><br>".$inscriptionsData->EXCLUS_FRA
                                 <div class="row">
                                     <div class="col-5 col-sm-5 col-md-4">
                                         <div class="form-group">
-                                            <label for="pxp-calculator-form-down-percentage"><?php _e('Down payment','theme-text-domain'); ?></label>
+                                            <label
+                                                for="pxp-calculator-form-down-percentage"><?php _e('Down payment','theme-text-domain'); ?></label>
                                             <select onchange="calculatorFunction()" class="custom-select"
                                                 id="downPayment">
                                                 <option value="0.05">5 %</option>
@@ -379,7 +389,8 @@ echo $inscriptionsData->INCLUS_FRANCAIS."<br><br>".$inscriptionsData->EXCLUS_FRA
                                     </div>
                                     <div class="col-7 col-sm-7 col-md-8">
                                         <div class="form-group">
-                                            <label for="pxp-calculator-form-down-price"><?php _e('Mortgage amount','theme-text-domain'); ?></label>
+                                            <label
+                                                for="pxp-calculator-form-down-price"><?php _e('Mortgage amount','theme-text-domain'); ?></label>
                                             <input type="text" class="form-control pxp-form-control-transform"
                                                 id="mortgage" disabled>
                                         </div>
@@ -648,7 +659,8 @@ echo $inscriptionsData->INCLUS_FRANCAIS."<br><br>".$inscriptionsData->EXCLUS_FRA
                         <div class="clearfix"></div>
                         <div class="pxp-sp-agent-btns mt-3 mt-md-4">
                             <a href="#pxp-contact-agent" class="pxp-sp-agent-btn-main" data-toggle="modal"
-                                data-target="#pxp-contact-agent"><span class="fa fa-envelope-o"></span> <?php _e('Contact Agent','theme-text-domain'); ?></a>
+                                data-target="#pxp-contact-agent"><span class="fa fa-envelope-o"></span>
+                                <?php _e('Contact Agent','theme-text-domain'); ?></a>
                         </div>
                     </div>
                 </div>
@@ -971,7 +983,7 @@ echo $inscriptionsData->INCLUS_FRANCAIS."<br><br>".$inscriptionsData->EXCLUS_FRA
         }
     }, 300);
     calculatorFunction();
-    $('.pxp-sp-more-1').click(function (e) {
+    $('.pxp-sp-more-1').click(function(e) {
         e = e || window.event;
         e.preventDefault ? e.preventDefault() : e.returnValue = false;
 
@@ -980,7 +992,7 @@ echo $inscriptionsData->INCLUS_FRANCAIS."<br><br>".$inscriptionsData->EXCLUS_FRA
         $('.pxp-sp-more-2').show();
         $('.pxp-sp-more-1').hide();
     });
-    $('.pxp-sp-more-2').click(function (e) {
+    $('.pxp-sp-more-2').click(function(e) {
         e = e || window.event;
         e.preventDefault ? e.preventDefault() : e.returnValue = false;
         $('.pxp-dots').toggle();
