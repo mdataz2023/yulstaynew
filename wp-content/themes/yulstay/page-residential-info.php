@@ -17,7 +17,7 @@ get_header();
                     </ol> -->
                     <div class="carousel-inner">
                         <div class="carousel-item active" data-slide="0">
-                            <div class="pxp-hero-bg pxp-cover" style="background-image: url(images/ph-big.jpg);"></div>
+                            <div class="pxp-hero-bg pxp-cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/imageres1.png);"></div>
                             <div class="pxp-caption">
                                 <div class="container">
                                     <div class="row">
@@ -41,7 +41,7 @@ get_header();
                             </div>
                         </div>
                         <div class="carousel-item" data-slide="1">
-                            <div class="pxp-hero-bg pxp-cover" style="background-image: url(images/ph-big.jpg);"></div>
+                            <div class="pxp-hero-bg pxp-cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/imageres2.png);"></div>
                             <div class="pxp-caption">
                                 <div class="container">
                                     <div class="row">
@@ -64,7 +64,7 @@ get_header();
                             </div>
                         </div>
                         <div class="carousel-item" data-slide="2">
-                            <div class="pxp-hero-bg pxp-cover" style="background-image: url(images/ph-big.jpg);"></div>
+                            <div class="pxp-hero-bg pxp-cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/imageres3.png);"></div>
                             <div class="pxp-caption">
                                 <div class="container">
                                     <div class="row">
@@ -111,17 +111,17 @@ get_header();
                 </div>
                 <div class="carousel slide pxp-hero-props-carousel-1-prices" data-ride="carousel" data-pause="false" data-interval="false">
                     <div class="carousel-inner">
-                        <div class="carousel-item active" data-slide="0" style="background-color: #e1a447;">
+                        <div class="carousel-item active" data-slide="0" style="background-color: #00e0fd;">
                             <div class="pxp-progress"></div>
                             <div class="pxp-price"><span>SALE</span></div>
                             <a href="single-property.html" class="pxp-cta text-uppercase pxp-animate">Residential Team</a>
                         </div>
-                        <div class="carousel-item" data-slide="1" style="background-color: #837c12;">
+                        <div class="carousel-item" data-slide="1" style="background-color: #00aec5;">
                             <div class="pxp-progress"></div>
                             <div class="pxp-price"><span>PURCHASE</span></div>
                             <a href="single-property.html" class="pxp-cta text-uppercase pxp-animate">Residential Team</a>
                         </div>
-                        <div class="carousel-item" data-slide="2" style="background-color: #687389;">
+                        <div class="carousel-item" data-slide="2" style="background-color: #007b8b;">
                             <div class="pxp-progress"></div>
                             <div class="pxp-price"><span>INVESTMENT</span></div>
                             <a href="single-property.html" class="pxp-cta text-uppercase pxp-animate">Residential Team</a>
