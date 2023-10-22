@@ -279,7 +279,7 @@ if ($lang == 'en-US'){
 
                             ?>
                         <div>
-                            <div class="pxp-testim-1-item">
+                            <div class="pxp-testim-1-item" style="height: 270px;">
                                 <?php if ( has_post_thumbnail() ) {
                                     $attachment_image = wp_get_attachment_url( get_post_thumbnail_id() );
                                     //echo '<link rel="preload" as="image" href="' . esc_attr( $attachment_image ) . '">';
@@ -287,8 +287,7 @@ if ($lang == 'en-US'){
                                 <div class="pxp-testim-1-item-avatar pxp-cover" style="background-image: url(<?php echo $attachment_image; ?>)"></div>
                                 <?php } ?>
                                 <div class="pxp-testim-1-item-name"><?php the_title(); ?></div>
-                                <div class="pxp-agents-1-item-details-email"><span class="fa fa-phone"></span>
-                                <?php echo get_field('team_member_telephone'); ?></div>
+                                <div class="pxp-testim-1-item-location"><span class="fa fa-phone"></span> <?php echo get_field('team_member_telephone'); ?></div>
                                 <div class="pxp-testim-1-item-message">the exserpt</div>
                             </div>
                         </div>
