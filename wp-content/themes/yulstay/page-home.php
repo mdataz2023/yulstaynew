@@ -280,10 +280,9 @@ if ($lang == 'en-US'){
                             ?>
                         <div>
                             <a href="<?php the_permalink(); ?>">
-                                <div class="pxp-testim-1-item" style="height: 270px;">
+                                <div class="pxp-testim-1-item" style="height: 270px; color:black !important;">
                                     <?php if ( has_post_thumbnail() ) {
                                         $attachment_image = wp_get_attachment_url( get_post_thumbnail_id() );
-                                        //echo '<link rel="preload" as="image" href="' . esc_attr( $attachment_image ) . '">';
                                     ?>
                                     <div class="pxp-testim-1-item-avatar pxp-cover" style="background-image: url(<?php echo $attachment_image; ?>)"></div>
                                     <?php } ?>
