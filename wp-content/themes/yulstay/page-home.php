@@ -289,7 +289,7 @@ if ($lang == 'en-US'){
                                     <?php } ?>
                                     <div class="pxp-testim-1-item-name"><?php the_title(); ?></div>
                                     <div class="pxp-testim-1-item-location"><span class="fa fa-phone"></span> <?php echo get_field('team_member_telephone'); ?></div>
-                                    <div class="pxp-testim-1-item-message">the exserpt</div>
+                                    <div class="pxp-testim-1-item-message"><?php echo get_field('team_member_destination'); ?></div>
                                 </div>
                             </a>
                         </div>
