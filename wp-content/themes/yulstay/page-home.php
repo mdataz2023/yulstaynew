@@ -259,6 +259,68 @@ if ($lang == 'en-US'){
             <a href="<?php bloginfo('url'); ?>/team" class="pxp-primary-cta text-uppercase mt-1 mt-md-4 pxp-animate"><?php _e('See All Agents','theme-text-domain'); ?></a>
         </div>
 
+        <div class="pxp-testim-1 pt-100 pb-100 mt-100 pxp-cover" style="background-image: url(images/ph-big.jpg);">
+                <div class="pxp-testim-1-intro">
+                    <h2 class="pxp-section-h2">Customer Testimonials</h2>
+                    <p class="pxp-text-light">What our customers say about us</p>
+                    <a href="#" class="pxp-primary-cta text-uppercase mt-2 mt-md-3 mt-lg-5 pxp-animate">Read All Stories</a>
+                </div>
+                <div class="pxp-testim-1-container mt-4 mt-md-5 mt-lg-0">
+                    <div class="owl-carousel pxp-testim-1-stage">
+                            <?php $the_query = new WP_Query( array('post_type' =>'team','posts_per_page' => '10',  'post__not_in'   => array( $id),) );?>
+                            <?php if ( have_posts())   : while ( $the_query->have_posts() ) : $the_query->the_post();?>
+
+                            <?php
+                                                $thumbnail_id = get_post_thumbnail_id();
+                                                $thumbnail_url = wp_get_attachment_image_src( $thumbnail_id, 'thumbnail-size', true );
+                                                $thumbnail_meta = get_post_meta( $thumbnail_id, '_wp_attachment_image_alt', true);
+
+                            $categories = get_the_category();
+
+                            ?>
+                        <div>
+                            <div class="pxp-testim-1-item">
+                                <?php if ( has_post_thumbnail() ) {
+                                    $attachment_image = wp_get_attachment_url( get_post_thumbnail_id() );
+                                    //echo '<link rel="preload" as="image" href="' . esc_attr( $attachment_image ) . '">';
+                                ?>
+                                <div class="pxp-testim-1-item-avatar pxp-cover" style="background-image: url(<?php echo $attachment_image; ?>)"></div>
+                                <?php } ?>
+                                <div class="pxp-testim-1-item-name"><?php the_title(); ?></div>
+                                <div class="pxp-agents-1-item-details-email"><span class="fa fa-phone"></span>
+                                <?php echo get_field('team_member_telephone'); ?></div>
+                                <div class="pxp-testim-1-item-message">the exserpt</div>
+                            </div>
+                        </div>
+                            <?php endwhile; endif; ?>
+                        <!-- <div>
+                            <div class="pxp-testim-1-item">
+                                <div class="pxp-testim-1-item-avatar pxp-cover" style="background-image: url(images/ph-avatar.jpg)"></div>
+                                <div class="pxp-testim-1-item-name">Rebecca Eason</div>
+                                <div class="pxp-testim-1-item-location">Washington, MD</div>
+                                <div class="pxp-testim-1-item-message">And it’s no wonder Resideo has shaken things up: As anyone who’s ever tried to rent or buy property in Washington knows, the experience is loaded with pain points.</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="pxp-testim-1-item">
+                                <div class="pxp-testim-1-item-avatar pxp-cover" style="background-image: url(images/ph-avatar.jpg)"></div>
+                                <div class="pxp-testim-1-item-name">Kenneth Spiers</div>
+                                <div class="pxp-testim-1-item-location">Cleveland, OH</div>
+                                <div class="pxp-testim-1-item-message">While Resideo functions like a traditional broker, the company's promise is using technology to reduce the time and friction of  buying and selling house or apartment.</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="pxp-testim-1-item">
+                                <div class="pxp-testim-1-item-avatar pxp-cover" style="background-image: url(images/ph-avatar.jpg)"></div>
+                                <div class="pxp-testim-1-item-name">Susanne Weil</div>
+                                <div class="pxp-testim-1-item-location">Cambridge, MA</div>
+                                <div class="pxp-testim-1-item-message">And it’s no wonder Resideo has shaken things up: As anyone who’s ever tried to rent or buy property in Cambridge knows, the experience is loaded with pain points.</div>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+
         <div class="pxp-services pxp-cover mt-100 pt-100 mb-200"
             style="background-image: url(<?php echo $home_why_choose_us_section_backgroud_image; ?>); background-position: 50% 60%;">
             <h2 class="text-center pxp-section-h2"><?php echo $home_why_choose_us_section_title; ?></h2>
