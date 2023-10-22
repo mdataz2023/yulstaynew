@@ -261,8 +261,8 @@ if ($lang == 'en-US'){
 
         <div class="pxp-testim-1 pt-100 pb-100 mt-100 pxp-cover" style="background-image: url(images/ph-big.jpg);">
                 <div class="pxp-testim-1-intro">
-                    <h2 class="pxp-section-h2">Customer Testimonials</h2>
-                    <p class="pxp-text-light">What our customers say about us</p>
+                    <h2 class="pxp-section-h2"><?php echo $home_team_section_title; ?></h2>
+                    <p class="pxp-text-light"><?php echo $home_team_section_description; ?></p>
                     <a href="#" class="pxp-primary-cta text-uppercase mt-2 mt-md-3 mt-lg-5 pxp-animate">Read All Stories</a>
                 </div>
                 <div class="pxp-testim-1-container mt-4 mt-md-5 mt-lg-0">
@@ -279,17 +279,19 @@ if ($lang == 'en-US'){
 
                             ?>
                         <div>
-                            <div class="pxp-testim-1-item" style="height: 270px;">
-                                <?php if ( has_post_thumbnail() ) {
-                                    $attachment_image = wp_get_attachment_url( get_post_thumbnail_id() );
-                                    //echo '<link rel="preload" as="image" href="' . esc_attr( $attachment_image ) . '">';
-                                ?>
-                                <div class="pxp-testim-1-item-avatar pxp-cover" style="background-image: url(<?php echo $attachment_image; ?>)"></div>
-                                <?php } ?>
-                                <div class="pxp-testim-1-item-name"><?php the_title(); ?></div>
-                                <div class="pxp-testim-1-item-location"><span class="fa fa-phone"></span> <?php echo get_field('team_member_telephone'); ?></div>
-                                <div class="pxp-testim-1-item-message">the exserpt</div>
-                            </div>
+                            <a href="<?php the_permalink(); ?>">
+                                <div class="pxp-testim-1-item" style="height: 270px;">
+                                    <?php if ( has_post_thumbnail() ) {
+                                        $attachment_image = wp_get_attachment_url( get_post_thumbnail_id() );
+                                        //echo '<link rel="preload" as="image" href="' . esc_attr( $attachment_image ) . '">';
+                                    ?>
+                                    <div class="pxp-testim-1-item-avatar pxp-cover" style="background-image: url(<?php echo $attachment_image; ?>)"></div>
+                                    <?php } ?>
+                                    <div class="pxp-testim-1-item-name"><?php the_title(); ?></div>
+                                    <div class="pxp-testim-1-item-location"><span class="fa fa-phone"></span> <?php echo get_field('team_member_telephone'); ?></div>
+                                    <div class="pxp-testim-1-item-message">the exserpt</div>
+                                </div>
+                            </a>
                         </div>
                             <?php endwhile; endif; ?>
                         <!-- <div>
