@@ -837,7 +837,7 @@ if ($lang == 'en-US'){
                                 <?php _e('Contact Agent','theme-text-domain'); ?></a>
                         </div>
                     </div>
-<br>
+                    <div></div>
                     <h3><?php _e('Listed By','theme-text-domain'); ?></h3>
                     <?php
                             $MEMBRES = $wpdb->get_row("SELECT * FROM MEMBRES WHERE CODE ='".$inscriptionsData->COURTIER_INSCRIPTEUR_1."'", OBJECT );
