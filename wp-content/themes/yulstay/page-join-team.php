@@ -31,7 +31,7 @@ $join_our_team_page_email_address_link = get_field('join_our_team_page_email_add
                 <div class="pxp-contact-hero mt-4 mt-md-5">
                     <div class="pxp-contact-hero-fig pxp-cover" style="background-image: url(<?php echo $join_our_team_page_banner_image ?>); background-position: 50% 80%;"></div>
 
-                    <div class="pxp-contact-hero-offices-container">
+                    <!-- <div class="pxp-contact-hero-offices-container">
                         <div class="container">
                             <div class="pxp-contact-hero-offices">
                                 <h2 class="pxp-section-h2"><?php echo $join_our_team_page_contact_details_title; ?></h2>
@@ -46,7 +46,7 @@ $join_our_team_page_email_address_link = get_field('join_our_team_page_email_add
                                             </p>
                                         </div>
                                     </div>
-                                    <!-- <div class="col-sm-12 col-md-4">
+                                    <div class="col-sm-12 col-md-4">
                                         <div class="pxp-contact-hero-offices-title mt-3 mt-md-4">New York</div>
                                         <div class="pxp-contact-hero-offices-info mt-2 mt-md-3">
                                             <p class="pxp-is-address">90 Fifth Avenue, 3rd Floor<br>New York, NY 1980</p>
@@ -65,11 +65,11 @@ $join_our_team_page_email_address_link = get_field('join_our_team_page_email_add
                                                 <a href="#">office-sf@resideo.com</a>
                                             </p>
                                         </div>
-                                    </div> -->
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
 
                 <div class="container mt-200">
