@@ -81,8 +81,8 @@ $join_our_team_page_email_address_link = get_field('join_our_team_page_email_add
                                         <div class="pxp-contact-hero-offices-info mt-2 mt-md-3">
                                             <p class="pxp-is-address"><?php echo $join_our_team_page_address_line_two; ?></p>
                                             <p>
-                                                <a href="<?php echo $join_our_team_page_contact_number_link; ?>"><?php echo $join_our_team_page_contact_number_link; ?></a><br>
-                                                <a href="<?php echo $join_our_team_page_email_address_link; ?>"><?php echo $join_our_team_page_email_address_link; ?></a>
+                                                <a href="<?php echo $join_our_team_page_contact_number_link; ?>"><?php echo $join_our_team_page_contact_number; ?></a><br>
+                                                <a href="<?php echo $join_our_team_page_email_address_link; ?>"><?php echo $join_our_team_page_email_address; ?></a>
                                             </p>
                                         </div>
                                     </div>
@@ -91,8 +91,8 @@ $join_our_team_page_email_address_link = get_field('join_our_team_page_email_add
                                         <div class="pxp-contact-hero-offices-info mt-2 mt-md-3">
                                             <p class="pxp-is-address">4030 Boulevard Côte Vertu Ouest Suite 111, Saint-Laurent, Quebec, H4R 1V4</p>
                                             <p>
-                                                <a href="<?php echo $join_our_team_page_contact_number_link; ?>"><?php echo $join_our_team_page_contact_number_link; ?></a><br>
-                                                <a href="<?php echo $join_our_team_page_email_address_link; ?>"><?php echo $join_our_team_page_email_address_link; ?></a>
+                                                <a href="<?php echo $join_our_team_page_contact_number_link; ?>"><?php echo $join_our_team_page_contact_number; ?></a><br>
+                                                <a href="<?php echo $join_our_team_page_email_address_link; ?>"><?php echo $join_our_team_page_email_address; ?></a>
                                             </p>
                                         </div>
                                     </div>
@@ -101,8 +101,8 @@ $join_our_team_page_email_address_link = get_field('join_our_team_page_email_add
                                         <div class="pxp-contact-hero-offices-info mt-2 mt-md-3">
                                             <p class="pxp-is-address">6600, aut Transcanadienne, Suite 203, Pointe-Claire, Québec, H9R 4S2</p>
                                             <p>
-                                                <a href="<?php echo $join_our_team_page_contact_number_link; ?>"><?php echo $join_our_team_page_contact_number_link; ?></a><br>
-                                                <a href="<?php echo $join_our_team_page_email_address_link; ?>"><?php echo $join_our_team_page_email_address_link; ?></a>
+                                                <a href="<?php echo $join_our_team_page_contact_number_link; ?>"><?php echo $join_our_team_page_contact_number; ?></a><br>
+                                                <a href="<?php echo $join_our_team_page_email_address_link; ?>"><?php echo $join_our_team_page_email_address; ?></a>
                                             </p>
                                         </div>
                                     </div>
