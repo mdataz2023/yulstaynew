@@ -56,7 +56,7 @@ $contact_page_email_address_link = get_field('contact_page_email_address_link');
                             <div class="pxp-contact-hero-offices">
                                 <h2 class="pxp-section-h2"><?php echo $contact_page_contact_details_title; ?></h2>
                                 <div class="row">
-                                    <div class="col-sm-12 col-md-6">
+                                    <div class="col-sm-12 col-md-4">
                                         <div class="pxp-contact-hero-offices-title"><?php echo $contact_page_address_line_one; ?></div>
                                         <div class="pxp-contact-hero-offices-info mt-2 mt-md-3">
                                             <p class="pxp-is-address"><?php echo $contact_page_address_line_two; ?></p>
@@ -66,7 +66,7 @@ $contact_page_email_address_link = get_field('contact_page_email_address_link');
                                             </p>
                                         </div>
                                     </div>
-                                    <div class="col-sm-12 col-md-6">
+                                    <div class="col-sm-12 col-md-4">
                                         <div class="pxp-contact-hero-offices-title">Saint-Laurent - BLVD Immobilier</div>
                                         <div class="pxp-contact-hero-offices-info mt-2 mt-md-3">
                                             <p class="pxp-is-address">4030 Boulevard Côte Vertu Ouest Suite 111, Saint-Laurent, Quebec, H4R 1V4</p>
@@ -76,7 +76,7 @@ $contact_page_email_address_link = get_field('contact_page_email_address_link');
                                             </p>
                                         </div>
                                     </div>
-                                    <div class="col-sm-12 col-md-6">
+                                    <div class="col-sm-12 col-md-4">
                                         <div class="pxp-contact-hero-offices-title">Pointe-Claire - BLVD Immobilier</div>
                                         <div class="pxp-contact-hero-offices-info mt-2 mt-md-3">
                                             <p class="pxp-is-address">6600, aut Transcanadienne, Suite 203, Pointe-Claire, Québec, H9R 4S2</p>
