@@ -72,6 +72,7 @@ $join_our_team_page_email_address_link = get_field('join_our_team_page_email_add
                     </div> -->
                 </div>
 
+                        <div class="container">
                             <div class="pxp-contact-hero-offices">
                                 <h2 class="pxp-section-h2"><?php echo $join_our_team_page_contact_details_title; ?></h2>
                                 <div class="row">
@@ -87,6 +88,7 @@ $join_our_team_page_email_address_link = get_field('join_our_team_page_email_add
                                     </div>
                                 </div>
                             </div>
+                        </div>
 
                 <div class="container mt-200">
                     <div class="row">
