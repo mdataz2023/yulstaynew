@@ -808,6 +808,7 @@ if ($lang == 'en-US'){
                 </div>
             </div>
             <div class="col-lg-4">
+                <div>
                 <div class="pxp-single-property-section pxp-sp-agent-section mt-4 mt-md-5 mt-lg-0">
                     <h3><?php _e('Listed By','theme-text-domain'); ?></h3>
                     <?php
@@ -838,7 +839,9 @@ if ($lang == 'en-US'){
                         </div>
                     </div>
                 </div>
+                </div>
 
+                <div>
                 <div class="pxp-single-property-section pxp-sp-agent-section mt-4 mt-md-5 mt-lg-0">
                     <h3><?php _e('Listed By','theme-text-domain'); ?></h3>
                     <?php
@@ -868,6 +871,7 @@ if ($lang == 'en-US'){
                                 <?php _e('Contact Agent','theme-text-domain'); ?></a>
                         </div>
                     </div>
+                </div>
                 </div>
             </div>
         </div>
