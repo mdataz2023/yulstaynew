@@ -32,9 +32,9 @@ if ($lang == 'en-US'){
             <div class="row">
                 <div class="col-sm-12 col-lg-8">
                     <h1 class="pxp-page-header float-left"><?php the_title(); ?></h1>
-                    <span class="pxp-agent-rating"><span class="fa fa-star"></span><span class="fa fa-star"></span><span
+                    <!-- <span class="pxp-agent-rating"><span class="fa fa-star"></span><span class="fa fa-star"></span><span
                             class="fa fa-star"></span><span class="fa fa-star"></span><span
-                            class="fa fa-star"></span></span>
+                            class="fa fa-star"></span></span> -->
                     <div class="clearfix"></div>
                     <p><?php echo $team_member_destination; ?></p>
                     <div class="mt-4 mt-md-5">
