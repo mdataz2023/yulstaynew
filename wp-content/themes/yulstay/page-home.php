@@ -238,9 +238,9 @@ if ($lang == 'en-US'){
 
         <div class="pxp-testim-1 pt-100 pb-100 mt-100 pxp-cover" style="background-image: url(https://mdataz.com/yulstaynew/wp-content/uploads/2023/10/KJP0223-HDR.jpg);">
                 <div class="pxp-testim-1-intro">
-                    <h2 class="pxp-section-h2"><?php echo $home_team_section_title; ?></h2>
-                    <p class="pxp-text-light"><?php echo $home_team_section_description; ?></p>
-                    <a href="#" class="pxp-primary-cta text-uppercase mt-2 mt-md-3 mt-lg-5 pxp-animate">Read All Stories</a>
+                    <h2 class="pxp-section-h2 font-white-in"><?php echo $home_team_section_title; ?></h2>
+                    <p class="pxp-text-light font-white-in"><?php echo $home_team_section_description; ?></p>
+                    <a href="#" class="pxp-primary-cta text-uppercase mt-2 mt-md-3 mt-lg-5 pxp-animate font-white-in">Read All Stories</a>
                 </div>
                 <div class="pxp-testim-1-container mt-4 mt-md-5 mt-lg-0">
                     <div class="owl-carousel pxp-testim-1-stage">
@@ -300,8 +300,8 @@ if ($lang == 'en-US'){
 
         <div class="pxp-services pxp-cover mt-100 pt-100 mb-200"
             style="background-image: url(<?php echo $home_why_choose_us_section_backgroud_image; ?>); background-position: 50% 60%;">
-            <h2 class="text-center pxp-section-h2"><?php echo $home_why_choose_us_section_title; ?></h2>
-            <p class="pxp-text-light text-center"><?php echo $home_why_choose_us_section_description; ?></p>
+            <h2 class="text-center pxp-section-h2 font-white-in"><?php echo $home_why_choose_us_section_title; ?></h2>
+            <p class="pxp-text-light text-center font-white-in"><?php echo $home_why_choose_us_section_description; ?></p>
 
 
             <div class="container">
@@ -560,9 +560,9 @@ if ($lang == 'en-US'){
 
         <div class="pxp-testim-1 pt-100 pb-100 mt-100 pxp-cover" style="background-image: url(<?php echo $home_page_testimonial_background_image; ?>);">
             <div class="pxp-testim-1-intro">
-                <h2 class="pxp-section-h2"><?php echo $home_page_testimonial_title; ?></h2>
-                <p class="pxp-text-light"><?php echo $home_page_testimonial_description; ?></p>
-                <a href="<?php echo $home_page_testimonial_link; ?>" class="pxp-primary-cta text-uppercase mt-2 mt-md-3 mt-lg-5 pxp-animate"><?php _e('Read All Stories','theme-text-domain'); ?></a>
+                <h2 class="pxp-section-h2 font-white-in"><?php echo $home_page_testimonial_title; ?></h2>
+                <p class="pxp-text-light font-white-in"><?php echo $home_page_testimonial_description; ?></p>
+                <a href="<?php echo $home_page_testimonial_link; ?>" class="pxp-primary-cta text-uppercase mt-2 mt-md-3 mt-lg-5 pxp-animate font-white-in"><?php _e('Read All Stories','theme-text-domain'); ?></a>
             </div>
             <div class="pxp-testim-1-container mt-4 mt-md-5 mt-lg-0">
                 <div class="owl-carousel pxp-testim-1-stage">
