@@ -14,6 +14,8 @@ $join_our_team_page_contact_number = get_field('join_our_team_page_contact_numbe
 $join_our_team_page_contact_number_link = get_field('join_our_team_page_contact_number_link');
 $join_our_team_page_email_address = get_field('join_our_team_page_email_address');
 $join_our_team_page_email_address_link = get_field('join_our_team_page_email_address_link');
+$join_our_team_page_contact_deatils_description = get_field('join_our_team_page_contact_deatils_description');
+$join_our_team_page_list_section_title = get_field('join_our_team_page_list_section_title');
 
 ?>
 
@@ -76,7 +78,7 @@ $join_our_team_page_email_address_link = get_field('join_our_team_page_email_add
                             <div class="pxp-contact-hero-offices">
                                 <h2 class="pxp-section-h2"><?php echo $join_our_team_page_contact_details_title; ?></h2>
 
-                                <p class="pxp-is-address">We’re dedicated to bringing out the very best in all our team members.  If you’re ready to work, we’re ready to support you with the help of tools, strategies and just being by your side every step of the way.</p>
+                                <p class="pxp-is-address"><?php echo $join_our_team_page_contact_deatils_description; ?></p>
 
                                 <div class="row">
                                     <div class="col-sm-12 col-md-4">
@@ -108,6 +110,34 @@ $join_our_team_page_email_address_link = get_field('join_our_team_page_email_add
                                                 <a href="<?php echo $join_our_team_page_email_address_link; ?>"><?php echo $join_our_team_page_email_address; ?></a>
                                             </p>
                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container">
+                            <div class="pxp-contact-hero-offices">
+                                <h2 class="pxp-section-h2"><?php echo $join_our_team_page_list_section_title; ?></h2>
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-6">
+                                    <?php if( have_rows('join_our_team_page_list_left') ): $s= 1; $a=0; ?>
+
+                                    <?php while( have_rows('join_our_team_page_list_left_items') ): the_row() ;
+                                            $i++;
+                                                    $join_our_team_page_list_left_items = get_sub_field('join_our_team_page_list_left_items');
+                                            ?>
+                                        <p class="pxp-is-address"><?php echo $join_our_team_page_list_left_items; ?></p>
+                                        <?php endwhile; endif; ?>
+                                    </div>
+                                    <div class="col-sm-12 col-md-6">
+                                    <?php if( have_rows('join_our_team_page_list_right') ): $s= 1; $a=0; ?>
+
+                                    <?php while( have_rows('join_our_team_page_list_right_items') ): the_row() ;
+                                            $i++;
+                                                    $join_our_team_page_list_right_items = get_sub_field('join_our_team_page_list_right_items');
+                                            ?>
+                                        <p class="pxp-is-address"><?php echo $join_our_team_page_list_right_items; ?></p>
+                                        <?php endwhile; endif; ?>
                                     </div>
                                 </div>
                             </div>
