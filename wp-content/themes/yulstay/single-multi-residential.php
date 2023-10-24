@@ -695,7 +695,6 @@ echo $inscriptionsData->INCLUS_FRANCAIS."<br><br>".$inscriptionsData->EXCLUS_FRA
                             </div>
                         </div>
                     </div>
-                    
                 </div>
             </div>
         </div>

@@ -497,7 +497,8 @@ echo $inscriptionsData->INCLUS_FRANCAIS."<br><br>".$inscriptionsData->EXCLUS_FRA
                 </div>
             </div>
             <div class="col-lg-4">
-                <div class="pxp-single-property-section pxp-sp-agent-section mt-4 mt-md-5 mt-lg-0">
+                <div class="pxp-single-property-section pxp-sp-agent-section mt-4 mt-md-5 mt-lg-0"  style="display: flex; flex-direction: column;">
+                <div>
                     <h3><?php _e('Listed By','theme-text-domain'); ?></h3>
                     <?php
                             $MEMBRES = $wpdb->get_row("SELECT * FROM MEMBRES WHERE CODE ='".$inscriptionsData->COURTIER_INSCRIPTEUR_1."'", OBJECT );
@@ -525,6 +526,37 @@ echo $inscriptionsData->INCLUS_FRANCAIS."<br><br>".$inscriptionsData->EXCLUS_FRA
                                 data-target="#pxp-contact-agent"><span class="fa fa-envelope-o"></span> <?php _e('Contact Agent','theme-text-domain'); ?></a>
                         </div>
                     </div>
+                </div>
+                <div>
+                    <h3><?php _e('Listed By','theme-text-domain'); ?></h3>
+                    <?php
+                            $MEMBRES = $wpdb->get_row("SELECT * FROM MEMBRES WHERE CODE ='".$inscriptionsData->COURTIER_INSCRIPTEUR_1."'", OBJECT );
+                        ?>
+                    <div class="pxp-sp-agent mt-3 mt-md-4">
+                        <a href="<?php echo site_url()."/team/".strtolower($MEMBRES->PRENOM."-". $MEMBRES->NOM)?>"
+                            class="pxp-sp-agent-fig pxp-cover rounded-lg"
+                            style="background-image: url('<?php echo $MEMBRES->PHOTO_URL?>'); background-position: top center"></a>
+                        <div class="pxp-sp-agent-info">
+                            <div class="pxp-sp-agent-info-name"><a
+                                    href="<?php echo site_url()."/team/".strtolower($MEMBRES->PRENOM."-". $MEMBRES->NOM)?>"><?php echo $MEMBRES->NOM." ".$MEMBRES->PRENOM?></a>
+                            </div>
+                            <div class="pxp-sp-agent-info-rating"><span class="fa fa-star"></span><span
+                                    class="fa fa-star"></span><span class="fa fa-star"></span><span
+                                    class="fa fa-star"></span><span class="fa fa-star"></span></div>
+                            <div class="pxp-sp-agent-info-email"><a
+                                    href="mailto:<?php echo $MEMBRES->COURRIEL?>"><?php echo $MEMBRES->COURRIEL?></a>
+                            </div>
+                            <div class="pxp-sp-agent-info-phone"><span
+                                    class="fa fa-phone"></span><?php echo $MEMBRES->TELEPHONE_1?></div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="pxp-sp-agent-btns mt-3 mt-md-4">
+                            <a href="#pxp-contact-agent" class="pxp-sp-agent-btn-main" data-toggle="modal"
+                                data-target="#pxp-contact-agent"><span class="fa fa-envelope-o"></span> <?php _e('Contact Agent','theme-text-domain'); ?></a>
+                        </div>
+                    </div>
+                </div>
+                    
                 </div>
             </div>
         </div>
