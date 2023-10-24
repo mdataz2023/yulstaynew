@@ -76,7 +76,7 @@ $join_our_team_page_paragraph = get_field('join_our_team_page_paragraph');
                 </div>
 
                         <div class="container">
-                            <div class="pxp-contact-hero-offices" style="padding-bottom: 0px; padding-top: 0px;">
+                            <div class="pxp-contact-hero-offices">
                                 <h2 class="pxp-section-h2"><?php echo $join_our_team_page_contact_details_title; ?></h2>
 
                                 <p class="pxp-is-address"><?php echo $join_our_team_page_contact_deatils_description; ?></p>
@@ -117,7 +117,7 @@ $join_our_team_page_paragraph = get_field('join_our_team_page_paragraph');
                         </div>
 
                         <div class="container">
-                            <div class="pxp-contact-hero-offices">
+                            <div class="pxp-contact-hero-offices" style="padding-bottom: 0px; padding-top: 0px;">
                                 <h2 class="pxp-contact-hero-offices-title"><?php echo $join_our_team_page_list_section_title; ?></h2>
                                 <div class="row">
                                     <div class="col-sm-12 col-md-6">
@@ -127,7 +127,17 @@ $join_our_team_page_paragraph = get_field('join_our_team_page_paragraph');
                                             $i++;
                                                     $join_our_team_page_list_left_items = get_sub_field('join_our_team_page_list_left_items');
                                             ?>
-                                        <p class="pxp-is-address"><?php echo $join_our_team_page_list_left_items; ?></p>
+                                            <div style="display:flex; gap:6px;">
+                                                <div>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#00AEC5" class="bi bi-plus" viewBox="0 0 16 16">
+                                                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                                                    </svg>
+                                                </div>
+                                                <div>
+                                                    <p class="pxp-is-address"><?php echo $join_our_team_page_list_left_items; ?></p>
+                                                </div>
+                                            </div>
+                                        
                                         <?php endwhile; endif; ?>
                                     </div>
                                     <div class="col-sm-12 col-md-6">
@@ -137,7 +147,17 @@ $join_our_team_page_paragraph = get_field('join_our_team_page_paragraph');
                                             $i++;
                                                     $join_our_team_page_list_right_items = get_sub_field('join_our_team_page_list_right_items');
                                             ?>
-                                        <p class="pxp-is-address"><?php echo $join_our_team_page_list_right_items; ?></p>
+                                        
+                                        <div style="display:flex; gap:6px;">
+                                                <div>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#00AEC5" class="bi bi-plus" viewBox="0 0 16 16">
+                                                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                                                    </svg>
+                                                </div>
+                                                <div>
+                                                    <p class="pxp-is-address"><?php echo $join_our_team_page_list_right_items; ?></p>
+                                                </div>
+                                            </div>
                                         <?php endwhile; endif; ?>
                                     </div>
                                 </div>
