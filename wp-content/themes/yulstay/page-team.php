@@ -91,7 +91,7 @@ $team_page_title_description = get_field('team_page_title_description');
                                     <div class="pxp-agents-1-item-details-spacer"></div>
                                     <div class="pxp-agents-1-item-cta text-uppercase"><?php _e('More Details','theme-text-domain'); ?></div>
                                 </div>
-                                <div class="pxp-agents-1-item-rating"><span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span></span></div>
+                                <!-- <div class="pxp-agents-1-item-rating"><span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span></span></div> -->
                             </a>
                         </div>
                          <?php endwhile; endif; ?>
