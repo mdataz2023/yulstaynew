@@ -117,12 +117,12 @@ $join_our_team_page_list_section_title = get_field('join_our_team_page_list_sect
 
                         <div class="container">
                             <div class="pxp-contact-hero-offices">
-                                <h2 class="pxp-section-h2"><?php echo $join_our_team_page_list_section_title; ?></h2>
+                                <h2 class="pxp-contact-hero-offices-title"><?php echo $join_our_team_page_list_section_title; ?></h2>
                                 <div class="row">
                                     <div class="col-sm-12 col-md-6">
                                     <?php if( have_rows('join_our_team_page_list_left') ): $s= 1; $a=0; ?>
 
-                                    <?php while( have_rows('join_our_team_page_list_left_items') ): the_row() ;
+                                    <?php while( have_rows('join_our_team_page_list_left') ): the_row() ;
                                             $i++;
                                                     $join_our_team_page_list_left_items = get_sub_field('join_our_team_page_list_left_items');
                                             ?>
@@ -132,7 +132,7 @@ $join_our_team_page_list_section_title = get_field('join_our_team_page_list_sect
                                     <div class="col-sm-12 col-md-6">
                                     <?php if( have_rows('join_our_team_page_list_right') ): $s= 1; $a=0; ?>
 
-                                    <?php while( have_rows('join_our_team_page_list_right_items') ): the_row() ;
+                                    <?php while( have_rows('join_our_team_page_list_right') ): the_row() ;
                                             $i++;
                                                     $join_our_team_page_list_right_items = get_sub_field('join_our_team_page_list_right_items');
                                             ?>
