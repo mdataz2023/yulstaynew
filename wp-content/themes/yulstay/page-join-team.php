@@ -75,6 +75,9 @@ $join_our_team_page_email_address_link = get_field('join_our_team_page_email_add
                         <div class="container">
                             <div class="pxp-contact-hero-offices">
                                 <h2 class="pxp-section-h2"><?php echo $join_our_team_page_contact_details_title; ?></h2>
+
+                                <p class="pxp-is-address">We’re dedicated to bringing out the very best in all our team members.  If you’re ready to work, we’re ready to support you with the help of tools, strategies and just being by your side every step of the way.</p>
+
                                 <div class="row">
                                     <div class="col-sm-12 col-md-4">
                                         <div class="pxp-contact-hero-offices-title"><?php echo $join_our_team_page_address_line_one; ?></div>
