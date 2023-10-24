@@ -256,7 +256,7 @@ if ($lang == 'en-US'){
 
                             ?>
                         <div>
-                            <a href="<?php the_permalink(); ?>">
+                            <a style="text-decoration: none;" href="<?php the_permalink(); ?>">
                                 <div class="pxp-testim-1-item" style="height: 270px; color:black !important;">
                                     <?php if ( has_post_thumbnail() ) {
                                         $attachment_image = wp_get_attachment_url( get_post_thumbnail_id() );
