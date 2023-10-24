@@ -144,6 +144,12 @@ if ($lang == 'en-US'){
                     <!-- <a href="<?php bloginfo('url'); ?>/">
                         <img class="yulstay-image" src="<?php echo get_template_directory_uri(); ?>/images/yulstay-logo.png" alt="">
                     </a> -->
+
+                    <div style="text-align: center;">
+                        <h1 class="text-white">Find your future home</h1>
+                        <p class="pxp-text-light text-white mb-0">Whether you’re buying, selling or renting, we can help you move forward.</p>
+                    </div>
+
                     <div class="tabs">
                         <div class="tabs__nav">
                         <button class="tabs__nav-btn tab-button" type="button" data-tab="#tab_1">Residential</button>
