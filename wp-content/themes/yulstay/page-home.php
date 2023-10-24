@@ -141,9 +141,39 @@ if ($lang == 'en-US'){
             <div class="pxp-hero-caption">
                 <div class="container">
                     <!-- <h1 class="text-white">Find your future home</h1> -->
-                    <a href="<?php bloginfo('url'); ?>/">
+                    <!-- <a href="<?php bloginfo('url'); ?>/">
                         <img class="yulstay-image" src="<?php echo get_template_directory_uri(); ?>/images/yulstay-logo.png" alt="">
-                    </a>
+                    </a> -->
+                    <div class="tabs">
+                        <div class="tabs__nav">
+                        <button class="tabs__nav-btn tab-button" type="button" data-tab="#tab_1">Residential</button>
+                        <button class="tabs__nav-btn tab-button" type="button" data-tab="#tab_2">Multi Residential</button>
+                        <button class="tabs__nav-btn tab-button" type="button" data-tab="#tab_3">Rental Property</button>
+                        </div>
+                        <div class="tabs__content">
+                        <div class="tabs__item" id="tab_1">
+                            <div class="tab-content-flex">
+                                <div><a class="tab-content-link" href="">Residential Form</a></div>
+                                <div><a class="tab-content-link" href="">Residential Team</a></div>
+                                <div><a class="tab-content-link" href="">Residential Property</a></div>
+                            </div>
+                        </div>
+                        <div class="tabs__item" id="tab_2">
+                            <div class="tab-content-flex">
+                                <div><a class="tab-content-link" href="">Multi Residential Form</a></div>
+                                <div><a class="tab-content-link" href="">Multi Residential Team</a></div>
+                                <div><a class="tab-content-link" href="">Multi Residential Property</a></div>
+                            </div>
+                        </div>
+                        <div class="tabs__item" id="tab_3">
+                            <div class="tab-content-flex">
+                                <div><a class="tab-content-link" href="">Rental Property Form</a></div>
+                                <div><a class="tab-content-link" href="">Rental Property Team</a></div>
+                                <div><a class="tab-content-link" href="">Rental Property Property</a></div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -599,6 +629,26 @@ if ($lang == 'en-US'){
         </div>
 
     </div>
+
+    <script>
+        const tabsNav = document.querySelector('.tabs__nav');
+        const tabsBtn = document.querySelectorAll(".tabs__nav-btn");
+        const tabsItems = document.querySelectorAll(".tabs__item");
+
+        tabsNav.addEventListener('click', function(event) {
+        const targetButton = event.target.closest('.tabs__nav-btn');
+        
+        if (targetButton) {
+            const tabId = targetButton.getAttribute("data-tab");
+            const currentTab = document.querySelector(tabId);
+
+            tabsBtn.forEach(btn => btn.classList.toggle('active', btn === targetButton));
+            tabsItems.forEach(item => item.classList.toggle('active', item === currentTab));
+        }
+        });
+
+        tabsBtn[0].click();
+      </script>
 
 
     <?php get_footer(); ?>
