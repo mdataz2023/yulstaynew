@@ -281,6 +281,7 @@
 .tab-content-flex{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     gap: 8px;
 }
 .tab-content-link{
@@ -296,7 +297,7 @@
 }
 
 .container-home-banner{
-  max-width: 960px;
+  max-width: 660px;
   margin-left: auto;
   margin-right: auto;
 }
