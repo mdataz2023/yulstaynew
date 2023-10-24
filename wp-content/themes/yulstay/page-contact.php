@@ -53,7 +53,7 @@ $contact_page_email_address_link = get_field('contact_page_email_address_link');
                 </div>
 
                         <div class="container">
-                            <div class="pxp-contact-hero-offices">
+                            <div class="pxp-contact-hero-offices" style="padding-bottom: 0px;">
                                 <h2 class="pxp-section-h2"><?php echo $contact_page_contact_details_title; ?></h2>
                                 <div class="row">
                                     <div class="col-sm-12 col-md-4">

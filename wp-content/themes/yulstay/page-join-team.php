@@ -76,7 +76,7 @@ $join_our_team_page_paragraph = get_field('join_our_team_page_paragraph');
                 </div>
 
                         <div class="container">
-                            <div class="pxp-contact-hero-offices">
+                            <div class="pxp-contact-hero-offices" style="padding-bottom: 0px; padding-top: 0px;">
                                 <h2 class="pxp-section-h2"><?php echo $join_our_team_page_contact_details_title; ?></h2>
 
                                 <p class="pxp-is-address"><?php echo $join_our_team_page_contact_deatils_description; ?></p>
