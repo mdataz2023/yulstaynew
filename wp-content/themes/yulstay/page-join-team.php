@@ -129,7 +129,7 @@ $join_our_team_page_paragraph = get_field('join_our_team_page_paragraph');
                                             ?>
                                             <div style="display:flex; gap:6px;">
                                                 <div>
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#00AEC5" class="bi bi-plus" viewBox="0 0 16 16">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#00AEC5" class="bi bi-plus" viewBox="0 0 16 16">
                                                     <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
                                                     </svg>
                                                 </div>
@@ -150,7 +150,7 @@ $join_our_team_page_paragraph = get_field('join_our_team_page_paragraph');
                                         
                                         <div style="display:flex; gap:6px;">
                                                 <div>
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#00AEC5" class="bi bi-plus" viewBox="0 0 16 16">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#00AEC5" class="bi bi-plus" viewBox="0 0 16 16">
                                                     <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
                                                     </svg>
                                                 </div>
