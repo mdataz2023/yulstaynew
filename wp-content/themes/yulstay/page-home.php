@@ -139,7 +139,7 @@ if ($lang == 'en-US'){
             </div>
             <div class="pxp-hero-opacity"></div>
             <div class="pxp-hero-caption">
-                <div class="container">
+                <div class="container-home-banner">
                     <!-- <h1 class="text-white">Find your future home</h1> -->
                     <!-- <a href="<?php bloginfo('url'); ?>/">
                         <img class="yulstay-image" src="<?php echo get_template_directory_uri(); ?>/images/yulstay-logo.png" alt="">
@@ -150,7 +150,7 @@ if ($lang == 'en-US'){
                         <button class="tabs__nav-btn tab-button" type="button" data-tab="#tab_2">Multi Residential</button>
                         <button class="tabs__nav-btn tab-button" type="button" data-tab="#tab_3">Rental Property</button>
                         </div>
-                        <div class="tabs__content">
+                        <div class="tabs__content" style="box-shadow: 0px 15px 30px rgba(0,0,0,0.30);">
                         <div class="tabs__item" id="tab_1">
                             <div class="tab-content-flex">
                                 <div><a class="tab-content-link" href="">Residential Form</a></div>

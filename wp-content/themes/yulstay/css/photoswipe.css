@@ -249,9 +249,8 @@
   }
 
   .tabs__nav-btn.active {
-    background-color: #5e3ddf;
-    border-right-color: #5e3ddf;
-    color: #fff;
+    background-color: rgba(255, 255, 255, 1);
+    color: #000;
 }
 .tabs__item {
     display: none;
@@ -267,10 +266,11 @@
     padding-bottom: 8px;
     border: none;
     border-radius: 8px 8px 0px 0px;
+    background-color:rgba(255, 255, 255, .3);
 }
 
 .tabs__content{
-    background-color: #919191;
+    background-color: #ffffff;
     padding-left: 8px;
     padding-right: 8px;
     padding-top: 16px;
@@ -291,4 +291,9 @@
     border-radius: 8px 8px 8px 8px;
     width: 200px !important;
     text-decoration: none;
+    color: #000;
+}
+
+.container-home-banner{
+  max-width: 960px;
 }
