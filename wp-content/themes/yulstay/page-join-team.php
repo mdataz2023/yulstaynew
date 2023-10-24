@@ -16,6 +16,7 @@ $join_our_team_page_email_address = get_field('join_our_team_page_email_address'
 $join_our_team_page_email_address_link = get_field('join_our_team_page_email_address_link');
 $join_our_team_page_contact_deatils_description = get_field('join_our_team_page_contact_deatils_description');
 $join_our_team_page_list_section_title = get_field('join_our_team_page_list_section_title');
+$join_our_team_page_paragraph = get_field('join_our_team_page_paragraph');
 
 ?>
 
@@ -140,6 +141,7 @@ $join_our_team_page_list_section_title = get_field('join_our_team_page_list_sect
                                         <?php endwhile; endif; ?>
                                     </div>
                                 </div>
+                                <p class="pxp-contact-hero-offices-title"><?php echo $join_our_team_page_paragraph; ?></p>
                             </div>
                         </div>
 
