@@ -148,6 +148,14 @@ if ($lang == 'en-US'){
                     <div style="text-align: center;">
                         <h1 class="text-white">Why are you here today</h1>
                         <p class="pxp-text-light text-white mb-0">Whether you’re buying, selling or renting, we can help you move forward.</p>
+                        <div class="banner-dropdown">
+                            <button class="banner-dropbtn">Dropdown</button>
+                            <div class="banner-dropdown-content">
+                                <a href="#">Link 1</a>
+                                <a href="#">Link 2</a>
+                                <a href="#">Link 3</a>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- <div class="tabs">
@@ -181,14 +189,7 @@ if ($lang == 'en-US'){
                         </div>
                     </div> -->
 
-                    <div class="banner-dropdown">
-                        <button class="banner-dropbtn">Dropdown</button>
-                        <div class="banner-dropdown-content">
-                            <a href="#">Link 1</a>
-                            <a href="#">Link 2</a>
-                            <a href="#">Link 3</a>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>
