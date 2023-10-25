@@ -171,6 +171,18 @@ $MUNICIPALITES = $wpdb->get_row("SELECT * FROM MUNICIPALITES m JOIN REGIONS r ON
             <img src="https://mediaserver.centris.ca/media.ashx?id=ADDC6FADCF335ABDD8CB337DEC&t=pi&f=I">
             <img src="https://mediaserver.centris.ca/media.ashx?id=ADDC6FADCF335A1DD8CB337DCA&t=pi&f=I">
             <img src="https://mediaserver.centris.ca/media.ashx?id=ADDC6FADCF335ABDD8CB337DEC&t=pi&f=I">
+            <img src="https://mediaserver.centris.ca/media.ashx?id=ADDC6FADCF335A8DD8CB337DAC&t=pi&f=I">
+            <img src="https://mediaserver.centris.ca/media.ashx?id=ADDC6FADCF335ABDD8CB337DEC&t=pi&f=I">
+            <img src="https://mediaserver.centris.ca/media.ashx?id=ADDC6FADCF335A1DD8CB337DCA&t=pi&f=I">
+            <img src="https://mediaserver.centris.ca/media.ashx?id=ADDC6FADCF335ABDD8CB337DEC&t=pi&f=I">
+            <img src="https://mediaserver.centris.ca/media.ashx?id=ADDC6FADCF335A8DD8CB337DAC&t=pi&f=I">
+            <img src="https://mediaserver.centris.ca/media.ashx?id=ADDC6FADCF335ABDD8CB337DEC&t=pi&f=I">
+            <img src="https://mediaserver.centris.ca/media.ashx?id=ADDC6FADCF335A1DD8CB337DCA&t=pi&f=I">
+            <img src="https://mediaserver.centris.ca/media.ashx?id=ADDC6FADCF335ABDD8CB337DEC&t=pi&f=I">
+            <img src="https://mediaserver.centris.ca/media.ashx?id=ADDC6FADCF335A8DD8CB337DAC&t=pi&f=I">
+            <img src="https://mediaserver.centris.ca/media.ashx?id=ADDC6FADCF335ABDD8CB337DEC&t=pi&f=I">
+            <img src="https://mediaserver.centris.ca/media.ashx?id=ADDC6FADCF335A1DD8CB337DCA&t=pi&f=I">
+            <img src="https://mediaserver.centris.ca/media.ashx?id=ADDC6FADCF335ABDD8CB337DEC&t=pi&f=I">
         </div>
     </div>
 <!-- gallery -->
