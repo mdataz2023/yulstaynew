@@ -61,6 +61,9 @@ $contact_page_email_address_link = get_field('contact_page_email_address_link');
                                     </div>
                                     <div class="col-sm-12 col-md-4">
                                         <div class="pxp-contact-hero-offices-title"><?php echo $contact_page_address_line_one; ?></div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-4">
+                                        
                                         <div class="pxp-contact-hero-offices-info mt-2 mt-md-3">
                                             <p class="pxp-is-address"><?php echo $contact_page_address_line_two; ?></p>
                                             <p>
