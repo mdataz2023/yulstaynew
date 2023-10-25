@@ -271,7 +271,7 @@
 }
 
 .tabs__content{
-    background-color:rgba(239, 239, 239, 0.3);
+    background-color:#20cdf44d;
     padding-left: 8px;
     padding-right: 8px;
     padding-top: 16px;
@@ -320,9 +320,12 @@
 
 .banner-dropdown-content a {
   color: black;
-  padding: 12px 16px;
+  padding: 8px 16px;
   text-decoration: none;
   display: block;
+  width: 250px;
+  border-radius: 8px 8px 8px 8px;
+  background-color: #9ad7e5a3;
 }
 
 .banner-dropdown-content a:hover {
@@ -341,11 +344,15 @@
 
 /* banner-drop */
 .banner-dropbtn {
+  margin-top: 12px;
   background-color: #3498db;
   color: white;
   padding: 10px;
   border: none;
   cursor: pointer;
+  width: 250px;
+  border-radius: 8px 8px 8px 8px;
+  background-color: #20cdf4ad;
 }
 
 .banner-dropdown {
