@@ -236,7 +236,7 @@ if ($lang == 'en-US'){
             ?>
 
 
-        <div class="pxp-testim-1 pt-100 pb-100 mt-100 pxp-cover" style="background-image: url(https://mdataz.com/yulstaynew/wp-content/uploads/2023/10/1-masked.jpg);">
+        <div class="pxp-testim-1 pt-100 pb-100 mt-100 pxp-cover" style="background-image: url(https://mdataz.com/yulstaynew/wp-content/uploads/2023/10/1-masked2.jpg);">
                 <div class="pxp-testim-1-intro">
                     <h2 class="pxp-section-h2 font-white-in"><?php echo $home_team_section_title; ?></h2>
                     <p class="pxp-text-light font-white-in"><?php echo $home_team_section_description; ?></p>
