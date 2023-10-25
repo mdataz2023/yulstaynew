@@ -31,7 +31,7 @@ $contact_page_email_address_link = get_field('contact_page_email_address_link');
                 <div class="pxp-contact-hero mt-4 mt-md-5">
                     <div class="pxp-contact-hero-fig pxp-cover" style="background-image: url(<?php echo $contact_page_banner_image; ?>); background-position: 50% 80%;"></div>
 
-                    <!-- <div class="pxp-contact-hero-offices-container">
+                    <div class="pxp-contact-hero-offices-container">
                         <div class="container">
                             <div class="pxp-contact-hero-offices">
                                 <h2 class="pxp-section-h2"><?php echo $contact_page_contact_details_title; ?></h2>
@@ -49,10 +49,10 @@ $contact_page_email_address_link = get_field('contact_page_email_address_link');
                                 </div>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
                 </div>
 
-                        <div class="container">
+                        <!-- <div class="container">
                             <div class="pxp-contact-hero-offices" style="padding-bottom: 0px;">
                                 <h2 class="pxp-section-h2"><?php echo $contact_page_contact_details_title; ?></h2>
                                 <div class="row">
@@ -88,7 +88,7 @@ $contact_page_email_address_link = get_field('contact_page_email_address_link');
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
                 <div class="container mt-100">
                     <div class="row">
