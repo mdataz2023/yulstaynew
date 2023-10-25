@@ -236,7 +236,7 @@ if ($lang == 'en-US'){
             ?>
 
 
-        <div class="pxp-testim-1 pt-100 pb-100 mt-100 pxp-cover" style="background-image: url(https://mdataz.com/yulstaynew/wp-content/uploads/2023/10/KJP0223-HDR.jpg);">
+        <div class="pxp-testim-1 pt-100 pb-100 mt-100 pxp-cover" style="background-image: url(https://mdataz.com/yulstaynew/wp-content/uploads/2023/10/1-masked.jpg);">
                 <div class="pxp-testim-1-intro">
                     <h2 class="pxp-section-h2 font-white-in"><?php echo $home_team_section_title; ?></h2>
                     <p class="pxp-text-light font-white-in"><?php echo $home_team_section_description; ?></p>
@@ -256,17 +256,22 @@ if ($lang == 'en-US'){
 
                             ?>
                         <div>
-                            <a style="text-decoration: none;" href="<?php the_permalink(); ?>">
-                                <div class="pxp-testim-1-item" style="height: 270px; color:black !important;">
-                                    <?php if ( has_post_thumbnail() ) {
-                                        $attachment_image = wp_get_attachment_url( get_post_thumbnail_id() );
-                                    ?>
-                                    <div class="pxp-testim-1-item-avatar pxp-cover" style="background-image: url(<?php echo $attachment_image; ?>)"></div>
-                                    <?php } ?>
-                                    <div class="pxp-testim-1-item-name"><?php the_title(); ?></div>
-                                    <div class="pxp-testim-1-item-location"><span class="fa fa-phone"></span> <?php echo get_field('team_member_telephone'); ?></div>
-                                    <div class="pxp-testim-1-item-message" style="padding-top: 16px;"><?php echo get_field('team_member_destination'); ?></div>
+                            <a href="<?php the_permalink(); ?>" class="pxp-agents-1-item">
+                            <?php if ( has_post_thumbnail() ) {
+                                $attachment_image = wp_get_attachment_url( get_post_thumbnail_id() );
+                                //echo '<link rel="preload" as="image" href="' . esc_attr( $attachment_image ) . '">';  
+                            ?>
+                                <div class="pxp-agents-1-item-fig-container rounded-lg">
+                                    <div class="pxp-agents-1-item-fig pxp-cover" style="background-image: url(<?php echo $attachment_image; ?>); background-position: top center"></div>
                                 </div>
+                                <?php } ?>
+                                <div class="pxp-agents-1-item-details rounded-lg">
+                                    <div class="pxp-agents-1-item-details-name"><?php the_title(); ?></div>
+                                    <div class="pxp-agents-1-item-details-email"><span class="fa fa-phone"></span> <?php echo get_field('team_member_telephone'); ?></div>
+                                    <div class="pxp-agents-1-item-details-spacer"></div>
+                                    <div class="pxp-agents-1-item-cta text-uppercase"><?php _e('More Details','theme-text-domain'); ?></div>
+                                </div>
+                                <!-- <div class="pxp-agents-1-item-rating"><span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span></span></div> -->
                             </a>
                         </div>
                             <?php endwhile; endif; ?>
