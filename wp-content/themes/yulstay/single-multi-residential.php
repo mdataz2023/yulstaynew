@@ -20,7 +20,76 @@ $inscriptionsData = $wpdb->get_row(" SELECT * FROM INSCRIPTIONS where NO_INSCRIP
 $GENRES_PROPRIETES = $wpdb->get_row("SELECT * FROM GENRES_PROPRIETES WHERE GENRE_PROPRIETE ='".$inscriptionsData->GENRE_PROPRIETE."'", OBJECT );
 $MUNICIPALITES = $wpdb->get_row("SELECT * FROM MUNICIPALITES m JOIN REGIONS r ON m.REGION_CODE = r.CODE where m.CODE='".$inscriptionsData->MUN_CODE."' ", OBJECT );
 ?>
+<style>
+  /* .box-shadow {
+    box-shadow: 2px 2px 10px 5px #b8b8b8;
+    border-radius: 10px;
+    transition: all 0.5s ease;
+  } */
 
+  .active{
+      border-radius: 10px;
+    }
+  
+    #thumbnails {
+      text-align: center;
+    }
+  
+    #thumbnails img {
+      width: 100px;
+      height: 100%;
+      margin: 2px;
+      cursor: pointer;
+  
+      @media only screen and (max-width: 480px) {
+        width: 50px;
+        height: 50px;
+      }
+  
+      @extend .box-shadow;
+  
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  
+    #main {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      margin: 8px auto;
+      position: relative;
+  
+      @media only screen and (max-width: 480px) {
+        width: 100%;
+      }
+  
+      @extend .box-shadow;
+    }
+  
+    .hidden {
+      opacity: 0;
+    }
+  
+    /* Style for the arrow buttons */
+    #slider-controls {
+      position: relative;
+      transform: translateY(-50%);
+      top:50%;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+  
+    #prev-btn, #next-btn {
+      background-color: #ffffff;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+</style>
 <div class="pxp-content">
     <div class="pxp-single-property-top pxp-content-wrapper mt-100">
         <div class="container">
@@ -73,6 +142,33 @@ $MUNICIPALITES = $wpdb->get_row("SELECT * FROM MUNICIPALITES m JOIN REGIONS r ON
             </div>
         </div>
     </div>
+
+    <!-- gallery -->
+    <div>
+        <div id="main-container">
+        <img src="https://mediaserver.centris.ca/media.ashx?id=ADDC6FADCF335A8DD8CB337DAC&t=pi&f=I" id="main">
+            <div id="slider-controls">
+                <button id="prev-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+                        <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+                    </svg>
+                </button>
+                <button id="next-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                        <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="thumbnails">
+            <img src="https://mediaserver.centris.ca/media.ashx?id=ADDC6FADCF335A8DD8CB337DAC&t=pi&f=I">
+            <img src="https://mediaserver.centris.ca/media.ashx?id=ADDC6FADCF335ABDD8CB337DEC&t=pi&f=I">
+            <img src="https://mediaserver.centris.ca/media.ashx?id=ADDC6FADCF335A1DD8CB337DCA&t=pi&f=I">
+            <img src="https://mediaserver.centris.ca/media.ashx?id=ADDC6FADCF335ABDD8CB337DEC&t=pi&f=I">
+        </div>
+    </div>
+    <!-- gallery -->
 
     <div class="pxp-single-property-gallery-container mt-4 mt-md-5">
         <div class="pxp-single-property-gallery" itemscope itemtype="http://schema.org/ImageGallery">
@@ -1096,5 +1192,45 @@ echo $inscriptionsData->INCLUS_FRANCAIS."<br><br>".$inscriptionsData->EXCLUS_FRA
         $('.pxp-sp-more-1').show();
     });
 })(jQuery);
+</script>
+<!-- gallery -->
+<script>
+var thumbnails = document.getElementById("thumbnails");
+var imgs = thumbnails.getElementsByTagName("img");
+var main = document.getElementById("main");
+var counter = 0;
+
+// Function to remove "active" class from all thumbnails
+function removeActiveClass() {
+  for (let i = 0; i < imgs.length; i++) {
+    imgs[i].classList.remove("active");
+  }
+}
+
+// Add event listeners to the arrow buttons
+document.getElementById("prev-btn").addEventListener("click", function() {
+  counter = (counter - 1 + imgs.length) % imgs.length;
+  main.src = imgs[counter].src;
+  removeActiveClass();
+  imgs[counter].classList.add("active");
+});
+
+document.getElementById("next-btn").addEventListener("click", function() {
+  counter = (counter + 1) % imgs.length;
+  main.src = imgs[counter].src;
+  removeActiveClass();
+  imgs[counter].classList.add("active");
+});
+
+// Add event listeners to the thumbnail images
+for (let i = 0; i < imgs.length; i++) {
+  let img = imgs[i];
+  img.addEventListener("click", function() {
+    main.src = this.src;
+    counter = i;
+    removeActiveClass();
+    img.classList.add("active");
+  });
+}
 </script>
 <?php get_footer(); ?>
