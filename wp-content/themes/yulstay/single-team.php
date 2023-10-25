@@ -111,7 +111,7 @@ if ($lang == 'en-US'){
             <h2 class="pxp-section-h2 mt-100"><?php _e('Listings by','theme-text-domain'); ?> <?php the_title(); ?></h2>
             <div class="row mt-4 mt-md-5">
                 <?php
-                        $datas = $wpdb->get_results("SELECT i.*,p.ID,p.post_type FROM INSCRIPTIONS i join wp_posts p on p.post_content=i.NO_INSCRIPTION where i.CODE_STATUT='EV' and COURTIER_INSCRIPTEUR_1='".$broker_id."'", OBJECT );
+                        $datas = $wpdb->get_results("SELECT i.*,p.ID,p.post_type FROM INSCRIPTIONS i join wp_posts p on p.post_content=i.NO_INSCRIPTION where i.CODE_STATUT='EV' and COURTIER_INSCRIPTEUR_1='".$broker_id."' or COURTIER_INSCRIPTEUR_2='".$broker_id."'", OBJECT );
                         foreach ($datas as $inscriptionsData) {
                     $results = $wpdb->get_row(" SELECT * FROM PHOTOS where  NO_INSCRIPTION = '".$inscriptionsData->NO_INSCRIPTION ."' limit 1", OBJECT );
 				?>

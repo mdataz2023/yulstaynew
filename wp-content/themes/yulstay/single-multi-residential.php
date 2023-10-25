@@ -646,7 +646,7 @@ echo $inscriptionsData->INCLUS_FRANCAIS."<br><br>".$inscriptionsData->EXCLUS_FRA
                                 style="background-image: url('<?php echo $MEMBRES->PHOTO_URL?>'); background-position: top center"></a>
                             <div class="pxp-sp-agent-info">
                                 <div class="pxp-sp-agent-info-name"><a
-                                        href="<?php echo site_url()."/team/".strtolower($MEMBRES->PRENOM."-". $MEMBRES->NOM)?>"><?php echo $MEMBRES->NOM." ".$MEMBRES->PRENOM?></a>
+                                        href="<?php echo site_url()."/team/".strtolower($MEMBRES->PRENOM."-". $MEMBRES->NOM)?>"><?php echo $MEMBRES->PRENOM." ".$MEMBRES->NOM?></a>
                                 </div>
                                 <div class="pxp-sp-agent-info-rating"><span class="fa fa-star"></span><span
                                         class="fa fa-star"></span><span class="fa fa-star"></span><span
@@ -668,29 +668,29 @@ echo $inscriptionsData->INCLUS_FRANCAIS."<br><br>".$inscriptionsData->EXCLUS_FRA
                     <div>
                         <h3><?php _e('Listed By','theme-text-domain'); ?></h3>
                         <?php
-                                $MEMBRES = $wpdb->get_row("SELECT * FROM MEMBRES WHERE CODE ='".$inscriptionsData->COURTIER_INSCRIPTEUR_1."'", OBJECT );
+                                $MEMBRES2 = $wpdb->get_row("SELECT * FROM MEMBRES WHERE CODE ='".$inscriptionsData->COURTIER_INSCRIPTEUR_2."'", OBJECT );
                             ?>
                         <div class="pxp-sp-agent mt-3 mt-md-4">
-                            <a href="<?php echo site_url()."/team/".strtolower($MEMBRES->PRENOM."-". $MEMBRES->NOM)?>"
+                            <a href="<?php echo site_url()."/team/".strtolower($MEMBRES2->PRENOM."-". $MEMBRES2->NOM)?>"
                                 class="pxp-sp-agent-fig pxp-cover rounded-lg"
-                                style="background-image: url('<?php echo $MEMBRES->PHOTO_URL?>'); background-position: top center"></a>
+                                style="background-image: url('<?php echo $MEMBRES2->PHOTO_URL?>'); background-position: top center"></a>
                             <div class="pxp-sp-agent-info">
                                 <div class="pxp-sp-agent-info-name"><a
-                                        href="<?php echo site_url()."/team/".strtolower($MEMBRES->PRENOM."-". $MEMBRES->NOM)?>"><?php echo $MEMBRES->NOM." ".$MEMBRES->PRENOM?></a>
+                                        href="<?php echo site_url()."/team/".strtolower($MEMBRES2->PRENOM."-". $MEMBRES2->NOM)?>"><?php echo $MEMBRES2->PRENOM." ".$MEMBRES2->NOM?></a>
                                 </div>
                                 <div class="pxp-sp-agent-info-rating"><span class="fa fa-star"></span><span
                                         class="fa fa-star"></span><span class="fa fa-star"></span><span
                                         class="fa fa-star"></span><span class="fa fa-star"></span></div>
                                 <div class="pxp-sp-agent-info-email"><a
-                                        href="mailto:<?php echo $MEMBRES->COURRIEL?>"><?php echo $MEMBRES->COURRIEL?></a>
+                                        href="mailto:<?php echo $MEMBRES2->COURRIEL?>"><?php echo $MEMBRES2->COURRIEL?></a>
                                 </div>
                                 <div class="pxp-sp-agent-info-phone"><span
-                                        class="fa fa-phone"></span><?php echo $MEMBRES->TELEPHONE_1?></div>
+                                        class="fa fa-phone"></span><?php echo $MEMBRES2->TELEPHONE_1?></div>
                             </div>
                             <div class="clearfix"></div>
                             <div class="pxp-sp-agent-btns mt-3 mt-md-4">
-                                <a href="#pxp-contact-agent" class="pxp-sp-agent-btn-main" data-toggle="modal"
-                                    data-target="#pxp-contact-agent"><span class="fa fa-envelope-o"></span>
+                                <a href="#pxp-contact-agent2" class="pxp-sp-agent-btn-main" data-toggle="modal"
+                                    data-target="#pxp-contact-agent2"><span class="fa fa-envelope-o"></span>
                                     <?php _e('Contact Agent','theme-text-domain'); ?></a>
                             </div>
                         </div>
@@ -747,7 +747,7 @@ echo $inscriptionsData->INCLUS_FRANCAIS."<br><br>".$inscriptionsData->EXCLUS_FRA
             </div>
             <div class="modal-body">
                 <h5 class="modal-title" id="pxpContactAgentModal"><?php _e('Contact','theme-text-domain'); ?>
-                    <?php echo $MEMBRES->NOM." ".$MEMBRES->PRENOM?></h5>
+                    <?php echo $MEMBRES->PRENOM." ".$MEMBRES->NOM?></h5>
                 <!-- <form class="mt-4">
                     <div class="form-group">
                         <label for="pxp-contact-agent-name">Name</label>
@@ -798,6 +798,69 @@ echo $inscriptionsData->INCLUS_FRANCAIS."<br><br>".$inscriptionsData->EXCLUS_FRA
         </div>
     </div>
 </div>
+<div class="modal fade" id="pxp-contact-agent2" tabindex="-1" role="dialog" aria-labelledby="pxpContactAgentModal"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h5 class="modal-title" id="pxpContactAgentModal"><?php _e('Contact','theme-text-domain'); ?>
+                    <?php echo $MEMBRES2->PRENOM." ".$MEMBRES2->NOM?></h5>
+                <!-- <form class="mt-4">
+                    <div class="form-group">
+                        <label for="pxp-contact-agent-name">Name</label>
+                        <input type="text" class="form-control" id="pxp-contact-agent-name">
+                    </div>
+                    <div class="form-group">
+                        <label for="pxp-contact-agent-email">Email</label>
+                        <input type="text" class="form-control" id="pxp-contact-agent-email">
+                    </div>
+                    <div class="form-group">
+                        <label for="pxp-contact-agent-phone">Phone</label>
+                        <input type="text" class="form-control" id="pxp-contact-agent-phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="pxp-contact-agent-message">Message</label>
+                        <textarea class="form-control" id="pxp-contact-agent-message"
+                            rows="4">I would like more information about Beautiful House in Marina on 542 29th Avenue.</textarea>
+                    </div>
+                    <div class="form-group mt-4">
+                        <a href="#" class="pxp-agent-contact-modal-btn">Send Message</a>
+                    </div>
+                </form> -->
+                <?php
+                if($MEMBRES2->CODE=="107667"){
+                echo do_shortcode('[contact-form-7 id="a5998d6" title="Sebaaly Ralph Property Contact"]');
+                }
+
+                if($MEMBRES2->PRENOM." ". $MEMBRES2->NOM=="Michael Ghannoum")
+                {
+                    echo do_shortcode('[contact-form-7 id="bedd78f" title="Michael Ghannoum Property Contact"]');
+                }
+                 if($MEMBRES2->PRENOM." ". $MEMBRES2->NOM=="Cynthia Dahoud")
+                {
+                    echo do_shortcode('[contact-form-7 id="026505a" title="Cynthia Dahoud Property Contact"]');
+                }
+                 if($MEMBRES2->CODE=="82166")
+                {
+                    echo do_shortcode('[contact-form-7 id="08b0a05" title="Parvez Coowar Property Contact"]');
+                }
+
+                 if($MEMBRES2->CODE=="118696")
+                {
+                    echo do_shortcode('[contact-form-7 id="a5998d6" title="Christian Daoud Property Contact"]');
+                }
+                ?>
+
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <div class="modal fade" id="pxp-signin-modal" tabindex="-1" role="dialog" aria-labelledby="pxpSigninModal"
     aria-hidden="true">
