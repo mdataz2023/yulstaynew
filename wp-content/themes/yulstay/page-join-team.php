@@ -81,7 +81,7 @@ $join_our_team_page_paragraph = get_field('join_our_team_page_paragraph');
 
                                 <p class="pxp-is-address"><?php echo $join_our_team_page_contact_deatils_description; ?></p>
 
-                                <div class="row">
+                                <!-- <div class="row">
                                     <div class="col-sm-12 col-md-4">
                                         <div class="pxp-contact-hero-offices-title"><?php echo $join_our_team_page_address_line_one; ?></div>
                                         <div class="pxp-contact-hero-offices-info mt-2 mt-md-3">
@@ -112,7 +112,7 @@ $join_our_team_page_paragraph = get_field('join_our_team_page_paragraph');
                                             </p>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
 
