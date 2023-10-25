@@ -29,64 +29,68 @@ $MUNICIPALITES = $wpdb->get_row("SELECT * FROM MUNICIPALITES m JOIN REGIONS r ON
     transition: all 0.5s ease;
   } */
 
-  #thumbnails {
-    text-align: center;
-  }
-
-  #thumbnails img {
-    width: 100px;
-    height: 100%;
-    margin: 2px;
-    cursor: pointer;
-
-    @media only screen and (max-width: 480px) {
-      width: 50px;
-      height: 50px;
+  .active{
+      border-radius: 10px;
     }
-
-    @extend .box-shadow;
-
-    &:hover {
-      transform: scale(1.05);
+  
+    #thumbnails {
+      text-align: center;
     }
-  }
-
-  #main {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    margin: 8px auto;
-    position: relative;
-
-    @media only screen and (max-width: 480px) {
+  
+    #thumbnails img {
+      width: 100px;
+      height: 100%;
+      margin: 2px;
+      cursor: pointer;
+  
+      @media only screen and (max-width: 480px) {
+        width: 50px;
+        height: 50px;
+      }
+  
+      @extend .box-shadow;
+  
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  
+    #main {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      margin: 8px auto;
+      position: relative;
+  
+      @media only screen and (max-width: 480px) {
+        width: 100%;
+      }
+  
+      @extend .box-shadow;
+    }
+  
+    .hidden {
+      opacity: 0;
+    }
+  
+    /* Style for the arrow buttons */
+    #slider-controls {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      justify-content: space-between;
       width: 100%;
     }
-
-    @extend .box-shadow;
-  }
-
-  .hidden {
-    opacity: 0;
-  }
-
-  /* Style for the arrow buttons */
-  #slider-controls {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-  }
-
-  #prev-btn, #next-btn {
-    background-color: #ffffff;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-  }
+  
+    #prev-btn, #next-btn {
+      background-color: #ffffff;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
 </style>
 <div class="pxp-content">
     <div class="pxp-single-property-top pxp-content-wrapper mt-100">
@@ -147,17 +151,17 @@ $MUNICIPALITES = $wpdb->get_row("SELECT * FROM MUNICIPALITES m JOIN REGIONS r ON
 <!-- gallery -->
     <div>
         <div id="main-container">
-            <img src="https://mediaserver.centris.ca/media.ashx?id=ADDC6FADCF335A8DD8CB337DAC&t=pi&f=I" id="main">
+        <img src="https://mediaserver.centris.ca/media.ashx?id=ADDC6FADCF335A8DD8CB337DAC&t=pi&f=I" id="main">
             <div id="slider-controls">
                 <button id="prev-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
-                    <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
-                </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+                        <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+                    </svg>
                 </button>
                 <button id="next-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
-                    <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-                </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                        <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                    </svg>
                 </button>
             </div>
         </div>
@@ -1362,21 +1366,33 @@ if ($lang == 'en-US'){
 })(jQuery);
 </script>
 
+<!-- gallery -->
 <script>
 var thumbnails = document.getElementById("thumbnails");
 var imgs = thumbnails.getElementsByTagName("img");
 var main = document.getElementById("main");
 var counter = 0;
 
+// Function to remove "active" class from all thumbnails
+function removeActiveClass() {
+  for (let i = 0; i < imgs.length; i++) {
+    imgs[i].classList.remove("active");
+  }
+}
+
 // Add event listeners to the arrow buttons
 document.getElementById("prev-btn").addEventListener("click", function() {
   counter = (counter - 1 + imgs.length) % imgs.length;
   main.src = imgs[counter].src;
+  removeActiveClass();
+  imgs[counter].classList.add("active");
 });
 
 document.getElementById("next-btn").addEventListener("click", function() {
   counter = (counter + 1) % imgs.length;
   main.src = imgs[counter].src;
+  removeActiveClass();
+  imgs[counter].classList.add("active");
 });
 
 // Add event listeners to the thumbnail images
@@ -1385,6 +1401,8 @@ for (let i = 0; i < imgs.length; i++) {
   img.addEventListener("click", function() {
     main.src = this.src;
     counter = i;
+    removeActiveClass();
+    img.classList.add("active");
   });
 }
 </script>
