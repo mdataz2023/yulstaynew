@@ -76,7 +76,7 @@ $MUNICIPALITES = $wpdb->get_row("SELECT * FROM MUNICIPALITES m JOIN REGIONS r ON
   
     /* Style for the arrow buttons */
     #slider-controls {
-      position: absolute;
+      position: relative;
       transform: translateY(-50%);
       display: flex;
       justify-content: space-between;
