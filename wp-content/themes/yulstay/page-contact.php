@@ -31,7 +31,7 @@ $contact_page_email_address_link = get_field('contact_page_email_address_link');
                 <div class="pxp-contact-hero mt-4 mt-md-5">
                     <div class="pxp-contact-hero-fig pxp-cover" style="background-image: url(<?php echo $contact_page_banner_image; ?>); background-position: 50% 80%;"></div>
 
-                    <!-- <div class="pxp-contact-hero-offices-container">
+                    <div class="pxp-contact-hero-offices-container">
                         <div class="container">
                             <div class="pxp-contact-hero-offices">
                                 <h2 class="pxp-section-h2"><?php echo $contact_page_contact_details_title; ?></h2>
@@ -39,20 +39,20 @@ $contact_page_email_address_link = get_field('contact_page_email_address_link');
                                     <div class="col-sm-12">
                                         <div class="pxp-contact-hero-offices-title mt-3 mt-md-4"><?php echo $contact_page_address_line_one; ?></div>
                                         <div class="pxp-contact-hero-offices-info mt-2 mt-md-3">
-                                            <p class="pxp-is-address"><?php echo $contact_page_address_line_two; ?></p>
+                                            <p class="pxp-is-address"><span class="fa fa-location-arrow"></span> <?php echo $contact_page_address_line_two; ?></p>
                                             <p>
-                                                <a href="<?php echo $contact_page_contact_number_link; ?>"><?php echo $contact_page_contact_number; ?></a><br>
-                                                <a href="<?php echo $contact_page_email_address_link; ?>"><?php echo $contact_page_email_address; ?></a>
+                                                <a href="<?php echo $contact_page_contact_number_link; ?>"><span class="fa fa-phone"> </span><?php echo $contact_page_contact_number; ?></a><br>
+                                                <a href="<?php echo $contact_page_email_address_link; ?>"><span class="fa fa-envelope-o"> </span><?php echo $contact_page_email_address; ?></a>
                                             </p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
                 </div>
 
-                        <div class="container">
+                        <!-- <div class="container">
                             <div class="pxp-contact-hero-offices" style="padding-bottom: 0px;">
                                 
                                 <div class="row">
@@ -85,7 +85,7 @@ $contact_page_email_address_link = get_field('contact_page_email_address_link');
                                     </div> -->
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
                 <div class="container mt-100">
                     <div class="row">
