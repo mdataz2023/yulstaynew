@@ -308,7 +308,7 @@
   cursor: pointer;
   width: 250px;
   border-radius: 8px 8px 8px 8px;
-  background-color: #20cdf4ad;
+  background-color: #04c9c9ad;
 }
 
 .banner-dropdown {
@@ -330,7 +330,7 @@
 
 .banner-dropdown-content a {
   color: black;
-  padding: 12px 16px;
+  padding: 6px 16px;
   text-decoration: none;
   display: block;
   border-radius: 8px 8px 8px 8px;

@@ -146,7 +146,7 @@ if ($lang == 'en-US'){
                     </a> -->
 
                     <div style="text-align: center;">
-                        <h1 class="text-white">Why are you here today</h1>
+                        <h1 class="text-white">What can we help you with today?</h1>
                         <p class="pxp-text-light text-white mb-0">Whether you’re buying, selling or renting, we can help you move forward.</p>
                         <div class="banner-dropdown">
                             <button class="banner-dropbtn">Dropdown</button>
