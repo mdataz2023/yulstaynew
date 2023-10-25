@@ -236,11 +236,12 @@ if ($lang == 'en-US'){
             ?>
 
 
-        <div class="pxp-testim-1 pt-100 pb-100 mt-100 pxp-cover" style="background-image: url(https://mdataz.com/yulstaynew/wp-content/uploads/2023/10/1-masked2.jpg);">
-                <!-- <div class="pxp-testim-1-intro">
                     <h2 class="pxp-section-h2 font-white-in"><?php echo $home_team_section_title; ?></h2>
                     <p class="pxp-text-light font-white-in"><?php echo $home_team_section_description; ?></p>
                     <a href="#" class="pxp-primary-cta text-uppercase mt-2 mt-md-3 mt-lg-5 pxp-animate font-white-in">Read All Stories</a>
+        <div class="pxp-testim-1 pt-100 pb-100 mt-100 pxp-cover">
+                <!-- <div class="pxp-testim-1-intro">
+                    
                 </div> -->
                 <div class="pxp-testim-1-container mt-4 mt-md-5 mt-lg-0">
                     <div class="owl-carousel pxp-testim-1-stage">
