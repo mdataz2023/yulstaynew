@@ -3438,6 +3438,10 @@ a.pxp-areas-carousel-item:hover .pxp-areas-carousel-item-fig {
     stroke: #fff;
 }
 
+#testimonialCarousel .owl-nav button svg line{
+    stroke: #fff;
+}
+
 .pxp-testim-1-container .owl-nav {
     margin-top: 3rem;
     text-align: center;

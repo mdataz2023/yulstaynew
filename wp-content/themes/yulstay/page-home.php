@@ -150,7 +150,7 @@ if ($lang == 'en-US'){
                         <p class="pxp-text-light text-white mb-0">Whether you’re buying, selling or renting, we can help you move forward.</p>
                     </div>
 
-                    <div class="tabs">
+                    <!-- <div class="tabs">
                         <div class="tabs__nav">
                         <button class="tabs__nav-btn tab-button" type="button" data-tab="#tab_1">Residential</button>
                         <button class="tabs__nav-btn tab-button" type="button" data-tab="#tab_2">Multi Residential</button>
@@ -178,6 +178,15 @@ if ($lang == 'en-US'){
                                 <div><a class="tab-content-link" href="">Rental Property Property</a></div>
                             </div>
                         </div>
+                        </div>
+                    </div> -->
+
+                    <div class="banner-dropdown">
+                        <button class="banner-dropbtn">Dropdown</button>
+                        <div class="banner-dropdown-content">
+                            <a href="#">Link 1</a>
+                            <a href="#">Link 2</a>
+                            <a href="#">Link 3</a>
                         </div>
                     </div>
                 </div>
@@ -571,7 +580,7 @@ if ($lang == 'en-US'){
                 <a href="<?php echo $home_page_testimonial_link; ?>" class="pxp-primary-cta text-uppercase mt-2 mt-md-3 mt-lg-5 pxp-animate font-white-in"><?php _e('Read All Stories','theme-text-domain'); ?></a>
             </div>
             <div class="pxp-testim-1-container mt-4 mt-md-5 mt-lg-0">
-                <div class="owl-carousel pxp-testim-1-stage">
+                <div class="owl-carousel pxp-testim-1-stage" id="testimonialCarousel">
                     <?php $the_query = new WP_Query( array('post_type' =>'testimonial','posts_per_page' => '20',  'post__not_in'   => array( $id),) );?>
                                     <?php if ( have_posts())   : while ( $the_query->have_posts() ) : $the_query->the_post();?>
 
