@@ -235,10 +235,10 @@ if ($lang == 'en-US'){
 
             ?>
 
-
-                    <h2 class="pxp-section-h2 font-white-in"><?php echo $home_team_section_title; ?></h2>
-                    <p class="pxp-text-light font-white-in"><?php echo $home_team_section_description; ?></p>
-                    <a href="#" class="pxp-primary-cta text-uppercase mt-2 mt-md-3 mt-lg-5 pxp-animate font-white-in">Read All Stories</a>
+            <div class="container mt-100">
+                <h2 class="pxp-section-h2"><?php echo $home_team_section_title; ?></h2>
+                <p class="pxp-text-light"><?php echo $home_team_section_description; ?></p>
+            </div>
         <div class="pxp-testim-1 pt-100 pb-100 mt-100 pxp-cover">
                 <!-- <div class="pxp-testim-1-intro">
                     
