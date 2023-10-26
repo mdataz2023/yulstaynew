@@ -29,30 +29,31 @@ $MUNICIPALITES = $wpdb->get_row("SELECT * FROM MUNICIPALITES m JOIN REGIONS r ON
 
   .active{
       border-radius: 10px;
+      width: 140px!important;
+      object-fit: cover!important;
     }
-  
     #thumbnails {
       text-align: center;
     }
-  
+
     #thumbnails img {
       width: 100px;
       height: 100%;
       margin: 2px;
       cursor: pointer;
-  
+
       @media only screen and (max-width: 480px) {
         width: 50px;
         height: 50px;
       }
-  
+
       @extend .box-shadow;
-  
+
       &:hover {
         transform: scale(1.05);
       }
     }
-  
+
     #main {
       width: 100%;
       height: 100%;
@@ -60,18 +61,18 @@ $MUNICIPALITES = $wpdb->get_row("SELECT * FROM MUNICIPALITES m JOIN REGIONS r ON
       display: block;
       margin: 8px auto;
       position: relative;
-  
+
       @media only screen and (max-width: 480px) {
         width: 100%;
       }
-  
+
       @extend .box-shadow;
     }
-  
+
     .hidden {
       opacity: 0;
     }
-  
+
     /* Style for the arrow buttons */
     #slider-controls {
       position: relative;
@@ -81,7 +82,7 @@ $MUNICIPALITES = $wpdb->get_row("SELECT * FROM MUNICIPALITES m JOIN REGIONS r ON
       justify-content: space-between;
       width: 100%;
     }
-  
+
     #prev-btn, #next-btn {
       background-color: #ffffff;
       padding: 10px;
@@ -145,9 +146,13 @@ $MUNICIPALITES = $wpdb->get_row("SELECT * FROM MUNICIPALITES m JOIN REGIONS r ON
 
     <!-- gallery -->
     <div>
-        <div id="main-container">
-        <img src="https://mediaserver.centris.ca/media.ashx?id=ADDC6FADCF335A8DD8CB337DAC&t=pi&f=I" id="main">
-            <div id="slider-controls">
+        <div id="main-container" style="margin-bottom: -70px !important">
+        <?php
+                        $results = $wpdb->get_results(" SELECT * FROM PHOTOS where  NO_INSCRIPTION = '".get_the_content()."'", OBJECT );
+
+                  ?>
+        <img src="<?php echo $results[0]->PhotoURL;?>" id="main">
+            <div id="slider-controls" style="margin-top: 30px !important">
                 <button id="prev-btn">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
                         <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
@@ -162,47 +167,19 @@ $MUNICIPALITES = $wpdb->get_row("SELECT * FROM MUNICIPALITES m JOIN REGIONS r ON
         </div>
 
         <div id="thumbnails">
-            <img src="https://mediaserver.centris.ca/media.ashx?id=ADDC6FADCF335A8DD8CB337DAC&t=pi&f=I">
-            <img src="https://mediaserver.centris.ca/media.ashx?id=ADDC6FADCF335ABDD8CB337DEC&t=pi&f=I">
-            <img src="https://mediaserver.centris.ca/media.ashx?id=ADDC6FADCF335A1DD8CB337DCA&t=pi&f=I">
-            <img src="https://mediaserver.centris.ca/media.ashx?id=ADDC6FADCF335ABDD8CB337DEC&t=pi&f=I">
+            <?php
+            $photoIndex=0;
+                        foreach ($results as $page) {
+            ?>
+            <img src="<?php echo $page->PhotoURL;?>" class="<?php echo  $photoIndex==0?"active":"";?>">
+            <?php
+             $photoIndex++;
+        }
+        ?>
         </div>
     </div>
     <!-- gallery -->
 
-    <div class="pxp-single-property-gallery-container mt-4 mt-md-5">
-        <div class="pxp-single-property-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-            <?php
-                        $results = $wpdb->get_results(" SELECT * FROM PHOTOS where  NO_INSCRIPTION = '".get_the_content()."'", OBJECT );
-                        $photoIndex=0;
-                        foreach ($results as $page) {
-                    ?>
-            <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="<?php
-                         if($photoIndex==0){
-                            echo "pxp-sp-gallery-main-img";
-                         }else{
-                         echo "pxp-cover" ;}?>">
-                <a href="<?php echo $page->PhotoURL;?>" itemprop="contentUrl" data-size="<?php
-                         if($photoIndex==0){
-                            echo "1920x1280";
-                         }else if($photoIndex==1){
-                            echo "1920x1459";
-                         }else if($photoIndex==2){
-                            echo "1920x2560";
-                         }else  {
-                            echo "1920x1280";
-                         }
-                         ?>" class="pxp-cover" style="background-image: url(<?php echo $page->PhotoURL;?>);"></a>
-                <figcaption itemprop="caption description"></figcaption>
-            </figure>
-            <?php
-                       $photoIndex++; }
-                    ?>
-
-        </div>
-        <a href="#" class="pxp-sp-gallery-btn"><?php _e('View Photos','theme-text-domain'); ?></a>
-        <div class="clearfix"></div>
-    </div>
 
     <div class="container mt-100">
         <div class="row">
