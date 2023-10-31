@@ -130,7 +130,7 @@ $contact_page_email_address_link = get_field('contact_page_email_address_link');
                                 </div> -->
                             </div>
                             <div class="mt-3">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d82654.1772775515!2d-73.63507320679707!3d45.500930295474966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc91b04898a3c2b%3A0xa830225a045600ad!2sYulstay%20Real%20Estate%20Services!5e0!3m2!1sen!2slk!4v1697704831057!5m2!1sen!2slk" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <iframe style="width: 100%; height: 450px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d82654.1772775515!2d-73.63507320679707!3d45.500930295474966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc91b04898a3c2b%3A0xa830225a045600ad!2sYulstay%20Real%20Estate%20Services!5e0!3m2!1sen!2slk!4v1697704831057!5m2!1sen!2slk" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                             </div>
                         </div>
                     </div>
