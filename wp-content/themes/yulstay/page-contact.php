@@ -17,7 +17,7 @@ $contact_page_email_address_link = get_field('contact_page_email_address_link');
 
 ?>
 
-        <div class="pxp-content">
+        <div class="pxp-content mb-100">
             <div class="pxp-contact pxp-content-wrapper banner-mtop">
                 <div class="container">
                     <div class="row">
