@@ -63,7 +63,7 @@ $team_page_title_description = get_field('team_page_title_description');
                 </div>
 
                 <div class="container">
-                    <div class="row mt-200">
+                    <div class="row mt-100 mb-100">
                         <?php $the_query = new WP_Query( array('post_type' =>'team','posts_per_page' => '20',  'post__not_in'   => array( $id),) );?>
 							     <?php if ( have_posts())   : while ( $the_query->have_posts() ) : $the_query->the_post();?>
 							  
