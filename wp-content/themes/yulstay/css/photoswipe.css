@@ -360,3 +360,19 @@
 .font-white-in{
   color: #fff !important;
 }
+
+.banner-mtop{
+	margin-top: 40px !important;
+}
+
+@media only screen and (max-width: 481px) {
+	.banner-mtop{
+		margin-top: 0px !important;
+	}
+}
+
+@media only screen and (max-width: 782px) {
+	.banner-mtop{
+		margin-top: 0px !important;
+	}
+}
