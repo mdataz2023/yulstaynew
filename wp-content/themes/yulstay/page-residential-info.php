@@ -24,15 +24,15 @@ get_header();
                                         <div class="col-sm-12">
                                             <!-- <div class="pxp-caption-prop-title">Chic Apartment in Downtown</div> -->
                                             <div style="display: flex; flex-direction: column; padding-top: 150px; padding-bottom: 100px;">
-                                                <p style="font-size: 14px;">It is imperative to understand the current market condition and draft a proper strategy tailored to you and your property. The goal is always to increase visibility and generate a high level of interest in order to maximize value.</p>
-                                                <h3 style="font-weight: 700; font-size: 16px;">Our mission is simple </h3>
-                                                <p style="font-size: 14px;">Help our clients sell their property with complete peace of mind by offering result-oriented strategies and services with the highest degree of transparency. We hold true to our mission and are able to deliver on it by focusing on our three core elements</p>
-                                                <h3 style="font-weight: 700; font-size: 16px;">Peace of mind </h3>
-                                                <p style="font-size: 14px;">Our team has an 18 + 1 step plan of action that has been proven to alleviate you from all the stress associated with the sale of your property.</p>
-                                                <h3 style="font-weight: 700; font-size: 16px;">Transparency</h3>
-                                                <p style="font-size: 14px;">We take the time to properly explain the current market conditions and what our step-by-step strategy to sell your property will be. We pride ourselves in maintaining a high level of communication throughout the entire process to ensure that all your questions and concerns are addressed.</p>
-                                                <h3 style="font-weight: 700; font-size: 16px;">Results</h3>
-                                                <p style="font-size: 14px;">Our tailored made strategies have a proven track record showing that we continuously deliver on our promise to maximize your returns.</p>
+                                                <p class="info-text-para">It is imperative to understand the current market condition and draft a proper strategy tailored to you and your property. The goal is always to increase visibility and generate a high level of interest in order to maximize value.</p>
+                                                <h3 class="info-text-title">Our mission is simple </h3>
+                                                <p class="info-text-para">Help our clients sell their property with complete peace of mind by offering result-oriented strategies and services with the highest degree of transparency. We hold true to our mission and are able to deliver on it by focusing on our three core elements</p>
+                                                <h3 class="info-text-title">Peace of mind </h3>
+                                                <p class="info-text-para">Our team has an 18 + 1 step plan of action that has been proven to alleviate you from all the stress associated with the sale of your property.</p>
+                                                <h3 class="info-text-title">Transparency</h3>
+                                                <p class="info-text-para">We take the time to properly explain the current market conditions and what our step-by-step strategy to sell your property will be. We pride ourselves in maintaining a high level of communication throughout the entire process to ensure that all your questions and concerns are addressed.</p>
+                                                <h3 class="info-text-title">Results</h3>
+                                                <p class="info-text-para">Our tailored made strategies have a proven track record showing that we continuously deliver on our promise to maximize your returns.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -47,15 +47,15 @@ get_header();
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <div style="display: flex; flex-direction: column; padding-top: 150px; padding-bottom: 100px;">
-                                                <p style="font-size: 14px;">It is imperative to understand the current market condition and draft a proper strategy tailored to you and your property. The goal is always to increase visibility and generate a high level of interest in order to maximize value.</p>
-                                                <h3 style="font-weight: 700; font-size: 16px;">Our mission is simple </h3>
-                                                <p style="font-size: 14px;">Help our clients sell their property with complete peace of mind by offering result-oriented strategies and services with the highest degree of transparency. We hold true to our mission and are able to deliver on it by focusing on our three core elements</p>
-                                                <h3 style="font-weight: 700; font-size: 16px;">Peace of mind </h3>
-                                                <p style="font-size: 14px;">Our team has an 18 + 1 step plan of action that has been proven to alleviate you from all the stress associated with the sale of your property.</p>
-                                                <h3 style="font-weight: 700; font-size: 16px;">Transparency</h3>
-                                                <p style="font-size: 14px;">We take the time to properly explain the current market conditions and what our step-by-step strategy to sell your property will be. We pride ourselves in maintaining a high level of communication throughout the entire process to ensure that all your questions and concerns are addressed.</p>
-                                                <h3 style="font-weight: 700; font-size: 16px;">Results</h3>
-                                                <p style="font-size: 14px;">Our tailored made strategies have a proven track record showing that we continuously deliver on our promise to maximize your returns.</p>
+                                            <p class="info-text-para">It is imperative to understand the current market condition and draft a proper strategy tailored to you and your property. The goal is always to increase visibility and generate a high level of interest in order to maximize value.</p>
+                                                <h3 class="info-text-title">Our mission is simple </h3>
+                                                <p class="info-text-para">Help our clients sell their property with complete peace of mind by offering result-oriented strategies and services with the highest degree of transparency. We hold true to our mission and are able to deliver on it by focusing on our three core elements</p>
+                                                <h3 class="info-text-title">Peace of mind </h3>
+                                                <p class="info-text-para">Our team has an 18 + 1 step plan of action that has been proven to alleviate you from all the stress associated with the sale of your property.</p>
+                                                <h3 class="info-text-title">Transparency</h3>
+                                                <p class="info-text-para">We take the time to properly explain the current market conditions and what our step-by-step strategy to sell your property will be. We pride ourselves in maintaining a high level of communication throughout the entire process to ensure that all your questions and concerns are addressed.</p>
+                                                <h3 class="info-text-title">Results</h3>
+                                                <p class="info-text-para">Our tailored made strategies have a proven track record showing that we continuously deliver on our promise to maximize your returns.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -70,15 +70,15 @@ get_header();
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <div style="display: flex; flex-direction: column; padding-top: 150px; padding-bottom: 100px;">
-                                                <p style="font-size: 14px;">It is imperative to understand the current market condition and draft a proper strategy tailored to you and your property. The goal is always to increase visibility and generate a high level of interest in order to maximize value.</p>
-                                                <h3 style="font-weight: 700; font-size: 16px;">Our mission is simple </h3>
-                                                <p style="font-size: 14px;">Help our clients sell their property with complete peace of mind by offering result-oriented strategies and services with the highest degree of transparency. We hold true to our mission and are able to deliver on it by focusing on our three core elements</p>
-                                                <h3 style="font-weight: 700; font-size: 16px;">Peace of mind </h3>
-                                                <p style="font-size: 14px;">Our team has an 18 + 1 step plan of action that has been proven to alleviate you from all the stress associated with the sale of your property.</p>
-                                                <h3 style="font-weight: 700; font-size: 16px;">Transparency</h3>
-                                                <p style="font-size: 14px;">We take the time to properly explain the current market conditions and what our step-by-step strategy to sell your property will be. We pride ourselves in maintaining a high level of communication throughout the entire process to ensure that all your questions and concerns are addressed.</p>
-                                                <h3 style="font-weight: 700; font-size: 16px;">Results</h3>
-                                                <p style="font-size: 14px;">Our tailored made strategies have a proven track record showing that we continuously deliver on our promise to maximize your returns.</p>
+                                            <p class="info-text-para">It is imperative to understand the current market condition and draft a proper strategy tailored to you and your property. The goal is always to increase visibility and generate a high level of interest in order to maximize value.</p>
+                                                <h3 class="info-text-title">Our mission is simple </h3>
+                                                <p class="info-text-para">Help our clients sell their property with complete peace of mind by offering result-oriented strategies and services with the highest degree of transparency. We hold true to our mission and are able to deliver on it by focusing on our three core elements</p>
+                                                <h3 class="info-text-title">Peace of mind </h3>
+                                                <p class="info-text-para">Our team has an 18 + 1 step plan of action that has been proven to alleviate you from all the stress associated with the sale of your property.</p>
+                                                <h3 class="info-text-title">Transparency</h3>
+                                                <p class="info-text-para">We take the time to properly explain the current market conditions and what our step-by-step strategy to sell your property will be. We pride ourselves in maintaining a high level of communication throughout the entire process to ensure that all your questions and concerns are addressed.</p>
+                                                <h3 class="info-text-title">Results</h3>
+                                                <p class="info-text-para">Our tailored made strategies have a proven track record showing that we continuously deliver on our promise to maximize your returns.</p>
                                             </div>
                                         </div>
                                     </div>
