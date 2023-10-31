@@ -327,10 +327,10 @@ if ($lang == 'en-US'){
                                 <img src="<?php echo get_template_directory_uri(); ?>/images/service-icon-1.svg" alt="...">
                             </div>
                             <div class="pxp-services-item-text text-center">
-                                <div class="pxp-services-item-text-title"><?php _e('Find your future home','theme-text-domain'); ?></div>
-                                <div class="pxp-services-item-text-sub"><?php _e('We help you find a new home by offering','theme-text-domain'); ?><br><?php _e('a smart real estate experience','theme-text-domain'); ?></div>
+                                <div class="pxp-services-item-text-title"><?php _e('Investments','theme-text-domain'); ?></div>
+                                <div class="pxp-services-item-text-sub"><?php _e('Where Yulstay was born.','theme-text-domain'); ?><br><?php _e('a smart real estate experience','theme-text-domain'); ?></div>
                             </div>
-                            <div class="pxp-services-item-cta text-uppercase text-center"><?php _e('Learn More','theme-text-domain'); ?></div>
+                            <div class="pxp-services-item-cta text-uppercase text-center"><?php _e('We offer unparalleled service and advice on the acquisition of investment properties, from condos to commercial multiplexes','theme-text-domain'); ?></div>
                         </a>
                         <a href="agents.html" class="pxp-services-item">
                             <div class="pxp-services-item-fig">
