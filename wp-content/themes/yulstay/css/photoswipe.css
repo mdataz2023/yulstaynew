@@ -362,7 +362,7 @@
 }
 
 .banner-mtop{
-	margin-top: 40px !important;
+	margin-top: 70px !important;
 }
 
 @media only screen and (max-width: 481px) {
@@ -373,6 +373,6 @@
 
 @media only screen and (max-width: 782px) {
 	.banner-mtop{
-		margin-top: 0px !important;
+		margin-top: 50px !important;
 	}
 }
