@@ -328,9 +328,9 @@ if ($lang == 'en-US'){
                             </div>
                             <div class="pxp-services-item-text text-center">
                                 <div class="pxp-services-item-text-title"><?php _e('Investments','theme-text-domain'); ?></div>
-                                <div class="pxp-services-item-text-sub"><?php _e('Where Yulstay was born.','theme-text-domain'); ?><br><?php _e('a smart real estate experience','theme-text-domain'); ?></div>
+                                <div class="pxp-services-item-text-sub"><?php _e('Where Yulstay was born. We offer unparalleled service and advice on the acquisition of investment properties,','theme-text-domain'); ?><br><?php _e('of investment properties from condos to commercial multiplexes','theme-text-domain'); ?></div>
                             </div>
-                            <div class="pxp-services-item-cta text-uppercase text-center"><?php _e('We offer unparalleled service and advice on the acquisition of investment properties, from condos to commercial multiplexes','theme-text-domain'); ?></div>
+                            <div class="pxp-services-item-cta text-uppercase text-center"><?php _e('','theme-text-domain'); ?></div>
                         </a>
                         <a href="agents.html" class="pxp-services-item">
                             <div class="pxp-services-item-fig">
