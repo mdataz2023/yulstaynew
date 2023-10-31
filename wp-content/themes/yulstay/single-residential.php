@@ -667,7 +667,7 @@ if ($lang == 'en-US'){
                         </div>
                     </div>
                 </div> -->
-                <div hidden class="pxp-single-property-section mt-4 mt-md-5">
+                <!-- <div hidden class="pxp-single-property-section mt-4 mt-md-5">
                     <h3>Payment Calculator</h3>
                     <div class="pxp-calculator-view mt-3 mt-md-4">
                         <div class="row">
@@ -769,7 +769,7 @@ if ($lang == 'en-US'){
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <div hidden class="pxp-single-property-section mt-4 mt-md-5">
                     <h3>Schools in Marina District</h3>
