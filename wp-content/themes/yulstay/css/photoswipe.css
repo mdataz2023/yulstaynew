@@ -362,7 +362,7 @@
 }
 
 .banner-mtop{
-	margin-top: 70px !important;
+	margin-top: 40px !important;
 }
 
 .info-text-title{
@@ -401,6 +401,6 @@
 
 @media only screen and (max-width: 782px) {
 	.banner-mtop{
-		margin-top: 50px !important;
+		margin-top: 30px !important;
 	}
 }
