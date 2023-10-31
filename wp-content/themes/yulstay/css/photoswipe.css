@@ -366,18 +366,26 @@
 }
 
 .info-text-title{
-  font-weight: 700;
-  font-size: 16px;
+  font-weight: 600;
+  font-size: 18px;
 }
 
 .info-text-para{
-  font-size: 14px;
+  font-size: 16px;
 }
 
 @media only screen and (max-width: 481px) {
 	.banner-mtop{
 		margin-top: 0px !important;
 	}
+  .info-text-title{
+    font-weight: 600;
+    font-size: 14px;
+  }
+  
+  .info-text-para{
+    font-size: 12px;
+  }
 }
 
 @media only screen and (max-width: 782px) {
