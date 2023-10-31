@@ -14,7 +14,7 @@ $team_page_title_description = get_field('team_page_title_description');
 ?>
 
         <div class="pxp-content">
-            <div class="pxp-agents pxp-content-wrapper mt-100">
+            <div class="pxp-agents pxp-content-wrapper">
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12 col-md-7">
