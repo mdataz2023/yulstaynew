@@ -357,7 +357,7 @@ echo $inscriptionsData->INCLUS_FRANCAIS."<br><br>".$inscriptionsData->EXCLUS_FRA
                     <div id="pxp-sp-map" class="mt-3"></div>
                 </div>
 
-                <div hidden class="pxp-single-property-section mt-4 mt-md-5">
+                <!-- <div hidden class="pxp-single-property-section mt-4 mt-md-5">
                     <h3>Payment Calculator</h3>
                     <div class="pxp-calculator-view mt-3 mt-md-4">
                         <div class="row">
@@ -567,7 +567,7 @@ echo $inscriptionsData->INCLUS_FRANCAIS."<br><br>".$inscriptionsData->EXCLUS_FRA
                             </table>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
             <div class="col-lg-4">
                 <div class="pxp-single-property-section pxp-sp-agent-section mt-4 mt-md-5 mt-lg-0"  style="display: flex; flex-direction: column;">
