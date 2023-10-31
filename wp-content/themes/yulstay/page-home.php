@@ -242,6 +242,8 @@ if ($lang == 'en-US'){
             $home_page_testimonial_title = get_field('home_page_testimonial_title');
             $home_page_testimonial_description = get_field('home_page_testimonial_description');
             $home_page_testimonial_link = get_field('home_page_testimonial_link');
+            $explore_section_title = get_field('explore_section_title');
+            $explore_section_description = get_field('explore_section_description');
 
             ?>
 
@@ -508,8 +510,8 @@ if ($lang == 'en-US'){
         </div>
 
         <div class="container mt-100">
-            <h2 class="pxp-section-h2">Explore Our Neighborhoods</h2>
-            <p class="pxp-text-light">Browse our comprehensive neighborhood listings</p>
+            <h2 class="pxp-section-h2"><?php echo $explore_section_title; ?></h2>
+            <p class="pxp-text-light"><?php echo $explore_section_description; ?></p>
 
             <div class="row mt-4 mt-md-5">
 
