@@ -95,7 +95,7 @@ $MUNICIPALITES = $wpdb->get_row("SELECT * FROM MUNICIPALITES m JOIN REGIONS r ON
     }
 </style>
 <div class="pxp-content">
-    <div class="pxp-single-property-top pxp-content-wrapper mt-100">
+    <div class="pxp-single-property-top pxp-content-wrapper mt-100" style="padding-top: 0px;">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-md-8">
