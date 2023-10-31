@@ -18,10 +18,10 @@ get_header();
                     <div class="carousel-inner">
                         <div class="carousel-item active" data-slide="0">
                             <div class="pxp-hero-bg pxp-cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/imageres1.png);"></div>
-                            <div class="pxp-caption pt-100 pb-100">
+                            <div class="pxp-caption">
                                 <div class="container">
                                     <div class="row">
-                                        <div class="col-sm-12">
+                                        <div class="col-sm-12 pt-100 pb-100">
                                             <!-- <div class="pxp-caption-prop-title">Chic Apartment in Downtown</div> -->
                                             <div style="display: flex; flex-direction: column; padding-top: 150px; padding-bottom: 100px;">
                                                 <p class="info-text-para">It is imperative to understand the current market condition and draft a proper strategy tailored to you and your property. The goal is always to increase visibility and generate a high level of interest in order to maximize value.</p>
@@ -42,10 +42,10 @@ get_header();
                         </div>
                         <div class="carousel-item" data-slide="1">
                             <div class="pxp-hero-bg pxp-cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/imageres2.png);"></div>
-                            <div class="pxp-caption pt-100 pb-100">
+                            <div class="pxp-caption">
                                 <div class="container">
                                     <div class="row">
-                                        <div class="col-sm-12">
+                                        <div class="col-sm-12 pt-100 pb-100">
                                             <div style="display: flex; flex-direction: column; padding-top: 150px; padding-bottom: 100px;">
                                             <p class="info-text-para">It is imperative to understand the current market condition and draft a proper strategy tailored to you and your property. The goal is always to increase visibility and generate a high level of interest in order to maximize value.</p>
                                                 <h3 class="info-text-title">Our mission is simple </h3>
@@ -65,10 +65,10 @@ get_header();
                         </div>
                         <div class="carousel-item" data-slide="2">
                             <div class="pxp-hero-bg pxp-cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/imageres3.png);"></div>
-                            <div class="pxp-caption pt-100 pb-100">
+                            <div class="pxp-caption">
                                 <div class="container">
                                     <div class="row">
-                                        <div class="col-sm-12">
+                                        <div class="col-sm-12 pt-100 pb-100">
                                             <div style="display: flex; flex-direction: column; padding-top: 150px; padding-bottom: 100px;">
                                             <p class="info-text-para">It is imperative to understand the current market condition and draft a proper strategy tailored to you and your property. The goal is always to increase visibility and generate a high level of interest in order to maximize value.</p>
                                                 <h3 class="info-text-title">Our mission is simple </h3>
