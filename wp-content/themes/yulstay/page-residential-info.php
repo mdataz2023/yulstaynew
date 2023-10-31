@@ -18,7 +18,7 @@ get_header();
                     <div class="carousel-inner">
                         <div class="carousel-item active" data-slide="0">
                             <div class="pxp-hero-bg pxp-cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/imageres1.png);"></div>
-                            <div class="pxp-caption">
+                            <div class="pxp-caption pt-100 pb-100">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-sm-12">
@@ -42,7 +42,7 @@ get_header();
                         </div>
                         <div class="carousel-item" data-slide="1">
                             <div class="pxp-hero-bg pxp-cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/imageres2.png);"></div>
-                            <div class="pxp-caption">
+                            <div class="pxp-caption pt-100 pb-100">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-sm-12">
@@ -65,7 +65,7 @@ get_header();
                         </div>
                         <div class="carousel-item" data-slide="2">
                             <div class="pxp-hero-bg pxp-cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/imageres3.png);"></div>
-                            <div class="pxp-caption">
+                            <div class="pxp-caption pt-100 pb-100">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-sm-12">

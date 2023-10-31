@@ -8434,10 +8434,10 @@ a.pxp-services-tabs-content-item:hover .pxp-services-tabs-content-item-cta {
         height: 80px;
     }
 
-    .pxp-hero {
+    /* .pxp-hero {
         height: 560px !important;
         min-height: 560px;
-    }
+    } */
 
     .pxp-hero-props-carousel-2 .pxp-carousel-controls {
         width: 160px;
