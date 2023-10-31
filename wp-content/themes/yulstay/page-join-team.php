@@ -21,7 +21,7 @@ $join_our_team_page_paragraph = get_field('join_our_team_page_paragraph');
 ?>
 
         <div class="pxp-content">
-            <div class="pxp-contact pxp-content-wrapper mt-100">
+            <div class="pxp-contact pxp-content-wrapper banner-mtop">
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12 col-md-7">
