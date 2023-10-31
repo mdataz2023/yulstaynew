@@ -5888,3 +5888,17 @@ footer {
 .is-IE .post-thumbnail .wp-post-image {
 	min-width: auto;
 }
+
+.banner-mtop{
+	margin-top: 40px;
+}
+
+@media only screen and (max-width: 481px) {
+	.banner-mtop{
+		margin-top: 0px;
+	}
+}
+
+@media only screen and (max-width: 782px) {
+
+}
