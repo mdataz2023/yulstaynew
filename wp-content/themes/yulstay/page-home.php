@@ -60,7 +60,7 @@ if ($lang == 'en-US'){
                 <div class="col-5 col-md-2">
                     <!-- <a href="<?php bloginfo('url'); ?>/" class="pxp-logo text-decoration-none">Yulstay</a> -->
                     <a href="<?php bloginfo('url'); ?>/" class="pxp-logo text-decoration-none">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/yulstay-logo.png"
+                        <img src="<?php echo get_template_directory_uri(); ?>/YULSTAY-NAV.png"
                             style="height: 2.75rem;" alt="">
                     </a>
                 </div>
