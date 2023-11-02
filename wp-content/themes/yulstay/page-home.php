@@ -331,17 +331,17 @@ if ($lang == 'en-US'){
                             </div>
                             <div class="pxp-services-item-text text-center">
                                 <div class="pxp-services-item-text-title"><?php _e('Investments','theme-text-domain'); ?></div>
-                                <div class="pxp-services-item-text-sub"><?php _e('Where Yulstay was born. We offer unparalleled service and advice on the acquisition of investment properties,','theme-text-domain'); ?></div>
+                                <div class="pxp-services-item-text-sub"><?php _e('Where Yulstay was born.  We offer unparalleled service and advice on the acquisition of investment properties, from condos to commercial multiplexes','theme-text-domain'); ?></div>
                             </div>
-                            <div class="pxp-services-item-cta text-uppercase text-center"><?php _e('','theme-text-domain'); ?></div>
+                            <div class="pxp-services-item-cta text-uppercase text-center"><?php _e('Learn More','theme-text-domain'); ?></div>
                         </a>
                         <a href="agents.html" class="pxp-services-item">
                             <div class="pxp-services-item-fig">
                                 <img src="<?php echo get_template_directory_uri(); ?>/images/service-icon-2.svg" alt="...">
                             </div>
                             <div class="pxp-services-item-text text-center">
-                                <div class="pxp-services-item-text-title"><?php _e('Experienced agents','theme-text-domain'); ?></div>
-                                <div class="pxp-services-item-text-sub"><?php _e('Find an agent who knows','theme-text-domain'); ?><br><?php _e('your market best','theme-text-domain'); ?></div>
+                                <div class="pxp-services-item-text-title"><?php _e('Purchase','theme-text-domain'); ?></div>
+                                <div class="pxp-services-item-text-sub"><?php _e('Looking for your new home? Our buyer brokers know how to best accompany you from start to finish','theme-text-domain'); ?></div>
                             </div>
                             <div class="pxp-services-item-cta text-uppercase text-center"><?php _e('Learn More','theme-text-domain'); ?></div>
                         </a>
@@ -350,8 +350,8 @@ if ($lang == 'en-US'){
                                 <img src="<?php echo get_template_directory_uri(); ?>/images/service-icon-3.svg" alt="...">
                             </div>
                             <div class="pxp-services-item-text text-center">
-                                <div class="pxp-services-item-text-title"><?php _e('Buy or rent homes','theme-text-domain'); ?></div>
-                                <div class="pxp-services-item-text-sub"><?php _e('Millions of houses and apartments in','theme-text-domain'); ?><br><?php _e('your favourite cities','theme-text-domain'); ?></div>
+                                <div class="pxp-services-item-text-title"><?php _e('Sale','theme-text-domain'); ?></div>
+                                <div class="pxp-services-item-text-sub"><?php _e('Need to sell your property?  Our experienced listing brokers will put an action plan in place based on your specific requirements','theme-text-domain'); ?></div>
                             </div>
                             <div class="pxp-services-item-cta text-uppercase text-center"><?php _e('Learn More','theme-text-domain'); ?></div>
                         </a>
@@ -360,8 +360,8 @@ if ($lang == 'en-US'){
                                 <img src="<?php echo get_template_directory_uri(); ?>/images/service-icon-4.svg" alt="...">
                             </div>
                             <div class="pxp-services-item-text text-center">
-                                <div class="pxp-services-item-text-title"><?php _e('List your own property','theme-text-domain'); ?></div>
-                                <div class="pxp-services-item-text-sub"><?php _e('Sign up now and sell or rent','theme-text-domain'); ?><br><?php _e('your own properties','theme-text-domain'); ?></div>
+                                <div class="pxp-services-item-text-title"><?php _e('Rental & Management','theme-text-domain'); ?></div>
+                                <div class="pxp-services-item-text-sub"><?php _e('With a leasing team dedicated to renting your property, our strategic planning, polished over the years, has ranked us as one of the very best in the business','theme-text-domain'); ?></div>
                             </div>
                             <div class="pxp-services-item-cta text-uppercase text-center"><?php _e('Learn More','theme-text-domain'); ?></div>
                         </a>
