@@ -68,6 +68,7 @@ $team_page_title_description = get_field('team_page_title_description');
 							     <?php if ( have_posts())   : while ( $the_query->have_posts() ) : $the_query->the_post();?>
 							  
 									   <?php
+                                        $post_id = get_the_ID();
 										$thumbnail_id = get_post_thumbnail_id(); 
 										$thumbnail_url = wp_get_attachment_image_src( $thumbnail_id, 'thumbnail-size', true );
 										$thumbnail_meta = get_post_meta( $thumbnail_id, '_wp_attachment_image_alt', true); 
@@ -87,7 +88,7 @@ $team_page_title_description = get_field('team_page_title_description');
                                 <?php } ?>
                                 <div class="pxp-agents-1-item-details rounded-lg">
                                     <div class="pxp-agents-1-item-details-name"><?php the_title(); ?></div>
-                                    <div class="pxp-agents-1-item-details-email"><span class="fa fa-phone"></span> <?php echo get_field('team_member_telephone'); ?></div>
+                                    <div class="pxp-agents-1-item-details-email"><?php echo $post_id; ?><span class="fa fa-phone"></span> <?php echo get_field('team_member_telephone'); ?></div>
                                     <div class="pxp-agents-1-item-details-spacer"></div>
                                     <div class="pxp-agents-1-item-cta text-uppercase"><?php _e('More Details','theme-text-domain'); ?></div>
                                 </div>
