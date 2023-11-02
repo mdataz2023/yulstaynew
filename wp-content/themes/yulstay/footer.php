@@ -19,7 +19,7 @@
                         <div class="pxp-footer-logo">
                         <img src="<?php echo get_template_directory_uri(); ?>/images/yulstay-logo.png" style="width: 8rem;" alt="">
                         </div>
-                        <div class="pxp-footer-address mt-2">>686 Rue Saint-Paul O., Quebec, <br>Montréal H3C 1M4<br>
+                        <div class="pxp-footer-address mt-2">686 Rue Saint-Paul O., Quebec, <br>Montréal H3C 1M4<br>
                             514.588.7663
                         </div>
                         <div class="pxp-footer-social mt-2">
