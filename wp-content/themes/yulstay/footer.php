@@ -23,9 +23,10 @@
                             514.588.7663
                         </div>
                         <div class="pxp-footer-social mt-2">
-                            <a href="#"><span class="fa fa-instagram"></span></a>
-                            <a href="#"><span class="fa fa-facebook-square"></span></a>
-                            <a href="#"><span class="fa fa-twitter"></span></a>
+                            <a href="https://www.instagram.com/yulstay_/"><span class="fa fa-instagram"></span></a>
+                            <a href="https://www.facebook.com/yulstay/"><span class="fa fa-facebook-square"></span></a>
+                            <a href="https://www.linkedin.com/company/yulstay/?originalSubdomain=ca"><span class="fa fa-linkedin-square"></span></a>
+                            <!-- <a href="#"><span class="fa fa-twitter"></span></a> -->
                         </div>
                     </div>
                     <div class="col-sm-12 col-lg-8">
