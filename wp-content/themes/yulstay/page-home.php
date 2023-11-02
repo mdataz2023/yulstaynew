@@ -261,7 +261,7 @@ if ($lang == 'en-US'){
                             <?php $the_query = new WP_Query( array('post_type' =>'team','posts_per_page' => '10',  'post__not_in'   => array( $id),) );?>
                             <?php if ( have_posts())   : while ( $the_query->have_posts() ) : $the_query->the_post();?>
 
-                            <?php
+                            <?php               $post_id = get_the_ID();
                                                 $thumbnail_id = get_post_thumbnail_id();
                                                 $thumbnail_url = wp_get_attachment_image_src( $thumbnail_id, 'thumbnail-size', true );
                                                 $thumbnail_meta = get_post_meta( $thumbnail_id, '_wp_attachment_image_alt', true);
@@ -281,7 +281,7 @@ if ($lang == 'en-US'){
                                 <?php } ?>
                                 <div class="pxp-agents-1-item-details rounded-lg">
                                     <div class="pxp-agents-1-item-details-name"><?php the_title(); ?></div>
-                                    <div class="pxp-agents-1-item-details-email"><span class="fa fa-phone"></span> <?php echo get_field('team_member_telephone'); ?></div>
+                                    <div class="pxp-agents-1-item-details-email"><?php if ($post_id == 32) {echo " "; } else { echo '<span class="fa fa-phone"></span>'; } ?>&#160; <?php echo get_field('team_member_telephone'); ?></div>
                                     <div class="pxp-agents-1-item-details-spacer"></div>
                                     <div class="pxp-agents-1-item-cta text-uppercase"><?php _e('More Details','theme-text-domain'); ?></div>
                                 </div>
