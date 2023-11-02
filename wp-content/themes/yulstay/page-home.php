@@ -151,9 +151,10 @@ if ($lang == 'en-US'){
                         <div class="banner-dropdown">
                             <button class="banner-dropbtn">Dropdown</button>
                             <div class="banner-dropdown-content">
-                                <a href="#">Link 1</a>
-                                <a href="#">Link 2</a>
-                                <a href="#">Link 3</a>
+                                <a href="#">Investments</a>
+                                <a href="#">Purchase</a>
+                                <a href="#">Sale</a>
+                                <a href="#">Rental & Management</a>
                             </div>
                         </div>
                     </div>
