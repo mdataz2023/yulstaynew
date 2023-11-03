@@ -327,7 +327,7 @@ if ($lang == 'en-US'){
                 <div class="pxp-services-container rounded-lg mt-4 mt-md-5">
                 <a href="properties.html" class="pxp-services-item">
                             <div class="pxp-services-item-fig">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/service-icon-1.svg" alt="...">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/icons81.png" alt="...">
                             </div>
                             <div class="pxp-services-item-text text-center">
                                 <div class="pxp-services-item-text-title"><?php _e('Investments','theme-text-domain'); ?></div>
@@ -337,7 +337,7 @@ if ($lang == 'en-US'){
                         </a>
                         <a href="agents.html" class="pxp-services-item">
                             <div class="pxp-services-item-fig">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/service-icon-2.svg" alt="...">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/icons82.png" alt="...">
                             </div>
                             <div class="pxp-services-item-text text-center">
                                 <div class="pxp-services-item-text-title"><?php _e('Purchase','theme-text-domain'); ?></div>
@@ -347,7 +347,7 @@ if ($lang == 'en-US'){
                         </a>
                         <a href="properties.html" class="pxp-services-item">
                             <div class="pxp-services-item-fig">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/service-icon-3.svg" alt="...">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/icons83.png" alt="...">
                             </div>
                             <div class="pxp-services-item-text text-center">
                                 <div class="pxp-services-item-text-title"><?php _e('Sale','theme-text-domain'); ?></div>
@@ -357,7 +357,7 @@ if ($lang == 'en-US'){
                         </a>
                         <a href="submit-property.html" class="pxp-services-item">
                             <div class="pxp-services-item-fig">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/service-icon-4.svg" alt="...">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/icons84.png" alt="...">
                             </div>
                             <div class="pxp-services-item-text text-center">
                                 <div class="pxp-services-item-text-title"><?php _e('Rental & Management','theme-text-domain'); ?></div>
@@ -581,7 +581,7 @@ if ($lang == 'en-US'){
             <div class="pxp-testim-1-intro">
                 <h2 class="pxp-section-h2 font-white-in"><?php echo $home_page_testimonial_title; ?></h2>
                 <p class="pxp-text-light font-white-in"><?php echo $home_page_testimonial_description; ?></p>
-                <a href="<?php echo $home_page_testimonial_link; ?>" class="pxp-primary-cta text-uppercase mt-2 mt-md-3 mt-lg-5 pxp-animate font-white-in"><?php _e('Read All Stories','theme-text-domain'); ?></a>
+                <!-- <a href="<?php echo $home_page_testimonial_link; ?>" class="pxp-primary-cta text-uppercase mt-2 mt-md-3 mt-lg-5 pxp-animate font-white-in"><?php _e('Read All Stories','theme-text-domain'); ?></a> -->
             </div>
             <div class="pxp-testim-1-container mt-4 mt-md-5 mt-lg-0">
                 <div class="owl-carousel pxp-testim-1-stage" id="testimonialCarousel">
