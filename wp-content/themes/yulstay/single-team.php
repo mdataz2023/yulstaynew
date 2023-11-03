@@ -24,6 +24,8 @@ if ($lang == 'en-US'){
     $language="F";
     $currencyLetterSuffix=" $";
 }
+
+$post_id = get_the_ID();
 ?>
 
 <div class="pxp-content">

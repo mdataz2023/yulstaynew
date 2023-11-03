@@ -40,7 +40,7 @@ $MUNICIPALITES = $wpdb->get_row("SELECT * FROM MUNICIPALITES m JOIN REGIONS r ON
     }
 
     #thumbnails img {
-      width: 100px;
+      width: 70px;
       height: 100%;
       margin: 2px;
       cursor: pointer;
@@ -96,6 +96,7 @@ $MUNICIPALITES = $wpdb->get_row("SELECT * FROM MUNICIPALITES m JOIN REGIONS r ON
       cursor: pointer;
       font-size: 16px;
       border-radius: 4px;
+      opacity: 80%;
     }
 </style>
 <div class="pxp-content mb-100">
