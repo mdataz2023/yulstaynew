@@ -42,8 +42,7 @@ if ($lang == 'en-US'){
                                     class="fa fa-envelope-o"></span> <?php echo $team_member_email; ?></a></div>
                         <div class="pxp-agent-email"><a href=""><span class="fa fa-location-arrow"></span>
                                 <?php echo $team_member_address; ?></a></div>
-                        <div class="pxp-agent-phone"><a href="tel:<?php echo $team_member_telephone; ?>" style="color: #333 !important;"><span
-                                    class="fa fa-phone"></span>  <?php echo $team_member_telephone; ?></a></div>
+                        <div class="pxp-agent-phone"><a href="tel:<?php echo $team_member_telephone; ?>" style="color: #333 !important;"><?php if ($post_id == 32) {echo " "; } else { echo '<span class="fa fa-phone"></span>'; } ?>  <?php echo $team_member_telephone; ?></a></div>
                     </div>
                     <div hidden class="mt-4 mt-md-5">
                         <a href="#pxp-work-with" class="pxp-agent-contact-btn" data-toggle="modal"
