@@ -112,7 +112,7 @@ $contact_page_email_address_link = get_field('contact_page_email_address_link');
 
                             // Define default content for each option
                             var defaultContent = {
-                                "investment-form": "<?php echo do_shortcode('[contact-form-7 id="96e23ab" title="Contact Form"]'); ?>",
+                                "investment-form": "<?php echo do_shortcode('[contact-form-7 id=\"96e23ab\" title=\"Contact Form\"]'); ?>",
                                 "purchase-form": "2",
                                 "sale-form": "3",
                                 "rental-form": "4",
