@@ -90,14 +90,21 @@ $contact_page_email_address_link = get_field('contact_page_email_address_link');
                 <div class="container mt-100">
                     <div class="row">
                         <div class="col-sm-12 col-lg-6">
-                        <h2 id="form-title">Select your form</h2>
-                        <select id="select-form">
-                            <option value="default">Select form</option>
-                            <option value="investment-form">Investments</option>
-                            <option value="purchase-form">Purchase</option>
-                            <option value="sale-form">Sale</option>
-                            <option value="rental-form">Rental & Management</option>
-                        </select>
+                            <div style="display:none; justify-content: space-between;">
+                                <div>
+                                    <h2 id="form-title">Select your form</h2>
+                                </div>
+                                <div>
+                                <select id="select-form">
+                                    <option value="default">Select form</option>
+                                    <option value="investment-form">Investments</option>
+                                    <option value="purchase-form">Purchase</option>
+                                    <option value="sale-form">Sale</option>
+                                    <option value="rental-form">Rental & Management</option>
+                                </select>
+                                </div>
+                            </div>
+
                         <div id="form-id">
                             <div>
                                 Default content for form-id when nothing is selected
@@ -132,7 +139,7 @@ $contact_page_email_address_link = get_field('contact_page_email_address_link');
                                 formIdDiv.innerHTML = defaultContent[selectedOption];
                             
                                 // Update the content of the form-title with the selected option's text
-                                formTitle.innerHTML = "Select your " + selectForm.options[selectForm.selectedIndex].text;
+                                formTitle.innerHTML = selectForm.options[selectForm.selectedIndex].text;
                             });
                             
                             // Initialize with default content for form-id
