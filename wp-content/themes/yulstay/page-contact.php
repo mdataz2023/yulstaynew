@@ -112,7 +112,7 @@ $contact_page_email_address_link = get_field('contact_page_email_address_link');
 
                             // Define default content for each option
                             var defaultContent = {
-                                "investment-form": "1",
+                                "investment-form": "<?php echo do_shortcode('[contact-form-7 id="96e23ab" title="Contact Form"]'); ?>",
                                 "purchase-form": "2",
                                 "sale-form": "3",
                                 "rental-form": "4",
@@ -136,7 +136,7 @@ $contact_page_email_address_link = get_field('contact_page_email_address_link');
                             formTitle.innerHTML = "Select your form"; // Set initial content for form-title
                         </script>
                             <!-- <?php echo do_shortcode('[contact-form-7 id="96e23ab" title="Contact Form"]'); ?> -->
-                            <div class="pxp-contact-form mt-3 mt-md-4">
+                            <!-- <div class="pxp-contact-form mt-3 mt-md-4">
                                 <div class="row">
                                     <div class="col-sm-12 col-md-12">
                                         <div class="form-group">
@@ -170,7 +170,7 @@ $contact_page_email_address_link = get_field('contact_page_email_address_link');
                                     </div>
                                 </div>
                                 <a href="#" class="pxp-contact-form-btn">Send Message</a>
-                            </div>
+                            </div> -->
                             <!-- <div class="pxp-contact-form mt-3 mt-md-4">
                                 <div class="row">
                                     <div class="col-sm-12 col-md-12">
