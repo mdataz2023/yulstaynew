@@ -90,8 +90,52 @@ $contact_page_email_address_link = get_field('contact_page_email_address_link');
                 <div class="container mt-100">
                     <div class="row">
                         <div class="col-sm-12 col-lg-6">
-                            <h2 class="pxp-section-h2">Send Us A Message</h2>
-                            <?php echo do_shortcode('[contact-form-7 id="96e23ab" title="Contact Form"]'); ?>
+                        <h2 id="form-title">Select your form</h2>
+                        <select id="select-form">
+                            <option value="default">Select form</option>
+                            <option value="investment-form">Investments</option>
+                            <option value="purchase-form">Purchase</option>
+                            <option value="sale-form">Sale</option>
+                            <option value="rental-form">Rental & Management</option>
+                        </select>
+                        <div id="form-id">
+                            <div>
+                                Default content for form-id when nothing is selected
+                            </div>
+                        </div>
+
+                        <script>
+                            // Get references to the select element, form-title, and form-id div
+                            var selectForm = document.getElementById("select-form");
+                            var formTitle = document.getElementById("form-title");
+                            var formIdDiv = document.getElementById("form-id");
+
+                            // Define default content for each option
+                            var defaultContent = {
+                                "investment-form": "1",
+                                "purchase-form": "2",
+                                "sale-form": "3",
+                                "rental-form": "4",
+                                "default": "Default content for form-id when nothing is selected"
+                            };
+
+                            // Add an event listener to the select element
+                            selectForm.addEventListener("change", function () {
+                                // Get the selected option value
+                                var selectedOption = selectForm.value;
+                            
+                                // Update the content of the form-id div with the selected option's text
+                                formIdDiv.innerHTML = defaultContent[selectedOption];
+                            
+                                // Update the content of the form-title with the selected option's text
+                                formTitle.innerHTML = "Select your " + selectForm.options[selectForm.selectedIndex].text;
+                            });
+                            
+                            // Initialize with default content for form-id
+                            formIdDiv.innerHTML = defaultContent["default"]; // Set initial content for form-id
+                            formTitle.innerHTML = "Select your form"; // Set initial content for form-title
+                        </script>
+                            <!-- <?php echo do_shortcode('[contact-form-7 id="96e23ab" title="Contact Form"]'); ?> -->
                             <!-- <div class="pxp-contact-form mt-3 mt-md-4">
                                 <div class="row">
                                     <div class="col-sm-12 col-md-12">
