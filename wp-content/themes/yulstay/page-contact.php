@@ -109,6 +109,8 @@ $contact_page_email_address_link = get_field('contact_page_email_address_link');
 $form_html = do_shortcode('[contact-form-7 id="96e23ab" title="Contact Form"]');
 ?>
 
+<div id="contact-form" style="display: none;"><?php echo esc_html($form_html); ?></div>
+
                         <script>
                             // Get references to the select element, form-title, and form-id div
                             var selectForm = document.getElementById("select-form");
@@ -117,7 +119,7 @@ $form_html = do_shortcode('[contact-form-7 id="96e23ab" title="Contact Form"]');
 
                             // Define default content for each option
                             var defaultContent = {
-                                "investment-form": "<?php echo esc_html($form_html); ?>",
+                                "investment-form": document.getElementById("contact-form").innerHTML,
                                 "purchase-form": "2",
                                 "sale-form": "3",
                                 "rental-form": "4",
