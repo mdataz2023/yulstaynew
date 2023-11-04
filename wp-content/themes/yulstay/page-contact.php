@@ -90,12 +90,12 @@ $contact_page_email_address_link = get_field('contact_page_email_address_link');
                 <div class="container mt-100">
                     <div class="row">
                         <div class="col-sm-12 col-lg-6">
-                            <div style="display:flex; justify-content: space-between;">
+                            <div style="display:flex; justify-content: space-between; align-items: center;">
                                 <div>
                                     <h2 class="pxp-section-h2" id="form-title">Select your form</h2>
                                 </div>
                                 <div>
-                                    <select class="banner-dropbtn" id="select-form">
+                                    <select class="contact-dropbtn" id="select-form">
                                         <option value="default">Select form</option>
                                         <option value="investment-form">Investments</option>
                                         <option value="purchase-form">Purchase</option>
@@ -107,7 +107,7 @@ $contact_page_email_address_link = get_field('contact_page_email_address_link');
 
                         <div id="form-id">
                             <div>
-                                Default content for form-id when nothing is selected
+                                Default content
                             </div>
                         </div>
 
