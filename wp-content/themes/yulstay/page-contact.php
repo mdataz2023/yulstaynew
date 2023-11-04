@@ -112,154 +112,10 @@ $contact_page_email_address_link = get_field('contact_page_email_address_link');
 
                             // Define default content for each option
                             var defaultContent = {
-                                "investment-form": '
-                                <div class="pxp-contact-form mt-3 mt-md-4">
-                                <div class="row">
-                                    <div class="col-sm-12 col-md-12">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" id="pxp-contact-form-name" placeholder="Name">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-12">
-                                        <div class="form-group">
-                                            <select class="custom-select" id="pxp-contact-form-reg">
-                                                <option value=""> - select option - </option>
-                                                <option value="">Residential</option>
-                                                <option value="">Multi Residential</option>
-                                                <option value="">Rental Property</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-12">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" id="pxp-contact-form-email" placeholder="Date of purchase">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-12">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" id="pxp-contact-form-email" placeholder="Email">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-12">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Phone (optional)" id="pxp-contact-form-phone">
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="#" class="pxp-contact-form-btn">Send Message</a>
-                            </div>
-                            ',
-                                "purchase-form": '
-                                <div class="pxp-contact-form mt-3 mt-md-4">
-                                <div class="row">
-                                    <div class="col-sm-12 col-md-12">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" id="pxp-contact-form-name" placeholder="Name">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-12">
-                                        <div class="form-group">
-                                            <select class="custom-select" id="pxp-contact-form-reg">
-                                                <option value=""> - select option - </option>
-                                                <option value="">Residential</option>
-                                                <option value="">Multi Residential</option>
-                                                <option value="">Rental Property</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-12">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" id="pxp-contact-form-email" placeholder="Date of purchase">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-12">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" id="pxp-contact-form-email" placeholder="Email">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-12">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Phone (optional)" id="pxp-contact-form-phone">
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="#" class="pxp-contact-form-btn">Send Message</a>
-                            </div>
-                                ',
-                                "sale-form": '
-                                <div class="pxp-contact-form mt-3 mt-md-4">
-                                <div class="row">
-                                    <div class="col-sm-12 col-md-12">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" id="pxp-contact-form-name" placeholder="Name">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-12">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" id="pxp-contact-form-name" placeholder="Expected sale price">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-12">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" id="pxp-contact-form-email" placeholder="Desired sale date">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-12">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" id="pxp-contact-form-name" placeholder="Address">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-12">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" id="pxp-contact-form-email" placeholder="Email">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-12">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Phone (optional)" id="pxp-contact-form-phone">
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="#" class="pxp-contact-form-btn">Send Message</a>
-                            </div>
-                                ',
-                                "rental-form": '
-                                <div class="pxp-contact-form mt-3 mt-md-4">
-                                <div class="row">
-                                    <div class="col-sm-12 col-md-12">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" id="pxp-contact-form-name" placeholder="Name">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-12">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" id="pxp-contact-form-name" placeholder="Expected sale price">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-12">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" id="pxp-contact-form-email" placeholder="Desired sale date">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-12">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" id="pxp-contact-form-name" placeholder="Address">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-12">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" id="pxp-contact-form-email" placeholder="Email">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-12">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Phone (optional)" id="pxp-contact-form-phone">
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="#" class="pxp-contact-form-btn">Send Message</a>
-                            </div>
-                                ',
+                                "investment-form": "1",
+                                "purchase-form": "2",
+                                "sale-form": "3",
+                                "rental-form": "4",
                                 "default": "Default content for form-id when nothing is selected"
                             };
 
@@ -280,7 +136,7 @@ $contact_page_email_address_link = get_field('contact_page_email_address_link');
                             formTitle.innerHTML = "Select your form"; // Set initial content for form-title
                         </script>
                             <!-- <?php echo do_shortcode('[contact-form-7 id="96e23ab" title="Contact Form"]'); ?> -->
-                            <!-- <div class="pxp-contact-form mt-3 mt-md-4">
+                            <div class="pxp-contact-form mt-3 mt-md-4">
                                 <div class="row">
                                     <div class="col-sm-12 col-md-12">
                                         <div class="form-group">
@@ -314,7 +170,7 @@ $contact_page_email_address_link = get_field('contact_page_email_address_link');
                                     </div>
                                 </div>
                                 <a href="#" class="pxp-contact-form-btn">Send Message</a>
-                            </div> -->
+                            </div>
                             <!-- <div class="pxp-contact-form mt-3 mt-md-4">
                                 <div class="row">
                                     <div class="col-sm-12 col-md-12">
