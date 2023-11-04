@@ -104,12 +104,8 @@ $contact_page_email_address_link = get_field('contact_page_email_address_link');
                             </div>
                         </div>
 
-                        <?php
-// Generate the Contact Form 7 HTML using PHP
-$form_html = do_shortcode('[contact-form-7 id="96e23ab" title="Contact Form"]');
-?>
 
-<div id="contact-form" style="display: none;"><?php echo esc_html($form_html); ?></div>
+<div id="contact-form" style="display: none;"><?php echo do_shortcode('[contact-form-7 id="96e23ab" title="Contact Form"]'); ?></div>
 
                         <script>
                             // Get references to the select element, form-title, and form-id div
