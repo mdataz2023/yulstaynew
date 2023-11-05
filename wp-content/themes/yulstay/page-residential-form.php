@@ -34,7 +34,7 @@ get_header();
                             </div>
                         </div>
 
-                        <div class="col-sm-12 col-lg-6" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/ph-big.jpg); height: 100%; width: 100%;">
+                        <div class="col-sm-12 col-lg-6" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/ph-big.jpg);">
                             
                         </div>
                     </div>
