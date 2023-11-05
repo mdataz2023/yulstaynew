@@ -1,6 +1,12 @@
 <!doctype html>
 
 <?php
+    /*
+        Template Name: Home
+    */
+    ?>
+
+<?php
 error_reporting(0);
 // $zipFolder    = '/home/customer/www/mdataz.com/public_html/yulstaynew/listing-files/';
 // $unzipFolder    = '/home/customer/www/mdataz.com/public_html/yulstaynew/listing-files/';
@@ -39,12 +45,6 @@ if ($lang == 'en-US'){
 
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
-
-    <?php
-    /*
-        Template Name: Home
-    */
-    ?>
 
     <style>
         .active-nav-link-home{
