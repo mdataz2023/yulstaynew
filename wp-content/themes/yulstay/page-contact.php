@@ -96,7 +96,7 @@ $contact_page_email_address_link = get_field('contact_page_email_address_link');
                             </div>
                             <div>
                                 <select class="contact-dropbtn" id="select-form">
-                                    <option value="default">select form</option>
+                                    <option value="default">Select your form</option>
                                     <option value="investment-form">Investments</option>
                                     <option value="purchase-form">Purchase</option>
                                     <option value="sale-form">Sale</option>
@@ -106,7 +106,9 @@ $contact_page_email_address_link = get_field('contact_page_email_address_link');
                         </div>
                         
                         <div id="form-id">
-                            <div id="default-content">Default Content</div>
+                            <div id="default-content" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/ph-big.jpg);">
+                                
+                            </div>
                             <div id="investment-form-content" style="display: none;">
                                 <?php echo do_shortcode('[contact-form-7 id="714498e" title="Investments"]'); ?>
                             </div>
