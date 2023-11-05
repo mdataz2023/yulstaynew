@@ -128,6 +128,13 @@ if ($lang == 'en-US'){
   }
     </style>
 
+<?php
+
+$home_banner_title = get_field('home_banner_title');
+$home_banner_title_description = get_field('home_banner_title_description');
+
+?>
+
     <div class="pxp-content">
         <div class="pxp-hero vh-100">
             <div class="pxp-hero-bg pxp-cover pxp-cover-bottom">
@@ -146,8 +153,8 @@ if ($lang == 'en-US'){
                     </a> -->
 
                     <div style="text-align: center;">
-                        <h1 class="text-white">What can we help you with today?</h1>
-                        <p class="pxp-text-light text-white mb-0">Whether you’re buying, selling or renting, we can help you move forward.</p>
+                        <h1 class="text-white"><?php echo $home_banner_title; ?></h1>
+                        <p class="pxp-text-light text-white mb-0"><?php echo $home_banner_title_description; ?></p>
                         <div class="banner-dropdown">
                             <button class="banner-dropbtn">Dropdown</button>
                             <div class="banner-dropdown-content">
@@ -225,7 +232,6 @@ if ($lang == 'en-US'){
 
         <?php
 
-            $home_banner_title = get_field('home_banner_title');
             $home_team_section_title = get_field('home_team_section_title');
             $home_team_section_description = get_field('home_team_section_description');
             $home_team_section_link = get_field('home_team_section_link');
