@@ -106,8 +106,9 @@ $contact_page_email_address_link = get_field('contact_page_email_address_link');
                         </div>
                         
                         <div class="mt-3" id="form-id">
-                            <div id="default-content" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/ph-big.jpg); width: 100%; height: 450px;">
-                                
+                            <div id="default-content">
+                                <p class="pxp-text-light">Investments Description</p>
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/ph-big.jpg" alt="" style="width: 100%; height: 450px;">
                             </div>
                             <div id="investment-form-content" style="display: none;">
                                 <p class="pxp-text-light">Investments Description</p>
