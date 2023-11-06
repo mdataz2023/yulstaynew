@@ -20,7 +20,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.png" type="image/x-icon">
-        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900" rel="stylesheet">
+        <!-- <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900" rel="stylesheet"> -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css?osaiduu">
         <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css?pas">
         <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css?lokas">
