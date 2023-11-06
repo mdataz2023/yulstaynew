@@ -1,6 +1,6 @@
 <?php
 /*
-	Template Name: Residential Form
+	Template Name: Sale Form
 */
 get_header();
 
@@ -11,7 +11,7 @@ get_header();
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12 col-md-7">
-                            <h1 class="pxp-page-header">Residential Form</h1>
+                            <h1 class="pxp-page-header">Sale Form</h1>
                             <p class="pxp-text-light">Three offices to better serve you</p>
                         </div>
                     </div>
@@ -25,11 +25,11 @@ get_header();
                     <div class="row">
                         <div class="col-sm-12 col-lg-6">
                                 <div>
-                                    <h2 class="pxp-section-h2" id="form-title">Residential Form</h2>
+                                    <h2 class="pxp-section-h2" id="form-title">Sale Form</h2>
                                 </div>
                             <div id="form-id">
                                 <div id="investment-form-content">
-                                    <?php echo do_shortcode('[contact-form-7 id="714498e" title="Investments"]'); ?>
+                                <?php echo do_shortcode('[contact-form-7 id="35457d9" title="Sale"]'); ?>
                                 </div>
                             </div>
                         </div>
