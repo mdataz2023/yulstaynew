@@ -29,7 +29,8 @@ get_header();
                                 </div>
                             <div id="form-id">
                                 <div id="investment-form-content">
-                                <?php echo do_shortcode('[contact-form-7 id="35457d9" title="Sale"]'); ?>
+                                    <p class="pxp-text-light">Rental & Management Description</p>
+                                    <?php echo do_shortcode('[contact-form-7 id="35457d9" title="Sale"]'); ?>
                                 </div>
                             </div>
                         </div>

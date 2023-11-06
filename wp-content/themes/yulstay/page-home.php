@@ -158,10 +158,10 @@ $home_banner_title_description = get_field('home_banner_title_description');
                         <div class="banner-dropdown">
                             <button class="banner-dropbtn">Dropdown</button>
                             <div class="banner-dropdown-content">
-                                <a href="#">Investments</a>
-                                <a href="#">Purchase</a>
-                                <a href="#">Sale</a>
-                                <a href="#">Rental & Management</a>
+                                <a href="<?php bloginfo('url'); ?>/invesment-form">Investments</a>
+                                <a href="<?php bloginfo('url'); ?>/purchase-form">Purchase</a>
+                                <a href="<?php bloginfo('url'); ?>/sale-form">Sale</a>
+                                <a href="<?php bloginfo('url'); ?>/rental-management-form">Rental & Management</a>
                             </div>
                         </div>
                     </div>
