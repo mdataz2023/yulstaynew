@@ -2,7 +2,7 @@
 /*
 	Template Name: Team_old
 */
-get_header();
+get_header('home');
 
 ?>
 
