@@ -26,7 +26,7 @@ $team_page_title_description = get_field('team_page_title_description');
                 </div>
 
                 <div class="pxp-agents-hero mt-4 mt-md-5">
-                    <div class="pxp-agents-hero-fig pxp-cover" style="background-image: url(<?php echo $team_page_banner_image ?>); background-position: 50% 60%;"></div>
+                    <div class="pxp-agents-hero-fig pxp-cover" style="background-image: url(https://mdataz.com/yulstaynew/wp-content/uploads/2023/09/ph-big.jpg); background-position: 50% 60%;"></div>
 
                     <div hidden class="pxp-agents-hero-search-container">
                         <div class="container">

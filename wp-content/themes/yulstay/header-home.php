@@ -1,99 +1,127 @@
-<?php
-/**
- * The header.
- *
- * This is the template that displays all of the <head> section and everything up until main.
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package WordPress
- * @subpackage Twenty_Twenty_One
- * @since Twenty Twenty-One 1.0
- */
-
-?>
-
 <!doctype html>
+
+
+<?php
+error_reporting(0);
+// $zipFolder    = '/home/customer/www/mdataz.com/public_html/yulstaynew/listing-files/';
+// $unzipFolder    = '/home/customer/www/mdataz.com/public_html/yulstaynew/listing-files/';
+// $backupFolder    = '/home/customer/www/mdataz.com/public_html/yulstaynew/listing-files/backup/';
+// $files1 = scandir($zipFolder);
+// $pattern = '/[\n]/';
+global $wpdb;
+$lang = get_bloginfo("language");
+$currencyLetterPrefix="";
+$currencyLetterSuffix="";
+if ($lang == 'en-US'){
+    $currencyLetterPrefix="$ ";
+}else{
+    $currencyLetterSuffix=" $";
+}
+ ?>
 <html <?php language_attributes(); ?>>
-    <head>
-        <meta charset="<?php bloginfo( 'charset' ); ?>">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
-        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900" rel="stylesheet">
-        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/bootstrap.min.css">
-        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/font-awesome.min.css">
-        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/owl.carousel.min.css">
-        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/owl.theme.default.min.css">
-        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css">
+<head>
+    <meta charset="<?php bloginfo( 'charset' ); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title><?php wp_title( '|', true, 'right' ); ?></title>
-        <?php wp_head(); ?>
-    </head>
-    <body <?php body_class(); ?>>
+    <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.png" type="image/x-icon">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900" rel="stylesheet"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/photoswipe.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title><?php wp_title( '|', true, 'right' ); ?></title>
+    <?php wp_head(); ?>
+</head>
+
+<body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
-        <div class="pxp-header fixed-top pxp-animate">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-5 col-md-2">
-                        <a href="index.html" class="pxp-logo text-decoration-none">resideo.</a>
-                    </div>
-                    <div class="col-2 col-md-8 text-center">
-                        <ul class="pxp-nav list-inline">
-                            <li class="list-inline-item">
-                                <a href="#">Home</a>
-                                <ul class="pxp-nav-sub rounded-lg">
-                                    <li><a href="index.html">Version 1</a></li>
-                                    <li><a href="index-2.html">Version 2</a></li>
-                                    <li><a href="index-3.html">Version 3</a></li>
-                                    <li><a href="index-4.html">Version 4</a></li>
-                                    <li><a href="index-5.html">Version 5</a></li>
-                                    <li><a href="index-5.html">Version 5</a></li>
-                                    <li><a href="index-6.html">Version 6</a></li>
-                                </ul>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#">Properties</a>
-                                <ul class="pxp-nav-sub rounded-lg">
-                                    <li><a href="properties.html">All Properties</a></li>
-                                    <li><a href="single-property.html">Single Property</a></li>
-                                    <li><a href="submit-property.html">Submit New Property</a></li>
-                                </ul>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#">Agents</a>
-                                <ul class="pxp-nav-sub rounded-lg">
-                                    <li><a href="agents.html">All Agents</a></li>
-                                    <li><a href="single-agent.html">Single Agent</a></li>
-                                </ul>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#">Blog</a>
-                                <ul class="pxp-nav-sub rounded-lg">
-                                    <li><a href="blog.html">All Blog Posts</a></li>
-                                    <li><a href="single-post.html">Single Blog Post</a></li>
-                                </ul>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#">Themes</a>
-                                <ul class="pxp-nav-sub rounded-lg">
-                                    <li><a href="../light/index-2.html">Light</a></li>
-                                    <li><a href="../dark/index-2.html">Dark</a></li>
-                                </ul>
-                            </li>
-                            <li class="list-inline-item pxp-is-last"><a href="contact.html">Contact Us</a></li>
-                            <li class="list-inline-item pxp-has-btns">
-                                <div class="pxp-user-btns">
-                                    <a href="#" class="pxp-user-btns-signup pxp-signup-trigger">Sign Up</a>
-                                    <a href="#" class="pxp-user-btns-login pxp-signin-trigger">Sign In</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-5 col-md-2 text-right">
-                        <a href="javascript:void(0);" class="pxp-header-nav-trigger"><span class="fa fa-bars"></span></a>
-                        <a href="javascript:void(0);" class="pxp-header-user pxp-signin-trigger"><span class="fa fa-user-o"></span></a>
-                    </div>
+
+    <style>
+        .active-nav-link-home{
+            color: #0093a6 !important;
+        }
+        .checked {
+            color: orange;
+        }
+    </style>
+    <div class="pxp-header fixed-top pxp-animate">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-5 col-md-2">
+                    <!-- <a href="<?php bloginfo('url'); ?>/" class="pxp-logo text-decoration-none">Yulstay</a> -->
+                    <a href="<?php bloginfo('url'); ?>/" class="pxp-logo text-decoration-none">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/YULSTAY-NAV.png"
+                            style="width: 8rem;" alt="">
+                    </a>
+                </div>
+                <div class="col-2 col-md-8 text-center">
+                    <ul class="pxp-nav list-inline">
+                        <li class="list-inline-item">
+                            <a href="<?php bloginfo('url'); ?>/"  <?php if(get_the_ID() == '6' || get_the_ID() == '495') { ?> class="active-nav-link-home"<?php } ?>><?php _e('Home','theme-text-domain'); ?></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="navproperty-home"><?php _e('Properties','theme-text-domain'); ?></a>
+                            <ul class="pxp-nav-sub rounded-lg">
+                                <li><a href="<?php bloginfo('url'); ?>/residential"><?php _e('Residential','theme-text-domain'); ?></a></li>
+                                <li><a href="<?php bloginfo('url'); ?>/multi-residential"><?php _e('Multi Residential','theme-text-domain'); ?></a></li>
+                                <li><a href="<?php bloginfo('url'); ?>/rental-property"><?php _e('Rental Property','theme-text-domain'); ?></a></li>
+                            </ul>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="<?php bloginfo('url'); ?>/teams"><?php _e('Team','theme-text-domain'); ?></a>
+                        </li>
+                        <li class="list-inline-item pxp-is-last"><a href="<?php bloginfo('url'); ?>/contact"><?php _e('Contact Us','theme-text-domain'); ?></a></li>
+                        <li class="list-inline-item">
+                            <a href="<?php bloginfo('url'); ?>/join-our-team"><?php _e('Join Our Team','theme-text-domain'); ?></a>
+                        </li>
+                        <!-- <li class="list-inline-item">
+                            <a href="#"><?php _e('Yulstay +','theme-text-domain'); ?></a>
+                            <ul class="pxp-nav-sub rounded-lg">
+                                <li><a href="blog.html"><?php _e('Pod Casts','theme-text-domain'); ?></a></li>
+                                <li><a href="single-post.html"><?php _e('Shop','theme-text-domain'); ?></a></li>
+                            </ul>
+                        </li> -->
+                        <li class="list-inline-item">
+                            <?php
+                                if (has_nav_menu('main-lang')) {
+                                    wp_nav_menu(
+                                        array(
+                                            'theme_location' => 'main-lang',
+                                            'menu_class'     => 'main-lang',
+                                        )
+                                    );
+                                }
+                            ?>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-5 col-md-2 text-right">
+                    <a href="javascript:void(0);" class="pxp-header-nav-trigger"><span class="fa fa-bars"></span></a>
+                    <!-- <a href="javascript:void(0);" class="pxp-header-user pxp-signin-trigger"><span class="fa fa-user-o"></span></a> -->
                 </div>
             </div>
         </div>
+    </div>
+
+    <style>
+          .wpml-ls-flag{
+    width: 19px;
+  }
+
+  .wpml-ls-item{
+    list-style-type: none;
+  }
+
+  #menu-main-lang{
+    padding-top: 12px;
+    padding-left: 0px;
+  }
+    </style>
