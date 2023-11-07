@@ -99,20 +99,7 @@
                     <div class="col-5 col-md-2 text-right">
                         <a href="javascript:void(0);" class="pxp-header-nav-trigger"><span class="fa fa-bars"></span></a>
                         <!-- <a href="javascript:void(0);" class="pxp-header-user pxp-signin-trigger"><span class="fa fa-user-o"></span></a> -->
-                        <ul class="pxp-nav list-inline">
-                            <li class="list-inline-item">
-                            <?php
-                                if (has_nav_menu('main-lang')) {
-                                    wp_nav_menu(
-                                        array(
-                                            'theme_location' => 'main-lang',
-                                            'menu_class'     => 'main-lang', 
-                                        )
-                                    );
-                                }
-                            ?>
-                            </li>
-                        </ul>
+                        
                     </div>
                 </div>
             </div>
