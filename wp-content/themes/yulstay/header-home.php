@@ -27,7 +27,7 @@
         <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/owl.theme.default.min.css">
         <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css">
 
-        <title>resideo.</title>
+        <title><?php wp_title( '|', true, 'right' ); ?></title>
         <?php wp_head(); ?>
     </head>
     <body <?php body_class(); ?>>
