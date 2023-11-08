@@ -15,7 +15,7 @@ get_header();
                     <div class="pxp-services-h-container mt-4 mt-md-5">
                         <div class="pxp-services-h-fig pxp-cover pxp-animate-in rounded-lg" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/ph-big.jpg);"></div>
                         <div class="pxp-services-h-items pxp-animate-in ml-0 ml-lg-5 mt-4 mt-md-5 mt-lg-0">
-                        <h2 class="pxp-section-h2 text-center">Our mission is simple</h2>
+                        <h2 class="pxp-section-h2">Our mission is simple</h2>
                         <p class="pxp-is-address" style="padding-top: 12px;">Help our customers invest in Montreal with complete peace of mind by offering
 result oriented real estate investment services with the highest degree of transparency. We hold true to
 our mission and are able to deliver on it by focusing on our three core elements:</p>
@@ -199,9 +199,25 @@ wellspring for our mutual success.</p>
                     <div class="row justify-content-center">
                         <div class="col-md-8 col-lg-6">
                             <div class="text-center">
-                                <h2 class="pxp-section-h2">A real estate company with a purpose.</h2>
-                                <p class="pxp-text-light mt-3 mt-lg-4">Resideo is building the first modern real estate platform, pairing the industry’s top talent with technology to make the search and sell experience intelligent and seamless.</p>
-                                <a href="contact.html" class="pxp-primary-cta text-uppercase mt-3 mt-md-5 pxp-animate">Contact us now</a>
+                                <h2 class="pxp-section-h2">PRE-CONSTRUCTION VIP PRICING</h2>
+                                <p class="pxp-text-light mt-3 mt-lg-4">Through our relationship in the industry and our volume of
+transactions, we are happy to have access to many new construction projects. This allows us to offer
+many benefits to any of our clients looking to purchase or invest in new constructions.</p>
+                                <!-- <a href="contact.html" class="pxp-primary-cta text-uppercase mt-3 mt-md-5 pxp-animate">Contact us now</a> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pxp-cta-4 mt-200 mb-100">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8 col-lg-6">
+                            <div class="text-center">
+                                <h2 class="pxp-section-h2">COMMERCIAL MULTIPLEX SEGMENT</h2>
+                                <p class="pxp-text-light mt-3 mt-lg-4">MLI / APH Select Experts &amp; Investment Funds. Having made close relationships with finance
+professionals over the years, Yulstay positions itself as one of the major players in the commercial space.</p>
+                                <!-- <a href="contact.html" class="pxp-primary-cta text-uppercase mt-3 mt-md-5 pxp-animate">Contact us now</a> -->
                             </div>
                         </div>
                     </div>
