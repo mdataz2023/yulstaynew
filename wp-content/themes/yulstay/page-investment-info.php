@@ -209,7 +209,7 @@ many benefits to any of our clients looking to purchase or invest in new constru
                     </div>
                 </div>
             </div>
-            <div class="pxp-cta-4 mt-200 mb-100">
+            <div class="pxp-cta-4 mb-100">
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-md-8 col-lg-6">
