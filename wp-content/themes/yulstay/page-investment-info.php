@@ -10,48 +10,19 @@ get_header();
             <div class="pxp-services-h pt-100 pb-100">
                 <div class="container">
                     <h2 class="pxp-section-h2">Investments</h2>
-                    <p class="pxp-text-light">It is imperative for us, at Yulstay, to provide unparalleled service to all our customers; this service consists of simplifying the real estate investment process for our local and international clients.</p>
+                    <p class="pxp-text-light"  style="width: 45%;">It is imperative for us, at Yulstay, to provide unparalleled service to all our customers; this service consists of simplifying the real estate investment process for our local and international clients.</p>
 
                     <div class="pxp-services-h-container mt-4 mt-md-5">
                         <div class="pxp-services-h-fig pxp-cover pxp-animate-in rounded-lg" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/ph-big.jpg);"></div>
                         <div class="pxp-services-h-items pxp-animate-in ml-0 ml-lg-5 mt-4 mt-md-5 mt-lg-0">
-                            <div class="pxp-services-h-item">
-                                <div class="media">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/images/service-icon-1-1.svg" class="mr-4" alt="...">
-                                    <div class="media-body">
-                                        <h5 class="mt-0">Find your future home</h5>
-                                        We help you find a new home by offering a smart real estate experience
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="pxp-services-h-item mt-3 mt-md-4">
-                                <div class="media">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/images/service-icon-2-1.svg" class="mr-4" alt="...">
-                                    <div class="media-body">
-                                        <h5 class="mt-0">Experienced agents</h5>
-                                        Find an agent who knows your market best
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="pxp-services-h-item mt-3 mt-md-4">
-                                <div class="media">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/images/service-icon-3-1.svg" class="mr-4" alt="...">
-                                    <div class="media-body">
-                                        <h5 class="mt-0">Buy or rent homes</h5>
-                                        Millions of houses and apartments in your favourite cities
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="pxp-services-h-item mt-3 mt-md-4">
-                                <div class="media">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/images/service-icon-4-1.svg" class="mr-4" alt="...">
-                                    <div class="media-body">
-                                        <h5 class="mt-0">List your own property</h5>
-                                        Sign up now and sell or rent your own properties
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="contact.html" class="pxp-primary-cta text-uppercase mt-4 mt-md-5 pxp-animate pxp-animate-in">Learn more</a>
+                        <div class="media-body">
+                            <h5 class="mt-0">Our mission is simple</h5>
+                        </div>
+                        <p class="pxp-is-address" style="padding-top: 1px;">Help our customers invest in Montreal with complete peace of mind by offering
+result oriented real estate investment services with the highest degree of transparency. We hold true to
+our mission and are able to deliver on it by focusing on our three core elements:</p>
+
+                            
                         </div>
                     </div>
                 </div>
@@ -115,7 +86,7 @@ get_header();
                                         </svg>
                                     </div>
                                     <div>
-                                        <p class="pxp-is-address">Top performing mortgage specialists from different financial institutions</p>
+                                        <p class="pxp-is-address" style="padding-top: 1px;">Top performing mortgage specialists from different financial institutions</p>
                                     </div>
                                 </div>
                                 <div style="display:flex; gap:6px;">
@@ -125,7 +96,7 @@ get_header();
                                         </svg>
                                     </div>
                                     <div>
-                                        <p class="pxp-is-address">Highly qualified and experienced inspectors</p>
+                                        <p class="pxp-is-address" style="padding-top: 1px;">Highly qualified and experienced inspectors</p>
                                     </div>
                                 </div>
                                 <div style="display:flex; gap:6px;">
@@ -135,7 +106,7 @@ get_header();
                                         </svg>
                                     </div>
                                     <div>
-                                        <p class="pxp-is-address">Insurance brokers</p>
+                                        <p class="pxp-is-address" style="padding-top: 1px;">Insurance brokers</p>
                                     </div>
                                 </div>
                         </div>
