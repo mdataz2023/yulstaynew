@@ -32,7 +32,7 @@ $join_our_team_page_paragraph = get_field('join_our_team_page_paragraph');
                 </div>
 
                 <div class="pxp-contact-hero mt-4 mt-md-5">
-                    <div class="pxp-contact-hero-fig pxp-cover" style="background-image: url(<?php echo $join_our_team_page_banner_image ?>); background-position: 50% 80%;"></div>
+                    <div class="pxp-contact-hero-fig pxp-cover" style="background-image: url(<?php echo $join_our_team_page_banner_image ?>); background-position: 50% 35%;"></div>
 
                     <!-- <div class="pxp-contact-hero-offices-container">
                         <div class="container">
