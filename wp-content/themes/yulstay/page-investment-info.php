@@ -1,6 +1,6 @@
 <?php
 /*
-	Template Name: Sale Info
+	Template Name: Investments Info
 */
 get_header();
 
