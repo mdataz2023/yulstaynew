@@ -206,7 +206,7 @@ $home_banner_title_description = get_field('home_banner_title_description');
             style="background-image: url(<?php echo $home_why_choose_us_section_backgroud_image; ?>); background-position: 50% 60%;">
             <h2 class="text-center pxp-section-h2 font-white-in"><?php echo $home_why_choose_us_section_title; ?></h2>
             <p class="pxp-text-light text-center font-white-in"><?php echo $home_why_choose_us_section_description; ?></p>
-            <div class="pxp-hero-opacity"></div>
+
 
             <div class="container">
                 <div class="pxp-services-container rounded-lg mt-4 mt-md-5">
@@ -468,7 +468,6 @@ $home_banner_title_description = get_field('home_banner_title_description');
                 <p class="pxp-text-light font-white-in"><?php echo $home_page_testimonial_description; ?></p>
                 <!-- <a href="<?php echo $home_page_testimonial_link; ?>" class="pxp-primary-cta text-uppercase mt-2 mt-md-3 mt-lg-5 pxp-animate font-white-in"><?php _e('Read All Stories','theme-text-domain'); ?></a> -->
             </div>
-            <div class="pxp-hero-opacity"></div>
             <div class="pxp-testim-1-container mt-4 mt-md-5 mt-lg-0">
                 <div class="owl-carousel pxp-testim-1-stage" id="testimonialCarousel">
                     <?php $the_query = new WP_Query( array('post_type' =>'testimonial','posts_per_page' => '20',  'post__not_in'   => array( $id),) );?>
