@@ -13,7 +13,7 @@ get_header();
                     <p class="pxp-text-light"  style="width: 45%;">It is imperative for us, at Yulstay, to provide unparalleled service to all our customers; this service consists of simplifying the real estate investment process for our local and international clients.</p>
 
                     <div class="pxp-services-h-container mt-4 mt-md-5">
-                        <div class="pxp-services-h-fig pxp-cover pxp-animate-in rounded-lg" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/ph-big.jpg);"></div>
+                        <div class="pxp-services-h-fig pxp-cover pxp-animate-in rounded-lg" style="background-image: url(https://mdataz.com/yulstaynew/wp-content/uploads/2023/10/25-1.jpg);"></div>
                         <div class="pxp-services-h-items pxp-animate-in ml-0 ml-lg-5 mt-4 mt-md-5 mt-lg-0">
                         <h2 class="pxp-section-h2">Our mission is simple</h2>
                         <p class="pxp-is-address" style="padding-top: 12px;">Help our customers invest in Montreal with complete peace of mind by offering
@@ -71,7 +71,7 @@ our mission and are able to deliver on it by focusing on our three core elements
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-lg-5">
-                            <div class="pxp-cta-3-image pxp-cover rounded-lg" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/ph-big.jpg);"></div>
+                            <div class="pxp-cta-3-image pxp-cover rounded-lg" style="background-image: url(https://mdataz.com/yulstaynew/wp-content/uploads/2023/10/25-1.jpg);"></div>
                         </div>
                         <div class="col-lg-2"></div>
                         <div class="col-lg-4">
@@ -167,7 +167,7 @@ develop a realistic forecast of the investments and are always ready to assess t
                         </div>
                         <div class="col-lg-2"></div>
                         <div class="col-lg-5 order-first order-lg-last">
-                            <div class="pxp-cta-3-image pxp-cover rounded-lg" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/ph-big.jpg);"></div>
+                            <div class="pxp-cta-3-image pxp-cover rounded-lg" style="background-image: url(https://mdataz.com/yulstaynew/wp-content/uploads/2023/10/19-2.jpg);"></div>
                         </div>
                     </div>
                 </div>
@@ -177,7 +177,7 @@ develop a realistic forecast of the investments and are always ready to assess t
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-lg-5">
-                            <div class="pxp-cta-3-image pxp-cover rounded-lg" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/ph-big.jpg);"></div>
+                            <div class="pxp-cta-3-image pxp-cover rounded-lg" style="background-image: url(https://mdataz.com/yulstaynew/wp-content/uploads/2023/10/19-2.jpg);"></div>
                         </div>
                         <div class="col-lg-2"></div>
                         <div class="col-lg-4">
