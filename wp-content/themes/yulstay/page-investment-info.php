@@ -9,8 +9,8 @@ get_header();
         <div class="pxp-content">
             <div class="pxp-services-h pt-100 pb-100">
                 <div class="container">
-                    <h2 class="pxp-section-h2">Why Choose Us</h2>
-                    <p class="pxp-text-light">We offer perfect real estate services</p>
+                    <h2 class="pxp-section-h2">Investments</h2>
+                    <p class="pxp-text-light">It is imperative for us, at Yulstay, to provide unparalleled service to all our customers; this service consists of simplifying the real estate investment process for our local and international clients.</p>
 
                     <div class="pxp-services-h-container mt-4 mt-md-5">
                         <div class="pxp-services-h-fig pxp-cover pxp-animate-in rounded-lg" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/ph-big.jpg);"></div>
@@ -106,9 +106,38 @@ get_header();
                         </div>
                         <div class="col-lg-2"></div>
                         <div class="col-lg-4">
-                            <h2 class="pxp-section-h2 mt-3 mt-md-5 mt-lg-0">Resideo concierge</h2>
-                            <p class="pxp-text-light mt-3 mt-lg-4">Concierge helps you sell your home faster and for more money by covering the cost of home improvement services — no upfront fees or interest charged.</p>
-                            <a href="single-post.html" class="pxp-primary-cta text-uppercase mt-3 mt-md-5 pxp-animate">Learn more</a>
+                            <h2 class="pxp-section-h2 mt-3 mt-md-5 mt-lg-0">Peace of mind</h2>
+                            <p class="pxp-text-light mt-3 mt-lg-4">Our one stop shop approach connects you to every professional service required for the purchase of a property such as:</p>
+                                <div style="display:flex; gap:6px;">
+                                    <div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#00AEC5" class="bi bi-plus" viewBox="0 0 16 16">
+                                                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <p class="pxp-is-address">Top performing mortgage specialists from different financial institutions</p>
+                                    </div>
+                                </div>
+                                <div style="display:flex; gap:6px;">
+                                    <div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#00AEC5" class="bi bi-plus" viewBox="0 0 16 16">
+                                                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <p class="pxp-is-address">Highly qualified and experienced inspectors</p>
+                                    </div>
+                                </div>
+                                <div style="display:flex; gap:6px;">
+                                    <div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#00AEC5" class="bi bi-plus" viewBox="0 0 16 16">
+                                                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <p class="pxp-is-address">Insurance brokers</p>
+                                    </div>
+                                </div>
                         </div>
                         <div class="col-lg-1"></div>
                     </div>
@@ -120,14 +149,38 @@ get_header();
                     <div class="row align-items-center">
                         <div class="col-lg-1"></div>
                         <div class="col-lg-4">
-                            <h2 class="pxp-section-h2 mt-3 mt-md-5 mt-lg-0">A tech company reinventing the space</h2>
-                            <p class="pxp-text-light mt-3 mt-lg-4">To lead the industry requires the smartest tools built by the brightest minds across engineering, design, and strategy.</p>
-                            <a href="single-post.html" class="pxp-primary-cta text-uppercase mt-3 mt-md-5 pxp-animate">Learn more</a>
+                            <h2 class="pxp-section-h2 mt-3 mt-md-5 mt-lg-0">Transparency</h2>
+                            <p class="pxp-text-light mt-3 mt-lg-4">Part of our added value consists of cultivating long lasting relationships with our
+investors, sellers and developers. This allows us to always deliver new and interesting investment
+opportunities. Maintaining a high degree of transparency also means investors can contact us at all
+times about any opportunity or simply to discuss their current investments. As part of our services, we
+develop a realistic forecast of the investments and are always ready to assess the results in comparison.</p>
                         </div>
                         <div class="col-lg-2"></div>
                         <div class="col-lg-5 order-first order-lg-last">
                             <div class="pxp-cta-3-image pxp-cover rounded-lg" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/ph-big.jpg);"></div>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pxp-cta-3 mt-100">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-5">
+                            <div class="pxp-cta-3-image pxp-cover rounded-lg" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/ph-big.jpg);"></div>
+                        </div>
+                        <div class="col-lg-2"></div>
+                        <div class="col-lg-4">
+                            <h2 class="pxp-section-h2 mt-3 mt-md-5 mt-lg-0">Results</h2>
+                            <p class="pxp-text-light mt-3 mt-lg-4">As real estate investors ourselves, we understand the importance of results. We have
+consistently delivered a high return on investment on properties under our management, a
+performance we strive to exceed every year. The fertile combination of expertise, strong relationships,
+solid partnerships, and fantastic clients has helped us nurture a rich ecosystem that has become a
+wellspring for our mutual success.</p>
+
+                        </div>
+                        <div class="col-lg-1"></div>
                     </div>
                 </div>
             </div>
