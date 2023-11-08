@@ -15,10 +15,8 @@ get_header();
                     <div class="pxp-services-h-container mt-4 mt-md-5">
                         <div class="pxp-services-h-fig pxp-cover pxp-animate-in rounded-lg" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/ph-big.jpg);"></div>
                         <div class="pxp-services-h-items pxp-animate-in ml-0 ml-lg-5 mt-4 mt-md-5 mt-lg-0">
-                        <div class="media-body">
-                            <h5 class="mt-0">Our mission is simple</h5>
-                        </div>
-                        <p class="pxp-is-address" style="padding-top: 1px;">Help our customers invest in Montreal with complete peace of mind by offering
+                        <h2 class="pxp-section-h2 text-center">Our mission is simple</h2>
+                        <p class="pxp-is-address" style="padding-top: 12px;">Help our customers invest in Montreal with complete peace of mind by offering
 result oriented real estate investment services with the highest degree of transparency. We hold true to
 our mission and are able to deliver on it by focusing on our three core elements:</p>
 
@@ -28,7 +26,7 @@ our mission and are able to deliver on it by focusing on our three core elements
                 </div>
             </div>
 
-            <div class="pxp-services-columns mt-100">
+            <!-- <div class="pxp-services-columns mt-100">
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
@@ -67,7 +65,7 @@ our mission and are able to deliver on it by focusing on our three core elements
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <div class="pxp-cta-3 mt-100">
                 <div class="container">
@@ -107,6 +105,46 @@ our mission and are able to deliver on it by focusing on our three core elements
                                     </div>
                                     <div>
                                         <p class="pxp-is-address" style="padding-top: 1px;">Insurance brokers</p>
+                                    </div>
+                                </div>
+                                <div style="display:flex; gap:6px;">
+                                    <div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#00AEC5" class="bi bi-plus" viewBox="0 0 16 16">
+                                                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <p class="pxp-is-address" style="padding-top: 1px;">Notaries</p>
+                                    </div>
+                                </div>
+                                <div style="display:flex; gap:6px;">
+                                    <div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#00AEC5" class="bi bi-plus" viewBox="0 0 16 16">
+                                                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <p class="pxp-is-address" style="padding-top: 1px;">Accountant</p>
+                                    </div>
+                                </div>
+                                <div style="display:flex; gap:6px;">
+                                    <div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#00AEC5" class="bi bi-plus" viewBox="0 0 16 16">
+                                                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <p class="pxp-is-address" style="padding-top: 1px;">Contractors</p>
+                                    </div>
+                                </div>
+                                <div style="display:flex; gap:6px;">
+                                    <div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#00AEC5" class="bi bi-plus" viewBox="0 0 16 16">
+                                                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <p class="pxp-is-address" style="padding-top: 1px;">Property managers And more…</p>
                                     </div>
                                 </div>
                         </div>
