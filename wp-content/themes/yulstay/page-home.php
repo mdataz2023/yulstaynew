@@ -468,6 +468,7 @@ $home_banner_title_description = get_field('home_banner_title_description');
                 <p class="pxp-text-light font-white-in"><?php echo $home_page_testimonial_description; ?></p>
                 <!-- <a href="<?php echo $home_page_testimonial_link; ?>" class="pxp-primary-cta text-uppercase mt-2 mt-md-3 mt-lg-5 pxp-animate font-white-in"><?php _e('Read All Stories','theme-text-domain'); ?></a> -->
             </div>
+            <div class="pxp-hero-opacity"></div>
             <div class="pxp-testim-1-container mt-4 mt-md-5 mt-lg-0">
                 <div class="owl-carousel pxp-testim-1-stage" id="testimonialCarousel">
                     <?php $the_query = new WP_Query( array('post_type' =>'testimonial','posts_per_page' => '20',  'post__not_in'   => array( $id),) );?>
