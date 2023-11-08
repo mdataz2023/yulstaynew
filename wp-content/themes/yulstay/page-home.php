@@ -216,7 +216,7 @@ $home_banner_title_description = get_field('home_banner_title_description');
                             </div>
                             <div class="pxp-services-item-text text-center">
                                 <div class="pxp-services-item-text-title"><?php _e('Investments','theme-text-domain'); ?></div>
-                                <div class="pxp-services-item-text-sub"><?php _e('Where Yulstay was born.  We offer unparalleled service and advice on the acquisition of investment properties, from condos to commercial multiplexes','theme-text-domain'); ?></div>
+                                <div class="pxp-services-item-text-sub"><?php _e('We offer unparalleled service and advice on the acquisition of revenue properties.','theme-text-domain'); ?></div>
                             </div>
                             <div class="pxp-services-item-cta text-uppercase text-center"><?php _e('Learn More','theme-text-domain'); ?></div>
                         </a>
@@ -236,7 +236,7 @@ $home_banner_title_description = get_field('home_banner_title_description');
                             </div>
                             <div class="pxp-services-item-text text-center">
                                 <div class="pxp-services-item-text-title"><?php _e('Sale','theme-text-domain'); ?></div>
-                                <div class="pxp-services-item-text-sub"><?php _e('Need to sell your property?  Our experienced listing brokers will put an action plan in place based on your specific requirements','theme-text-domain'); ?></div>
+                                <div class="pxp-services-item-text-sub"><?php _e('Need to sell your property?  Our experienced brokers will devise an action plan based on your requirements.','theme-text-domain'); ?></div>
                             </div>
                             <div class="pxp-services-item-cta text-uppercase text-center"><?php _e('Learn More','theme-text-domain'); ?></div>
                         </a>
@@ -246,7 +246,7 @@ $home_banner_title_description = get_field('home_banner_title_description');
                             </div>
                             <div class="pxp-services-item-text text-center">
                                 <div class="pxp-services-item-text-title"><?php _e('Rental & Management','theme-text-domain'); ?></div>
-                                <div class="pxp-services-item-text-sub"><?php _e('With a leasing team dedicated to renting your property, our strategic planning, polished over the years, has ranked us as one of the very best in the business','theme-text-domain'); ?></div>
+                                <div class="pxp-services-item-text-sub"><?php _e('With a dedicated leasing team and strategic planning, we\'re ranked as one of the very best in the business','theme-text-domain'); ?></div>
                             </div>
                             <div class="pxp-services-item-cta text-uppercase text-center"><?php _e('Learn More','theme-text-domain'); ?></div>
                         </a>
