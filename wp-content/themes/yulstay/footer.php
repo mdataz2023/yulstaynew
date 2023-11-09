@@ -40,7 +40,7 @@
                                     <li><a href="<?php bloginfo('url'); ?>/contact">Contact Us</a></li>
                                     <li><a href="<?php bloginfo('url'); ?>/join-our-team">Join Our Team</a></li> -->
                                     <?php 
-                                    $menu_name = 'footer-service-menu';
+                                    $menu_name = 'footer-company-menu';
                                     if ( ( $locations = get_nav_menu_locations() ) && isset( $locations[ $menu_name ] ) ) 
                                     {
                                     $menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
