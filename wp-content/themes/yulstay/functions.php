@@ -15,6 +15,13 @@ function register_main_lang() {
 }
 add_action( 'init', 'register_main_lang' );
 
+// Footer Menu
+
+function register_footer_company_menu() {
+    register_nav_menu('footer-company-menu',__( 'Footer Company Menu' ));
+  }
+  add_action( 'init', 'register_footer_company_menu' );
+
 
 /**
  * schedule_post_publish_event runs when a Post is Published

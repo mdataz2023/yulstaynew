@@ -35,10 +35,24 @@
                                 <h4 class="pxp-footer-header mt-4 mt-lg-0">Company</h4>
                                 <ul class="list-unstyled pxp-footer-links mt-2">
                                     <!-- <li><a href="">About Us</a></li> -->
-                                    <li><a href="<?php bloginfo('url'); ?>/team">Team</a></li>
+                                    <!-- <li><a href="<?php bloginfo('url'); ?>/team">Team</a></li>
                                     <li><a href="">Yulstay</a></li>
                                     <li><a href="<?php bloginfo('url'); ?>/contact">Contact Us</a></li>
-                                    <li><a href="<?php bloginfo('url'); ?>/join-our-team">Join Our Team</a></li>
+                                    <li><a href="<?php bloginfo('url'); ?>/join-our-team">Join Our Team</a></li> -->
+                                    <?php 
+                                    $menu_name = 'footer-service-menu';
+                                    if ( ( $locations = get_nav_menu_locations() ) && isset( $locations[ $menu_name ] ) ) 
+                                    {
+                                    $menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
+                                    $menu_items = wp_get_nav_menu_items($menu->term_id); ?>
+                                    <?php foreach ( (array) $menu_items as $key => $menu_item ) 
+                                        { 
+                                    $ptitle = $menu_item->title; ?>
+                                        <li><a href="<?php echo $menu_item->url; ?>"><?php echo $menu_item->title; ?></a></li>
+                                    <?php 
+                                    }  
+                                        } 
+                                    ?>
                                 </ul>
                             </div>
                             <div class="col-sm-12 col-md-4">
