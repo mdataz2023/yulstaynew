@@ -4,21 +4,28 @@
 */
 get_header();
 
+$investments_info_page_title = get_field('investments_info_page_title');
+$investments_info_page_description = get_field('investments_info_page_description');
+$investments_info_page_section_one_image = get_field('investments_info_page_section_one_image');
+$investments_info_page_section_one_title = get_field('investments_info_page_section_one_title');
+$investments_info_page_section_one_paragraph = get_field('investments_info_page_section_one_paragraph');
+$investments_info_page_second_image = get_field('investments_info_page_second_image');
+$investments_info_page_second_title = get_field('investments_info_page_second_title');
+$investments_info_page_second_paragraph = get_field('investments_info_page_second_paragraph');
+
 ?>
 
         <div class="pxp-content">
             <div class="pxp-services-h pt-100 pb-100">
                 <div class="container">
-                    <h2 class="pxp-section-h2">Investments</h2>
-                    <p class="pxp-text-light"  style="width: 45%;">It is imperative for us, at Yulstay, to provide unparalleled service to all our customers; this service consists of simplifying the real estate investment process for our local and international clients.</p>
+                    <h2 class="pxp-section-h2"><?php echo $investments_info_page_title; ?></h2>
+                    <p class="pxp-text-light"  style="width: 45%;"><?php echo $investments_info_page_description; ?></p>
 
                     <div class="pxp-services-h-container mt-4 mt-md-5">
-                        <div class="pxp-services-h-fig pxp-cover pxp-animate-in rounded-lg" style="background-image: url(https://mdataz.com/yulstaynew/wp-content/uploads/2023/10/25-1.jpg);"></div>
+                        <div class="pxp-services-h-fig pxp-cover pxp-animate-in rounded-lg" style="background-image: url(<?php echo $investments_info_page_section_one_image; ?>);"></div>
                         <div class="pxp-services-h-items pxp-animate-in ml-0 ml-lg-5 mt-4 mt-md-5 mt-lg-0">
-                        <h2 class="pxp-section-h2">Our mission is simple</h2>
-                        <p class="pxp-is-address" style="padding-top: 12px;">Help our customers invest in Montreal with complete peace of mind by offering
-result oriented real estate investment services with the highest degree of transparency. We hold true to
-our mission and are able to deliver on it by focusing on our three core elements:</p>
+                        <h2 class="pxp-section-h2"><?php echo $investments_info_page_section_one_title; ?></h2>
+                        <p class="pxp-is-address" style="padding-top: 12px;"><?php echo $investments_info_page_section_one_paragraph; ?></p>
 
                             
                         </div>
@@ -71,12 +78,18 @@ our mission and are able to deliver on it by focusing on our three core elements
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-lg-5">
-                            <div class="pxp-cta-3-image pxp-cover rounded-lg" style="background-image: url(https://mdataz.com/yulstaynew/wp-content/uploads/2023/10/25-1.jpg);"></div>
+                            <div class="pxp-cta-3-image pxp-cover rounded-lg" style="background-image: url(<?php echo $investments_info_page_second_image; ?>);"></div>
                         </div>
                         <div class="col-lg-2"></div>
                         <div class="col-lg-4">
-                            <h2 class="pxp-section-h2 mt-3 mt-md-5 mt-lg-0">Peace of mind</h2>
-                            <p class="pxp-text-light mt-3 mt-lg-4">Our one stop shop approach connects you to every professional service required for the purchase of a property such as:</p>
+                            <h2 class="pxp-section-h2 mt-3 mt-md-5 mt-lg-0"><?php echo $investments_info_page_second_title; ?></h2>
+                            <p class="pxp-text-light mt-3 mt-lg-4"><?php echo $investments_info_page_second_paragraph; ?></p>
+                            <?php if( have_rows('investments_info_page_second_list') ): $s= 1; $a=0; ?>
+
+                            <?php while( have_rows('investments_info_page_second_list') ): the_row() ;
+                                    $i++;
+                                            $investments_info_page_second_list_item = get_sub_field('investments_info_page_second_list_item');
+                                    ?>
                                 <div style="display:flex; gap:6px;">
                                     <div>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#00AEC5" class="bi bi-plus" viewBox="0 0 16 16">
@@ -84,69 +97,10 @@ our mission and are able to deliver on it by focusing on our three core elements
                                         </svg>
                                     </div>
                                     <div>
-                                        <p class="pxp-is-address" style="padding-top: 1px;">Top performing mortgage specialists from different financial institutions</p>
+                                        <p class="pxp-is-address" style="padding-top: 1px;"><?php echo $investments_info_page_second_list_item; ?></p>
                                     </div>
                                 </div>
-                                <div style="display:flex; gap:6px;">
-                                    <div>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#00AEC5" class="bi bi-plus" viewBox="0 0 16 16">
-                                                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <p class="pxp-is-address" style="padding-top: 1px;">Highly qualified and experienced inspectors</p>
-                                    </div>
-                                </div>
-                                <div style="display:flex; gap:6px;">
-                                    <div>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#00AEC5" class="bi bi-plus" viewBox="0 0 16 16">
-                                                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <p class="pxp-is-address" style="padding-top: 1px;">Insurance brokers</p>
-                                    </div>
-                                </div>
-                                <div style="display:flex; gap:6px;">
-                                    <div>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#00AEC5" class="bi bi-plus" viewBox="0 0 16 16">
-                                                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <p class="pxp-is-address" style="padding-top: 1px;">Notaries</p>
-                                    </div>
-                                </div>
-                                <div style="display:flex; gap:6px;">
-                                    <div>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#00AEC5" class="bi bi-plus" viewBox="0 0 16 16">
-                                                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <p class="pxp-is-address" style="padding-top: 1px;">Accountant</p>
-                                    </div>
-                                </div>
-                                <div style="display:flex; gap:6px;">
-                                    <div>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#00AEC5" class="bi bi-plus" viewBox="0 0 16 16">
-                                                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <p class="pxp-is-address" style="padding-top: 1px;">Contractors</p>
-                                    </div>
-                                </div>
-                                <div style="display:flex; gap:6px;">
-                                    <div>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#00AEC5" class="bi bi-plus" viewBox="0 0 16 16">
-                                                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <p class="pxp-is-address" style="padding-top: 1px;">Property managers And more…</p>
-                                    </div>
-                                </div>
+                                <?php endwhile; endif; ?>
                         </div>
                         <div class="col-lg-1"></div>
                     </div>
