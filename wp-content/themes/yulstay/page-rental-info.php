@@ -18,8 +18,8 @@ $rental_management_info_page_section_three_description = get_field('rental_manag
 $rental_management_info_page_section_four_image = get_field('rental_management_info_page_section_four_image');
 $rental_management_info_page_section_four_title = get_field('rental_management_info_page_section_four_title');
 $rental_management_info_page_section_four_description = get_field('rental_management_info_page_section_four_description');
-// $rental_management_info_page_section_five_title = get_field('rental_management_info_page_section_five_title');
-// $rental_management_info_page_section_five_description = get_field('rental_management_info_page_section_five_description');
+$rental_management_info_page_section_five_title = get_field('rental_management_info_page_section_five_title');
+$rental_management_info_page_section_five_description = get_field('rental_management_info_page_section_five_description');
 
 ?>
 
@@ -73,7 +73,7 @@ $rental_management_info_page_section_four_description = get_field('rental_manage
                 </div>
             </div>
 
-            <div class="pxp-cta-3 mt-100 mb-100">
+            <div class="pxp-cta-3 mt-100">
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-lg-5">
