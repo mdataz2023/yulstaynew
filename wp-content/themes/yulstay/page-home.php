@@ -218,7 +218,7 @@ $home_banner_title_description = get_field('home_banner_title_description');
                                 <div class="pxp-services-item-text-title"><?php _e('Investments','theme-text-domain'); ?></div>
                                 <div class="pxp-services-item-text-sub"><?php _e('We offer unparalleled service and advice on the acquisition of revenue properties.','theme-text-domain'); ?></div>
                             </div>
-                            <div class="pxp-services-item-cta text-uppercase text-center"><?php _e('Learn More','theme-text-domain'); ?></div>
+                            <a href="<?php bloginfo('url'); ?>/investments-info"><div class="pxp-services-item-cta text-uppercase text-center"><?php _e('Learn More','theme-text-domain'); ?></div></a>
                         </a>
                         <a href="agents.html" class="pxp-services-item">
                             <div class="pxp-services-item-fig">
