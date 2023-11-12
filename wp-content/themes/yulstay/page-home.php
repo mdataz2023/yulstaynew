@@ -220,7 +220,7 @@ $home_banner_title_description = get_field('home_banner_title_description');
                             </div>
                             <div class="pxp-services-item-cta text-uppercase text-center"><?php _e('Learn More','theme-text-domain'); ?></div>
                         </a>
-                        <a href="agents.html" class="pxp-services-item">
+                        <a href="<?php bloginfo('url'); ?>/purchase-info" class="pxp-services-item">
                             <div class="pxp-services-item-fig">
                                 <img src="<?php echo get_template_directory_uri(); ?>/images/icons82.png" alt="...">
                             </div>
@@ -230,7 +230,7 @@ $home_banner_title_description = get_field('home_banner_title_description');
                             </div>
                             <div class="pxp-services-item-cta text-uppercase text-center"><?php _e('Learn More','theme-text-domain'); ?></div>
                         </a>
-                        <a href="properties.html" class="pxp-services-item">
+                        <a href="<?php bloginfo('url'); ?>/sale-info" class="pxp-services-item">
                             <div class="pxp-services-item-fig">
                                 <img src="<?php echo get_template_directory_uri(); ?>/images/icons83.png" alt="...">
                             </div>
@@ -240,7 +240,7 @@ $home_banner_title_description = get_field('home_banner_title_description');
                             </div>
                             <div class="pxp-services-item-cta text-uppercase text-center"><?php _e('Learn More','theme-text-domain'); ?></div>
                         </a>
-                        <a href="submit-property.html" class="pxp-services-item">
+                        <a href="<?php bloginfo('url'); ?>/rental-management-info" class="pxp-services-item">
                             <div class="pxp-services-item-fig">
                                 <img src="<?php echo get_template_directory_uri(); ?>/images/icons84.png" alt="...">
                             </div>
