@@ -412,3 +412,13 @@
 		margin-top: 30px !important;
 	}
 }
+
+.info-des{
+  width: 45%;
+}
+
+@media screen and (max-width: 991px){
+  .info-des{
+    width: 100%;
+  }
+}

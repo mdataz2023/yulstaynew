@@ -27,7 +27,7 @@ $investments_info_page_sixth_section_description = get_field('investments_info_p
             <div class="pxp-services-h pt-100 pb-100">
                 <div class="container">
                     <h2 class="pxp-section-h2"><?php echo $investments_info_page_title; ?></h2>
-                    <p class="pxp-text-light"  style="width: 45%;"><?php echo $investments_info_page_description; ?></p>
+                    <p class="pxp-text-light info-des"><?php echo $investments_info_page_description; ?></p>
 
                     <div class="pxp-services-h-container mt-4 mt-md-5">
                         <div class="pxp-services-h-fig pxp-cover pxp-animate-in rounded-lg" style="background-image: url(<?php echo $investments_info_page_section_one_image; ?>);"></div>
