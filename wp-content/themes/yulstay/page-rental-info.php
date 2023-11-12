@@ -89,7 +89,7 @@ $rental_management_info_page_section_five_description = get_field('rental_manage
                 </div>
             </div>
 
-            <div class="pxp-cta-4 mb-100">
+            <div class="pxp-cta-4 mt-100 mb-100">
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-md-8 col-lg-6">
@@ -100,6 +100,53 @@ $rental_management_info_page_section_five_description = get_field('rental_manage
                         </div>
                     </div>
                 </div>
+                        <div class="container">
+                            <div class="pxp-contact-hero-offices" style="padding-bottom: 0px; padding-top: 0px;">
+                                <h2 class="pxp-contact-hero-offices-title"><?php echo $join_our_team_page_list_section_title; ?></h2>
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-6">
+                                    <?php if( have_rows('rental_management_info_page_section_five_list') ): $s= 1; $a=0; ?>
+
+                                    <?php while( have_rows('rental_management_info_page_section_five_list') ): the_row() ;
+                                            $i++;
+                                                    $rental_management_info_page_section_five_list_item = get_sub_field('rental_management_info_page_section_five_list_item');
+                                            ?>
+                                            <div style="display:flex; gap:6px;">
+                                                <div>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#00AEC5" class="bi bi-plus" viewBox="0 0 16 16">
+                                                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                                                    </svg>
+                                                </div>
+                                                <div>
+                                                    <p class="pxp-is-address"><?php echo $rental_management_info_page_section_five_list_item; ?></p>
+                                                </div>
+                                            </div>
+                                        
+                                        <?php endwhile; endif; ?>
+                                    </div>
+                                    <div class="col-sm-12 col-md-6">
+                                    <?php if( have_rows('rental_management_info_page_section_five_list_column_two') ): $s= 1; $a=0; ?>
+
+                                    <?php while( have_rows('rental_management_info_page_section_five_list_column_two') ): the_row() ;
+                                            $i++;
+                                                    $rental_management_info_page_section_five_list_item_column_two = get_sub_field('rental_management_info_page_section_five_list_item_column_two');
+                                            ?>
+                                        
+                                        <div style="display:flex; gap:6px;">
+                                                <div>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#00AEC5" class="bi bi-plus" viewBox="0 0 16 16">
+                                                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                                                    </svg>
+                                                </div>
+                                                <div>
+                                                    <p class="pxp-is-address"><?php echo $rental_management_info_page_section_five_list_item_column_two; ?></p>
+                                                </div>
+                                            </div>
+                                        <?php endwhile; endif; ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
             </div>
         </div>
 
