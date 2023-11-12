@@ -4,22 +4,22 @@
 */
 get_header();
 
-$sale_info_page_title = get_field('purchase_info_page_title');
-$sale_info_page_description = get_field('purchase_info_page_description');
-$sale_info_page_section_one_image = get_field('purchase_info_page_section_one_image');
-$sale_info_page_section_one_title = get_field('purchase_info_page_section_one_title');
-$sale_info_page_section_one_description = get_field('purchase_info_page_section_one_description');
-$sale_info_page_section_two_image = get_field('purchase_info_page_section_two_image');
-$sale_info_page_section_two_title = get_field('purchase_info_page_section_two_title');
-$sale_info_page_section_two_description = get_field('purchase_info_page_section_two_description');
-$sale_info_page_section_three_image = get_field('purchase_info_page_section_three_image');
-$sale_info_page_section_three_title = get_field('purchase_info_page_section_three_title');
-$sale_info_page_section_three_description = get_field('purchase_info_page_section_three_description');
-$sale_info_page_section_four_image = get_field('purchase_info_page_section_four_image');
-$sale_info_page_section_four_title = get_field('purchase_info_page_section_four_title');
-$sale_info_page_section_four_description = get_field('purchase_info_page_section_four_description');
-// $sale_info_page_section_five_title = get_field('purchase_info_page_section_five_title');
-// $sale_info_page_section_five_description = get_field('purchase_info_page_section_five_description');
+$sale_info_page_title = get_field('sale_info_page_title');
+$sale_info_page_description = get_field('sale_info_page_description');
+$sale_info_page_section_one_image = get_field('sale_info_page_section_one_image');
+$sale_info_page_section_one_title = get_field('sale_info_page_section_one_title');
+$sale_info_page_section_one_description = get_field('sale_info_page_section_one_description');
+$sale_info_page_section_two_image = get_field('sale_info_page_section_two_image');
+$sale_info_page_section_two_title = get_field('sale_info_page_section_two_title');
+$sale_info_page_section_two_description = get_field('sale_info_page_section_two_description');
+$sale_info_page_section_three_image = get_field('sale_info_page_section_three_image');
+$sale_info_page_section_three_title = get_field('sale_info_page_section_three_title');
+$sale_info_page_section_three_description = get_field('sale_info_page_section_three_description');
+$sale_info_page_section_four_image = get_field('sale_info_page_section_four_image');
+$sale_info_page_section_four_title = get_field('sale_info_page_section_four_title');
+$sale_info_page_section_four_description = get_field('sale_info_page_section_four_description');
+// $sale_info_page_section_five_title = get_field('sale_info_page_section_five_title');
+// $sale_info_page_section_five_description = get_field('sale_info_page_section_five_description');
 
 ?>
 
