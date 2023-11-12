@@ -78,16 +78,16 @@ $purchase_info_page_section_five_description = get_field('purchase_info_page_sec
             <div class="pxp-cta-3 mt-100">
                 <div class="container">
                     <div class="row align-items-center">
-                        <div class="col-lg-1"></div>
+                        <div class="col-lg-5">
+                            <div class="pxp-cta-3-image pxp-cover rounded-lg" style="background-image: url(<?php echo $purchase_info_page_section_four_image; ?>);"></div>
+                        </div>
+                        <div class="col-lg-2"></div>
                         <div class="col-lg-4">
                             <h2 class="pxp-section-h2 mt-3 mt-md-5 mt-lg-0"><?php echo $purchase_info_page_section_four_title; ?></h2>
                             <p class="pxp-text-light mt-3 mt-lg-4"><?php echo $purchase_info_page_section_four_description; ?></p>
                             <a href="single-post.html" class="pxp-primary-cta text-uppercase mt-3 mt-md-5 pxp-animate">Learn more</a>
                         </div>
-                        <div class="col-lg-2"></div>
-                        <div class="col-lg-5 order-first order-lg-last">
-                            <div class="pxp-cta-3-image pxp-cover rounded-lg" style="background-image: url(<?php echo $purchase_info_page_section_four_image; ?>);"></div>
-                        </div>
+                        <div class="col-lg-1"></div>
                     </div>
                 </div>
             </div>
