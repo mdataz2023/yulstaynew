@@ -12,6 +12,14 @@ $investments_info_page_section_one_paragraph = get_field('investments_info_page_
 $investments_info_page_second_image = get_field('investments_info_page_second_image');
 $investments_info_page_second_title = get_field('investments_info_page_second_title');
 $investments_info_page_second_paragraph = get_field('investments_info_page_second_paragraph');
+$investments_info_page_third_section_title = get_field('investments_info_page_third_section_title');
+$investments_info_page_third_section_description = get_field('investments_info_page_third_section_description');
+$investments_info_page_forth_section_title = get_field('investments_info_page_forth_section_title');
+$investments_info_page_forth_section_description = get_field('investments_info_page_forth_section_description');
+$investments_info_page_fifth_section_title = get_field('investments_info_page_fifth_section_title');
+$investments_info_page_fifth_section_description = get_field('investments_info_page_fifth_section_description');
+$investments_info_page_sixth_section_title = get_field('investments_info_page_sixth_section_title');
+$investments_info_page_sixth_section_description = get_field('investments_info_page_sixth_section_description');
 
 ?>
 
@@ -112,12 +120,8 @@ $investments_info_page_second_paragraph = get_field('investments_info_page_secon
                     <div class="row align-items-center">
                         <div class="col-lg-1"></div>
                         <div class="col-lg-4">
-                            <h2 class="pxp-section-h2 mt-3 mt-md-5 mt-lg-0">Transparency</h2>
-                            <p class="pxp-text-light mt-3 mt-lg-4">Part of our added value consists of cultivating long lasting relationships with our
-investors, sellers and developers. This allows us to always deliver new and interesting investment
-opportunities. Maintaining a high degree of transparency also means investors can contact us at all
-times about any opportunity or simply to discuss their current investments. As part of our services, we
-develop a realistic forecast of the investments and are always ready to assess the results in comparison.</p>
+                            <h2 class="pxp-section-h2 mt-3 mt-md-5 mt-lg-0"><?php echo $investments_info_page_third_section_title; ?></h2>
+                            <p class="pxp-text-light mt-3 mt-lg-4"><?php echo $investments_info_page_third_section_description; ?></p>
                         </div>
                         <div class="col-lg-2"></div>
                         <div class="col-lg-5 order-first order-lg-last">
@@ -135,12 +139,8 @@ develop a realistic forecast of the investments and are always ready to assess t
                         </div>
                         <div class="col-lg-2"></div>
                         <div class="col-lg-4">
-                            <h2 class="pxp-section-h2 mt-3 mt-md-5 mt-lg-0">Results</h2>
-                            <p class="pxp-text-light mt-3 mt-lg-4">As real estate investors ourselves, we understand the importance of results. We have
-consistently delivered a high return on investment on properties under our management, a
-performance we strive to exceed every year. The fertile combination of expertise, strong relationships,
-solid partnerships, and fantastic clients has helped us nurture a rich ecosystem that has become a
-wellspring for our mutual success.</p>
+                            <h2 class="pxp-section-h2 mt-3 mt-md-5 mt-lg-0"><?php echo $investments_info_page_forth_section_title; ?></h2>
+                            <p class="pxp-text-light mt-3 mt-lg-4"><?php echo $investments_info_page_forth_section_description; ?></p>
 
                         </div>
                         <div class="col-lg-1"></div>
@@ -153,10 +153,8 @@ wellspring for our mutual success.</p>
                     <div class="row justify-content-center">
                         <div class="col-md-8 col-lg-6">
                             <div class="text-center">
-                                <h2 class="pxp-section-h2">PRE-CONSTRUCTION VIP PRICING</h2>
-                                <p class="pxp-text-light mt-3 mt-lg-4">Through our relationship in the industry and our volume of
-transactions, we are happy to have access to many new construction projects. This allows us to offer
-many benefits to any of our clients looking to purchase or invest in new constructions.</p>
+                                <h2 class="pxp-section-h2"><?php echo $investments_info_page_fifth_section_title; ?></h2>
+                                <p class="pxp-text-light mt-3 mt-lg-4"><?php echo $investments_info_page_fifth_section_description; ?></p>
                                 <!-- <a href="contact.html" class="pxp-primary-cta text-uppercase mt-3 mt-md-5 pxp-animate">Contact us now</a> -->
                             </div>
                         </div>
@@ -168,9 +166,8 @@ many benefits to any of our clients looking to purchase or invest in new constru
                     <div class="row justify-content-center">
                         <div class="col-md-8 col-lg-6">
                             <div class="text-center">
-                                <h2 class="pxp-section-h2">COMMERCIAL MULTIPLEX SEGMENT</h2>
-                                <p class="pxp-text-light mt-3 mt-lg-4">MLI / APH Select Experts &amp; Investment Funds. Having made close relationships with finance
-professionals over the years, Yulstay positions itself as one of the major players in the commercial space.</p>
+                                <h2 class="pxp-section-h2"><?php echo $investments_info_page_sixth_section_title; ?></h2>
+                                <p class="pxp-text-light mt-3 mt-lg-4"><?php echo $investments_info_page_sixth_section_description; ?></p>
                                 <!-- <a href="contact.html" class="pxp-primary-cta text-uppercase mt-3 mt-md-5 pxp-animate">Contact us now</a> -->
                             </div>
                         </div>
