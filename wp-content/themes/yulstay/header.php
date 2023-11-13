@@ -14,23 +14,6 @@
 ?>
 
 <!doctype html>
-<?php
-error_reporting(0);
-// $zipFolder    = '/home/customer/www/mdataz.com/public_html/yulstaynew/listing-files/';
-// $unzipFolder    = '/home/customer/www/mdataz.com/public_html/yulstaynew/listing-files/';
-// $backupFolder    = '/home/customer/www/mdataz.com/public_html/yulstaynew/listing-files/backup/';
-// $files1 = scandir($zipFolder);
-// $pattern = '/[\n]/';
-global $wpdb;
-$lang = get_bloginfo("language");
-$currencyLetterPrefix="";
-$currencyLetterSuffix="";
-if ($lang == 'en-US'){
-    $currencyLetterPrefix="$ ";
-}else{
-    $currencyLetterSuffix=" $";
-}
- ?>
 <html <?php language_attributes(); ?>>
     <head>
         <meta charset="<?php bloginfo( 'charset' ); ?>">
