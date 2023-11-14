@@ -59,7 +59,7 @@ for ($i=0; $i <count($files1) ; $i++) { $explode=explode(".zip",$files1[$i]); if
     {
     $value1= str_replace('�',"",$value);
     $replaceValue= str_replace('"',"",str_replace('Ã©',"é",$value1));
-	$valueExplode=explode(",",$replaceValue);
+    $valueExplode=explode(",",$replaceValue);
     $bureauxSql = $conn->query("SELECT * FROM BUREAUX WHERE CODE = '".$valueExplode[0]."'");
 
     if($bureauxSql->num_rows===0){
@@ -808,10 +808,33 @@ for ($i=0; $i <count($files1) ; $i++) { $explode=explode(".zip",$files1[$i]); if
     // lowercase
     $post_name = strtolower($text);
 
-    $insertSql = "INSERT INTO wp_posts (post_title,post_content,post_status,post_type,post_author,post_name)
-    VALUES ('".$row['NOM_RUE_COMPLET']."','".$row['NO_INSCRIPTION']."','publish','".$postType."','1','".$post_name."')";
 
-    $conn->query($insertSql);
+    $new_post = array(
+        'post_author'   => 1,
+        'post_date'     => current_time('mysql'),
+        'post_date_gmt' => current_time('mysql', 1),
+        'post_content'  => $row['NO_INSCRIPTION'],
+        'post_title'    => $row['NOM_RUE_COMPLET'],
+        'post_status'   => 'publish',
+        'post_type'     => $postType,
+        'comment_status'=> 'open',
+        'ping_status'   => 'open',
+    );
+
+    // Insert the post into the database
+    $post_id = wp_insert_post($new_post);
+
+    // Check if the insertion was successful
+    // if ($post_id) {
+    //     echo "Post inserted successfully. ID: " . $post_id;
+    // } else {
+    //     echo "Error inserting post.";
+    // }
+
+    // $insertSql = "INSERT INTO wp_posts (post_title,post_content,post_status,post_type,post_author,post_name)
+    // VALUES ('".$row['NOM_RUE_COMPLET']."','".$row['NO_INSCRIPTION']."','publish','".$postType."','1','".$post_name."')";
+
+    // $conn->query($insertSql);
 
 
     }
