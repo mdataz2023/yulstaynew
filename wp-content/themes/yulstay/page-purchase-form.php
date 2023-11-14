@@ -29,9 +29,9 @@ $purchase_form_page_form_description = get_field('purchase_form_page_form_descri
                 <div class="container mt-100">
                     <div class="row">
                         <div class="col-sm-12 col-lg-6">
-                                <div>
+                                <!-- <div>
                                     <h2 class="pxp-section-h2" id="form-title">Invesment Form</h2>
-                                </div>
+                                </div> -->
                             <div id="form-id">
                                 <div id="investment-form-content">
                                     <p class="pxp-text-light"><?php echo $purchase_form_page_form_description; ?></p>
