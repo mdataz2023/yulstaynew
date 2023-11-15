@@ -20,6 +20,8 @@ $investments_info_page_fifth_section_title = get_field('investments_info_page_fi
 $investments_info_page_fifth_section_description = get_field('investments_info_page_fifth_section_description');
 $investments_info_page_sixth_section_title = get_field('investments_info_page_sixth_section_title');
 $investments_info_page_sixth_section_description = get_field('investments_info_page_sixth_section_description');
+$investments_info_page_third_section_image = get_field('investments_info_page_third_section_image');
+$investments_info_page_forth_section_image = get_field('investments_info_page_forth_section_image');
 
 ?>
 
@@ -125,7 +127,7 @@ $investments_info_page_sixth_section_description = get_field('investments_info_p
                         </div>
                         <div class="col-lg-2"></div>
                         <div class="col-lg-5 order-first order-lg-last">
-                            <div class="pxp-cta-3-image pxp-cover rounded-lg" style="background-image: url(https://mdataz.com/yulstaynew/wp-content/uploads/2023/10/19-2.jpg);"></div>
+                            <div class="pxp-cta-3-image pxp-cover rounded-lg" style="background-image: url(<?php echo $investments_info_page_third_section_image; ?>);"></div>
                         </div>
                     </div>
                 </div>
@@ -135,7 +137,7 @@ $investments_info_page_sixth_section_description = get_field('investments_info_p
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-lg-5">
-                            <div class="pxp-cta-3-image pxp-cover rounded-lg" style="background-image: url(https://mdataz.com/yulstaynew/wp-content/uploads/2023/10/19-2.jpg);"></div>
+                            <div class="pxp-cta-3-image pxp-cover rounded-lg" style="background-image: url(<?php echo $investments_info_page_forth_section_image; ?>);"></div>
                         </div>
                         <div class="col-lg-2"></div>
                         <div class="col-lg-4">
