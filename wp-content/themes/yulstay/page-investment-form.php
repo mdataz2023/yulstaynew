@@ -39,8 +39,8 @@ $invesment_form_page_form_description = get_field('invesment_form_page_form_desc
                                 </div>
                             </div>
                         </div>
-
-                        <div class="col-sm-12 col-lg-6" style="background-image: url(<?php echo $invesment_form_page_image; ?>">
+                        <div class="pxp-cta-3-image pxp-cover rounded-lg" style="background-image: url(<?php echo $invesment_form_page_image; ?>);"></div>
+                        <!-- <div class="col-sm-12 col-lg-6" style="background-image: url(<?php echo $invesment_form_page_image; ?>"> -->
                             
                         </div>
                     </div>
