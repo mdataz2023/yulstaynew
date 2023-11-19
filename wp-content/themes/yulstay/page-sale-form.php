@@ -40,7 +40,7 @@ $sale_form_page_form_description = get_field('sale_form_page_form_description');
                             </div>
                         </div>
 
-                        <div class="col-sm-12 col-lg-6" style="background-image: url(<?php echo $sale_form_page_image; ?>">
+                        <div class="col-sm-12 col-lg-6 pxp-cta-3-image pxp-cover rounded-lg" style="background-image: url(<?php echo $sale_form_page_image; ?>);">
                             
                         </div>
                     </div>

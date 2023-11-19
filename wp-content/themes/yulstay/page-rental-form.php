@@ -40,7 +40,7 @@ $rental_management_page_form_description = get_field('rental_management_page_for
                             </div>
                         </div>
 
-                        <div class="col-sm-12 col-lg-6" style="background-image: url(<?php echo $rental_management_page_image; ?>">
+                        <div class="col-sm-12 col-lg-6 pxp-cta-3-image pxp-cover rounded-lg" style="background-image: url(<?php echo $rental_management_page_image; ?>);">
                             
                         </div>
                     </div>
