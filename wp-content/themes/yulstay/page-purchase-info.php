@@ -28,7 +28,7 @@ $purchase_info_page_section_five_description = get_field('purchase_info_page_sec
                 <div class="container">
                     <h2 class="pxp-section-h2"><?php echo $purchase_info_page_title; ?></h2>
                     <p class="pxp-text-light info-des"><?php echo $purchase_info_page_description; ?></p>
-                    <a href="<?php bloginfo('url'); ?>/purchase-form" class="pxp-primary-cta text-uppercase mt-md-5 pxp-animate"><?php _e('purchase info Form','theme-text-domain'); ?> <span class="fa fa-phone"></span></a>
+                    <a href="<?php bloginfo('url'); ?>/purchase-form" class="pxp-primary-cta text-uppercase pxp-animate"><span class="fa fa-phone"></span> <?php _e('purchase info Form','theme-text-domain'); ?></a>
 
                     <div class="pxp-services-h-container mt-4 mt-md-5">
                         <div class="pxp-services-h-fig pxp-cover pxp-animate-in rounded-lg" style="background-image: url(<?php echo $purchase_info_page_section_one_image; ?>);"></div>
