@@ -30,13 +30,14 @@ $investments_info_page_forth_section_image = get_field('investments_info_page_fo
                 <div class="container">
                     <h2 class="pxp-section-h2"><?php echo $investments_info_page_title; ?></h2>
                     <p class="pxp-text-light info-des"><?php echo $investments_info_page_description; ?></p>
+                    <a href="<?php bloginfo('url'); ?>/invesment-form" class="pxp-primary-cta text-uppercase mt-4 mt-md-5 pxp-animate"><?php _e('Investments Form','theme-text-domain'); ?></a>
 
                     <div class="pxp-services-h-container mt-4 mt-md-5">
                         <div class="pxp-services-h-fig pxp-cover pxp-animate-in rounded-lg" style="background-image: url(<?php echo $investments_info_page_section_one_image; ?>);"></div>
                         <div class="pxp-services-h-items pxp-animate-in ml-0 ml-lg-5 mt-4 mt-md-5 mt-lg-0">
                         <h2 class="pxp-section-h2"><?php echo $investments_info_page_section_one_title; ?></h2>
                         <p class="pxp-is-address" style="padding-top: 12px;"><?php echo $investments_info_page_section_one_paragraph; ?></p>
-                        <a href="<?php echo $home_properties_section_page_link; ?>" class="pxp-primary-cta text-uppercase mt-4 mt-md-5 pxp-animate"><?php _e('Investments Form','theme-text-domain'); ?></a>
+                        
                             
                         </div>
                     </div>
