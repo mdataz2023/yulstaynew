@@ -115,7 +115,7 @@ $contact_page_email_address_link = get_field('contact_page_email_address_link');
                                 <?php echo do_shortcode('[contact-form-7 id="714498e" title="Investments"]'); ?>
                             </div>
                             <div id="purchase-form-content" style="display: none;">
-                                <p class="pxp-text-light"><?php _e('Achat - Let\'s find your dream home','theme-text-domain'); ?></p>
+                                <p class="pxp-text-light"><?php _e('Let\'s find your dream home','theme-text-domain'); ?></p>
                                 <?php echo do_shortcode('[contact-form-7 id="714498e" title="Investments"]'); ?>
                             </div>
                             <div id="sale-form-content" style="display: none;">
