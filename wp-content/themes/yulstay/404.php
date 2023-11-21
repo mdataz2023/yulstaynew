@@ -10,8 +10,8 @@
 get_header();
 ?>
 
-        <div class="pxp-content mb-100">
-            				<h1 class="mb-5" class="liquid-counter-element">
+        <div class="pxp-content mb-100 mt-100" st>
+            				<h1 class="mb-5" sty>
 									<span>404</span>
 								</h1><!-- /.liquid-counter-element -->
 	
