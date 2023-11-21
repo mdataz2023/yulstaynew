@@ -374,8 +374,8 @@ $home_banner_title_description = get_field('home_banner_title_description');
 
                 </div>
 
-                <a href="<?php echo $home_properties_section_page_link; ?>"
-                    class="pxp-primary-cta text-uppercase mt-4 mt-md-5 pxp-animate"><?php _e('Browse All','theme-text-domain'); ?></a>
+                <!-- <a href="<?php echo $home_properties_section_page_link; ?>"
+                    class="pxp-primary-cta text-uppercase mt-4 mt-md-5 pxp-animate"><?php _e('Browse All','theme-text-domain'); ?></a> -->
             </div>
         </div>
 
