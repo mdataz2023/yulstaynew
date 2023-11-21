@@ -120,11 +120,11 @@ $contact_page_email_address_link = get_field('contact_page_email_address_link');
                             </div>
                             <div id="sale-form-content" style="display: none;">
                                 <p class="pxp-text-light"><?php _e('With you every step','theme-text-domain'); ?></p>
-                                <?php echo do_shortcode('[contact-form-7 id="35457d9" title="Sale"]'); ?>
+                                <?php echo do_shortcode('[contact-form-7 id="b09d61c" title="Rental & Management"]'); ?>
                             </div>
                             <div id="rental-form-content" style="display: none;">
                                 <p class="pxp-text-light"><?php _e('Peace of mind above all','theme-text-domain'); ?></p>
-                                <?php echo do_shortcode('[contact-form-7 id="35457d9" title="Sale"]'); ?>
+                                <?php echo do_shortcode('[contact-form-7 id="b09d61c" title="Rental & Management"]'); ?>
                             </div>
                         </div>
                         
