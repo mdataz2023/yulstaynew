@@ -97,10 +97,10 @@ $contact_page_email_address_link = get_field('contact_page_email_address_link');
                             <div>
                                 <select class="contact-dropbtn" id="select-form">
                                     <option value="default">Select your form</option>
-                                    <option value="investment-form">Investments</option>
-                                    <option value="purchase-form">Purchase</option>
-                                    <option value="sale-form">Sale</option>
-                                    <option value="rental-form">Rental & Management</option>
+                                    <option value="investment-form"><?php _e('Investment','theme-text-domain'); ?></option>
+                                    <option value="purchase-form"><?php _e('Purchase','theme-text-domain'); ?></option>
+                                    <option value="sale-form"><?php _e('Sale','theme-text-domain'); ?></option>
+                                    <option value="rental-form"><?php _e('Rental & Management','theme-text-domain'); ?></option>
                                 </select>
                             </div>
                         </div>
@@ -111,19 +111,19 @@ $contact_page_email_address_link = get_field('contact_page_email_address_link');
                                 <img src="<?php echo get_template_directory_uri(); ?>/images/ph-big.jpg" alt="" style="width: 100%; height: 411px;">
                             </div>
                             <div id="investment-form-content" style="display: none;">
-                                <p class="pxp-text-light">Investments Description</p>
+                                <p class="pxp-text-light"><?php _e('Tell us about your goals','theme-text-domain'); ?></p>
                                 <?php echo do_shortcode('[contact-form-7 id="714498e" title="Investments"]'); ?>
                             </div>
                             <div id="purchase-form-content" style="display: none;">
-                                <p class="pxp-text-light">Purchase Description</p>
+                                <p class="pxp-text-light"><?php _e('Achat - Let\'s find your dream home','theme-text-domain'); ?></p>
                                 <?php echo do_shortcode('[contact-form-7 id="714498e" title="Investments"]'); ?>
                             </div>
                             <div id="sale-form-content" style="display: none;">
-                                <p class="pxp-text-light">Sale Description</p>
+                                <p class="pxp-text-light"><?php _e('With you every step','theme-text-domain'); ?></p>
                                 <?php echo do_shortcode('[contact-form-7 id="35457d9" title="Sale"]'); ?>
                             </div>
                             <div id="rental-form-content" style="display: none;">
-                                <p class="pxp-text-light">Rental & Management Description</p>
+                                <p class="pxp-text-light"><?php _e('Peace of mind above all','theme-text-domain'); ?></p>
                                 <?php echo do_shortcode('[contact-form-7 id="35457d9" title="Sale"]'); ?>
                             </div>
                         </div>
