@@ -34,7 +34,7 @@ $invesment_form_page_form_description = get_field('invesment_form_page_form_desc
                                 </div> -->
                             <div id="form-id">
                                 <div id="investment-form-content">
-                                    <p class="pxp-text-light"><?php echo $invesment_form_page_form_description; ?></p>
+                                    <!-- <p class="pxp-text-light"><?php echo $invesment_form_page_form_description; ?></p> -->
                                     <?php echo do_shortcode('[contact-form-7 id="714498e" title="Investments"]'); ?>
                                 </div>
                             </div>
