@@ -48,7 +48,7 @@ $post_id = get_the_ID();
                     </div>
                     <div hidden class="mt-4 mt-md-5">
                         <a href="#pxp-work-with" class="pxp-agent-contact-btn" data-toggle="modal"
-                            data-target="#pxp-work-with"><?php _e('Work with','theme-text-domain'); ?> <?php the_title(); ?></a>
+                            data-target="#pxp-work-with"><?php _e('Work with','theme-text-domain'); ?> <?php echo $team_member_name; ?></a>
                     </div>
                 </div>
                 <div class="col-sm-12 offset-lg-1 col-lg-3">
@@ -61,7 +61,7 @@ $post_id = get_the_ID();
             <div class="row">
                 <div class="col-sm-12 col-lg-8">
                     <div class="pxp-agent-section mt-4 mt-md-5">
-                        <h3>About <?php the_title(); ?></h3>
+                        <h3>About <?php echo $team_member_name; ?></h3>
                         <div class="mt-3 mt-md-4">
                             <?php if( have_rows('team_member_paragraphs') ): $s= 1; $a=0; ?>
 
@@ -114,7 +114,7 @@ $post_id = get_the_ID();
                 </div>
             </div>
 
-            <h2 class="pxp-section-h2 mt-100"><?php _e('Listings by','theme-text-domain'); ?> <?php the_title(); ?></h2>
+            <h2 class="pxp-section-h2 mt-100"><?php _e('Listings by','theme-text-domain'); ?> <?php echo $team_member_name; ?></h2>
             <div class="row mt-4 mt-md-5">
                 <?php
                         $datas = $wpdb->get_results("SELECT i.*,p.ID,p.post_type FROM INSCRIPTIONS i join wp_posts p on p.post_content=i.NO_INSCRIPTION where i.CODE_STATUT='EV' and COURTIER_INSCRIPTEUR_1='".$broker_id."' or COURTIER_INSCRIPTEUR_2='".$broker_id."'", OBJECT );
