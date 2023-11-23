@@ -78,7 +78,7 @@
                 </div>
 
                 <div class="pxp-footer-bottom mt-2">
-                    <div><a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a></div>
+                    <div><a style="color:white;" href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a></div>
                     <div class="pxp-footer-copyright">&copy; Yulasty. All Rights Reserved. 2023</div>
                 </div>
             </div>
