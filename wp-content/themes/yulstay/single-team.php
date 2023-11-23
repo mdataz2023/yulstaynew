@@ -92,9 +92,14 @@ $post_id = get_the_ID();
                     <div class="pxp-agent-section mt-4 mt-md-5">
                         <h3><?php _e('Specialities','theme-text-domain'); ?></h3>
                         <ul class="list-unstyled pxp-agent-specialities mt-3 mt-md-4">
-                            <li>International Buyers and Sellers</li>
-                            <li>Investors</li>
-                            <li>Family Offices</li>
+                            <?php if( have_rows('team_page_speciality') ): $s= 1; $a=0; ?>
+
+                            <?php while( have_rows('team_page_speciality') ): the_row() ;
+                                    $i++;
+                                            $team_page_specialities = get_sub_field('team_page_specialities');
+                                    ?>
+                            <li><?php echo $team_page_specialities; ?></li>
+                            <?php   endwhile; endif; ?>
                         </ul>
                     </div>
                     <div class="pxp-agent-section mt-4 mt-md-5">
