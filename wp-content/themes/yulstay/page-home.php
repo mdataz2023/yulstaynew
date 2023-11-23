@@ -35,12 +35,12 @@ $home_banner_title_description = get_field('home_banner_title_description');
                         <h1 class="text-white"><?php echo $home_banner_title; ?></h1>
                         <p class="pxp-text-light text-white mb-0"><?php echo $home_banner_title_description; ?></p>
                         <div class="banner-dropdown">
-                            <button class="banner-dropbtn">Dropdown</button>
+                            <button class="banner-dropbtn"><?php _e('Start Now','theme-text-domain'); ?></button>
                             <div class="banner-dropdown-content">
-                                <a href="<?php bloginfo('url'); ?>/invesment-form">Investments</a>
-                                <a href="<?php bloginfo('url'); ?>/purchase-form">Purchase</a>
-                                <a href="<?php bloginfo('url'); ?>/sale-form">Sale</a>
-                                <a href="<?php bloginfo('url'); ?>/rental-management-form">Rental & Management</a>
+                                <a href="<?php bloginfo('url'); ?>/invesment-form"><?php _e('Investments','theme-text-domain'); ?></a>
+                                <a href="<?php bloginfo('url'); ?>/purchase-form"><?php _e('Purchase','theme-text-domain'); ?></a>
+                                <a href="<?php bloginfo('url'); ?>/sale-form"><?php _e('Sale','theme-text-domain'); ?></a>
+                                <a href="<?php bloginfo('url'); ?>/rental-management-form"><?php _e('Rental & Management','theme-text-domain'); ?></a>
                             </div>
                         </div>
                     </div>

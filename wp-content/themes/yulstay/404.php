@@ -26,7 +26,7 @@ get_header();
 									<span class="btn-txt px-3">Back to home</span>
 								</span>
 							</a>
-            </div>
+        </div>
 
 
 
