@@ -712,6 +712,24 @@ global $wpdb;
     }
 
     setTimeout(function() {
+        $.ajax("<?php echo get_template_directory_uri(); ?>/page-db.php", {
+            type: 'POST', // http method
+            data: {
+                post_type: "residential",
+                bloginfo: "<?php echo bloginfo('url');?>",
+                regionCode: $("#pxp-p-filter-type").val(),
+                orderBy: $("#pxp-sort-results").val(),
+                min_price: $("#pxp-p-filter-price-min").val(),
+                max_price: $("#pxp-p-filter-price-max").val(),
+                baths: $("#pxp-p-filter-baths").val(),
+                beds: $("#pxp-p-filter-beds").val(),
+            }, // data to submit
+            success: function(data, status, xhr) {
+                $('.filter_hide_section').hide();
+                $(".filter_display_section").html(data);
+            },
+            error: function(jqXhr, textStatus, errorMessage) {}
+        });
         if ($('#results-map').length > 0) {
             map = new google.maps.Map(document.getElementById('results-map'), options);
             var styledMapType = new google.maps.StyledMapType(styles, {
