@@ -5,10 +5,14 @@
 get_header();
 $lang = get_bloginfo("language");
 $language="A";
+$currencyLetterPrefix="";
+$currencyLetterSuffix="";
 if ($lang == 'en-US'){
-   $language="A";
+    $currencyLetterPrefix="$ ";
+    $language="A";
 }else{
-   $language="F";
+    $currencyLetterSuffix=" $";
+    $language="F";
 }
 global $wpdb;
 $dataIns = $wpdb->get_results("SELECT *  FROM INSCRIPTIONS i join wp_posts p on p.post_content=i.NO_INSCRIPTION join MUNICIPALITES m  ON m.CODE = i.MUN_CODE   where i.CODE_STATUT='EV' AND m.REGION_CODE='".$_GET["city"]."'", OBJECT );
@@ -89,9 +93,9 @@ $dataIns = $wpdb->get_results("SELECT *  FROM INSCRIPTIONS i join wp_posts p on 
                             <div class="pxp-results-card-1-details-price">
                                 <?php
                                  if($inscriptionsData->post_type=="rental-property"){
-                    echo $inscriptionsData->PRIX_LOCATION_DEMANDE.' $';
+                                echo $currencyLetterPrefix."". number_format($inscriptionsData->PRIX_LOCATION_DEMANDE).''.$currencyLetterSuffix;
                 }else{
-                    echo $inscriptionsData->PRIX_DEMANDE.' $';
+                    echo $currencyLetterPrefix."".number_format($inscriptionsData->PRIX_DEMANDE ).''.$currencyLetterSuffix;
                 }?>
                             </div>
                         </div>
@@ -516,15 +520,15 @@ $dataIns = $wpdb->get_results("SELECT *  FROM INSCRIPTIONS i join wp_posts p on 
         price: {
             long: '<?php
                 if($page->post_type=="rental-property"){
-                    echo $page->PRIX_LOCATION_DEMANDE.' $';
+                        echo $currencyLetterPrefix."".number_format($page->PRIX_LOCATION_DEMANDE).''.$currencyLetterSuffix;
                 }else{
-                    echo $page->PRIX_DEMANDE.' $';
+                    echo $currencyLetterPrefix."".number_format($page->PRIX_DEMANDE).''.$currencyLetterSuffix;
                 }
                 ?>',
             short: '<?php    if($page->post_type=="rental-property"){
-                    echo $page->PRIX_LOCATION_DEMANDE.' $';
+                        echo $currencyLetterPrefix."".number_format($page->PRIX_LOCATION_DEMANDE).''.$currencyLetterSuffix;
                 }else{
-                    echo $page->PRIX_DEMANDE.' $';
+                    echo $currencyLetterPrefix."".number_format($page->PRIX_DEMANDE).''.$currencyLetterSuffix;
                 }?>'
         },
         link: '<?php  echo get_permalink( $post->ID );?>',
@@ -623,6 +627,24 @@ $dataIns = $wpdb->get_results("SELECT *  FROM INSCRIPTIONS i join wp_posts p on 
     }
 
     setTimeout(function() {
+        $.ajax("<?php echo get_template_directory_uri(); ?>/page-db.php", {
+            type: 'POST', // http method
+            data: {
+                post_type: "multi-residential",
+                bloginfo: "<?php echo bloginfo('url');?>",
+                regionCode: $("#pxp-p-filter-type").val(),
+                orderBy: $("#pxp-sort-results").val(),
+                min_price: $("#pxp-p-filter-price-min").val(),
+                max_price: $("#pxp-p-filter-price-max").val(),
+                baths: $("#pxp-p-filter-baths").val(),
+                beds: $("#pxp-p-filter-beds").val(),
+            }, // data to submit
+            success: function(data, status, xhr) {
+                $('.filter_hide_section').hide();
+                $(".filter_display_section").html(data);
+            },
+            error: function(jqXhr, textStatus, errorMessage) {}
+        });
         if ($('#results-map').length > 0) {
             map = new google.maps.Map(document.getElementById('results-map'), options);
             var styledMapType = new google.maps.StyledMapType(styles, {
@@ -687,7 +709,6 @@ $dataIns = $wpdb->get_results("SELECT *  FROM INSCRIPTIONS i join wp_posts p on 
         }
     }, 300);
 })(jQuery);
-
 </script>
 
 </body>

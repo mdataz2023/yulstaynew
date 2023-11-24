@@ -121,10 +121,8 @@ global $wpdb;
                     <div class="pxp-sort-form form-inline float-right">
                         <div class="form-group">
                             <select class="custom-select" id="pxp-sort-results">
-                                <option value="" selected="selected"><?php _e('Default Sort','theme-text-domain'); ?>
-                                </option>
                                 <option value="low"><?php _e('Price (Lo-Hi)','theme-text-domain'); ?></option>
-                                <option value="high"><?php _e('Price (Hi-Lo)','theme-text-domain'); ?></option>
+                                <option selected value="high"><?php _e('Price (Hi-Lo)','theme-text-domain'); ?></option>
                             </select>
                         </div>
                         <div class="form-group d-flex">

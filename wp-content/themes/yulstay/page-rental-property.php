@@ -122,9 +122,8 @@ $the_query = new WP_Query( array('post_type' =>'rental-property','posts_per_page
                     <div class="pxp-sort-form form-inline float-right">
                         <div class="form-group">
                             <select class="custom-select" id="pxp-sort-results">
-                                <option value="" selected="selected"><?php _e('Default Sort','theme-text-domain'); ?></option>
                                 <option value="low"><?php _e('Price (Lo-Hi)','theme-text-domain'); ?></option>
-                                <option value="high"><?php _e('Price (Hi-Lo)','theme-text-domain'); ?></option>
+                                <option selected value="high"><?php _e('Price (Hi-Lo)','theme-text-domain'); ?></option>
                             </select>
                         </div>
                         <div class="form-group d-flex">
@@ -710,6 +709,24 @@ $the_query = new WP_Query( array('post_type' =>'rental-property','posts_per_page
     }
 
     setTimeout(function() {
+        $.ajax("<?php echo get_template_directory_uri(); ?>/page-db.php", {
+            type: 'POST', // http method
+            data: {
+                post_type: "multi-residential",
+                bloginfo: "<?php echo bloginfo('url');?>",
+                regionCode: $("#pxp-p-filter-type").val(),
+                orderBy: $("#pxp-sort-results").val(),
+                min_price: $("#pxp-p-filter-price-min").val(),
+                max_price: $("#pxp-p-filter-price-max").val(),
+                baths: $("#pxp-p-filter-baths").val(),
+                beds: $("#pxp-p-filter-beds").val(),
+            }, // data to submit
+            success: function(data, status, xhr) {
+                $('.filter_hide_section').hide();
+                $(".filter_display_section").html(data);
+            },
+            error: function(jqXhr, textStatus, errorMessage) {}
+        });
         if ($('#results-map').length > 0) {
             map = new google.maps.Map(document.getElementById('results-map'), options);
             var styledMapType = new google.maps.StyledMapType(styles, {
