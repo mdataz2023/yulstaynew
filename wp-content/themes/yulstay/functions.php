@@ -17,10 +17,20 @@ add_action( 'init', 'register_main_lang' );
 
 // Footer Menu
 
-function register_footer_company_menu() {
+  function register_footer_company_menu() {
     register_nav_menu('footer-company-menu',__( 'Footer Company Menu' ));
   }
   add_action( 'init', 'register_footer_company_menu' );
+
+  function register_footer_properties_menu() {
+    register_nav_menu('footer-properties-menu',__( 'Footer Properties Menu' ));
+  }
+  add_action( 'init', 'register_footer_properties_menu' );
+
+  function register_footer_team_menu() {
+    register_nav_menu('footer-team-menu',__( 'Footer Team Menu' ));
+  }
+  add_action( 'init', 'register_footer_team_menu' );
 
 
 /**

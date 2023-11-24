@@ -20,7 +20,7 @@
                         <img src="<?php echo get_template_directory_uri(); ?>/images/yulstay-logo.png" style="width: 8rem;" alt="">
                         </div>
                         <div class="pxp-footer-address mt-2">686 Rue Saint-Paul O, Quebec, <br>Montréal H3C 1M4<br>
-                            514.588.7663
+                            <a href="tel:+15145887663">+1-514-588-7663</a><br><a href="tel:+15149996293">+1-514-999-6293</a>
                         </div>
                         <div class="pxp-footer-social mt-2">
                             <a href="https://www.instagram.com/yulstay_/" target="_blank"><span class="fa fa-instagram"></span></a>
@@ -32,7 +32,7 @@
                     <div class="col-sm-12 col-lg-8">
                         <div class="row">
                             <div class="col-sm-12 col-md-4">
-                                <h4 class="pxp-footer-header mt-4 mt-lg-0">Company</h4>
+                                <h4 class="pxp-footer-header mt-4 mt-lg-0"><?php _e('Explore','theme-text-domain'); ?></h4>
                                 <ul class="list-unstyled pxp-footer-links mt-2">
                                     <!-- <li><a href="">About Us</a></li> -->
                                     <!-- <li><a href="<?php bloginfo('url'); ?>/team">Team</a></li>
@@ -56,21 +56,49 @@
                                 </ul>
                             </div>
                             <div class="col-sm-12 col-md-4">
-                                <h4 class="pxp-footer-header mt-4 mt-lg-0">Actions</h4>
+                                <h4 class="pxp-footer-header mt-4 mt-lg-0"><?php _e('Properties','theme-text-domain'); ?></h4>
                                 <ul class="list-unstyled pxp-footer-links mt-2">
-                                    <li><a href="<?php bloginfo('url'); ?>/residential">Residential</a></li>
+                                    <!-- <li><a href="<?php bloginfo('url'); ?>/residential">Residential</a></li>
                                     <li><a href="<?php bloginfo('url'); ?>/multi-residentialv">Multi Residential</a></li>
-                                    <li><a href="<?php bloginfo('url'); ?>/rental-property">Rental + Management</a></li>
+                                    <li><a href="<?php bloginfo('url'); ?>/rental-property">Rental + Management</a></li> -->
+                                    <?php 
+                                    $menu_name = 'footer-properties-menu';
+                                    if ( ( $locations = get_nav_menu_locations() ) && isset( $locations[ $menu_name ] ) ) 
+                                    {
+                                    $menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
+                                    $menu_items = wp_get_nav_menu_items($menu->term_id); ?>
+                                    <?php foreach ( (array) $menu_items as $key => $menu_item ) 
+                                        { 
+                                    $ptitle = $menu_item->title; ?>
+                                        <li><a href="<?php echo $menu_item->url; ?>"><?php echo $menu_item->title; ?></a></li>
+                                    <?php 
+                                    }  
+                                        } 
+                                    ?>
                                 </ul>
                             </div>
                             <div class="col-sm-12 col-md-4">
-                                <h4 class="pxp-footer-header mt-4 mt-lg-0">Team</h4>
+                                <h4 class="pxp-footer-header mt-4 mt-lg-0"><?php _e('Team','theme-text-domain'); ?></h4>
                                 <ul class="list-unstyled pxp-footer-links mt-2">
-                                    <li><a href="<?php bloginfo('url'); ?>/ralph-sebaaly/">Ralph Sebaaly</a></li>
+                                    <!-- <li><a href="<?php bloginfo('url'); ?>/ralph-sebaaly/">Ralph Sebaaly</a></li>
                                     <li><a href="<?php bloginfo('url'); ?>/christian-daoud/">Christian Daoud</a></li>
                                     <li><a href="<?php bloginfo('url'); ?>/parvez-coowar/">Parvez Coowar</a></li>
                                     <li><a href="<?php bloginfo('url'); ?>/cynthia-dahoud/">Cynthia Dahoud</a></li>
-                                    <li><a href="<?php bloginfo('url'); ?>/michael-ghannoum/">Michael Ghannoum</a></li>
+                                    <li><a href="<?php bloginfo('url'); ?>/michael-ghannoum/">Michael Ghannoum</a></li> -->
+                                    <?php 
+                                    $menu_name = 'footer-team-menu';
+                                    if ( ( $locations = get_nav_menu_locations() ) && isset( $locations[ $menu_name ] ) ) 
+                                    {
+                                    $menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
+                                    $menu_items = wp_get_nav_menu_items($menu->term_id); ?>
+                                    <?php foreach ( (array) $menu_items as $key => $menu_item ) 
+                                        { 
+                                    $ptitle = $menu_item->title; ?>
+                                        <li><a href="<?php echo $menu_item->url; ?>"><?php echo $menu_item->title; ?></a></li>
+                                    <?php 
+                                    }  
+                                        } 
+                                    ?>
                                 </ul>
                             </div>
                         </div>
@@ -78,8 +106,8 @@
                 </div>
 
                 <div class="pxp-footer-bottom mt-2">
-                    <div><a style="color:white;" href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a></div>
-                    <div class="pxp-footer-copyright">&copy; Yulasty. All Rights Reserved. 2023</div>
+                    <!-- <div><a style="color:white;" href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a></div> -->
+                    <div class="pxp-footer-copyright">&copy; Yulstay. All Rights Reserved. 2023</div>
                 </div>
             </div>
         </div>
