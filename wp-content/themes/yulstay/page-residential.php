@@ -715,7 +715,7 @@ global $wpdb;
         $.ajax("<?php echo get_template_directory_uri(); ?>/page-db.php", {
             type: 'POST', // http method
             data: {
-                post_type: "multi-residential",
+                post_type: "residential",
                 bloginfo: "<?php echo bloginfo('url');?>",
                 regionCode: $("#pxp-p-filter-type").val(),
                 orderBy: $("#pxp-sort-results").val(),

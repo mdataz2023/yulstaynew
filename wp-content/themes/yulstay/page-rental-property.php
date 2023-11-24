@@ -712,7 +712,7 @@ $the_query = new WP_Query( array('post_type' =>'rental-property','posts_per_page
         $.ajax("<?php echo get_template_directory_uri(); ?>/page-db.php", {
             type: 'POST', // http method
             data: {
-                post_type: "multi-residential",
+                post_type: "rental-property",
                 bloginfo: "<?php echo bloginfo('url');?>",
                 regionCode: $("#pxp-p-filter-type").val(),
                 orderBy: $("#pxp-sort-results").val(),
