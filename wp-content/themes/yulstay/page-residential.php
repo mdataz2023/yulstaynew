@@ -717,6 +717,8 @@ global $wpdb;
             data: {
                 post_type: "residential",
                 bloginfo: "<?php echo bloginfo('url');?>",
+                currencyLetterPrefix: "<?php echo $currencyLetterPrefix;?>",
+                currencyLetterSuffix: "<?php echo $currencyLetterSuffix;?>",
                 regionCode: $("#pxp-p-filter-type").val(),
                 orderBy: $("#pxp-sort-results").val(),
                 min_price: $("#pxp-p-filter-price-min").val(),
@@ -801,6 +803,8 @@ $("#pxp-p-filter-type").change(function() {
         data: {
             post_type: "residential",
             bloginfo: "<?php echo bloginfo('url');?>",
+            currencyLetterPrefix: "<?php echo $currencyLetterPrefix;?>",
+            currencyLetterSuffix: "<?php echo $currencyLetterSuffix;?>",
             regionCode: $("#pxp-p-filter-type").val(),
             orderBy: $("#pxp-sort-results").val(),
             min_price: $("#pxp-p-filter-price-min").val(),
@@ -825,6 +829,8 @@ $("#pxp-sort-results").change(function() {
         data: {
             post_type: "residential",
             bloginfo: "<?php echo bloginfo('url');?>",
+            currencyLetterPrefix: "<?php echo $currencyLetterPrefix;?>",
+            currencyLetterSuffix: "<?php echo $currencyLetterSuffix;?>",
             regionCode: $("#pxp-p-filter-type").val(),
             orderBy: $("#pxp-sort-results").val(),
             min_price: $("#pxp-p-filter-price-min").val(),
@@ -861,6 +867,8 @@ $(".pxp-filter-btn").click(function() {
             post_type: "residential",
             bloginfo: "<?php echo bloginfo('url');?>",
             regionCode: $("#pxp-p-filter-type").val(),
+            currencyLetterPrefix: "<?php echo $currencyLetterPrefix;?>",
+            currencyLetterSuffix: "<?php echo $currencyLetterSuffix;?>",
             orderBy: $("#pxp-sort-results").val(),
             min_price: $("#pxp-p-filter-price-min").val(),
             max_price: $("#pxp-p-filter-price-max").val(),

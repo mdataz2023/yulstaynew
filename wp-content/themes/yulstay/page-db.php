@@ -26,6 +26,8 @@ $orderBy=@$_POST['orderBy'];
 $regionCode=@$_POST['regionCode'];
 $baths=$_POST['baths'];
 $beds=$_POST['beds'];
+$currencyLetterPrefix=$_POST['currencyLetterPrefix'];
+$currencyLetterSuffix=$_POST['currencyLetterSuffix'];
 $regionSql="";
 
 if(isset($min_price)&$min_price!=""){
@@ -140,7 +142,7 @@ $postIndex=0;
              <div class="pxp-results-card-1-details">
                  <div class="pxp-results-card-1-details-title">'.  $title.'</div>
                  <div class="pxp-results-card-1-details-price">
-                 $ '.number_format($priceVariable).' '.'
+                   '.$currencyLetterPrefix.' '.number_format($priceVariable).' '.$currencyLetterSuffix.'
                  </div>
              </div>
              <div class="pxp-results-card-1-features">

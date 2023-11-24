@@ -714,6 +714,8 @@ $the_query = new WP_Query( array('post_type' =>'rental-property','posts_per_page
             data: {
                 post_type: "rental-property",
                 bloginfo: "<?php echo bloginfo('url');?>",
+                currencyLetterPrefix: "<?php echo $currencyLetterPrefix;?>",
+                currencyLetterSuffix: "<?php echo $currencyLetterSuffix;?>",
                 regionCode: $("#pxp-p-filter-type").val(),
                 orderBy: $("#pxp-sort-results").val(),
                 min_price: $("#pxp-p-filter-price-min").val(),
@@ -809,6 +811,8 @@ $("#pxp-p-filter-type").change(function() {
         data: {
             post_type: "rental-property",
             bloginfo: "<?php echo bloginfo('url');?>",
+            currencyLetterPrefix: "<?php echo $currencyLetterPrefix;?>",
+            currencyLetterSuffix: "<?php echo $currencyLetterSuffix;?>",
             regionCode: $("#pxp-p-filter-type").val(),
             orderBy: $("#pxp-sort-results").val(),
             min_price: $("#pxp-p-filter-price-min").val(),
@@ -833,6 +837,8 @@ $("#pxp-sort-results").change(function() {
         data: {
             post_type: "rental-property",
             bloginfo: "<?php echo bloginfo('url');?>",
+            currencyLetterPrefix: "<?php echo $currencyLetterPrefix;?>",
+            currencyLetterSuffix: "<?php echo $currencyLetterSuffix;?>",
             regionCode: $("#pxp-p-filter-type").val(),
             orderBy: $("#pxp-sort-results").val(),
             min_price: $("#pxp-p-filter-price-min").val(),
@@ -868,6 +874,8 @@ $(".pxp-filter-btn").click(function() {
         data: {
             post_type: "rental-property",
             bloginfo: "<?php echo bloginfo('url');?>",
+            currencyLetterPrefix: "<?php echo $currencyLetterPrefix;?>",
+            currencyLetterSuffix: "<?php echo $currencyLetterSuffix;?>",
             regionCode: $("#pxp-p-filter-type").val(),
             orderBy: $("#pxp-sort-results").val(),
             min_price: $("#pxp-p-filter-price-min").val(),
