@@ -20,7 +20,7 @@
                         <img src="<?php echo get_template_directory_uri(); ?>/images/yulstay-logo.png" style="width: 8rem;" alt="">
                         </div>
                         <div class="pxp-footer-address mt-2">686 Rue Saint-Paul O, Quebec, <br>Montréal H3C 1M4<br>
-                            <a href="tel:+15145887663">+1-514-588-7663</a><br><a href="tel:+15149996293">+1-514-999-6293</a>
+                            <a href="tel:+15145887663" style="color: #333;">+1 514 588 7663</a><br><a href="tel:+15149996293" style="color: #333;">+1 514 999 6293</a>
                         </div>
                         <div class="pxp-footer-social mt-2">
                             <a href="https://www.instagram.com/yulstay_/" target="_blank"><span class="fa fa-instagram"></span></a>
