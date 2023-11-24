@@ -140,7 +140,7 @@ $postIndex=0;
              <div class="pxp-results-card-1-details">
                  <div class="pxp-results-card-1-details-title">'.  $title.'</div>
                  <div class="pxp-results-card-1-details-price">
-                     '.number_format($priceVariable).' $'.'
+                 $ '.number_format($priceVariable).' '.'
                  </div>
              </div>
              <div class="pxp-results-card-1-features">
