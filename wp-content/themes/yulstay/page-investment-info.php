@@ -86,36 +86,8 @@ $investments_info_page_forth_section_image = get_field('investments_info_page_fo
             <div class="pxp-services-h pt-100 pb-100">
                 <div class="container">
                     <div class="pxp-services-h-container mt-4 mt-md-5">
-                        <div class="pxp-services-h-fig pxp-cover pxp-animate-in rounded-lg" style="background-image: url(<?php echo $investments_info_page_section_one_image; ?>);"></div>
                         <div class="pxp-services-h-items pxp-animate-in ml-0 ml-lg-5 mt-4 mt-md-5 mt-lg-0">
-                            <h2 class="pxp-section-h2"><?php echo $investments_info_page_section_one_title; ?></h2>
-                            <p class="pxp-is-address" style="padding-top: 12px;"><?php echo $investments_info_page_section_one_paragraph; ?></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="pxp-services-h pt-100 pb-100">
-                <div class="container">
-                    <div class="pxp-services-h-container mt-4 mt-md-5">
-                        <div class="pxp-services-h-items pxp-animate-in ml-0 ml-lg-5 mt-4 mt-md-5 mt-lg-0">
-                            <h2 class="pxp-section-h2"><?php echo $investments_info_page_section_one_title; ?></h2>
-                            <p class="pxp-is-address" style="padding-top: 12px;"><?php echo $investments_info_page_section_one_paragraph; ?></p>
-                        </div>
-                        <div class="pxp-services-h-fig pxp-cover pxp-animate-in rounded-lg" style="background-image: url(<?php echo $investments_info_page_section_one_image; ?>);"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="pxp-cta-3 mt-100">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-5">
-                            <div class="pxp-cta-3-image pxp-cover rounded-lg" style="background-image: url(<?php echo $investments_info_page_second_image; ?>);"></div>
-                        </div>
-                        <div class="col-lg-2"></div>
-                        <div class="col-lg-4">
-                            <h2 class="pxp-section-h2 mt-3 mt-md-5 mt-lg-0"><?php echo $investments_info_page_second_title; ?></h2>
+                        <h2 class="pxp-section-h2 mt-3 mt-md-5 mt-lg-0"><?php echo $investments_info_page_second_title; ?></h2>
                             <p class="pxp-text-light mt-3 mt-lg-4"><?php echo $investments_info_page_second_paragraph; ?></p>
                             <?php if( have_rows('investments_info_page_second_list') ): $s= 1; $a=0; ?>
 
@@ -135,22 +107,66 @@ $investments_info_page_forth_section_image = get_field('investments_info_page_fo
                                 </div>
                                 <?php endwhile; endif; ?>
                         </div>
-                        <div class="col-lg-1"></div>
+                        <div class="pxp-services-h-fig pxp-cover pxp-animate-in rounded-lg" style="background-image: url(<?php echo $investments_info_page_second_image; ?>);"></div>
                     </div>
                 </div>
             </div>
 
-            <div class="pxp-cta-3 mt-100">
+            <div class="pxp-services-h pt-100 pb-100">
                 <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-1"></div>
-                        <div class="col-lg-4">
+                    <div class="pxp-services-h-container mt-4 mt-md-5">
+                        <div class="pxp-services-h-fig pxp-cover pxp-animate-in rounded-lg" style="background-image: url(<?php echo $investments_info_page_third_section_image; ?>);"></div>
+                        <div class="pxp-services-h-items pxp-animate-in ml-0 ml-lg-5 mt-4 mt-md-5 mt-lg-0">
                             <h2 class="pxp-section-h2 mt-3 mt-md-5 mt-lg-0"><?php echo $investments_info_page_third_section_title; ?></h2>
                             <p class="pxp-text-light mt-3 mt-lg-4"><?php echo $investments_info_page_third_section_description; ?></p>
                         </div>
-                        <div class="col-lg-2"></div>
-                        <div class="col-lg-5 order-first order-lg-last">
-                            <div class="pxp-cta-3-image pxp-cover rounded-lg" style="background-image: url(<?php echo $investments_info_page_third_section_image; ?>);"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pxp-services-h pt-100 pb-100">
+                <div class="container">
+                    <div class="pxp-services-h-container mt-4 mt-md-5">
+                        <div class="pxp-services-h-items pxp-animate-in ml-0 ml-lg-5 mt-4 mt-md-5 mt-lg-0">
+                            <h2 class="pxp-section-h2 mt-3 mt-md-5 mt-lg-0"><?php echo $investments_info_page_forth_section_title; ?></h2>
+                            <p class="pxp-text-light mt-3 mt-lg-4"><?php echo $investments_info_page_forth_section_description; ?></p>
+                        </div>
+                        <div class="pxp-services-h-fig pxp-cover pxp-animate-in rounded-lg" style="background-image: url(<?php echo $investments_info_page_forth_section_image; ?>);"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pxp-services-h pt-100 pb-100">
+                <div class="container">
+                    <div class="pxp-services-h-container mt-4 mt-md-5">
+                        <div class="pxp-services-h-fig pxp-cover pxp-animate-in rounded-lg" style="background-image: url(<?php echo $investments_info_page_section_one_image; ?>);"></div>
+                        <div class="pxp-services-h-items pxp-animate-in ml-0 ml-lg-5 mt-4 mt-md-5 mt-lg-0">
+                                <h2 class="pxp-section-h2"><?php echo $investments_info_page_fifth_section_title; ?></h2>
+                                <p class="pxp-text-light mt-3 mt-lg-4"><?php echo $investments_info_page_fifth_section_description; ?></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pxp-services-h pt-100 pb-100">
+                <div class="container">
+                    <div class="pxp-services-h-container mt-4 mt-md-5">
+                        <div class="pxp-services-h-items pxp-animate-in ml-0 ml-lg-5 mt-4 mt-md-5 mt-lg-0">
+                                <h2 class="pxp-section-h2"><?php echo $investments_info_page_fifth_section_title; ?></h2>
+                                <p class="pxp-text-light mt-3 mt-lg-4"><?php echo $investments_info_page_fifth_section_description; ?></p>
+                        </div>
+                        <div class="pxp-services-h-fig pxp-cover pxp-animate-in rounded-lg" style="background-image: url(<?php echo $investments_info_page_section_one_image; ?>);"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pxp-services-h pt-100 pb-100">
+                <div class="container">
+                    <div class="pxp-services-h-container mt-4 mt-md-5">
+                        <div class="pxp-services-h-fig pxp-cover pxp-animate-in rounded-lg" style="background-image: url(<?php echo $investments_info_page_section_one_image; ?>);"></div>
+                        <div class="pxp-services-h-items pxp-animate-in ml-0 ml-lg-5 mt-4 mt-md-5 mt-lg-0">
+                            <h2 class="pxp-section-h2"><?php echo $investments_info_page_section_one_title; ?></h2>
+                            <p class="pxp-is-address" style="padding-top: 12px;"><?php echo $investments_info_page_section_one_paragraph; ?></p>
                         </div>
                     </div>
                 </div>
@@ -160,12 +176,41 @@ $investments_info_page_forth_section_image = get_field('investments_info_page_fo
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-lg-5">
-                            <div class="pxp-cta-3-image pxp-cover rounded-lg" style="background-image: url(<?php echo $investments_info_page_forth_section_image; ?>);"></div>
+                            <div class="pxp-cta-3-image pxp-cover rounded-lg" style="background-image: url();"></div>
                         </div>
                         <div class="col-lg-2"></div>
                         <div class="col-lg-4">
-                            <h2 class="pxp-section-h2 mt-3 mt-md-5 mt-lg-0"><?php echo $investments_info_page_forth_section_title; ?></h2>
-                            <p class="pxp-text-light mt-3 mt-lg-4"><?php echo $investments_info_page_forth_section_description; ?></p>
+                            
+                        </div>
+                        <div class="col-lg-1"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pxp-cta-3 mt-100">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-1"></div>
+                        <div class="col-lg-4">
+                            
+                        </div>
+                        <div class="col-lg-2"></div>
+                        <div class="col-lg-5 order-first order-lg-last">
+                            <div class="pxp-cta-3-image pxp-cover rounded-lg" style="background-image: url();"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pxp-cta-3 mt-100">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-5">
+                            <div class="pxp-cta-3-image pxp-cover rounded-lg" style="background-image: url();"></div>
+                        </div>
+                        <div class="col-lg-2"></div>
+                        <div class="col-lg-4">
+
 
                         </div>
                         <div class="col-lg-1"></div>
@@ -178,8 +223,7 @@ $investments_info_page_forth_section_image = get_field('investments_info_page_fo
                     <div class="row justify-content-center">
                         <div class="col-md-8 col-lg-6">
                             <div class="text-center">
-                                <h2 class="pxp-section-h2"><?php echo $investments_info_page_fifth_section_title; ?></h2>
-                                <p class="pxp-text-light mt-3 mt-lg-4"><?php echo $investments_info_page_fifth_section_description; ?></p>
+                                
                                 <!-- <a href="contact.html" class="pxp-primary-cta text-uppercase mt-3 mt-md-5 pxp-animate">Contact us now</a> -->
                             </div>
                         </div>
@@ -191,8 +235,6 @@ $investments_info_page_forth_section_image = get_field('investments_info_page_fo
                     <div class="row justify-content-center">
                         <div class="col-md-8 col-lg-6">
                             <div class="text-center">
-                                <h2 class="pxp-section-h2"><?php echo $investments_info_page_sixth_section_title; ?></h2>
-                                <p class="pxp-text-light mt-3 mt-lg-4"><?php echo $investments_info_page_sixth_section_description; ?></p>
                                 <!-- <a href="contact.html" class="pxp-primary-cta text-uppercase mt-3 mt-md-5 pxp-animate">Contact us now</a> -->
                             </div>
                         </div>
