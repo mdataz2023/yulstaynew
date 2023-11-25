@@ -40,15 +40,17 @@ $post_id = get_the_ID();
                     <div class="clearfix"></div>
                     <p><?php echo $team_member_destination; ?></p>
                     <div class="mt-4 mt-md-5">
-                        <div class="pxp-agent-email" style="display: flex; gap: 4px;">
+                        <div class="pxp-agent-email" style="display: flex; gap: 8px; align-items: center; margin-bottom: 10px;">
                             <div class="fa fa-envelope-o"></div>
                             <a href="mailto:<?php echo $team_member_email; ?>"><?php echo $team_member_email; ?></a>
                         </div>
-                        <div class="pxp-agent-email">
-                            <a href=""><span class="fa fa-location-arrow"></span><?php echo $team_member_address; ?></a>
+                        <div class="pxp-agent-email" style="display: flex; gap: 8px; align-items: center; margin-bottom: 10px;">
+                            <div class="fa fa-location-arrow"></div>
+                            <a href=""><?php echo $team_member_address; ?></a>
                         </div>
-                        <div class="pxp-agent-phone">
-                            <a href="tel:<?php echo $team_member_telephone; ?>" style="color: #333 !important;"><?php if ($post_id == 32) {echo " "; } else { echo '<span class="fa fa-phone"></span>'; } ?>  <?php echo $team_member_telephone; ?></a>
+                        <div class="pxp-agent-phone" style="display: flex; gap: 8px; align-items: center; margin-bottom: 10px;">
+                            <div><?php if ($post_id == 32) {echo " "; } else { echo '<div class="fa fa-phone"></div>'; } ?></div>
+                            <a href="tel:<?php echo $team_member_telephone; ?>" style="color: #333 !important;"><?php echo $team_member_telephone; ?></a>
                         </div>
                     </div>
                     <div hidden class="mt-4 mt-md-5">
