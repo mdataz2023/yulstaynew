@@ -92,11 +92,11 @@ $contact_page_email_address_link = get_field('contact_page_email_address_link');
                         <div class="col-sm-12 col-lg-6">
                         <div style="display:flex; justify-content: space-between; align-items: center;">
                             <div>
-                                <h2 class="pxp-section-h2" id="form-title">Select your form</h2>
+                                <h2 class="pxp-section-h2" id="form-title"><?php _e('Choose Contact Reason','theme-text-domain'); ?></h2>
                             </div>
                             <div>
                                 <select class="contact-dropbtn" id="select-form">
-                                    <option value="default">Select your form</option>
+                                    <option value="default"><?php _e('Select a Reason​','theme-text-domain'); ?></option>
                                     <option value="investment-form"><?php _e('Investment','theme-text-domain'); ?></option>
                                     <option value="purchase-form"><?php _e('Purchase','theme-text-domain'); ?></option>
                                     <option value="sale-form"><?php _e('Sale','theme-text-domain'); ?></option>

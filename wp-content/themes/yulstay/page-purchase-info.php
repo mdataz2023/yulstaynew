@@ -23,7 +23,7 @@ $purchase_info_page_section_five_description = get_field('purchase_info_page_sec
 
 ?>
 
-        <div class="pxp-content">
+        <div class="pxp-content pt-100">
             <div class="pxp-services-h pt-100 pb-100">
                 <div class="container">
                     <h2 class="pxp-section-h2"><?php echo $purchase_info_page_title; ?></h2>

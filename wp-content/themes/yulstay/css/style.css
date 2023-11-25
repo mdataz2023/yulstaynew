@@ -946,6 +946,7 @@ h1.pxp-page-header {
 .pxp-dark-mode .pxp-header.pxp-full .pxp-header-nav-trigger {
     color: #fff;
     border: 1px solid #fff;
+    background-color: #00AEC5;
 }
 
 .pxp-dark-mode .pxp-is-sticky .pxp-header-user:hover,

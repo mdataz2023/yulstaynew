@@ -32,7 +32,7 @@ $the_query = new WP_Query( array('post_type' =>'rental-property','posts_per_page
                         <div class="col-12 pxp-content-side-search-form-col">
                             <div class="form-group">
                                 <select class="custom-select" id="pxp-p-filter-type">
-                                    <option value="" disabled selected><?php _e('Select Listning','theme-text-domain'); ?></option>
+                                    <option value="" disabled selected><?php _e('Select Property Listing','theme-text-domain'); ?></option>
                                     <option value="All"><?php _e('All','theme-text-domain'); ?></option>
                                     <?php
                                      $datas = $wpdb->get_results("SELECT

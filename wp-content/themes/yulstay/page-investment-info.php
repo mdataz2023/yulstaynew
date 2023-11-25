@@ -25,7 +25,7 @@ $investments_info_page_forth_section_image = get_field('investments_info_page_fo
 
 ?>
 
-        <div class="pxp-content">
+        <div class="pxp-content pt-100">
             <div class="pxp-services-h pt-100 pb-100">
                 <div class="container">
                     <h2 class="pxp-section-h2"><?php echo $investments_info_page_title; ?></h2>

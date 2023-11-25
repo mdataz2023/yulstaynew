@@ -33,7 +33,7 @@ $home_banner_title_description = get_field('home_banner_title_description');
 
                     <div style="text-align: center;">
                         <h1 class="text-white"><?php echo $home_banner_title; ?></h1>
-                        <p class="pxp-text-light text-white mb-0"><?php echo $home_banner_title_description; ?></p>
+                        <p class="pxp-text-light text-white mb-0" style="padding: 8px;"><?php echo $home_banner_title_description; ?></p>
                         <div class="banner-dropdown">
                             <button class="banner-dropbtn"><?php _e('Start Now','theme-text-domain'); ?></button>
                             <div class="banner-dropdown-content">
