@@ -40,8 +40,9 @@ $post_id = get_the_ID();
                     <div class="clearfix"></div>
                     <p><?php echo $team_member_destination; ?></p>
                     <div class="mt-4 mt-md-5">
-                        <div class="pxp-agent-email">
-                            <a href="mailto:<?php echo $team_member_email; ?>"><span class="fa fa-envelope-o"></span> <?php echo $team_member_email; ?></a>
+                        <div class="pxp-agent-email" style="display: flex; gap: 4px;">
+                            <div class="fa fa-envelope-o"></div>
+                            <a href="mailto:<?php echo $team_member_email; ?>"><?php echo $team_member_email; ?></a>
                         </div>
                         <div class="pxp-agent-email">
                             <a href=""><span class="fa fa-location-arrow"></span><?php echo $team_member_address; ?></a>
