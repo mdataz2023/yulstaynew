@@ -28,7 +28,7 @@ $rental_management_info_page_section_five_description = get_field('rental_manage
                 <div class="container">
                     <h2 class="pxp-section-h2"><?php echo $rental_management_info_page_title; ?></h2>
                     <p class="pxp-text-light info-des"><?php echo $rental_management_info_page_description; ?></p>
-                    <a href="<?php bloginfo('url'); ?>/rental-management-form" class="pxp-primary-cta text-uppercase pxp-animate"><span class="fa fa-phone"></span> <?php _e('rental management Team','theme-text-domain'); ?></a>
+                    <a href="<?php bloginfo('url'); ?>/rental-management-form" class="pxp-primary-cta text-uppercase pxp-animate"><span class="fa fa-phone"></span>  <?php _e('book a consultation','theme-text-domain'); ?></a>
 
                     <div class="pxp-services-h-container mt-4 mt-md-5">
                         <div class="pxp-services-h-fig pxp-cover pxp-animate-in rounded-lg" style="background-image: url(<?php echo $rental_management_info_page_section_one_image; ?>);"></div>
