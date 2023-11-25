@@ -127,7 +127,7 @@ $investments_info_page_forth_section_image = get_field('investments_info_page_fo
             <div class="pxp-services-h pt-100 pb-100">
                 <div class="container">
                     <div class="pxp-services-h-container mt-4 mt-md-5">
-                        <div class="pxp-services-h-items pxp-animate-in ml-0 ml-lg-5 mt-4 mt-md-5 mt-lg-0">
+                        <div class="pxp-services-h-items pxp-animate-in ml-0 mr-lg-5 mt-4 mt-md-5 mt-lg-0">
                             <h2 class="pxp-section-h2 mt-3 mt-md-5 mt-lg-0"><?php echo $investments_info_page_forth_section_title; ?></h2>
                             <p class="pxp-text-light mt-3 mt-lg-4"><?php echo $investments_info_page_forth_section_description; ?></p>
                         </div>
