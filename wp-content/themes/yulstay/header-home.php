@@ -73,7 +73,7 @@ if ($lang == 'en-US'){
                 <div class="col-5 col-md-2">
                     <!-- <a href="<?php bloginfo('url'); ?>/" class="pxp-logo text-decoration-none">Yulstay</a> -->
                     <a href="<?php bloginfo('url'); ?>/" class="pxp-logo text-decoration-none">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/YULSTAY-NAV.png"
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/yulstay-logo.png"
                             style="width: 8rem;" alt="">
                     </a>
                 </div>
