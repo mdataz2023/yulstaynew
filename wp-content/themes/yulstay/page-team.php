@@ -88,7 +88,7 @@ $team_page_title_description = get_field('team_page_title_description');
                                 <?php } ?>
                                 <div class="pxp-agents-1-item-details rounded-lg">
                                     <div class="pxp-agents-1-item-details-name"><?php the_title(); ?></div>
-                                    <div class="pxp-agents-1-item-details-email"><?php if ($$post_id == 32 || $post_id == 551) {echo " "; } else { echo '<span class="fa fa-phone"></span>'; } ?>&#160; <?php echo get_field('team_member_telephone'); ?></div>
+                                    <div class="pxp-agents-1-item-details-email"><?php if ($$post_id == 549 || $post_id == 551) {echo " "; } else { echo '<span class="fa fa-phone"></span>'; } ?>&#160; <?php echo get_field('team_member_telephone'); ?></div>
                                     <div class="pxp-agents-1-item-details-spacer"></div>
                                     <div class="pxp-agents-1-item-cta text-uppercase"><?php _e('More Details','theme-text-domain'); ?></div>
                                 </div>
