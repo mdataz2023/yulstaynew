@@ -83,7 +83,7 @@ $home_banner_title_description = get_field('home_banner_title_description');
                 </div>
             </div>
             <div style="display: flex; justify-content: flex-end; z-index: 1000; color: white; font-size: 32px; padding: 12px;">
-                <div>Test</div>
+                <div>Investing in peace of mind</div>
             </div>
         </div>
         <!-- <div class="pxp-hero vh-100">
@@ -221,7 +221,7 @@ $home_banner_title_description = get_field('home_banner_title_description');
                                 <img src="<?php echo get_template_directory_uri(); ?>/images/icons81.png" alt="...">
                             </div>
                             <div class="pxp-services-item-text text-center">
-                                <div class="pxp-services-item-text-title"><?php _e('Investments','theme-text-domain'); ?></div>
+                                <div class="pxp-services-item-text-title"><?php _e('Invest','theme-text-domain'); ?></div>
                                 <div class="pxp-services-item-text-sub"><?php _e('We offer unparalleled service and advice on the acquisition of revenue properties.','theme-text-domain'); ?></div>
                             </div>
                             <div class="pxp-services-item-cta text-uppercase text-center"><?php _e('Learn More','theme-text-domain'); ?></div>
