@@ -116,11 +116,11 @@ $contact_page_email_address_link = get_field('contact_page_email_address_link');
                             </div>
                             <div id="purchase-form-content" style="display: none;">
                                 <p class="pxp-text-light"><?php _e('Let\'s find your dream home','theme-text-domain'); ?></p>
-                                <?php echo do_shortcode('[contact-form-7 id="714498e" title="Investments"]'); ?>
+                                <?php echo do_shortcode('[contact-form-7 id="958520f" title="Purchase"]'); ?>
                             </div>
                             <div id="sale-form-content" style="display: none;">
                                 <p class="pxp-text-light"><?php _e('With you every step','theme-text-domain'); ?></p>
-                                <?php echo do_shortcode('[contact-form-7 id="b09d61c" title="Rental & Management"]'); ?>
+                                <?php echo do_shortcode('[contact-form-7 id="35457d9" title="Sale"]'); ?>
                             </div>
                             <div id="rental-form-content" style="display: none;">
                                 <p class="pxp-text-light"><?php _e('Peace of mind above all','theme-text-domain'); ?></p>
@@ -159,7 +159,7 @@ $contact_page_email_address_link = get_field('contact_page_email_address_link');
                         </script>
                         
                             <!-- <?php echo do_shortcode('[contact-form-7 id="96e23ab" title="Contact Form"]'); ?> -->
-                            <div class="pxp-contact-form mt-3 mt-md-4">
+                            <!-- <div class="pxp-contact-form mt-3 mt-md-4">
                                 <div class="row">
                                     <div class="col-sm-12 col-md-12">
                                         <div class="form-group">
@@ -198,7 +198,7 @@ $contact_page_email_address_link = get_field('contact_page_email_address_link');
                                     </div>
                                 </div>
                                 <a href="#" class="pxp-contact-form-btn">Send Message</a>
-                            </div>
+                            </div> -->
                             <!-- <div class="pxp-contact-form mt-3 mt-md-4">
                                 <div class="row">
                                     <div class="col-sm-12 col-md-12">
