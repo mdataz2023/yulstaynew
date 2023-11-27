@@ -15,7 +15,8 @@ $home_banner_title_description = get_field('home_banner_title_description');
 ?>
 
     <div class="pxp-content">
-        <div class="pxp-hero vh-100">
+        <div class="pxp-hero vh-100" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div></div>
             <div class="pxp-hero-bg pxp-cover pxp-cover-bottom">
                 <video class="home-video" autoplay loop muted playsinline>
                     <source src="https://mdataz.com/yulstaynew/wp-content/uploads/2023/10/Home-Video-Bg-1.mp4" type="video/mp4">
@@ -24,6 +25,7 @@ $home_banner_title_description = get_field('home_banner_title_description');
                 </video>
             </div>
             <div class="pxp-hero-opacity"></div>
+            
             <div class="pxp-hero-caption">
                 <div class="container-home-banner">
                     <!-- <h1 class="text-white">Find your future home</h1> -->
@@ -75,9 +77,13 @@ $home_banner_title_description = get_field('home_banner_title_description');
                         </div>
                         </div>
                     </div> -->
+                    
 
                     
                 </div>
+            </div>
+            <div style="display: flex; justify-content: flex-end;">
+                <div>Test</div>
             </div>
         </div>
         <!-- <div class="pxp-hero vh-100">
