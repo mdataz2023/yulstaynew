@@ -177,8 +177,8 @@ $contact_page_email_address_link = get_field('contact_page_email_address_link');
                                         </div>
                                     </div>
                                     <div class="col-sm-6 col-md-6">
-                                        <div class="form-group">
-                                            <span>Date of purchase</span>
+                                        <div class="form-group" style="font-size: 14px;">
+                                            <div>Date of purchase</div>
                                         </div>
                                     </div>
                                     <div class="col-sm-6 col-md-6">
