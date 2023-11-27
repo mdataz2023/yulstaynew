@@ -97,7 +97,7 @@ $contact_page_email_address_link = get_field('contact_page_email_address_link');
                             <div>
                                 <select class="contact-dropbtn" id="select-form">
                                     <option value="default"><?php _e('Select a Reason​','theme-text-domain'); ?></option>
-                                    <option value="investment-form"><?php _e('Investment','theme-text-domain'); ?></option>
+                                    <option value="investment-form"><?php _e('Invest','theme-text-domain'); ?></option>
                                     <option value="purchase-form"><?php _e('Purchase','theme-text-domain'); ?></option>
                                     <option value="sale-form"><?php _e('Sale','theme-text-domain'); ?></option>
                                     <option value="rental-form"><?php _e('Rental & Management','theme-text-domain'); ?></option>
