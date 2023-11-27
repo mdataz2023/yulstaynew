@@ -111,12 +111,12 @@ $post_id = get_the_ID();
                     </div>
                     <div class="pxp-agent-section mt-4 mt-md-5">
                         <h3><?php _e('Social Media','theme-text-domain'); ?></h3>
-                        <ul class="list-unstyled pxp-agent-social mt-3 mt-md-4">
-                            <li><a href="#"><span class="fa fa-facebook"></span></a></li>
-                            <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-                            <li><a href="#"><span class="fa fa-pinterest"></span></a></li>
-                            <li><a href="#"><span class="fa fa-linkedin"></span></a></li>
-                        </ul>
+                        <div class="pxp-footer-social mt-2">
+                            <a href="https://www.instagram.com/yulstay_/" target="_blank"><span class="fa fa-instagram"></span></a>
+                            <a href="https://www.facebook.com/yulstay/" target="_blank"><span class="fa fa-facebook-square"></span></a>
+                            <a href="https://www.linkedin.com/company/yulstay/?originalSubdomain=ca" target="_blank"><span class="fa fa-linkedin-square"></span></a>
+                            <!-- <a href="#"><span class="fa fa-twitter"></span></a> -->
+                        </div>
                     </div>
                 </div>
             </div>
