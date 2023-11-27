@@ -80,12 +80,14 @@
                             <div class="col-sm-12 col-md-4">
                                 <h4 class="pxp-footer-header mt-4 mt-lg-0"><?php _e('Team','theme-text-domain'); ?></h4>
                                 <ul class="list-unstyled pxp-footer-links mt-2">
-                                    <!-- <li><a href="<?php bloginfo('url'); ?>/ralph-sebaaly/">Ralph Sebaaly</a></li>
+                                    <li><a href="<?php bloginfo('url'); ?>/ralph-sebaaly/">Ralph Sebaaly</a></li>
                                     <li><a href="<?php bloginfo('url'); ?>/christian-daoud/">Christian Daoud</a></li>
+                                    <li><a href="<?php bloginfo('url'); ?>/jasmine/">Jasmine Sidar-Caceres</a></li>
                                     <li><a href="<?php bloginfo('url'); ?>/parvez-coowar/">Parvez Coowar</a></li>
+                                    <li><a href="<?php bloginfo('url'); ?>/michael-ghannoum/">Michael Ghannoum</a></li>
                                     <li><a href="<?php bloginfo('url'); ?>/cynthia-dahoud/">Cynthia Dahoud</a></li>
-                                    <li><a href="<?php bloginfo('url'); ?>/michael-ghannoum/">Michael Ghannoum</a></li> -->
-                                    <?php 
+                                    
+                                    <!-- <?php 
                                     $menu_name = 'footer-team-menu';
                                     if ( ( $locations = get_nav_menu_locations() ) && isset( $locations[ $menu_name ] ) ) 
                                     {
@@ -98,7 +100,7 @@
                                     <?php 
                                     }  
                                         } 
-                                    ?>
+                                    ?> -->
                                 </ul>
                             </div>
                         </div>
