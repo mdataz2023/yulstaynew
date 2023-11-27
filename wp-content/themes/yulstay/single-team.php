@@ -49,7 +49,7 @@ $post_id = get_the_ID();
                             <a href="" style=" margin: 0px !important;"><?php echo $team_member_address; ?></a>
                         </div>
                         <div class="pxp-agent-phone" style="display: flex; gap: 8px; align-items: center; margin-bottom: 10px;">
-                            <div><?php if ($post_id == 32) {echo " "; } else { echo '<div class="fa fa-phone"></div>'; } ?></div>
+                            <div><?php if ($post_id == 32 || $post_id == 808) {echo " "; } else { echo '<div class="fa fa-phone"></div>'; } ?></div>
                             <a href="tel:<?php echo $team_member_telephone; ?>" style="color: #333 !important; margin: 0px !important;"><?php echo $team_member_telephone; ?></a>
                         </div>
                     </div>
