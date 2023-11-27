@@ -117,7 +117,7 @@ $MUNICIPALITES = $wpdb->get_row("SELECT * FROM MUNICIPALITES m JOIN REGIONS r ON
                         $property=$GENRES_PROPRIETES->DESCRIPTION_FRANCAISE;
                         $cityName=$MUNICIPALITES->DESCRIPTION;
                      }
-                     echo $property." for sale, ".$cityName;?></h2>
+                     echo $property. _e('for sale,','theme-text-domain') .$cityName;?></h2>
                     <p class="pxp-sp-top-address pxp-text-light">
                         <?php echo  $inscriptionsData->NO_CIVIQUE_DEBUT.', '.$inscriptionsData->NOM_RUE_COMPLET.($inscriptionsData->APPARTEMENT===""?"":', app.'.$inscriptionsData->APPARTEMENT).', '. $cityName;?>
                     </p>
@@ -196,7 +196,7 @@ $MUNICIPALITES = $wpdb->get_row("SELECT * FROM MUNICIPALITES m JOIN REGIONS r ON
         <div class="row">
             <div class="col-lg-8">
                 <div class="pxp-single-property-section">
-                    <h3>Key Details</h3>
+                    <h3><?php _e('Key Details','theme-text-domain'); ?></h3>
                     <div class="row mt-3 mt-md-4">
                         <div class="col-sm-6">
                             <div class="pxp-sp-key-details-item">
