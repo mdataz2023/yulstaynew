@@ -12,6 +12,9 @@ $specialities_paragraph=get_field('specialities_paragraph');
 $social_media_heading=get_field('social_media_heading');
 $social_media_paragraph=get_field('social_media_paragraph');
 $broker_id=get_field('broker_id');
+$instagram=get_field('instagram');
+$facebook=get_field('facebook');
+$linkedin=get_field('linkedin');
 
 $lang = get_bloginfo("language");
 $language="A";
@@ -112,9 +115,9 @@ $post_id = get_the_ID();
                     <div class="pxp-agent-section mt-4 mt-md-5">
                         <h3><?php _e('Social Media','theme-text-domain'); ?></h3>
                         <div class="pxp-footer-social mt-2">
-                            <a href="https://www.instagram.com/yulstay_/" target="_blank"><span class="fa fa-instagram"></span></a>
-                            <a href="https://www.facebook.com/yulstay/" target="_blank"><span class="fa fa-facebook-square"></span></a>
-                            <a href="https://www.linkedin.com/company/yulstay/?originalSubdomain=ca" target="_blank"><span class="fa fa-linkedin-square"></span></a>
+                            <a href="<?php echo $instagram; ?>" target="_blank"><span class="fa fa-instagram"></span></a>
+                            <a href="<?php echo $facebook; ?>" target="_blank"><span class="fa fa-facebook-square"></span></a>
+                            <a href="<?php echo $linkedin; ?>" target="_blank"><span class="fa fa-linkedin-square"></span></a>
                             <!-- <a href="#"><span class="fa fa-twitter"></span></a> -->
                         </div>
                     </div>
