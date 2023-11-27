@@ -176,12 +176,12 @@ $contact_page_email_address_link = get_field('contact_page_email_address_link');
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-sm-6 col-md-6">
-                                        <div class="form-group" style="font-size: 14px;">
+                                    <div class="col-sm-4 col-md-4">
+                                        <div class="form-group" style="font-size: 14px; margin-top: 10px;">
                                             <div>Date of purchase</div>
                                         </div>
                                     </div>
-                                    <div class="col-sm-6 col-md-6">
+                                    <div class="col-sm-8 col-md-8">
                                         <div class="form-group">
                                             <input type="date" class="form-control" id="pxp-contact-form-email" placeholder="Date of purchase">
                                         </div>
