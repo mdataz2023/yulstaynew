@@ -88,7 +88,7 @@ $team_page_title_description = get_field('team_page_title_description');
                                 <?php } ?>
                                 <div class="pxp-agents-1-item-details rounded-lg">
                                     <div class="pxp-agents-1-item-details-name"><?php the_title(); ?></div>
-                                    <div class="pxp-agents-1-item-details-email"><?php if ($post_id == 549 || $post_id == 551) {
+                                    <div class="pxp-agents-1-item-details-email"><?php if ($post_id == 32 || $post_id == 808) {
     echo " ";
 } else {
     echo '<span class="fa fa-phone"></span>';
