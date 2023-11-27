@@ -82,7 +82,7 @@ $home_banner_title_description = get_field('home_banner_title_description');
                     
                 </div>
             </div>
-            <div style="display: flex; justify-content: flex-end;">
+            <div style="display: flex; justify-content: flex-end; z-index: 1000; color: white; font-size: 32px; padding: 12px;">
                 <div>Test</div>
             </div>
         </div>
