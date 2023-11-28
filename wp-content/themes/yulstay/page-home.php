@@ -25,7 +25,7 @@ $home_banner_title_description = get_field('home_banner_title_description');
                 </video>
             </div>
             <div class="pxp-hero-opacity"></div>
-            
+
             <div class="pxp-hero-caption">
                 <div class="container-home-banner">
                     <!-- <h1 class="text-white">Find your future home</h1> -->
@@ -77,9 +77,9 @@ $home_banner_title_description = get_field('home_banner_title_description');
                         </div>
                         </div>
                     </div> -->
-                    
 
-                    
+
+
                 </div>
             </div>
             <div style="display: flex; justify-content: flex-end; z-index: 1000; color: white; font-size: 32px; padding: 12px;">
@@ -145,7 +145,7 @@ $home_banner_title_description = get_field('home_banner_title_description');
             </div>
         <div class="pxp-testim-1 mt-50 pxp-cover">
                 <!-- <div class="pxp-testim-1-intro">
-                    
+
                 </div> -->
                 <div class="pxp-testim-1-container mt-4 mt-md-5 mt-lg-0">
                     <div class="owl-carousel pxp-testim-1-stage">
@@ -164,7 +164,7 @@ $home_banner_title_description = get_field('home_banner_title_description');
                             <a href="<?php the_permalink(); ?>" class="pxp-agents-1-item">
                             <?php if ( has_post_thumbnail() ) {
                                 $attachment_image = wp_get_attachment_url( get_post_thumbnail_id() );
-                                //echo '<link rel="preload" as="image" href="' . esc_attr( $attachment_image ) . '">';  
+                                //echo '<link rel="preload" as="image" href="' . esc_attr( $attachment_image ) . '">';
                             ?>
                                 <div class="pxp-agents-1-item-fig-container rounded-lg">
                                     <div class="pxp-agents-1-item-fig pxp-cover" style="background-image: url(<?php echo $attachment_image; ?>); background-position: top center"></div>
@@ -408,6 +408,13 @@ $home_banner_title_description = get_field('home_banner_title_description');
             <div class="row mt-4 mt-md-5">
 
             <?php
+            $lang = get_bloginfo("language");
+            $language="";
+            if ($lang == 'en-US'){
+                $language="";
+            }else{
+                $language="fr";
+            }
                $cities = $wpdb->get_results("
                SELECT
                     r.*,i.NO_INSCRIPTION
@@ -424,7 +431,7 @@ $home_banner_title_description = get_field('home_banner_title_description');
 
             ?>
                 <div class="col-sm-12 col-md-6 col-lg-4">
-                    <a href="<?php echo site_url()."/properties?city=".$city->CODE;?>" class="pxp-areas-1-item rounded-lg">
+                    <a href="<?php echo site_url().'/'. $language."/properties?city=".$city->CODE;?>" class="pxp-areas-1-item rounded-lg">
                         <div class="pxp-areas-1-item-fig pxp-cover"
                             style="background-image: url(<?php  echo $results->PhotoURL;?>);">
                         </div>
@@ -553,7 +560,7 @@ $home_banner_title_description = get_field('home_banner_title_description');
 
         tabsNav.addEventListener('click', function(event) {
         const targetButton = event.target.closest('.tabs__nav-btn');
-        
+
         if (targetButton) {
             const tabId = targetButton.getAttribute("data-tab");
             const currentTab = document.querySelector(tabId);
