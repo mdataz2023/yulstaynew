@@ -14,8 +14,18 @@ if ($lang == 'en-US'){
     $currencyLetterSuffix=" $";
     $language="F";
 }
+if (!session_id()) {
+    session_start();
+}
+$city=$_GET["city"];
+if(isset($_GET["city"])){
+    $_SESSION['city'] = $_GET["city"];
+}else{
+    $city= $_SESSION["city"];
+}
+
 global $wpdb;
-$dataIns = $wpdb->get_results("SELECT *  FROM INSCRIPTIONS i join wp_posts p on p.post_content=i.NO_INSCRIPTION join MUNICIPALITES m  ON m.CODE = i.MUN_CODE   where i.CODE_STATUT='EV' AND m.REGION_CODE='".$_GET["city"]."'", OBJECT );
+$dataIns = $wpdb->get_results("SELECT *  FROM INSCRIPTIONS i join wp_posts p on p.post_content=i.NO_INSCRIPTION join MUNICIPALITES m  ON m.CODE = i.MUN_CODE   where i.CODE_STATUT='EV' AND m.REGION_CODE='".$city."'", OBJECT );
 
 ?>
 
@@ -83,13 +93,12 @@ $dataIns = $wpdb->get_results("SELECT *  FROM INSCRIPTIONS i join wp_posts p on 
                         <div class="pxp-results-card-1-details">
                             <div class="pxp-results-card-1-details-title"><?php
                              $cityName="";
-                             if ($lang == 'en-US'){
+                             if ($language == 'A'){
                                 $cityName=$REGION_CODE->DESCRIPTION;
                              }else{
                                 $cityName=$REGION_CODE->DESCRIPTION;
                              }
-                            echo   $cityName;
-                            ?></div>
+                            echo   $cityName; ?></div>
                             <div class="pxp-results-card-1-details-price">
                                 <?php
                                  if($inscriptionsData->post_type=="rental-property"){

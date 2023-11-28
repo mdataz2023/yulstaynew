@@ -17,7 +17,7 @@
 
 
 <?php
-error_reporting(0);
+// error_reporting(0);
 // $zipFolder    = '/home/customer/www/mdataz.com/public_html/yulstaynew/listing-files/';
 // $unzipFolder    = '/home/customer/www/mdataz.com/public_html/yulstaynew/listing-files/';
 // $backupFolder    = '/home/customer/www/mdataz.com/public_html/yulstaynew/listing-files/backup/';
