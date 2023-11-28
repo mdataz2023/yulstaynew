@@ -694,6 +694,31 @@ $dataIns = $wpdb->get_results("SELECT *  FROM INSCRIPTIONS i join wp_posts p on 
 })(jQuery);
 </script>
 
+<script>
+// Find the element with the class "wpml-ls-native"
+const spanElement = document.querySelector(".wpml-ls-native");
+
+if (spanElement) {
+    // Get the text content within the span element
+    const textContent = spanElement.textContent;
+
+    // Determine what to display based on the text content
+    let displayText = "";
+    if (textContent.includes("Français")) {
+        displayText = "FR";
+    } else if (textContent.includes("English")) {
+        displayText = "EN";
+    }
+
+    // Create a new span element with the determined display text
+    const newSpanElement = document.createElement("span");
+    newSpanElement.textContent = displayText;
+
+    // Replace the original span element with the new one
+    spanElement.replaceWith(newSpanElement);
+}
+</script>
+
 </body>
 
 </html>
