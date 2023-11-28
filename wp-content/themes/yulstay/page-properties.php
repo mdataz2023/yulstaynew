@@ -512,7 +512,7 @@ $dataIns = $wpdb->get_results("SELECT *  FROM INSCRIPTIONS i join wp_posts p on 
         }]
     }];
     <?php
-$dataIns = $wpdb->get_results("SELECT *  FROM INSCRIPTIONS i join wp_posts p on p.post_content=i.NO_INSCRIPTION join MUNICIPALITES m  ON m.CODE = i.MUN_CODE   where i.CODE_STATUT='EV' AND m.REGION_CODE='".$_GET["city"]."'", OBJECT );
+$dataIns = $wpdb->get_results("SELECT *  FROM INSCRIPTIONS i join wp_posts p on p.post_content=i.NO_INSCRIPTION join MUNICIPALITES m  ON m.CODE = i.MUN_CODE   where i.CODE_STATUT='EV' AND m.REGION_CODE='".$city."'", OBJECT );
                  foreach ($dataIns as $page) {
                             $post = $wpdb->get_row("SELECT ID from wp_posts where post_content='".$page->NO_INSCRIPTION."'", OBJECT );
                             $results = $wpdb->get_row(" SELECT * FROM PHOTOS where  NO_INSCRIPTION = '".$page->NO_INSCRIPTION."'", OBJECT );
