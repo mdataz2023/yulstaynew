@@ -4459,7 +4459,7 @@ a.pxp-results-card-1 .carousel-inner>.carousel-item {
     padding: 0 5px;
 }
 
-.pxp-results-card-1-save {
+/* .pxp-results-card-1-save {
     position: absolute;
     top: 20px;
     right: 20px;
@@ -4482,17 +4482,17 @@ a.pxp-results-card-1 .carousel-inner>.carousel-item {
     -webkit-transition: all .3s ease-in-out;
     -o-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
-}
+} */
 
-.pxp-dark-mode .pxp-results-card-1-save {
+/* .pxp-dark-mode .pxp-results-card-1-save {
     color: #fff;
     background-color: #000;
-}
+} */
 
-.pxp-results-card-1:hover .pxp-results-card-1-save {
+/* .pxp-results-card-1:hover .pxp-results-card-1-save {
     opacity: 1;
     transform: translateY(0);
-}
+} */
 
 /**
  * 17.0 - Property list filter
@@ -8111,10 +8111,10 @@ a.pxp-services-tabs-content-item:hover .pxp-services-tabs-content-item-cta {
         transform: translateY(0);
     }
 
-    .pxp-results-card-1 .pxp-results-card-1-save {
+    /* .pxp-results-card-1 .pxp-results-card-1-save {
         opacity: 1;
         transform: translateY(0);
-    }
+    } */
 
     .pxp-sp-key-details-item {
         padding-bottom: 10px;
