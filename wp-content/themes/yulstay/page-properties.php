@@ -104,7 +104,7 @@ $dataIns = $wpdb->get_results("SELECT *  FROM INSCRIPTIONS i join wp_posts p on 
                                 <?php echo $inscriptionsData->SUPERFICIE_HABITABLE." ".$inscriptionsData->UM_SUPERFICIE_HABITABLE;?>
                             </span>
                         </div>
-                        <div class="pxp-results-card-1-save"><span class="fa fa-star-o"></span></div>
+                        
                     </a>
                 </div>
                 <?php
