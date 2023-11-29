@@ -197,9 +197,6 @@ $the_query = new WP_Query( array('post_type' =>'multi-residential','posts_per_pa
                                 <?php echo $inscriptionsData->SUPERFICIE_HABITABLE." ".$inscriptionsData->UM_SUPERFICIE_HABITABLE;?>
                             </span>
                         </div>
-                        <!-- <div class="pxp-results-card-1-save">
-                            <span class="fa fa-star-o"></span>
-                        </div> -->
                     </a>
                 </div>
                 <?php
