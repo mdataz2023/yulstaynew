@@ -78,8 +78,8 @@ $contact_page_email_address_link = get_field('contact_page_email_address_link');
                                         <div class="pxp-contact-hero-offices-info mt-2 mt-md-3">
                                             <p class="pxp-is-address"><span class="fa fa-location-arrow"></span>&nbsp;&nbsp;<?php echo $contact_page_address_line_two; ?></p>
                                             <p>
-                                                <a href="<?php echo $contact_page_contact_number_link; ?>"><span class="fa fa-phone">&nbsp;&nbsp;</span><?php echo $contact_page_contact_number; ?></a><br>
-                                                <a href="<?php echo $contact_page_email_address_link; ?>"><span class="fa fa-envelope-o">&nbsp;&nbsp;</span><?php echo $contact_page_email_address; ?></a>
+                                                <a href="tel:<?php echo $contact_page_contact_number_link; ?>"><span class="fa fa-phone">&nbsp;&nbsp;</span><?php echo $contact_page_contact_number; ?></a><br>
+                                                <a href="mailto:<?php echo $contact_page_email_address_link; ?>"><span class="fa fa-envelope-o">&nbsp;&nbsp;</span><?php echo $contact_page_email_address; ?></a>
                                             </p>
                                         </div>
                                     </div>

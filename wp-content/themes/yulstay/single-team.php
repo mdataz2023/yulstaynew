@@ -49,7 +49,7 @@ $post_id = get_the_ID();
                         </div>
                         <div class="pxp-agent-email" style="display: flex; gap: 8px; align-items: center; margin-bottom: 10px;">
                             <div class="fa fa-location-arrow"></div>
-                            <a href="https://maps.app.goo.gl/sX98HcDRk2vBpUtz8" style=" margin: 0px !important;"><?php echo $team_member_address; ?></a>
+                            <a href="https://maps.app.goo.gl/sX98HcDRk2vBpUtz8" target="_blank" style=" margin: 0px !important;"><?php echo $team_member_address; ?></a>
                         </div>
                         <div class="pxp-agent-phone" style="display: flex; gap: 8px; align-items: center; margin-bottom: 10px;">
                             <div><?php if ($post_id == 32 || $post_id == 808) {echo " "; } else { echo '<div class="fa fa-phone"></div>'; } ?></div>
