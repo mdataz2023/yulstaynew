@@ -100,7 +100,7 @@ $post_id = get_the_ID();
                 </div>
                 <div class="col-sm-12 col-lg-3 offset-lg-1">
                     <div class="pxp-agent-section mt-4 mt-md-5">
-                        <h3><?php _e('Specialities','theme-text-domain'); ?></h3>
+                        <h3><?php _e('Specialties','theme-text-domain'); ?></h3>
                         <ul class="list-unstyled pxp-agent-specialities mt-3 mt-md-4">
                             <?php if( have_rows('team_page_speciality') ): $s= 1; $a=0; ?>
 
