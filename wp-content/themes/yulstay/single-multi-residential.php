@@ -715,7 +715,7 @@ echo $inscriptionsData->INCLUS_FRANCAIS."<br><br>".$inscriptionsData->EXCLUS_FRA
             <div class="col-lg-4">
                 <div class="pxp-single-property-section pxp-sp-agent-section mt-4 mt-md-5 mt-lg-0" style="display: flex; flex-direction: column;">
                     <div>
-                        <h3><?php _e('Listed By','theme-text-domain'); ?></h3>
+                        <h3><?php _e('Brokers','theme-text-domain'); ?></h3>
                         <?php
                                 $MEMBRES = $wpdb->get_row("SELECT * FROM MEMBRES WHERE CODE ='".$inscriptionsData->COURTIER_INSCRIPTEUR_1."'", OBJECT );
                             ?>
@@ -740,12 +740,12 @@ echo $inscriptionsData->INCLUS_FRANCAIS."<br><br>".$inscriptionsData->EXCLUS_FRA
                             <div class="pxp-sp-agent-btns mt-3 mt-md-4">
                                 <a href="#pxp-contact-agent" class="pxp-sp-agent-btn-main" data-toggle="modal"
                                     data-target="#pxp-contact-agent"><span class="fa fa-envelope-o"></span>
-                                    <?php _e('Contact Agent','theme-text-domain'); ?></a>
+                                    <?php _e('Contact Broker','theme-text-domain'); ?></a>
                             </div>
                         </div>
                     </div>
                     <div>
-                        <h3><?php _e('Listed By','theme-text-domain'); ?></h3>
+                        <h3><?php _e('','theme-text-domain'); ?></h3>
                         <?php
                                 $MEMBRES2 = $wpdb->get_row("SELECT * FROM MEMBRES WHERE CODE ='".$inscriptionsData->COURTIER_INSCRIPTEUR_2."'", OBJECT );
                             ?>
@@ -770,7 +770,7 @@ echo $inscriptionsData->INCLUS_FRANCAIS."<br><br>".$inscriptionsData->EXCLUS_FRA
                             <div class="pxp-sp-agent-btns mt-3 mt-md-4">
                                 <a href="#pxp-contact-agent2" class="pxp-sp-agent-btn-main" data-toggle="modal"
                                     data-target="#pxp-contact-agent2"><span class="fa fa-envelope-o"></span>
-                                    <?php _e('Contact Agent','theme-text-domain'); ?></a>
+                                    <?php _e('Contact Broker','theme-text-domain'); ?></a>
                             </div>
                         </div>
                     </div>

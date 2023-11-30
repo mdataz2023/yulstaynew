@@ -108,7 +108,7 @@ $contact_page_email_address_link = get_field('contact_page_email_address_link');
                         <div class="mt-3" id="form-id">
                             <div id="default-content">
                                 <p class="pxp-text-light"></p>
-                                <img src="https://mdataz.com/yulstaynew/wp-content/uploads/2023/11/Soir-19.jpg" alt="" style="width: 100%; height: 450px;">
+                                <img src="https://mdataz.com/yulstaynew/wp-content/uploads/2023/11/Soir-19.jpg" alt="" style="width: 100%; height: 412px;">
                             </div>
                             <div id="investment-form-content" style="display: none;">
                                 <p class="pxp-text-light"><?php _e('Tell us about your goals','theme-text-domain'); ?></p>
