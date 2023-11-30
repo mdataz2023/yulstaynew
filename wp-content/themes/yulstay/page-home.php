@@ -479,7 +479,7 @@ $home_banner_title_description = get_field('home_banner_title_description');
             <div class="pxp-testim-1-intro">
                 <h2 class="pxp-section-h2 font-white-in"><?php echo $home_page_testimonial_title; ?></h2>
                 <p class="pxp-text-light font-white-in"><?php echo $home_page_testimonial_description; ?></p>
-                <!-- <a href="<?php echo $home_page_testimonial_link; ?>" class="pxp-primary-cta text-uppercase mt-2 mt-md-3 mt-lg-5 pxp-animate font-white-in"><?php _e('Read All Stories','theme-text-domain'); ?></a> -->
+                <a href=" https://g.page/r/Ca0AVgRaIjCoEBM/review" class="pxp-primary-cta text-uppercase mt-2 mt-md-3 mt-lg-5 pxp-animate font-white-in"><?php _e('Read All Stories','theme-text-domain'); ?></a>
             </div>
             <div class="pxp-testim-1-container mt-4 mt-md-5 mt-lg-0">
                 <div class="owl-carousel pxp-testim-1-stage" id="testimonialCarousel">
