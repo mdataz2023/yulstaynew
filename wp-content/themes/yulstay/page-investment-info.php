@@ -22,6 +22,8 @@ $investments_info_page_sixth_section_title = get_field('investments_info_page_si
 $investments_info_page_sixth_section_description = get_field('investments_info_page_sixth_section_description');
 $investments_info_page_third_section_image = get_field('investments_info_page_third_section_image');
 $investments_info_page_forth_section_image = get_field('investments_info_page_forth_section_image');
+$investments_info_page_fifth_section_image = get_field('investments_info_page_fifth_section_image');
+$investments_info_page_sixth_section_image = get_field('investments_info_page_sixth_section_image');
 
 ?>
 
@@ -139,7 +141,7 @@ $investments_info_page_forth_section_image = get_field('investments_info_page_fo
             <div class="pxp-services-h pt-100 pb-100">
                 <div class="container">
                     <div class="pxp-services-h-container mt-4 mt-md-5">
-                        <div class="pxp-services-h-fig pxp-cover pxp-animate-in rounded-lg" style="background-image: url(<?php echo $investments_info_page_section_one_image; ?>);"></div>
+                        <div class="pxp-services-h-fig pxp-cover pxp-animate-in rounded-lg" style="background-image: url(<?php echo $investments_info_page_fifth_section_image; ?>);"></div>
                         <div class="pxp-services-h-items pxp-animate-in ml-0 ml-lg-5 mt-4 mt-md-5 mt-lg-0">
                                 <h2 class="pxp-section-h2"><?php echo $investments_info_page_fifth_section_title; ?></h2>
                                 <p class="pxp-text-light mt-3 mt-lg-4"><?php echo $investments_info_page_fifth_section_description; ?></p>
@@ -155,7 +157,7 @@ $investments_info_page_forth_section_image = get_field('investments_info_page_fo
                                 <h2 class="pxp-section-h2"><?php echo $investments_info_page_fifth_section_title; ?></h2>
                                 <p class="pxp-text-light mt-3 mt-lg-4"><?php echo $investments_info_page_fifth_section_description; ?></p>
                         </div>
-                        <div class="pxp-services-h-fig pxp-cover pxp-animate-in rounded-lg" style="background-image: url(<?php echo $investments_info_page_section_one_image; ?>);"></div>
+                        <div class="pxp-services-h-fig pxp-cover pxp-animate-in rounded-lg" style="background-image: url(<?php echo $investments_info_page_sixth_section_image; ?>);"></div>
                     </div>
                 </div>
             </div>
