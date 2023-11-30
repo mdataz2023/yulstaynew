@@ -590,9 +590,9 @@ echo $inscriptionsData->INCLUS_FRANCAIS."<br><br>".$inscriptionsData->EXCLUS_FRA
                             <div class="pxp-sp-agent-info-name"><a
                                     href="<?php echo site_url()."/team/".strtolower($MEMBRES->PRENOM."-". $MEMBRES->NOM)?>"><?php echo $MEMBRES->PRENOM." ".$MEMBRES->NOM?></a>
                             </div>
-                            <div class="pxp-sp-agent-info-rating"><span class="fa fa-star"></span><span
+                            <!-- <div class="pxp-sp-agent-info-rating"><span class="fa fa-star"></span><span
                                     class="fa fa-star"></span><span class="fa fa-star"></span><span
-                                    class="fa fa-star"></span><span class="fa fa-star"></span></div>
+                                    class="fa fa-star"></span><span class="fa fa-star"></span></div> -->
                             <div class="pxp-sp-agent-info-email"><a
                                     href="mailto:<?php echo $MEMBRES->COURRIEL?>"><?php echo $MEMBRES->COURRIEL?></a>
                             </div>
@@ -619,9 +619,9 @@ echo $inscriptionsData->INCLUS_FRANCAIS."<br><br>".$inscriptionsData->EXCLUS_FRA
                             <div class="pxp-sp-agent-info-name"><a
                                     href="<?php echo site_url()."/team/".strtolower($MEMBRES2->PRENOM."-". $MEMBRES2->NOM)?>"><?php echo $MEMBRES2->PRENOM." ".$MEMBRES2->NOM?></a>
                             </div>
-                            <div class="pxp-sp-agent-info-rating"><span class="fa fa-star"></span><span
+                            <!-- <div class="pxp-sp-agent-info-rating"><span class="fa fa-star"></span><span
                                     class="fa fa-star"></span><span class="fa fa-star"></span><span
-                                    class="fa fa-star"></span><span class="fa fa-star"></span></div>
+                                    class="fa fa-star"></span><span class="fa fa-star"></span></div> -->
                             <div class="pxp-sp-agent-info-email"><a
                                     href="mailto:<?php echo $MEMBRES2->COURRIEL?>"><?php echo $MEMBRES2->COURRIEL?></a>
                             </div>
