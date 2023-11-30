@@ -734,7 +734,7 @@ echo $inscriptionsData->INCLUS_FRANCAIS."<br><br>".$inscriptionsData->EXCLUS_FRA
                                         href="mailto:<?php echo $MEMBRES->COURRIEL?>"><?php echo $MEMBRES->COURRIEL?></a>
                                 </div>
                                 <div class="pxp-sp-agent-info-phone"><span
-                                        class="fa fa-phone"></span><?php echo $MEMBRES->TELEPHONE_1?></div>
+                                        class="fa fa-phone"></span>&nbsp;&nbsp;<?php echo $MEMBRES->TELEPHONE_1?></div>
                             </div>
                             <div class="clearfix"></div>
                             <div class="pxp-sp-agent-btns mt-3 mt-md-4">
@@ -764,7 +764,7 @@ echo $inscriptionsData->INCLUS_FRANCAIS."<br><br>".$inscriptionsData->EXCLUS_FRA
                                         href="mailto:<?php echo $MEMBRES2->COURRIEL?>"><?php echo $MEMBRES2->COURRIEL?></a>
                                 </div>
                                 <div class="pxp-sp-agent-info-phone"><span
-                                        class="fa fa-phone"></span><?php echo $MEMBRES2->TELEPHONE_1?></div>
+                                        class="fa fa-phone"></span>&nbsp;&nbsp;<?php echo $MEMBRES2->TELEPHONE_1?></div>
                             </div>
                             <div class="clearfix"></div>
                             <div class="pxp-sp-agent-btns mt-3 mt-md-4">
