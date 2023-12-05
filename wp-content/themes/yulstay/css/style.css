@@ -4844,7 +4844,7 @@ a.pxp-results-card-1 .carousel-inner>.carousel-item {
     float: left;
     text-align: center;
     white-space: nowrap;
-    width: 49%;
+    width: 100%;
     min-width: 170px;
     background-color: #333;
     height: 46px;
