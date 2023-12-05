@@ -8506,6 +8506,8 @@ a.pxp-services-tabs-content-item:hover .pxp-services-tabs-content-item-cta {
 
 .home-video{
     width: 100vw;
+    height: 100vh;
+    object-fit: cover;
 }
 
 .yulstay-image{
