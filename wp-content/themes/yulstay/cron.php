@@ -170,7 +170,7 @@ while (($valueExplode = fgetcsv($firmesFile)) !== FALSE) {
     '$valueExplode[137]', '$valueExplode[138]', '$valueExplode[139]', '$valueExplode[140]', '$valueExplode[141]',
     '$valueExplode[142]', '$valueExplode[143]', '$valueExplode[144]', '$valueExplode[145]', '$valueExplode[146]',
     '$valueExplode[147]', '$valueExplode[148]', '$valueExplode[149]', '$valueExplode[150]', '$valueExplode[151]',
-    '$valueExplode[152]', '$valueExplode[153]', '$valueExplode[154]', '$valueExplode[155]', '$valueExplode[156]', '$obj157', '$obj158')";
+    '$valueExplode[152]', '$valueExplode[153]', '$valueExplode[154]', '$valueExplode[155]', '$valueExplode[156]', '$obj157', '$obj158','$valueExplode[159]')";
 
    $conn->query($insertSql);
     }else{
@@ -301,6 +301,9 @@ while (($valueExplode = fgetcsv($remarquesFile)) !== FALSE) {
         $conn->query($insertSql);
     }
 }
+unlink($zipFolder."REMARQUES.TXT");
+
+
 // //////////////////////////////////////////////////////////////////////////////////////
 
 $renovationsFile =fopen($zipFolder."RENOVATIONS.TXT", 'r');
