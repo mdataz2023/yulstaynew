@@ -154,10 +154,10 @@ $investments_info_page_sixth_section_image = get_field('investments_info_page_si
                 <div class="container">
                     <div class="pxp-services-h-container mt-4 mt-md-5">
                         <div class="pxp-services-h-items pxp-animate-in ml-0 mr-lg-5 mt-4 mt-md-5 mt-lg-0">
-                                <h2 class="pxp-section-h2"><?php echo $investments_info_page_sixth_section_image; ?></h2>
-                                <p class="pxp-text-light mt-3 mt-lg-4"><?php echo $investments_info_page_sixth_section_title; ?></p>
+                                <h2 class="pxp-section-h2"><?php echo $investments_info_page_sixth_section_title; ?></h2>
+                                <p class="pxp-text-light mt-3 mt-lg-4"><?php echo $investments_info_page_sixth_section_description; ?></p>
                         </div>
-                        <div class="pxp-services-h-fig pxp-cover pxp-animate-in rounded-lg" style="background-image: url(<?php echo $investments_info_page_sixth_section_description; ?>);"></div>
+                        <div class="pxp-services-h-fig pxp-cover pxp-animate-in rounded-lg" style="background-image: url(<?php echo $investments_info_page_sixth_section_image; ?>);"></div>
                     </div>
                 </div>
             </div>
