@@ -18,6 +18,7 @@ $purchase_info_page_section_three_description = get_field('purchase_info_page_se
 $purchase_info_page_section_four_image = get_field('purchase_info_page_section_four_image');
 $purchase_info_page_section_four_title = get_field('purchase_info_page_section_four_title');
 $purchase_info_page_section_four_description = get_field('purchase_info_page_section_four_description');
+$purchase_info_page_section_five_image = get_field('purchase_info_page_section_five_image');
 $purchase_info_page_section_five_title = get_field('purchase_info_page_section_five_title');
 $purchase_info_page_section_five_description = get_field('purchase_info_page_section_five_description');
 
