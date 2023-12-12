@@ -424,30 +424,30 @@ echo $inscriptionsData->INCLUS_FRANCAIS."<br><br>".$inscriptionsData->EXCLUS_FRA
                                     <label
                                         for="pxp-calculator-form-price"><?php _e('Amortization','theme-text-domain'); ?></label>
                                     <select onchange="calculatorFunction()" class="custom-select" id="amortization">
-                                        <option value="5">5 Years</option>
-                                        <option value="6">6 Years</option>
-                                        <option value="7">7 Years</option>
-                                        <option value="8">8 Years</option>
-                                        <option value="9">9 Years</option>
-                                        <option value="10">10 Years</option>
-                                        <option value="11">11 Years</option>
-                                        <option value="12">12 Years</option>
-                                        <option value="13">13 Years</option>
-                                        <option value="14">14 Years</option>
-                                        <option value="15">15 Years</option>
-                                        <option value="16">16 Years</option>
-                                        <option value="17">17 Years</option>
-                                        <option value="18">18 Years</option>
-                                        <option value="19">19 Years</option>
-                                        <option selected value="20">20 Years</option>
-                                        <option value="21">21 Years</option>
-                                        <option value="22">22 Years</option>
-                                        <option value="23">23 Years</option>
-                                        <option value="24">24 Years</option>
-                                        <option value="25">25 Years</option>
-                                        <option value="30">30 Years</option>
-                                        <option value="35">35 Years</option>
-                                        <option value="40">40 Years</option>
+                                        <option value="5">5 <?php _e('Years','theme-text-domain'); ?></option>
+                                        <option value="6">6 <?php _e('Years','theme-text-domain'); ?></option>
+                                        <option value="7">7 <?php _e('Years','theme-text-domain'); ?></option>
+                                        <option value="8">8 <?php _e('Years','theme-text-domain'); ?></option>
+                                        <option value="9">9 <?php _e('Years','theme-text-domain'); ?></option>
+                                        <option value="10">10 <?php _e('Years','theme-text-domain'); ?></option>
+                                        <option value="11">11 <?php _e('Years','theme-text-domain'); ?></option>
+                                        <option value="12">12 <?php _e('Years','theme-text-domain'); ?></option>
+                                        <option value="13">13 <?php _e('Years','theme-text-domain'); ?></option>
+                                        <option value="14">14 <?php _e('Years','theme-text-domain'); ?></option>
+                                        <option value="15">15 <?php _e('Years','theme-text-domain'); ?></option>
+                                        <option value="16">16 <?php _e('Years','theme-text-domain'); ?></option>
+                                        <option value="17">17 <?php _e('Years','theme-text-domain'); ?></option>
+                                        <option value="18">18 <?php _e('Years','theme-text-domain'); ?></option>
+                                        <option value="19">19 <?php _e('Years','theme-text-domain'); ?></option>
+                                        <option selected value="20">20 <?php _e('Years','theme-text-domain'); ?></option>
+                                        <option value="21">21 <?php _e('Years','theme-text-domain'); ?></option>
+                                        <option value="22">22 <?php _e('Years','theme-text-domain'); ?></option>
+                                        <option value="23">23 <?php _e('Years','theme-text-domain'); ?></option>
+                                        <option value="24">24 <?php _e('Years','theme-text-domain'); ?></option>
+                                        <option value="25">25 <?php _e('Years','theme-text-domain'); ?></option>
+                                        <option value="30">30 <?php _e('Years','theme-text-domain'); ?></option>
+                                        <option value="35">35 <?php _e('Years','theme-text-domain'); ?></option>
+                                        <option value="40">40 <?php _e('Years','theme-text-domain'); ?></option>
                                     </select>
                                 </div>
                             </div>

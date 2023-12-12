@@ -33,7 +33,7 @@ global $wpdb;
                                 <select class="custom-select" id="pxp-p-filter-type">
                                     <option value="" disabled selected>
                                         <?php _e('Select Area','theme-text-domain'); ?></option>
-                                    <option value="All">All</option>
+                                    <option value="All"><?php _e('All','theme-text-domain'); ?></option>
                                     <?php
                                      $datas = $wpdb->get_results("SELECT
                                      m.*, REGION_CODE, m.DESCRIPTION
