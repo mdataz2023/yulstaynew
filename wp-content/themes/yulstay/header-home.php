@@ -87,7 +87,7 @@ if ($lang == 'en-US'){
                             <ul class="pxp-nav-sub rounded-lg">
                                 <li><a href="<?php bloginfo('url'); ?>/residential"><?php _e('Residential','theme-text-domain'); ?></a></li>
                                 <li><a href="<?php bloginfo('url'); ?>/multi-residential"><?php _e('Multi Residential','theme-text-domain'); ?></a></li>
-                                <li><a href="<?php bloginfo('url'); ?>/rental-property"><?php _e('Rental Property','theme-text-domain'); ?></a></li>
+                                <li><a href="<?php bloginfo('url'); ?>/rental-property"><?php _e('Rental + Management','theme-text-domain'); ?></a></li>
                             </ul>
                         </li>
                         <li class="list-inline-item">
