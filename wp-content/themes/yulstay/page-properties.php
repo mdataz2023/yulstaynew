@@ -36,7 +36,7 @@ $dataIns = $wpdb->get_results("SELECT *  FROM INSCRIPTIONS i join wp_posts p on 
                 <div class="col-sm-6">
                     <h2 class="pxp-content-side-h2"><?php
                 echo count($dataIns);
-                ?> Results</h2>
+                ?> <?php _e('Results','theme-text-domain'); ?></h2>
                 </div>
 
             </div>
