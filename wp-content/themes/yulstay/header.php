@@ -51,7 +51,7 @@
                 <div class="row align-items-center">
                     <div class="col-5 col-md-2">
                         <a href="<?php bloginfo('url'); ?>/" class="pxp-logo text-decoration-none">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/yulstay-logo.png" style="width: 6rem;" alt="">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/yulstay-logo.png" style="width: 4rem;" alt="">
                         </a>
                         <!-- <a href="<?php bloginfo('url'); ?>/"></a> -->
                     </div>
