@@ -112,15 +112,24 @@ $post_id = get_the_ID();
                             <?php   endwhile; endif; ?>
                         </ul>
                     </div>
-                    <div class="pxp-agent-section mt-4 mt-md-5">
-                        <h3><?php _e('Social Media','theme-text-domain'); ?></h3>
-                        <div class="pxp-footer-social mt-2">
-                            <a href="<?php echo $instagram; ?>" target="_blank"><span class="fa fa-instagram"></span></a>
-                            <a href="<?php echo $facebook; ?>" target="_blank"><span class="fa fa-facebook-square"></span></a>
-                            <a href="<?php echo $linkedin; ?>" target="_blank"><span class="fa fa-linkedin-square"></span></a>
-                            <!-- <a href="#"><span class="fa fa-twitter"></span></a> -->
-                        </div>
-                    </div>
+                    <?php 
+                    if ($post_id == 32 || $post_id == 808) {
+                        echo " ";
+                    } else {
+                        echo '
+                        <div class="pxp-agent-section mt-4 mt-md-5">
+                            <h3>';
+                        _e('Social Media','theme-text-domain');
+                        echo '</h3>
+                            <div class="pxp-footer-social mt-2">
+                                <a href="' . $instagram . '" target="_blank"><span class="fa fa-instagram"></span></a>
+                                <a href="' . $facebook . '" target="_blank"><span class="fa fa-facebook-square"></span></a>
+                                <a href="' . $linkedin . '" target="_blank"><span class="fa fa-linkedin-square"></span></a>
+                                <!-- <a href="#"><span class="fa fa-twitter"></span></a> -->
+                            </div>
+                        </div>';
+                    } 
+                ?>
                 </div>
             </div>
 <?php
