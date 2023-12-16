@@ -34,10 +34,12 @@ $home_banner_title_description = get_field('home_banner_title_description');
                     </a> -->
 
                     <div style="text-align: center;">
-                        <h1 class="text-white"><?php echo $home_banner_title; ?></h1>
-                        <p class="pxp-text-light text-white mb-0" style="padding: 8px;">
-                            <!-- <?php echo $home_banner_title_description; ?> -->
+                        <h1 class="text-white">
+                            <!-- <?php echo $home_banner_title; ?> -->
                             <?php _e('Investing in peace of mind','theme-text-domain'); ?>
+                        </h1>
+                        <p class="pxp-text-light text-white mb-0" style="padding: 8px;">
+                            <?php echo $home_banner_title_description; ?>
                         </p>
                         <div class="banner-dropdown">
                             <button class="banner-dropbtn"><?php _e('Start Now','theme-text-domain'); ?></button>
