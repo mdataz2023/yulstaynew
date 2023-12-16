@@ -35,7 +35,10 @@ $home_banner_title_description = get_field('home_banner_title_description');
 
                     <div style="text-align: center;">
                         <h1 class="text-white"><?php echo $home_banner_title; ?></h1>
-                        <p class="pxp-text-light text-white mb-0" style="padding: 8px;"><?php echo $home_banner_title_description; ?></p>
+                        <p class="pxp-text-light text-white mb-0" style="padding: 8px;">
+                            <!-- <?php echo $home_banner_title_description; ?> -->
+                            <?php _e('Investing in peace of mind','theme-text-domain'); ?>
+                        </p>
                         <div class="banner-dropdown">
                             <button class="banner-dropbtn"><?php _e('Start Now','theme-text-domain'); ?></button>
                             <div class="banner-dropdown-content">
@@ -83,7 +86,7 @@ $home_banner_title_description = get_field('home_banner_title_description');
                 </div>
             </div>
             <div style="display: flex; justify-content: flex-end; z-index: 1000; color: white; font-size: 32px; padding: 12px;">
-                <div style="font-weight: 700; font-size: 3.2rem;"><?php _e('Investing in peace of mind','theme-text-domain'); ?></div>
+                <div style="font-weight: 700; font-size: 3.2rem;"></div>
             </div>
         </div>
         <!-- <div class="pxp-hero vh-100">
