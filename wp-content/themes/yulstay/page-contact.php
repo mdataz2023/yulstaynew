@@ -237,7 +237,7 @@ $contact_page_email_address_link = get_field('contact_page_email_address_link');
                         </div>
                         <div class="col-sm-12 col-lg-6">
                             <div class="row mt-4 mt-md-5 mt-lg-0">
-                                <div class="col-6">
+                                <div class="col-12">
                                     <h2 class="pxp-section-h2"><?php _e('Our Locations','theme-text-domain'); ?></h2>
                                 </div>
                                 <!-- <div class="col-6 text-right">
