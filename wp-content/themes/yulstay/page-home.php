@@ -517,7 +517,7 @@ if($city->CODE!=16){
                                 <span class="fa fa-star checked"></span>
                                 <span class="fa fa-star checked"></span>
                             </div>
-                            <div class="pxp-testim-1-item-message"><?php the_content(); ?></div>
+                            <div class="pxp-testim-1-item-message" style="padding-top: 10px !important;"><?php the_content(); ?></div>
                         </div>
                     </div>
                     <?php endwhile; endif; ?>
