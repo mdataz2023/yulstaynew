@@ -850,9 +850,9 @@ if ($lang == 'en-US'){
                 {
                     echo do_shortcode('[contact-form-7 id="bedd78f" title="Michael Ghannoum Property Contact"]');
                 }
-                 if($MEMBRES->PRENOM." ". $MEMBRES->NOM=="Cynthia Dahoud")
+                 if($MEMBRES->CODE=="124050")
                 {
-                    echo do_shortcode('[contact-form-7 id="026505a" title="Cynthia Dahoud Property Contact"]');
+                    echo do_shortcode('[contact-form-7 id="9f78dd8" title="Jasmine Sidar-Caceres Property Contact"]');
                 }
                  if($MEMBRES->CODE=="82166")
                 {
