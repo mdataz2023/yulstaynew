@@ -433,7 +433,7 @@ $home_banner_title_description = get_field('home_banner_title_description');
                 GROUP BY r.CODE ", OBJECT );
                foreach ($cities as $city) {
                 $results = $wpdb->get_row(" SELECT * FROM PHOTOS where  NO_INSCRIPTION = '".$city->NO_INSCRIPTION ."' limit 1", OBJECT );
-if($city->CODE!="16"){
+if($city->CODE!=16){
             ?>
 
                 <div class="col-sm-12 col-md-6 col-lg-4">
