@@ -79,6 +79,7 @@ $contact_page_email_address_link = get_field('contact_page_email_address_link');
                                             <p class="pxp-is-address"><span class="fa fa-location-arrow"></span>&nbsp;&nbsp;<a href="https://maps.app.goo.gl/sX98HcDRk2vBpUtz8" target="_blank" rel="noopener noreferrer"><?php echo $contact_page_address_line_two; ?></a></p>
                                             <p>
                                                 <a href="tel:<?php echo $contact_page_contact_number_link; ?>"><span class="fa fa-phone">&nbsp;&nbsp;</span><?php echo $contact_page_contact_number; ?></a><br>
+                                                <a href="tel:+15149996293"><span class="fa fa-phone">&nbsp;&nbsp;</span>514.999.6293</a><br>
                                                 <a href="mailto:<?php echo $contact_page_email_address_link; ?>"><span class="fa fa-envelope-o">&nbsp;&nbsp;</span><?php echo $contact_page_email_address; ?></a>
                                             </p>
                                         </div>
