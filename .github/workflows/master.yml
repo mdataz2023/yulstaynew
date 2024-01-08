@@ -14,7 +14,7 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
-        server: ftp.mdataz.com
+        server: giowm1090.siteground.biz
         username: ${{ secrets.ftp_yulstay_username }}
         password: ${{ secrets.ftp_yulstay_password }}
-        server-dir: /mdataz.com/public_html/yulstaynew/
+        server-dir: /yulstay.com/public_html/
