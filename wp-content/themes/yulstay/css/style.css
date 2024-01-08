@@ -8524,3 +8524,7 @@ a.pxp-services-tabs-content-item:hover .pxp-services-tabs-content-item-cta {
         width: 300px;
     }
 }
+
+.grecaptcha-badge { 
+    visibility: hidden !important;
+}
