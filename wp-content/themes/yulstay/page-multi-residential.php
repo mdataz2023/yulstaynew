@@ -350,7 +350,7 @@ $the_query = new WP_Query( array('post_type' =>'multi-residential','posts_per_pa
         <div class="pxp-footer pxp-content-side-wrapper">
             <div class="pxp-footer-bottom">
                 <div class="pxp-footer-copyright">&copy;
-                    <?php _e('Yulstay. All Rights Reserved. 2023','theme-text-domain'); ?></div>
+                    <?php _e('Yulstay. All Rights Reserved. 2024','theme-text-domain'); ?></div>
             </div>
         </div>
     </div>

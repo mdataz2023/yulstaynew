@@ -256,7 +256,7 @@ $dataIns = $wpdb->get_results("SELECT *  FROM INSCRIPTIONS i join wp_posts p on 
     </div>
     <div class="pxp-footer pxp-content-side-wrapper">
         <div class="pxp-footer-bottom">
-            <div class="pxp-footer-copyright">&copy; Yulasty. All Rights Reserved. 2023</div>
+            <div class="pxp-footer-copyright">&copy; Yulasty. All Rights Reserved. 2024</div>
         </div>
     </div>
 </div>
