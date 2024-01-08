@@ -4,9 +4,13 @@ $servername = "localhost";
 // $password = "1234";
 // $dbname = "yulstaynewdb";
 
-$username = "uhd50p3aarwb3";
-$password = "b2p(N1;]:3Lc";
-$dbname = "db3slni3ex0xza";
+// $username = "uhd50p3aarwb3";
+// $password = "b2p(N1;]:3Lc";
+// $dbname = "db3slni3ex0xza";
+
+$username = "ueq2jdl1nv8ns";
+$password = "5V2}(c%&qE23";
+$dbname = "dbqna6goibsr4v";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
