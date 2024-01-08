@@ -316,7 +316,7 @@ global $wpdb;
 </div>
 
 <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKdureXZeG3r84mCn0P7giVJKaigPAeaE&amp;libraries=geometry&amp;libraries=places">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeZktuvHBS_UuaSzu7q-KTg7Oh8s8mdrM&amp;libraries=geometry&amp;libraries=places">
 </script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery-3.4.1.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/popper.min.js"></script>
