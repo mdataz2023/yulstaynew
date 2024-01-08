@@ -443,7 +443,7 @@ $the_query = new WP_Query( array('post_type' =>'rental-property','posts_per_page
 </div>
 
 <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALbrsESmR55p0PLDbeL-SQ_YPuRpucYrw&amp;libraries=geometry&amp;libraries=places">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeZktuvHBS_UuaSzu7q-KTg7Oh8s8mdrM&amp;libraries=geometry&amp;libraries=places">
 </script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery-3.4.1.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/popper.min.js"></script>
