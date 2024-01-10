@@ -817,7 +817,7 @@ echo $inscriptionsData->INCLUS_FRANCAIS."<br><br>".$inscriptionsData->EXCLUS_FRA
             </div>
             <div class="modal-body">
                 <h5 class="modal-title" id="pxpSigninModal">Welcome back!</h5>
-                <form class="mt-4">
+                <!-- <form class="mt-4">
                     <div class="form-group">
                         <label for="pxp-signin-email">Email</label>
                         <input type="text" class="form-control" id="pxp-signin-email"
@@ -838,7 +838,7 @@ echo $inscriptionsData->INCLUS_FRANCAIS."<br><br>".$inscriptionsData->EXCLUS_FRA
                         New to Resideo? <a href="javascript:void(0);" class="pxp-modal-link pxp-signup-trigger">Create
                             an account</a>
                     </div>
-                </form>
+                </form> -->
             </div>
         </div>
     </div>
@@ -855,7 +855,7 @@ echo $inscriptionsData->INCLUS_FRANCAIS."<br><br>".$inscriptionsData->EXCLUS_FRA
             </div>
             <div class="modal-body">
                 <h5 class="modal-title" id="pxpSignupModal">Create an account</h5>
-                <form class="mt-4">
+                <!-- <form class="mt-4">
                     <div class="row">
                         <div class="col-6">
                             <div class="form-group">
@@ -889,7 +889,7 @@ echo $inscriptionsData->INCLUS_FRANCAIS."<br><br>".$inscriptionsData->EXCLUS_FRA
                         Already have an account? <a href="javascript:void(0);"
                             class="pxp-modal-link pxp-signin-trigger">Sign in</a>
                     </div>
-                </form>
+                </form> -->
             </div>
         </div>
     </div>
