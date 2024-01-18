@@ -1219,5 +1219,11 @@ for (let i = 0; i < imgs.length; i++) {
     img.classList.add("active");
   });
 }
+
+$(".pxp-sp-agent-btn-main").click(function() {
+    setTimeout(() => {
+        $('.custom_inscription_id_contact_7').val('<?php echo  $inscriptionsData->NO_INSCRIPTION;?>');
+    }, 2000);
+});
 </script>
 <?php get_footer(); ?>
