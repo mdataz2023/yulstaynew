@@ -120,7 +120,7 @@ $the_query = new WP_Query( array('post_type' =>'multi-residential','posts_per_pa
                     </div>
                     <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Max" id="pxp-p-filter-price-max">
+                            <input type="text" class="form-control" placeholder="MLSXXXXXXX" id="pxp-p-filter-price-max">
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
