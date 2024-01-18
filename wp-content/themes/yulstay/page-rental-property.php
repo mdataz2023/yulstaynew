@@ -107,8 +107,8 @@ $the_query = new WP_Query( array('post_type' =>'rental-property','posts_per_page
                 </div>
 
 
-                <a href="#" class="pxp-filter-btn"><?php _e('Apply Filters','theme-text-domain'); ?></a>
-                <a href="#" class="pxp-filter-clear-btn"><?php _e('Clear','theme-text-domain'); ?></a>
+                <!-- <a href="#" class="pxp-filter-btn"><?php _e('Apply Filters','theme-text-domain'); ?></a>
+                <a href="#" class="pxp-filter-clear-btn"><?php _e('Clear','theme-text-domain'); ?></a> -->
 
                 <div class="row pxp-content-side-search-form-row">
                     <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
