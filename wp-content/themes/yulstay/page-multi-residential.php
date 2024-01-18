@@ -110,7 +110,9 @@ $the_query = new WP_Query( array('post_type' =>'multi-residential','posts_per_pa
 
                 <a href="#" class="pxp-filter-btn"><?php _e('Apply Filters','theme-text-domain'); ?></a>
                 <a href="#" class="pxp-filter-clear-btn"><?php _e('Clear','theme-text-domain'); ?></a>
-                <input type="text" class="form-control" placeholder="Max" id="pxp-p-filter-price-max">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Max" id="pxp-p-filter-price-max">
+                </div>
                 <a href="#" class="pxp-filter-clear-btn"><?php _e('Search','theme-text-domain'); ?></a>
             </div>
 
