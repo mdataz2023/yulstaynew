@@ -120,21 +120,21 @@ $the_query = new WP_Query( array('post_type' =>'multi-residential','posts_per_pa
                     </div>
                     <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="MLSXXXXXXX" id="pxp-p-filter-price-max">
+                            <input type="text" class="form-control" placeholder="MLSXXXXXXX" id="pxp-p-filter-mls-no">
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
                         <div class="form-group">
-                            <a href="#" class="pxp-filter-clear-btn"><?php _e('Search','theme-text-domain'); ?></a>
+                            <a href="#" class="search-btn2" id="mls_no_search"><?php _e('Search','theme-text-domain'); ?></a>
                         </div>
                     </div>
                 </div>
-                
-                
+
+
                 <div class="form-group">
-                    
+
                 </div>
-                
+
             </div>
 
             <div class="row pb-4">
@@ -866,7 +866,31 @@ $("#pxp-sort-results").change(function() {
         error: function(jqXhr, textStatus, errorMessage) {}
     });
 });
-
+$("#mls_no_search").click(function() {
+    $.ajax("<?php echo get_template_directory_uri(); ?>/page-db.php", {
+        type: 'POST',
+        data: {
+            post_type: "multi-residential",
+            bloginfo: "<?php echo bloginfo('url');?>",
+            regionCode: $("#pxp-p-filter-type").val(),
+            currencyLetterPrefix: "<?php echo $currencyLetterPrefix;?>",
+            currencyLetterSuffix: "<?php echo $currencyLetterSuffix;?>",
+            orderBy: $("#pxp-sort-results").val(),
+            min_price: $("#pxp-p-filter-price-min").val(),
+            max_price: $("#pxp-p-filter-price-max").val(),
+            mls_no: $("#pxp-p-filter-mls-no").val(),
+            // max_size: $("#pxp-p-filter-size-max").val(),
+            baths: $("#pxp-p-filter-baths").val(),
+            beds: $("#pxp-p-filter-beds").val(),
+        },
+        success: function(data, status, xhr) {
+            $(".filter_display_section").show();
+            $('.filter_hide_section').hide();
+            $(".filter_display_section").html(data);
+        },
+        error: function(jqXhr, textStatus, errorMessage) { }
+    });
+});
 $(".pxp-filter-clear-btn").click(function() {
     $('.filter_hide_section').show();
     $(".filter_display_section").hide();

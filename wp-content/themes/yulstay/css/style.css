@@ -4583,6 +4583,31 @@ a.pxp-results-card-1 .carousel-inner>.carousel-item {
     border: 1px solid #333;
 }
 
+.search-btn2 {
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #fff;
+    height: 46px;
+    padding: 0 20px;
+    border: 1px solid #E2E2E2;
+    border-radius: 0.25rem;
+    font-size: .9rem;
+    text-transform: uppercase;
+    line-height: 46px;
+    font-weight: 700;
+    color: #333;
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+.search-btn2:hover {
+    text-decoration: none;
+    color: #333;
+    border: 1px solid #333;
+}
+
 /**
  * 18.0 - Single property
  */
@@ -8525,6 +8550,6 @@ a.pxp-services-tabs-content-item:hover .pxp-services-tabs-content-item-cta {
     }
 }
 
-.grecaptcha-badge { 
+.grecaptcha-badge {
     visibility: hidden !important;
 }
