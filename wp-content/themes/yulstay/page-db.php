@@ -1,16 +1,16 @@
 <?php
 $servername = "localhost";
-// $username = "root";
-// $password = "1234";
-// $dbname = "yulstaynewdb";
+$username = "root";
+$password = "1234";
+$dbname = "yulstaynewdb";
 
 // $username = "uhd50p3aarwb3";
 // $password = "b2p(N1;]:3Lc";
 // $dbname = "db3slni3ex0xza";
 
-$username = "ueq2jdl1nv8ns";
-$password = "5V2}(c%&qE23";
-$dbname = "dbqna6goibsr4v";
+// $username = "ueq2jdl1nv8ns";
+// $password = "5V2}(c%&qE23";
+// $dbname = "dbqna6goibsr4v";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -32,6 +32,9 @@ $baths=$_POST['baths'];
 $beds=$_POST['beds'];
 $currencyLetterPrefix=$_POST['currencyLetterPrefix'];
 $currencyLetterSuffix=$_POST['currencyLetterSuffix'];
+$mls_no =@$_POST['mls_no'];
+
+
 $regionSql="";
 
 if(isset($min_price)&$min_price!=""){
@@ -67,6 +70,11 @@ if(isset($regionCode)&$regionCode!=""& $regionCode!="All"){
 //     $customSql.=" and  SUPERFICIE_HABITABLE <= '".$max_size."'";
 // }
 
+if(isset($mls_no)&$mls_no!="" ){
+    $replace1 = str_replace("MLS","",$mls_no);
+    $mls_no_after_replace = str_replace(" ","",$replace1);
+    $customSql.=" and  i.NO_INSCRIPTION = '".$mls_no_after_replace."' ";
+}
 
 if(isset($orderBy)&$orderBy!=""){
 
@@ -82,13 +90,15 @@ if($post_type=="rental-property"){
 }
 
 
+
 $sql= "SELECT * FROM INSCRIPTIONS i join wp_posts p on p.post_content=i.NO_INSCRIPTION where p.post_type='".$_POST['post_type']."' and i.CODE_STATUT='EV' ".$customSql;
 // $sql = "INSERT INTO filter_table (QUERY) VALUES ('".$sql1."' )";
-
 $result = mysqli_query($conn, $sql);
+
 $data="";
 $postIndex=0;
-    while($inscriptionsData = mysqli_fetch_assoc($result)) {
+while($inscriptionsData = mysqli_fetch_assoc($result)) {
+
         $photos=mysqli_query($conn, "SELECT * FROM PHOTOS where  NO_INSCRIPTION = '".$inscriptionsData["NO_INSCRIPTION"]."' limit 3");
         $photosHtml="";
         if ($photos->num_rows > 0) {
