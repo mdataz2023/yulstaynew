@@ -80,7 +80,7 @@ if ($lang == 'en-US'){
                 <div class="col-2 col-md-8 text-center">
                     <ul class="pxp-nav list-inline">
                         <li class="list-inline-item">
-                            <a href="<?php bloginfo('url'); ?>/"  <?php if(get_the_ID() == '6' || get_the_ID() == '495') { ?> class="active-nav-link-home"<?php } ?>><?php _e('Home','theme-text-domain'); ?></a>
+                            <a href="#services"  <?php if(get_the_ID() == '6' || get_the_ID() == '495') { ?> class="active-nav-link-home"<?php } ?>><?php _e('Services','theme-text-domain'); ?></a>
                         </li>
                         <li class="list-inline-item">
                             <a class="navproperty-home"><?php _e('Properties','theme-text-domain'); ?></a>

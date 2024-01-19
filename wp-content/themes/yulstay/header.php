@@ -58,7 +58,7 @@
                     <div class="col-2 col-md-8 text-center">
                         <ul class="pxp-nav list-inline">
                             <li class="list-inline-item">
-                                <a href="<?php bloginfo('url'); ?>/" <?php if(get_the_ID() == '6') { ?> class="active-nav-link"<?php } ?>><?php _e('Home','theme-text-domain'); ?></a>
+                                <a href="<?php bloginfo('url'); ?>/#services" <?php if(get_the_ID() == '6') { ?> class="active-nav-link"<?php } ?>><?php _e('Services','theme-text-domain'); ?></a>
                             </li>
                             <li class="list-inline-item">
                             <a class="navproperty" <?php if (get_the_ID() == '34' || get_the_ID() == '36' || get_the_ID() == '38' || get_the_ID() == '476' || get_the_ID() == '541' || get_the_ID() == '542') { ?> style="color: #0093a6 !important;" <?php } ?>><?php _e('Properties','theme-text-domain'); ?></a>
