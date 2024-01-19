@@ -786,7 +786,7 @@ echo $inscriptionsData->INCLUS_FRANCAIS."<br><br>".$inscriptionsData->EXCLUS_FRA
                 {
                     echo do_shortcode('[contact-form-7 id="bedd78f" title="Michael Ghannoum Property Contact"]');
                 }
-                 if($MEMBRES->CODE=="124050")
+                 if($MEMBRES2->CODE=="124050")
                 {
                     echo do_shortcode('[contact-form-7 id="9f78dd8" title="Jasmine Sidar-Caceres Property Contact"]');
                 }
