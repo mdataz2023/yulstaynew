@@ -144,11 +144,11 @@ $home_banner_title_description = get_field('home_banner_title_description');
 
             ?>
 
-            <div class="container mt-100">
+            <div class="container mt-100" id="services">
                 <h2 class="pxp-section-h2"><?php echo $home_team_section_title; ?></h2>
                 <p class="pxp-text-light"><?php echo $home_team_section_description; ?></p>
             </div>
-        <div class="pxp-testim-1 mt-50 pxp-cover" id="services">
+        <div class="pxp-testim-1 mt-50 pxp-cover">
                 <!-- <div class="pxp-testim-1-intro">
 
                 </div> -->
