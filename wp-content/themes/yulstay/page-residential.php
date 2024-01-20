@@ -112,12 +112,12 @@ global $wpdb;
                 <div class="row pxp-content-side-search-form-row">
                     <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
                         <div class="form-group">
-                        <a href="#" class="pxp-filter-btn"><?php _e('Apply Filters','theme-text-domain'); ?></a>
+                        <button class="pxp-filter-btn"><?php _e('Apply Filters','theme-text-domain'); ?></button >
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
                         <div class="form-group">
-                            <a href="#" class="pxp-filter-clear-btn"><?php _e('Clear','theme-text-domain'); ?></a>
+                            <button  class="pxp-filter-clear-btn"><?php _e('Clear','theme-text-domain'); ?></button>
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
@@ -127,7 +127,7 @@ global $wpdb;
                     </div>
                     <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
                         <div class="form-group">
-                            <a href="#" class="pxp-filter-btn" id="mls_no_search"><?php _e('Search','theme-text-domain'); ?></a>
+                            <button class="pxp-filter-btn" id="mls_no_search"><?php _e('Search','theme-text-domain'); ?></button>
                         </div>
                     </div>
                 </div>
