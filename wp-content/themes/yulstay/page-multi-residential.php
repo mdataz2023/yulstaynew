@@ -125,7 +125,7 @@ $the_query = new WP_Query( array('post_type' =>'multi-residential','posts_per_pa
                     </div>
                     <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
                         <div class="form-group">
-                            <a href="#" class="search-btn2" id="mls_no_search"><?php _e('Search','theme-text-domain'); ?></a>
+                            <a href="#" class="pxp-filter-btn" id="mls_no_search"><?php _e('Search','theme-text-domain'); ?></a>
                         </div>
                     </div>
                 </div>
