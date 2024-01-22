@@ -213,13 +213,13 @@ $home_banner_title_description = get_field('home_banner_title_description');
                 </div>
             </div>
 
-        <div class="pxp-services pxp-cover mt-100 pt-100 mb-200"
+        <div class="pxp-services pxp-cover mt-100 pt-100 mb-200" id="services"
             style="background-image: url(<?php echo $home_why_choose_us_section_backgroud_image; ?>); background-position: 50% 60%;">
             <h2 class="text-center pxp-section-h2 font-white-in"><?php echo $home_why_choose_us_section_title; ?></h2>
             <p class="pxp-text-light text-center font-white-in"><?php echo $home_why_choose_us_section_description; ?></p>
 
 
-            <div class="container" id="services">
+            <div class="container">
                 <div class="pxp-services-container rounded-lg mt-4 mt-md-5">
                         <a href="<?php bloginfo('url'); ?>/investments-info" class="pxp-services-item">
                             <div class="pxp-services-item-fig">
