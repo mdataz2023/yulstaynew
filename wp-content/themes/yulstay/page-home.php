@@ -144,7 +144,7 @@ $home_banner_title_description = get_field('home_banner_title_description');
 
             ?>
 
-            <div class="container mt-100" id="services">
+            <div class="container mt-100">
                 <h2 class="pxp-section-h2"><?php echo $home_team_section_title; ?></h2>
                 <p class="pxp-text-light"><?php echo $home_team_section_description; ?></p>
             </div>
@@ -219,7 +219,7 @@ $home_banner_title_description = get_field('home_banner_title_description');
             <p class="pxp-text-light text-center font-white-in"><?php echo $home_why_choose_us_section_description; ?></p>
 
 
-            <div class="container">
+            <div class="container" id="services">
                 <div class="pxp-services-container rounded-lg mt-4 mt-md-5">
                         <a href="<?php bloginfo('url'); ?>/investments-info" class="pxp-services-item">
                             <div class="pxp-services-item-fig">
