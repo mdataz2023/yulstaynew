@@ -144,6 +144,62 @@ $home_banner_title_description = get_field('home_banner_title_description');
 
             ?>
 
+
+        <div class="pxp-services pxp-cover mt-100 pt-100 mb-200" id="services"
+            style="background-image: url(<?php echo $home_why_choose_us_section_backgroud_image; ?>); background-position: 50% 60%;">
+            <h2 class="text-center pxp-section-h2 font-white-in"><?php echo $home_why_choose_us_section_title; ?></h2>
+            <p class="pxp-text-light text-center font-white-in"><?php echo $home_why_choose_us_section_description; ?></p>
+
+
+            <div class="container">
+                <div class="pxp-services-container rounded-lg mt-4 mt-md-5">
+                        <a href="<?php bloginfo('url'); ?>/investments-info" class="pxp-services-item">
+                            <div class="pxp-services-item-fig">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/icons81.png" alt="...">
+                            </div>
+                            <div class="pxp-services-item-text text-center">
+                                <div class="pxp-services-item-text-title"><?php _e('Invest','theme-text-domain'); ?></div>
+                                <div class="pxp-services-item-text-sub"><?php _e('We offer unparalleled service and advice on the acquisition of revenue properties.','theme-text-domain'); ?></div>
+                            </div>
+                            <div class="pxp-services-item-cta text-uppercase text-center"><?php _e('Learn More','theme-text-domain'); ?></div>
+                        </a>
+                        <a href="<?php bloginfo('url'); ?>/purchase-info" class="pxp-services-item">
+                            <div class="pxp-services-item-fig">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/icons82.png" alt="...">
+                            </div>
+                            <div class="pxp-services-item-text text-center">
+                                <div class="pxp-services-item-text-title"><?php _e('Purchase','theme-text-domain'); ?></div>
+                                <div class="pxp-services-item-text-sub"><?php _e('Looking for your new home? Our buyer brokers know how to best accompany you from start to finish','theme-text-domain'); ?></div>
+                            </div>
+                            <div class="pxp-services-item-cta text-uppercase text-center"><?php _e('Learn More','theme-text-domain'); ?></div>
+                        </a>
+                        <a href="<?php bloginfo('url'); ?>/sale-info" class="pxp-services-item">
+                            <div class="pxp-services-item-fig">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/icons83.png" alt="...">
+                            </div>
+                            <div class="pxp-services-item-text text-center">
+                                <div class="pxp-services-item-text-title"><?php _e('Sale','theme-text-domain'); ?></div>
+                                <div class="pxp-services-item-text-sub"><?php _e('Need to sell your property?  Our experienced brokers will devise an action plan based on your requirements.','theme-text-domain'); ?></div>
+                            </div>
+                            <div class="pxp-services-item-cta text-uppercase text-center"><?php _e('Learn More','theme-text-domain'); ?></div>
+                        </a>
+                        <a href="<?php bloginfo('url'); ?>/rental-management-info" class="pxp-services-item">
+                            <div class="pxp-services-item-fig">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/icons84.png" alt="...">
+                            </div>
+                            <div class="pxp-services-item-text text-center">
+                                <div class="pxp-services-item-text-title"><?php _e('Rental & Management','theme-text-domain'); ?></div>
+                                <div class="pxp-services-item-text-sub"><?php _e('With a dedicated leasing team and strategic planning, we\'re ranked as one of the very best in the business','theme-text-domain'); ?></div>
+                            </div>
+                            <div class="pxp-services-item-cta text-uppercase text-center"><?php _e('Learn More','theme-text-domain'); ?></div>
+                        </a>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+
+
+
             <div class="container mt-100">
                 <h2 class="pxp-section-h2"><?php echo $home_team_section_title; ?></h2>
                 <p class="pxp-text-light"><?php echo $home_team_section_description; ?></p>
@@ -213,58 +269,7 @@ $home_banner_title_description = get_field('home_banner_title_description');
                 </div>
             </div>
 
-        <div class="pxp-services pxp-cover mt-100 pt-100 mb-200" id="services"
-            style="background-image: url(<?php echo $home_why_choose_us_section_backgroud_image; ?>); background-position: 50% 60%;">
-            <h2 class="text-center pxp-section-h2 font-white-in"><?php echo $home_why_choose_us_section_title; ?></h2>
-            <p class="pxp-text-light text-center font-white-in"><?php echo $home_why_choose_us_section_description; ?></p>
 
-
-            <div class="container">
-                <div class="pxp-services-container rounded-lg mt-4 mt-md-5">
-                        <a href="<?php bloginfo('url'); ?>/investments-info" class="pxp-services-item">
-                            <div class="pxp-services-item-fig">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/icons81.png" alt="...">
-                            </div>
-                            <div class="pxp-services-item-text text-center">
-                                <div class="pxp-services-item-text-title"><?php _e('Invest','theme-text-domain'); ?></div>
-                                <div class="pxp-services-item-text-sub"><?php _e('We offer unparalleled service and advice on the acquisition of revenue properties.','theme-text-domain'); ?></div>
-                            </div>
-                            <div class="pxp-services-item-cta text-uppercase text-center"><?php _e('Learn More','theme-text-domain'); ?></div>
-                        </a>
-                        <a href="<?php bloginfo('url'); ?>/purchase-info" class="pxp-services-item">
-                            <div class="pxp-services-item-fig">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/icons82.png" alt="...">
-                            </div>
-                            <div class="pxp-services-item-text text-center">
-                                <div class="pxp-services-item-text-title"><?php _e('Purchase','theme-text-domain'); ?></div>
-                                <div class="pxp-services-item-text-sub"><?php _e('Looking for your new home? Our buyer brokers know how to best accompany you from start to finish','theme-text-domain'); ?></div>
-                            </div>
-                            <div class="pxp-services-item-cta text-uppercase text-center"><?php _e('Learn More','theme-text-domain'); ?></div>
-                        </a>
-                        <a href="<?php bloginfo('url'); ?>/sale-info" class="pxp-services-item">
-                            <div class="pxp-services-item-fig">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/icons83.png" alt="...">
-                            </div>
-                            <div class="pxp-services-item-text text-center">
-                                <div class="pxp-services-item-text-title"><?php _e('Sale','theme-text-domain'); ?></div>
-                                <div class="pxp-services-item-text-sub"><?php _e('Need to sell your property?  Our experienced brokers will devise an action plan based on your requirements.','theme-text-domain'); ?></div>
-                            </div>
-                            <div class="pxp-services-item-cta text-uppercase text-center"><?php _e('Learn More','theme-text-domain'); ?></div>
-                        </a>
-                        <a href="<?php bloginfo('url'); ?>/rental-management-info" class="pxp-services-item">
-                            <div class="pxp-services-item-fig">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/icons84.png" alt="...">
-                            </div>
-                            <div class="pxp-services-item-text text-center">
-                                <div class="pxp-services-item-text-title"><?php _e('Rental & Management','theme-text-domain'); ?></div>
-                                <div class="pxp-services-item-text-sub"><?php _e('With a dedicated leasing team and strategic planning, we\'re ranked as one of the very best in the business','theme-text-domain'); ?></div>
-                            </div>
-                            <div class="pxp-services-item-cta text-uppercase text-center"><?php _e('Learn More','theme-text-domain'); ?></div>
-                        </a>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-        </div>
 
         <div class="container-fluid pxp-props-carousel-right mt-100">
             <h2 class="pxp-section-h2"><?php echo $home_properties_section_title; ?></h2>
