@@ -1082,6 +1082,7 @@ for (let i = 0; i < imgs.length; i++) {
 $(".pxp-sp-agent-btn-main").click(function() {
     setTimeout(() => {
         $('.custom_inscription_id_contact_7').val('<?php echo  $inscriptionsData->NO_INSCRIPTION;?>');
+        $('.custom_address_contact_7').val('<?php echo  $inscriptionsData->NO_CIVIQUE_DEBUT.', '.$inscriptionsData->NOM_RUE_COMPLET.($inscriptionsData->APPARTEMENT===""?"":', app.'.$inscriptionsData->APPARTEMENT).', '. $cityName;?>');
     }, 2000);
 });
 </script>
