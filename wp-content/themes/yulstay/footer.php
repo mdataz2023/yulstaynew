@@ -82,7 +82,7 @@
                                 <ul class="list-unstyled pxp-footer-links mt-2">
                                     <li><a href="<?php bloginfo('url'); ?>/ralph-sebaaly/">Ralph Sebaaly</a></li>
                                     <li><a href="<?php bloginfo('url'); ?>/christian-daoud/">Christian Daoud</a></li>
-                                    <li><a href="<?php bloginfo('url'); ?>/jasmine/">Jasmine Sidar-Caceres</a></li>
+                                    <li><a href="<?php bloginfo('url'); ?>/jasmine-sidar-caceres/">Jasmine Sidar-Caceres</a></li>
                                     <li><a href="<?php bloginfo('url'); ?>/parvez-coowar/">Parvez Coowar</a></li>
                                     <li><a href="<?php bloginfo('url'); ?>/michael-ghannoum/">Michael Ghannoum</a></li>
                                     <li><a href="<?php bloginfo('url'); ?>/cynthia-dahoud/">Cynthia Dahoud</a></li>
