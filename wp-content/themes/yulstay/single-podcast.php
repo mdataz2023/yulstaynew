@@ -18,7 +18,7 @@ get_header();
                 </div>
 
                 <div class="pxp-blog-post-hero mt-4 mt-md-5">
-                    <div class="pxp-blog-post-hero-fig pxp-cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/team.jpg); background-position: 50% 50%;"></div>
+                    <div class="pxp-blog-post-hero-fig pxp-cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/home1.jpg); background-position: 50% 50%;"></div>
                 </div>
 
                 <div class="container mt-100">
@@ -45,7 +45,7 @@ get_header();
                             </div>
 
                             <div class="pxp-blog-post-block pxp-full mt-4 mt-md-5">
-                                <a href="javascript:void(0);" class="pxp-blog-post-video pxp-cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/team.jpg); background-position: 50% 50%;"></a>
+                                <a href="javascript:void(0);" class="pxp-blog-post-video pxp-cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/home1.jpg); background-position: 50% 50%;"></a>
                                 <iframe width="889" height="500" src="https://www.youtube.com/embed/4Wee4LASqvE?start=23" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width: 100%; border: 0 none;"></iframe>
                             </div>
 
@@ -62,10 +62,10 @@ get_header();
                             <!-- <div class="pxp-blog-post-block pxp-full mt-4 mt-md-5">
                                 <div class="row">
                                     <div class="col-sm-12 col-md-6">
-                                        <img src="images/ph-gallery.jpg" alt="" class="pxp-image-full mb-3">
+                                        <img src="images/home1.jpg" alt="" class="pxp-image-full mb-3">
                                     </div>
                                     <div class="col-sm-12 col-md-6">
-                                        <img src="images/ph-gallery.jpg" alt="" class="pxp-image-full mb-3">
+                                        <img src="images/home1.jpg" alt="" class="pxp-image-full mb-3">
                                     </div>
                                 </div>
                             </div> -->
@@ -86,7 +86,7 @@ get_header();
                         <div class="col-sm-12 col-md-6 col-lg-4">
                             <a href="#" class="pxp-posts-1-item">
                                 <div class="pxp-posts-1-item-fig-container">
-                                    <div class="pxp-posts-1-item-fig pxp-cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/ph-gallery.jpg);"></div>
+                                    <div class="pxp-posts-1-item-fig pxp-cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/home1.jpg);"></div>
                                 </div>
                                 <div class="pxp-posts-1-item-details">
                                     <div class="pxp-posts-1-item-details-category">Interior Design</div>
@@ -99,7 +99,7 @@ get_header();
                         <div class="col-sm-12 col-md-6 col-lg-4">
                             <a href="#" class="pxp-posts-1-item">
                                 <div class="pxp-posts-1-item-fig-container">
-                                    <div class="pxp-posts-1-item-fig pxp-cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/ph-gallery.jpg);"></div>
+                                    <div class="pxp-posts-1-item-fig pxp-cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/home1.jpg);"></div>
                                 </div>
                                 <div class="pxp-posts-1-item-details">
                                     <div class="pxp-posts-1-item-details-category">Architecture</div>
@@ -112,7 +112,7 @@ get_header();
                         <div class="col-sm-12 col-md-6 col-lg-4">
                             <a href="#" class="pxp-posts-1-item">
                                 <div class="pxp-posts-1-item-fig-container">
-                                    <div class="pxp-posts-1-item-fig pxp-cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/imagess/ph-gallery.jpg);"></div>
+                                    <div class="pxp-posts-1-item-fig pxp-cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/imagess/home1.jpg);"></div>
                                 </div>
                                 <div class="pxp-posts-1-item-details">
                                     <div class="pxp-posts-1-item-details-category">Interior Design</div>
