@@ -17,8 +17,8 @@ get_header();
                     </div>
                 </div>
 
-                <div class="pxp-blog-post-hero mt-4 mt-md-5">
-                    <div class="pxp-blog-post-hero-fig pxp-cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/imageres1.png); background-position: 50% 50%;"></div>
+                <div class="pxp-contact-hero mt-4 mt-md-5">
+                    <div class="pxp-contact-hero-fig pxp-cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/imageres1.png); background-position: 50% 80%;"></div>
                 </div>
 
                 <div class="container mt-100">

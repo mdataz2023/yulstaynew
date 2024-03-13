@@ -168,13 +168,13 @@ get_header();
 
         <div class="pxp-full pxp-cover pt-100 pb-100 mt-100" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/imageres3.png);">
             <div class="container">
-                <h2 class="pxp-section-h2">Stay Up to Date</h2>
-                <p class="pxp-text-light">Subscribe to our newsletter to receive our weekly feed</p>
+                <h2 class="pxp-section-h2" style="color:white;">Stay Up to Date</h2>
+                <p class="pxp-text-light" style="color:white;">Subscribe to our newsletter to receive our weekly feed</p>
                 <div class="row mt-4 mt-md-5">
                     <div class="col-xs-12 col-sm-6">
                         <form action="blog.html" class="pxp-newsletter-1-form">
                             <input type="text" class="form-control" placeholder="Enter your email...">
-                            <a href="#" class="pxp-primary-cta text-uppercase pxp-animate mt-3 mt-md-4">Subscribe</a>
+                            <a href="#" class="pxp-primary-cta text-uppercase pxp-animate mt-3 mt-md-4" style="color:white;">Subscribe</a>
                         </form>
                     </div>
                 </div>
