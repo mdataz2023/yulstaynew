@@ -112,11 +112,11 @@ get_header();
                         <div class="col-sm-12 col-md-6 col-lg-4">
                             <a href="#" class="pxp-posts-1-item">
                                 <div class="pxp-posts-1-item-fig-container">
-                                    <div class="pxp-posts-1-item-fig pxp-cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/imagess/imageres1.png);"></div>
+                                    <div class="pxp-posts-1-item-fig pxp-cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/imageres1.png);"></div>
                                 </div>
                                 <div class="pxp-posts-1-item-details">
-                                    <div class="pxp-posts-1-item-details-category">Interior Design</div>
-                                    <div class="pxp-posts-1-item-details-title">Stylish Modern Ranch Exuding a Welcoming Feel</div>
+                                    <div class="pxp-posts-1-item-details-category">Architecture</div>
+                                    <div class="pxp-posts-1-item-details-title">Private Contemporary Home Balancing Openness</div>
                                     <div class="pxp-posts-1-item-details-date mt-2">April 9, 2021</div>
                                     <div class="pxp-posts-1-item-cta text-uppercase">Read Article</div>
                                 </div>

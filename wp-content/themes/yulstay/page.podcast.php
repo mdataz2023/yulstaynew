@@ -39,14 +39,14 @@ get_header();
 
                                 <div class="col-sm-12 col-md-4">
                                     <a href="<?php the_permalink(); ?>" class="pxp-posts-1-item">
-                                        <?php 
+                                        <!-- <?php 
                                         if ( has_post_thumbnail() ) {
                                             $attachment_image = wp_get_attachment_url( get_post_thumbnail_id() );
-                                        ?>
+                                        ?> -->
                                         <div class="pxp-posts-1-item-fig-container">
                                             <div class="pxp-posts-1-item-fig pxp-cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/imageres1.png);"></div>
                                         </div>
-                                        <?php } ?>
+                                        <!-- <?php } ?> -->
                                         <div class="pxp-posts-1-item-details">
                                             <div class="pxp-posts-1-item-details-category">Interior Design</div>
                                             <div class="pxp-posts-1-item-details-title"><?php the_title(); ?></div>
