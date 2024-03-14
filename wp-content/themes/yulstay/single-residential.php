@@ -931,7 +931,7 @@ if ($lang == 'en-US'){
                 {
                     echo do_shortcode('[contact-form-7 id="a5998d6" title="Christian Daoud Property Contact"]');
                 }
-                if($MEMBRES->CODE=="124413")
+                if($MEMBRES2->CODE=="124413")
                 {
                     echo do_shortcode('[contact-form-7 id="e0915fa" title="Alain Khoury Property Contact"]');
                 }
