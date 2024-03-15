@@ -133,7 +133,7 @@ $post_id = get_the_ID();
                 </div>
             </div>
 <?php
-                        $datas = $wpdb->get_results("SELECT i.*,p.ID,p.post_type FROM INSCRIPTIONS i join wp_posts p on p.post_content=i.NO_INSCRIPTION where i.CODE_STATUT='EV' and (COURTIER_INSCRIPTEUR_1='".$broker_id."' or COURTIER_INSCRIPTEUR_2='".$broker_id."'  or COURTIER_INSCRIPTEUR_3='".$broker_id."')", OBJECT );
+                        $datas = $wpdb->get_results("SELECT i.*,p.ID,p.post_type FROM INSCRIPTIONS i join wp_posts p on p.post_content=i.NO_INSCRIPTION where i.CODE_STATUT='EV' and (COURTIER_INSCRIPTEUR_1='".$broker_id."' or COURTIER_INSCRIPTEUR_2='".$broker_id."' or COURTIER_INSCRIPTEUR_3='".$broker_id."')", OBJECT );
                         if(count($datas )>0){
                         ?>
 
