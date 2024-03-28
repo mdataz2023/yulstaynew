@@ -39,7 +39,15 @@ if ($lang == 'en-US'){
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri(); ?>/images/fav/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo get_template_directory_uri(); ?>/images/fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo get_template_directory_uri(); ?>/images/fav/favicon-16x16.png">
+    <link rel="manifest" href="<?php echo get_template_directory_uri(); ?>/images/fav/site.webmanifest">
+    <link rel="mask-icon" href="<?php echo get_template_directory_uri(); ?>/images/fav/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.png" type="image/x-icon"> -->
     <!-- <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900" rel="stylesheet"> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
