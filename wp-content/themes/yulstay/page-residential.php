@@ -112,7 +112,7 @@ global $wpdb;
                 <div class="row pxp-content-side-search-form-row">
                     <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
                         <div class="form-group">
-                        <a href="#" class="pxp-filter-btn"><?php _e('Apply Filters','theme-text-domain'); ?></a>
+                            <a href="#" class="pxp-filter-btn pxp-filter-btn2"><?php _e('Apply Filters','theme-text-domain'); ?></a>
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
@@ -127,7 +127,8 @@ global $wpdb;
                     </div>
                     <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
                         <div class="form-group">
-                            <a href="#" class="pxp-filter-btn" id="mls_no_search"><?php _e('Search','theme-text-domain'); ?></a>
+                            <button class="pxp-filter-btn"
+                                id="mls_no_search"><?php _e('Search','theme-text-domain'); ?></button>
                         </div>
                     </div>
                 </div>
@@ -751,7 +752,7 @@ $(".pxp-filter-clear-btn").click(function() {
     $("#pxp-p-filter-baths").val("")
     $("#pxp-p-filter-beds").val("")
 });
-$(".pxp-filter-btn").click(function() {
+$(".pxp-filter-btn2").click(function() {
     $.ajax("<?php echo get_template_directory_uri(); ?>/page-db.php", {
         type: 'POST',
         data: {
@@ -776,30 +777,39 @@ $(".pxp-filter-btn").click(function() {
     });
 });
 
-$("#mls_no_search").click(function() {
-    $.ajax("<?php echo get_template_directory_uri(); ?>/page-db.php", {
-        type: 'POST',
-        data: {
-            post_type: "residential",
-            bloginfo: "<?php echo bloginfo('url');?>",
-            regionCode: $("#pxp-p-filter-type").val(),
-            currencyLetterPrefix: "<?php echo $currencyLetterPrefix;?>",
-            currencyLetterSuffix: "<?php echo $currencyLetterSuffix;?>",
-            orderBy: $("#pxp-sort-results").val(),
-            min_price: $("#pxp-p-filter-price-min").val(),
-            max_price: $("#pxp-p-filter-price-max").val(),
-            mls_no: $("#pxp-p-filter-mls-no").val(),
-            // max_size: $("#pxp-p-filter-size-max").val(),
-            baths: $("#pxp-p-filter-baths").val(),
-            beds: $("#pxp-p-filter-beds").val(),
-        },
-        success: function(data, status, xhr) {
-            $(".filter_display_section").show();
-            $('.filter_hide_section').hide();
-            $(".filter_display_section").html(data);
-        },
-        error: function(jqXhr, textStatus, errorMessage) { }
-    });
+$("#mls_no_search").click(async function() {
+    var mlsNo = document.getElementById("pxp-p-filter-mls-no").value.trim(); // Trim whitespace
+    if (mlsNo) {
+        $.ajax("<?php echo get_template_directory_uri(); ?>/page-db.php", {
+            type: 'POST',
+            data: {
+                post_type: "residential",
+                bloginfo: "<?php echo bloginfo('url');?>",
+                regionCode: $("#pxp-p-filter-type").val(),
+                currencyLetterPrefix: "<?php echo $currencyLetterPrefix;?>",
+                currencyLetterSuffix: "<?php echo $currencyLetterSuffix;?>",
+                orderBy: $("#pxp-sort-results").val(),
+                min_price: $("#pxp-p-filter-price-min").val(),
+                max_price: $("#pxp-p-filter-price-max").val(),
+                mls_no: mlsNo,
+                mls_no_send: true,
+                // max_size: $("#pxp-p-filter-size-max").val(),
+                baths: $("#pxp-p-filter-baths").val(),
+                beds: $("#pxp-p-filter-beds").val(),
+            },
+            success: function(data, status, xhr) {
+                $(".filter_display_section").show();
+                $('.filter_hide_section').hide();
+                $(".filter_display_section").html(data);
+            },
+            error: function(jqXhr, textStatus, errorMessage) {
+                console.error("AJAX Error:", errorMessage);
+            }
+        });
+    } else {
+        console.log("mlsNo is empty. Cannot proceed with the AJAX call.");
+        // Handle the case where mlsNo is empty, such as showing an error message to the user.
+    }
 });
 </script>
 
