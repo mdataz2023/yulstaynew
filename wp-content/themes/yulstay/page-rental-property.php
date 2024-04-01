@@ -113,7 +113,7 @@ $the_query = new WP_Query( array('post_type' =>'rental-property','posts_per_page
                 <div class="row pxp-content-side-search-form-row">
                     <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
                         <div class="form-group">
-                            <a href="#" class="pxp-filter-btn"><?php _e('Apply Filters','theme-text-domain'); ?></a>
+                            <a href="#" class="pxp-filter-btn2"><?php _e('Apply Filters','theme-text-domain'); ?></a>
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
@@ -890,7 +890,7 @@ $(".pxp-filter-clear-btn").click(function() {
     $("#pxp-p-filter-baths").val("")
     $("#pxp-p-filter-beds").val("")
 });
-$(".pxp-filter-btn").click(function() {
+$(".pxp-filter-btn2").click(function() {
     $.ajax("<?php echo get_template_directory_uri(); ?>/page-db.php", {
         type: 'POST',
         data: {
