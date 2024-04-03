@@ -131,6 +131,7 @@ while (($valueExplode = fgetcsv($firmesFile)) !== FALSE) {
     $obj100= $conn->real_escape_string(mb_convert_encoding(quoted_printable_decode($valueExplode[100]), 'UTF-8', 'ISO-8859-1'));
     $obj101= $conn->real_escape_string(mb_convert_encoding(quoted_printable_decode($valueExplode[101]), 'UTF-8', 'ISO-8859-1'));
     $obj102= $conn->real_escape_string(mb_convert_encoding(quoted_printable_decode($valueExplode[102]), 'UTF-8', 'ISO-8859-1'));
+    $obj103= $conn->real_escape_string(mb_convert_encoding(quoted_printable_decode($valueExplode[103]), 'UTF-8', 'ISO-8859-1'));
     $obj157= $conn->real_escape_string(mb_convert_encoding(quoted_printable_decode($valueExplode[157]), 'UTF-8', 'ISO-8859-1'));
     $obj158= $conn->real_escape_string(mb_convert_encoding(quoted_printable_decode($valueExplode[158]), 'UTF-8', 'ISO-8859-1'));
 
@@ -160,7 +161,7 @@ while (($valueExplode = fgetcsv($firmesFile)) !== FALSE) {
     '$valueExplode[84]', '$valueExplode[85]', '$valueExplode[86]', '$valueExplode[87]', '$valueExplode[88]',
     '$valueExplode[89]', '$valueExplode[90]', '$valueExplode[91]', '$valueExplode[92]', '$valueExplode[93]',
     '$valueExplode[94]', '$valueExplode[95]', '$valueExplode[96]', '$valueExplode[97]', '$valueExplode[98]',
-    '$valueExplode[99]', '$obj100', '$obj101','$obj102', '$valueExplode[103]',
+    '$valueExplode[99]', '$obj100', '$obj101','$obj102', '$obj103',
     '$valueExplode[104]', '$valueExplode[105]', '$valueExplode[106]','$valueExplode[107]', '$valueExplode[108]', '$valueExplode[109]', '$valueExplode[110]', '$valueExplode[111]',
     '$valueExplode[112]', '$valueExplode[113]', '$valueExplode[114]', '$valueExplode[115]', '$valueExplode[116]',
     '$valueExplode[117]', '$valueExplode[118]', '$valueExplode[119]', '$valueExplode[120]', '$valueExplode[121]',
