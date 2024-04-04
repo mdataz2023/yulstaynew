@@ -192,7 +192,7 @@ $MUNICIPALITES = $wpdb->get_row("SELECT * FROM MUNICIPALITES m JOIN REGIONS r ON
         <div class="row">
             <div class="col-lg-8">
                 <div class="pxp-single-property-section">
-                    <h3>Key Details <?php
+                    <h3><?php _e('Key Details','theme-text-domain'); ?> <?php
                     if($inscriptionsData->IND_OPTION_ACHAT=="0"){
                         echo "- Available for sale";
                     }
