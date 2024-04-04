@@ -479,6 +479,7 @@ $the_query = new WP_Query( array('post_type' =>'rental-property','posts_per_page
     var elements = document.querySelectorAll('.post-count[data-loop-count]');
     var loopCount = elements.length;
     document.getElementById('loop-count').innerHTML += ' (' + loopCount + ')';
+    console.log("Loop Count:", loopCount);
 </script>
 <script>
 
