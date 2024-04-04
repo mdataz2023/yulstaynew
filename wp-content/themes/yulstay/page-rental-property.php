@@ -140,7 +140,7 @@ $the_query = new WP_Query( array('post_type' =>'rental-property','posts_per_page
                     <h2 class="pxp-content-side-h2"><?php
                     $POST_COUNT = $wpdb->get_row("SELECT count(NO_INSCRIPTION) as POST_COUNT FROM INSCRIPTIONS i join wp_posts p on p.post_content=i.NO_INSCRIPTION where p.post_type='rental-property' and i.CODE_STATUT='EV'", OBJECT );
                 echo $POST_COUNT->POST_COUNT;
-                ?> <span id="loop-count"></span> <?php _e('Results','theme-text-domain'); ?></h2>
+                ?> <?php _e('Results','theme-text-domain'); ?></h2>
                 </div>
                 <div class="col-sm-6">
                     <div class="pxp-sort-form form-inline float-right">
@@ -475,12 +475,12 @@ $the_query = new WP_Query( array('post_type' =>'rental-property','posts_per_page
 <script src="<?php echo get_template_directory_uri(); ?>/js/markerclusterer.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/main.js?asdsd"></script>
 <!-- <script src="<?php echo get_template_directory_uri(); ?>/js/map.js?asldksjd"></script> -->
-<script>
+<!-- <script>
     var elements = document.querySelectorAll('.hide_post_class[data-loop-count]');
     var loopCount = elements.length;
     document.getElementById('loop-count').innerHTML += ' (' + loopCount + ')';
     console.log("Loop Count:", loopCount);
-</script>
+</script> -->
 <script>
 
 
