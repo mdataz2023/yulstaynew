@@ -140,7 +140,7 @@ $the_query = new WP_Query( array('post_type' =>'rental-property','posts_per_page
                     <h2 class="pxp-content-side-h2"><?php
                     $POST_COUNT = $wpdb->get_row("SELECT count(NO_INSCRIPTION) as POST_COUNT FROM INSCRIPTIONS i join wp_posts p on p.post_content=i.NO_INSCRIPTION where p.post_type='rental-property' and i.CODE_STATUT='EV'", OBJECT );
                 echo $POST_COUNT->POST_COUNT;
-                ?> <?php _e('Results','theme-text-domain'); ?></h2>
+                ?> <span id="loop-count"></span> <?php _e('Results','theme-text-domain'); ?></h2>
                 </div>
                 <div class="col-sm-6">
                     <div class="pxp-sort-form form-inline float-right">
@@ -172,7 +172,7 @@ $the_query = new WP_Query( array('post_type' =>'rental-property','posts_per_page
                     $categories = get_the_category();
                     $results = $wpdb->get_results(" SELECT * FROM PHOTOS where  NO_INSCRIPTION = '".get_the_content()."' limit 3", OBJECT );
 				?>
-                <div class="col-sm-12 col-md-6 col-xxxl-4 hide_post_class  NO_INSCRIPTION<?php
+                <div class="post-count col-sm-12 col-md-6 col-xxxl-4 hide_post_class  NO_INSCRIPTION<?php
                              $REGION_CODE = $wpdb->get_row("SELECT r.*,REGION_CODE,m.DESCRIPTION FROM MUNICIPALITES m JOIN REGIONS r ON m.REGION_CODE = r.CODE where m.CODE='".$inscriptionsData->MUN_CODE."' ", OBJECT );
      echo $REGION_CODE->REGION_CODE;?>">
                     <a href="<?php the_permalink(); ?>" class="pxp-results-card-1 rounded-lg" data-prop="1">
@@ -476,6 +476,13 @@ $the_query = new WP_Query( array('post_type' =>'rental-property','posts_per_page
 <script src="<?php echo get_template_directory_uri(); ?>/js/main.js?asdsd"></script>
 <!-- <script src="<?php echo get_template_directory_uri(); ?>/js/map.js?asldksjd"></script> -->
 <script>
+    var elements = document.querySelectorAll('.post-count[data-loop-count]');
+    var loopCount = elements.length;
+    document.getElementById('loop-count').innerHTML += ' (' + loopCount + ')';
+</script>
+<script>
+
+
 (function($) {
     "use strict";
 
