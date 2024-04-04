@@ -110,7 +110,7 @@ $the_query = new WP_Query( array('post_type' =>'multi-residential','posts_per_pa
                 <div class="row pxp-content-side-search-form-row">
                     <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
                         <div class="form-group">
-                        <a href="#" class="pxp-filter-btn2"><?php _e('Apply Filters','theme-text-domain'); ?></a>
+                        <a href="#" class="pxp-filter-btn2 pxp-filter-btn"><?php _e('Apply Filters','theme-text-domain'); ?></a>
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-3 pxp-content-side-search-form-col">
