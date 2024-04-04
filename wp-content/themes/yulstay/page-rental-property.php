@@ -476,7 +476,7 @@ $the_query = new WP_Query( array('post_type' =>'rental-property','posts_per_page
 <script src="<?php echo get_template_directory_uri(); ?>/js/main.js?asdsd"></script>
 <!-- <script src="<?php echo get_template_directory_uri(); ?>/js/map.js?asldksjd"></script> -->
 <script>
-    var elements = document.querySelectorAll('.post-count[data-loop-count]');
+    var elements = document.querySelectorAll('.hide_post_class[data-loop-count]');
     var loopCount = elements.length;
     document.getElementById('loop-count').innerHTML += ' (' + loopCount + ')';
     console.log("Loop Count:", loopCount);
