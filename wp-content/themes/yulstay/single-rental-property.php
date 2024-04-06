@@ -241,7 +241,7 @@ $MUNICIPALITES = $wpdb->get_row("SELECT * FROM MUNICIPALITES m JOIN REGIONS r ON
                             <div class="pxp-sp-key-details-item">
                                 <div class="text-uppercase"><?php _e('Number of powder rooms','theme-text-domain'); ?></div>
                                 <div class="pxp-sp-kd-item-value"><?php
-                                echo $inscriptionsData->NB_SALLES_EAU;?></div>
+                                echo $inscriptionsData->NB_CHAMBRES_SOUS_SOL;?></div>
                             </div>
                         </div>
                     </div>
