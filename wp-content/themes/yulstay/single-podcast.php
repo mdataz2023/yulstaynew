@@ -107,9 +107,14 @@ $video_id = get_field('video_id');
 								?>
                         <div class="col-sm-12 col-md-6 col-lg-4">
                             <a href="#" class="pxp-posts-1-item">
+                                <?php if ( has_post_thumbnail() ) {
+                                    $attachment_image = wp_get_attachment_url( get_post_thumbnail_id() );
+                                    //echo '<link rel="preload" as="image" href="' . esc_attr( $attachment_image ) . '">';  
+                                ?>
                                 <div class="pxp-posts-1-item-fig-container">
                                     <div class="pxp-posts-1-item-fig pxp-cover" style="background-image: url(<?php echo $attachment_image; ?>);"></div>
                                 </div>
+                                <?php } ?>
                                 <div class="pxp-posts-1-item-details">
                                     <div class="pxp-posts-1-item-details-category">Youtube</div>
                                     <div class="pxp-posts-1-item-details-title"><?php the_title(); ?></div>
