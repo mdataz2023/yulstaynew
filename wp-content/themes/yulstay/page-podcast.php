@@ -43,16 +43,16 @@ get_header();
                                             <div class="pxp-posts-1-item-fig pxp-cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/imageres1.png);"></div>
                                         </div>
                                         <div class="pxp-posts-1-item-details">
-                                            <div class="pxp-posts-1-item-details-category">Architecture</div>
-                                            <div class="pxp-posts-1-item-details-title">Private Contemporary Home Balancing Openness</div>
-                                            <div class="pxp-posts-1-item-details-date mt-2">April 9, 2021</div>
+                                            <div class="pxp-posts-1-item-details-category">Youtube</div>
+                                            <div class="pxp-posts-1-item-details-title"><?php the_title(); ?></div>
+                                            <div class="pxp-posts-1-item-details-date mt-2"><?php echo date('F j, Y'); ?></div>
                                             <div class="pxp-posts-1-item-cta text-uppercase">Read Article</div>
                                         </div>
                                     </a>
                                 </div>
                                 <?php endwhile; endif; wp_reset_Query(); ?>
 
-                                <div class="col-sm-12 col-md-4">
+                                <!-- <div class="col-sm-12 col-md-4">
                                     <a href="single-post.html" class="pxp-posts-1-item">
                                         <div class="pxp-posts-1-item-fig-container">
                                             <div class="pxp-posts-1-item-fig pxp-cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/imageres1.png);"></div>
@@ -116,7 +116,7 @@ get_header();
                                             <div class="pxp-posts-1-item-cta text-uppercase">Read Article</div>
                                         </div>
                                     </a>
-                                </div>
+                                </div> -->
                             </div>
 
                             <ul class="pagination pxp-paginantion mt-3 mt-md-4">
