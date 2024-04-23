@@ -119,12 +119,12 @@ get_header();
                                 </div> -->
                             </div>
 
-                            <ul class="pagination pxp-paginantion mt-3 mt-md-4">
+                            <!-- <ul class="pagination pxp-paginantion mt-3 mt-md-4">
                                 <li class="page-item active"><a class="page-link" href="#">1</a></li>
                                 <li class="page-item"><a class="page-link" href="#">2</a></li>
                                 <li class="page-item"><a class="page-link" href="#">3</a></li>
                                 <li class="page-item"><a class="page-link" href="#">Next <span class="fa fa-angle-right"></span></a></li>
-                            </ul>
+                            </ul> -->
                         </div>
                         <!-- <div class="col-sm-12 col-lg-3 mt-4 mt-md-5 mt-lg-0">
                             <div class="pxp-blog-posts-side-section">
