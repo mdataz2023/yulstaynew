@@ -29,7 +29,7 @@ $video_id = get_field('video_id');
                     <div class="row">
                         <div class="col-sm-12 col-lg-1">
                             <div class="pxp-blog-post-share">
-                                <div class="pxp-blog-post-share-label">Share</div>
+                                <div class="pxp-blog-post-share-label"><?php _e('Share','theme-text-domain'); ?></div>
                                 <ul class="list-unstyled mt-3">
                                     <li><a href="#"><span class="fa fa-facebook"></span></a></li>
                                     <li><a href="#"><span class="fa fa-twitter"></span></a></li>
@@ -92,22 +92,34 @@ $video_id = get_field('video_id');
                 </div>
 
                 <div class="container mt-100">
-                    <h2 class="pxp-section-h2">Related Articles</h2>
+                    <h2 class="pxp-section-h2"><?php _e('Related Articles','theme-text-domain'); ?></h2>
                     <div class="row mt-4 mt-md-5">
+                    <?php $the_query = new WP_Query( array('post_type' =>'podcast','posts_per_page' => '3',  'post__not_in'   => array( $id),) );?>
+							     <?php if ( have_posts())   : while ( $the_query->have_posts() ) : $the_query->the_post();?>
+							  
+									   <?php
+										$thumbnail_id = get_post_thumbnail_id(); 
+										$thumbnail_url = wp_get_attachment_image_src( $thumbnail_id, 'thumbnail-size', true );
+										$thumbnail_meta = get_post_meta( $thumbnail_id, '_wp_attachment_image_alt', true); 
+
+                                $categories = get_the_category();
+										
+								?>
                         <div class="col-sm-12 col-md-6 col-lg-4">
                             <a href="#" class="pxp-posts-1-item">
                                 <div class="pxp-posts-1-item-fig-container">
-                                    <div class="pxp-posts-1-item-fig pxp-cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/imageres1.png);"></div>
+                                    <div class="pxp-posts-1-item-fig pxp-cover" style="background-image: url(<?php echo $attachment_image; ?>);"></div>
                                 </div>
                                 <div class="pxp-posts-1-item-details">
-                                    <div class="pxp-posts-1-item-details-category">Interior Design</div>
-                                    <div class="pxp-posts-1-item-details-title">What to Expect When Working with an Interior Designer</div>
-                                    <div class="pxp-posts-1-item-details-date mt-2">April 9, 2021</div>
-                                    <div class="pxp-posts-1-item-cta text-uppercase">Read Article</div>
+                                    <div class="pxp-posts-1-item-details-category">Youtube</div>
+                                    <div class="pxp-posts-1-item-details-title"><?php the_title(); ?></div>
+                                    <div class="pxp-posts-1-item-details-date mt-2"><?php the_date('j F, Y') ?></div>
+                                    <div class="pxp-posts-1-item-cta text-uppercase"><?php _e('Read Article','theme-text-domain'); ?></div>
                                 </div>
                             </a>
                         </div>
-                        <div class="col-sm-12 col-md-6 col-lg-4">
+                        <?php endwhile; endif; wp_reset_Query(); ?>
+                        <!-- <div class="col-sm-12 col-md-6 col-lg-4">
                             <a href="#" class="pxp-posts-1-item">
                                 <div class="pxp-posts-1-item-fig-container">
                                     <div class="pxp-posts-1-item-fig pxp-cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/imageres1.png);"></div>
@@ -132,7 +144,7 @@ $video_id = get_field('video_id');
                                     <div class="pxp-posts-1-item-cta text-uppercase">Read Article</div>
                                 </div>
                             </a>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>

@@ -11,8 +11,8 @@ get_header();
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12 col-md-7">
-                            <h1 class="pxp-page-header">Podcast</h1>
-                            <p class="pxp-text-light">Say hello. Tell us how we can guide you.</p>
+                            <h1 class="pxp-page-header"><?php _e('Podcast','theme-text-domain'); ?></h1>
+                            <p class="pxp-text-light"><?php _e('Say hello. Tell us how we can guide you.','theme-text-domain'); ?></p>
                         </div>
                     </div>
                 </div>
@@ -25,7 +25,7 @@ get_header();
 
                     <div class="row mt-100">
                             <!-- <div class="row"> -->
-                                <?php $the_query = new WP_Query( array('post_type' =>'podcast','posts_per_page' => '6',  'post__not_in'   => array( $id),) );?>
+                                <?php $the_query = new WP_Query( array('post_type' =>'podcast','posts_per_page' => '10',  'post__not_in'   => array( $id),) );?>
 							     <?php if ( have_posts())   : while ( $the_query->have_posts() ) : $the_query->the_post();?>
 							  
 									   <?php
@@ -40,13 +40,13 @@ get_header();
                                 <div class="col-sm-12 col-md-4">
                                     <a href="<?php the_permalink(); ?>" class="pxp-posts-1-item">
                                         <div class="pxp-posts-1-item-fig-container">
-                                            <div class="pxp-posts-1-item-fig pxp-cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/imageres1.png);"></div>
+                                            <div class="pxp-posts-1-item-fig pxp-cover" style="background-image: url(<?php echo $attachment_image; ?>);"></div>
                                         </div>
                                         <div class="pxp-posts-1-item-details">
                                             <div class="pxp-posts-1-item-details-category">Youtube</div>
                                             <div class="pxp-posts-1-item-details-title"><?php the_title(); ?></div>
-                                            <div class="pxp-posts-1-item-details-date mt-2"><?php echo date('F j, Y'); ?></div>
-                                            <div class="pxp-posts-1-item-cta text-uppercase">Read Article</div>
+                                            <div class="pxp-posts-1-item-details-date mt-2"><?php the_date('j F, Y') ?></div>
+                                            <div class="pxp-posts-1-item-cta text-uppercase"><?php _e('Read Article','theme-text-domain'); ?></div>
                                         </div>
                                     </a>
                                 </div>
