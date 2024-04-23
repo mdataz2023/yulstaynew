@@ -4,6 +4,10 @@
 */
 get_header();
 
+$second_title = get_field('second_title');
+$paragraph_one = get_field('paragraph_one');
+$video_id = get_field('video_id');
+
 ?>
 
         <div class="pxp-content">
@@ -11,14 +15,14 @@ get_header();
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12 col-md-9 col-lg-7">
-                            <div class="pxp-blog-post-category"><span><?php echo date('F j, Y'); ?></span><span>Youtube</span></div>
+                            <div class="pxp-blog-post-category"><span><?php the_date('j F, Y'); ?></span><span>Youtube</span></div>
                             <h1 class="pxp-page-header"><?php the_title(); ?></h1>
                         </div>
                     </div>
                 </div>
 
                 <div class="pxp-contact-hero mt-4 mt-md-5">
-                    <div class="pxp-contact-hero-fig pxp-cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/imageres1.png); background-position: 50% 80%;"></div>
+                    <div class="pxp-contact-hero-fig pxp-cover" style="background-image: url(<?php echo wp_get_attachment_url( get_post_thumbnail_id() ); ?>); background-position: 50% 80%;"></div>
                 </div>
 
                 <div class="container mt-100">
@@ -37,16 +41,23 @@ get_header();
                         </div>
                         <div class="col-sm-12 col-lg-10">
                             <div class="pxp-blog-post-block mt-4 mt-md-5 mt-lg-0">
-                                <h2>Have realistic expectations</h2>
+                                <h2><?php echo $second_title ?></h2>
                                 <div class="mt-3 mt-md-4">
-                                    <p class="pxp-first-letter">Most designers will tell you that, as much as we all love to watch home design shows, their prevalence has done them a bit of a disservice. Thanks to TV magic, the designers on those shows pull off projects with tight deadlines and shoestring budgets that would never fly in the real world.</p>
-                                    <p>Of course, every project is different. The best way to get a handle on an anticipated budget and duration is by asking potential designers for this information upfront. Don’t be afraid to reach out to more than one to get a realistic picture of what to expect.</p>
+                                    <p class="pxp-first-letter"><?php echo $paragraph_one ?></p>
+                                    <?php if( have_rows('paragraph_section') ): $s= 1; $a=0; ?>
+
+                                    <?php while( have_rows('paragraph_section') ): the_row() ;
+                                            $i++;
+                                                    $paragraph = get_sub_field('paragraph');
+                                            ?>
+                                    <p><?php echo $paragraph; ?></p>
+                                    <?php   endwhile; endif; ?>
                                 </div>
                             </div>
 
                             <div class="pxp-blog-post-block pxp-full mt-4 mt-md-5">
                                 <!-- <a href="javascript:void(0);" class="pxp-blog-post-video pxp-cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/imageres1.png); background-position: 50% 50%;"></a> -->
-                                <iframe width="889" height="500" src="https://www.youtube.com/embed/IaykqjaiNRQ?start=23" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width: 100%; border: 0 none;"></iframe>
+                                <iframe width="889" height="500" src="https://www.youtube.com/embed/<?php echo $video_id ?>?start=23" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width: 100%; border: 0 none;"></iframe>
                             </div>
 
                             <!-- <div class="pxp-blog-post-block mt-4 mt-md-5">
