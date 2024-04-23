@@ -11,8 +11,8 @@ get_header();
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12 col-md-9 col-lg-7">
-                            <div class="pxp-blog-post-category"><span>April 9, 2021</span><span>Interior Design</span></div>
-                            <h1 class="pxp-page-header">What to Expect When Working with an Interior Designer</h1>
+                            <div class="pxp-blog-post-category"><span><?php echo date('F j, Y'); ?></span><span>Youtube</span></div>
+                            <h1 class="pxp-page-header"><?php the_title(); ?></h1>
                         </div>
                     </div>
                 </div>
@@ -46,7 +46,7 @@ get_header();
 
                             <div class="pxp-blog-post-block pxp-full mt-4 mt-md-5">
                                 <a href="javascript:void(0);" class="pxp-blog-post-video pxp-cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/imageres1.png); background-position: 50% 50%;"></a>
-                                <iframe width="889" height="500" src="https://www.youtube.com/embed/4Wee4LASqvE?start=23" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width: 100%; border: 0 none;"></iframe>
+                                <iframe width="889" height="500" src="https://www.youtube.com/embed/IaykqjaiNRQ?start=23" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width: 100%; border: 0 none;"></iframe>
                             </div>
 
                             <!-- <div class="pxp-blog-post-block mt-4 mt-md-5">
