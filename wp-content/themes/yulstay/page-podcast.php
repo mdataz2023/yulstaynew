@@ -117,7 +117,7 @@ get_header();
                                         </div>
                                     </a>
                                 </div> -->
-                            </div>
+                            <!-- </div> -->
 
                             <!-- <ul class="pagination pxp-paginantion mt-3 mt-md-4">
                                 <li class="page-item active"><a class="page-link" href="#">1</a></li>
