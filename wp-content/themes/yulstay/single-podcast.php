@@ -45,7 +45,7 @@ get_header();
                             </div>
 
                             <div class="pxp-blog-post-block pxp-full mt-4 mt-md-5">
-                                <a href="javascript:void(0);" class="pxp-blog-post-video pxp-cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/imageres1.png); background-position: 50% 50%;"></a>
+                                <!-- <a href="javascript:void(0);" class="pxp-blog-post-video pxp-cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/imageres1.png); background-position: 50% 50%;"></a> -->
                                 <iframe width="889" height="500" src="https://www.youtube.com/embed/IaykqjaiNRQ?start=23" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width: 100%; border: 0 none;"></iframe>
                             </div>
 
