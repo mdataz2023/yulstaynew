@@ -24,7 +24,7 @@ get_header();
                 <div class="container">
 
                     <div class="row mt-100">
-                            <div class="row">
+                            <!-- <div class="row"> -->
                                 <?php $the_query = new WP_Query( array('post_type' =>'podcast','posts_per_page' => '6',  'post__not_in'   => array( $id),) );?>
 							     <?php if ( have_posts())   : while ( $the_query->have_posts() ) : $the_query->the_post();?>
 							  
