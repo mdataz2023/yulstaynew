@@ -4,6 +4,8 @@
 */
 get_header();
 
+$page_title = get_field('page_title');
+
 ?>
 
         <div class="pxp-content">
@@ -11,8 +13,16 @@ get_header();
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12 col-md-7">
-                            <h1 class="pxp-page-header"><?php _e('Podcast','theme-text-domain'); ?></h1>
-                            <p class="pxp-text-light"><?php _e('Say hello. Tell us how we can guide you.','theme-text-domain'); ?></p>
+                            <h1 class="pxp-page-header"><?php echo $video_id ?></h1>
+                            <?php if( have_rows('banner_paragraph_section') ): $s= 1; $a=0; ?>
+
+                            <?php while( have_rows('banner_paragraph_section') ): the_row() ;
+                                    $i++;
+                                            $paragraph = get_sub_field('paragraph');
+                                    ?>
+                            <p class="pxp-text-light"><?php echo $paragraph; ?></p>
+                            <?php   endwhile; endif; ?>
+                            
                         </div>
                     </div>
                 </div>
