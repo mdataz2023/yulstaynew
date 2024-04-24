@@ -187,10 +187,10 @@ $page_title = get_field('page_title');
                 <p class="pxp-text-light" style="color:white;">Subscribe to our newsletter to receive our weekly feed</p>
                 <div class="row mt-4 mt-md-5">
                     <div class="col-xs-12 col-sm-6">
-                        <form action="blog.html" class="pxp-newsletter-1-form">
+                        <div action="blog.html" class="pxp-newsletter-1-form">
                             <input type="text" class="form-control" placeholder="Enter your email...">
                             <a href="#" class="pxp-primary-cta text-uppercase pxp-animate mt-3 mt-md-4" style="color:white;">Subscribe</a>
-                        </form>
+                                    </div>
                     </div>
                 </div>
             </div>
