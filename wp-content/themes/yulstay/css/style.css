@@ -8557,3 +8557,8 @@ a.pxp-services-tabs-content-item:hover .pxp-services-tabs-content-item-cta {
 .mc4wp-alert{
  color: #fff !important;
 }
+
+.mail-chimp-submit{
+    background-color: transparent !important;
+    border: none !important;
+}
