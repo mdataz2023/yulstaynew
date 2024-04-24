@@ -106,7 +106,7 @@ $video_id = get_field('video_id');
 										
 								?>
                         <div class="col-sm-12 col-md-6 col-lg-4">
-                            <a href="#" class="pxp-posts-1-item">
+                            <a href="<?php the_permalink(); ?>" class="pxp-posts-1-item">
                                 <?php if ( has_post_thumbnail() ) {
                                     $attachment_image = wp_get_attachment_url( get_post_thumbnail_id() );
                                     //echo '<link rel="preload" as="image" href="' . esc_attr( $attachment_image ) . '">';  
