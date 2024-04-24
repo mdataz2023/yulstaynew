@@ -28,7 +28,7 @@ $page_title = get_field('page_title');
                 </div>
 
                 <div class="pxp-contact-hero mt-4 mt-md-5">
-                    <div class="pxp-contact-hero-fig pxp-cover" style="background-image: url(<?php echo wp_get_attachment_image_src( $thumbnail_id, 'thumbnail-size', true ); ?>); background-position: 50% 80%; background-position: top;"></div>
+                    <div class="pxp-contact-hero-fig pxp-cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/77.jpg); background-position: 50% 80%; background-size: top;"></div>
                 </div>
 
                 <div class="container">
