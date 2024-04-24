@@ -5,6 +5,7 @@
 get_header();
 
 $page_title = get_field('page_title');
+$banner_image = get_field('banner_image');
 
 ?>
 
@@ -28,7 +29,7 @@ $page_title = get_field('page_title');
                 </div>
 
                 <div class="pxp-contact-hero mt-4 mt-md-5">
-                    <div class="pxp-contact-hero-fig pxp-cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/77.jpg); background-position: 50% 80%; background-position: top !important;"></div>
+                    <div class="pxp-contact-hero-fig pxp-cover" style="background-image: url(<?php echo $banner_image; ?>); background-position: 50% 80%; background-position: top !important;"></div>
                 </div>
 
                 <div class="container">
