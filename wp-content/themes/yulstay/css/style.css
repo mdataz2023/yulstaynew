@@ -8553,3 +8553,7 @@ a.pxp-services-tabs-content-item:hover .pxp-services-tabs-content-item-cta {
 .grecaptcha-badge {
     visibility: hidden !important;
 }
+
+.mc4wp-alert{
+ color: #fff !important;
+}
