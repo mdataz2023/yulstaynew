@@ -188,8 +188,7 @@ $page_title = get_field('page_title');
                 <div class="row mt-4 mt-md-5">
                     <div class="col-xs-12 col-sm-6">
                         <div action="blog.html" class="pxp-newsletter-1-form">
-                            <input type="text" class="form-control" placeholder="Enter your email...">
-                            <a href="#" class="pxp-primary-cta text-uppercase pxp-animate mt-3 mt-md-4" style="color:white;">Subscribe</a>
+                        <?php echo do_shortcode('[mc4wp_form id=920048]'); ?>
                                     </div>
                     </div>
                 </div>
