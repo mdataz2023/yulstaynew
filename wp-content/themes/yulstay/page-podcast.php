@@ -13,7 +13,7 @@ $page_title = get_field('page_title');
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12 col-md-7">
-                            <h1 class="pxp-page-header"><?php echo $video_id ?></h1>
+                            <h1 class="pxp-page-header"><?php echo $page_title ?></h1>
                             <?php if( have_rows('banner_paragraph_section') ): $s= 1; $a=0; ?>
 
                             <?php while( have_rows('banner_paragraph_section') ): the_row() ;
