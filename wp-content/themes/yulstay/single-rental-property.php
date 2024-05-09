@@ -748,6 +748,10 @@ echo $inscriptionsData->INCLUS_FRANCAIS."<br><br>".$inscriptionsData->EXCLUS_FRA
                 {
                     echo do_shortcode('[contact-form-7 id="e0915fa" title="Alain Khoury Property Contact"]');
                 }
+                if($MEMBRES->CODE=="124896")
+                {
+                    echo do_shortcode('[contact-form-7 id="ad512b0" title="Peter Likoudis Property Contact"]');
+                }
                 ?>
 
             </div>
@@ -814,6 +818,10 @@ echo $inscriptionsData->INCLUS_FRANCAIS."<br><br>".$inscriptionsData->EXCLUS_FRA
                 if($MEMBRES2->CODE=="124413")
                 {
                         echo do_shortcode('[contact-form-7 id="e0915fa" title="Alain Khoury Property Contact"]');
+                }
+                if($MEMBRES->CODE=="124896")
+                {
+                    echo do_shortcode('[contact-form-7 id="ad512b0" title="Peter Likoudis Property Contact"]');
                 }
                 ?>
 
