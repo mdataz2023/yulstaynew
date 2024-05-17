@@ -109,7 +109,7 @@
 
                 <div class="pxp-footer-bottom mt-2">
                     <!-- <div><a style="color:white;" href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a></div> -->
-                    <div class="pxp-footer-copyright">&copy; Yulstay. <?php _e('All Rights Reserved.','theme-text-domain'); ?> 2024</div>
+                    <div class="pxp-footer-copyright">&copy; Yulstay. <?php _e('All Rights Reserved.','theme-text-domain'); ?> 2024.</div>
                 </div>
             </div>
         </div>
